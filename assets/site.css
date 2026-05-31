@@ -141,6 +141,17 @@ p { margin: 0 0 var(--s4); }
 /* ghost button on a dark section (e.g. the CTA block) — light text + visible border */
 .cta .btn-ghost { color: var(--paper); border-color: rgba(247,244,236,.35); }
 .cta .btn-ghost:hover { color: #fff; border-color: var(--paper); background: rgba(247,244,236,.10); }
+
+/* kind badges (light context: cards) */
+.badge { display:inline-block; font-family: var(--f-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:3px; font-weight:600; vertical-align:middle; }
+.badge-live { background: var(--accent-wash); color: var(--accent-ink); }
+.badge-live::before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background: var(--term-green); margin-right:5px; vertical-align:middle; }
+.badge-builder { background: var(--paper-3); color: var(--ink-2); }
+
+/* "Example output" callout in the terminal widget (dark context) — makes clear the sample is fixed, not live */
+.example-head { font-size: 13px; color: var(--term-amber); background: rgba(255,197,107,.08); border:1px solid rgba(255,197,107,.28); border-radius: var(--radius); padding: 10px 14px; margin-bottom: var(--s3); line-height: 1.5; }
+.example-head b { color: var(--term-text); }
+.example-badge { display:inline-block; font-family: var(--f-mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; background: var(--term-amber); color:#1a1206; padding:2px 7px; border-radius:3px; margin-right:6px; font-weight:700; }
 .btn[disabled]{ opacity:.5; cursor: not-allowed; transform:none; }
 .btn .arr { transition: transform .15s ease; }
 .btn:hover .arr { transform: translateX(3px); }

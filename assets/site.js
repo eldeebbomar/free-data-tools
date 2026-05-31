@@ -125,11 +125,13 @@
   function runConfigurator() {
     var status = $("#status"), out = $("#results");
     renderJSON();
-    status.innerHTML = '<span class="run">› loading sample output…</span>';
+    status.innerHTML = '<span class="ok">✓ query ready — copy it below and paste into the actor for live results</span>';
     out.innerHTML = "";
-    if (!TOOL || !TOOL.sampleUrl) { status.innerHTML = '<span class="ok">✓ run input ready — copy it below</span>'; return; }
+    if (!TOOL || !TOOL.sampleUrl) return;
     fetch(TOOL.sampleUrl).then(function (r) { return r.json(); }).then(function (rows) {
-      status.innerHTML = '<span class="ok">✓ sample of ' + rows.length + ' records the actor returns for this query</span>';
+      var head = el("div", "example-head");
+      head.innerHTML = '<span class="example-badge">Example output</span> A fixed sample showing the <b>data shape</b> the actor returns — not live results for your query.';
+      out.appendChild(head);
       var ul = el("ul", "result-list");
       rows.slice(0, 6).forEach(function (row) {
         var li = el("li", "result-item");
@@ -140,9 +142,9 @@
       });
       out.appendChild(ul);
       var note = el("div", "term-hint"); note.style.marginTop = "12px";
-      note.textContent = "↑ bundled sample. Run the actor (free trial) to get this live for your exact query, at scale, as JSON/CSV/API.";
+      note.textContent = "↑ Fixed example — the same rows every time, not your live results. To run the exact query you built above, paste it into the actor (free to start, then pay-as-you-go); it fetches live at scale and exports JSON/CSV/API.";
       out.appendChild(note);
-    }).catch(function () { status.innerHTML = '<span class="ok">✓ run input ready — copy it below to run the actor</span>'; });
+    }).catch(function () { /* the built query is already shown above; the example sample is optional */ });
   }
 
   /* ---------- boot ---------- */

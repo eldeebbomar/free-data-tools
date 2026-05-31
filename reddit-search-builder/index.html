@@ -28,9 +28,9 @@
 <main>
 <div class="wrap"><div class="crumb"><a href="../">Data Tooly</a> / Social &amp; Community</div></div>
 <section class="hero" style="padding-top:40px"><div class="wrap">
-<span class="eyebrow">Free tool</span>
+<span class="eyebrow">Query builder</span>
 <h1>Search Reddit by keyword or subreddit — and export it clean</h1>
-<p class="lede">Compose a precise Reddit query — <strong>keyword search</strong> or a whole subreddit, with sort and time range — and preview the structured posts you'd get: title, subreddit, score, comments, author, URL. Free to set up; export at scale with the actor.</p>
+<p class="lede">Compose a precise Reddit query — <strong>keyword search</strong> or a whole subreddit, with sort and time range — and see an example of the structured posts the actor returns: title, subreddit, score, comments, author, URL. Free to set up; export at scale with the actor.</p>
 </div></section>
 
 <section class="section" style="padding:40px 0 0"><div class="wrap-narrow"><div class="answer-first" data-reveal><span class="af-label">In short</span><p>Reddit keyword search means finding every Reddit post or comment that mentions a term, optionally scoped by subreddit, author, title, or date using operators like subreddit:, author:, and &quot;exact phrase&quot;. This free builder writes the exact search query and shows the clean output shape you'll get. Reddit's JSON is CORS-blocked in browsers and 403'd from datacenter IPs, so honest export needs a scraper like Reddit Scraper Pro.</p></div></div></section>
@@ -40,7 +40,7 @@
 <div class="term-bar"><span class="term-dots"><i></i><i></i><i></i></span><span class="term-title">reddit — search builder</span></div>
 <div class="term-body">
 <div class="term-row"><div class="term-field"><label>Mode</label><select class="term-select" data-key="mode"><option value="search" selected>search</option><option value="subreddit_posts">subreddit_posts</option></select></div><div class="term-field"><label>Keyword query (search mode)</label><input class="term-input" type="text" data-key="searchQuery" placeholder="&quot;remote work&quot; burnout"></div><div class="term-field"><label>Subreddits (subreddit_posts mode, comma-separated)</label><input class="term-input" type="text" data-key="subreddits" data-type="list" placeholder="datascience, MachineLearning"></div><div class="term-field"><label>Sort</label><select class="term-select" data-key="sort"><option value="relevance">relevance</option><option value="top" selected>top</option><option value="hot">hot</option><option value="new">new</option><option value="rising">rising</option><option value="comments">comments</option></select></div><div class="term-field"><label>Time range</label><select class="term-select" data-key="timeFilter"><option value="all" selected>all</option><option value="year">year</option><option value="month">month</option><option value="week">week</option><option value="day">day</option></select></div><div class="term-field"><label>Max items</label><input class="term-input" type="number" data-key="maxItems" data-type="number" placeholder="50"></div></div>
-<p class="term-hint">Reddit blocks direct browser reads (no CORS) and rate-limits datacenter IPs, so this builds a ready-to-run query + shows a real sample. The actor fetches it reliably with IP rotation.</p>
+<p class="term-hint">Reddit blocks direct browser reads (no CORS) and rate-limits datacenter IPs, so this builds a ready-to-run query and shows a fixed example of the output shape — not live results. Paste the query into the actor to fetch it live with IP rotation.</p>
 <div style="margin-top:18px"><button id="run" class="btn btn-term">› Build query + preview data</button></div>
 <div class="term-out"><div id="status" class="term-status"></div><div id="results"></div></div>
 </div></div>

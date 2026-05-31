@@ -28,9 +28,9 @@
 <main>
 <div class="wrap"><div class="crumb"><a href="../">Data Tooly</a> / Patents &amp; IP</div></div>
 <section class="hero" style="padding-top:40px"><div class="wrap">
-<span class="eyebrow">Free tool</span>
+<span class="eyebrow">Query builder</span>
 <h1>Search Google Patents by company, inventor, or keyword — the structured way</h1>
-<p class="lede">Compose a precise patent query — by keyword, <strong>assignee (company)</strong>, or inventor — and preview the clean, structured records you'd get back: titles, assignees, filing/grant dates, citation counts, and legal status across USPTO, EPO, WIPO and 100+ offices.</p>
+<p class="lede">Compose a precise patent query — by keyword, <strong>assignee (company)</strong>, or inventor — and see an example of the clean, structured records the actor returns: titles, assignees, filing/grant dates, citation counts, and legal status across USPTO, EPO, WIPO and 100+ offices.</p>
 </div></section>
 
 <section class="section" style="padding:40px 0 0"><div class="wrap-narrow"><div class="answer-first" data-reveal><span class="af-label">In short</span><p>Google Patents search lets you query 100+ patent offices (USPTO, EPO, WIPO, JPO, CNIPA) by keyword, assignee/company, inventor, CPC classification, or date. The free site is ideal for reading single patents but caps its CSV download at the first 1,000 results per query and offers no public API. For bulk, repeatable landscape work, use a structured query builder plus a server-side export pipeline.</p></div></div></section>
@@ -40,7 +40,7 @@
 <div class="term-bar"><span class="term-dots"><i></i><i></i><i></i></span><span class="term-title">google-patents — query builder</span></div>
 <div class="term-body">
 <div class="term-row"><div class="term-field"><label>Mode</label><select class="term-select" data-key="mode"><option value="search" selected>search</option><option value="by_assignee">by_assignee</option><option value="by_inventor">by_inventor</option></select></div><div class="term-field"><label>Keyword query</label><input class="term-input" type="text" data-key="query" placeholder="quantum error correction"></div><div class="term-field"><label>Assignee / company (by_assignee mode)</label><input class="term-input" type="text" data-key="assignee" placeholder="Apple"></div><div class="term-field"><label>Inventor (by_inventor mode)</label><input class="term-input" type="text" data-key="inventor" placeholder="John Carmack"></div><div class="term-field"><label>Max results</label><input class="term-input" type="number" data-key="maxResults" data-type="number" placeholder="50"></div></div>
-<p class="term-hint">Google Patents blocks direct browser reads (no CORS header), so this builds a ready-to-run query + shows a real sample. The actor runs it live at scale.</p>
+<p class="term-hint">Google Patents blocks direct browser reads (no CORS header), so this builds a ready-to-run query and shows a fixed example of the output shape — not live results. Paste the query into the actor to run it live at scale.</p>
 <div style="margin-top:18px"><button id="run" class="btn btn-term">› Build query + preview data</button></div>
 <div class="term-out"><div id="status" class="term-status"></div><div id="results"></div></div>
 </div></div>
