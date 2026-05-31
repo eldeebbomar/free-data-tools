@@ -138,6 +138,9 @@ p { margin: 0 0 var(--s4); }
 .btn-ink:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--ink); background: var(--paper-2); }
+/* ghost button on a dark section (e.g. the CTA block) — light text + visible border */
+.cta .btn-ghost { color: var(--paper); border-color: rgba(247,244,236,.35); }
+.cta .btn-ghost:hover { color: #fff; border-color: var(--paper); background: rgba(247,244,236,.10); }
 .btn[disabled]{ opacity:.5; cursor: not-allowed; transform:none; }
 .btn .arr { transition: transform .15s ease; }
 .btn:hover .arr { transform: translateX(3px); }
