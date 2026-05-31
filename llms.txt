@@ -1,0 +1,23 @@
+# Data Tooly
+
+> Free micro-tools for developers, analysts & researchers. Free, no-signup, browser-based query & search builders for public data sources. Each tool gives instant value in the browser and links to a production Apify actor for full structured extraction at scale.
+
+Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who publishes 25 public production data actors.
+
+## Tools
+
+- [Hiring & Sales Signals](https://datatooly.xyz/company-hiring-signals/): See what any company is hiring for and what it signals. Free in-browser tool reads live Greenhouse roles and flags hiring intent. No login. Try it now.
+- [Patents & IP](https://datatooly.xyz/google-patents-search-builder/): Search Google Patents by company, inventor, or keyword the structured way. Free query builder + sample preview, plus a path to bulk CSV/JSON export. Try it.
+- [Social & Community](https://datatooly.xyz/reddit-search-builder/): Build a Reddit keyword/subreddit search query free in your browser, preview the output, then export posts + comments to CSV/JSON. No API key, no login.
+
+## Backing Apify actors
+
+- [ats-hiring-intent-scraper on Apify](https://apify.com/constructive_calm/ats-hiring-intent-scraper)
+- [google-patents-intelligence on Apify](https://apify.com/constructive_calm/google-patents-intelligence)
+- [reddit-scraper-pro on Apify](https://apify.com/constructive_calm/reddit-scraper-pro)
+- [All 25 actors by Omar Eldeeb](https://apify.com/constructive_calm)
+
+## About
+
+- [Home / all tools](https://datatooly.xyz/)
+- Author: Omar Eldeeb — https://github.com/eldeebbomar
