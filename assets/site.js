@@ -200,6 +200,107 @@
     }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
   }
 
+  /* ---------- live: ClinicalTrials.gov v2 search (CORS-open, no key) ---------- */
+  function runClinicalTrials() {
+    var status = $("#status"), out = $("#results");
+    var cond = fieldAttr("ct-condition");
+    var intervention = fieldAttr("ct-intervention");
+    var phase = fieldAttr("ct-phase");
+    var st = fieldAttr("ct-status");
+    if (!cond && !intervention) { status.innerHTML = '<span class="err">Enter a condition (e.g. diabetes) or a drug/intervention to search.</span>'; return; }
+    var qlabel = cond || intervention;
+    status.innerHTML = '<span class="run">› searching ClinicalTrials.gov for "' + esc(qlabel) + '"…</span>';
+    out.innerHTML = "";
+    var p = ["pageSize=20", "fields=NCTId,BriefTitle,OverallStatus,Phase,LeadSponsorName,StartDate"];
+    if (cond) p.push("query.cond=" + encodeURIComponent(cond));
+    if (intervention) p.push("query.intr=" + encodeURIComponent(intervention));
+    var filters = [];
+    if (phase) filters.push("AREA[Phase]" + phase);
+    if (st) filters.push("AREA[OverallStatus]" + st);
+    if (filters.length) p.push("filter.advanced=" + encodeURIComponent(filters.join(" AND ")));
+    fetch("https://clinicaltrials.gov/api/v2/studies?" + p.join("&")).then(function (r) {
+      if (!r.ok) throw new Error("ClinicalTrials.gov API returned HTTP " + r.status);
+      return r.json();
+    }).then(function (d) {
+      var studies = d.studies || [];
+      if (!studies.length) { status.innerHTML = '<span class="err">No studies matched. Try a broader condition or fewer filters.</span>'; return; }
+      var total = d.totalCount != null ? d.totalCount : studies.length;
+      status.innerHTML = '<span class="ok">✓ ' + total.toLocaleString() + ' matching studies · live from ClinicalTrials.gov (showing ' + Math.min(10, studies.length) + ')</span>';
+      var ul = el("ul", "result-list");
+      studies.slice(0, 10).forEach(function (s) {
+        var id = (s.protocolSection && s.protocolSection.identificationModule) || {};
+        var sm = (s.protocolSection && s.protocolSection.statusModule) || {};
+        var sp = (s.protocolSection && s.protocolSection.sponsorCollaboratorsModule) || {};
+        var dm = (s.protocolSection && s.protocolSection.designModule) || {};
+        var ph = (dm.phases || []).join("/") || "N/A";
+        var spon = (sp.leadSponsor && sp.leadSponsor.name) || "—";
+        var li = el("li", "result-item");
+        li.innerHTML = '<div class="rt">' + esc(id.briefTitle || "(untitled)") + '</div><div class="rm">' +
+          '<span><b>' + esc(id.nctId || "") + '</b></span>' +
+          '<span>' + esc((sm.overallStatus || "").replace(/_/g, " ").toLowerCase()) + '</span>' +
+          '<span>phase: <b>' + esc(ph) + '</b></span>' +
+          '<span>' + esc(spon) + '</span></div>';
+        ul.appendChild(li);
+      });
+      out.appendChild(ul);
+      var note = el("div", "term-hint"); note.style.marginTop = "12px";
+      note.textContent = "↑ Live from the official ClinicalTrials.gov v2 API. The actor adds FDA layers — drug approvals, 510(k)/PMA device clearances, adverse events, recalls, drug shortages, and a per-sponsor pipeline rollup — with monitoring + CSV/JSON/API export.";
+      out.appendChild(note);
+      var inp = { mode: "trials", maxItems: 100 };
+      if (cond) inp.conditions = [cond];
+      if (intervention) inp.interventions = [intervention];
+      if (phase) inp.phases = [phase];
+      if (st) inp.statuses = [st];
+      setCTA(inp);
+    }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
+  }
+
+  /* ---------- live: Shopify store products (/products.json, CORS-open) ---------- */
+  function runShopify() {
+    var status = $("#status"), out = $("#results");
+    var raw = fieldAttr("shop-domain");
+    if (!raw) { status.innerHTML = '<span class="err">Enter a Shopify store domain (e.g. allbirds.com).</span>'; return; }
+    // normalize: strip scheme + path + trailing slash
+    var domain = raw.replace(/^https?:\/\//i, "").replace(/\/.*$/, "").trim().toLowerCase();
+    status.innerHTML = '<span class="run">› fetching ' + esc(domain) + ' products…</span>';
+    out.innerHTML = "";
+    fetch("https://" + domain + "/products.json?limit=20").then(function (r) {
+      var ctype = (r.headers.get("content-type") || "");
+      if (!r.ok || ctype.indexOf("json") === -1) {
+        throw new Error("'" + domain + "' didn't return a public products.json (HTTP " + r.status + "). Either it's not Shopify, or it's WAF-protected (e.g. Gymshark) — those need the actor's server-side fallback. Try allbirds.com, kith.com, or another open store.");
+      }
+      return r.json();
+    }).then(function (d) {
+      var products = (d && d.products) || [];
+      if (!products.length) { status.innerHTML = '<span class="err">No public products found for ' + esc(domain) + '.</span>'; return; }
+      // currency from first variant isn't in products.json; show price as-is
+      var inStock = products.filter(function (p) { return (p.variants || []).some(function (v) { return v.available; }); }).length;
+      var types = {};
+      products.forEach(function (p) { var t = p.product_type || "—"; types[t] = (types[t] || 0) + 1; });
+      var topType = Object.keys(types).sort(function (a, b) { return types[b] - types[a]; })[0];
+      status.innerHTML = '<span class="ok">✓ ' + products.length + ' products · live from ' + esc(domain) + '/products.json</span>';
+      var head = el("div", "result-item");
+      head.innerHTML = '<div class="rt">' + esc(domain) + ' — ' + products.length + ' products shown</div>' +
+        '<div class="rm"><span><b>' + inStock + '</b> in stock</span><span>top type: <b>' + esc(topType) + '</b></span><span>vendor: <b>' + esc(products[0].vendor || "—") + '</b></span></div>';
+      out.appendChild(head);
+      var ul = el("ul", "result-list");
+      products.slice(0, 8).forEach(function (p) {
+        var v = (p.variants && p.variants[0]) || {};
+        var li = el("li", "result-item");
+        li.innerHTML = '<div class="rt">' + esc(p.title || "(untitled)") + '</div><div class="rm">' +
+          '<span>price: <b>' + esc(v.price != null ? v.price : "—") + '</b></span>' +
+          '<span>' + (v.available ? 'in stock' : '<span style="color:#FF8367">out of stock</span>') + '</span>' +
+          '<span>' + esc(p.product_type || "—") + '</span></div>';
+        ul.appendChild(li);
+      });
+      out.appendChild(ul);
+      var note = el("div", "term-hint"); note.style.marginTop = "12px";
+      note.textContent = "↑ Live from the store's public /products.json. The actor scans many stores at once and adds price-change deltas, new-launch detection, stock signals, true inventory levels, and an AI store-audit — exported as JSON/CSV/API, with a server-side fallback for WAF-protected stores.";
+      out.appendChild(note);
+      setCTA({ mode: "catalog_snapshot", storeDomains: [domain], maxProductsPerStore: 500 });
+    }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
+  }
+
   /* ---------- configurator: build input + show sample ---------- */
   function runConfigurator() {
     var status = $("#status"), out = $("#results");
@@ -233,7 +334,7 @@
     renderJSON();
     $all("[data-key]").forEach(function (i) { i.addEventListener("input", renderJSON); });
     var runBtn = $("#run");
-    var RUNNERS = { "live-greenhouse": runGreenhouse, "live-hackernews": runHackerNews, "live-appstore": runAppStore };
+    var RUNNERS = { "live-greenhouse": runGreenhouse, "live-hackernews": runHackerNews, "live-appstore": runAppStore, "live-clinicaltrials": runClinicalTrials, "live-shopify": runShopify };
     if (runBtn) runBtn.addEventListener("click", function () {
       (RUNNERS[TOOL.mode] || runConfigurator)();
     });

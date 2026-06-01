@@ -11,6 +11,8 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [Social & Community](https://datatooly.xyz/reddit-search-builder/): Build a Reddit keyword/subreddit search query free in your browser, preview the output, then export posts + comments to CSV/JSON. No API key, no login.
 - [Dev & Community](https://datatooly.xyz/hacker-news-search/): Search Hacker News by keyword live — real stories, points, comments, author, date. Free browser tool on the public HN Algolia API, no key. Filters + scale upsell.
 - [App Intelligence](https://datatooly.xyz/app-store-top-charts/): See the App Store top charts live, free, in any country. Real-time Top Free, Top Paid & Top Grossing apps straight from Apple's official iTunes RSS feed.
+- [Health & Pharma](https://datatooly.xyz/clinical-trials-search/): Search ClinicalTrials.gov live by condition, drug, or phase. Free browser tool hits the official v2 REST API (no key, CORS-open) and shows real NCT studies.
+- [E-commerce Intelligence](https://datatooly.xyz/shopify-store-products/): Free live tool: enter a Shopify domain and read its public /products.json in your browser — real titles, vendors, variants, prices, stock. No app, no key.
 
 ## Backing Apify actors
 
@@ -19,6 +21,8 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [reddit-scraper-pro on Apify](https://apify.com/constructive_calm/reddit-scraper-pro)
 - [hacker-news-scraper on Apify](https://apify.com/constructive_calm/hacker-news-scraper)
 - [app-store-rank-tracker on Apify](https://apify.com/constructive_calm/app-store-rank-tracker)
+- [clinical-trials-fda-scraper on Apify](https://apify.com/constructive_calm/clinical-trials-fda-scraper)
+- [shopify-store-intel on Apify](https://apify.com/constructive_calm/shopify-store-intel)
 - [All 25 actors by Omar Eldeeb](https://apify.com/constructive_calm)
 
 ## About
