@@ -30,6 +30,7 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [Ads Intelligence](https://datatooly.xyz/tiktok-ad-library-search/): Build a TikTok Ad Library query by keyword or advertiser, check if your market is in the 33 EU/DSA regions, preview the output, then run it live.
 - [Sports Analytics](https://datatooly.xyz/understat-football-stats/): Build a ready-to-run query for Understat xG data — players, teams, shots across 6 leagues since 2014/15 — preview the output shape, then run it live.
 - [Jobs & Visas](https://datatooly.xyz/visa-sponsor-finder/): Free H-1B visa sponsor lookup query builder. Set a role + city, preview the output shape, then run it live on real DOL LCA & PERM sponsor data.
+- [Jobs & Visas](https://datatooly.xyz/salary-benchmark-lookup/): Benchmark what a role pays using public DOL H-1B/PERM wage disclosure data — percentiles by city, state, or employer, or individual records. Free to start.
 
 ## Backing Apify actors
 
@@ -57,6 +58,7 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [tiktok-ad-library-pro on Apify](https://apify.com/constructive_calm/tiktok-ad-library-pro)
 - [understat-football-analytics on Apify](https://apify.com/constructive_calm/understat-football-analytics)
 - [visa-sponsor-tracker on Apify](https://apify.com/constructive_calm/visa-sponsor-tracker)
+- [salarybench-iq on Apify](https://apify.com/constructive_calm/salarybench-iq)
 - [All 25 actors by Omar Eldeeb](https://apify.com/constructive_calm)
 
 ## About

@@ -1,0 +1,26 @@
+[
+  {
+    "role": "Software Engineer",
+    "employer": "Amazon",
+    "city": "Seattle",
+    "medianSalary": "$165,000",
+    "p25": "$148,000",
+    "p75": "$190,000"
+  },
+  {
+    "role": "Data Scientist",
+    "employer": "Meta",
+    "city": "Menlo Park",
+    "medianSalary": "$182,000",
+    "p25": "$160,000",
+    "p75": "$205,000"
+  },
+  {
+    "role": "Product Manager",
+    "employer": "Google",
+    "city": "Mountain View",
+    "medianSalary": "$198,000",
+    "p25": "$172,000",
+    "p75": "$225,000"
+  }
+]
