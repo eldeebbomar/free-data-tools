@@ -1,0 +1,20 @@
+[
+  {
+    "username": "zuck",
+    "text": "Shipping new AI features this week.",
+    "likes": 42000,
+    "replies": 3100
+  },
+  {
+    "username": "mosseri",
+    "text": "How the Threads algorithm ranks posts.",
+    "likes": 18500,
+    "replies": 2200
+  },
+  {
+    "username": "mosseri",
+    "text": "We're testing longer posts.",
+    "likes": 9800,
+    "replies": 1400
+  }
+]

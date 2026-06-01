@@ -1,0 +1,23 @@
+[
+  {
+    "player": "Haaland",
+    "team": "MCI",
+    "position": "FWD",
+    "ownershipPct": 62.3,
+    "form": 8.4
+  },
+  {
+    "player": "Salah",
+    "team": "LIV",
+    "position": "MID",
+    "ownershipPct": 48.1,
+    "form": 7.2
+  },
+  {
+    "player": "Saka",
+    "team": "ARS",
+    "position": "MID",
+    "ownershipPct": 31.5,
+    "form": 6.8
+  }
+]

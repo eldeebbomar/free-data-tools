@@ -1,0 +1,20 @@
+[
+  {
+    "player": "Erling Haaland",
+    "team": "Manchester City",
+    "xG": 24.6,
+    "goals": 27
+  },
+  {
+    "player": "Mohamed Salah",
+    "team": "Liverpool",
+    "xG": 18.2,
+    "goals": 19
+  },
+  {
+    "player": "Alexander Isak",
+    "team": "Newcastle",
+    "xG": 16.8,
+    "goals": 21
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Toyota Land Cruiser GXR",
+    "price": "AED 245,000",
+    "year": 2022,
+    "mileage": "38,000 km"
+  },
+  {
+    "title": "Nissan Patrol Platinum",
+    "price": "AED 198,000",
+    "year": 2021,
+    "mileage": "52,000 km"
+  },
+  {
+    "title": "Lexus LX 600",
+    "price": "AED 520,000",
+    "year": 2023,
+    "mileage": "12,000 km"
+  }
+]

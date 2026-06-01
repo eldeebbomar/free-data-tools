@@ -1,0 +1,20 @@
+[
+  {
+    "employer": "Amazon",
+    "role": "Software Development Engineer",
+    "city": "Seattle",
+    "medianSalary": "$165,000"
+  },
+  {
+    "employer": "Google",
+    "role": "Software Engineer III",
+    "city": "Mountain View",
+    "medianSalary": "$184,000"
+  },
+  {
+    "employer": "Microsoft",
+    "role": "Senior SDE",
+    "city": "Redmond",
+    "medianSalary": "$178,000"
+  }
+]

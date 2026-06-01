@@ -1,0 +1,20 @@
+[
+  {
+    "plan": "Free",
+    "price": "$0",
+    "billingPeriod": "month",
+    "features": 5
+  },
+  {
+    "plan": "Pro",
+    "price": "$12",
+    "billingPeriod": "month",
+    "features": 18
+  },
+  {
+    "plan": "Enterprise",
+    "price": "Custom",
+    "billingPeriod": "year",
+    "features": 40
+  }
+]

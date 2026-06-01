@@ -1,0 +1,20 @@
+[
+  {
+    "prompt": "best note-taking app for teams",
+    "platform": "ChatGPT",
+    "brandMentioned": true,
+    "rank": 1
+  },
+  {
+    "prompt": "Notion alternatives",
+    "platform": "Perplexity",
+    "brandMentioned": true,
+    "rank": 3
+  },
+  {
+    "prompt": "free knowledge base tools",
+    "platform": "Gemini",
+    "brandMentioned": false,
+    "rank": null
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Apartment for sale in New Cairo",
+    "price": "4,200,000 EGP",
+    "location": "New Cairo",
+    "bedrooms": 3,
+    "areaSqm": 165
+  },
+  {
+    "title": "Villa in Sheikh Zayed",
+    "price": "12,500,000 EGP",
+    "location": "Sheikh Zayed",
+    "bedrooms": 5,
+    "areaSqm": 400
+  },
+  {
+    "title": "Studio in Maadi",
+    "price": "1,850,000 EGP",
+    "location": "Maadi",
+    "bedrooms": 1,
+    "areaSqm": 60
+  }
+]

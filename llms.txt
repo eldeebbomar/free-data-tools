@@ -13,6 +13,23 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [App Intelligence](https://datatooly.xyz/app-store-top-charts/): See the App Store top charts live, free, in any country. Real-time Top Free, Top Paid & Top Grossing apps straight from Apple's official iTunes RSS feed.
 - [Health & Pharma](https://datatooly.xyz/clinical-trials-search/): Search ClinicalTrials.gov live by condition, drug, or phase. Free browser tool hits the official v2 REST API (no key, CORS-open) and shows real NCT studies.
 - [E-commerce Intelligence](https://datatooly.xyz/shopify-store-products/): Free live tool: enter a Shopify domain and read its public /products.json in your browser — real titles, vendors, variants, prices, stock. No app, no key.
+- [News & Crypto](https://datatooly.xyz/crypto-news-search/): Free Cointelegraph scraper query builder. Configure keyword, language, and article count, preview the JSON output shape, then run it live on the Apify actor.
+- [Real Estate](https://datatooly.xyz/egypt-real-estate-search/): Build a query for Egypt property listings data from Aqarmap, Dubizzle &amp; Property Finder, preview the output shape, then run it on Apify to export CSV/JSON.
+- [Ads Intelligence](https://datatooly.xyz/facebook-ad-library-search/): Build a ready-to-run Facebook Ad Library scraper query — keyword, country, active status — and preview the export shape, then run it live on Apify.
+- [Sports Analytics](https://datatooly.xyz/fpl-intelligence-tool/): Build a ready-to-run Fantasy Premier League API query for gameweek picks and manager dashboards, preview the output shape, then run it live on Apify.
+- [Automotive](https://datatooly.xyz/gulf-used-car-search/): Build a query for Dubai used car listings data across DubiCars and Dubizzle, preview the export shape, then run it live. Make, model, price, mileage in AED.
+- [Lead Generation](https://datatooly.xyz/linkedin-profile-lookup/): Free query builder for a LinkedIn profile scraper: paste profile URLs, preview the JSON output shape, then run it on Apify — no cookies or login.
+- [AI & SEO](https://datatooly.xyz/llm-visibility-monitor-tool/): Build a ready-to-run query to track brand mentions in ChatGPT and 4 other AI engines. Preview the output shape, then run it live on Apify. Free to start.
+- [Crypto & DeFi](https://datatooly.xyz/mev-pair-scanner-tool/): Build a ready-to-run query for DEX sandwich attack MEV data — preview the per-pair output shape (sandwich rate, MEV fee ratio, risk level), then run it live.
+- [Health & Pharma](https://datatooly.xyz/peptide-market-intel-tool/): Build a ready-to-run query for peptide market research data: track GLP-1, BPC-157 and 30+ compounds across YouTube, Amazon and optional Reddit with sentiment.
+- [SaaS & SEO](https://datatooly.xyz/saas-pricing-tracker-tool/): Build a ready-to-run query to track competitor SaaS pricing and plan changes. Preview the structured output shape, then run it live on Apify. Free to start.
+- [Real Estate](https://datatooly.xyz/saudi-real-estate-search/): Build a query for Saudi Arabia property data across Bayut.sa, Wasalt, Aqar.fm and PropertyFinder.sa, preview the output shape, then run it live to export listings.
+- [Finance & Filings](https://datatooly.xyz/sec-edgar-search/): Build a ready-to-run SEC EDGAR API query for filings, XBRL financials & insider trades by ticker, preview the output shape, then run it live on the actor.
+- [Social & Community](https://datatooly.xyz/telegram-channel-search/): Build a ready-to-run config to scrape Telegram channel posts, views, and reactions. Preview the output shape, then run it live on the Apify actor.
+- [Social & Community](https://datatooly.xyz/threads-profile-search/): Free Threads scraper query builder. Configure profile, posts & hashtag scrapes, preview the output shape, then run live on Apify. No login needed.
+- [Ads Intelligence](https://datatooly.xyz/tiktok-ad-library-search/): Build a TikTok Ad Library query by keyword or advertiser, check if your market is in the 33 EU/DSA regions, preview the output, then run it live.
+- [Sports Analytics](https://datatooly.xyz/understat-football-stats/): Build a ready-to-run query for Understat xG data — players, teams, shots across 6 leagues since 2014/15 — preview the output shape, then run it live.
+- [Jobs & Visas](https://datatooly.xyz/visa-sponsor-finder/): Free H-1B visa sponsor lookup query builder. Set a role + city, preview the output shape, then run it live on real DOL LCA & PERM sponsor data.
 
 ## Backing Apify actors
 
@@ -23,6 +40,23 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [app-store-rank-tracker on Apify](https://apify.com/constructive_calm/app-store-rank-tracker)
 - [clinical-trials-fda-scraper on Apify](https://apify.com/constructive_calm/clinical-trials-fda-scraper)
 - [shopify-store-intel on Apify](https://apify.com/constructive_calm/shopify-store-intel)
+- [crypto-news-scraper on Apify](https://apify.com/constructive_calm/crypto-news-scraper)
+- [egypt-real-estate-scraper on Apify](https://apify.com/constructive_calm/egypt-real-estate-scraper)
+- [facebook-ad-library-pro on Apify](https://apify.com/constructive_calm/facebook-ad-library-pro)
+- [fpl-intelligence on Apify](https://apify.com/constructive_calm/fpl-intelligence)
+- [gulf-used-car-scraper on Apify](https://apify.com/constructive_calm/gulf-used-car-scraper)
+- [linkedin-profile-pro on Apify](https://apify.com/constructive_calm/linkedin-profile-pro)
+- [llm-visibility-monitor on Apify](https://apify.com/constructive_calm/llm-visibility-monitor)
+- [mev-pair-scanner on Apify](https://apify.com/constructive_calm/mev-pair-scanner)
+- [peptide-market-intel on Apify](https://apify.com/constructive_calm/peptide-market-intel)
+- [saas-pricing-tracker on Apify](https://apify.com/constructive_calm/saas-pricing-tracker)
+- [saudi-real-estate-scraper on Apify](https://apify.com/constructive_calm/saudi-real-estate-scraper)
+- [sec-edgar-scraper on Apify](https://apify.com/constructive_calm/sec-edgar-scraper)
+- [telegram-intelligence-pro on Apify](https://apify.com/constructive_calm/telegram-intelligence-pro)
+- [threads-scraper on Apify](https://apify.com/constructive_calm/threads-scraper)
+- [tiktok-ad-library-pro on Apify](https://apify.com/constructive_calm/tiktok-ad-library-pro)
+- [understat-football-analytics on Apify](https://apify.com/constructive_calm/understat-football-analytics)
+- [visa-sponsor-tracker on Apify](https://apify.com/constructive_calm/visa-sponsor-tracker)
 - [All 25 actors by Omar Eldeeb](https://apify.com/constructive_calm)
 
 ## About

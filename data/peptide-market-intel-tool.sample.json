@@ -1,0 +1,20 @@
+[
+  {
+    "compound": "BPC-157",
+    "sentiment": "positive",
+    "intent": "experience-report",
+    "vendor": "Amino Asylum"
+  },
+  {
+    "compound": "Semaglutide",
+    "sentiment": "neutral",
+    "intent": "vendor-question",
+    "vendor": "Limitless Life"
+  },
+  {
+    "compound": "MK-677",
+    "sentiment": "negative",
+    "intent": "side-effect",
+    "vendor": null
+  }
+]

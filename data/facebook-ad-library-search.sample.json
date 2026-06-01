@@ -1,0 +1,20 @@
+[
+  {
+    "pageName": "Nike",
+    "adText": "Just Do It — new Pegasus drop",
+    "platforms": "facebook, instagram",
+    "startDate": "2026-05-12"
+  },
+  {
+    "pageName": "Adidas",
+    "adText": "Run the city. Ultraboost.",
+    "platforms": "facebook",
+    "startDate": "2026-05-18"
+  },
+  {
+    "pageName": "On Running",
+    "adText": "Cloudmonster — try it free",
+    "platforms": "instagram, facebook",
+    "startDate": "2026-05-20"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "ticker": "AAPL",
+    "form": "10-K",
+    "filedAt": "2025-11-01",
+    "accessionNumber": "0000320193-25-000106"
+  },
+  {
+    "ticker": "AAPL",
+    "form": "8-K",
+    "filedAt": "2026-01-30",
+    "accessionNumber": "0000320193-26-000012"
+  },
+  {
+    "ticker": "TSLA",
+    "form": "10-Q",
+    "filedAt": "2026-04-24",
+    "accessionNumber": "0001628280-26-000045"
+  }
+]

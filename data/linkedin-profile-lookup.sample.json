@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Jane Doe",
+    "headline": "VP Engineering at Acme",
+    "location": "San Francisco",
+    "followers": 8400
+  },
+  {
+    "name": "John Smith",
+    "headline": "Founder & CEO, DataCo",
+    "location": "London",
+    "followers": 15200
+  },
+  {
+    "name": "Maria Garcia",
+    "headline": "Head of Growth",
+    "location": "Berlin",
+    "followers": 4300
+  }
+]
