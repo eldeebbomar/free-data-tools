@@ -9,12 +9,16 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [Hiring & Sales Signals](https://datatooly.xyz/company-hiring-signals/): See what any company is hiring for and what it signals. Free in-browser tool reads live Greenhouse roles and flags hiring intent. No login. Try it now.
 - [Patents & IP](https://datatooly.xyz/google-patents-search-builder/): Search Google Patents by company, inventor, or keyword the structured way. Free query builder + sample preview, plus a path to bulk CSV/JSON export. Try it.
 - [Social & Community](https://datatooly.xyz/reddit-search-builder/): Build a Reddit keyword/subreddit search query free in your browser, preview the output, then export posts + comments to CSV/JSON. No API key, no login.
+- [Dev & Community](https://datatooly.xyz/hacker-news-search/): Search Hacker News by keyword live — real stories, points, comments, author, date. Free browser tool on the public HN Algolia API, no key. Filters + scale upsell.
+- [App Intelligence](https://datatooly.xyz/app-store-top-charts/): See the App Store top charts live, free, in any country. Real-time Top Free, Top Paid & Top Grossing apps straight from Apple's official iTunes RSS feed.
 
 ## Backing Apify actors
 
 - [ats-hiring-intent-scraper on Apify](https://apify.com/constructive_calm/ats-hiring-intent-scraper)
 - [google-patents-intelligence on Apify](https://apify.com/constructive_calm/google-patents-intelligence)
 - [reddit-scraper-pro on Apify](https://apify.com/constructive_calm/reddit-scraper-pro)
+- [hacker-news-scraper on Apify](https://apify.com/constructive_calm/hacker-news-scraper)
+- [app-store-rank-tracker on Apify](https://apify.com/constructive_calm/app-store-rank-tracker)
 - [All 25 actors by Omar Eldeeb](https://apify.com/constructive_calm)
 
 ## About

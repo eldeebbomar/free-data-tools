@@ -121,6 +121,85 @@
     });
   }
 
+  /* read a value from a field marked with a custom data-attribute, e.g. data-hn-query */
+  function fieldAttr(name) { var i = $("[data-" + name + "]"); return i ? (i.value || "").trim() : ""; }
+  function setCTA(inp) { var box = $("#json-code"); if (box) { box.innerHTML = highlightJSON(inp); window.__ctaInput = inp; } }
+
+  /* ---------- live: Hacker News search (Algolia API, CORS-open) ---------- */
+  function runHackerNews() {
+    var status = $("#status"), out = $("#results");
+    var q = fieldAttr("hn-query");
+    var tag = fieldAttr("hn-tags") || "story";
+    var sort = fieldAttr("hn-sort") || "relevance";
+    var minp = parseInt(fieldAttr("hn-minpoints"), 10) || 0;
+    if (!q) { status.innerHTML = '<span class="err">Enter a keyword to search (e.g. Claude, GPT-5, rust).</span>'; return; }
+    status.innerHTML = '<span class="run">› searching Hacker News for "' + esc(q) + '"…</span>';
+    out.innerHTML = "";
+    var base = sort === "date" ? "search_by_date" : "search";
+    var url = "https://hn.algolia.com/api/v1/" + base + "?query=" + encodeURIComponent(q) + "&tags=" + encodeURIComponent(tag) + "&hitsPerPage=20";
+    if (minp > 0) url += "&numericFilters=" + encodeURIComponent("points>=" + minp);
+    fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("HN Algolia API returned HTTP " + r.status);
+      return r.json();
+    }).then(function (data) {
+      var hits = (data && data.hits) || [];
+      if (!hits.length) { status.innerHTML = '<span class="err">No matches for "' + esc(q) + '" with these filters. Try a broader keyword or lower min points.</span>'; }
+      else { status.innerHTML = '<span class="ok">✓ ' + hits.length + ' live results · Hacker News (Algolia API)</span>'; }
+      var ul = el("ul", "result-list");
+      hits.slice(0, 10).forEach(function (h) {
+        var li = el("li", "result-item");
+        var title = h.title || h.story_title || h.comment_text || "(untitled)";
+        var hnUrl = "https://news.ycombinator.com/item?id=" + h.objectID;
+        li.innerHTML = '<div class="rt">' + esc(title) + '</div><div class="rm">' +
+          '<span>points: <b>' + (h.points != null ? h.points : 0) + '</b></span>' +
+          '<span>comments: <b>' + (h.num_comments != null ? h.num_comments : 0) + '</b></span>' +
+          '<span>by <b>' + esc(h.author || "—") + '</b></span>' +
+          '<span>' + esc((h.created_at || "").slice(0, 10)) + '</span></div>';
+        ul.appendChild(li);
+      });
+      out.appendChild(ul);
+      var note = el("div", "term-hint"); note.style.marginTop = "12px";
+      note.textContent = "↑ Live from the public HN Algolia API (the same source the actor uses). The actor adds 9 modes — full nested comment trees, user histories, the monthly Who-is-hiring parser, date/score/domain filters — and exports JSON/CSV/API at scale.";
+      out.appendChild(note);
+      setCTA({ mode: "search", searchQuery: q, sortSearchBy: sort, searchTags: [tag], minScore: minp, maxItems: 30 });
+    }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
+  }
+
+  /* ---------- live: App Store top charts (Apple iTunes RSS, CORS-open) ---------- */
+  function runAppStore() {
+    var status = $("#status"), out = $("#results");
+    var cc = (fieldAttr("as-country") || "us").toLowerCase();
+    var chart = fieldAttr("as-chart") || "top-free";
+    var feedMap = { "top-free": "topfreeapplications", "top-paid": "toppaidapplications", "top-grossing": "topgrossingapplications" };
+    var feed = feedMap[chart] || "topfreeapplications";
+    status.innerHTML = '<span class="run">› fetching App Store ' + esc(chart) + ' — ' + esc(cc.toUpperCase()) + '…</span>';
+    out.innerHTML = "";
+    var url = "https://itunes.apple.com/" + encodeURIComponent(cc) + "/rss/" + feed + "/limit=25/json";
+    fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("Apple iTunes RSS returned HTTP " + r.status);
+      return r.json();
+    }).then(function (data) {
+      var entries = (data && data.feed && data.feed.entry) || [];
+      if (!Array.isArray(entries)) entries = [entries];
+      if (!entries.length) { status.innerHTML = '<span class="err">No chart data for "' + esc(cc) + '". Try a valid 2-letter country code (us, gb, de, jp…).</span>'; return; }
+      status.innerHTML = '<span class="ok">✓ live App Store ' + esc(chart) + ' · ' + esc(cc.toUpperCase()) + '</span>';
+      var ul = el("ul", "result-list");
+      entries.slice(0, 10).forEach(function (e2, i) {
+        var li = el("li", "result-item");
+        var name = (e2["im:name"] && e2["im:name"].label) || "—";
+        var dev = (e2["im:artist"] && e2["im:artist"].label) || "—";
+        var cat = (e2.category && e2.category.attributes && e2.category.attributes.label) || "—";
+        li.innerHTML = '<div class="rt"><b>#' + (i + 1) + '</b>  ' + esc(name) + '</div><div class="rm"><span>' + esc(dev) + '</span><span>' + esc(cat) + '</span></div>';
+        ul.appendChild(li);
+      });
+      out.appendChild(ul);
+      var note = el("div", "term-hint"); note.style.marginTop = "12px";
+      note.textContent = "↑ Live from Apple's official iTunes RSS feed (top 10 shown; Apple caps this feed at 100/chart). The actor tracks 150+ countries × all 3 charts + categories, enriches each app (ratings, reviews, developer, screenshots), computes rank deltas + risers/fallers + a forecast, and exports JSON/CSV/API. (Google Play is server-side only.)";
+      out.appendChild(note);
+      setCTA({ platforms: ["apple"], countries: [cc], chartTypes: [chart], resultsPerChart: 100 });
+    }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
+  }
+
   /* ---------- configurator: build input + show sample ---------- */
   function runConfigurator() {
     var status = $("#status"), out = $("#results");
@@ -154,8 +233,9 @@
     renderJSON();
     $all("[data-key]").forEach(function (i) { i.addEventListener("input", renderJSON); });
     var runBtn = $("#run");
+    var RUNNERS = { "live-greenhouse": runGreenhouse, "live-hackernews": runHackerNews, "live-appstore": runAppStore };
     if (runBtn) runBtn.addEventListener("click", function () {
-      if (TOOL.mode === "live-greenhouse") runGreenhouse(); else runConfigurator();
+      (RUNNERS[TOOL.mode] || runConfigurator)();
     });
     // allow Enter to run from a text field
     $all(".term-input").forEach(function (i) { i.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); runBtn && runBtn.click(); } }); });
