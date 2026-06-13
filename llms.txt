@@ -31,6 +31,7 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [Sports Analytics](https://datatooly.xyz/understat-football-stats/): Build a ready-to-run query for Understat xG data — players, teams, shots across 6 leagues since 2014/15 — preview the output shape, then run it live.
 - [Jobs & Visas](https://datatooly.xyz/visa-sponsor-finder/): Free H-1B visa sponsor lookup query builder. Set a role + city, preview the output shape, then run it live on real DOL LCA & PERM sponsor data.
 - [Jobs & Visas](https://datatooly.xyz/salary-benchmark-lookup/): Benchmark what a role pays using public DOL H-1B/PERM wage disclosure data — percentiles by city, state, or employer, or individual records. Free to start.
+- [Social & Community](https://datatooly.xyz/threads-keyword-monitor/): Build a Threads keyword or hashtag search, then schedule monitoring for new matching posts. Cookie-free public-web config for the Apify actor. Free to start.
 
 ## Backing Apify actors
 
@@ -59,6 +60,7 @@ Built and maintained by Omar Eldeeb (Apify Store handle: constructive_calm), who
 - [understat-football-analytics on Apify](https://apify.com/constructive_calm/understat-football-analytics)
 - [visa-sponsor-tracker on Apify](https://apify.com/constructive_calm/visa-sponsor-tracker)
 - [salarybench-iq on Apify](https://apify.com/constructive_calm/salarybench-iq)
+- [threads-search-monitor on Apify](https://apify.com/constructive_calm/threads-search-monitor)
 - [All 25 actors by Omar Eldeeb](https://apify.com/constructive_calm)
 
 ## About
