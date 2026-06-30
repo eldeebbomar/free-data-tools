@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>linkedin-profile-pro</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>name</th><th>headline</th><th>location</th><th>followers</th></tr></thead><tbody><tr><td>Jane Doe</td><td>VP Engineering at Acme</td><td>San Francisco</td><td>8400</td></tr><tr><td>John Smith</td><td>Founder &amp; CEO, DataCo</td><td>London</td><td>15200</td></tr><tr><td>Maria Garcia</td><td>Head of Growth</td><td>Berlin</td><td>4300</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This is a query builder: paste LinkedIn profile URLs or slugs, set options, and copy a ready-to-run config plus see a fixed example of the output shape — it does not return live data in the browser.</li><li>The backing actor (LinkedIn Profile Pro by constructive_calm) is cookie-free and login-free: it parses public JSON-LD embedded in profile pages, so no LinkedIn account or session cookie is needed.</li><li>Output includes profile fields (name, headline, country, work history with dates, education), up to ~10 recent posts with engagement metrics, and up to ~10 published articles.</li><li>Pricing is pay-as-you-go on Apify: $4.00 per 1,000 profiles resolved, and the actor includes a per-run trial of the first 10 resolved profiles free for testing (Apify also gives new accounts platform free credits to start).</li><li>Cookie-free architecture has limits: skills, certifications, per-reaction breakdowns, and comment-thread bodies are not available — that data only loads behind a login wall.</li><li>U.S. case law (hiQ Labs v. LinkedIn) suggests scraping public data is unlikely to violate the CFAA, but the dispute settled in 2022 and scraping can still breach LinkedIn's Terms of Service — scrape public data responsibly.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Extract LinkedIn profiles at scale</h2>
 <p>Copy the run input below into the linkedin-profile-pro actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;includeRecentPosts&quot;: true,
+  &quot;maxItems&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/linkedin-profile-pro?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/linkedin-profile-pro?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

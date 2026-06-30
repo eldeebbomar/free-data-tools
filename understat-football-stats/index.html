@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>understat-football-analytics</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>player</th><th>team</th><th>xG</th><th>goals</th></tr></thead><tbody><tr><td>Erling Haaland</td><td>Manchester City</td><td>24.6</td><td>27</td></tr><tr><td>Mohamed Salah</td><td>Liverpool</td><td>18.2</td><td>19</td></tr><tr><td>Alexander Isak</td><td>Newcastle</td><td>16.8</td><td>21</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This is a query builder: pick a mode, leagues and seasons, preview the output shape, then run it live on the Apify actor to get real rows — it does not fetch live data in your browser.</li><li>Understat covers six leagues — EPL, La Liga, Bundesliga, Serie A, Ligue 1 and the Russian Premier League (RFPL) — with data going back to the 2014/15 season.</li><li>Player rows expose the full Understat model: xG, xA, npxG (non-penalty xG), xGChain and xGBuildup, plus minutes, goals and assists.</li><li>Understat has no official public API and serves data as JSON embedded in &lt;script&gt; tags with no CORS header — that is exactly why a builder + server-side actor is needed instead of a live browser fetch.</li><li>The backing Apify actor is free to start, then pay-as-you-go; it also supports team, match and shot-level modes beyond the default league_players preview.</li><li>Understat's xG model is more lenient than StatsBomb/FBref because it ignores defensive pressure, so don't mix sources within one analysis.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,16 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Understat xG football analytics at scale</h2>
 <p>Copy the run input below into the understat-football-analytics actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;league_players&quot;,
+  &quot;leagues&quot;: [
+    &quot;EPL&quot;
+  ],
+  &quot;seasons&quot;: [
+    &quot;2025&quot;
+  ],
+  &quot;maxResults&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/understat-football-analytics?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/understat-football-analytics?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

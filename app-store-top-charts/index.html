@@ -49,6 +49,8 @@
 </div></div>
 </div></section>
 
+
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>The tool is genuinely live: it reads Apple's official iTunes RSS top-charts feed directly in your browser (CORS-open, no API key, no login) and shows the real current ranking.</li><li>Three chart types: Top Free ranks by download volume, Top Paid ranks by paid download volume, and Top Grossing ranks by total revenue including in-app purchases.</li><li>Apple limits the public RSS feed to the top 100 apps per chart per country, so this tool shows ranks 1 through 100.</li><li>Charts are country-specific because demand, competition, localization, and spending power differ by region, so the #1 app in the US is often not #1 elsewhere.</li><li>Each row shows rank, app name, developer, and category pulled straight from Apple's feed.</li><li>For 150+ countries, category charts, rank-change deltas, risers/fallers, forecasts, scheduled history, and per-app enrichment, the App Store + Google Play Rank Tracker actor is free to start, then pay-as-you-go.</li><li>Google Play's charts are not reliably browser-fetchable (they typically need a proxy server-side), which is why this in-browser tool covers the Apple App Store only.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +65,18 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Track app rankings across 150+ countries</h2>
 <p>This shows one country's chart live. The App Store + Google Play Rank Tracker sweeps 150+ countries, all chart types and categories, enriches each app, and tracks daily rank movement with forecasts — exported as JSON/CSV/API. First 100 enrichment calls per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;platforms&quot;: [
+    &quot;apple&quot;
+  ],
+  &quot;countries&quot;: [
+    &quot;us&quot;
+  ],
+  &quot;chartTypes&quot;: [
+    &quot;top-free&quot;
+  ],
+  &quot;resultsPerChart&quot;: 100
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

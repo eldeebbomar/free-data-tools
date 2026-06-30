@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>llm-visibility-monitor</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>prompt</th><th>platform</th><th>brandMentioned</th><th>rank</th></tr></thead><tbody><tr><td>best note-taking app for teams</td><td>ChatGPT</td><td>true</td><td>1</td></tr><tr><td>Notion alternatives</td><td>Perplexity</td><td>true</td><td>3</td></tr><tr><td>free knowledge base tools</td><td>Gemini</td><td>false</td><td></td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page is a query builder: enter your brand and market category, get a ready-to-run config plus a fixed example of the output shape. It does not fetch live ChatGPT answers in the browser.</li><li>The backing actor queries five AI engines as chat models via API: ChatGPT (OpenAI), Claude, Google Gemini, Perplexity, and Grok. It does not scrape Google AI Overview SERPs.</li><li>A mention (your brand is named) is different from a citation (your domain is linked as a source). The output captures both as separate fields.</li><li>Output fields include brandMentioned, brandPosition, shareOfVoice, ownedDomainCited, citedUrls/citedDomains, sentimentLabel/sentimentScore, and an answerSnippet as evidence.</li><li>AI answers vary by user, session, and model version, so a single manual check is unreliable; recurring prompt-set runs reveal the trend.</li><li>The actor defaults to a dry-run mode that makes no external API calls and incurs no charges, so you can smoke-test the config safely before running a live, pay-as-you-go audit.</li><li>Share of voice = your brand mentions divided by total brand + competitor mentions across the prompt set, i.e. your share of AI answers.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,9 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Is your brand visible in ChatGPT &amp; AI search? at scale</h2>
 <p>Copy the run input below into the llm-visibility-monitor actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;runPreset&quot;: &quot;standard&quot;
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

@@ -49,6 +49,8 @@
 </div></div>
 </div></section>
 
+
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>Append /products.json to any Shopify domain (e.g. allbirds.com/products.json) to get its public product catalog as JSON — no key, no login.</li><li>The tool fetches the endpoint live in YOUR browser because Shopify serves /products.json with an open CORS header (Access-Control-Allow-Origin: *) — verified, not a sample.</li><li>Each product carries id, title, handle, vendor, product_type, tags, images, options, and a variants array; price, available, sku, and compare_at_price live on each variant, not the product.</li><li>~70-80% of Shopify stores expose /products.json; big brands behind a WAF (e.g. Gymshark) return 403 in-browser. The tool says so and suggests known-good demo stores.</li><li>The endpoint returns up to 250 products per page; paginate with ?limit=250&amp;page=2 to read larger catalogs.</li><li>For WAF-blocked stores and continuous monitoring, the Shopify Store Intelligence Apify actor (free to start, then pay-as-you-go) falls back to sitemap + residential proxy server-side and adds price-change, stock-signal, and new-launch detection.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +65,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Monitor competitor catalogs and prices</h2>
 <p>This shows one store live. The Shopify Store Intelligence actor scans many stores on a schedule and detects variant-level price changes, new launches, and stock signals, plus an AI store-audit — exported as JSON/CSV/API, with a server-side fallback for WAF-protected stores. First 10 events per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;catalog_snapshot&quot;,
+  &quot;maxProductsPerStore&quot;: 500
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

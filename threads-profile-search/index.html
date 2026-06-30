@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>threads-scraper</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>username</th><th>text</th><th>likes</th><th>replies</th></tr></thead><tbody><tr><td>zuck</td><td>Shipping new AI features this week.</td><td>42000</td><td>3100</td></tr><tr><td>mosseri</td><td>How the Threads algorithm ranks posts.</td><td>18500</td><td>2200</td></tr><tr><td>mosseri</td><td>We're testing longer posts.</td><td>9800</td><td>1400</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page is a query builder: you configure the scrape and preview the output shape here, then run it live on the Apify actor — it does not fetch live Threads results in your browser.</li><li>The backing actor scrapes public threads.com data in six modes: posts by user, profile, post detail (discussion tree), search, hashtag, and monitor (new posts since last run).</li><li>No Threads login or API key is needed — public profiles and posts are read from server-rendered JSON embedded in the page.</li><li>Output includes username, userId, follower count, bio, verification status, post text, engagement metrics (likes, replies, reposts, quotes), media URLs, and timestamps.</li><li>The actor is free to start, then pay-as-you-go: the first 10 chargeable events per run are free, then per-event pricing applies.</li><li>Private accounts, full follower lists, and deep nested reply chains cannot be scraped without login; per-profile post volume is limited by what Threads serves publicly.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Scrape Threads profiles, posts &amp; hashtags at scale</h2>
 <p>Copy the run input below into the threads-scraper actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;profile&quot;,
+  &quot;maxPostsPerUser&quot;: 25
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/threads-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/threads-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

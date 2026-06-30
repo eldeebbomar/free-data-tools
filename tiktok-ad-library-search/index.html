@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>tiktok-ad-library-pro</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>advertiser</th><th>adCaption</th><th>region</th><th>firstShown</th></tr></thead><tbody><tr><td>Temu</td><td>Shop like a billionaire</td><td>NL</td><td>2026-05-15</td></tr><tr><td>CeraVe</td><td>Dermatologist-developed skincare</td><td>DE</td><td>2026-05-11</td></tr><tr><td>Shein</td><td>Summer drop is here</td><td>FR</td><td>2026-05-18</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>TikTok's official Commercial Content API is gated to approved academic researchers and qualified organizations in the US/EU, is non-commercial only, and approval can take weeks to months — it is not open to marketers or agencies.</li><li>The public TikTok Commercial Content Library at library.tiktok.com is free to browse, needs no login, and exists because the EU Digital Services Act requires TikTok to disclose ads served in the region.</li><li>Coverage is EU/DSA only: the 27 EEA states plus EEA add-ons (Iceland, Liechtenstein, Norway), the UK, Switzerland and Turkey — 33 regions in total, not the US or global markets.</li><li>This page is a query builder and coverage checker: you check whether one target region has data, assemble a keyword or advertiser query, and preview the output shape, then run it live on the backing Apify actor (it does not fetch live ads in your browser).</li><li>Keyword search is hard-capped by TikTok at roughly 1,000 results per (keyword, region); searching by advertiser name or business ID is uncapped, so large advertisers can return hundreds of thousands of ads.</li><li>The backing actor 'tiktok-ad-library-pro' by constructive_calm is free to start, then pay-as-you-go — the first 10 chargeable events per run are free — returning structured JSON with creatives, advertiser identity, dates active and per-region targeting/reach data.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,12 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Search the TikTok Ad Library (EU/DSA) at scale</h2>
 <p>Copy the run input below into the tiktok-ad-library-pro actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;regions&quot;: [
+    &quot;US&quot;
+  ],
+  &quot;maxItems&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

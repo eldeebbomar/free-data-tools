@@ -49,6 +49,8 @@
 </div></div>
 </div></section>
 
+
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>A hiring signal is the strategic intent you read from a company's open roles — the departments it's growing point to where it's spending next.</li><li>Hiring outranks anonymous web-visit intent data because a job posting is public, verifiable, and tied to a real budget commitment, not an inferred page view.</li><li>The Greenhouse Job Board API (https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs) is public, read-only, and requires no authentication — it returns every open role as JSON.</li><li>Common signal-to-intent mappings: engineering hires = product build-out, sales/BD hires = revenue expansion, data/ML hires = AI initiative, finance/ops hires = fundraising or M&amp;A.</li><li>This free tool reads live Greenhouse roles for one company and classifies the intent instantly; the paid actor sweeps 25,000+ companies across Greenhouse, Lever, Ashby, SmartRecruiters and Workday with weekly change alerts.</li><li>Hiring signals are strongest when combined with funding and technographic data — hiring tells you direction, a funding round tells you budget timing.</li><li>A company hiring a named tool (e.g. a 'Salesforce Administrator') discloses its tech stack, which doubles as a technographic signal for vendors and competitors.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +65,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Track hiring intent across 25,000+ companies</h2>
 <p>This page shows one company on Greenhouse. The ATS Hiring Intent actor sweeps five ATS platforms, AI-tags every company's buying intent, and alerts you the moment a prospect starts hiring for what you sell. First 500 events per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;signals&quot;,
+  &quot;maxItems&quot;: 200
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/ats-hiring-intent-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/ats-hiring-intent-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

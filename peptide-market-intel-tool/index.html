@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>peptide-market-intel</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>compound</th><th>sentiment</th><th>intent</th><th>vendor</th></tr></thead><tbody><tr><td>BPC-157</td><td>positive</td><td>experience-report</td><td>Amino Asylum</td></tr><tr><td>Semaglutide</td><td>neutral</td><td>vendor-question</td><td>Limitless Life</td></tr><tr><td>MK-677</td><td>negative</td><td>side-effect</td><td></td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This is a query builder: it generates a ready-to-run config and shows a fixed example of the output shape; it does not fetch live results in the browser.</li><li>Run the configured query on the backing Apify actor (constructive_calm/peptide-market-intel) on a pay-as-you-go basis, using Apify's platform-level free credits to get started.</li><li>Default sources are YouTube and Amazon; Reddit is an opt-in extra (it can return 403 from Apify cloud). The tool tracks 30+ compounds including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases (Ozempic, Wegovy, Mounjaro).</li><li>Each mention row carries sentiment (positive/neutral/negative + 0-1 score), intent (vendor-question, experience-report, dosage-question, side-effect, price-inquiry), and extracted vendor/brand mentions.</li><li>Optional aggregate reports include TOP_COMPOUNDS, VENDOR_LEADERBOARD, SENTIMENT_BY_COMPOUND and TRENDING_COMPOUNDS_7D for week-over-week tracking.</li><li>Useful for DTC supplement brands, market researchers and brand-risk teams monitoring unregulated peptide and GLP-1 demand signals.</li><li>Set maxItemsPerSource low (e.g. 30) to keep a preview run cheap; mention rows are charged first, so a small preview (about 30 items) usually stays within the first 10 free events; with aggregates on (the default) the 3-4 aggregate reports are charged after and can tip a larger run past the actor's first 10 free events per run.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,13 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Peptide &amp; GLP-1 market intelligence at scale</h2>
 <p>Copy the run input below into the peptide-market-intel actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;sources&quot;: [
+    &quot;reddit&quot;
+  ],
+  &quot;maxItemsPerSource&quot;: 50,
+  &quot;includeAggregates&quot;: true
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

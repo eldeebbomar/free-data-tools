@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>salarybench-iq</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>role</th><th>employer</th><th>city</th><th>medianSalary</th></tr></thead><tbody><tr><td>Software Engineer</td><td>Amazon</td><td>Seattle</td><td>$165,000</td></tr><tr><td>Data Scientist</td><td>Meta</td><td>Menlo Park</td><td>$182,000</td></tr><tr><td>Product Manager</td><td>Google</td><td>Mountain View</td><td>$198,000</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This is a SALARY-BENCHMARKING tool: it answers 'what does this role pay in this city/state/employer,' not 'which companies sponsor visas' (that is the companion visa-sponsor-finder tool).</li><li>Two modes: salary-benchmark for aggregate percentiles (P10, P25, median, P75, P90) and salary-samples for individual disclosed wage records.</li><li>Data comes from the public US DOL Office of Foreign Labor Certification (OFLC) H-1B/LCA + PERM disclosure files, where sponsoring employers must report the offered/required wage.</li><li>Honest scope: this is visa-sponsored wage data (a real-salary signal but a subset of all US jobs) and it is the base offered wage, excluding bonus and equity.</li><li>Role is the only field you type (mode is preset); employer, city, state, visaTypes (default H-1B), fiscalYears, minSalary/maxSalary, and maxItems are optional filters.</li><li>The page is a query BUILDER — it outputs a ready-to-run config plus a fixed example output shape; it does not run live searches in the browser.</li><li>The actor is free to start and then pay-as-you-go using your Apify platform credits.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,14 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run What does a role pay at scale</h2>
 <p>Copy the run input below into the salarybench-iq actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;salary-benchmark&quot;,
+  &quot;role&quot;: &quot;software engineer&quot;,
+  &quot;visaTypes&quot;: [
+    &quot;H-1B&quot;
+  ],
+  &quot;maxItems&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/salarybench-iq?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/salarybench-iq?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

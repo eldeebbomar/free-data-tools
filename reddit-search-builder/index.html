@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>reddit-scraper-pro</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>title</th><th>subreddit</th><th>score</th><th>comments</th></tr></thead><tbody><tr><td>What's everyone using for offshore/remote recruiting in 2026?</td><td>recruiting</td><td>412</td><td>187</td></tr><tr><td>We tried 6 'Notion alternatives' so you don't have to — honest writeup</td><td>productivity</td><td>2840</td><td>503</td></tr><tr><td>Is anyone actually getting ROI from buying-intent data tools?</td><td>sales</td><td>318</td><td>142</td></tr><tr><td>Best way to monitor a keyword across multiple subreddits?</td><td>DataHoarder</td><td>596</td><td>98</td></tr><tr><td>Reddit API pricing killed my side project — what are people doing now?</td><td>webdev</td><td>1733</td><td>421</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>Reddit keyword search finds posts and comments containing a term; advanced operators (subreddit:, author:, title:, selftext:, flair:, plus AND/OR/NOT and quoted phrases) narrow it precisely.</li><li>Reddit's .json endpoints are CORS-blocked in browsers and return HTTP 403 from datacenter IPs (verified while building Reddit Scraper Pro), so no honest in-browser live fetch is possible.</li><li>Reddit's built-in search caps recall at roughly 250 results per query and indexes comments weakly, so it misses posts that genuinely exist.</li><li>Pushshift, the long-standing free Reddit archive, was restricted to Reddit-verified subreddit moderators for moderation use only after the 2023 API changes.</li><li>Reddit's official Data API free tier allows ~100 requests/minute for OAuth apps (10/min unauthenticated) and prohibits commercial use; commercial access requires a paid enterprise contract.</li><li>This free tool builds the query and previews the exact schema; it does not fake a live fetch. Reddit Scraper Pro then exports the full result set to CSV/JSON at $0.0025 per post (10 events free per run, &gt;95% success).</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,12 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Export this Reddit search at scale</h2>
 <p>Copy the run input below into Reddit Scraper Pro and get every matching post (and full comment threads) as clean JSON/CSV/API, fetched reliably with IP rotation. First 10 results per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;search&quot;,
+  &quot;sort&quot;: &quot;top&quot;,
+  &quot;timeFilter&quot;: &quot;all&quot;,
+  &quot;maxItems&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/reddit-scraper-pro?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/reddit-scraper-pro?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

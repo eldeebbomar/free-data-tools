@@ -49,6 +49,8 @@
 </div></div>
 </div></section>
 
+
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>The tool is genuinely live: it calls the official ClinicalTrials.gov v2 REST API directly from your browser. No key, no signup, no proxy server in between (the API sends Access-Control-Allow-Origin: *, verified).</li><li>Search by condition (query.cond), free-text term (query.term), or filter by phase and overall status (RECRUITING, COMPLETED, TERMINATED, etc.). Results show NCT ID, title, status, phase, and lead sponsor.</li><li>The classic (legacy) ClinicalTrials.gov API was retired on June 25, 2024 — the v2 API built on OpenAPI 3.0 is the only supported version now.</li><li>ClinicalTrials.gov holds over 500,000 registered studies (NLM marked the 500K milestone on the registry's 25th anniversary, April 2025) — the largest public trial registry in the world, all keyed by NCT identifier.</li><li>This in-browser tool covers trial search only. For FDA drug approvals, 510(k)/PMA device clearances, FAERS adverse events, recalls, drug shortages, and sponsor pipeline rollups, the Clinical Trials &amp; FDA Pipeline actor adds nine more modes plus CSV/JSON/Excel export.</li><li>The backing Apify actor is free to start, then pay-as-you-go: the first 10 chargeable events of every run are free, and a 100-trial search costs roughly $0.027.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +65,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Build a full drug + device pipeline view</h2>
 <p>This searches trials live. The Clinical Trials &amp; FDA Pipeline actor adds FDA approvals, device clearances, adverse events, recalls and shortages, rolled up per sponsor (resolve by ticker or name), with change monitoring and CSV/JSON/API export. First 50 events per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;trials&quot;,
+  &quot;maxItems&quot;: 100
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

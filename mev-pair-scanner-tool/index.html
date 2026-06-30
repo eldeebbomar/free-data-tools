@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>mev-pair-scanner</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>pair</th><th>mevRiskLevel</th><th>sandwichRate</th><th>mevToTotalFeesRatio</th></tr></thead><tbody><tr><td>WETH/USDC</td><td>high</td><td>0.18</td><td>0.24</td></tr><tr><td>PEPE/WETH</td><td>medium</td><td>0.07</td><td>0.11</td></tr><tr><td>USDT/USDC</td><td>low</td><td>0.01</td><td>0.02</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>Builds a copy-paste-ready query and shows a fixed example of the output shape — it does not return live on-chain data in your browser.</li><li>Output fields cover sandwich risk directly: sandwich_rate_24h, estimated_sandwich_attacks_24h, mev_risk_level, mev_to_total_fees_ratio_24h, and a fee_regime label.</li><li>Three modes: scan-token (a token's top pools), scan-pair (specific pool addresses), and discover-mev (rank the most MEV-toxic pools on a chain).</li><li>The backing actor pulls from Codex.io's GraphQL index across 133 chains, including Ethereum, Solana, Base, BSC, and Arbitrum.</li><li>Run it on the Apify actor — free to start on Apify's platform credits, then pay-as-you-go (a per-run start fee plus a per-pair-scanned charge).</li><li>A fee breakdown (base fees, priority fees, builder tips, pool/LP fees, L1 data fees) shows how much of a pool's trading cost is MEV leakage versus normal gas — though several fields are null by design (builder tips are zero on L2s like Base/Arbitrum, L1 data fees are null on L1 chains), which the per-row data_availability map flags.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,11 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Scan DEX pairs for MEV &amp; sandwich risk at scale</h2>
 <p>Copy the run input below into the mev-pair-scanner actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;scan-token&quot;,
+  &quot;default_evm_chain&quot;: &quot;ethereum&quot;,
+  &quot;max_results&quot;: 20
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

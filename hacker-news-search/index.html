@@ -49,6 +49,8 @@
 </div></div>
 </div></section>
 
+
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This tool is genuinely live: it queries the public HN Algolia API directly from your browser (CORS-open, no key) and returns real, current results — not a cached sample.</li><li>The HN search API has two endpoints: /search (sorted by relevance, then points, then comments) and /search_by_date (newest first). Both are free, no API key, no auth.</li><li>Filter by tag (story, comment, ask_hn, show_hn, poll, front_page, author_X) and by numericFilters (points, num_comments, created_at_i Unix timestamp).</li><li>Algolia's HN API has historically allowed on the order of ~10,000 requests/hour per IP and caps retrievable results at about 1,000 per query — fine for ad-hoc search, a wall for scale.</li><li>Use the Firebase API for raw/real-time front-page and item data; use Algolia for keyword search and full comment trees — most projects combine both.</li><li>For scale, monitoring, full nested comment trees, user profiles and the monthly Who-is-hiring parser, the Hacker News Scraper actor (free to start, then pay-as-you-go) handles pagination, retries and CSV/JSON/API export.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +65,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Monitor Hacker News at scale</h2>
 <p>This searches one keyword live. The Hacker News Scraper actor pulls top/new/best/Ask/Show/jobs lists, full comment trees, user histories, and the monthly Who-is-hiring thread — on a schedule, exported as JSON/CSV/API. First 50 events per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;search&quot;,
+  &quot;maxItems&quot;: 30
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

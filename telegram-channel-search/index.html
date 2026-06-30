@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>telegram-intelligence-pro</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>channel</th><th>text</th><th>views</th><th>date</th></tr></thead><tbody><tr><td>durov</td><td>Telegram now has 1 billion monthly users.</td><td>11300000</td><td>2026-05-22</td></tr><tr><td>telegram</td><td>New privacy features rolling out.</td><td>8400000</td><td>2026-05-19</td></tr><tr><td>durov</td><td>On the importance of independent tech.</td><td>9650000</td><td>2026-05-10</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This tool builds a ready-to-run query and previews the output shape; it does not fetch live channel data in your browser. You run the finished config on the Apify actor.</li><li>Public channels expose a server-rendered preview at t.me/s/&lt;channel&gt; that includes post text, view counts, reactions, media URLs, and forwarded-from info with no login or API key.</li><li>The web preview only exposes a recent window of posts, not full channel history; extracting a channel's complete archive requires Telegram's official MTProto API (e.g. Telethon) and credentials.</li><li>Private channels and groups cannot be scraped this way because no authenticated session is used; the method works for public channels only.</li><li>The backing actor (telegram-intelligence-pro) is free to start, then pay-as-you-go: the first 30 chargeable events of each run are free, and it charges per non-empty post extracted rather than per row.</li><li>Four modes cover different jobs: channel_snapshot (recent posts), posts_history (deep paginated history), search_by_keyword, and monitor_channels (delta detection).</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Extract Telegram public channel posts at scale</h2>
 <p>Copy the run input below into the telegram-intelligence-pro actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;channel_snapshot&quot;,
+  &quot;maxPostsPerChannel&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/telegram-intelligence-pro?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/telegram-intelligence-pro?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

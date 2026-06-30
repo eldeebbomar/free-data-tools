@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>saudi-real-estate-scraper</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>title</th><th>priceSar</th><th>city</th><th>regaLicense</th></tr></thead><tbody><tr><td>Villa for sale in Al Narjis</td><td>2,400,000</td><td>Riyadh</td><td>7200xxxxxx</td></tr><tr><td>Apartment in Al Hamra</td><td>950,000</td><td>Jeddah</td><td>7200xxxxxx</td></tr><tr><td>Land in Al Aqiq</td><td>3,100,000</td><td>Riyadh</td><td>7200xxxxxx</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page is a query builder: you configure platforms, cities, listing type and a result cap, preview the fixed output shape, then run the query live on the Apify actor — it does not fetch live listings in your browser.</li><li>Covers four Saudi portals: Bayut.sa, Wasalt.sa (PIF-owned), Aqar.fm and PropertyFinder.sa, normalized into one schema.</li><li>The REGA (Real Estate General Authority) advertising-license number acts as a cross-platform join key — Bayut, Wasalt and PropertyFinder expose it, letting you de-duplicate the same property across portals.</li><li>listingType supports sale, rent, off_plan and auction; you can also filter by city, price range in SAR, and Vision 2030 zones like NEOM, Red Sea and ROSHN.</li><li>The backing actor is free to start, then pay-as-you-go — roughly $0.004 per listing, with the first 10 chargeable events per run free for trialing.</li><li>Output is normalized JSON/CSV: common fields (price, area, beds, coordinates, agent) plus platform-specific extras like Aqar.fm installment plans.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,13 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Saudi real-estate listings at scale</h2>
 <p>Copy the run input below into the saudi-real-estate-scraper actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;platforms&quot;: [
+    &quot;bayut_sa&quot;
+  ],
+  &quot;listingType&quot;: &quot;sale&quot;,
+  &quot;maxListingsPerPlatform&quot;: 100
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/saudi-real-estate-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/saudi-real-estate-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

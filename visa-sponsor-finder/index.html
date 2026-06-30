@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>visa-sponsor-tracker</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>employer</th><th>role</th><th>city</th><th>medianSalary</th></tr></thead><tbody><tr><td>Amazon</td><td>Software Development Engineer</td><td>Seattle</td><td>$165,000</td></tr><tr><td>Google</td><td>Software Engineer III</td><td>Mountain View</td><td>$184,000</td></tr><tr><td>Microsoft</td><td>Senior SDE</td><td>Redmond</td><td>$178,000</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page is a query builder: you set a role, city, and result cap, see a sample of the output fields, then run the query live on the Apify actor — it does not fetch live sponsor results inside your browser.</li><li>Data comes from official U.S. Department of Labor (OFLC) LCA and PERM disclosure files, the same public records third-party H-1B sites index.</li><li>Results identify employers that filed H-1B, H-1B1, E-3, or PERM green-card paperwork, with job titles, offered wages, work locations, and filing outcomes.</li><li>An LCA filing is a prerequisite step, not proof an H-1B was approved — read filing counts and approval outcomes accordingly.</li><li>The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are free before charging begins.</li><li>Coverage is U.S. visa programs only; fiscal years from 2014 onward are selectable, and DOL publishes new disclosure data roughly quarterly, about a month after each fiscal quarter closes.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Find visa sponsors &amp; salary data (H-1B + UK) at scale</h2>
 <p>Copy the run input below into the visa-sponsor-tracker actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;sponsor-finder&quot;,
+  &quot;maxItems&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/visa-sponsor-tracker?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/visa-sponsor-tracker?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

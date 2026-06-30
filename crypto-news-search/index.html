@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>crypto-news-scraper</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>title</th><th>author</th><th>publishedAt</th><th>views</th></tr></thead><tbody><tr><td>Bitcoin ETF inflows hit record as price tests resistance</td><td>CT Markets</td><td>2026-05-30</td><td>18420</td></tr><tr><td>Ethereum staking yields shift after upgrade</td><td>CT Markets</td><td>2026-05-29</td><td>9210</td></tr><tr><td>Regulators weigh new stablecoin framework</td><td>CT Policy</td><td>2026-05-28</td><td>12750</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page is a query builder, not a live fetcher: it produces a ready-to-run config and shows a fixed example of the output shape, then you run it on the actor.</li><li>The backing crypto-news-scraper actor pulls from Cointelegraph's GraphQL API across 15 language editions (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru).</li><li>Four inputs drive a query: search_query (keyword, empty = latest), language, article_count (5-100,000), and fetch_full_text.</li><li>Each article returns title, summary (leadText), optional full body, author, category, ISO + human dates, cover image, badges, and optional view count.</li><li>The backing actor uses pay-as-you-go pricing (pay-per-event, billed per article saved) and failed requests are not charged; Apify itself gives new accounts free platform credits to start.</li><li>Use scraped articles for internal research, sentiment analysis, and monitoring, not republishing, articles are copyrighted; review Cointelegraph's Terms first.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,11 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Search &amp; export Cointelegraph crypto news at scale</h2>
 <p>Copy the run input below into the crypto-news-scraper actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;language&quot;: &quot;en&quot;,
+  &quot;article_count&quot;: 50,
+  &quot;fetch_full_text&quot;: true
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

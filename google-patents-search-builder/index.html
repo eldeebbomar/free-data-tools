@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>google-patents-intelligence</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>title</th><th>assignee</th><th>patentId</th><th>filingDate</th></tr></thead><tbody><tr><td>Quantum error correction using surface codes with reduced qubit overhead</td><td>Google LLC</td><td>US11526797B2</td><td>2020-06-30</td></tr><tr><td>Fault-tolerant logical qubit operations in a superconducting processor</td><td>International Business Machines Corporation</td><td>US11087228B2</td><td>2019-11-12</td></tr><tr><td>Method for calibrating qubit frequencies in a multi-qubit array</td><td>Intel Corporation</td><td>US10970651B2</td><td>2018-03-21</td></tr><tr><td>Cryogenic control system for scalable quantum computing</td><td>Microsoft Technology Licensing LLC</td><td>EP3815007A1</td><td>2019-06-28</td></tr><tr><td>Topological qubit device and methods of fabrication</td><td>Microsoft Technology Licensing LLC</td><td>US11436516B2</td><td>2017-08-04</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>Google Patents indexes 120+ million patent publications from 100+ offices worldwide, including USPTO, EPO, WIPO, JPO and CNIPA, with machine-translated full text.</li><li>Google's built-in Download (CSV) button is documented to return only the top 1,000 results of any single query, and fewer may be returned.</li><li>Google Patents offers no official public REST search API. The only Google-supported bulk path is the Google Patents Public Datasets on BigQuery, which requires SQL and a Google Cloud project.</li><li>Search by company uses the assignee: operator, search by inventor uses inventor:, and both can be stacked with keyword, CPC, country and before:/after: date filters.</li><li>Because Google Patents does not send a permissive CORS header, browsers block other sites from reading its results — so this free tool is an honest query builder + sample-data preview, not a live scraper.</li><li>Google Patents' native CSV omits abstracts, full claims, citations and legal status. Those omitted fields are exactly what IP analysts need, so enriched server-side extraction is usually required.</li><li>BigQuery patent access is free for the first 1 TB of query data per user per month, then $5 per terabyte, but you must write SQL to use it.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,11 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run this patent search live, at scale</h2>
 <p>Copy the run input below into Google Patents Intelligence and get every matching patent across 100+ offices — fully enriched with citations, legal status and claims — as JSON, CSV, or API. First 20 deep records per run are free.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;search&quot;,
+  &quot;maxResults&quot;: 50,
+  &quot;enrichmentDepth&quot;: &quot;deep&quot;
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/google-patents-intelligence?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/google-patents-intelligence?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

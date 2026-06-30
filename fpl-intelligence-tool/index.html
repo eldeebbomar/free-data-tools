@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>fpl-intelligence</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>player</th><th>team</th><th>position</th><th>ownershipPct</th></tr></thead><tbody><tr><td>Haaland</td><td>MCI</td><td>FWD</td><td>62.3</td></tr><tr><td>Salah</td><td>LIV</td><td>MID</td><td>48.1</td></tr><tr><td>Saka</td><td>ARS</td><td>MID</td><td>31.5</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>The Fantasy Premier League API is a free, unofficial set of public JSON endpoints under fantasy.premierleague.com/api/ with no official documentation.</li><li>The FPL API sends no Access-Control-Allow-Origin header, so direct browser fetch() calls are blocked by CORS and need a server or proxy.</li><li>This page is a query builder: it maps your inputs to a ready-to-run config and shows a fixed example output shape, not live results.</li><li>Common endpoints: bootstrap-static/ for all players and teams, and entry/{manager_id}/event/{event_id}/picks/ for a manager's gameweek squad.</li><li>The backing Apify actor (constructive_calm/fpl-intelligence) runs the call server-side across modes like gameweek_picks and manager_dashboard.</li><li>The actor is free to start, then pay-as-you-go via pay-per-event, with the first 10 chargeable events per run free.</li><li>FPL's data is free for non-commercial use; check Premier League terms before any monetised project.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,10 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Fantasy Premier League data &amp; picks at scale</h2>
 <p>Copy the run input below into the fpl-intelligence actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;gameweek_picks&quot;,
+  &quot;picksTopN&quot;: 20
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

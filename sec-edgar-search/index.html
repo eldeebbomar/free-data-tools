@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>sec-edgar-scraper</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>ticker</th><th>form</th><th>filedAt</th><th>accessionNumber</th></tr></thead><tbody><tr><td>AAPL</td><td>10-K</td><td>2025-11-01</td><td>0000320193-25-000106</td></tr><tr><td>AAPL</td><td>8-K</td><td>2026-01-30</td><td>0000320193-26-000012</td></tr><tr><td>TSLA</td><td>10-Q</td><td>2026-04-24</td><td>0001628280-26-000045</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>The SEC EDGAR API is free and needs no API key or login, but every request must send a User-Agent header naming your app and contact email or it returns 403 Forbidden.</li><li>This page is a query builder: pick a ticker, mode (filings / financials / insider trades) and forms, preview the output shape, then run it live on the backing Apify actor.</li><li>Because the User-Agent header cannot be set from browser JavaScript, EDGAR is effectively blocked in-browser, so the builder produces a config instead of fetching live results here.</li><li>Official endpoints live on data.sec.gov: submissions, XBRL companyfacts, and companyconcept; the CIK must be zero-padded to 10 digits (Apple = CIK0000320193).</li><li>The SEC caps automated access at 10 requests per second per IP (since July 27, 2021); exceeding it triggers a temporary block.</li><li>The backing actor (constructive_calm/sec-edgar-scraper) is free to start, then pay-as-you-go per event, covering filings, XBRL facts, normalized statements, full-text search and Form 4 insider trades.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,13 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Search SEC EDGAR filings, financials &amp; insider trades at scale</h2>
 <p>Copy the run input below into the sec-edgar-scraper actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;filings&quot;,
+  &quot;forms&quot;: [
+    &quot;10-K&quot;
+  ],
+  &quot;maxItems&quot;: 25
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

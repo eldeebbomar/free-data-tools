@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>threads-search-monitor</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>username</th><th>text</th><th>likes</th><th>replies</th></tr></thead><tbody><tr><td>indiehacker</td><td>Built a Threads keyword monitor this weekend.</td><td>1240</td><td>86</td></tr><tr><td>saasfounder</td><td>Anyone tracking brand mentions on Threads yet?</td><td>540</td><td>122</td></tr><tr><td>devtoolsguy</td><td>Threads search via the public web is underrated.</td><td>880</td><td>47</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page builds a config for keyword and hashtag SEARCH plus scheduled MONITORING of saved searches — it is distinct from the threads-profile-search page, which extracts one given user's profile and posts.</li><li>Three modes: search (keyword or phrase), hashtag (topic-tag feed), and monitor (re-runs a saved search on a schedule and returns only new matching posts since the last run).</li><li>Cookie-free: it reads public threads.com pages with no Threads login, OAuth token, or official API key — search and monitor find posts matching your terms, not a specific profile.</li><li>Common uses are brand monitoring, lead generation, and trend tracking — surface every post mentioning your brand, product, niche, or hashtag.</li><li>Optional add-ons: reply-tree extraction, author bio contacts (email or phone parsed from public bios), and linktree or beacons link resolution.</li><li>This is a builder and fixed-sample preview, not live in-browser results — Threads pages are not CORS-open, so you copy the generated config into the Apify actor to run it.</li><li>The backing actor is free to start, then pay-as-you-go via Apify platform credits using a pay-per-event model; the first 10 chargeable events per run are free.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,11 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Monitor Threads by keyword or hashtag at scale</h2>
 <p>Copy the run input below into the threads-search-monitor actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;mode&quot;: &quot;search&quot;,
+  &quot;sort&quot;: &quot;top&quot;,
+  &quot;maxItems&quot;: 50
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>

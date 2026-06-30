@@ -49,6 +49,12 @@
 </div></div>
 </div></section>
 
+<section class="section" style="padding:8px 0 28px"><div class="wrap-narrow">
+<span class="eyebrow">Example output</span>
+<p class="lede" style="font-size:1rem;margin:6px 0 16px">A fixed sample of the fields the <strong>gulf-used-car-scraper</strong> actor returns for this query — example data, not live results. Run it on Apify for real, complete output.</p>
+<div class="sample-table-wrap" style="overflow-x:auto"><table class="sample-table"><thead><tr><th>title</th><th>price</th><th>year</th><th>mileage</th></tr></thead><tbody><tr><td>Toyota Land Cruiser GXR</td><td>AED 245,000</td><td>2022</td><td>38,000 km</td></tr><tr><td>Nissan Patrol Platinum</td><td>AED 198,000</td><td>2021</td><td>52,000 km</td></tr><tr><td>Lexus LX 600</td><td>AED 520,000</td><td>2023</td><td>12,000 km</td></tr></tbody></table></div>
+</div></section>
+
 <section class="section" style="padding:40px 0"><div class="wrap-narrow"><span class="eyebrow">Key takeaways</span><ul class="takeaways"><li>This page is a query builder: you assemble a config (platforms, make, model, listing cap) and preview the output shape — it does not fetch live listings in your browser. You run the export live on the backing Apify actor.</li><li>Output rows are normalized across DubiCars and Dubizzle Motors with consistent fields: make, model, year, price, currency (AED), mileageKm, fuelType, transmission, sellerType, isGccSpec, listingUrl and scrapedAt.</li><li>DubiCars lists roughly 24,000 used cars in Dubai and Dubizzle Motors over 34,000 — enough volume for genuine price benchmarking, dealer monitoring and arbitrage analysis.</li><li>Leave make and model empty to scan the whole market, or set them (e.g. Toyota / Land Cruiser) to pull a focused segment. Note: filtering by model requires a make to be set.</li><li>The backing actor is free to start using Apify's platform free credits, then pay-as-you-go — it charges per listing extracted on a pay-per-event basis, not a flat subscription.</li><li>Use maxListingsPerPlatform to cap volume and cost; raise it for full-market sweeps, keep it low (e.g. 10) for quick samples.</li></ul></div></section>
 
 <section class="section" style="padding:24px 0 0"><div class="wrap-narrow prose">
@@ -63,7 +69,12 @@
 <span class="eyebrow">Run it at scale</span>
 <h2>Run Gulf used-car listings at scale</h2>
 <p>Copy the run input below into the gulf-used-car-scraper actor on Apify to run this at scale and export clean JSON/CSV/API. Free to start, then pay-as-you-go.</p>
-<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code"></code></pre></div>
+<div class="json-panel"><button class="copy-btn" id="copy-json">copy</button><pre><code id="json-code">{
+  &quot;platforms&quot;: [
+    &quot;dubicars&quot;
+  ],
+  &quot;maxListingsPerPlatform&quot;: 100
+}</code></pre></div>
 <div class="cta-actions">
 <a class="btn btn-primary" href="https://apify.com/constructive_calm/gulf-used-car-scraper?fpr=v77kxu" target="_blank" rel="noopener">Run on Apify — free to start <span class="arr">→</span></a>
 <a class="btn btn-ghost" href="https://apify.com/constructive_calm/gulf-used-car-scraper?fpr=v77kxu#pricing" target="_blank" rel="noopener">See pricing</a>
