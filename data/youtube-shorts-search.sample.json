@@ -1,0 +1,57 @@
+[
+  {
+    "title": "$1 vs $10,000 Cake",
+    "channelName": "MrBeast",
+    "viewCount": 48200000,
+    "likeCount": 2100000,
+    "commentCount": 18400,
+    "durationSeconds": 48,
+    "viralScore": 94,
+    "engagementRate": 4.4,
+    "url": "https://www.youtube.com/shorts/LgbyEFILLJI"
+  },
+  {
+    "title": "5-minute morning ab routine",
+    "channelName": "FitByLina",
+    "viewCount": 12100000,
+    "likeCount": 540000,
+    "commentCount": 6200,
+    "durationSeconds": 59,
+    "viralScore": 86,
+    "engagementRate": 4.5,
+    "url": "https://www.youtube.com/shorts/aB3xY7kQ2Zp"
+  },
+  {
+    "title": "ASMR mechanical keyboard build",
+    "channelName": "KeebLab",
+    "viewCount": 8900000,
+    "likeCount": 410000,
+    "commentCount": 5100,
+    "durationSeconds": 33,
+    "viralScore": 82,
+    "engagementRate": 4.7,
+    "url": "https://www.youtube.com/shorts/9QwErTyU1oP"
+  },
+  {
+    "title": "How I edit a Short in 60 seconds",
+    "channelName": "mkbhd",
+    "viewCount": 3400000,
+    "likeCount": 198000,
+    "commentCount": 2900,
+    "durationSeconds": 52,
+    "viralScore": 77,
+    "engagementRate": 5.9,
+    "url": "https://www.youtube.com/shorts/Zx1Cv2Bn3Mq"
+  },
+  {
+    "title": "POV: your first espresso",
+    "channelName": "BaristaDaily",
+    "viewCount": 1250000,
+    "likeCount": 71000,
+    "commentCount": 840,
+    "durationSeconds": 27,
+    "viralScore": 64,
+    "engagementRate": 5.7,
+    "url": "https://www.youtube.com/shorts/Kj8Hg6Fd4Sa"
+  }
+]
