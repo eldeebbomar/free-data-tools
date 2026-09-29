@@ -3,8 +3,8 @@
     "observedAt": "2026-09-29T08:00:00.000Z",
     "brandName": "Acme Notes",
     "prompt": "best note-taking apps for small teams",
-    "platform": "openai-gpt",
-    "platformLabel": "OpenAI GPT Latest",
+    "platform": "chatgpt-free",
+    "platformLabel": "ChatGPT Free (GPT Luna, API + web search)",
     "brandMentioned": true,
     "brandPosition": 2,
     "shareOfVoice": 0.33,
@@ -22,8 +22,8 @@
     "observedAt": "2026-09-29T08:00:00.000Z",
     "brandName": "Acme Notes",
     "prompt": "best note-taking apps for small teams",
-    "platform": "perplexity-sonar",
-    "platformLabel": "Perplexity Sonar",
+    "platform": "perplexity",
+    "platformLabel": "Perplexity (Sonar, API + native search)",
     "brandMentioned": true,
     "brandPosition": 1,
     "shareOfVoice": 0.5,
@@ -40,8 +40,8 @@
     "observedAt": "2026-09-29T08:00:00.000Z",
     "brandName": "Acme Notes",
     "prompt": "Acme Notes alternatives",
-    "platform": "claude-sonnet",
-    "platformLabel": "Claude Sonnet Latest",
+    "platform": "claude",
+    "platformLabel": "Claude (Sonnet, API + web search)",
     "brandMentioned": true,
     "brandPosition": 1,
     "shareOfVoice": 0.25,
@@ -60,8 +60,8 @@
     "observedAt": "2026-09-29T08:00:00.000Z",
     "brandName": "Acme Notes",
     "prompt": "which note app syncs offline",
-    "platform": "gemini-flash",
-    "platformLabel": "Gemini Flash Latest",
+    "platform": "gemini",
+    "platformLabel": "Gemini (3.5 Flash, API, model knowledge)",
     "brandMentioned": false,
     "brandPosition": null,
     "shareOfVoice": 0,
@@ -69,9 +69,7 @@
       "Obsidian",
       "Evernote"
     ],
-    "citedDomains": [
-      "www.example-reviews.com"
-    ],
+    "citedDomains": [],
     "sentimentLabel": "neutral"
   },
   {
@@ -79,16 +77,14 @@
     "brandName": "Acme Notes",
     "prompt": "note-taking app with the best AI features",
     "platform": "grok",
-    "platformLabel": "Grok 4.3",
+    "platformLabel": "Grok (latest, API, model knowledge)",
     "brandMentioned": false,
     "brandPosition": null,
     "shareOfVoice": 0,
     "competitorsMentioned": [
       "Evernote"
     ],
-    "citedDomains": [
-      "www.example-reviews.com"
-    ],
+    "citedDomains": [],
     "sentimentLabel": "neutral"
   }
 ]

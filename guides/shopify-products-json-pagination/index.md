@@ -149,7 +149,7 @@ To check whether a store leaves `/products.json` open, and to see what's in it, 
 
 ## At scale
 
-The script above gives you one catalog, once. Competitor monitoring means running it on a schedule across many stores and diffing each run against the last. You'd flag variant price changes, new product IDs and `available` flips, and fall back to the sitemap when `/products.json` is blocked. For that I built the [Shopify Store Intelligence actor](https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu) on Apify. It has catalog-snapshot, new-launch, price-change and stock-signal modes and an AI store audit, and exports JSON or CSV. It's free to start, then pay-as-you-go.
+The script above gives you one catalog, once. Competitor monitoring means running it on a schedule across many stores and diffing each run against the last. You'd flag variant price changes, new product IDs and `available` flips, and fall back to the sitemap when `/products.json` is blocked. For that I built the [Shopify Store Intelligence actor](https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu) on Apify. It has catalog-snapshot, new-launch, price-change and stock-signal modes and an AI store audit. The monitoring modes keep each store's previous snapshot in a named key-value store in your own Apify account, so scheduled runs report changes (the first run for a store records the baseline), and it exports JSON or CSV. It's free to start, then pay-as-you-go.
 
 *Disclosure: I build the datatooly tool and the Apify actor. The endpoint behavior and the script above work without either.*
 

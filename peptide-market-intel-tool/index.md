@@ -15,7 +15,7 @@ Pick sources and compound categories and preview the peptide and GLP-1 mentions 
 
 - This is a query builder: it generates a ready-to-run config and shows a fixed example of the output shape; it does not fetch live results in the browser.
 - Run the configured query on the backing Apify actor (constructive_calm/peptide-market-intel) on a pay-as-you-go basis, using Apify's platform-level free credits to get started.
-- Default sources are YouTube and Amazon; Reddit is an opt-in extra (it can return 403 from Apify cloud). The tool tracks 30+ compounds including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases (Ozempic, Wegovy, Mounjaro).
+- Default sources are YouTube and Amazon; Reddit is an opt-in extra. The tool tracks 30+ compounds including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases (Ozempic, Wegovy, Mounjaro).
 - Each mention row carries sentiment (positive/neutral/negative + 0-1 score), intent (vendor-question, experience-report, dosage-question, side-effect, price-inquiry), and extracted vendor/brand mentions.
 - Optional aggregate reports include TOP_COMPOUNDS, VENDOR_LEADERBOARD, SENTIMENT_BY_COMPOUND and TRENDING_COMPOUNDS_7D for week-over-week tracking.
 - Useful for DTC supplement brands, market researchers and brand-risk teams monitoring unregulated peptide and GLP-1 demand signals.
@@ -25,7 +25,7 @@ Pick sources and compound categories and preview the peptide and GLP-1 mentions 
 
 ### 1. Choose your sources and compounds
 
-Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra that can occasionally return 403 from Apify cloud. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
+Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra. A source that is blocked is reported as blocked, never as zero results. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
 
 ### 2. Set the item limit
 
@@ -33,13 +33,13 @@ Set maxItemsPerSource. Use a small number such as 30 for a low-cost preview run;
 
 ### 3. Enable aggregates and trend tracking
 
-includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Add a stable datasetName if you want week-over-week TRENDING_COMPOUNDS_7D deltas across scheduled runs.
+includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Schedule the actor and TRENDING_COMPOUNDS_7D reports week-over-week deltas across runs; the history lives in a named key-value store in your account (trendingStoreName).
 
 ## How to use it
 
-1. **Choose your sources and compounds** — Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra that can occasionally return 403 from Apify cloud. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
+1. **Choose your sources and compounds** — Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra. A source that is blocked is reported as blocked, never as zero results. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
 2. **Set the item limit** — Set maxItemsPerSource. Use a small number such as 30 for a low-cost preview run; raise it for fuller weekly scans once you've confirmed the output shape. Note that mention rows are charged first and aggregate reports are charged after mentions, so a small preview may only partly fit inside the actor's first 10 free events per run.
-3. **Enable aggregates and trend tracking** — includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Add a stable datasetName if you want week-over-week TRENDING_COMPOUNDS_7D deltas across scheduled runs.
+3. **Enable aggregates and trend tracking** — includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Schedule the actor and TRENDING_COMPOUNDS_7D reports week-over-week deltas across runs; the history lives in a named key-value store in your account (trendingStoreName).
 4. **Copy the generated query and preview the shape** — The builder outputs a ready-to-run JSON config and a fixed example of the output rows (mention text, compounds, sentiment, intent, vendor/brand mentions) so you know exactly what fields to expect before spending anything.
 5. **Run it live on the Apify actor** — Paste the config into the backing actor (constructive_calm/peptide-market-intel) on Apify and run it. The actor performs the live collection and Gemini enrichment and returns your real dataset on a pay-as-you-go basis.
 
@@ -93,7 +93,7 @@ Building and previewing the query here is free. The backing Apify actor is pay-a
 
 ### Which peptide compounds and sources are covered?
 
-The actor tracks 30+ compounds across categories like GLP-1, healing, GH-GHRP, cosmetic, sexual, nootropic and longevity, including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases such as Ozempic, Wegovy and Mounjaro. Default sources are YouTube and Amazon; Reddit is available as an opt-in extra (it can occasionally return 403 from Apify cloud), and there is an experimental TikTok option that is off by default.
+The actor tracks 30+ compounds across categories like GLP-1, healing, GH-GHRP, cosmetic, sexual, nootropic and longevity, including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases such as Ozempic, Wegovy and Mounjaro. Default sources are YouTube and Amazon; Reddit is available as an opt-in extra, and there is an experimental TikTok option that is off by default.
 
 ### What sentiment and intent does each mention include?
 
@@ -101,7 +101,7 @@ Each mention row includes a sentiment object with a label (positive, neutral or 
 
 ### Can I track peptide demand trends week over week?
 
-Yes. Set a stable datasetName and schedule recurring runs, and the actor can produce a TRENDING_COMPOUNDS_7D aggregate showing week-over-week mention-count deltas per compound. Other aggregates include TOP_COMPOUNDS (mention counts), VENDOR_LEADERBOARD (retailers with sentiment breakdown) and SENTIMENT_BY_COMPOUND for brand-risk monitoring. includeAggregates is on by default, so these reports are generated unless you turn it off.
+Yes. Schedule recurring runs with the same inputs and the actor produces a TRENDING_COMPOUNDS_7D aggregate (its history is kept in a named key-value store in your account) showing week-over-week mention-count deltas per compound. Other aggregates include TOP_COMPOUNDS (mention counts), VENDOR_LEADERBOARD (retailers with sentiment breakdown) and SENTIMENT_BY_COMPOUND for brand-risk monitoring. includeAggregates is on by default, so these reports are generated unless you turn it off.
 
 ### Who uses peptide market intelligence like this?
 

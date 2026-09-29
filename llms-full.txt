@@ -1865,7 +1865,7 @@ Search Cointelegraph by keyword and language edition and preview the article rec
 ## Key takeaways
 
 - This page is a query builder, not a live fetcher: it produces a ready-to-run config and shows a fixed example of the output shape, then you run it on the actor.
-- The backing crypto-news-scraper actor pulls from Cointelegraph's GraphQL API across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); in a live check on 29 September 2026 every edition except my (Malay) returned articles.
+- The backing crypto-news-scraper actor pulls from Cointelegraph's GraphQL API across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); Malay (my) is currently unavailable, and the actor stops a Malay run with a clear message.
 - Four inputs drive a query: search_query (keyword, empty = latest), language, article_count (5-100,000), and fetch_full_text.
 - Each article returns title, summary (leadText), optional full body, author, category, ISO + human dates, cover image, badges, and optional view count.
 - The backing actor uses pay-as-you-go pricing (pay-per-event, billed per article saved) and failed requests are not charged; Apify itself gives new accounts free platform credits to start.
@@ -1879,17 +1879,17 @@ Type a keyword into search_query, for example bitcoin, ETF, or a project name. L
 
 ### 2. Pick a language edition
 
-Set the language field to one of the 15 codes the actor accepts (default en); on 29 September 2026, 14 returned articles and my (Malay) returned none. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
+Set the language field to one of the codes the actor accepts (default en). Malay (my) is currently unavailable: the actor stops a Malay run with a clear message instead of returning an empty dataset. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
 
 ### 3. Set how many articles and whether to include full text
 
-Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies; turn it off for lighter, faster metadata-only runs.
+Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies (for up to 10,000 articles per run); turn it off for lighter, faster metadata-only runs.
 
 ## How to use it
 
 1. **Enter a search query** — Type a keyword into search_query, for example bitcoin, ETF, or a project name. Leave it empty to pull the latest Cointelegraph articles instead of a keyword search.
-2. **Pick a language edition** — Set the language field to one of the 15 codes the actor accepts (default en); on 29 September 2026, 14 returned articles and my (Malay) returned none. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
-3. **Set how many articles and whether to include full text** — Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies; turn it off for lighter, faster metadata-only runs.
+2. **Pick a language edition** — Set the language field to one of the codes the actor accepts (default en). Malay (my) is currently unavailable: the actor stops a Malay run with a clear message instead of returning an empty dataset. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
+3. **Set how many articles and whether to include full text** — Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies (for up to 10,000 articles per run); turn it off for lighter, faster metadata-only runs.
 4. **Preview the output shape** — Review the fixed example output the builder shows, post ID, title, leadText, author, category, dates, cover image, badges, and view count, so you know exactly what schema to expect.
 5. **Run the query live on the actor** — Send the generated config to the backing Apify actor (pay-as-you-go, billed per article saved; new Apify accounts start with free platform credits) to perform the real GraphQL fetch and export results as JSON or CSV.
 
@@ -1917,7 +1917,7 @@ A fixed sample of the fields the crypto-news-scraper actor returns — example d
 
 ## Key facts
 
-- The backing actor scrapes Cointelegraph across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); in a live check on 29 September 2026 every edition except my (Malay) returned articles. (Source: From the actor's input schema and README for constructive_calm/crypto-news-scraper.)
+- The backing actor scrapes Cointelegraph across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); Malay (my) is currently unavailable, and the actor stops a Malay run with a clear message. (Source: From the actor's input schema and README for constructive_calm/crypto-news-scraper.)
 - article_count is configurable from a minimum of 5 to a maximum of 100,000, with a default of 10. (Source: From the actor's input schema (constructive_calm/crypto-news-scraper).)
 - Pricing is pay-per-event at $6.00 per 1,000 articles saved, and failed requests are not charged. (Source: From the actor's README pricing section (constructive_calm/crypto-news-scraper).)
 - Each article can return title, summary (leadText), optional full body, author, category, ISO + human-readable dates, cover image, badges, and optional view count. (Source: Field list taken from the actor's README data table; the README notes some fields may be null.)
@@ -1935,7 +1935,7 @@ The query builder on this page is free to use. The backing Apify actor uses pay-
 
 ### What languages does the Cointelegraph scraper support?
 
-The backing actor covers 15 Cointelegraph language editions: English (en), Turkish (tr), German (de), Spanish (es), French (fr), Italian (it), Japanese (jp), Korean (kr), Portuguese/Brazil (br), Chinese (cn), Arabic (ar), Malay (my), Hindi (in), Taiwan Chinese (tw), and Russian (ru). In a live check on 29 September 2026 the my edition returned no articles; the other 14 did. Set the language field in the query builder to target one edition per run.
+The backing actor covers 15 Cointelegraph language editions: English (en), Turkish (tr), German (de), Spanish (es), French (fr), Italian (it), Japanese (jp), Korean (kr), Portuguese/Brazil (br), Chinese (cn), Arabic (ar), Malay (my), Hindi (in), Taiwan Chinese (tw), and Russian (ru). Malay (my) is currently unavailable: Cointelegraph returns no Malay articles, so the actor stops a Malay run with a clear message. Set the language field in the query builder to target one edition per run.
 
 ### What fields does each article return?
 
@@ -2042,7 +2042,7 @@ A fixed sample of the fields the egypt-real-estate-scraper actor returns — exa
 - Property Finder Egypt offers the richest per-row data of the three portals, including GPS coordinates, amenities and agent contact available directly from search results without enrichment. (Source: From the actor's README (constructive_calm/egypt-real-estate-scraper).)
 - Dubizzle Egypt was formerly branded OLX Egypt; its listings split across apartments, villas/houses and other property types. (Source: Dubizzle Egypt site branding via web search, 2026; live category counts fluctuate.)
 - Average apartment prices in New Cairo compounds ran roughly EGP 40,000–70,000 per sqm in 2025, with Fifth Settlement broadly in the ~EGP 55,000–65,000/sqm band depending on finishing and project. (Source: Synthesised from community Egyptian property-market guides via web search; estimates vary widely by source, project and finishing level and are not transacted prices.)
-- The backing Apify actor is pay-as-you-go: $0.01 per run start, $0.005 per listing extracted and $0.03 per AI-extracted listing, so 100 listings total is about $0.51. (Source: From the actor's README (constructive_calm/egypt-real-estate-scraper); confirm current rates on the live Store page before a large run.)
+- The backing Apify actor is pay-as-you-go: $0.01 per GB of run memory at start ($0.04 at the default 4 GB), $0.005 per listing extracted, and a one-time $0.03 per run when the AI vision fallback delivers listings, so 100 listings total is about $0.54. (Source: From the actor's README (constructive_calm/egypt-real-estate-scraper); confirm current rates on the live Store page before a large run.)
 
 ## FAQ
 
@@ -2068,7 +2068,7 @@ Build your query here to confirm the platforms, listing type and location, then 
 
 ### Is this tool free?
 
-The query builder on this page is free to use. The backing Apify actor is pay-as-you-go: $0.01 per run start, $0.005 per listing extracted, and $0.03 per listing when the AI vision fallback is triggered. There is no separate actor-specific free tier, but Apify's platform-level free credits cover light starting usage. As a rough guide, 100 listings total is about $0.51. Check the actor's Store page for current pricing before a large run.
+The query builder on this page is free to use. The backing Apify actor is pay-as-you-go: $0.01 per GB of run memory at start ($0.04 at the default 4 GB), $0.005 per listing extracted, and a one-time $0.03 per run only when the AI vision fallback delivers listings. There is no separate actor-specific free tier, but Apify's platform-level free credits cover light starting usage. As a rough guide, 100 listings total is about $0.54 at the default memory. Check the actor's Store page for current pricing before a large run.
 
 ### Is scraping Egyptian real-estate listings legal?
 
@@ -2616,7 +2616,7 @@ Enter a brand, a market category and competitors, and preview how the actor reco
 - A mention (your brand is named) is different from a citation (your domain is linked as a source). The output captures both as separate fields.
 - Output fields include brandMentioned, brandPosition, shareOfVoice, ownedDomainCited, citedUrls/citedDomains, sentimentLabel/sentimentScore, and an answerSnippet as evidence.
 - AI answers vary by user, session, and model version, so a single manual check is unreliable; recurring prompt-set runs reveal the trend.
-- The actor defaults to a dry-run mode that makes no external API calls and incurs no charges, so you can smoke-test the config safely before running a live, pay-as-you-go audit.
+- The actor has an optional demo mode that writes clearly labelled fake answers, calls no AI model and charges nothing, so you can see the output format before running a live, pay-as-you-go audit.
 - Share of voice = your brand mentions divided by total brand + competitor mentions across the prompt set, i.e. your share of AI answers.
 
 ## How it works
@@ -2639,7 +2639,7 @@ Pick a runPreset that balances depth against cost: quick (the default) is the ch
 2. **Add your market category** — Describe your market category (for example, 'B2B analytics software' or 'project management tools'). This lets the actor auto-generate realistic buyer-intent prompts that prospects would actually ask an AI assistant.
 3. **Choose a run preset** — Pick a runPreset that balances depth against cost: quick (the default) is the cheapest read, agency and deep add more prompts, platforms and samples for a fuller audit, and custom lets you set everything yourself.
 4. **Generate the query and preview the output shape** — The builder produces a ready-to-run configuration and shows a fixed example of the output, including brandMentioned, brandPosition, shareOfVoice, citedDomains, and sentiment fields, so you know exactly what you will receive.
-5. **Run it live on Apify** — Copy the generated config into the LLM Visibility Monitor actor on Apify and run it. It starts in a safe dry-run by default (no charges), then runs live pay-as-you-go and writes results plus summary reports to your dataset and key-value store.
+5. **Run it live on Apify** — Copy the generated config into the LLM Visibility Monitor actor on Apify and run it. It runs live and pay-as-you-go (turn on demo mode first if you only want to see the output format for free) and writes results plus summary reports to your dataset and key-value store.
 
 ## Example output
 
@@ -2647,11 +2647,11 @@ A fixed sample of the fields the llm-visibility-monitor actor returns — exampl
 
 | prompt | platformLabel | brandMentioned | brandPosition | shareOfVoice |
 | --- | --- | --- | --- | --- |
-| best note-taking apps for small teams | OpenAI GPT Latest | true | 2 | 0.33 |
-| best note-taking apps for small teams | Perplexity Sonar | true | 1 | 0.5 |
-| Acme Notes alternatives | Claude Sonnet Latest | true | 1 | 0.25 |
-| which note app syncs offline | Gemini Flash Latest | false |  | 0 |
-| note-taking app with the best AI features | Grok 4.3 | false |  | 0 |
+| best note-taking apps for small teams | ChatGPT Free (GPT Luna, API + web search) | true | 2 | 0.33 |
+| best note-taking apps for small teams | Perplexity (Sonar, API + native search) | true | 1 | 0.5 |
+| Acme Notes alternatives | Claude (Sonnet, API + web search) | true | 1 | 0.25 |
+| which note app syncs offline | Gemini (3.5 Flash, API, model knowledge) | false |  | 0 |
+| note-taking app with the best AI features | Grok (latest, API, model knowledge) | false |  | 0 |
 
 ## Ready-to-run actor input
 
@@ -2667,7 +2667,7 @@ A fixed sample of the fields the llm-visibility-monitor actor returns — exampl
 - Share of voice is computed as brand mentions divided by total brand plus competitor mentions across the prompt set. (Source: From the actor's README; consistent with the general industry definition of AI share of voice as percentage of inclusion in AI answers.)
 - A brand's mention rate can swing substantially from one week to the next without any page changes, due to token sampling and retrieval drift. (Source: Reflects the well-documented non-determinism of LLM answers; any specific percentages are illustrative of drift, not a fixed benchmark.)
 - ChatGPT answer variability is driven by four factors: probabilistic token sampling, per-user personalization, model version, and live retrieval. (Source: Synthesized from general AI-visibility and GEO community guidance; illustrative secondary commentary, not a load-bearing citation.)
-- The actor's per-event pricing includes about $0.15 per standard LLM sample and $0.35 per premium sample, with a dry-run mode that incurs no charges. (Source: From the actor's pay-per-event pricing metadata and README; confirm current rates on the Apify Store listing before running.)
+- The actor's per-event pricing includes about $0.15 per standard LLM sample and $0.35 per premium sample, with an optional demo mode that incurs no charges. (Source: From the actor's pay-per-event pricing metadata and README; confirm current rates on the Apify Store listing before running.)
 - A brand mention (the AI names your brand) is distinct from a citation (the AI links to your domain as a source) and the two require different strategies. (Source: General GEO community guidance; reflected in the actor's separate brandMentioned and ownedDomainCited fields.)
 
 ## FAQ
@@ -2694,7 +2694,7 @@ ChatGPT answers vary due to probabilistic token sampling, per-user personalizati
 
 ### Is this tool free?
 
-The builder on this page is free to use. The backing Apify actor defaults to a dry-run mode that makes no external API calls and incurs no charges, so you can smoke-test the config safely. Once you turn dry-run off and run it live, pricing is pay-per-event: about $0.15 per standard LLM sample and $0.35 per premium sample per the actor's pricing, and samples that return no usable evidence are not charged. New Apify accounts also get platform-level free credits to start.
+The builder on this page is free to use. The backing Apify actor has an optional demo mode (off by default) that writes labelled fake answers, calls no AI model and charges nothing. A normal run is live, and pricing is pay-per-event: about $0.15 per standard LLM sample and $0.35 per premium sample per the actor's pricing, and samples that return no usable evidence are not charged. New Apify accounts also get platform-level free credits to start.
 
 ### What is share of voice in AI search?
 
@@ -2859,7 +2859,7 @@ Pick sources and compound categories and preview the peptide and GLP-1 mentions 
 
 - This is a query builder: it generates a ready-to-run config and shows a fixed example of the output shape; it does not fetch live results in the browser.
 - Run the configured query on the backing Apify actor (constructive_calm/peptide-market-intel) on a pay-as-you-go basis, using Apify's platform-level free credits to get started.
-- Default sources are YouTube and Amazon; Reddit is an opt-in extra (it can return 403 from Apify cloud). The tool tracks 30+ compounds including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases (Ozempic, Wegovy, Mounjaro).
+- Default sources are YouTube and Amazon; Reddit is an opt-in extra. The tool tracks 30+ compounds including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases (Ozempic, Wegovy, Mounjaro).
 - Each mention row carries sentiment (positive/neutral/negative + 0-1 score), intent (vendor-question, experience-report, dosage-question, side-effect, price-inquiry), and extracted vendor/brand mentions.
 - Optional aggregate reports include TOP_COMPOUNDS, VENDOR_LEADERBOARD, SENTIMENT_BY_COMPOUND and TRENDING_COMPOUNDS_7D for week-over-week tracking.
 - Useful for DTC supplement brands, market researchers and brand-risk teams monitoring unregulated peptide and GLP-1 demand signals.
@@ -2869,7 +2869,7 @@ Pick sources and compound categories and preview the peptide and GLP-1 mentions 
 
 ### 1. Choose your sources and compounds
 
-Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra that can occasionally return 403 from Apify cloud. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
+Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra. A source that is blocked is reported as blocked, never as zero results. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
 
 ### 2. Set the item limit
 
@@ -2877,13 +2877,13 @@ Set maxItemsPerSource. Use a small number such as 30 for a low-cost preview run;
 
 ### 3. Enable aggregates and trend tracking
 
-includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Add a stable datasetName if you want week-over-week TRENDING_COMPOUNDS_7D deltas across scheduled runs.
+includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Schedule the actor and TRENDING_COMPOUNDS_7D reports week-over-week deltas across runs; the history lives in a named key-value store in your account (trendingStoreName).
 
 ## How to use it
 
-1. **Choose your sources and compounds** — Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra that can occasionally return 403 from Apify cloud. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
+1. **Choose your sources and compounds** — Select which platforms to scan. YouTube and Amazon are enabled by default; Reddit is an opt-in extra. A source that is blocked is reported as blocked, never as zero results. Optionally narrow to compound categories like GLP-1, healing, cosmetic or longevity, and add any custom vocabulary terms you want matched.
 2. **Set the item limit** — Set maxItemsPerSource. Use a small number such as 30 for a low-cost preview run; raise it for fuller weekly scans once you've confirmed the output shape. Note that mention rows are charged first and aggregate reports are charged after mentions, so a small preview may only partly fit inside the actor's first 10 free events per run.
-3. **Enable aggregates and trend tracking** — includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Add a stable datasetName if you want week-over-week TRENDING_COMPOUNDS_7D deltas across scheduled runs.
+3. **Enable aggregates and trend tracking** — includeAggregates is on by default, generating the TOP_COMPOUNDS, VENDOR_LEADERBOARD and SENTIMENT_BY_COMPOUND reports. Schedule the actor and TRENDING_COMPOUNDS_7D reports week-over-week deltas across runs; the history lives in a named key-value store in your account (trendingStoreName).
 4. **Copy the generated query and preview the shape** — The builder outputs a ready-to-run JSON config and a fixed example of the output rows (mention text, compounds, sentiment, intent, vendor/brand mentions) so you know exactly what fields to expect before spending anything.
 5. **Run it live on the Apify actor** — Paste the config into the backing actor (constructive_calm/peptide-market-intel) on Apify and run it. The actor performs the live collection and Gemini enrichment and returns your real dataset on a pay-as-you-go basis.
 
@@ -2937,7 +2937,7 @@ Building and previewing the query here is free. The backing Apify actor is pay-a
 
 ### Which peptide compounds and sources are covered?
 
-The actor tracks 30+ compounds across categories like GLP-1, healing, GH-GHRP, cosmetic, sexual, nootropic and longevity, including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases such as Ozempic, Wegovy and Mounjaro. Default sources are YouTube and Amazon; Reddit is available as an opt-in extra (it can occasionally return 403 from Apify cloud), and there is an experimental TikTok option that is off by default.
+The actor tracks 30+ compounds across categories like GLP-1, healing, GH-GHRP, cosmetic, sexual, nootropic and longevity, including semaglutide, tirzepatide, BPC-157 and TB-500 plus brand aliases such as Ozempic, Wegovy and Mounjaro. Default sources are YouTube and Amazon; Reddit is available as an opt-in extra, and there is an experimental TikTok option that is off by default.
 
 ### What sentiment and intent does each mention include?
 
@@ -2945,7 +2945,7 @@ Each mention row includes a sentiment object with a label (positive, neutral or 
 
 ### Can I track peptide demand trends week over week?
 
-Yes. Set a stable datasetName and schedule recurring runs, and the actor can produce a TRENDING_COMPOUNDS_7D aggregate showing week-over-week mention-count deltas per compound. Other aggregates include TOP_COMPOUNDS (mention counts), VENDOR_LEADERBOARD (retailers with sentiment breakdown) and SENTIMENT_BY_COMPOUND for brand-risk monitoring. includeAggregates is on by default, so these reports are generated unless you turn it off.
+Yes. Schedule recurring runs with the same inputs and the actor produces a TRENDING_COMPOUNDS_7D aggregate (its history is kept in a named key-value store in your account) showing week-over-week mention-count deltas per compound. Other aggregates include TOP_COMPOUNDS (mention counts), VENDOR_LEADERBOARD (retailers with sentiment breakdown) and SENTIMENT_BY_COMPOUND for brand-risk monitoring. includeAggregates is on by default, so these reports are generated unless you turn it off.
 
 ### Who uses peptide market intelligence like this?
 
@@ -3042,7 +3042,7 @@ A fixed sample of the fields the saas-pricing-tracker actor returns — example 
 - In Visualping's own analysis of competitor pricing-page monitors, a large share flagged at least one change within roughly a month. (Source: Vendor-published analysis from Visualping (visualping.io); first-party to the vendor and not independently verified here.)
 - Larger SaaS vendors are commonly reported to build mid-single-digit annual price increases into contracts at renewal. (Source: Directional pattern from third-party SaaS pricing commentary; specific vendor terms vary by contract and are not independently verified here.)
 - Competitive-intelligence vendors report that a majority of teams using sales battlecards see improved win rates. (Source: From competitive-intelligence vendor survey material (self-reported, selection-biased samples); treat as directional marketing data, not independent measurement.)
-- The backing Apify actor is pay-as-you-go: roughly $0.01 per run start plus about $0.09 per company analyzed, so tracking 10 competitors is on the order of $0.91 per run. AI-enhanced extraction, if enabled, may add a small per-result fee on pages where it is needed. (Source: Per-event rates from the actor's README and input schema; check the Apify Store page for current rates, which may change.)
+- The backing Apify actor is pay-as-you-go: $0.01 per GB of run memory at start ($0.04 at the default 4 GB) plus $0.09 per company analyzed, so tracking 10 competitors is on the order of $0.94 per run. AI-enhanced extraction, if enabled, may add a small per-result fee on pages where it is needed. (Source: Per-event rates from the actor's README and input schema; check the Apify Store page for current rates, which may change.)
 
 ## FAQ
 
@@ -3060,7 +3060,7 @@ No. This is a query builder. It assembles a ready-to-run configuration and shows
 
 ### What data does the SaaS pricing tracker return?
 
-For each company it returns structured JSON: companyName, companyUrl, pricingPageUrl, hasFreeTier, hasEnterprisePlan, totalPlansFound, and a plans array. Each plan includes planName, priceMonthly, priceAnnualPerMonth, priceAnnualTotal, pricingModel, currency (ISO 4217), billingPeriods, a features list, featureLimits, ctaText/ctaUrl, and the flags isFree, isEnterprise, isPopular, and trialDays. There is also an optional featureComparison matrix, an extractionMethod and extractionConfidence rating (high, medium, or low), and an errors array. When change detection is on you also get a hasChanges boolean, a changes array, and previousScrapedAt. The fixed example shown on this page is a representative subset of these fields.
+For each company it returns structured JSON: companyName, companyUrl, pricingPageUrl, hasFreeTier, hasEnterprisePlan, totalPlansFound, and a plans array. Each plan includes planName, priceMonthly, priceAnnualPerMonth, priceAnnualTotal, pricingModel, currency (ISO 4217), billingPeriods, a features list, featureLimits, ctaText/ctaUrl, priceSource (JSON-LD, card, table, promo or AI), promo fields (hasPromo, promoPrice, promoText), and the flags isFree, isEnterprise, isPopular, and trialDays. There is also an optional featureComparison matrix, an extractionMethod and extractionConfidence rating (high, medium, or low), and an errors array. When change detection is on you also get a hasChanges boolean, a changes array, and previousScrapedAt. The fixed example shown on this page is a representative subset of these fields.
 
 ### How does change detection work?
 
@@ -3863,7 +3863,7 @@ Enter a role and city and preview the H-1B and green-card sponsors the actor ran
 - Results identify employers that filed H-1B, H-1B1, E-3, or PERM green-card paperwork, with job titles, offered wages, work locations, and filing outcomes.
 - An LCA filing is a prerequisite step, not proof an H-1B was approved — read filing counts and approval outcomes accordingly.
 - The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are free before charging begins.
-- Coverage is U.S. visa programs only; fiscal years from 2014 onward are selectable, and DOL publishes new disclosure data roughly quarterly, about a month after each fiscal quarter closes.
+- Coverage is U.S. visa programs only; fiscal years from FY2008 onward are selectable, and DOL publishes new disclosure data roughly quarterly, about a month after each fiscal quarter closes.
 
 ## How it works
 
@@ -3911,9 +3911,9 @@ A fixed sample of the fields the visa-sponsor-tracker actor returns — example 
 ## Key facts
 
 - The backing actor reads official U.S. Department of Labor (OFLC) LCA and PERM public disclosure files, covering H-1B, H-1B1, E-3, and PERM green-card records. (Source: From the actor's README and input schema; source cited as dol.gov/agencies/eta/foreign-labor/performance.)
-- Selectable fiscal years run from 2014 onward across the H-1B/LCA and PERM programs; the DOL publishes new data roughly quarterly. (Source: From the actor's input handling (fiscal-year input is clamped to 2014 and later); corroborated by the DOL OFLC release pattern (data released ~1 month after each fiscal quarter closes).)
+- Selectable fiscal years run from FY2008 onward across the H-1B/LCA and PERM programs; the DOL publishes new data roughly quarterly. (Source: From the actor's input handling (fiscal-year input accepts FY2008 and later, the first year DOL publishes); corroborated by the DOL OFLC release pattern (data released ~1 month after each fiscal quarter closes).)
 - An LCA is certified by the DOL but does not approve an H-1B; the employer must still file Form I-129 with USCIS for the actual sponsorship. (Source: DOL Office of Foreign Labor Certification LCA program documentation and general immigration-law guidance.)
-- The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are a free trial before per-event charging begins. (Source: From the actor's README and pay-per-event configuration (actor start $0.01; visa filing $0.005; salary percentile row $0.003).)
+- The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are a free trial before per-event charging begins. (Source: From the actor's README and pay-per-event configuration (actor start $0.01 per GB of run memory, $0.04 at the default 4 GB; visa filing $0.005; salary percentile row $0.003).)
 - The UK's official GOV.UK Register of Licensed Sponsors is a free, regularly updated list of licensed worker sponsors — but it is NOT covered by this U.S.-only actor. (Source: GOV.UK 'Register of licensed sponsors: workers'; noted here only to set scope honestly. The exact organisation count fluctuates and is not tracked by this actor.)
 
 ## FAQ
@@ -3948,7 +3948,7 @@ Yes, indirectly. Each sponsor filing in the output includes the offered (annuali
 
 ### How current is the data?
 
-The Department of Labor publishes new disclosure data roughly quarterly, typically about a month after each federal fiscal quarter closes. The actor discovers the available files at run time, so freshness tracks the DOL release schedule rather than a fixed internal cadence. Selectable fiscal years run from 2014 onward across the H-1B/LCA and PERM programs.
+The Department of Labor publishes new disclosure data roughly quarterly, typically about a month after each federal fiscal quarter closes. The actor discovers the available files at run time, so freshness tracks the DOL release schedule rather than a fixed internal cadence. Selectable fiscal years run from FY2008 onward across the H-1B/LCA and PERM programs.
 
 ### What can I do with the results?
 
@@ -5251,7 +5251,7 @@ The free [Cointelegraph query builder](https://datatooly.xyz/crypto-news-search/
 
 ## At scale
 
-A one-off script is fine for a single search. For a scheduled crypto-news feed, you also need retries, deduplication across runs, language editions, and exports that feed a sentiment model or dashboard. The [Cointelegraph News Scraper actor](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) on Apify handles the retries, per-run deduplication, language editions and exports on top of the same GraphQL backend. Deduplicating across scheduled runs is still up to you: key on the article `id`. It takes a keyword or pulls the latest articles, collects 5 to 100,000 per run, includes view counts, and exports JSON or CSV. It's free to start, then pay-as-you-go.
+A one-off script is fine for a single search. For a scheduled crypto-news feed, you also need retries, deduplication across runs, language editions, and exports that feed a sentiment model or dashboard. The [Cointelegraph News Scraper actor](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) on Apify handles the retries, per-run deduplication, language editions and exports on top of the same GraphQL backend. Deduplicating across scheduled runs is still up to you: key on the article `id`. It takes a keyword or pulls the latest articles, collects 5 to 100,000 per run, includes view counts and full article text (for up to 10,000 articles per run), and exports JSON or CSV. It's free to start, then pay-as-you-go.
 
 *Disclosure: I build the datatooly builder and the Apify actor. The endpoints and code above work without either.*
 
@@ -6692,7 +6692,7 @@ The free [LLM visibility query builder](https://datatooly.xyz/llm-visibility-mon
 
 ## At scale
 
-[LLM Visibility Monitor on Apify](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) runs this as a scheduled audit. It covers OpenAI, Anthropic Claude, Google Gemini, Perplexity and xAI Grok surfaces, runs every sample with web search on and labels each row with the search surface used (the model's native search or OpenRouter web search), and can generate a buyer-intent prompt set from your market category. It applies the absence and brand-only sentiment rules above and writes a scorecard, competitor share of voice, citation opportunities, prompt gaps and an agency-style report to the run's key-value store. It defaults to a dry-run mode that makes no LLM calls, supports your own OpenRouter key, and is free to start, then pay-as-you-go. Samples that come back empty or truncated aren't charged.
+[LLM Visibility Monitor on Apify](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) runs this as a scheduled audit. It covers OpenAI, Anthropic Claude, Google Gemini, Perplexity and xAI Grok surfaces, labels each row by how the answer was produced (native search, OpenRouter web search, or model knowledge only), and can generate a buyer-intent prompt set from your market category. It applies the absence and brand-only sentiment rules above and writes a scorecard, competitor share of voice, citation opportunities, prompt gaps and an agency-style report to the run's key-value store. It has an optional demo mode that makes no LLM calls, supports your own OpenRouter key, and is free to start, then pay-as-you-go. Samples that come back empty or truncated aren't charged.
 
 *Disclosure: I built the query builder and the actor. The script above works on its own with any OpenRouter key.*
 
@@ -7081,7 +7081,7 @@ The free [peptide market intelligence query builder](https://datatooly.xyz/pepti
 
 ## At scale
 
-The [Peptide Market Intelligence actor on Apify](https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu) runs this kind of collection across YouTube and Amazon search results by default, with Reddit as an opt-in source. It resolves 30+ compounds and their aliases to canonical names, and it optionally adds AI-labelled sentiment, intent and vendor/brand mentions to each row. It also writes aggregate reports (top compounds, vendor leaderboard, sentiment by compound, plus week-over-week deltas when you reuse a named dataset). The first 10 chargeable events in each run are free, then it's pay-as-you-go. The same caveat applies to its output: it is public-conversation data for market research, not medical information.
+The [Peptide Market Intelligence actor on Apify](https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu) runs this kind of collection across YouTube and Amazon search results by default, with Reddit as an opt-in source, and records exact YouTube upload times where the page data has them. It resolves 30+ compounds and their aliases to canonical names, and it optionally adds AI-labelled sentiment, intent and vendor/brand mentions to each row. It also writes aggregate reports (top compounds, vendor leaderboard, sentiment by compound, plus week-over-week deltas across scheduled runs, kept in a named key-value store in your account). The first 10 chargeable events in each run are free, then it's pay-as-you-go. The same caveat applies to its output: it is public-conversation data for market research, not medical information.
 
 *Disclosure: I built the query builder and the actor. The script above works on its own with no account.*
 
@@ -7444,7 +7444,7 @@ The free [SaaS pricing tracker query builder](https://datatooly.xyz/saas-pricing
 
 ## At scale
 
-[SaaS Pricing & Feature Tracker on Apify](https://apify.com/constructive_calm/saas-pricing-tracker?fpr=v77kxu) handles the pages that JSON-LD doesn't cover. It finds the pricing page from a homepage, tries structured data, comparison tables and plan cards, and keeps the most confident result. It reads monthly and annual prices from data attributes and hidden toggle elements, falls back to a real browser for client-rendered pages, and can use AI vision when extraction comes back incomplete. Each plan gets `priceMonthly`, `priceAnnualPerMonth`, `currency`, `features` and `isEnterprise`, plus an `extractionConfidence` rating. With a named dataset, scheduled runs flag added or removed plans, price moves and feature changes, and can POST them to a webhook. A `country` input sets which market's prices you see. It's free to start, then pay-as-you-go.
+[SaaS Pricing & Feature Tracker on Apify](https://apify.com/constructive_calm/saas-pricing-tracker?fpr=v77kxu) handles the pages that JSON-LD doesn't cover. It finds the pricing page from a homepage, tries structured data, comparison tables and plan cards, and keeps the most confident result. It reads monthly and annual prices from data attributes and hidden toggle elements, falls back to a real browser for client-rendered pages, and can use AI vision when extraction comes back incomplete. Each plan gets `priceMonthly`, `priceAnnualPerMonth`, `currency`, `features` and `isEnterprise`, plus a `priceSource` (JSON-LD, card, table, promo or AI), promo fields (`hasPromo`, `promoPrice`, `promoText`) and an `extractionConfidence` rating. With a named dataset, scheduled runs flag added or removed plans, price moves and feature changes, and can POST them to a webhook. A `country` input sets which market's prices you see. It's free to start, then pay-as-you-go.
 
 *Disclosure: I built the query builder and the actor. The scripts above work on their own.*
 
@@ -8068,7 +8068,7 @@ To check whether a store leaves `/products.json` open, and to see what's in it, 
 
 ## At scale
 
-The script above gives you one catalog, once. Competitor monitoring means running it on a schedule across many stores and diffing each run against the last. You'd flag variant price changes, new product IDs and `available` flips, and fall back to the sitemap when `/products.json` is blocked. For that I built the [Shopify Store Intelligence actor](https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu) on Apify. It has catalog-snapshot, new-launch, price-change and stock-signal modes and an AI store audit, and exports JSON or CSV. It's free to start, then pay-as-you-go.
+The script above gives you one catalog, once. Competitor monitoring means running it on a schedule across many stores and diffing each run against the last. You'd flag variant price changes, new product IDs and `available` flips, and fall back to the sitemap when `/products.json` is blocked. For that I built the [Shopify Store Intelligence actor](https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu) on Apify. It has catalog-snapshot, new-launch, price-change and stock-signal modes and an AI store audit. The monitoring modes keep each store's previous snapshot in a named key-value store in your own Apify account, so scheduled runs report changes (the first run for a store records the baseline), and it exports JSON or CSV. It's free to start, then pay-as-you-go.
 
 *Disclosure: I build the datatooly tool and the Apify actor. The endpoint behavior and the script above work without either.*
 

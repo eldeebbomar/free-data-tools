@@ -18,7 +18,7 @@ Enter a role and city and preview the H-1B and green-card sponsors the actor ran
 - Results identify employers that filed H-1B, H-1B1, E-3, or PERM green-card paperwork, with job titles, offered wages, work locations, and filing outcomes.
 - An LCA filing is a prerequisite step, not proof an H-1B was approved — read filing counts and approval outcomes accordingly.
 - The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are free before charging begins.
-- Coverage is U.S. visa programs only; fiscal years from 2014 onward are selectable, and DOL publishes new disclosure data roughly quarterly, about a month after each fiscal quarter closes.
+- Coverage is U.S. visa programs only; fiscal years from FY2008 onward are selectable, and DOL publishes new disclosure data roughly quarterly, about a month after each fiscal quarter closes.
 
 ## How it works
 
@@ -66,9 +66,9 @@ A fixed sample of the fields the visa-sponsor-tracker actor returns — example 
 ## Key facts
 
 - The backing actor reads official U.S. Department of Labor (OFLC) LCA and PERM public disclosure files, covering H-1B, H-1B1, E-3, and PERM green-card records. (Source: From the actor's README and input schema; source cited as dol.gov/agencies/eta/foreign-labor/performance.)
-- Selectable fiscal years run from 2014 onward across the H-1B/LCA and PERM programs; the DOL publishes new data roughly quarterly. (Source: From the actor's input handling (fiscal-year input is clamped to 2014 and later); corroborated by the DOL OFLC release pattern (data released ~1 month after each fiscal quarter closes).)
+- Selectable fiscal years run from FY2008 onward across the H-1B/LCA and PERM programs; the DOL publishes new data roughly quarterly. (Source: From the actor's input handling (fiscal-year input accepts FY2008 and later, the first year DOL publishes); corroborated by the DOL OFLC release pattern (data released ~1 month after each fiscal quarter closes).)
 - An LCA is certified by the DOL but does not approve an H-1B; the employer must still file Form I-129 with USCIS for the actual sponsorship. (Source: DOL Office of Foreign Labor Certification LCA program documentation and general immigration-law guidance.)
-- The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are a free trial before per-event charging begins. (Source: From the actor's README and pay-per-event configuration (actor start $0.01; visa filing $0.005; salary percentile row $0.003).)
+- The backing actor is free to start, then pay-as-you-go: the first 10 chargeable output events per run are a free trial before per-event charging begins. (Source: From the actor's README and pay-per-event configuration (actor start $0.01 per GB of run memory, $0.04 at the default 4 GB; visa filing $0.005; salary percentile row $0.003).)
 - The UK's official GOV.UK Register of Licensed Sponsors is a free, regularly updated list of licensed worker sponsors — but it is NOT covered by this U.S.-only actor. (Source: GOV.UK 'Register of licensed sponsors: workers'; noted here only to set scope honestly. The exact organisation count fluctuates and is not tracked by this actor.)
 
 ## FAQ
@@ -103,7 +103,7 @@ Yes, indirectly. Each sponsor filing in the output includes the offered (annuali
 
 ### How current is the data?
 
-The Department of Labor publishes new disclosure data roughly quarterly, typically about a month after each federal fiscal quarter closes. The actor discovers the available files at run time, so freshness tracks the DOL release schedule rather than a fixed internal cadence. Selectable fiscal years run from 2014 onward across the H-1B/LCA and PERM programs.
+The Department of Labor publishes new disclosure data roughly quarterly, typically about a month after each federal fiscal quarter closes. The actor discovers the available files at run time, so freshness tracks the DOL release schedule rather than a fixed internal cadence. Selectable fiscal years run from FY2008 onward across the H-1B/LCA and PERM programs.
 
 ### What can I do with the results?
 

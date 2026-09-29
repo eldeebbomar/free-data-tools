@@ -70,7 +70,7 @@ A fixed sample of the fields the saas-pricing-tracker actor returns — example 
 - In Visualping's own analysis of competitor pricing-page monitors, a large share flagged at least one change within roughly a month. (Source: Vendor-published analysis from Visualping (visualping.io); first-party to the vendor and not independently verified here.)
 - Larger SaaS vendors are commonly reported to build mid-single-digit annual price increases into contracts at renewal. (Source: Directional pattern from third-party SaaS pricing commentary; specific vendor terms vary by contract and are not independently verified here.)
 - Competitive-intelligence vendors report that a majority of teams using sales battlecards see improved win rates. (Source: From competitive-intelligence vendor survey material (self-reported, selection-biased samples); treat as directional marketing data, not independent measurement.)
-- The backing Apify actor is pay-as-you-go: roughly $0.01 per run start plus about $0.09 per company analyzed, so tracking 10 competitors is on the order of $0.91 per run. AI-enhanced extraction, if enabled, may add a small per-result fee on pages where it is needed. (Source: Per-event rates from the actor's README and input schema; check the Apify Store page for current rates, which may change.)
+- The backing Apify actor is pay-as-you-go: $0.01 per GB of run memory at start ($0.04 at the default 4 GB) plus $0.09 per company analyzed, so tracking 10 competitors is on the order of $0.94 per run. AI-enhanced extraction, if enabled, may add a small per-result fee on pages where it is needed. (Source: Per-event rates from the actor's README and input schema; check the Apify Store page for current rates, which may change.)
 
 ## FAQ
 
@@ -88,7 +88,7 @@ No. This is a query builder. It assembles a ready-to-run configuration and shows
 
 ### What data does the SaaS pricing tracker return?
 
-For each company it returns structured JSON: companyName, companyUrl, pricingPageUrl, hasFreeTier, hasEnterprisePlan, totalPlansFound, and a plans array. Each plan includes planName, priceMonthly, priceAnnualPerMonth, priceAnnualTotal, pricingModel, currency (ISO 4217), billingPeriods, a features list, featureLimits, ctaText/ctaUrl, and the flags isFree, isEnterprise, isPopular, and trialDays. There is also an optional featureComparison matrix, an extractionMethod and extractionConfidence rating (high, medium, or low), and an errors array. When change detection is on you also get a hasChanges boolean, a changes array, and previousScrapedAt. The fixed example shown on this page is a representative subset of these fields.
+For each company it returns structured JSON: companyName, companyUrl, pricingPageUrl, hasFreeTier, hasEnterprisePlan, totalPlansFound, and a plans array. Each plan includes planName, priceMonthly, priceAnnualPerMonth, priceAnnualTotal, pricingModel, currency (ISO 4217), billingPeriods, a features list, featureLimits, ctaText/ctaUrl, priceSource (JSON-LD, card, table, promo or AI), promo fields (hasPromo, promoPrice, promoText), and the flags isFree, isEnterprise, isPopular, and trialDays. There is also an optional featureComparison matrix, an extractionMethod and extractionConfidence rating (high, medium, or low), and an errors array. When change detection is on you also get a hasChanges boolean, a changes array, and previousScrapedAt. The fixed example shown on this page is a representative subset of these fields.
 
 ### How does change detection work?
 

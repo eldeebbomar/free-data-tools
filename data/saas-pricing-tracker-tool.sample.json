@@ -13,28 +13,36 @@
         "priceMonthly": 0,
         "currency": "USD",
         "isFree": true,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Team",
         "priceMonthly": 29,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Business",
         "priceMonthly": 99,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Enterprise",
         "priceMonthly": null,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": true
+        "isEnterprise": true,
+        "hasPromo": false,
+        "priceSource": null
       }
     ],
     "hasChanges": false,
@@ -54,21 +62,27 @@
         "priceMonthly": 15,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "card"
       },
       {
         "planName": "Growth",
         "priceMonthly": 49,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "card"
       },
       {
         "planName": "Enterprise",
         "priceMonthly": null,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": true
+        "isEnterprise": true,
+        "hasPromo": false,
+        "priceSource": null
       }
     ],
     "hasChanges": false,
@@ -88,21 +102,27 @@
         "priceMonthly": 0,
         "currency": "USD",
         "isFree": true,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Plus",
         "priceMonthly": 8,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Business",
         "priceMonthly": 15,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       }
     ],
     "hasChanges": false,
@@ -122,21 +142,27 @@
         "priceMonthly": 19,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "card"
       },
       {
         "planName": "Pro",
         "priceMonthly": 55,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "card"
       },
       {
         "planName": "Enterprise",
         "priceMonthly": null,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": true
+        "isEnterprise": true,
+        "hasPromo": false,
+        "priceSource": null
       }
     ],
     "hasChanges": false,
@@ -156,21 +182,27 @@
         "priceMonthly": 0,
         "currency": "USD",
         "isFree": true,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Essentials",
         "priceMonthly": 13,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       },
       {
         "planName": "Premium",
         "priceMonthly": 350,
         "currency": "USD",
         "isFree": false,
-        "isEnterprise": false
+        "isEnterprise": false,
+        "hasPromo": false,
+        "priceSource": "jsonld"
       }
     ],
     "hasChanges": false,

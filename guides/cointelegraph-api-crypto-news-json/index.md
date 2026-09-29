@@ -200,7 +200,7 @@ The free [Cointelegraph query builder](https://datatooly.xyz/crypto-news-search/
 
 ## At scale
 
-A one-off script is fine for a single search. For a scheduled crypto-news feed, you also need retries, deduplication across runs, language editions, and exports that feed a sentiment model or dashboard. The [Cointelegraph News Scraper actor](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) on Apify handles the retries, per-run deduplication, language editions and exports on top of the same GraphQL backend. Deduplicating across scheduled runs is still up to you: key on the article `id`. It takes a keyword or pulls the latest articles, collects 5 to 100,000 per run, includes view counts, and exports JSON or CSV. It's free to start, then pay-as-you-go.
+A one-off script is fine for a single search. For a scheduled crypto-news feed, you also need retries, deduplication across runs, language editions, and exports that feed a sentiment model or dashboard. The [Cointelegraph News Scraper actor](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) on Apify handles the retries, per-run deduplication, language editions and exports on top of the same GraphQL backend. Deduplicating across scheduled runs is still up to you: key on the article `id`. It takes a keyword or pulls the latest articles, collects 5 to 100,000 per run, includes view counts and full article text (for up to 10,000 articles per run), and exports JSON or CSV. It's free to start, then pay-as-you-go.
 
 *Disclosure: I build the datatooly builder and the Apify actor. The endpoints and code above work without either.*
 

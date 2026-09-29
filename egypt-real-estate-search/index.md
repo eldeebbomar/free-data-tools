@@ -72,7 +72,7 @@ A fixed sample of the fields the egypt-real-estate-scraper actor returns — exa
 - Property Finder Egypt offers the richest per-row data of the three portals, including GPS coordinates, amenities and agent contact available directly from search results without enrichment. (Source: From the actor's README (constructive_calm/egypt-real-estate-scraper).)
 - Dubizzle Egypt was formerly branded OLX Egypt; its listings split across apartments, villas/houses and other property types. (Source: Dubizzle Egypt site branding via web search, 2026; live category counts fluctuate.)
 - Average apartment prices in New Cairo compounds ran roughly EGP 40,000–70,000 per sqm in 2025, with Fifth Settlement broadly in the ~EGP 55,000–65,000/sqm band depending on finishing and project. (Source: Synthesised from community Egyptian property-market guides via web search; estimates vary widely by source, project and finishing level and are not transacted prices.)
-- The backing Apify actor is pay-as-you-go: $0.01 per run start, $0.005 per listing extracted and $0.03 per AI-extracted listing, so 100 listings total is about $0.51. (Source: From the actor's README (constructive_calm/egypt-real-estate-scraper); confirm current rates on the live Store page before a large run.)
+- The backing Apify actor is pay-as-you-go: $0.01 per GB of run memory at start ($0.04 at the default 4 GB), $0.005 per listing extracted, and a one-time $0.03 per run when the AI vision fallback delivers listings, so 100 listings total is about $0.54. (Source: From the actor's README (constructive_calm/egypt-real-estate-scraper); confirm current rates on the live Store page before a large run.)
 
 ## FAQ
 
@@ -98,7 +98,7 @@ Build your query here to confirm the platforms, listing type and location, then 
 
 ### Is this tool free?
 
-The query builder on this page is free to use. The backing Apify actor is pay-as-you-go: $0.01 per run start, $0.005 per listing extracted, and $0.03 per listing when the AI vision fallback is triggered. There is no separate actor-specific free tier, but Apify's platform-level free credits cover light starting usage. As a rough guide, 100 listings total is about $0.51. Check the actor's Store page for current pricing before a large run.
+The query builder on this page is free to use. The backing Apify actor is pay-as-you-go: $0.01 per GB of run memory at start ($0.04 at the default 4 GB), $0.005 per listing extracted, and a one-time $0.03 per run only when the AI vision fallback delivers listings. There is no separate actor-specific free tier, but Apify's platform-level free credits cover light starting usage. As a rough guide, 100 listings total is about $0.54 at the default memory. Check the actor's Store page for current pricing before a large run.
 
 ### Is scraping Egyptian real-estate listings legal?
 

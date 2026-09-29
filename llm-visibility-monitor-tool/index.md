@@ -18,7 +18,7 @@ Enter a brand, a market category and competitors, and preview how the actor reco
 - A mention (your brand is named) is different from a citation (your domain is linked as a source). The output captures both as separate fields.
 - Output fields include brandMentioned, brandPosition, shareOfVoice, ownedDomainCited, citedUrls/citedDomains, sentimentLabel/sentimentScore, and an answerSnippet as evidence.
 - AI answers vary by user, session, and model version, so a single manual check is unreliable; recurring prompt-set runs reveal the trend.
-- The actor defaults to a dry-run mode that makes no external API calls and incurs no charges, so you can smoke-test the config safely before running a live, pay-as-you-go audit.
+- The actor has an optional demo mode that writes clearly labelled fake answers, calls no AI model and charges nothing, so you can see the output format before running a live, pay-as-you-go audit.
 - Share of voice = your brand mentions divided by total brand + competitor mentions across the prompt set, i.e. your share of AI answers.
 
 ## How it works
@@ -41,7 +41,7 @@ Pick a runPreset that balances depth against cost: quick (the default) is the ch
 2. **Add your market category** — Describe your market category (for example, 'B2B analytics software' or 'project management tools'). This lets the actor auto-generate realistic buyer-intent prompts that prospects would actually ask an AI assistant.
 3. **Choose a run preset** — Pick a runPreset that balances depth against cost: quick (the default) is the cheapest read, agency and deep add more prompts, platforms and samples for a fuller audit, and custom lets you set everything yourself.
 4. **Generate the query and preview the output shape** — The builder produces a ready-to-run configuration and shows a fixed example of the output, including brandMentioned, brandPosition, shareOfVoice, citedDomains, and sentiment fields, so you know exactly what you will receive.
-5. **Run it live on Apify** — Copy the generated config into the LLM Visibility Monitor actor on Apify and run it. It starts in a safe dry-run by default (no charges), then runs live pay-as-you-go and writes results plus summary reports to your dataset and key-value store.
+5. **Run it live on Apify** — Copy the generated config into the LLM Visibility Monitor actor on Apify and run it. It runs live and pay-as-you-go (turn on demo mode first if you only want to see the output format for free) and writes results plus summary reports to your dataset and key-value store.
 
 ## Example output
 
@@ -49,11 +49,11 @@ A fixed sample of the fields the llm-visibility-monitor actor returns — exampl
 
 | prompt | platformLabel | brandMentioned | brandPosition | shareOfVoice |
 | --- | --- | --- | --- | --- |
-| best note-taking apps for small teams | OpenAI GPT Latest | true | 2 | 0.33 |
-| best note-taking apps for small teams | Perplexity Sonar | true | 1 | 0.5 |
-| Acme Notes alternatives | Claude Sonnet Latest | true | 1 | 0.25 |
-| which note app syncs offline | Gemini Flash Latest | false |  | 0 |
-| note-taking app with the best AI features | Grok 4.3 | false |  | 0 |
+| best note-taking apps for small teams | ChatGPT Free (GPT Luna, API + web search) | true | 2 | 0.33 |
+| best note-taking apps for small teams | Perplexity (Sonar, API + native search) | true | 1 | 0.5 |
+| Acme Notes alternatives | Claude (Sonnet, API + web search) | true | 1 | 0.25 |
+| which note app syncs offline | Gemini (3.5 Flash, API, model knowledge) | false |  | 0 |
+| note-taking app with the best AI features | Grok (latest, API, model knowledge) | false |  | 0 |
 
 ## Ready-to-run actor input
 
@@ -69,7 +69,7 @@ A fixed sample of the fields the llm-visibility-monitor actor returns — exampl
 - Share of voice is computed as brand mentions divided by total brand plus competitor mentions across the prompt set. (Source: From the actor's README; consistent with the general industry definition of AI share of voice as percentage of inclusion in AI answers.)
 - A brand's mention rate can swing substantially from one week to the next without any page changes, due to token sampling and retrieval drift. (Source: Reflects the well-documented non-determinism of LLM answers; any specific percentages are illustrative of drift, not a fixed benchmark.)
 - ChatGPT answer variability is driven by four factors: probabilistic token sampling, per-user personalization, model version, and live retrieval. (Source: Synthesized from general AI-visibility and GEO community guidance; illustrative secondary commentary, not a load-bearing citation.)
-- The actor's per-event pricing includes about $0.15 per standard LLM sample and $0.35 per premium sample, with a dry-run mode that incurs no charges. (Source: From the actor's pay-per-event pricing metadata and README; confirm current rates on the Apify Store listing before running.)
+- The actor's per-event pricing includes about $0.15 per standard LLM sample and $0.35 per premium sample, with an optional demo mode that incurs no charges. (Source: From the actor's pay-per-event pricing metadata and README; confirm current rates on the Apify Store listing before running.)
 - A brand mention (the AI names your brand) is distinct from a citation (the AI links to your domain as a source) and the two require different strategies. (Source: General GEO community guidance; reflected in the actor's separate brandMentioned and ownedDomainCited fields.)
 
 ## FAQ
@@ -96,7 +96,7 @@ ChatGPT answers vary due to probabilistic token sampling, per-user personalizati
 
 ### Is this tool free?
 
-The builder on this page is free to use. The backing Apify actor defaults to a dry-run mode that makes no external API calls and incurs no charges, so you can smoke-test the config safely. Once you turn dry-run off and run it live, pricing is pay-per-event: about $0.15 per standard LLM sample and $0.35 per premium sample per the actor's pricing, and samples that return no usable evidence are not charged. New Apify accounts also get platform-level free credits to start.
+The builder on this page is free to use. The backing Apify actor has an optional demo mode (off by default) that writes labelled fake answers, calls no AI model and charges nothing. A normal run is live, and pricing is pay-per-event: about $0.15 per standard LLM sample and $0.35 per premium sample per the actor's pricing, and samples that return no usable evidence are not charged. New Apify accounts also get platform-level free credits to start.
 
 ### What is share of voice in AI search?
 

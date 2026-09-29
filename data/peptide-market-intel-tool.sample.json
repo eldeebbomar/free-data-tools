@@ -19,7 +19,8 @@
     "brandMentions": [
       "Ozempic"
     ],
-    "enriched": true
+    "enriched": true,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
     "id": "amazon:B0EXAMPLE01",
@@ -41,7 +42,8 @@
       "ExampleLabs"
     ],
     "brandMentions": [],
-    "enriched": true
+    "enriched": true,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
     "id": "youtube:EXAMPLE0002",
@@ -63,7 +65,8 @@
     "brandMentions": [
       "Mounjaro"
     ],
-    "enriched": true
+    "enriched": true,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
     "id": "reddit:ex1abc",
@@ -86,7 +89,8 @@
       "SampleSource"
     ],
     "brandMentions": [],
-    "enriched": true
+    "enriched": true,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
     "id": "amazon:B0EXAMPLE02",
@@ -108,6 +112,7 @@
       "PlaceholderSkin"
     ],
     "brandMentions": [],
-    "enriched": true
+    "enriched": true,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

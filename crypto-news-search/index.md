@@ -14,7 +14,7 @@ Search Cointelegraph by keyword and language edition and preview the article rec
 ## Key takeaways
 
 - This page is a query builder, not a live fetcher: it produces a ready-to-run config and shows a fixed example of the output shape, then you run it on the actor.
-- The backing crypto-news-scraper actor pulls from Cointelegraph's GraphQL API across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); in a live check on 29 September 2026 every edition except my (Malay) returned articles.
+- The backing crypto-news-scraper actor pulls from Cointelegraph's GraphQL API across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); Malay (my) is currently unavailable, and the actor stops a Malay run with a clear message.
 - Four inputs drive a query: search_query (keyword, empty = latest), language, article_count (5-100,000), and fetch_full_text.
 - Each article returns title, summary (leadText), optional full body, author, category, ISO + human dates, cover image, badges, and optional view count.
 - The backing actor uses pay-as-you-go pricing (pay-per-event, billed per article saved) and failed requests are not charged; Apify itself gives new accounts free platform credits to start.
@@ -28,17 +28,17 @@ Type a keyword into search_query, for example bitcoin, ETF, or a project name. L
 
 ### 2. Pick a language edition
 
-Set the language field to one of the 15 codes the actor accepts (default en); on 29 September 2026, 14 returned articles and my (Malay) returned none. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
+Set the language field to one of the codes the actor accepts (default en). Malay (my) is currently unavailable: the actor stops a Malay run with a clear message instead of returning an empty dataset. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
 
 ### 3. Set how many articles and whether to include full text
 
-Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies; turn it off for lighter, faster metadata-only runs.
+Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies (for up to 10,000 articles per run); turn it off for lighter, faster metadata-only runs.
 
 ## How to use it
 
 1. **Enter a search query** — Type a keyword into search_query, for example bitcoin, ETF, or a project name. Leave it empty to pull the latest Cointelegraph articles instead of a keyword search.
-2. **Pick a language edition** — Set the language field to one of the 15 codes the actor accepts (default en); on 29 September 2026, 14 returned articles and my (Malay) returned none. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
-3. **Set how many articles and whether to include full text** — Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies; turn it off for lighter, faster metadata-only runs.
+2. **Pick a language edition** — Set the language field to one of the codes the actor accepts (default en). Malay (my) is currently unavailable: the actor stops a Malay run with a clear message instead of returning an empty dataset. Each run targets a single Cointelegraph language edition, such as ar for Arabic or jp for Japanese.
+3. **Set how many articles and whether to include full text** — Choose article_count (5 to 100,000) and toggle fetch_full_text. Full text returns complete article bodies (for up to 10,000 articles per run); turn it off for lighter, faster metadata-only runs.
 4. **Preview the output shape** — Review the fixed example output the builder shows, post ID, title, leadText, author, category, dates, cover image, badges, and view count, so you know exactly what schema to expect.
 5. **Run the query live on the actor** — Send the generated config to the backing Apify actor (pay-as-you-go, billed per article saved; new Apify accounts start with free platform credits) to perform the real GraphQL fetch and export results as JSON or CSV.
 
@@ -66,7 +66,7 @@ A fixed sample of the fields the crypto-news-scraper actor returns — example d
 
 ## Key facts
 
-- The backing actor scrapes Cointelegraph across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); in a live check on 29 September 2026 every edition except my (Malay) returned articles. (Source: From the actor's input schema and README for constructive_calm/crypto-news-scraper.)
+- The backing actor scrapes Cointelegraph across 15 language codes (en, tr, de, es, fr, it, jp, kr, br, cn, ar, my, in, tw, ru); Malay (my) is currently unavailable, and the actor stops a Malay run with a clear message. (Source: From the actor's input schema and README for constructive_calm/crypto-news-scraper.)
 - article_count is configurable from a minimum of 5 to a maximum of 100,000, with a default of 10. (Source: From the actor's input schema (constructive_calm/crypto-news-scraper).)
 - Pricing is pay-per-event at $6.00 per 1,000 articles saved, and failed requests are not charged. (Source: From the actor's README pricing section (constructive_calm/crypto-news-scraper).)
 - Each article can return title, summary (leadText), optional full body, author, category, ISO + human-readable dates, cover image, badges, and optional view count. (Source: Field list taken from the actor's README data table; the README notes some fields may be null.)
@@ -84,7 +84,7 @@ The query builder on this page is free to use. The backing Apify actor uses pay-
 
 ### What languages does the Cointelegraph scraper support?
 
-The backing actor covers 15 Cointelegraph language editions: English (en), Turkish (tr), German (de), Spanish (es), French (fr), Italian (it), Japanese (jp), Korean (kr), Portuguese/Brazil (br), Chinese (cn), Arabic (ar), Malay (my), Hindi (in), Taiwan Chinese (tw), and Russian (ru). In a live check on 29 September 2026 the my edition returned no articles; the other 14 did. Set the language field in the query builder to target one edition per run.
+The backing actor covers 15 Cointelegraph language editions: English (en), Turkish (tr), German (de), Spanish (es), French (fr), Italian (it), Japanese (jp), Korean (kr), Portuguese/Brazil (br), Chinese (cn), Arabic (ar), Malay (my), Hindi (in), Taiwan Chinese (tw), and Russian (ru). Malay (my) is currently unavailable: Cointelegraph returns no Malay articles, so the actor stops a Malay run with a clear message. Set the language field in the query builder to target one edition per run.
 
 ### What fields does each article return?
 
