@@ -1,6 +1,6 @@
 # How to Scrape Reddit Without the API (After the 2023 Price Changes)
 
-> A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.
+> A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 
 - URL: https://datatooly.xyz/guides/scrape-reddit-without-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)

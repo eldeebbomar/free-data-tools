@@ -153,7 +153,7 @@ Hub: https://datatooly.xyz/category/jobs-visas/
 - [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/): Measure your brand's AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores 'I'm not familiar with X' answers.
 - [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/): Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/): Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.
-- [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/): A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.
+- [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/): A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 - [Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD](https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/): Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/): A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/): A practical guide to collecting Saudi Arabia property data from the major portals, including the REGA license trick that dedupes listings across platforms.
@@ -373,7 +373,7 @@ Source: https://datatooly.xyz/category/social-community/
 
 ## Guides
 
-- [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/): A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.
+- [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/): A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/): A verified, runnable guide to scraping public Telegram channels without login, an API key or a phone number, using the t.me/s/ preview and plain HTTP.
 - [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/): A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.
@@ -4518,7 +4518,7 @@ Source: https://datatooly.xyz/guides/
 - [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/) (2026-06-01): A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.
 - [Read Company Hiring Signals From Public Job Board APIs (with code)](https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/) (2026-05-31): Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.
 - [How to Export Google Patents to CSV (Honest Guide to Every Real Path)](https://datatooly.xyz/guides/export-google-patents-to-csv/) (2026-05-31): A precise, no-hype guide to exporting Google Patents search results to CSV — the built-in 1,000-row cap, the BigQuery bulk path, and why browser scraping fails.
-- [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/) (2026-05-31): A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.
+- [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/) (2026-05-31): A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 
 ---
 
@@ -7121,7 +7121,7 @@ Source: https://datatooly.xyz/guides/scrape-reddit-without-api/
 
 # How to Scrape Reddit Without the API (After the 2023 Price Changes)
 
-> A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.
+> A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 
 - URL: https://datatooly.xyz/guides/scrape-reddit-without-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
