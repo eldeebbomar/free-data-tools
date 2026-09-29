@@ -1,0 +1,310 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Cointelegraph API: Get Crypto News as JSON Without a Key</title>
+<meta name="description" content="Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.">
+<link rel="canonical" href="https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Cointelegraph API: Get Crypto News as JSON Without a Key"><meta property="og:description" content="Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON."><meta property="og:url" content="https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-cointelegraph-api-crypto-news-json.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Cointelegraph API: Get Crypto News as JSON Without a Key">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="crypto"><meta property="article:tag" content="api"><meta property="article:tag" content="webscraping">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cointelegraph API: Get Crypto News as JSON Without a Key"><meta name="twitter:description" content="Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-cointelegraph-api-crypto-news-json.jpg"><meta name="twitter:image:alt" content="Cointelegraph API: Get Crypto News as JSON Without a Key">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/#article","headline":"Cointelegraph API: Get Crypto News as JSON Without a Key","description":"Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-cointelegraph-api-crypto-news-json.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, crypto, api, webscraping","about":{"@type":"SoftwareApplication","name":"Search & export Cointelegraph crypto news","url":"https://datatooly.xyz/crypto-news-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/#webpage","url":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/","name":"Cointelegraph API: Get Crypto News as JSON Without a Key","description":"Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-cointelegraph-api-crypto-news-json.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Cointelegraph API: Get Crypto News as JSON Without a Key","item":"https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/news-crypto/">News &amp; Crypto</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · News &amp; Crypto</span>
+<h1>Cointelegraph API: Get Crypto News as JSON Without a Key</h1>
+<p class="lede">Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Search &amp; export Cointelegraph crypto news</p><p class="gcta-s">Free Cointelegraph scraper query builder. Configure keyword, language, and article count, preview the JSON output shape, then run it live on the Apify actor.</p><a class="btn btn-primary" href="../../crypto-news-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Cointelegraph doesn&#39;t publish a documented news API. Its website, though, loads articles from a GraphQL endpoint at <code>https://conpletus.cointelegraph.com/v1/</code> that answers plain POST requests with no key. One query gives you the latest articles or keyword search results as JSON: title, publish time, lead text, category and view count. Full article bodies need a second query per article, by slug. For just the headlines, <code>https://cointelegraph.com/rss</code> is simpler.</p>
+<p>This guide shows both routes with code that ran against the live endpoints on 2026-09-29. It also covers the quirks that trip people up: the empty <code>bodyText</code>, the CORS lock, and a language code that doesn&#39;t mean what it looks like.</p>
+<h2 id="two-free-sources-and-when-to-use-each">Two free sources, and when to use each</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>URL</th>
+<th>Gives you</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RSS feeds</td>
+<td><code>https://cointelegraph.com/rss</code>, <code>/rss/tag/bitcoin</code>, <code>/rss/category/analysis</code></td>
+<td>The latest items as XML</td>
+<td>30 items per feed in testing; no search; no paging back in time</td>
+</tr>
+<tr>
+<td>GraphQL</td>
+<td><code>https://conpletus.cointelegraph.com/v1/</code> (POST)</td>
+<td>Latest articles, keyword search, single articles with body HTML, view counts, 14 working language editions</td>
+<td>Undocumented and internal, so it can change without notice</td>
+</tr>
+</tbody></table></div>
+<p>RSS is the stable, sanctioned option for &quot;what&#39;s new right now&quot;. GraphQL is what you need for keyword search, history, view counts or full text.</p>
+<h2 id="the-graphql-shape">The GraphQL shape</h2>
+<p>Everything hangs off <code>locale(short: &quot;&lt;code&gt;&quot;)</code>. Inside it, three queries matter:</p>
+<ul>
+<li><code>posts(order: &quot;postPublishedTime&quot;, offset, length)</code> returns the latest articles, newest first</li>
+<li><code>postsSearch(offset, length, query)</code> returns keyword search results</li>
+<li><code>post(slug)</code> returns one article, including its body</li>
+</ul>
+<p>Both list queries return <code>{ data: [Post], hasMorePosts }</code>. The fields you&#39;ll use on a <code>Post</code>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>Article ID</td>
+</tr>
+<tr>
+<td><code>slug</code> / <code>url</code></td>
+<td>string</td>
+<td><code>url</code> is a relative path such as <code>/news/...</code></td>
+</tr>
+<tr>
+<td><code>views</code></td>
+<td>int</td>
+<td>View count</td>
+</tr>
+<tr>
+<td><code>postTranslate.title</code></td>
+<td>string</td>
+<td>Headline</td>
+</tr>
+<tr>
+<td><code>postTranslate.published</code></td>
+<td>string</td>
+<td>ISO-8601 with UTC offset</td>
+</tr>
+<tr>
+<td><code>postTranslate.leadText</code></td>
+<td>string</td>
+<td>The summary paragraph</td>
+</tr>
+<tr>
+<td><code>postTranslate.bodyText</code></td>
+<td>string (HTML)</td>
+<td>Filled in by <code>post(slug)</code> only (see below)</td>
+</tr>
+<tr>
+<td><code>postTranslate.publishedHumanFormat</code></td>
+<td>string</td>
+<td>Came back <code>null</code> in every test</td>
+</tr>
+<tr>
+<td><code>category.slug</code></td>
+<td>string</td>
+<td>For example <code>markets</code> or <code>latest-news</code></td>
+</tr>
+<tr>
+<td><code>postBadge.label</code></td>
+<td>string or null</td>
+<td>Badge label, often null</td>
+</tr>
+<tr>
+<td><code>author.authorTranslates[].name</code></td>
+<td>string</td>
+<td>Byline</td>
+</tr>
+</tbody></table></div>
+<h2 id="python-search-cointelegraph-and-save-csv">Python: search Cointelegraph and save CSV</h2>
+<p>This needs only <code>requests</code>:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import csv
+import time
+import requests
+
+ENDPOINT = &quot;https://conpletus.cointelegraph.com/v1/&quot;
+
+QUERY = &quot;&quot;&quot;
+query Search($short: String!, $offset: Int!, $length: Int!, $query: String!) {
+  locale(short: $short) {
+    postsSearch(offset: $offset, length: $length, query: $query) {
+      hasMorePosts
+      data {
+        id
+        url
+        views
+        postTranslate { title published leadText }
+        category { slug }
+        postBadge { label }
+      }
+    }
+  }
+}
+&quot;&quot;&quot;
+
+def search_cointelegraph(term, lang=&quot;en&quot;, limit=60, page_size=20):
+    rows, seen, offset = [], set(), 0
+    while len(rows) &lt; limit:
+        resp = requests.post(
+            ENDPOINT,
+            json={&quot;query&quot;: QUERY, &quot;variables&quot;: {
+                &quot;short&quot;: lang, &quot;offset&quot;: offset, &quot;length&quot;: page_size, &quot;query&quot;: term}},
+            headers={&quot;Origin&quot;: &quot;https://cointelegraph.com&quot;},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        body = resp.json()
+        if body.get(&quot;errors&quot;):
+            raise RuntimeError(body[&quot;errors&quot;][0][&quot;message&quot;])
+        page = (body[&quot;data&quot;][&quot;locale&quot;] or {}).get(&quot;postsSearch&quot;) or {}
+        posts = page.get(&quot;data&quot;) or []
+        for p in posts:
+            if p[&quot;id&quot;] in seen or not p.get(&quot;postTranslate&quot;):
+                continue
+            seen.add(p[&quot;id&quot;])
+            t = p[&quot;postTranslate&quot;]
+            rows.append({
+                &quot;id&quot;: p[&quot;id&quot;],
+                &quot;title&quot;: t[&quot;title&quot;],
+                &quot;published&quot;: t[&quot;published&quot;],
+                &quot;lead&quot;: (t[&quot;leadText&quot;] or &quot;&quot;).strip(),
+                &quot;category&quot;: (p.get(&quot;category&quot;) or {}).get(&quot;slug&quot;),
+                &quot;views&quot;: p.get(&quot;views&quot;),
+                &quot;url&quot;: &quot;https://cointelegraph.com&quot; + p[&quot;url&quot;],
+            })
+        if not posts or not page.get(&quot;hasMorePosts&quot;):
+            break
+        offset += page_size
+        time.sleep(0.5)  # be polite
+    return rows[:limit]
+
+if __name__ == &quot;__main__&quot;:
+    articles = search_cointelegraph(&quot;bitcoin etf&quot;, limit=60)
+    with open(&quot;cointelegraph_bitcoin_etf.csv&quot;, &quot;w&quot;, newline=&quot;&quot;, encoding=&quot;utf-8&quot;) as f:
+        w = csv.DictWriter(f, fieldnames=articles[0].keys())
+        w.writeheader()
+        w.writerows(articles)
+    print(len(articles), &quot;articles&quot;)
+    for a in articles[:3]:
+        print(a[&quot;published&quot;][:10], a[&quot;views&quot;], a[&quot;title&quot;])</code></pre></div>
+<p>Output on 2026-09-29:</p>
+<div class="code-block"><pre><code>60 articles
+2026-09-25 812 Bitcoin ETF inflows slow to $191M as six-day streak reaches $2.8B
+2026-09-19 1416 REX launches 2x leveraged ETF tied to Bitcoin treasury firm Strive
+2026-09-14 676 Bitcoin ETFs shed $463M in weekly reversal as Ether ETFs gain $197M</code></pre></div>
+<h2 id="node-js-latest-articles-with-full-text">Node.js: latest articles with full text</h2>
+<p>The list and search queries return <code>bodyText</code> as an <strong>empty string</strong>. I checked <code>posts</code> and <code>postsSearch</code>, for both recent and older articles. To get the body, ask for each article by slug:</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">// Node 18+ (built-in fetch). Latest articles + full body text.
+const ENDPOINT = &quot;https://conpletus.cointelegraph.com/v1/&quot;;
+
+async function gql(query, variables) {
+  const res = await fetch(ENDPOINT, {
+    method: &quot;POST&quot;,
+    headers: { &quot;content-type&quot;: &quot;application/json&quot;, origin: &quot;https://cointelegraph.com&quot; },
+    body: JSON.stringify({ query, variables }),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const { data, errors } = await res.json();
+  if (errors?.length) throw new Error(errors[0].message);
+  return data;
+}
+
+const LATEST = `
+  query Latest($short: String!, $offset: Int!, $length: Int!) {
+    locale(short: $short) {
+      posts(order: &quot;postPublishedTime&quot;, offset: $offset, length: $length) {
+        hasMorePosts
+        data { id slug url views postTranslate { title published } }
+      }
+    }
+  }`;
+
+const ONE_POST = `
+  query One($short: String!, $slug: String!) {
+    locale(short: $short) {
+      post(slug: $slug) { postTranslate { bodyText } }
+    }
+  }`;
+
+const lang = &quot;en&quot;;
+const list = await gql(LATEST, { short: lang, offset: 0, length: 5 });
+
+for (const p of list.locale.posts.data) {
+  // List and search queries return an empty bodyText; fetch the post by slug for the body.
+  const one = await gql(ONE_POST, { short: lang, slug: p.slug });
+  const html = one.locale.post?.postTranslate?.bodyText ?? &quot;&quot;;
+  const text = html.replace(/&lt;[^&gt;]+&gt;/g, &quot; &quot;).replace(/\s+/g, &quot; &quot;).trim();
+  console.log(p.postTranslate.published.slice(0, 10), p.views, p.postTranslate.title);
+  console.log(&quot;   &quot;, text.slice(0, 120), `... (${text.length} chars)`);
+  await new Promise((r) =&gt; setTimeout(r, 300));
+}</code></pre></div>
+<p>Save it as <code>latest.mjs</code> and run <code>node latest.mjs</code>. Each article prints with a body of roughly 1,200 to 4,100 characters, where the list query alone gave 0.</p>
+<h2 id="pitfalls-stated-precisely">Pitfalls, stated precisely</h2>
+<ul>
+<li><strong>It&#39;s an internal endpoint.</strong> Cointelegraph doesn&#39;t document <code>conpletus</code> or promise it&#39;ll stay stable. Check for <code>errors</code> in every response, and alert when a page comes back empty, not only when the request fails.</li>
+<li><strong>Browsers are blocked by CORS.</strong> The endpoint answers with <code>access-control-allow-origin: https://cointelegraph.com</code>, so a <code>fetch()</code> from any other site fails in the browser. It works from a server, a script or a notebook. That&#39;s why the free tool below builds the query instead of running it in your browser.</li>
+<li><strong>Empty <code>bodyText</code> in lists.</strong> As shown above, you need the extra <code>post(slug)</code> call for the full text. Budget one request per article.</li>
+<li><strong>Paging.</strong> <code>offset</code> and <code>length</code> work as you&#39;d expect. <code>length</code> values up to 200 were accepted, and an offset of 20,000 still returned articles (from September 2024). Stop when <code>hasMorePosts</code> is false or a page comes back empty. Deduplicate by <code>id</code> in case a new article shifts the offsets while you page.</li>
+<li><strong>Language codes aren&#39;t all what they look like.</strong> <code>ar</code> resolves to <code>cointelegraph.com.ar</code>, which looks like an Argentinian domain but serves the Arabic edition (Arabic titles, <code>lang=&quot;ar&quot;</code>). <code>jp</code> resolves to <code>cointelegraph.jp</code>. <code>my</code> returns no data. To check what a code maps to, query <code>locale(short: &quot;xx&quot;) { language { domain short } }</code>, and build absolute URLs from that domain, not from <code>cointelegraph.com</code>.</li>
+<li><strong><code>publishedHumanFormat</code> is null.</strong> Format <code>published</code> yourself.</li>
+<li><strong>Copyright.</strong> Articles are copyrighted. Use the data for research, monitoring and analysis, not for republishing full text, and read Cointelegraph&#39;s terms before you scrape at volume.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/crypto-news-search/">Cointelegraph query builder</a> is a <strong>query builder</strong>, not a live fetcher. The CORS lock above rules out a live in-browser call. You set a keyword, a language edition and an article count, and it builds a ready-to-run input for the actor below. It also shows a fixed example of the output fields, so you can plan the schema before you run anything.</p>
+<h2 id="at-scale">At scale</h2>
+<p>A one-off script is fine for a single search. For a scheduled crypto-news feed, you also need retries, deduplication across runs, language editions, and exports that feed a sentiment model or dashboard. The <a href="https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu" target="_blank" rel="noopener">Cointelegraph News Scraper actor</a> on Apify handles the retries, per-run deduplication, language editions and exports on top of the same GraphQL backend. Deduplicating across scheduled runs is still up to you: key on the article <code>id</code>. It takes a keyword or pulls the latest articles, collects 5 to 100,000 per run, includes view counts, and exports JSON or CSV. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly builder and the Apify actor. The endpoints and code above work without either.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-cointelegraph-have-an-official-api">Does Cointelegraph have an official API?</h3>
+<p>It has no documented public news API. The site runs on a GraphQL endpoint (<code>conpletus.cointelegraph.com/v1/</code>) that accepts POST requests without a key, and it publishes RSS feeds at <code>cointelegraph.com/rss</code>.</p>
+<h3 id="do-i-need-an-api-key">Do I need an API key?</h3>
+<p>No. Neither the GraphQL endpoint nor the RSS feeds needed a key or cookie in testing. The code sends an <code>Origin: https://cointelegraph.com</code> header to match what the site itself sends.</p>
+<h3 id="why-is-bodytext-empty">Why is <code>bodyText</code> empty?</h3>
+<p>The list and search queries return an empty <code>bodyText</code>. Request the article with <code>post(slug: &quot;...&quot;)</code> inside <code>locale(short: &quot;en&quot;)</code> to get the full HTML body.</p>
+<h3 id="can-i-call-it-from-browser-javascript">Can I call it from browser JavaScript?</h3>
+<p>Not from your own site. CORS only allows the <code>https://cointelegraph.com</code> origin. Run it server-side, or use the RSS feed through your own backend.</p>
+<h3 id="how-far-back-can-i-go">How far back can I go?</h3>
+<p>Offsets deep into the archive work. An offset of 20,000 on the English edition returned articles from September 2024. Page with <code>offset</code> and <code>length</code> until <code>hasMorePosts</code> is false.</p>
+<h3 id="which-language-codes-work">Which language codes work?</h3>
+<p>These 14 codes all returned articles on 2026-09-29: <code>en</code>, <code>tr</code>, <code>de</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>jp</code>, <code>kr</code>, <code>br</code>, <code>cn</code>, <code>ar</code>, <code>in</code>, <code>tw</code> and <code>ru</code>. <code>ar</code> is the Arabic edition, served from <code>cointelegraph.com.ar</code> despite the Argentinian-looking domain, and <code>my</code> returned no data. Query <code>language { domain }</code> to confirm a mapping.</p>
+
+</div>
+<p class="guide-end"><a href="../../crypto-news-search/">Open the free Search &amp; export Cointelegraph crypto news tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/measure-ai-share-of-voice-python/">Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

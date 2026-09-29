@@ -1,23 +1,122 @@
 [
   {
-    "player": "Haaland",
-    "team": "MCI",
-    "position": "FWD",
-    "ownershipPct": 62.3,
-    "form": 8.4
+    "type": "captain_pick",
+    "rank": 1,
+    "gameweek": 6,
+    "player": {
+      "webName": "Vellano",
+      "team": {
+        "shortName": "MCI"
+      },
+      "position": "FWD",
+      "cost": 14.5,
+      "selectedByPercent": 58.2,
+      "epNext": 7.9
+    },
+    "pickScore": 92.4,
+    "fixtureLookaheadDifficulty": 2.2,
+    "reasonTags": [
+      "good_form",
+      "easy_fixture",
+      "home_advantage",
+      "high_ep_next"
+    ],
+    "source": "fpl-api",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "player": "Salah",
-    "team": "LIV",
-    "position": "MID",
-    "ownershipPct": 48.1,
-    "form": 7.2
+    "type": "captain_pick",
+    "rank": 2,
+    "gameweek": 6,
+    "player": {
+      "webName": "Okafor",
+      "team": {
+        "shortName": "LIV"
+      },
+      "position": "MID",
+      "cost": 13,
+      "selectedByPercent": 41.7,
+      "epNext": 7.1
+    },
+    "pickScore": 88.1,
+    "fixtureLookaheadDifficulty": 2.4,
+    "reasonTags": [
+      "good_form",
+      "set_piece_taker",
+      "xgi_leader",
+      "high_ep_next"
+    ],
+    "source": "fpl-api",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "player": "Saka",
-    "team": "ARS",
-    "position": "MID",
-    "ownershipPct": 31.5,
-    "form": 6.8
+    "type": "captain_pick",
+    "rank": 3,
+    "gameweek": 6,
+    "player": {
+      "webName": "Brennan",
+      "team": {
+        "shortName": "ARS"
+      },
+      "position": "MID",
+      "cost": 10,
+      "selectedByPercent": 29.5,
+      "epNext": 6.4
+    },
+    "pickScore": 81.6,
+    "fixtureLookaheadDifficulty": 2.6,
+    "reasonTags": [
+      "easy_fixture",
+      "home_advantage",
+      "high_ep_next"
+    ],
+    "source": "fpl-api",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "type": "captain_pick",
+    "rank": 4,
+    "gameweek": 6,
+    "player": {
+      "webName": "Castellan",
+      "team": {
+        "shortName": "CHE"
+      },
+      "position": "MID",
+      "cost": 9.5,
+      "selectedByPercent": 18.3,
+      "epNext": 5.8
+    },
+    "pickScore": 74.9,
+    "fixtureLookaheadDifficulty": 2.8,
+    "reasonTags": [
+      "set_piece_taker",
+      "xgi_leader"
+    ],
+    "source": "fpl-api",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "type": "captain_pick",
+    "rank": 5,
+    "gameweek": 6,
+    "player": {
+      "webName": "Lindqvist",
+      "team": {
+        "shortName": "NEW"
+      },
+      "position": "FWD",
+      "cost": 8.5,
+      "selectedByPercent": 6.1,
+      "epNext": 5.6
+    },
+    "pickScore": 70.2,
+    "fixtureLookaheadDifficulty": 2.5,
+    "reasonTags": [
+      "easy_fixture",
+      "low_ownership"
+    ],
+    "source": "fpl-api",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

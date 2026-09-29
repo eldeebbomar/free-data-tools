@@ -1,20 +1,179 @@
 [
   {
-    "plan": "Free",
-    "price": "$0",
-    "billingPeriod": "month",
-    "features": 5
+    "companyName": "Acme Analytics",
+    "pricingPageUrl": "https://acme-analytics.example.com/pricing",
+    "totalPlansFound": 4,
+    "hasFreeTier": true,
+    "hasEnterprisePlan": true,
+    "defaultCurrency": "USD",
+    "extractionConfidence": "high",
+    "plans": [
+      {
+        "planName": "Free",
+        "priceMonthly": 0,
+        "currency": "USD",
+        "isFree": true,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Team",
+        "priceMonthly": 29,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Business",
+        "priceMonthly": 99,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Enterprise",
+        "priceMonthly": null,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": true
+      }
+    ],
+    "hasChanges": false,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "plan": "Pro",
-    "price": "$12",
-    "billingPeriod": "month",
-    "features": 18
+    "companyName": "Sample CRM",
+    "pricingPageUrl": "https://samplecrm.example.com/pricing",
+    "totalPlansFound": 3,
+    "hasFreeTier": false,
+    "hasEnterprisePlan": true,
+    "defaultCurrency": "USD",
+    "extractionConfidence": "high",
+    "plans": [
+      {
+        "planName": "Starter",
+        "priceMonthly": 15,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Growth",
+        "priceMonthly": 49,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Enterprise",
+        "priceMonthly": null,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": true
+      }
+    ],
+    "hasChanges": false,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "plan": "Enterprise",
-    "price": "Custom",
-    "billingPeriod": "year",
-    "features": 40
+    "companyName": "Placeholder Docs",
+    "pricingPageUrl": "https://placeholderdocs.example.com/plans",
+    "totalPlansFound": 3,
+    "hasFreeTier": true,
+    "hasEnterprisePlan": false,
+    "defaultCurrency": "USD",
+    "extractionConfidence": "high",
+    "plans": [
+      {
+        "planName": "Free",
+        "priceMonthly": 0,
+        "currency": "USD",
+        "isFree": true,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Plus",
+        "priceMonthly": 8,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Business",
+        "priceMonthly": 15,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      }
+    ],
+    "hasChanges": false,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "companyName": "Demo Support Desk",
+    "pricingPageUrl": "https://demodesk.example.com/pricing",
+    "totalPlansFound": 3,
+    "hasFreeTier": false,
+    "hasEnterprisePlan": true,
+    "defaultCurrency": "USD",
+    "extractionConfidence": "high",
+    "plans": [
+      {
+        "planName": "Basic",
+        "priceMonthly": 19,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Pro",
+        "priceMonthly": 55,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Enterprise",
+        "priceMonthly": null,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": true
+      }
+    ],
+    "hasChanges": false,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "companyName": "Example Mailer",
+    "pricingPageUrl": "https://examplemailer.example.com/pricing",
+    "totalPlansFound": 3,
+    "hasFreeTier": true,
+    "hasEnterprisePlan": false,
+    "defaultCurrency": "USD",
+    "extractionConfidence": "high",
+    "plans": [
+      {
+        "planName": "Free",
+        "priceMonthly": 0,
+        "currency": "USD",
+        "isFree": true,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Essentials",
+        "priceMonthly": 13,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      },
+      {
+        "planName": "Premium",
+        "priceMonthly": 350,
+        "currency": "USD",
+        "isFree": false,
+        "isEnterprise": false
+      }
+    ],
+    "hasChanges": false,
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

@@ -1,20 +1,113 @@
 [
   {
-    "compound": "BPC-157",
-    "sentiment": "positive",
+    "id": "youtube:EXAMPLE0001",
+    "source": "youtube",
+    "sourceUrl": "https://www.example.com/youtube/EXAMPLE0001",
+    "text": "Three months on semaglutide: appetite changes and what surprised me.",
+    "author": null,
+    "createdAt": "2026-09-29T08:00:00.000Z",
+    "compounds": [
+      "semaglutide"
+    ],
+    "compoundCategory": "GLP-1",
+    "sentiment": {
+      "label": "positive",
+      "score": 0.62
+    },
     "intent": "experience-report",
-    "vendor": "Amino Asylum"
+    "vendorMentions": [],
+    "brandMentions": [
+      "Ozempic"
+    ],
+    "enriched": true
   },
   {
-    "compound": "Semaglutide",
-    "sentiment": "neutral",
-    "intent": "vendor-question",
-    "vendor": "Limitless Life"
-  },
-  {
-    "compound": "MK-677",
-    "sentiment": "negative",
+    "id": "amazon:B0EXAMPLE01",
+    "source": "amazon",
+    "sourceUrl": "https://www.example.com/amazon/B0EXAMPLE01",
+    "text": "Did not notice any difference for my shoulder after four weeks.",
+    "author": null,
+    "createdAt": "2026-09-29T08:00:00.000Z",
+    "compounds": [
+      "BPC-157"
+    ],
+    "compoundCategory": "healing",
+    "sentiment": {
+      "label": "negative",
+      "score": -0.41
+    },
     "intent": "side-effect",
-    "vendor": null
+    "vendorMentions": [
+      "ExampleLabs"
+    ],
+    "brandMentions": [],
+    "enriched": true
+  },
+  {
+    "id": "youtube:EXAMPLE0002",
+    "source": "youtube",
+    "sourceUrl": "https://www.example.com/youtube/EXAMPLE0002",
+    "text": "Is it normal to stay on the starting dose longer than a month?",
+    "author": null,
+    "createdAt": "2026-09-29T08:00:00.000Z",
+    "compounds": [
+      "tirzepatide"
+    ],
+    "compoundCategory": "GLP-1",
+    "sentiment": {
+      "label": "neutral",
+      "score": 0.05
+    },
+    "intent": "dosage-question",
+    "vendorMentions": [],
+    "brandMentions": [
+      "Mounjaro"
+    ],
+    "enriched": true
+  },
+  {
+    "id": "reddit:ex1abc",
+    "source": "reddit",
+    "sourceUrl": "https://www.example.com/reddit/ex1abc",
+    "text": "Anyone have lab-tested sources for these two?",
+    "author": null,
+    "createdAt": "2026-09-29T08:00:00.000Z",
+    "compounds": [
+      "TB-500",
+      "BPC-157"
+    ],
+    "compoundCategory": "healing",
+    "sentiment": {
+      "label": "neutral",
+      "score": 0
+    },
+    "intent": "vendor-question",
+    "vendorMentions": [
+      "SampleSource"
+    ],
+    "brandMentions": [],
+    "enriched": true
+  },
+  {
+    "id": "amazon:B0EXAMPLE02",
+    "source": "amazon",
+    "sourceUrl": "https://www.example.com/amazon/B0EXAMPLE02",
+    "text": "Skin texture looks noticeably smoother after six weeks.",
+    "author": null,
+    "createdAt": "2026-09-29T08:00:00.000Z",
+    "compounds": [
+      "GHK-Cu"
+    ],
+    "compoundCategory": "cosmetic",
+    "sentiment": {
+      "label": "positive",
+      "score": 0.55
+    },
+    "intent": "experience-report",
+    "vendorMentions": [
+      "PlaceholderSkin"
+    ],
+    "brandMentions": [],
+    "enriched": true
   }
 ]

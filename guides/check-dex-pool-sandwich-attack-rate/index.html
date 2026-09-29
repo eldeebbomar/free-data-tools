@@ -1,0 +1,221 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>How to Check a DEX Pool's Sandwich Attack Rate (Python + API)</title>
+<meta name="description" content="Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.">
+<link rel="canonical" href="https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to Check a DEX Pool&#39;s Sandwich Attack Rate (Python + API)"><meta property="og:description" content="Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python."><meta property="og:url" content="https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-check-dex-pool-sandwich-attack-rate.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How to Check a DEX Pool&#39;s Sandwich Attack Rate (Python + API)">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="ethereum"><meta property="article:tag" content="defi"><meta property="article:tag" content="python"><meta property="article:tag" content="blockchain">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Check a DEX Pool&#39;s Sandwich Attack Rate (Python + API)"><meta name="twitter:description" content="Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-check-dex-pool-sandwich-attack-rate.jpg"><meta name="twitter:image:alt" content="How to Check a DEX Pool&#39;s Sandwich Attack Rate (Python + API)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/#article","headline":"How to Check a DEX Pool's Sandwich Attack Rate (Python + API)","description":"Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-check-dex-pool-sandwich-attack-rate.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"ethereum, defi, python, blockchain","about":{"@type":"SoftwareApplication","name":"Scan DEX pairs for MEV & sandwich risk","url":"https://datatooly.xyz/mev-pair-scanner-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/#webpage","url":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/","name":"How to Check a DEX Pool's Sandwich Attack Rate (Python + API)","description":"Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-check-dex-pool-sandwich-attack-rate.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"How to Check a DEX Pool's Sandwich Attack Rate (Python + API)","item":"https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/crypto-defi/">Crypto &amp; DeFi</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Crypto &amp; DeFi</span>
+<h1>How to Check a DEX Pool's Sandwich Attack Rate (Python + API)</h1>
+<p class="lede">Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Scan DEX pairs for MEV &amp; sandwich risk</p><p class="gcta-s">Build a ready-to-run query for DEX sandwich attack MEV data — preview the per-pair output shape (sandwich rate, MEV fee ratio, risk level), then run it live.</p><a class="btn btn-primary" href="../../mev-pair-scanner-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>To check a DEX pool&#39;s sandwich attack rate, query its hourly bars from Codex&#39;s GraphQL <code>getBars</code> endpoint. Each bar carries <code>sandwichRate</code> (sandwiched events divided by transactions), <code>mevRiskLevel</code>, and a fee split into gas, builder tips and LP fees. Weight each hour by its transaction count to get the 24-hour rate. A free Codex key covers light use.</p>
+<p>Most &quot;how to detect sandwich attacks&quot; material has you rebuild the detector: pull every swap, group swaps by block, and look for a front-run and a back-run by the same address around a victim. That&#39;s a research project. If you only need to know whether a pool gets sandwiched a lot before you trade on it or provide liquidity to it, an indexer that has already done the detection is much faster.</p>
+<h2 id="the-source-codex-getbars">The source: Codex <code>getBars</code></h2>
+<p><a href="https://www.codex.io/" target="_blank" rel="noopener">Codex</a> is a GraphQL API that indexes DEX trades across more than a hundred networks. Its <code>getBars</code> query returns OHLCV candles for a pair, plus MEV and fee columns for each bar. The field definitions from Codex&#39;s SDK types:</p>
+<ul>
+<li><code>sandwichRate</code>: &quot;Rate of sandwich attacks per transaction (sandwichedEventCount / transactions). Null when no transaction data.&quot;</li>
+<li><code>mevRiskLevel</code>: &quot;low (&lt;3% builder tips), medium (3-30%), or high (&gt;30%)&quot;</li>
+<li><code>mevToTotalFeesRatio</code>: builder tips ÷ total fees</li>
+<li><code>feeRegimeClassification</code>: gas-dominated (gas &gt;50% of fees), mev-dominated (tips &gt;20%), or pool-fee-dominated</li>
+<li><code>totalFees</code> = <code>poolFees + baseFees + priorityFees + builderTips + l1DataFees</code>, all in USD</li>
+</ul>
+<p>Limits worth knowing: you need an API key. Codex&#39;s pricing page currently lists a free plan with 10,000 requests a month at 5 requests per second, after a $1 one-time activation fee. One 24-hour scan of one pool costs one request. The key goes in the <code>Authorization</code> header as-is, with no <code>Bearer</code> prefix.</p>
+<h2 id="runnable-python">Runnable Python</h2>
+<p>This script needs <code>requests</code> and a <code>CODEX_API_KEY</code> environment variable.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import os
+import time
+import requests
+
+CODEX_URL = &quot;https://graph.codex.io/graphql&quot;
+API_KEY = os.environ[&quot;CODEX_API_KEY&quot;]  # secret key, sent WITHOUT &quot;Bearer&quot;
+
+QUERY = &quot;&quot;&quot;
+query Bars($symbol: String!, $from: Int!, $to: Int!, $resolution: String!) {
+  getBars(symbol: $symbol, from: $from, to: $to, resolution: $resolution,
+          removeEmptyBars: true) {
+    t transactions
+    sandwichRate mevRiskLevel mevToTotalFeesRatio feeRegimeClassification
+    totalFees baseFees priorityFees builderTips poolFees l1DataFees
+    pair { address networkId protocol token0Data { symbol } token1Data { symbol } }
+  }
+}
+&quot;&quot;&quot;
+
+
+def f(x):
+    &quot;&quot;&quot;Codex returns numeric fields as strings (or null).&quot;&quot;&quot;
+    return None if x is None else float(x)
+
+
+def sandwich_report(pool_address: str, network_id: int, hours: int = 24) -&gt; dict:
+    now = int(time.time())
+    variables = {
+        &quot;symbol&quot;: f&quot;{pool_address}:{network_id}&quot;,  # POOL address, not token
+        &quot;from&quot;: now - hours * 3600,
+        &quot;to&quot;: now,
+        &quot;resolution&quot;: &quot;60&quot;,  # 1-hour bars
+    }
+    r = requests.post(
+        CODEX_URL,
+        json={&quot;query&quot;: QUERY, &quot;variables&quot;: variables},
+        headers={&quot;Authorization&quot;: API_KEY},
+        timeout=30,
+    )
+    r.raise_for_status()
+    body = r.json()
+    if body.get(&quot;errors&quot;):
+        raise RuntimeError(body[&quot;errors&quot;][0][&quot;message&quot;])
+    b = body[&quot;data&quot;][&quot;getBars&quot;]
+
+    tx = [n or 0 for n in b[&quot;transactions&quot;]]
+    rates = [f(v) for v in b[&quot;sandwichRate&quot;]]
+    # sandwichRate is per bar (sandwiched / transactions). Weight by each
+    # bar's transaction count; a plain mean over-weights quiet hours.
+    sandwiched = sum(r_ * t for r_, t in zip(rates, tx) if r_ is not None)
+    total_tx = sum(t for r_, t in zip(rates, tx) if r_ is not None)
+
+    def total(field):
+        vals = [f(v) for v in (b.get(field) or []) if v is not None]
+        return round(sum(vals), 2) if vals else None  # None = not indexed
+
+    p = b[&quot;pair&quot;]
+    return {
+        &quot;pool&quot;: p[&quot;address&quot;],
+        &quot;pair&quot;: f'{p[&quot;token0Data&quot;][&quot;symbol&quot;]}/{p[&quot;token1Data&quot;][&quot;symbol&quot;]}',
+        &quot;protocol&quot;: p[&quot;protocol&quot;],
+        &quot;bars&quot;: len(b[&quot;t&quot;]),
+        &quot;transactions&quot;: sum(tx),
+        &quot;sandwich_rate_24h&quot;: round(sandwiched / total_tx, 5) if total_tx else None,
+        &quot;est_sandwiched_tx_24h&quot;: round(sandwiched),
+        &quot;mev_risk_by_hour&quot;: b[&quot;mevRiskLevel&quot;],
+        &quot;fees_usd&quot;: {k: total(k) for k in
+                     (&quot;totalFees&quot;, &quot;baseFees&quot;, &quot;priorityFees&quot;,
+                      &quot;builderTips&quot;, &quot;poolFees&quot;, &quot;l1DataFees&quot;)},
+    }
+
+
+if __name__ == &quot;__main__&quot;:
+    # USDC/WETH 0.05% Uniswap v3 pool on Ethereum (network id 1)
+    rep = sandwich_report(&quot;0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640&quot;, 1)
+    for k, v in rep.items():
+        print(f&quot;{k:24} {v}&quot;)</code></pre></div>
+<p>I ran this on 29 September 2026 against that pool, then against the top-volume pools on Solana (network id <code>1399811149</code>) and Base (<code>8453</code>). Each call returned 25 hourly bars. The results show why the per-row caveats below matter: the busiest Solana SOL/USDC pools returned a <code>sandwichRate</code> but <code>null</code> for every fee field, while Ethereum pools returned the full fee breakdown.</p>
+<p>To find pool addresses, Codex&#39;s <code>filterPairs</code> query ranks pairs by <code>volumeUSD24</code> or <code>liquidity</code> on a given network.</p>
+<h2 id="output-fields">Output fields</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sandwich_rate_24h</code></td>
+<td>Sandwiched transactions ÷ transactions, weighted by hour</td>
+<td><code>None</code> if Codex has no transaction data for the pool</td>
+</tr>
+<tr>
+<td><code>est_sandwiched_tx_24h</code></td>
+<td>Approximate count of sandwiched transactions</td>
+<td>Derived from the rate. It is not a list of attacks</td>
+</tr>
+<tr>
+<td><code>mev_risk_by_hour</code></td>
+<td><code>low</code> / <code>medium</code> / <code>high</code> per bar</td>
+<td>Based on builder-tip share of fees, <strong>not</strong> sandwich rate</td>
+</tr>
+<tr>
+<td><code>fees_usd.builderTips</code></td>
+<td>USD paid to block builders (MEV)</td>
+<td><code>None</code> on L2s such as Base, where there&#39;s no builder market</td>
+</tr>
+<tr>
+<td><code>fees_usd.poolFees</code></td>
+<td>LP fees</td>
+<td><code>None</code> on some Solana pools</td>
+</tr>
+<tr>
+<td><code>fees_usd.l1DataFees</code></td>
+<td>L1 data-posting cost</td>
+<td>Only on L2 rollups. <code>None</code> on L1 chains</td>
+</tr>
+</tbody></table></div>
+<h2 id="pitfalls">Pitfalls</h2>
+<ol>
+<li><strong><code>mevRiskLevel</code> is not a sandwich metric.</strong> It measures how much of the pool&#39;s fees go to block builders. In my test, the Ethereum USDC/WETH pool had a sandwich rate of zero while most of its hourly bars were <code>medium</code> MEV risk. Builder tips pay for every kind of MEV, including arbitrage, backruns and liquidations, not just sandwiches. Report both numbers, and don&#39;t use one as a stand-in for the other.</li>
+<li><strong>A token address silently resolves to a pool.</strong> When I passed the WETH token address as the symbol, Codex returned bars for the USDC/WETH 0.05% pool without any error. Always read <code>pair.address</code> from the response to confirm which pool you actually measured.</li>
+<li><strong><code>null</code> means &quot;not indexed&quot;, not zero.</strong> Don&#39;t turn a missing value into a zero, or pools with no data will look perfectly safe. The script keeps <code>None</code> for exactly this reason.</li>
+<li><strong>Numbers are strings.</strong> <code>sandwichRate</code>, every fee field, <code>liquidity</code> and <code>volume</code> come back as decimal strings. <code>transactions</code> is an integer.</li>
+<li><strong>Don&#39;t average the hourly rates without weighting.</strong> Hours with 10 trades and hours with 2,000 trades count equally in a plain mean, and one quiet hour with a single sandwich skews the result. Weight by transactions.</li>
+<li><strong>Case matters off-EVM.</strong> EVM addresses work in any case. Solana base58 addresses are case-sensitive, so never lowercase them.</li>
+<li><strong>Bar limits.</strong> Codex documents a maximum of 1,500 datapoints per <code>getBars</code> request. For long windows at fine resolution, page through time.</li>
+</ol>
+<p>For trade-level history on EVM chains, Dune&#39;s curated <code>dex.sandwiches</code> and <code>dex.sandwiched</code> tables record the attacker and victim legs, and you query them with SQL. That approach suits forensic work. Codex is the quicker option for a live, per-pool check.</p>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/mev-pair-scanner-tool/">MEV pair scanner query builder</a> turns a mode (scan a token&#39;s top pools, scan specific pools, or discover the most MEV-toxic pools on a chain), a chain and a list of addresses into a ready-to-run input. It also shows a fixed example of the output shape. It is a query builder, not a live scanner: it doesn&#39;t call Codex from your browser.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu" target="_blank" rel="noopener">MEV Risk Scanner actor on Apify</a> wraps this query with Codex access included, so you don&#39;t need your own key. It scans up to 20 pools per run across chains, attaches a <code>data_availability</code> map to every row so you can tell nulls from zeros, lists the low-risk hours, and can add an optional one-line AI verdict. You can schedule it for a daily MEV leaderboard. It&#39;s free to start, then pay-as-you-go per pool scanned. One difference from the script above: the actor&#39;s <code>sandwich_rate_24h</code> is a simple average of the hourly values, not a transaction-weighted one.</p>
+<p><em>Disclosure: I built the query builder and the actor. The script above works on its own with a free Codex key.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-a-good-sandwich-rate-for-a-dex-pool">What is a good sandwich rate for a DEX pool?</h3>
+<p>There&#39;s no official benchmark. Compare pools that trade the same pair: a pool whose rate is several times higher than its siblings is the one to avoid or to route through a private RPC. Look at <code>sandwich_rate_24h</code> over several days, not a single snapshot.</p>
+<h3 id="is-there-a-free-api-for-sandwich-attack-data">Is there a free API for sandwich attack data?</h3>
+<p>Codex&#39;s free plan (10,000 requests a month per its pricing page, after a $1 activation fee) includes <code>getBars</code> with <code>sandwichRate</code>. Dune&#39;s <code>dex.sandwiches</code> tables can be queried with SQL on a Dune account. Both are free to start.</p>
+<h3 id="why-is-buildertips-null-on-base-or-arbitrum">Why is <code>builderTips</code> null on Base or Arbitrum?</h3>
+<p>Those L2s don&#39;t have an MEV-builder market like Ethereum mainnet, so there is nothing to report and <code>mevToTotalFeesRatio</code> can&#39;t be computed. L2 fee data shows up in <code>l1DataFees</code> instead.</p>
+<h3 id="why-does-a-solana-pool-return-only-sandwichrate">Why does a Solana pool return only <code>sandwichRate</code>?</h3>
+<p>Codex&#39;s fee indexing is per pool on Solana. In my test, the highest-volume SOL/USDC pools returned sandwich rates but no fee breakdown. Treat the missing fields as unknown.</p>
+<h3 id="does-a-low-sandwich-rate-mean-my-trade-is-safe">Does a low sandwich rate mean my trade is safe?</h3>
+<p>No. It means the pool was rarely sandwiched recently. Your own slippage tolerance and whether your transaction goes through a public mempool matter more. A tight slippage limit and a private RPC reduce the risk no matter which pool you use.</p>
+
+</div>
+<p class="guide-end"><a href="../../mev-pair-scanner-tool/">Open the free Scan DEX pairs for MEV &amp; sandwich risk tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

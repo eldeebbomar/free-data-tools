@@ -1,26 +1,87 @@
 [
   {
-    "role": "Software Engineer",
-    "employer": "Amazon",
+    "type": "salary-distribution",
+    "role": "software engineer",
     "city": "Seattle",
-    "medianSalary": "$165,000",
-    "p25": "$148,000",
-    "p75": "$190,000"
+    "state": "WA",
+    "count": 5120,
+    "p10Salary": 118000,
+    "p25Salary": 136000,
+    "medianSalary": 158000,
+    "p75Salary": 182000,
+    "p90Salary": 210000,
+    "topEmployer": "Example Cloud Inc.",
+    "visaTypeBreakdown": {
+      "H-1B": 5120
+    },
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "role": "Data Scientist",
-    "employer": "Meta",
-    "city": "Menlo Park",
-    "medianSalary": "$182,000",
-    "p25": "$160,000",
-    "p75": "$205,000"
+    "type": "salary-distribution",
+    "role": "software engineer",
+    "city": "San Jose",
+    "state": "CA",
+    "count": 6840,
+    "p10Salary": 125000,
+    "p25Salary": 145000,
+    "medianSalary": 170000,
+    "p75Salary": 196000,
+    "p90Salary": 228000,
+    "topEmployer": "Placeholder Semiconductor Corp",
+    "visaTypeBreakdown": {
+      "H-1B": 6840
+    },
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "role": "Product Manager",
-    "employer": "Google",
-    "city": "Mountain View",
-    "medianSalary": "$198,000",
-    "p25": "$172,000",
-    "p75": "$225,000"
+    "type": "salary-distribution",
+    "role": "software engineer",
+    "city": "Austin",
+    "state": "TX",
+    "count": 2210,
+    "p10Salary": 98000,
+    "p25Salary": 114000,
+    "medianSalary": 135000,
+    "p75Salary": 158000,
+    "p90Salary": 184000,
+    "topEmployer": "Sample Devices LLC",
+    "visaTypeBreakdown": {
+      "H-1B": 2210
+    },
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "type": "salary-distribution",
+    "role": "software engineer",
+    "city": "New York",
+    "state": "NY",
+    "count": 3975,
+    "p10Salary": 112000,
+    "p25Salary": 131000,
+    "medianSalary": 155000,
+    "p75Salary": 182000,
+    "p90Salary": 215000,
+    "topEmployer": "Demo Financial Technologies",
+    "visaTypeBreakdown": {
+      "H-1B": 3975
+    },
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "type": "salary-distribution",
+    "role": "software engineer",
+    "city": "Chicago",
+    "state": "IL",
+    "count": 1480,
+    "p10Salary": 95000,
+    "p25Salary": 108000,
+    "medianSalary": 126000,
+    "p75Salary": 147000,
+    "p90Salary": 170000,
+    "topEmployer": "Acme Logistics Software",
+    "visaTypeBreakdown": {
+      "H-1B": 1480
+    },
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

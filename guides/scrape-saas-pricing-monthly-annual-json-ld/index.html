@@ -1,0 +1,275 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD</title>
+<meta name="description" content="Get both sides of a SaaS pricing page&#39;s monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.">
+<link rel="canonical" href="https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD"><meta property="og:description" content="Get both sides of a SaaS pricing page&#39;s monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule."><meta property="og:url" content="https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-scrape-saas-pricing-monthly-annual-json-ld.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="saas"><meta property="article:tag" content="json">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD"><meta name="twitter:description" content="Get both sides of a SaaS pricing page&#39;s monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-scrape-saas-pricing-monthly-annual-json-ld.jpg"><meta name="twitter:image:alt" content="Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/#article","headline":"Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD","description":"Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-scrape-saas-pricing-monthly-annual-json-ld.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, webscraping, saas, json","about":{"@type":"SoftwareApplication","name":"Track SaaS pricing & plan changes","url":"https://datatooly.xyz/saas-pricing-tracker-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/#webpage","url":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/","name":"Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD","description":"Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-scrape-saas-pricing-monthly-annual-json-ld.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD","item":"https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/saas-seo/">SaaS &amp; SEO</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · SaaS &amp; SEO</span>
+<h1>Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD</h1>
+<p class="lede">Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Track SaaS pricing &amp; plan changes</p><p class="gcta-s">Build a ready-to-run query to track competitor SaaS pricing and plan changes. Preview the structured output shape, then run it live on Apify. Free to start.</p><a class="btn btn-primary" href="../../saas-pricing-tracker-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>To scrape both the monthly and the annual price from a SaaS pricing page without clicking the billing toggle, check the page&#39;s JSON-LD first. Many pricing pages embed schema.org <code>Offer</code> objects whose <code>priceSpecification</code> lists one <code>UnitPriceSpecification</code> per billing period: <code>unitCode: &quot;MON&quot;</code> or <code>&quot;ANN&quot;</code>, or <code>billingDuration: &quot;P1M&quot;</code> or <code>&quot;P1Y&quot;</code>. One plain HTTP request gets you both numbers.</p>
+<p>When the JSON-LD is missing, or names the plans without prices, the numbers are rendered client-side and you need a browser. This guide covers the fast path, a working extractor, a diff for change alerts, and the traps in how vendors mark prices up.</p>
+<h2 id="why-the-toggle-is-the-hard-part">Why the toggle is the hard part</h2>
+<p>A pricing page usually shows one billing period at a time. The other set of prices is either hidden in the DOM (a <code>display:none</code> twin, or a <code>data-annual-price</code> attribute), fetched by JavaScript when you flip the switch, or baked into structured data for search engines. Scraping the visible cards gets you whichever period the page defaults to. Clicking the toggle means running a browser.</p>
+<p>Structured data sidesteps both. It&#39;s there for Google&#39;s rich results, so it tends to be complete, machine-readable, and in the raw HTML.</p>
+<h2 id="what-real-pages-expose">What real pages expose</h2>
+<p>I fetched a handful of well-known pricing pages with a plain HTTP client on 29 September 2026 and ran the extractor below on each:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Page</th>
+<th>JSON-LD offers</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>monday.com/pricing</code></td>
+<td>16</td>
+<td>Plan names with separate <code>MON</code> and <code>ANN</code> unit prices, per product line</td>
+</tr>
+<tr>
+<td><code>calendly.com/pricing</code></td>
+<td>8</td>
+<td>Plan prices in USD, GBP and EUR, marked <code>billingDuration: &quot;P1Y&quot;</code></td>
+</tr>
+<tr>
+<td><code>zapier.com/pricing</code></td>
+<td>4</td>
+<td>Plan names; only the free plan carries a price</td>
+</tr>
+<tr>
+<td><code>slack.com/pricing</code></td>
+<td>0</td>
+<td>Nothing in JSON-LD. Prices are rendered client-side.</td>
+</tr>
+</tbody></table></div>
+<p>So this is a fast path, not a universal one. Where it works it&#39;s cheap and exact. Where it doesn&#39;t, the page is telling you it needs a browser.</p>
+<h2 id="runnable-python-extract-offers-and-billing-periods">Runnable Python: extract offers and billing periods</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import json, re, sys, requests
+
+UA = &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36&quot;
+LD_RE = re.compile(r'&lt;script[^&gt;]*type=&quot;application/ld\+json&quot;[^&gt;]*&gt;(.*?)&lt;/script&gt;', re.S | re.I)
+
+def walk(node, product=None):
+    &quot;&quot;&quot;Yield (product_name, offer) for every Offer anywhere in a JSON-LD tree.&quot;&quot;&quot;
+    if isinstance(node, list):
+        for n in node:
+            yield from walk(n, product)
+    elif isinstance(node, dict):
+        types = node.get(&quot;@type&quot;)
+        types = types if isinstance(types, list) else [types]
+        if &quot;Offer&quot; in types:
+            yield product, node
+            return
+        name = node.get(&quot;name&quot;) if {&quot;Product&quot;, &quot;SoftwareApplication&quot;} &amp; set(types) else product
+        for v in node.values():
+            yield from walk(v, name)
+
+def period(spec):
+    &quot;&quot;&quot;Map a UnitPriceSpecification to 'monthly' | 'annual' | None.&quot;&quot;&quot;
+    unit = str(spec.get(&quot;unitCode&quot;, &quot;&quot;)).upper()
+    dur = str(spec.get(&quot;billingDuration&quot;, &quot;&quot;)).upper()
+    if unit == &quot;MON&quot; or dur == &quot;P1M&quot;:
+        return &quot;monthly&quot;
+    if unit == &quot;ANN&quot; or dur == &quot;P1Y&quot;:
+        return &quot;annual&quot;
+    return None
+
+def to_num(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return None
+
+def extract(url):
+    html = requests.get(url, headers={&quot;User-Agent&quot;: UA, &quot;Accept-Language&quot;: &quot;en-US,en;q=0.9&quot;}, timeout=30).text
+    plans = []
+    for block in LD_RE.findall(html):
+        try:
+            data = json.loads(block)
+        except ValueError:
+            continue
+        for product, offer in walk(data):
+            row = {&quot;product&quot;: product, &quot;plan&quot;: offer.get(&quot;name&quot;), &quot;currency&quot;: offer.get(&quot;priceCurrency&quot;),
+                   &quot;price&quot;: to_num(offer.get(&quot;price&quot;)), &quot;monthly&quot;: None, &quot;annual&quot;: None}
+            specs = offer.get(&quot;priceSpecification&quot;) or []
+            for spec in specs if isinstance(specs, list) else [specs]:
+                p = period(spec)
+                if p:
+                    row[p] = to_num(spec.get(&quot;price&quot;))
+                    row[&quot;currency&quot;] = row[&quot;currency&quot;] or spec.get(&quot;priceCurrency&quot;)
+            plans.append(row)
+    return plans
+
+if __name__ == &quot;__main__&quot;:
+    for url in sys.argv[1:]:
+        plans = extract(url)
+        print(f&quot;\n{url}: {len(plans)} offers in JSON-LD&quot;)
+        for p in plans[:8]:
+            print(&quot;  &quot;, p)</code></pre></div>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">pip install requests
+python pricing_ld.py https://monday.com/pricing https://calendly.com/pricing</code></pre></div>
+<p>On monday.com, captured on the date above, the first rows looked like this: both toggle states in one fetch.</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">{'product': 'monday.com Work Management', 'plan': 'Free', 'currency': 'USD', 'price': 0.0, 'monthly': None, 'annual': None}
+{'product': 'monday.com Work Management', 'plan': 'Basic', 'currency': 'USD', 'price': None, 'monthly': 12.0, 'annual': 9.0}
+{'product': 'monday.com Work Management', 'plan': 'Standard', 'currency': 'USD', 'price': None, 'monthly': 14.0, 'annual': 12.0}</code></pre></div>
+<p>Prices change, so treat those numbers as a snapshot of the markup, not current pricing.</p>
+<h2 id="turn-it-into-a-change-alert">Turn it into a change alert</h2>
+<p>Save each run&#39;s rows and compare them with the previous run&#39;s on structured fields. A diff of raw HTML fires on every rotating testimonial and build hash. A diff of plan rows fires only when a plan or a price moves.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import json, pathlib
+from pricing_ld import extract
+
+def key(p):
+    return (p[&quot;product&quot;], p[&quot;plan&quot;], p[&quot;currency&quot;])
+
+def diff(old, new):
+    old_by, new_by = {key(p): p for p in old}, {key(p): p for p in new}
+    changes = []
+    for k in old_by.keys() - new_by.keys():
+        changes.append((&quot;plan_removed&quot;, k))
+    for k in new_by.keys() - old_by.keys():
+        changes.append((&quot;plan_added&quot;, k))
+    for k in old_by.keys() &amp; new_by.keys():
+        for field in (&quot;price&quot;, &quot;monthly&quot;, &quot;annual&quot;):
+            a, b = old_by[k][field], new_by[k][field]
+            if a is not None and b is not None and a != b:
+                changes.append((&quot;price_increase&quot; if b &gt; a else &quot;price_decrease&quot;, k, field, a, b))
+    return changes
+
+url = &quot;https://monday.com/pricing&quot;
+snap = pathlib.Path(&quot;monday.snapshot.json&quot;)
+current = extract(url)
+if snap.exists():
+    for c in diff(json.loads(snap.read_text()), current):
+        print(c)
+snap.write_text(json.dumps(current, indent=2))
+print(f&quot;saved {len(current)} offers&quot;)</code></pre></div>
+<p>To test it, edit one price in the snapshot file by hand and run it again. You&#39;ll get a line like <code>(&#39;price_increase&#39;, (&#39;monday.com Work Management&#39;, &#39;Basic&#39;, &#39;USD&#39;), &#39;monthly&#39;, 10.0, 12.0)</code>. Pipe those lines to Slack or email and you have a pricing-change monitor.</p>
+<h2 id="field-reference-the-schema-org-keys-that-matter">Field reference: the schema.org keys that matter</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Where</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@type: &quot;Offer&quot;</code></td>
+<td>anywhere in the tree, often under <code>Product.offers</code> or <code>@graph</code></td>
+<td>One plan, or one plan in one currency</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Offer</td>
+<td>Plan name, sometimes with a currency suffix, like &quot;Standard Plan (USD)&quot;</td>
+</tr>
+<tr>
+<td><code>price</code>, <code>priceCurrency</code></td>
+<td>Offer</td>
+<td>A single headline price</td>
+</tr>
+<tr>
+<td><code>priceSpecification</code></td>
+<td>Offer</td>
+<td>An object <strong>or a list</strong> of <code>UnitPriceSpecification</code></td>
+</tr>
+<tr>
+<td><code>unitCode</code></td>
+<td>spec</td>
+<td>UN/CEFACT unit: <code>MON</code> = month, <code>ANN</code> = year</td>
+</tr>
+<tr>
+<td><code>billingDuration</code></td>
+<td>spec</td>
+<td>ISO 8601 duration: <code>P1M</code> monthly, <code>P1Y</code> yearly</td>
+</tr>
+<tr>
+<td><code>unitText</code></td>
+<td>spec</td>
+<td>Free text such as &quot;seat/month&quot;. Read it before comparing.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Offer or spec</td>
+<td>Often says &quot;per seat, billed annually&quot;</td>
+</tr>
+</tbody></table></div>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li><strong><code>price: 0</code> doesn&#39;t always mean free.</strong> Calendly&#39;s Enterprise offer carries <code>price: &quot;0&quot;</code> with <code>unitText: &quot;yr&quot;</code>. That&#39;s a contact-sales placeholder. Treat a zero as free only when the plan name or description agrees.</li>
+<li><strong>An annual spec is usually a per-month rate.</strong> <code>billingDuration: &quot;P1Y&quot;</code> alongside <code>unitText: &quot;seat/month&quot;</code> means &quot;per seat per month, billed yearly&quot;, not a yearly total. Normalize units before you compare vendors.</li>
+<li><strong>One page, several currencies.</strong> Calendly lists USD, GBP and EUR offers side by side. Key your diff on currency too, as the script does, or a GBP row will look like a price change.</li>
+<li><strong>Names without prices.</strong> Zapier&#39;s JSON-LD lists paid plans with no price. The numbers load client-side, so you need browser rendering for those pages.</li>
+<li><strong>Location changes the answer.</strong> Many vendors localize currency and price by IP or <code>Accept-Language</code>. Fetch from one consistent location, or you&#39;ll diff geography instead of pricing.</li>
+<li><strong>Structured data can lag the page.</strong> It&#39;s SEO markup, and it can go stale after a redesign. Spot-check it against the visible cards now and then.</li>
+<li><strong>Be polite.</strong> Public pricing pages are meant to be read, but check the site&#39;s terms and robots.txt, and fetch each page on a schedule measured in hours or days, not seconds.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/saas-pricing-tracker-tool/">SaaS pricing tracker query builder</a> takes competitor homepage or pricing URLs and builds a ready-to-run input with pricing-page discovery and change detection switched on, plus a fixed example of the output shape. It&#39;s a query builder: it doesn&#39;t fetch live prices in your browser.</p>
+<h2 id="at-scale">At scale</h2>
+<p><a href="https://apify.com/constructive_calm/saas-pricing-tracker?fpr=v77kxu" target="_blank" rel="noopener">SaaS Pricing &amp; Feature Tracker on Apify</a> handles the pages that JSON-LD doesn&#39;t cover. It finds the pricing page from a homepage, tries structured data, comparison tables and plan cards, and keeps the most confident result. It reads monthly and annual prices from data attributes and hidden toggle elements, falls back to a real browser for client-rendered pages, and can use AI vision when extraction comes back incomplete. Each plan gets <code>priceMonthly</code>, <code>priceAnnualPerMonth</code>, <code>currency</code>, <code>features</code> and <code>isEnterprise</code>, plus an <code>extractionConfidence</code> rating. With a named dataset, scheduled runs flag added or removed plans, price moves and feature changes, and can POST them to a webhook. A <code>country</code> input sets which market&#39;s prices you see. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I built the query builder and the actor. The scripts above work on their own.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-do-i-scrape-both-monthly-and-annual-prices-from-a-pricing-page">How do I scrape both monthly and annual prices from a pricing page?</h3>
+<p>Look for schema.org <code>Offer</code> JSON-LD first. If <code>priceSpecification</code> holds one entry with <code>unitCode: &quot;MON&quot;</code> and one with <code>&quot;ANN&quot;</code> (or <code>billingDuration</code> <code>P1M</code> and <code>P1Y</code>), you have both prices from a single request. Otherwise, read the hidden toggle elements or render the page and click the toggle.</p>
+<h3 id="do-i-need-selenium-or-playwright-to-scrape-saas-pricing">Do I need Selenium or Playwright to scrape SaaS pricing?</h3>
+<p>Only for pages that render prices with JavaScript. If the raw HTML carries priced <code>Offer</code> JSON-LD, <code>requests</code> is enough. If the JSON-LD is missing or has plan names without prices, you need a browser.</p>
+<h3 id="how-can-i-get-alerted-when-a-competitor-changes-its-pricing">How can I get alerted when a competitor changes its pricing?</h3>
+<p>Store each run&#39;s plan rows and diff them against the previous run on plan name, currency and price fields, then send any changes to Slack, email or a webhook. Diffing structured rows avoids the false alarms that raw-HTML diffs produce.</p>
+<h3 id="why-does-the-scraped-price-differ-from-what-i-see-in-my-browser">Why does the scraped price differ from what I see in my browser?</h3>
+<p>Usually location or currency: many vendors localize by IP and browser language. It can also be stale JSON-LD, or a per-seat monthly rate being compared against a yearly total. Check <code>unitText</code> and <code>billingDuration</code>.</p>
+<h3 id="is-it-legal-to-scrape-competitor-pricing-pages">Is it legal to scrape competitor pricing pages?</h3>
+<p>Pricing pages are published for anyone to read, but legality depends on your jurisdiction and the site&#39;s terms. Collect only public pricing, respect robots.txt and the terms, keep request rates low, and ask counsel for anything commercial at scale.</p>
+
+</div>
+<p class="guide-end"><a href="../../saas-pricing-tracker-tool/">Open the free Track SaaS pricing &amp; plan changes tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

@@ -1,0 +1,96 @@
+[
+  {
+    "profileUrl": "https://linkedin.example.com/in/jane-example-rn",
+    "slug": "jane-example-rn",
+    "name": "Jane Example",
+    "headline": "Registered Nurse - ICU at Example Health Hospital",
+    "currentTitle": "Registered Nurse - ICU",
+    "currentCompany": "Example Health Hospital",
+    "location": { "raw": "Dubai, United Arab Emirates", "normalized": "Dubai, United Arab Emirates", "countryCode": "AE" },
+    "locationConfidence": "exact",
+    "snippet": "Registered Nurse - ICU at Example Health Hospital · Experience: Example Health Hospital · Location: Dubai · 300 connections...",
+    "enriched": true,
+    "about": "Critical-care nurse with eight years of ICU experience (fictional sample profile).",
+    "workHistory": [
+      { "company": "Example Health Hospital", "companyLinkedInUrl": "https://linkedin.example.com/company/example-health", "title": null, "startDate": null, "endDate": null, "isCurrent": true }
+    ],
+    "education": [
+      { "school": "Example University of Nursing", "degree": "B.Sc. Nursing", "startYear": 2012, "endYear": 2016 }
+    ],
+    "followers": 310,
+    "connections": 300,
+    "_meta": { "query": "site:linkedin.com/in \"Registered Nurse\" \"Dubai\"", "queryOrigin": "seed", "rank": 1, "freshnessWindow": "any", "fetchedAt": "2026-09-29T08:00:00.000Z", "enrichAttempts": 1, "enrichFailureReason": null }
+  },
+  {
+    "profileUrl": "https://linkedin.example.com/in/omar-sample",
+    "slug": "omar-sample",
+    "name": "Omar Sample",
+    "headline": "ICU Staff Nurse | BLS & ACLS certified",
+    "currentTitle": null,
+    "currentCompany": "Sample Medical Centre",
+    "location": { "raw": "Abu Dhabi, United Arab Emirates", "normalized": "Abu Dhabi, United Arab Emirates", "countryCode": "AE" },
+    "locationConfidence": "exact",
+    "snippet": "ICU Staff Nurse | BLS & ACLS certified · Experience: Sample Medical Centre · Location: Abu Dhabi...",
+    "enriched": true,
+    "about": null,
+    "workHistory": [
+      { "company": "Sample Medical Centre", "companyLinkedInUrl": null, "title": null, "startDate": null, "endDate": null, "isCurrent": true }
+    ],
+    "education": [],
+    "followers": 145,
+    "connections": 140,
+    "_meta": { "query": "site:linkedin.com/in \"ICU Nurse\" \"Abu Dhabi\"", "queryOrigin": "synonym", "rank": 4, "freshnessWindow": "any", "fetchedAt": "2026-09-29T08:00:05.000Z", "enrichAttempts": 1, "enrichFailureReason": null }
+  },
+  {
+    "profileUrl": "https://linkedin.example.com/in/priya-placeholder",
+    "slug": "priya-placeholder",
+    "name": "Priya Placeholder",
+    "headline": "Staff Nurse at Placeholder Hospital | Open to opportunities in Dubai",
+    "currentTitle": "Staff Nurse",
+    "currentCompany": "Placeholder Hospital",
+    "location": { "raw": "Kochi, Kerala, India", "normalized": "Kochi, Kerala, India", "countryCode": "IN" },
+    "locationConfidence": "mentioned",
+    "snippet": "Staff Nurse at Placeholder Hospital | Open to opportunities in Dubai · Location: Kochi...",
+    "enriched": false,
+    "_meta": { "query": "site:linkedin.com/in \"Registered Nurse\" \"Dubai\"", "queryOrigin": "seed", "rank": 7, "freshnessWindow": "any", "fetchedAt": "2026-09-29T08:00:09.000Z", "enrichAttempts": 5, "enrichFailureReason": "login_walled" }
+  },
+  {
+    "profileUrl": "https://linkedin.example.com/in/alex-demo-talent",
+    "slug": "alex-demo-talent",
+    "name": "Alex Demo",
+    "headline": "Head of Talent at Demo Software Ltd",
+    "currentTitle": "Head of Talent",
+    "currentCompany": "Demo Software Ltd",
+    "location": { "raw": "London, England, United Kingdom", "normalized": "London, England, United Kingdom", "countryCode": "GB" },
+    "locationConfidence": "exact",
+    "snippet": "Head of Talent at Demo Software Ltd · Location: London...",
+    "enriched": false,
+    "_meta": { "query": "site:linkedin.com/in \"Head of Talent\" \"London\"", "queryOrigin": "seed", "rank": 2, "freshnessWindow": "past_week", "fetchedAt": "2026-09-29T08:01:00.000Z" }
+  },
+  {
+    "profileUrl": "https://linkedin.example.com/in/sam-testcase",
+    "slug": "sam-testcase",
+    "name": "Sam Testcase",
+    "headline": "Talent Acquisition Manager | Hiring engineers across the UK",
+    "currentTitle": null,
+    "currentCompany": null,
+    "location": { "raw": "Manchester, England, United Kingdom", "normalized": "Manchester, England, United Kingdom", "countryCode": "GB" },
+    "locationConfidence": "exact",
+    "snippet": "Talent Acquisition Manager | Hiring engineers across the UK · Location: Manchester...",
+    "enriched": false,
+    "_meta": { "query": "site:linkedin.com/in \"Talent Acquisition Manager\" \"Manchester\"", "queryOrigin": "seed", "rank": 5, "freshnessWindow": "past_week", "fetchedAt": "2026-09-29T08:01:04.000Z" }
+  },
+  {
+    "profileUrl": "https://linkedin.example.com/in/maria-muster",
+    "slug": "maria-muster",
+    "name": "Maria Muster",
+    "headline": "Backend Engineer at Beispiel GmbH",
+    "currentTitle": "Backend Engineer",
+    "currentCompany": "Beispiel GmbH",
+    "location": { "raw": "Berlin, Berlin, Deutschland", "normalized": "Berlin, Germany", "countryCode": "DE" },
+    "locationConfidence": "exact",
+    "snippet": "Backend Engineer at Beispiel GmbH · Location: Berlin...",
+    "enriched": false,
+    "_meta": { "query": "site:linkedin.com/in \"Backend Engineer\" \"Berlin\" -recruiter -hiring", "queryOrigin": "raw", "rank": 3, "freshnessWindow": "any", "fetchedAt": "2026-09-29T08:02:00.000Z" }
+  }
+]

@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>The SEC EDGAR API: A Practical Guide to Free Filing Data in Python</title>
+<meta name="description" content="A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.">
+<link rel="canonical" href="https://datatooly.xyz/guides/sec-edgar-api-python-guide/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="The SEC EDGAR API: A Practical Guide to Free Filing Data in Python"><meta property="og:description" content="A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python."><meta property="og:url" content="https://datatooly.xyz/guides/sec-edgar-api-python-guide/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-sec-edgar-api-python-guide.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The SEC EDGAR API: A Practical Guide to Free Filing Data in Python">
+<meta property="article:published_time" content="2026-06-13"><meta property="article:modified_time" content="2026-06-13"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="finance"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The SEC EDGAR API: A Practical Guide to Free Filing Data in Python"><meta name="twitter:description" content="A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-sec-edgar-api-python-guide.jpg"><meta name="twitter:image:alt" content="The SEC EDGAR API: A Practical Guide to Free Filing Data in Python">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/#article","headline":"The SEC EDGAR API: A Practical Guide to Free Filing Data in Python","description":"A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-13","dateModified":"2026-06-13","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-sec-edgar-api-python-guide.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, finance, datascience","about":{"@type":"SoftwareApplication","name":"Search SEC EDGAR filings, financials & insider trades","url":"https://datatooly.xyz/sec-edgar-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/#webpage","url":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/","name":"The SEC EDGAR API: A Practical Guide to Free Filing Data in Python","description":"A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/#breadcrumb"},"dateModified":"2026-06-13","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-sec-edgar-api-python-guide.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/#article"},"datePublished":"2026-06-13"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"The SEC EDGAR API: A Practical Guide to Free Filing Data in Python","item":"https://datatooly.xyz/guides/sec-edgar-api-python-guide/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/finance-filings/">Finance &amp; Filings</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Finance &amp; Filings</span>
+<h1>The SEC EDGAR API: A Practical Guide to Free Filing Data in Python</h1>
+<p class="lede">A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.</p>
+<p class="updated">Published <time datetime="2026-06-13">June 13, 2026</time> · Updated <time datetime="2026-06-13">June 13, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Search SEC EDGAR filings, financials &amp; insider trades</p><p class="gcta-s">Build a ready-to-run SEC EDGAR API query for filings, XBRL financials &amp; insider trades by ticker, preview the output shape, then run it live on the actor.</p><a class="btn btn-primary" href="../../sec-edgar-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>The <strong>SEC EDGAR API</strong> is one of the best-kept secrets in financial data engineering: every mandatory disclosure filed by every U.S. public company, available as clean JSON, for free, with no API key. If you&#39;ve ever paid for a &quot;fundamentals&quot; data vendor or scraped a brokerage page for a balance sheet, you&#39;ve been working harder than you need to. The raw, authoritative source — quarterly revenue, insider trades, institutional holdings, 8-K event filings — is sitting on <code>data.sec.gov</code> waiting for an HTTP GET.</p>
+<p>The catch is small but absolute, and it trips up almost everyone on their first request. Let&#39;s walk through how the API actually works, write a correct, runnable Python example, and cover the one rule that will get your IP blocked if you ignore it.</p>
+<h2 id="what-the-sec-edgar-api-actually-is">What &quot;the SEC EDGAR API&quot; actually is</h2>
+<p>There isn&#39;t a single endpoint. &quot;The SEC EDGAR API&quot; is really three free public services that work together:</p>
+<ol>
+<li><strong>The structured data API</strong> (<code>data.sec.gov</code>) — JSON endpoints for company submissions and XBRL financial facts.</li>
+<li><strong>Full-text search</strong> (<code>efts.sec.gov</code>) — a keyword search index over the text of every filing submitted since 2001, including exhibits.</li>
+<li><strong>The ticker map</strong> (<code>company_tickers.json</code>) — a small file that maps stock tickers and company names to the internal IDs the other two services require.</li>
+</ol>
+<p>None of them require registration or an API key. All of them require one HTTP header. We&#39;ll get to that.</p>
+<h2 id="the-cik-edgar-s-primary-key">The CIK: EDGAR&#39;s primary key</h2>
+<p>EDGAR doesn&#39;t index companies by ticker. It uses a <strong>Central Index Key (CIK)</strong> — a unique integer assigned to every filer. Apple&#39;s CIK is <code>320193</code>.</p>
+<p>Two things bite people here:</p>
+<ul>
+<li>You need to translate a ticker (<code>AAPL</code>) into a CIK before you can call most endpoints. That&#39;s what <code>company_tickers.json</code> is for.</li>
+<li>In API URLs, the CIK <strong>must be zero-padded to exactly 10 digits</strong>. Apple&#39;s <code>320193</code> becomes <code>CIK0000320193</code>. Pass the un-padded number and you&#39;ll get a 404.</li>
+</ul>
+<p>This is the single most common silent failure when getting started, so bake the padding into a helper and never think about it again.</p>
+<h2 id="the-one-rule-declare-a-user-agent-or-get-a-403">The one rule: declare a User-Agent or get a 403</h2>
+<p>The SEC enforces a <strong>fair-access policy</strong>. Every request must include a <code>User-Agent</code> header that identifies who you are, and the policy asks for a contact — typically your name and email. Send a request without it, or with a generic library default, and EDGAR returns <strong>403 Forbidden</strong> and may block your IP for roughly ten minutes.</p>
+<p>I confirmed this the hard way while researching this article: an automated fetch of an SEC documentation page with no declared User-Agent came straight back as <code>403 Forbidden</code>. That&#39;s not an edge case — it&#39;s the designed behavior.</p>
+<p>This rule has a subtle, important consequence: <strong>a normal web browser cannot consume these endpoints directly.</strong> Browser JavaScript is forbidden by the Fetch spec from setting the <code>User-Agent</code> header — it&#39;s a &quot;forbidden header name.&quot; So a pure in-browser tool physically cannot make a compliant request to <code>data.sec.gov</code>. Any browser-based EDGAR helper is therefore a <em>query builder</em> or <em>preview</em> — it constructs the right URL for you to run server-side — not a live in-browser fetcher. Keep that distinction in mind; it matters when you choose tooling later.</p>
+<p>The other half of fair access is a <strong>rate limit of 10 requests per second</strong> per IP. Exceed it and you&#39;ll see <code>429</code> responses and, again, a temporary block. A simple <code>time.sleep(0.1)</code> between calls, or capping yourself a little lower at ~8/s, keeps you safely compliant.</p>
+<h2 id="a-correct-runnable-python-example">A correct, runnable Python example</h2>
+<p>Here&#39;s an end-to-end script: resolve a ticker to a CIK, zero-pad it, and pull a specific financial concept (annual revenue) from the XBRL <code>companyconcept</code> endpoint. It uses only the standard <code>requests</code> library and follows every fair-access rule.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import time
+import requests
+
+# Identify yourself. The SEC fair-access policy requires a descriptive
+# User-Agent with a contact. Use your real app name + email.
+HEADERS = {&quot;User-Agent&quot;: &quot;edgar-demo/1.0 (you@example.com)&quot;}
+
+def get_ticker_cik_map():
+    &quot;&quot;&quot;Download the official ticker -&gt; CIK map.&quot;&quot;&quot;
+    url = &quot;https://www.sec.gov/files/company_tickers.json&quot;
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    # Keys are arbitrary indices; each value has cik_str, ticker, title.
+    return {row[&quot;ticker&quot;].upper(): row[&quot;cik_str&quot;] for row in resp.json().values()}
+
+def cik_padded(cik_int):
+    &quot;&quot;&quot;EDGAR requires the CIK zero-padded to 10 digits.&quot;&quot;&quot;
+    return f&quot;CIK{int(cik_int):010d}&quot;
+
+def get_concept(cik_int, concept, taxonomy=&quot;us-gaap&quot;):
+    &quot;&quot;&quot;Fetch one XBRL concept (e.g. Revenues) for a company.&quot;&quot;&quot;
+    url = (
+        f&quot;https://data.sec.gov/api/xbrl/companyconcept/&quot;
+        f&quot;{cik_padded(cik_int)}/{taxonomy}/{concept}.json&quot;
+    )
+    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    return resp.json()
+
+if __name__ == &quot;__main__&quot;:
+    tickers = get_ticker_cik_map()
+    cik = tickers[&quot;AAPL&quot;]
+    print(f&quot;AAPL CIK: {cik} -&gt; {cik_padded(cik)}&quot;)
+
+    time.sleep(0.1)  # stay under 10 req/s
+
+    data = get_concept(cik, &quot;RevenueFromContractWithCustomerExcludingAssessedTax&quot;)
+
+    # Print annual (10-K) USD figures.
+    for unit in data[&quot;units&quot;][&quot;USD&quot;]:
+        if unit.get(&quot;form&quot;) == &quot;10-K&quot; and unit.get(&quot;fp&quot;) == &quot;FY&quot;:
+            print(unit[&quot;fy&quot;], unit[&quot;frame&quot;] if &quot;frame&quot; in unit else &quot;&quot;,
+                  f&quot;${unit['val']:,}&quot;)</code></pre></div>
+<p>Two things to notice. First, the <code>User-Agent</code> is doing real work — remove it and every call 403s. Second, XBRL concepts are <em>specific</em>: revenue under modern US-GAAP is usually tagged <code>RevenueFromContractWithCustomerExcludingAssessedTax</code>, not a friendly <code>Revenue</code>. Discovering the right tag for each company is part of the job.</p>
+<h2 id="the-other-endpoints-worth-knowing">The other endpoints worth knowing</h2>
+<p>Once you&#39;re past authentication, the API surface is broad:</p>
+<ul>
+<li><strong>Submissions</strong> — <code>https://data.sec.gov/submissions/CIK##########.json</code> returns a company&#39;s filing history: every form type, accession number, and date. This is your entry point for &quot;list all 10-Ks for this company.&quot;</li>
+<li><strong>Company facts</strong> — <code>https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json</code> returns <em>all</em> XBRL facts for a company in one call. Heavy, but great for bulk extraction.</li>
+<li><strong>Frames</strong> — <code>https://data.sec.gov/api/xbrl/frames/us-gaap/{CONCEPT}/{UNIT}/CY{YEAR}.json</code> flips the axis: one concept across <em>every</em> company for a period. Perfect for cross-sectional analysis (&quot;every filer&#39;s 2024 revenue&quot;).</li>
+<li><strong>Full-text search</strong> — <code>https://efts.sec.gov/LATEST/search-index?q=...</code> searches the text of all filings since 2001 by keyword, with filters for form type, date range, and entity. No key, same User-Agent rule.</li>
+</ul>
+<h2 id="where-it-gets-hard-and-where-a-tool-helps">Where it gets hard (and where a tool helps)</h2>
+<p>The endpoints are free and well-documented, but turning them into a usable dataset is more work than a single GET. Real projects hit:</p>
+<ul>
+<li><strong>XBRL tag archaeology</strong> — companies use different, sometimes deprecated, tags for the same concept across years.</li>
+<li><strong>Form-specific parsing</strong> — Form 4 (insider trades), Form 13F (institutional holdings), and 8-K item codes each have their own nested structures and quirks.</li>
+<li><strong>Pagination, rate-limit backoff, and ticker resolution</strong> plumbing you rewrite on every project.</li>
+<li><strong>The browser problem</strong> — you can&#39;t prototype a live query from a web UI because of the User-Agent restriction.</li>
+</ul>
+<p>If you want to <em>design</em> a query before you write the plumbing, a free <strong><a href="https://datatooly.xyz/sec-edgar-search/">SEC EDGAR query builder</a></strong> lets you assemble the right endpoint and parameters and preview the request shape. Because of the User-Agent rule above, it builds and previews the query — it does not execute a live fetch in your browser; you run the generated request server-side.</p>
+<p>When you&#39;d rather skip the plumbing entirely, the <strong><a href="https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu" target="_blank" rel="noopener">SEC EDGAR Scraper actor</a></strong> handles the compliant-User-Agent requests, rate limiting, and parsing for you. It exposes nine modes — filings, normalized financials, raw XBRL facts, full-text search, Form 4 insider trades, Form 13F holdings, activist (SC 13D/G) stakes, a latest-filings feed, and parsed 8-K items — with ticker-to-CIK resolution built in and output as JSON, CSV, Excel, or XML. It&#39;s free to start (the first 50 chargeable events per run are free), then pay-as-you-go.</p>
+<h2 id="the-takeaway">The takeaway</h2>
+<p>The SEC EDGAR API gives you institutional-grade financial data for the price of a well-formed HTTP header. Remember the three rules — <strong>declare a User-Agent, zero-pad your CIK to 10 digits, and stay under 10 requests per second</strong> — and the entire corpus of U.S. public-company disclosures is yours to query. Start with the <code>company_tickers.json</code> map, graduate to <code>companyconcept</code> for targeted facts or <code>frames</code> for cross-sectional pulls, and reach for the full-text index when you need to find filings by what they <em>say</em>, not just who filed them.</p>
+<p><em>Disclosure: I&#39;m the author of the SEC EDGAR Scraper actor and the linked query builder.</em></p>
+<p>Sources: <a href="https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data" target="_blank" rel="noopener">SEC: Accessing EDGAR Data</a>, <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces" target="_blank" rel="noopener">SEC: EDGAR APIs</a>, <a href="https://www.sec.gov/edgar/search/efts-faq.html" target="_blank" rel="noopener">SEC: EDGAR Full Text Search FAQ</a>.</p>
+
+</div>
+<p class="guide-end"><a href="../../sec-edgar-search/">Open the free Search SEC EDGAR filings, financials &amp; insider trades tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

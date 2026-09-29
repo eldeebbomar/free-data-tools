@@ -1,20 +1,94 @@
 [
   {
-    "prompt": "best note-taking app for teams",
-    "platform": "ChatGPT",
+    "observedAt": "2026-09-29T08:00:00.000Z",
+    "brandName": "Acme Notes",
+    "prompt": "best note-taking apps for small teams",
+    "platform": "openai-gpt",
+    "platformLabel": "OpenAI GPT Latest",
     "brandMentioned": true,
-    "rank": 1
+    "brandPosition": 2,
+    "shareOfVoice": 0.33,
+    "competitorsMentioned": [
+      "Obsidian",
+      "Evernote"
+    ],
+    "citedDomains": [
+      "acmenotes.example.com",
+      "www.example-reviews.com"
+    ],
+    "sentimentLabel": "positive"
   },
   {
-    "prompt": "Notion alternatives",
-    "platform": "Perplexity",
+    "observedAt": "2026-09-29T08:00:00.000Z",
+    "brandName": "Acme Notes",
+    "prompt": "best note-taking apps for small teams",
+    "platform": "perplexity-sonar",
+    "platformLabel": "Perplexity Sonar",
     "brandMentioned": true,
-    "rank": 3
+    "brandPosition": 1,
+    "shareOfVoice": 0.5,
+    "competitorsMentioned": [
+      "Obsidian"
+    ],
+    "citedDomains": [
+      "acmenotes.example.com",
+      "www.example-reviews.com"
+    ],
+    "sentimentLabel": "positive"
   },
   {
-    "prompt": "free knowledge base tools",
-    "platform": "Gemini",
+    "observedAt": "2026-09-29T08:00:00.000Z",
+    "brandName": "Acme Notes",
+    "prompt": "Acme Notes alternatives",
+    "platform": "claude-sonnet",
+    "platformLabel": "Claude Sonnet Latest",
+    "brandMentioned": true,
+    "brandPosition": 1,
+    "shareOfVoice": 0.25,
+    "competitorsMentioned": [
+      "Obsidian",
+      "Evernote",
+      "Bear"
+    ],
+    "citedDomains": [
+      "acmenotes.example.com",
+      "www.example-reviews.com"
+    ],
+    "sentimentLabel": "neutral"
+  },
+  {
+    "observedAt": "2026-09-29T08:00:00.000Z",
+    "brandName": "Acme Notes",
+    "prompt": "which note app syncs offline",
+    "platform": "gemini-flash",
+    "platformLabel": "Gemini Flash Latest",
     "brandMentioned": false,
-    "rank": null
+    "brandPosition": null,
+    "shareOfVoice": 0,
+    "competitorsMentioned": [
+      "Obsidian",
+      "Evernote"
+    ],
+    "citedDomains": [
+      "www.example-reviews.com"
+    ],
+    "sentimentLabel": "neutral"
+  },
+  {
+    "observedAt": "2026-09-29T08:00:00.000Z",
+    "brandName": "Acme Notes",
+    "prompt": "note-taking app with the best AI features",
+    "platform": "grok",
+    "platformLabel": "Grok 4.3",
+    "brandMentioned": false,
+    "brandPosition": null,
+    "shareOfVoice": 0,
+    "competitorsMentioned": [
+      "Evernote"
+    ],
+    "citedDomains": [
+      "www.example-reviews.com"
+    ],
+    "sentimentLabel": "neutral"
   }
 ]

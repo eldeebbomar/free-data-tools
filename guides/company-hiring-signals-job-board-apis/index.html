@@ -1,0 +1,179 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Read Company Hiring Signals From Public Job Board APIs (with code)</title>
+<meta name="description" content="Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.">
+<link rel="canonical" href="https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Read Company Hiring Signals From Public Job Board APIs (with code)"><meta property="og:description" content="Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier."><meta property="og:url" content="https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-company-hiring-signals-job-board-apis.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Read Company Hiring Signals From Public Job Board APIs (with code)">
+<meta property="article:published_time" content="2026-05-31"><meta property="article:modified_time" content="2026-05-31"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="webdev"><meta property="article:tag" content="javascript"><meta property="article:tag" content="api"><meta property="article:tag" content="sales">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Read Company Hiring Signals From Public Job Board APIs (with code)"><meta name="twitter:description" content="Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-company-hiring-signals-job-board-apis.jpg"><meta name="twitter:image:alt" content="Read Company Hiring Signals From Public Job Board APIs (with code)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/#article","headline":"Read Company Hiring Signals From Public Job Board APIs (with code)","description":"Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-05-31","dateModified":"2026-05-31","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-company-hiring-signals-job-board-apis.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"webdev, javascript, api, sales","about":{"@type":"SoftwareApplication","name":"Company Hiring Signals — read buying intent from job postings","url":"https://datatooly.xyz/company-hiring-signals/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/#webpage","url":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/","name":"Read Company Hiring Signals From Public Job Board APIs (with code)","description":"Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/#breadcrumb"},"dateModified":"2026-05-31","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-company-hiring-signals-job-board-apis.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/#article"},"datePublished":"2026-05-31"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Read Company Hiring Signals From Public Job Board APIs (with code)","item":"https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/hiring-sales-signals/">Hiring &amp; Sales Signals</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Hiring &amp; Sales Signals</span>
+<h1>Read Company Hiring Signals From Public Job Board APIs (with code)</h1>
+<p class="lede">Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.</p>
+<p class="updated">Published <time datetime="2026-05-31">May 31, 2026</time> · Updated <time datetime="2026-05-31">May 31, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Company Hiring Signals — read buying intent from job postings</p><p class="gcta-s">See what any company is hiring for and what it signals. Free in-browser tool reads live Greenhouse roles and flags hiring intent. No login. Try it now.</p><a class="btn btn-primary" href="../../company-hiring-signals/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>A company&#39;s open roles are the most honest document it publishes. The careers page is marketing; the job board is the budget. If you learn to read <strong>company hiring signals</strong> straight from the open requisitions, you can infer where a business is investing months before it shows up in a press release.</p>
+<p>And the best part for developers: most of the data is sitting behind public, no-auth JSON APIs. The applicant tracking systems (ATS) that power those careers pages — Greenhouse, Lever, Ashby, SmartRecruiters — expose job boards as plain endpoints. You can fetch them, parse them, and classify the role mix yourself.</p>
+<p>This article shows you how to do that, with a snippet that actually runs in a browser console.</p>
+<h2 id="why-open-roles-encode-strategy">Why open roles encode strategy</h2>
+<p>Headcount is the clearest expression of intent a company has. Every requisition is a funded decision someone fought for in a planning meeting. So the <em>mix</em> of roles, not just the count, tells a story:</p>
+<ul>
+<li><strong>A wave of Account Executives and Sales Engineers</strong> → they have a product that works and are pouring fuel on go-to-market. Likely just raised, or hitting a revenue inflection.</li>
+<li><strong>A spike in backend / infra / platform engineers</strong> → scaling pains. The thing is growing faster than the architecture can handle.</li>
+<li><strong>New &quot;AI&quot;, &quot;ML&quot;, or &quot;Applied Scientist&quot; titles where there were none</strong> → a strategic bet that didn&#39;t exist last quarter.</li>
+<li><strong>Roles concentrated in a new city or country</strong> → geographic expansion. A &quot;Country Manager, Germany&quot; is a market-entry announcement disguised as a job post.</li>
+<li><strong>Recruiters and People Ops hiring</strong> → they expect to hire a <em>lot</em> soon. Recruiting hires are often a leading indicator of broader expansion.</li>
+<li><strong>First Compliance / Legal / Finance leadership</strong> → maturing toward a fundraise, audit, or exit.</li>
+</ul>
+<p>This is exactly the kind of intelligence that sales teams pay for under the label &quot;hiring intent&quot; or &quot;buying signals.&quot; You can derive a useful slice of it yourself.</p>
+<h2 id="the-data-source-public-ats-job-boards">The data source: public ATS job boards</h2>
+<p>Greenhouse runs a dedicated read-only API for board content. The shape is dead simple:</p>
+<div class="code-block"><pre><code>GET https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs</code></pre></div>
+<p>The <code>board_token</code> is usually the company&#39;s slug — <code>stripe</code>, <code>airbnb</code>, etc. No API key, no OAuth, no header dance. It returns <code>200 OK</code> with <code>Content-Type: application/json</code> and, crucially for front-end code, <code>Access-Control-Allow-Origin: *</code>. That wildcard CORS header means the request genuinely succeeds from a browser on any origin — you can paste the fetch below straight into DevTools and it works.</p>
+<p>Here&#39;s the response shape (illustrative values — run it yourself for live data), so you know what you&#39;re parsing:</p>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{
+  &quot;jobs&quot;: [
+    {
+      &quot;id&quot;: 1234567,
+      &quot;title&quot;: &quot;Account Executive, Enterprise&quot;,
+      &quot;updated_at&quot;: &quot;2026-05-20T16:58:18-04:00&quot;,
+      &quot;location&quot;: { &quot;name&quot;: &quot;San Francisco, CA&quot; },
+      &quot;absolute_url&quot;: &quot;https://example.com/jobs/search?gh_jid=1234567&quot;
+    }
+  ]
+}</code></pre></div>
+<p>Each job gives you <code>title</code>, <code>location.name</code>, <code>updated_at</code>, and a link. That&#39;s all you need to map role mix to intent.</p>
+<h2 id="fetch-classify-in-50-lines">Fetch + classify in ~50 lines</h2>
+<p>Below is a self-contained function. It pulls a board, buckets each role into a category by keyword, and returns a sorted intent profile plus a naive &quot;primary signal.&quot; Drop it in your browser console with any Greenhouse board token.</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">const SIGNALS = {
+  sales:       /\b(account executive|ae|sales|business development|bdr|sdr|revenue)\b/i,
+  marketing:   /\b(marketing|growth|demand gen|content|brand|seo)\b/i,
+  engineering: /\b(engineer|developer|sre|devops|infrastructure|platform|backend|frontend)\b/i,
+  ai_ml:       /\b(machine learning|ml engineer|applied scientist|\bai\b|research scientist|nlp)\b/i,
+  product:     /\b(product manager|\bpm\b|product designer|ux|ui designer)\b/i,
+  recruiting:  /\b(recruiter|talent|people ops|hr business partner)\b/i,
+  finance_legal:/\b(finance|accounting|controller|legal|counsel|compliance)\b/i,
+  support:     /\b(support|customer success|csm|implementation|onboarding)\b/i,
+};
+
+function classify(title) {
+  for (const [label, re] of Object.entries(SIGNALS)) {
+    if (re.test(title)) return label;
+  }
+  return &quot;other&quot;;
+}
+
+async function hiringSignals(boardToken) {
+  const url = `https://boards-api.greenhouse.io/v1/boards/${boardToken}/jobs`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Board &quot;${boardToken}&quot; returned ${res.status}`);
+  const { jobs } = await res.json();
+
+  const counts = {};
+  const byCity = {};
+  for (const job of jobs) {
+    const cat = classify(job.title);
+    counts[cat] = (counts[cat] || 0) + 1;
+    const city = job.location?.name || &quot;Unknown&quot;;
+    byCity[city] = (byCity[city] || 0) + 1;
+  }
+
+  const profile = Object.entries(counts).sort((a, b) =&gt; b[1] - a[1]);
+  const topCities = Object.entries(byCity).sort((a, b) =&gt; b[1] - a[1]).slice(0, 5);
+
+  return {
+    board: boardToken,
+    totalRoles: jobs.length,
+    roleMix: profile,
+    topLocations: topCities,
+    primarySignal: profile[0]?.[0],
+  };
+}
+
+// Try it:
+hiringSignals(&quot;stripe&quot;).then(console.log);</code></pre></div>
+<p>Run it and you get something shaped like this (example numbers — boards change daily, so your run will differ):</p>
+<div class="code-block"><pre><code>{
+  board: &quot;stripe&quot;,
+  totalRoles: 470,
+  roleMix: [[&quot;engineering&quot;, 160], [&quot;sales&quot;, 70], [&quot;product&quot;, 40], ...],
+  topLocations: [[&quot;San Francisco, CA&quot;, 64], [&quot;New York, NY&quot;, 38], ...],
+  primarySignal: &quot;engineering&quot;
+}</code></pre></div>
+<p>Note <code>primarySignal</code> is just <code>roleMix[0][0]</code> — the highest-count category — and <code>classify()</code> files each title under its <em>first</em> matching pattern, so treat both as a rough first read, not gospel. From there, the interesting analysis isn&#39;t the snapshot — it&#39;s the <strong>delta</strong>. Save today&#39;s <code>roleMix</code> and diff it next week. A category that jumps from 3 to 18 roles is the signal. A new city appearing in <code>topLocations</code> is the signal. Absolute counts are noisy; <em>changes</em> are where intent lives.</p>
+<h2 id="sharpen-the-read">Sharpen the read</h2>
+<p>A few things to layer on once the basics work:</p>
+<ul>
+<li><strong>Weight by recency.</strong> Roles with a fresh <code>updated_at</code> reflect current priorities more than ones reposted for months. Filter to roles updated in the last 30 days.</li>
+<li><strong>Watch for <em>firsts</em>.</strong> The first role in a category (first &quot;Enterprise AE&quot;, first &quot;Solutions Architect&quot;) often matters more than the tenth. Track which categories crossed from zero.</li>
+<li><strong>Seniority skew.</strong> A batch of &quot;Head of&quot; / &quot;Director&quot; / &quot;VP&quot; postings signals a layer being built out — usually ahead of an org&#39;s scaling phase.</li>
+<li><strong>Cross-reference with funding.</strong> Sales-and-marketing hiring spikes that line up with a recent raise are the strongest go-to-market-expansion tell.</li>
+</ul>
+<p>The regexes above are deliberately simple. Real titles are messy (&quot;Staff Software Engineer, Payments Risk Platform&quot;), and a keyword bucket will misfile some. For anything beyond exploration, an LLM classifier handling each title against your taxonomy is far more robust than brittle patterns — but start with regex to understand your data.</p>
+<h2 id="want-to-eyeball-one-company-right-now">Want to eyeball one company right now?</h2>
+<p>If you just want to point at a single Greenhouse board and see the role mix without writing code, there&#39;s a free browser tool that runs the same idea live: <a href="https://datatooly.xyz/company-hiring-signals/">datatooly.xyz/company-hiring-signals</a> (disclosure: I built it, and the Apify actor mentioned later). It fetches the public board client-side (thanks to that wildcard CORS header) and renders the intent breakdown. Good for a quick check on one prospect.</p>
+<h2 id="the-other-ats-platforms-and-the-hard-one">The other ATS platforms (and the hard one)</h2>
+<p>Greenhouse is the easiest, but it&#39;s not alone. Several major ATS platforms expose public job boards:</p>
+<blockquote>
+<p>Endpoint shapes and headers drift over time — test each ATS before depending on it in production.</p>
+</blockquote>
+<ul>
+<li><strong>Lever</strong> — <code>https://api.lever.co/v0/postings/{company}?mode=json</code> returns a plain JSON array with <code>text</code>, <code>categories.team</code>, <code>categories.location</code>, and <code>hostedUrl</code>.</li>
+<li><strong>Ashby</strong> — a public posting API keyed by job-board name, and it also sends <code>Access-Control-Allow-Origin: *</code>.</li>
+<li><strong>SmartRecruiters</strong> — a public postings endpoint per company.</li>
+</ul>
+<p>Each has a slightly different response shape, so you&#39;d normalize them into one schema (title, location, team, updated date, url) before classifying.</p>
+<p>Then there&#39;s <strong>Workday</strong>, which is the genuinely hard one. Workday tenants serve postings through a per-tenant CXS endpoint that you have to discover, and pagination is done via POST with an offset body rather than a clean GET — no friendly wildcard CORS, no single base URL. A meaningful share of large enterprises run on Workday, so any &quot;company hiring signals&quot; pipeline that ignores it has a blind spot exactly where the biggest budgets are.</p>
+<h2 id="doing-this-at-scale">Doing this at scale</h2>
+<p>Reading one board by hand is a five-minute task. Tracking <strong>25,000+ companies</strong>, normalizing four-plus ATS schemas (including the Workday pagination dance), running an AI classifier over messy titles, and diffing week-over-week to fire alerts when a category spikes — that&#39;s a data pipeline, not a console snippet.</p>
+<p>If you&#39;d rather not build and maintain all of that, the <a href="https://apify.com/constructive_calm/ats-hiring-intent-scraper?fpr=v77kxu" target="_blank" rel="noopener">ATS Hiring-Intent Scraper on Apify</a> does the heavy lifting: it pulls across the major ATS platforms, classifies role mix into intent categories, and is built for running on a schedule so you catch the <em>changes</em> rather than just snapshots. Useful if hiring signals feed a sales or research workflow and you need them reliably, not as a one-off.</p>
+<p>But for learning the concept and prototyping on a handful of targets, the fetch-and-classify snippet above is all you need — and it&#39;s a genuinely fun afternoon of code.</p>
+<hr>
+<p>One honest note: these endpoints are public because companies <em>want</em> their jobs found, but they&#39;re meant for candidates, not bulk harvesting. Keep request rates polite, cache aggressively, respect each platform&#39;s Terms of Service and <code>robots.txt</code>, and don&#39;t republish personal data. Read the strategy, not the people.</p>
+
+</div>
+<p class="guide-end"><a href="../../company-hiring-signals/">Open the free Company Hiring Signals tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

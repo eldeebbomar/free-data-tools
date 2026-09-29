@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>How to Build a Threads Scraper for Meta Profiles and Posts</title>
+<meta name="description" content="A practical, honest guide to building a Threads scraper for Meta&#39;s threads.com — what loads cookie-free, what doesn&#39;t, and a runnable example.">
+<link rel="canonical" href="https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to Build a Threads Scraper for Meta Profiles and Posts"><meta property="og:description" content="A practical, honest guide to building a Threads scraper for Meta&#39;s threads.com — what loads cookie-free, what doesn&#39;t, and a runnable example."><meta property="og:url" content="https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-build-threads-scraper-profiles-posts.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How to Build a Threads Scraper for Meta Profiles and Posts">
+<meta property="article:published_time" content="2026-06-13"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="socialmedia"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Build a Threads Scraper for Meta Profiles and Posts"><meta name="twitter:description" content="A practical, honest guide to building a Threads scraper for Meta&#39;s threads.com — what loads cookie-free, what doesn&#39;t, and a runnable example."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-build-threads-scraper-profiles-posts.jpg"><meta name="twitter:image:alt" content="How to Build a Threads Scraper for Meta Profiles and Posts">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/#article","headline":"How to Build a Threads Scraper for Meta Profiles and Posts","description":"A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-13","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-build-threads-scraper-profiles-posts.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, webscraping, socialmedia, datascience","about":{"@type":"SoftwareApplication","name":"Scrape Threads profiles, posts & hashtags","url":"https://datatooly.xyz/threads-profile-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/#webpage","url":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/","name":"How to Build a Threads Scraper for Meta Profiles and Posts","description":"A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-build-threads-scraper-profiles-posts.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/#article"},"datePublished":"2026-06-13"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"How to Build a Threads Scraper for Meta Profiles and Posts","item":"https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/social-community/">Social &amp; Community</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Social &amp; Community</span>
+<h1>How to Build a Threads Scraper for Meta Profiles and Posts</h1>
+<p class="lede">A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.</p>
+<p class="updated">Published <time datetime="2026-06-13">June 13, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Scrape Threads profiles, posts &amp; hashtags</p><p class="gcta-s">Free Threads scraper query builder. Configure profile, posts &amp; hashtag scrapes, preview the output shape, then run live on Apify. No login needed.</p><a class="btn btn-primary" href="../../threads-profile-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you want to build a <strong>Threads scraper</strong>, the first thing to get straight is <em>what Threads actually is in 2026</em> — because the surface has changed under everyone&#39;s feet. Threads is Meta&#39;s X-competitor, and it is no longer a small experiment: Meta reported it crossed <strong>400 million monthly active users</strong> in August 2025. That growth is exactly why marketers, researchers, and data teams suddenly want programmatic access to profiles, posts, and hashtags.</p>
+<p>This guide is the honest version. I&#39;ll show you what loads without authentication, what doesn&#39;t, where Meta&#39;s official API helps versus where it doesn&#39;t, and a runnable code example you can adapt today.</p>
+<h2 id="fact-1-it-s-threads-com-now-not-threads-net">Fact #1: It&#39;s threads.com now, not threads.net</h2>
+<p>A surprising number of tutorials still hardcode <code>threads.net</code>. That&#39;s stale. On <strong>April 24, 2025</strong>, Meta officially migrated the canonical domain from <code>threads.net</code> to <strong><code>threads.com</code></strong>. Meta didn&#39;t own the <code>.com</code> at launch — it belonged to a messaging startup — and acquired it in September 2024 before flipping the canonical domain the following spring. Old <code>threads.net</code> URLs now redirect, but if you&#39;re writing a <strong>Threads scraper</strong>, target <code>threads.com</code> directly so you skip a redirect hop and avoid brittle string matching.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python"># Do this
+PROFILE_URL = &quot;https://www.threads.com/@zuck&quot;
+
+# Not this (redirects, and you may parse a redirect interstitial)
+# PROFILE_URL = &quot;https://www.threads.net/@zuck&quot;</code></pre></div>
+<h2 id="fact-2-there-is-no-open-public-api-for-general-scraping">Fact #2: There is no open public API for general scraping</h2>
+<p>This is the part people get wrong in both directions, so let&#39;s be precise.</p>
+<p>Meta <em>does</em> publish an official <strong>Threads API</strong>, opened to developers in 2024. It is genuinely useful for some things: publishing posts on behalf of an authenticated user, tokenless <strong>oEmbed</strong> for embedding public posts, and a limited ability to search public posts by author or media type. But it is <strong>not an open data firehose</strong>. To use it meaningfully you register a Meta Developer App and go through App Review, and the read surface is narrow and account-scoped — it&#39;s built for &quot;let my app post and embed,&quot; not &quot;let me pull arbitrary public profiles and their post history at scale.&quot;</p>
+<p>So when someone says &quot;just use the API,&quot; the honest answer is: the official API solves <em>publishing</em> well and <em>bulk public reading</em> poorly. For competitive research, audience analysis, or trend tracking across accounts you don&#39;t own, you&#39;re going to read the public web surface instead. Which brings us to the good news.</p>
+<h2 id="fact-3-public-profiles-and-posts-render-cookie-free">Fact #3: Public profiles and posts render cookie-free</h2>
+<p>Threads is, relative to Instagram or LinkedIn, friendly to logged-out reading. <strong>Public posts render in the initial server-side HTML</strong> for unauthenticated visitors. You don&#39;t need cookies, a logged-in session, or GraphQL <code>doc_id</code> juggling to read a public profile&#39;s recent posts — the data is in the page Meta serves to crawlers.</p>
+<p>The cleanest way to trigger that crawler-friendly server-rendered HTML is to identify as Meta&#39;s own link-preview crawler, <code>facebookexternalhit</code>. This is the bot Meta runs to build link previews when a URL is shared, and it reliably receives the SSR variant of the page. Combined with structured data embedded in the HTML, you get profile and post fields without browser automation.</p>
+<p>Here&#39;s a minimal, correct example in Python. It fetches a public profile page with the crawler user-agent and pulls structured data out of the HTML. No login, no headless browser.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import json
+import re
+import urllib.request
+
+UA = &quot;facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)&quot;
+
+def fetch_public_profile(username: str) -&gt; str:
+    url = f&quot;https://www.threads.com/@{username}&quot;
+    req = urllib.request.Request(url, headers={&quot;User-Agent&quot;: UA})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return resp.read().decode(&quot;utf-8&quot;, errors=&quot;replace&quot;)
+
+def extract_jsonld(html: str):
+    &quot;&quot;&quot;Pull &lt;script type='application/ld+json'&gt; blocks (structured data).&quot;&quot;&quot;
+    blocks = re.findall(
+        r'&lt;script type=&quot;application/ld\+json&quot;[^&gt;]*&gt;(.*?)&lt;/script&gt;',
+        html,
+        flags=re.DOTALL,
+    )
+    out = []
+    for b in blocks:
+        try:
+            out.append(json.loads(b.strip()))
+        except json.JSONDecodeError:
+            continue
+    return out
+
+if __name__ == &quot;__main__&quot;:
+    html = fetch_public_profile(&quot;zuck&quot;)
+    for obj in extract_jsonld(html):
+        # ProfilePage / Person objects carry name, handle, description, etc.
+        print(json.dumps(obj, indent=2)[:800])</code></pre></div>
+<p>A few notes so this holds up in production:</p>
+<ul>
+<li><strong>Parse the JSON, don&#39;t regex the fields.</strong> The HTML markup churns constantly; the embedded structured-data and inline JSON blobs are far more stable. Find the script blocks, <code>json.loads</code> them, then walk the objects.</li>
+<li><strong>Expect more than one JSON shape.</strong> Threads has shipped at least two structured-data layouts over time (a bare <code>Person</code> object and a <code>ProfilePage</code> wrapping <code>mainEntity</code>). Handle both, or your parser silently returns nulls after Meta ships a tweak.</li>
+<li><strong>Validate the host.</strong> If you accept arbitrary input URLs, make sure the host is <em>exactly</em> <code>threads.com</code> (or <code>www.threads.com</code>). A naive suffix check like &quot;ends with threads.com&quot; will happily accept <code>notthreads.com</code> and open you to SSRF. Match the host, not a substring.</li>
+</ul>
+<h2 id="fact-4-search-and-reply-trees-are-the-hard-part">Fact #4: Search and reply-trees are the hard part</h2>
+<p>Here&#39;s where logged-out reading hits its ceiling, and where honest expectation-setting matters.</p>
+<p><strong>Profiles and a profile&#39;s recent posts: easy.</strong> Public, in the SSR HTML, cookie-free.</p>
+<p><strong>Full reply trees: limited.</strong> Without an authenticated session, a post&#39;s discussion tree returns only the publicly-indexed posts that reference or quote it — roughly 15–30 — not the complete comment list. The deep thread requires a login Threads doesn&#39;t hand to anonymous crawlers.</p>
+<p><strong>Keyword search and hashtags: partial.</strong> You can pull top results for a tag or query from the public surface, but the volume and depth are capped by what Threads chooses to expose to logged-out users. Treat search/hashtag as &quot;top sample,&quot; not &quot;exhaustive archive,&quot; and design your downstream analytics around a sample, not a census.</p>
+<p>This isn&#39;t a flaw in your code — it&#39;s the platform boundary. A good <strong>Threads scraper</strong> is explicit about which mode returns complete data (profile, posts-by-user) and which returns a public subset (search, hashtag, reply-tree). On the legal side, logged-out scraping of public data has generally been treated more favorably by US case law than authenticated scraping (e.g., <em>hiQ v. LinkedIn</em>, <em>Meta v. Bright Data</em>) — but that&#39;s a posture, not legal advice. Read Meta&#39;s terms and your own jurisdiction.</p>
+<h2 id="putting-it-together-modes-you-actually-want">Putting it together: modes you actually want</h2>
+<p>A complete Threads scraper usually exposes these modes:</p>
+<ol>
+<li><strong>Profile</strong> — handle, bio, follower count, bio links, verification.</li>
+<li><strong>Posts by user</strong> — recent posts for one or more usernames.</li>
+<li><strong>Post detail</strong> — a source post plus its public quote-reposts/references.</li>
+<li><strong>Search</strong> — top results for a keyword (sampled).</li>
+<li><strong>Hashtag</strong> — top posts for a tag (sampled).</li>
+<li><strong>Monitor</strong> — emit only posts new since your last run, for ongoing tracking.</li>
+</ol>
+<p>The first three return complete-ish public data; the last three are sample-or-delta by nature. Knowing that distinction up front saves you from promising stakeholders an &quot;everything&quot; dataset the platform won&#39;t give you.</p>
+<h2 id="a-faster-path-than-hand-rolling-it">A faster path than hand-rolling it</h2>
+<p>The code above works, but going from &quot;fetches one profile&quot; to &quot;handles both JSON shapes, retries transient failures, rotates IPs when Meta rate-limits, paginates posts, and dedupes a monitor run&quot; is real engineering. If you&#39;d rather skip the maintenance treadmill, I built two things to help.</p>
+<p>First, a free <strong><a href="https://datatooly.xyz/threads-profile-search/">Threads query builder</a></strong>. Important honest caveat: it is a <em>query builder</em>, <strong>not</strong> a live in-browser scraper. Threads isn&#39;t CORS-open, so nothing fetches live results in your tab. You pick a mode, type usernames or a query, set limits, and it previews the exact <strong>output shape</strong> so you know the field structure before you run anything. It&#39;s the fastest way to design your schema.</p>
+<p>Second, the backing <strong><a href="https://apify.com/constructive_calm/threads-scraper?fpr=v77kxu" target="_blank" rel="noopener">Threads Scraper actor on Apify</a></strong> runs the configured job for real. It uses the cookie-free SSR approach described here (no login, no cookie management), supports all six modes above including monitor-deltas and bio-contact extraction, and is <strong>free to start, then pay-as-you-go</strong> — the first 10 chargeable events per run are free, so you can validate output on real data before spending anything.</p>
+<p><em>Disclosure: I built the query-builder tool and the Apify actor referenced above.</em></p>
+<p>Whether you hand-roll it with the snippet here or run the actor, the takeaways are the same: target <code>threads.com</code>, expect no open public API, lean on cookie-free SSR for profiles and posts, and treat search/hashtag/reply-trees as public samples rather than complete archives. Build for those boundaries and your scraper stays correct as Threads keeps shipping changes.</p>
+
+</div>
+<p class="guide-end"><a href="../../threads-profile-search/">Open the free Scrape Threads profiles, posts &amp; hashtags tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/scrape-reddit-without-api/">How to Scrape Reddit Without the API (After the 2023 Price Changes) →</a><a href="../../guides/scrape-telegram-channel-without-login/">How to Scrape a Telegram Channel Without Login (No API Key) →</a><a href="../../guides/threads-keyword-search-without-app-review/">Threads Keyword Search Without App Review: Monitor in Python →</a><a href="../../guides/scrape-youtube-shorts-data/">How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts) →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

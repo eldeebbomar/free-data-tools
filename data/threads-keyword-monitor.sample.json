@@ -1,20 +1,103 @@
 [
   {
-    "username": "indiehacker",
-    "text": "Built a Threads keyword monitor this weekend.",
-    "likes": 1240,
-    "replies": 86
+    "recordType": "post",
+    "postId": "3700000000000000000",
+    "url": "https://www.threads.com/@jane.example/post/EXAMPLE1",
+    "username": "jane.example",
+    "text": "Tried three web scraping tools this week, the one with built-in retries saved me hours.",
+    "takenAt": "2026-09-28T12:00:00.000Z",
+    "likeCount": 214,
+    "replyCount": 31,
+    "repostCount": 11,
+    "quoteCount": 4,
+    "mediaUrls": [],
+    "depth": 0,
+    "matchedQuery": "web scraping",
+    "serpTypes": [
+      "default"
+    ],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/search?q=web%20scraping"
   },
   {
-    "username": "saasfounder",
-    "text": "Anyone tracking brand mentions on Threads yet?",
-    "likes": 540,
-    "replies": 122
+    "recordType": "post",
+    "postId": "3700000000000007919",
+    "url": "https://www.threads.com/@omar.sample/post/EXAMPLE2",
+    "username": "omar.sample",
+    "text": "Is anyone using the Threads API for scheduled posts yet? Curious about rate limits.",
+    "takenAt": "2026-09-28T10:30:00.000Z",
+    "likeCount": 96,
+    "replyCount": 44,
+    "repostCount": 5,
+    "quoteCount": 2,
+    "mediaUrls": [],
+    "depth": 0,
+    "matchedQuery": "threads api",
+    "serpTypes": [
+      "default",
+      "recent"
+    ],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/search?q=threads%20api"
   },
   {
-    "username": "devtoolsguy",
-    "text": "Threads search via the public web is underrated.",
-    "likes": 880,
-    "replies": 47
+    "recordType": "post",
+    "postId": "3700000000000015838",
+    "url": "https://www.threads.com/@priya.placeholder/post/EXAMPLE3",
+    "username": "priya.placeholder",
+    "text": "Hot take: most scraping projects fail on maintenance, not on the first version.",
+    "takenAt": "2026-09-28T09:00:00.000Z",
+    "likeCount": 388,
+    "replyCount": 57,
+    "repostCount": 19,
+    "quoteCount": 6,
+    "mediaUrls": [],
+    "depth": 0,
+    "matchedQuery": "web scraping",
+    "serpTypes": [
+      "default"
+    ],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/search?q=web%20scraping"
+  },
+  {
+    "recordType": "post",
+    "postId": "3700000000000023757",
+    "url": "https://www.threads.com/@alex.demo/post/EXAMPLE4",
+    "username": "alex.demo",
+    "text": "Shipped a small tool that exports my saved posts to CSV. Link in bio.",
+    "takenAt": "2026-09-28T07:30:00.000Z",
+    "likeCount": 41,
+    "replyCount": 9,
+    "repostCount": 2,
+    "quoteCount": 1,
+    "mediaUrls": [],
+    "depth": 0,
+    "matchedQuery": "threads api",
+    "serpTypes": [
+      "recent"
+    ],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/search?q=threads%20api"
+  },
+  {
+    "recordType": "post",
+    "postId": "3700000000000031676",
+    "url": "https://www.threads.com/@maria.muster/post/EXAMPLE5",
+    "username": "maria.muster",
+    "text": "What is your go-to stack for monitoring brand mentions?",
+    "takenAt": "2026-09-28T06:00:00.000Z",
+    "likeCount": 73,
+    "replyCount": 26,
+    "repostCount": 4,
+    "quoteCount": 1,
+    "mediaUrls": [],
+    "depth": 0,
+    "matchedQuery": "web scraping",
+    "serpTypes": [
+      "recent"
+    ],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/search?q=web%20scraping"
   }
 ]

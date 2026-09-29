@@ -1,0 +1,158 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>The Hacker News Search API: Free, No-Key, and Surprisingly Powerful</title>
+<meta name="description" content="A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.">
+<link rel="canonical" href="https://datatooly.xyz/guides/hacker-news-search-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="The Hacker News Search API: Free, No-Key, and Surprisingly Powerful"><meta property="og:description" content="A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code."><meta property="og:url" content="https://datatooly.xyz/guides/hacker-news-search-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-hacker-news-search-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The Hacker News Search API: Free, No-Key, and Surprisingly Powerful">
+<meta property="article:published_time" content="2026-06-01"><meta property="article:modified_time" content="2026-06-01"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="javascript"><meta property="article:tag" content="webdev"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The Hacker News Search API: Free, No-Key, and Surprisingly Powerful"><meta name="twitter:description" content="A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-hacker-news-search-api.jpg"><meta name="twitter:image:alt" content="The Hacker News Search API: Free, No-Key, and Surprisingly Powerful">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/hacker-news-search-api/#article","headline":"The Hacker News Search API: Free, No-Key, and Surprisingly Powerful","description":"A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-01","dateModified":"2026-06-01","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-hacker-news-search-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/hacker-news-search-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, javascript, webdev, datascience","about":{"@type":"SoftwareApplication","name":"Search Hacker News by keyword — live, with points and comments","url":"https://datatooly.xyz/hacker-news-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/hacker-news-search-api/#webpage","url":"https://datatooly.xyz/guides/hacker-news-search-api/","name":"The Hacker News Search API: Free, No-Key, and Surprisingly Powerful","description":"A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/hacker-news-search-api/#breadcrumb"},"dateModified":"2026-06-01","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-hacker-news-search-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/hacker-news-search-api/#article"},"datePublished":"2026-06-01"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/hacker-news-search-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"The Hacker News Search API: Free, No-Key, and Surprisingly Powerful","item":"https://datatooly.xyz/guides/hacker-news-search-api/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/dev-community/">Dev &amp; Community</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Dev &amp; Community</span>
+<h1>The Hacker News Search API: Free, No-Key, and Surprisingly Powerful</h1>
+<p class="lede">A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.</p>
+<p class="updated">Published <time datetime="2026-06-01">June 1, 2026</time> · Updated <time datetime="2026-06-01">June 1, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Search Hacker News by keyword — live, with points and comments</p><p class="gcta-s">Search Hacker News by keyword live — real stories, points, comments, author, date. Free browser tool on the public HN Algolia API, no key. Filters + scale upsell.</p><a class="btn btn-primary" href="../../hacker-news-search/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<h2 id="the-hacker-news-search-api-you-don-t-need-a-key-for">The Hacker News search API you don&#39;t need a key for</h2>
+<p>If you&#39;ve ever wanted to programmatically search Hacker News — pull every &quot;Show HN&quot; above 100 points, mine the monthly &quot;Who is hiring?&quot; thread, or track mentions of your project — there&#39;s a <strong>Hacker News search API</strong> that is free, requires no key, and no OAuth dance. It lives at <code>https://hn.algolia.com/api/v1/</code> and it&#39;s powered by Algolia, the search company HN uses for its own on-site search.</p>
+<p>This post walks through how it actually works, with code you can paste and run right now. Everything below is verified against the live endpoint, not copied from stale docs.</p>
+<h2 id="two-endpoints-relevance-vs-recency">Two endpoints: relevance vs. recency</h2>
+<p>There are two search endpoints, and the difference matters more than people expect:</p>
+<ul>
+<li><strong><code>/search</code></strong> — ranked by <em>relevance</em> (Algolia&#39;s text-relevance scoring, weighted by points/comments). Use this when you&#39;re searching for a topic.</li>
+<li><strong><code>/search_by_date</code></strong> — ranked by <em>recency</em> (newest first). Use this when you&#39;re building a feed, a monitor, or anything time-sensitive.</li>
+</ul>
+<p>A subtle gotcha: <code>/search</code> reorders by relevance, so a query like <code>created_at_i&gt;...</code> won&#39;t give you a clean chronological list. If you want &quot;the newest N items matching X,&quot; reach for <code>/search_by_date</code>.</p>
+<h2 id="a-runnable-example">A runnable example</h2>
+<p>Here&#39;s a real <code>fetch()</code> call. It finds story-type posts mentioning &quot;rust&quot; with more than 100 points, newest first:</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">const params = new URLSearchParams({
+  query: &quot;rust&quot;,
+  tags: &quot;story&quot;,
+  numericFilters: &quot;points&gt;100&quot;,
+  hitsPerPage: &quot;20&quot;,
+});
+
+const url = `https://hn.algolia.com/api/v1/search_by_date?${params}`;
+const res = await fetch(url);
+const data = await res.json();
+
+console.log(`${data.nbHits} total matches, showing ${data.hits.length}`);
+for (const hit of data.hits) {
+  console.log(`${hit.points}pts  ${hit.title}`);
+  console.log(`  https://news.ycombinator.com/item?id=${hit.objectID}`);
+}</code></pre></div>
+<p>And the same thing as a one-liner with <code>curl</code>:</p>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl &quot;https://hn.algolia.com/api/v1/search_by_date?query=rust&amp;tags=story&amp;numericFilters=points%3E100&amp;hitsPerPage=20&quot;</code></pre></div>
+<p>(<code>%3E</code> is just a URL-encoded <code>&gt;</code>. In a browser/<code>fetch</code>, <code>URLSearchParams</code> encodes it for you.)</p>
+<p>Each hit in the <code>hits</code> array contains the fields you&#39;d want: <code>objectID</code> (the HN item id), <code>title</code>, <code>url</code>, <code>author</code>, <code>points</code>, <code>num_comments</code>, <code>created_at</code>, and <code>created_at_i</code> (the Unix timestamp — handy for filtering). The response envelope also gives you <code>nbHits</code>, <code>page</code>, <code>nbPages</code>, and <code>hitsPerPage</code> for pagination.</p>
+<h2 id="tags-the-most-useful-parameter">Tags: the most useful parameter</h2>
+<p>The <code>tags</code> parameter is how you scope what <em>kind</em> of item you want. The supported values:</p>
+<ul>
+<li><code>story</code> — link/text submissions</li>
+<li><code>comment</code> — individual comments</li>
+<li><code>ask_hn</code> — Ask HN posts</li>
+<li><code>show_hn</code> — Show HN posts</li>
+<li><code>poll</code> — polls</li>
+<li><code>author_&lt;username&gt;</code> — items by a specific user, e.g. <code>author_pg</code></li>
+</ul>
+<p>Tags combine with logic. A <strong>comma</strong> means AND; <strong>parentheses</strong> mean OR. So:</p>
+<div class="code-block"><pre><code>tags=story,author_pg            → stories by pg
+tags=(story,poll),author_pg     → stories OR polls by pg
+tags=show_hn,(story,comment)    → Show HN items that are stories or comments</code></pre></div>
+<p>This is genuinely powerful. Want every Ask HN post by a particular user? <code>tags=ask_hn,author_jl</code>. Want only top-level submissions and never comments? Just <code>tags=story</code>.</p>
+<h2 id="numeric-filters-points-comments-and-time-ranges">Numeric filters: points, comments, and time ranges</h2>
+<p><code>numericFilters</code> lets you filter on numeric fields server-side, so you don&#39;t pull 1,000 rows just to discard 980. Supported operators are <code>&lt;</code>, <code>&lt;=</code>, <code>=</code>, <code>&gt;</code>, <code>&gt;=</code>, and you can comma-separate multiple conditions (AND):</p>
+<div class="code-block"><pre><code>numericFilters=points&gt;500
+numericFilters=num_comments&gt;50
+numericFilters=points&gt;100,num_comments&gt;20</code></pre></div>
+<p>The time field <code>created_at_i</code> is a Unix timestamp, which makes date-range queries easy. To get high-signal stories from a specific window:</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">const since = Math.floor(Date.now() / 1000) - 7 * 24 * 3600; // last 7 days
+const params = new URLSearchParams({
+  tags: &quot;story&quot;,
+  numericFilters: `points&gt;200,created_at_i&gt;${since}`,
+  hitsPerPage: &quot;30&quot;,
+});
+const res = await fetch(
+  `https://hn.algolia.com/api/v1/search?${params}`
+);
+const { hits } = await res.json();</code></pre></div>
+<p>This pattern — <code>points&gt;N</code> plus a <code>created_at_i</code> floor — is the backbone of most &quot;what&#39;s hot this week&quot; dashboards built on HN.</p>
+<h2 id="pagination-and-the-limits-to-know-about">Pagination and the limits to know about</h2>
+<p>Pagination is straightforward: pass <code>page</code> (zero-indexed) and <code>hitsPerPage</code> (max 1000, though smaller pages are kinder). Read <code>nbPages</code> from the response to know when to stop.</p>
+<p>Two limits are worth internalizing so you don&#39;t design something that quietly breaks:</p>
+<ol>
+<li><p><strong>~1,000 retrievable results per query.</strong> This is Algolia&#39;s standard pagination ceiling — you can page through results, but only down to roughly the first 1,000. If you need <em>everything</em> matching a broad query, you can&#39;t just deep-paginate; you have to <strong>slice by time</strong> instead. Run several narrower <code>created_at_i</code> ranges and stitch the results together.</p>
+</li>
+<li><p><strong>A rough rate ceiling of ~10,000 requests/hour/IP.</strong> Important caveat: this is a community / Algolia-staff figure that&#39;s been cited over the years, <strong>not a published SLA</strong>. Treat it as a courtesy budget, not a guarantee — add backoff, cache responses, and don&#39;t hammer it.</p>
+</li>
+</ol>
+<p>Neither limit is a problem for normal use, but both shape how you architect a large backfill.</p>
+<h2 id="drilling-into-a-single-item-and-the-who-is-hiring-thread">Drilling into a single item (and the &quot;Who is hiring?&quot; thread)</h2>
+<p>The search index returns flat hits. To get the full nested comment tree for any item, use the items endpoint:</p>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl &quot;https://hn.algolia.com/api/v1/items/42000000&quot;</code></pre></div>
+<p>This returns the post and a recursive <code>children</code> array of comments — perfect for the monthly <strong>&quot;Who is hiring?&quot;</strong> thread, which typically carries ~400–900 job-posting comments. Grab the thread&#39;s <code>objectID</code>, hit <code>/items/:id</code>, and walk <code>children</code> to pull every job comment in one shot.</p>
+<h2 id="don-t-forget-the-firebase-api-has-no-search">Don&#39;t forget: the Firebase API has no search</h2>
+<p>Hacker News also publishes an <em>official</em> Firebase API at <code>https://hacker-news.firebaseio.com/v0/</code>. It&#39;s great for live data — top stories, new stories, individual item lookups by id, user profiles — but it has <strong>no search capability whatsoever</strong>. You can&#39;t query it by keyword, points, or date.</p>
+<p>The practical move is to <strong>combine the two</strong>: use the Algolia search API to discover item ids matching your criteria, then optionally hit Firebase for the freshest real-time state of those items. Search where you need search; go to Firebase where you need authority and freshness.</p>
+<h2 id="try-it-without-writing-code-first">Try it without writing code first</h2>
+<p>If you just want to poke at queries and see real results before wiring anything up, I built a free browser tool that runs this exact API live: <strong><a href="https://datatooly.xyz/hacker-news-search/">datatooly.xyz/hacker-news-search</a></strong>. It&#39;s not a canned demo — it fires the request straight from your browser (the Algolia endpoint echoes the request origin for CORS), so the results are the live index. Tweak the query, tags, and filters and watch the JSON come back.</p>
+<h2 id="when-you-need-the-heavy-version">When you need the heavy version</h2>
+<p>The raw API is perfect for targeted queries. But once you&#39;re doing serious extraction — full nested comment trees across thousands of items, a parsed &quot;Who is hiring?&quot; feed, user profiles, or export to CSV — the pagination cap and rate budget start to bite, and you end up rebuilding the same plumbing.</p>
+<p>That&#39;s what pushed me to package it as the <strong><a href="https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu" target="_blank" rel="noopener">Hacker News Scraper actor on Apify</a></strong>. It has 9 modes (top / new / best / ask / show / jobs / search / user / hiring_threads), pulls full nested comment trees and user profiles, includes a dedicated &quot;Who is hiring?&quot; parser, supports date/score/domain filters, and exports JSON, CSV, or via API. It&#39;s <strong>free to start, then pay-as-you-go</strong> — the first 50 events of every run are free, so small jobs cost nothing.</p>
+<p><em>Disclosure: I built both the free tool and the actor.</em></p>
+<h2 id="tl-dr">TL;DR</h2>
+<ul>
+<li>Base URL: <code>https://hn.algolia.com/api/v1/</code> — no key, no auth.</li>
+<li><code>/search</code> = relevance, <code>/search_by_date</code> = newest first.</li>
+<li><code>tags</code> scopes type (<code>story</code>, <code>comment</code>, <code>ask_hn</code>, <code>show_hn</code>, <code>poll</code>, <code>author_X</code>); comma = AND, parentheses = OR.</li>
+<li><code>numericFilters</code> filters on <code>points</code>, <code>num_comments</code>, <code>created_at_i</code>.</li>
+<li>Watch the ~1,000-results-per-query cap (slice by time) and the <em>unofficial</em> ~10k req/hr/IP courtesy budget.</li>
+<li>Use <code>/items/:id</code> for full comment trees; combine with the search-less Firebase API for live state.</li>
+</ul>
+<p>Go build something. The index is wide open.</p>
+
+</div>
+<p class="guide-end"><a href="../../hacker-news-search/">Open the free Search Hacker News by keyword tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

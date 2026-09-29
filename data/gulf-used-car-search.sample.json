@@ -1,20 +1,77 @@
 [
   {
-    "title": "Toyota Land Cruiser GXR",
-    "price": "AED 245,000",
-    "year": 2022,
-    "mileage": "38,000 km"
-  },
-  {
-    "title": "Nissan Patrol Platinum",
-    "price": "AED 198,000",
+    "title": "2021 Toyota Land Cruiser",
+    "make": "Toyota",
+    "model": "Land Cruiser",
     "year": 2021,
-    "mileage": "52,000 km"
+    "price": 239000,
+    "currency": "AED",
+    "mileageKm": 64000,
+    "city": "Dubai",
+    "country": "AE",
+    "sourcePlatform": "dubicars",
+    "listingUrl": "https://www.example.com/dubicars/car/example-1",
+    "sellerType": "dealer",
+    "isGccSpec": true
   },
   {
-    "title": "Lexus LX 600",
-    "price": "AED 520,000",
+    "title": "2020 Nissan Patrol",
+    "make": "Nissan",
+    "model": "Patrol",
+    "year": 2020,
+    "price": 168000,
+    "currency": "AED",
+    "mileageKm": 88000,
+    "city": "Abu Dhabi",
+    "country": "AE",
+    "sourcePlatform": "dubizzle",
+    "listingUrl": "https://www.example.com/dubizzle/car/example-2",
+    "sellerType": "individual",
+    "isGccSpec": true
+  },
+  {
+    "title": "2023 Lexus LX 600",
+    "make": "Lexus",
+    "model": "LX 600",
     "year": 2023,
-    "mileage": "12,000 km"
+    "price": 455000,
+    "currency": "AED",
+    "mileageKm": 21000,
+    "city": "Dubai",
+    "country": "AE",
+    "sourcePlatform": "dubicars",
+    "listingUrl": "https://www.example.com/dubicars/car/example-3",
+    "sellerType": "dealer",
+    "isGccSpec": true
+  },
+  {
+    "title": "2019 Toyota Camry",
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2019,
+    "price": 58000,
+    "currency": "AED",
+    "mileageKm": 112000,
+    "city": "Sharjah",
+    "country": "AE",
+    "sourcePlatform": "dubizzle",
+    "listingUrl": "https://www.example.com/dubizzle/car/example-4",
+    "sellerType": "individual",
+    "isGccSpec": false
+  },
+  {
+    "title": "2022 Mitsubishi Pajero",
+    "make": "Mitsubishi",
+    "model": "Pajero",
+    "year": 2022,
+    "price": 97000,
+    "currency": "AED",
+    "mileageKm": 41000,
+    "city": "Dubai",
+    "country": "AE",
+    "sourcePlatform": "dubicars",
+    "listingUrl": "https://www.example.com/dubicars/car/example-5",
+    "sellerType": "dealer",
+    "isGccSpec": true
   }
 ]

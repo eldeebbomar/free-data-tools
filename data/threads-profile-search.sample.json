@@ -1,20 +1,87 @@
 [
   {
-    "username": "zuck",
-    "text": "Shipping new AI features this week.",
-    "likes": 42000,
-    "replies": 3100
+    "recordType": "profile",
+    "username": "jane.example",
+    "fullName": "Jane Example",
+    "biography": "Product designer. Writing about UX and small tools.",
+    "followerCount": 18400,
+    "isVerified": false,
+    "bioLinks": [
+      {
+        "url": "https://www.example.com/jane"
+      }
+    ],
+    "extractedEmails": [
+      "hello@example.com"
+    ],
+    "extractedPhones": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/@jane.example"
   },
   {
-    "username": "mosseri",
-    "text": "How the Threads algorithm ranks posts.",
-    "likes": 18500,
-    "replies": 2200
+    "recordType": "profile",
+    "username": "omar.sample",
+    "fullName": "Omar Sample",
+    "biography": "Home cook sharing 15-minute dinners.",
+    "followerCount": 62300,
+    "isVerified": true,
+    "bioLinks": [
+      {
+        "url": "https://www.example.com/omar-recipes"
+      }
+    ],
+    "extractedEmails": [],
+    "extractedPhones": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/@omar.sample"
   },
   {
-    "username": "mosseri",
-    "text": "We're testing longer posts.",
-    "likes": 9800,
-    "replies": 1400
+    "recordType": "profile",
+    "username": "priya.placeholder",
+    "fullName": "Priya Placeholder",
+    "biography": "Running coach | marathon plans in bio link",
+    "followerCount": 9870,
+    "isVerified": false,
+    "bioLinks": [
+      {
+        "url": "https://www.example.com/priya-coach"
+      }
+    ],
+    "extractedEmails": [
+      "coach@example.com"
+    ],
+    "extractedPhones": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/@priya.placeholder"
+  },
+  {
+    "recordType": "profile",
+    "username": "alex.demo",
+    "fullName": "Alex Demo",
+    "biography": "Indie game dev. Devlogs every Friday.",
+    "followerCount": 4125,
+    "isVerified": false,
+    "bioLinks": [],
+    "extractedEmails": [],
+    "extractedPhones": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/@alex.demo"
+  },
+  {
+    "recordType": "profile",
+    "username": "maria.muster",
+    "fullName": "Maria Muster",
+    "biography": "Travel photographer based in Lisbon.",
+    "followerCount": 27650,
+    "isVerified": false,
+    "bioLinks": [
+      {
+        "url": "https://www.example.com/maria-photos"
+      }
+    ],
+    "extractedEmails": [],
+    "extractedPhones": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z",
+    "sourceUrl": "https://www.threads.com/@maria.muster"
   }
 ]

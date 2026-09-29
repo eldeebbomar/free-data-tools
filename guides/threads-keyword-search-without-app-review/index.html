@@ -1,0 +1,278 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Threads Keyword Search Without App Review: Monitor in Python</title>
+<meta name="description" content="Threads&#39; keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.">
+<link rel="canonical" href="https://datatooly.xyz/guides/threads-keyword-search-without-app-review/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Threads Keyword Search Without App Review: Monitor in Python"><meta property="og:description" content="Threads&#39; keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review."><meta property="og:url" content="https://datatooly.xyz/guides/threads-keyword-search-without-app-review/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-threads-keyword-search-without-app-review.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Threads Keyword Search Without App Review: Monitor in Python">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="socialmedia"><meta property="article:tag" content="api">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Threads Keyword Search Without App Review: Monitor in Python"><meta name="twitter:description" content="Threads&#39; keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-threads-keyword-search-without-app-review.jpg"><meta name="twitter:image:alt" content="Threads Keyword Search Without App Review: Monitor in Python">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/#article","headline":"Threads Keyword Search Without App Review: Monitor in Python","description":"Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-threads-keyword-search-without-app-review.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, webscraping, socialmedia, api","about":{"@type":"SoftwareApplication","name":"Monitor Threads by keyword or hashtag","url":"https://datatooly.xyz/threads-keyword-monitor/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/#webpage","url":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/","name":"Threads Keyword Search Without App Review: Monitor in Python","description":"Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-threads-keyword-search-without-app-review.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Threads Keyword Search Without App Review: Monitor in Python","item":"https://datatooly.xyz/guides/threads-keyword-search-without-app-review/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/social-community/">Social &amp; Community</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Social &amp; Community</span>
+<h1>Threads Keyword Search Without App Review: Monitor in Python</h1>
+<p class="lede">Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Monitor Threads by keyword or hashtag</p><p class="gcta-s">Build a Threads keyword or hashtag search, then schedule monitoring for new matching posts. Cookie-free public-web config for the Apify actor. Free to start.</p><a class="btn btn-primary" href="../../threads-keyword-monitor/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Without app review, Meta&#39;s Threads <code>keyword_search</code> endpoint only searches posts owned by the authenticated user. Public posts become searchable only after Meta approves your app for the <code>threads_keyword_search</code> permission. To monitor public keywords before (or instead of) that approval, read the public search page at <code>threads.com/search?q=…</code> and dedupe posts by their <code>code</code> between runs.</p>
+<p>That is the whole trick. The rest of this guide covers what the official endpoint gives you once approved, how the public page ships its data, a monitoring script that only prints new posts, and where the public route stops.</p>
+<h2 id="why-your-keyword-search-only-returns-your-own-posts">Why your keyword search only returns your own posts</h2>
+<p>The official endpoint is <code>GET /keyword_search</code> on the Threads Graph API. Per Meta&#39;s documentation (checked on 29 September 2026):</p>
+<ul>
+<li>It needs two permissions: <code>threads_basic</code> and <code>threads_keyword_search</code>.</li>
+<li>Until your app is approved for <code>threads_keyword_search</code>, &quot;the search will be performed only on posts owned by the authenticated user.&quot; That is why a fresh app returns your own posts and nothing else.</li>
+<li>A user can send at most 2,200 queries in a rolling 24-hour window. Queries that return no results do not count.</li>
+<li>Parameters: <code>q</code> (required), <code>search_type</code> (<code>TOP</code> or <code>RECENT</code>), <code>search_mode</code> (<code>KEYWORD</code> or <code>TAG</code>), <code>media_type</code>, <code>since</code> / <code>until</code>, <code>limit</code> (default 25, max 100), and <code>author_username</code>.</li>
+</ul>
+<p>If you can get through app review, use the API. It is the sanctioned route, and it gives you date bounds and 100 results per page, which the public page does not. The rest of this guide is for the case where you can&#39;t, or not yet: a prototype, a one-off research pull, or a team without a Meta business app.</p>
+<h2 id="the-public-route-server-rendered-search-pages">The public route: server-rendered search pages</h2>
+<p>Threads has three public URLs that matter for keyword monitoring:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>URL</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://www.threads.com/search?q=&lt;term&gt;&amp;serp_type=default</code></td>
+<td>Relevance-ranked results for a keyword</td>
+</tr>
+<tr>
+<td><code>https://www.threads.com/search?q=&lt;term&gt;&amp;serp_type=recent</code></td>
+<td>Newest-first results for the same keyword</td>
+</tr>
+<tr>
+<td><code>https://www.threads.com/tag/&lt;name&gt;</code></td>
+<td>A topic tag&#39;s feed (Threads&#39; version of a hashtag)</td>
+</tr>
+</tbody></table></div>
+<p>Meta serves these pages with the post data embedded as JSON inside <code>&lt;script type=&quot;application/json&quot;&gt;</code> blocks when the request identifies as a link-preview crawler (<code>facebookexternalhit/1.1</code>, the user agent Facebook itself uses when unfurling links). A normal browser user agent gets a thin app shell instead, because the browser is expected to fetch the data with JavaScript afterwards.</p>
+<p>The JSON is nested inside Meta&#39;s module envelope, and the exact path moves around between releases. So don&#39;t hard-code a path. Walk every block recursively and pick out anything that looks like a post: an object with a string <code>code</code>, a <code>caption</code>, a string <code>pk</code>, and either <code>taken_at</code> or <code>like_count</code>.</p>
+<p>Two properties of these pages shape everything below:</p>
+<ol>
+<li><strong>There is no cursor.</strong> The page&#39;s <code>page_info</code> reports <code>has_next_page: false</code>. Each view renders a bounded sample, typically a few dozen posts, and you can&#39;t page deeper without logging in.</li>
+<li><strong>The two views differ.</strong> <code>default</code> (relevance) and <code>recent</code> (newest) overlap but aren&#39;t identical, so fetching both and merging on <code>code</code> widens what you see per term.</li>
+</ol>
+<h2 id="runnable-python-print-only-new-posts-per-keyword">Runnable Python: print only new posts per keyword</h2>
+<p>This script fetches both views for each term, merges them, and compares the result with a local state file. It keeps each post&#39;s <code>code</code> plus a &quot;high-water mark&quot; timestamp, and prints only posts it hasn&#39;t returned before. Run it on a cron and you have a keyword monitor.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import json, re, sys, time, pathlib, requests
+from urllib.parse import quote
+
+UA = &quot;facebookexternalhit/1.1&quot;   # Meta server-renders embedded JSON for link-preview crawlers
+SCRIPT_RE = re.compile(r'&lt;script[^&gt;]*type=&quot;application/json&quot;[^&gt;]*&gt;(.*?)&lt;/script&gt;', re.S)
+STATE = pathlib.Path(&quot;threads_seen.json&quot;)
+
+def walk(node, posts, depth=0):
+    &quot;&quot;&quot;Collect post nodes: code + caption + pk + (taken_at or like_count).&quot;&quot;&quot;
+    if depth &gt; 30 or node is None:
+        return
+    if isinstance(node, list):
+        for v in node:
+            walk(v, posts, depth + 1)
+    elif isinstance(node, dict):
+        if (isinstance(node.get(&quot;code&quot;), str) and &quot;caption&quot; in node
+                and isinstance(node.get(&quot;pk&quot;), str)
+                and (&quot;taken_at&quot; in node or &quot;like_count&quot; in node)):
+            old = posts.get(node[&quot;code&quot;])
+            if old is None or len(json.dumps(node)) &gt; len(json.dumps(old)):
+                posts[node[&quot;code&quot;]] = node          # keep the richest copy
+        for v in node.values():
+            walk(v, posts, depth + 1)
+
+def fetch_view(term, view, attempts=3):
+    url = f&quot;https://www.threads.com/search?q={quote(term)}&amp;serp_type={view}&quot;
+    for i in range(attempts):
+        try:
+            r = requests.get(url, timeout=25, headers={&quot;User-Agent&quot;: UA, &quot;Accept-Language&quot;: &quot;en-US,en;q=0.9&quot;})
+            r.raise_for_status()
+            posts = {}
+            for block in SCRIPT_RE.findall(r.text):
+                try:
+                    walk(json.loads(block), posts)
+                except ValueError:
+                    continue
+            if posts:
+                return list(posts.values())
+            # 200 with zero posts: a login gate, a data-less shell, or a real &quot;no results&quot;.
+        except requests.RequestException:
+            pass
+        time.sleep(2 * (i + 1))
+    return []
+
+def to_row(p, term):
+    user, info = p.get(&quot;user&quot;) or {}, p.get(&quot;text_post_app_info&quot;) or {}
+    return {
+        &quot;matchedQuery&quot;: term,
+        &quot;code&quot;: p[&quot;code&quot;],
+        &quot;url&quot;: f&quot;https://www.threads.com/@{user.get('username')}/post/{p['code']}&quot;,
+        &quot;username&quot;: user.get(&quot;username&quot;),
+        &quot;text&quot;: (p.get(&quot;caption&quot;) or {}).get(&quot;text&quot;),
+        &quot;takenAt&quot;: p.get(&quot;taken_at&quot;),                  # unix seconds
+        &quot;likes&quot;: p.get(&quot;like_count&quot;),
+        &quot;replies&quot;: info.get(&quot;direct_reply_count&quot;),
+        &quot;reposts&quot;: info.get(&quot;repost_count&quot;),
+        &quot;quotes&quot;: info.get(&quot;quote_count&quot;),
+    }
+
+def monitor(terms):
+    state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    new_rows = []
+    for term in terms:
+        prior = state.get(term, {})
+        seen, high_water = set(prior.get(&quot;codes&quot;, [])), prior.get(&quot;lastTakenAt&quot;, 0)
+        union = {}
+        for view in (&quot;recent&quot;, &quot;default&quot;):              # recency view first, then relevance
+            for p in fetch_view(term, view):
+                union.setdefault(p[&quot;code&quot;], p)
+        fresh = [p for p in union.values()
+                 if p[&quot;code&quot;] not in seen
+                 and (p.get(&quot;taken_at&quot;) is None or p[&quot;taken_at&quot;] &gt; high_water)]
+        new_rows += [to_row(p, term) for p in fresh]
+        stamps = [p.get(&quot;taken_at&quot;) or 0 for p in union.values()] + [high_water]
+        codes = list(dict.fromkeys([*union, *prior.get(&quot;codes&quot;, [])]))[:2000]   # newest first, capped
+        state[term] = {&quot;codes&quot;: codes, &quot;lastTakenAt&quot;: max(stamps)}
+        print(f&quot;{term!r}: {len(union)} gathered, {len(fresh)} new&quot;, file=sys.stderr)
+    STATE.write_text(json.dumps(state))
+    return new_rows
+
+if __name__ == &quot;__main__&quot;:
+    for row in monitor(sys.argv[1:] or [&quot;web scraping&quot;]):
+        print(json.dumps(row, ensure_ascii=False))</code></pre></div>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">pip install requests
+python threads_monitor.py &quot;web scraping&quot; &quot;n8n&quot;</code></pre></div>
+<p>The first run for a term prints everything currently visible. That&#39;s your baseline. After that, a post has to clear two gates to print: its <code>code</code> has never been seen, and it&#39;s newer than the last timestamp recorded for that term. The code check stops repeats. The timestamp check stops a post from coming back after its code ages out of the capped list.</p>
+<h2 id="field-reference">Field reference</h2>
+<p>These are the raw keys on each post node the walker collects, and what the script maps them to:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Raw key</th>
+<th>Script field</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>code</code></td>
+<td><code>code</code></td>
+<td>Short post ID, used in the URL. The dedupe key.</td>
+</tr>
+<tr>
+<td><code>pk</code></td>
+<td>—</td>
+<td>Numeric post ID as a string</td>
+</tr>
+<tr>
+<td><code>user.username</code></td>
+<td><code>username</code></td>
+<td>Author handle</td>
+</tr>
+<tr>
+<td><code>caption.text</code></td>
+<td><code>text</code></td>
+<td>Post body. <code>caption</code> can be present with empty text.</td>
+</tr>
+<tr>
+<td><code>taken_at</code></td>
+<td><code>takenAt</code></td>
+<td>Unix seconds</td>
+</tr>
+<tr>
+<td><code>like_count</code></td>
+<td><code>likes</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>text_post_app_info.direct_reply_count</code></td>
+<td><code>replies</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>text_post_app_info.repost_count</code></td>
+<td><code>reposts</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>text_post_app_info.quote_count</code></td>
+<td><code>quotes</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>image_versions2</code>, <code>carousel_media</code>, <code>video_versions</code></td>
+<td>—</td>
+<td>Media candidates. Pick the largest <code>width × height</code>.</td>
+</tr>
+</tbody></table></div>
+<p>The post URL is built as <code>https://www.threads.com/@&lt;username&gt;/post/&lt;code&gt;</code>. Use <code>threads.com</code>: <code>threads.net</code> URLs redirect, and a redirect is one more hop to go wrong.</p>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li><strong>A 200 with zero posts is ambiguous.</strong> Meta sometimes answers a crawler request with a full-size page that has the data blocks stripped, or with a &quot;Threads · Log in&quot; gate. This varies by IP and by moment. It&#39;s why the script retries and logs &quot;0 gathered&quot; instead of treating the term as dead. From the connection I wrote this on, every request came back as the data-less shell, so the script above ran cleanly but returned nothing. That was the IP, not the method: the same approach run on Apify&#39;s cloud through its proxies on the same day returned 10 posts for &quot;web scraping&quot;. Output from a clean IP is what the field table documents. If you&#39;re on a hot IP, try from another egress before concluding a term has no posts.</li>
+<li><strong>Coverage is a sample, not an archive.</strong> With no cursor, one term yields a few dozen posts at most, even when thousands exist. Widen coverage by monitoring related terms and by running more often, not by trying to page backwards.</li>
+<li><strong>Busy terms rotate.</strong> For a high-volume keyword, consecutive fetches can surface different slices. Early runs will look &quot;new-heavy&quot; until the seen-set fills.</li>
+<li><strong>Tags are separate.</strong> Topic tags live at <code>/tag/&lt;name&gt;</code>. Searching <code>q=%23name</code> gives an overlapping but different sample, so fetch both if a tag matters.</li>
+<li><strong>Date filters only narrow.</strong> Filtering on <code>taken_at</code> trims what the page showed you. It can&#39;t reach older posts the page never exposed.</li>
+<li><strong>Terms and privacy.</strong> Meta&#39;s terms restrict automated collection, and post authors are people. Collect public posts only, keep request rates modest, and have a lawful basis before you store or contact anyone.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/threads-keyword-monitor/">Threads keyword monitor query builder</a> lets you pick a mode (search, hashtag, or monitor), enter your terms, and set sort and limits. It generates a ready-to-run input and shows a fixed example of the output shape. It&#39;s a query builder: Threads isn&#39;t open to cross-site browser requests, so it doesn&#39;t fetch live posts in your browser.</p>
+<h2 id="at-scale">At scale</h2>
+<p><a href="https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu" target="_blank" rel="noopener">Threads Search &amp; Monitor on Apify</a> runs the same public-page approach with the parts that are tedious to maintain yourself. It fetches through Apify datacenter proxies and automatically retries gated pages through residential. It merges the relevance and recency views (and the tag view for hashtags). Its monitor mode keeps the seen-codes and high-water state in a named key-value store in your own Apify account, so a scheduled run returns only new posts. Reply trees and author bio contacts are both opt-in. It&#39;s free to start, then pay-as-you-go, charged per post returned. In monitor mode, only new posts are charged.</p>
+<p><em>Disclosure: I built the query builder and the actor. The script above works on its own.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-the-threads-api-support-keyword-search">Does the Threads API support keyword search?</h3>
+<p>Yes. <code>GET /keyword_search</code> accepts <code>q</code>, <code>search_type</code> (<code>TOP</code> or <code>RECENT</code>), <code>search_mode</code> (<code>KEYWORD</code> or <code>TAG</code>), <code>since</code>/<code>until</code> and <code>limit</code> up to 100. It needs the <code>threads_keyword_search</code> permission, and a user can make at most 2,200 queries per rolling 24 hours.</p>
+<h3 id="why-does-keyword-search-only-return-my-own-posts">Why does keyword_search only return my own posts?</h3>
+<p>Your app hasn&#39;t been approved for <code>threads_keyword_search</code> yet. Until it is, Meta scopes the search to posts owned by the authenticated user. Public posts become searchable after approval through App Review.</p>
+<h3 id="can-i-search-threads-without-logging-in">Can I search Threads without logging in?</h3>
+<p>For public posts, yes. <code>threads.com/search?q=&lt;term&gt;</code> and <code>threads.com/tag/&lt;name&gt;</code> render public results for anonymous visitors. Private accounts and anything behind the login wall stay out of reach, and there&#39;s no cursor for deeper pages.</p>
+<h3 id="how-many-posts-can-i-get-per-keyword-without-the-api">How many posts can I get per keyword without the API?</h3>
+<p>A bounded sample per view, typically a few dozen posts. Merging the <code>default</code> and <code>recent</code> views widens it somewhat. For broader coverage, monitor several related terms on a schedule instead of trying to backfill one term&#39;s history.</p>
+<h3 id="how-do-i-get-only-new-threads-posts-for-a-keyword">How do I get only new Threads posts for a keyword?</h3>
+<p>Store each post&#39;s <code>code</code> plus the newest <code>taken_at</code> you&#39;ve seen for that term. On every run, emit only posts whose code is new and whose timestamp is newer than the stored mark, then update both. The script above does exactly this in a local JSON file.</p>
+<h3 id="is-it-threads-net-or-threads-com">Is it threads.net or threads.com?</h3>
+<p><code>threads.com</code>. Old <code>threads.net</code> links still redirect, but build URLs on <code>threads.com</code> directly.</p>
+
+</div>
+<p class="guide-end"><a href="../../threads-keyword-monitor/">Open the free Monitor Threads by keyword or hashtag tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/scrape-reddit-without-api/">How to Scrape Reddit Without the API (After the 2023 Price Changes) →</a><a href="../../guides/scrape-telegram-channel-without-login/">How to Scrape a Telegram Channel Without Login (No API Key) →</a><a href="../../guides/build-threads-scraper-profiles-posts/">How to Build a Threads Scraper for Meta Profiles and Posts →</a><a href="../../guides/scrape-youtube-shorts-data/">How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts) →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

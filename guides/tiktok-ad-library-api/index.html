@@ -1,0 +1,142 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>The TikTok Ad Library API: A Developer's Guide to the DSA Library</title>
+<meta name="description" content="A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.">
+<link rel="canonical" href="https://datatooly.xyz/guides/tiktok-ad-library-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="The TikTok Ad Library API: A Developer&#39;s Guide to the DSA Library"><meta property="og:description" content="A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it."><meta property="og:url" content="https://datatooly.xyz/guides/tiktok-ad-library-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-tiktok-ad-library-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The TikTok Ad Library API: A Developer&#39;s Guide to the DSA Library">
+<meta property="article:published_time" content="2026-06-13"><meta property="article:modified_time" content="2026-06-13"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="marketing"><meta property="article:tag" content="webdev"><meta property="article:tag" content="tiktok">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The TikTok Ad Library API: A Developer&#39;s Guide to the DSA Library"><meta name="twitter:description" content="A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-tiktok-ad-library-api.jpg"><meta name="twitter:image:alt" content="The TikTok Ad Library API: A Developer&#39;s Guide to the DSA Library">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/tiktok-ad-library-api/#article","headline":"The TikTok Ad Library API: A Developer's Guide to the DSA Library","description":"A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-13","dateModified":"2026-06-13","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-tiktok-ad-library-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/tiktok-ad-library-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, marketing, webdev, tiktok","about":{"@type":"SoftwareApplication","name":"Search the TikTok Ad Library (EU/DSA)","url":"https://datatooly.xyz/tiktok-ad-library-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/tiktok-ad-library-api/#webpage","url":"https://datatooly.xyz/guides/tiktok-ad-library-api/","name":"The TikTok Ad Library API: A Developer's Guide to the DSA Library","description":"A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/tiktok-ad-library-api/#breadcrumb"},"dateModified":"2026-06-13","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-tiktok-ad-library-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/tiktok-ad-library-api/#article"},"datePublished":"2026-06-13"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/tiktok-ad-library-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"The TikTok Ad Library API: A Developer's Guide to the DSA Library","item":"https://datatooly.xyz/guides/tiktok-ad-library-api/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/ads-intelligence/">Ads Intelligence</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Ads Intelligence</span>
+<h1>The TikTok Ad Library API: A Developer's Guide to the DSA Library</h1>
+<p class="lede">A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.</p>
+<p class="updated">Published <time datetime="2026-06-13">June 13, 2026</time> · Updated <time datetime="2026-06-13">June 13, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Search the TikTok Ad Library (EU/DSA)</p><p class="gcta-s">Build a TikTok Ad Library query by keyword or advertiser, check if your market is in the 33 EU/DSA regions, preview the output, then run it live.</p><a class="btn btn-primary" href="../../tiktok-ad-library-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you have ever tried to find a clean, documented TikTok ad library API, you have probably hit a wall of marketing pages, half-answers, and tools that promise &quot;global TikTok ads&quot; without telling you what is actually inside. This guide cuts through that. I will explain exactly what TikTok exposes, what it does <em>not</em>, where the data comes from, and how to query it programmatically without guessing.</p>
+<p>The short version: there is a real, public TikTok ad transparency database, but its scope is narrower than most people assume, and there are two very different access paths with very different rules.</p>
+<h2 id="what-the-tiktok-ad-library-actually-is">What the TikTok Ad Library actually is</h2>
+<p>TikTok runs a <strong>Commercial Content Library</strong> at <a href="https://library.tiktok.com" target="_blank" rel="noopener">library.tiktok.com</a>. It exists because of the EU&#39;s <strong>Digital Services Act (DSA)</strong>, which requires very large online platforms to keep a searchable, public archive of the advertising they serve. So this is not a marketing feature TikTok built for fun — it is a regulatory obligation.</p>
+<p>That regulatory origin shapes everything about it, including the single most important fact you need before you write a line of code:</p>
+<blockquote>
+<p><strong>US ads are not in this library.</strong> The Commercial Content Library covers ads shown to users in the EU/EEA, plus the UK, Switzerland, and Türkiye. It does not cover the United States, Brazil, India, Mexico, Canada, Japan, or Australia.</p>
+</blockquote>
+<p>In practice the supported set is the 27 EU member states, the three additional EEA countries (Iceland, Liechtenstein, Norway), the UK, Switzerland, and Türkiye — 33 regions in total. If you query an unsupported country, you get an HTTP 400, not an empty result. I have seen plenty of teams burn a sprint building &quot;US TikTok ad monitoring&quot; on top of this data before discovering the US simply is not there. Don&#39;t be that team.</p>
+<p>(Separately, TikTok also runs the <strong>Creative Center</strong>, a global &quot;top ads&quot; showcase at <code>ads.tiktok.com/business/creativecenter</code>. That is a curated highlight reel, often login-gated, and is a different surface from the DSA library. Keep the two straight — people conflate them constantly.)</p>
+<h2 id="the-two-access-paths">The two access paths</h2>
+<p>There are two ways to programmatically reach Commercial Content Library data, and confusing them is the root of most &quot;the TikTok ad library API doesn&#39;t work&quot; complaints.</p>
+<h3 id="1-the-official-commercial-content-api-gated">1. The official Commercial Content API (gated)</h3>
+<p>TikTok publishes an official <strong>Commercial Content API</strong> under <a href="https://developers.tiktok.com/products/commercial-content-api" target="_blank" rel="noopener">developers.tiktok.com</a>. It is OAuth-based and free, but it is <em>gated</em>. Per TikTok&#39;s own documentation, eligibility is limited to qualifying academic institutions and non-profit researchers in the US, EEA, UK, and Switzerland (plus certain Brazilian researchers studying youth safety). <strong>Commercial users, creators, and advertisers are explicitly ineligible.</strong> Approved applications get a client key and are tightly rate-limited under a non-commercial-use commitment — TikTok&#39;s Research Tools documentation cites a ceiling on the order of 1,000 requests per day, and the Commercial Content endpoints additionally cap a single call at roughly 50 ads, so high-volume pulls mean a lot of paginated calls. TikTok says you typically hear back on a Commercial Content API application within about two working days.</p>
+<p>So if you are an academic, this is your path. If you are building anything commercial, you are not eligible — and that is by design, not an oversight.</p>
+<h3 id="2-the-public-library-s-json-endpoints">2. The public library&#39;s JSON endpoints</h3>
+<p>The public-facing library at <code>library.tiktok.com</code> is a normal web app that talks to a JSON backend. Because the library itself is public to everyone regardless of location, those read endpoints are reachable without OAuth. This is the path that powers most third-party tooling for the DSA library.</p>
+<p>I want to be precise and honest here: this is the <em>public</em> library data, the same archive any person can browse in their own browser. It is not a private feed, and it is rate-limited at scale. Below is the real request shape, which I verified directly against the live endpoints rather than copying from docs.</p>
+<h2 id="a-working-request">A working request</h2>
+<p>The flow is: discover supported regions, then POST a search scoped to one region and a time window. Time bounds are <strong>mandatory</strong> and expressed in <strong>Unix seconds</strong>. Here is a runnable Node example (Node 18+ has <code>fetch</code> built in):</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">const BASE = &quot;https://library.tiktok.com&quot;;
+
+// 1) Supported regions (cache this ~24h)
+async function getRegions() {
+  const res = await fetch(`${BASE}/api/v1/support-regions`);
+  const json = await res.json();
+  return json.region_list; // [{ region: &quot;DE&quot;, name: &quot;Germany&quot; }, ...]
+}
+
+// 2) Keyword search, scoped to ONE region + a time window
+async function searchAds({ query, region = &quot;DE&quot;, days = 30 }) {
+  const end = Math.floor(Date.now() / 1000);
+  const start = end - days * 24 * 60 * 60;
+  const url =
+    `${BASE}/api/v1/search` +
+    `?region=${region}&amp;type=1&amp;start_time=${start}&amp;end_time=${end}`;
+
+  const res = await fetch(url, {
+    method: &quot;POST&quot;,
+    headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+    body: JSON.stringify({
+      query,
+      query_type: &quot;3&quot;,          // STRING. 1=All, 2=AdvName, 3=Keyword
+      order: &quot;last_shown_date,desc&quot;,
+      offset: 0,
+      limit: 12,                // server caps page size at 12 regardless
+    }),
+  });
+
+  // Rate-limit quirk: a soft limit returns HTTP 200 with a PLAIN-TEXT
+  // body (&quot;limit exceed&quot;), so res.ok is true but JSON.parse throws.
+  const text = await res.text();
+  if (/limit\s*exceed|too\s*many/i.test(text)) {
+    throw new Error(&quot;rate-limited (soft 429) — back off and retry&quot;);
+  }
+  const json = JSON.parse(text);
+  return json; // { code: 0, data: [...ads...], total, has_more, search_id }
+}
+
+(async () =&gt; {
+  const data = await searchAds({ query: &quot;skincare&quot;, region: &quot;FR&quot;, days: 14 });
+  console.log(`total=${data.total}, first page=${data.data.length}`);
+})();</code></pre></div>
+<p>A few things that will save you hours, all learned the hard way:</p>
+<ul>
+<li><strong><code>query_type</code> is a string</strong> (<code>&quot;1&quot;</code>/<code>&quot;2&quot;</code>/<code>&quot;3&quot;</code>), not an integer — and several other response fields are typed as strings too, so don&#39;t assume numbers.</li>
+<li><strong>Page size is server-capped at 12</strong>, no matter what <code>limit</code> you send. Paginate with <code>offset</code> plus the <code>search_id</code> cursor from the previous response.</li>
+<li><strong><code>region=ALL</code> is rejected.</strong> One ISO region code per call.</li>
+<li>The response is flat: <code>data</code> <em>is</em> the array of ads, and <code>total</code> / <code>has_more</code> / <code>search_id</code> sit at the top level.</li>
+<li>A soft rate limit returns <strong>HTTP 200 with a plain-text body</strong>, not JSON. Sniff the body before <code>JSON.parse</code> and treat that as a retryable 429 with exponential backoff.</li>
+<li>Video creative URLs are signed and expire (roughly 24h), so store a <code>fetched_at</code> timestamp next to any media URL you keep.</li>
+</ul>
+<h2 id="what-you-get-per-ad">What you get per ad</h2>
+<p>This is where the DSA library is genuinely interesting. Because the law mandates targeting transparency, each ad detail record exposes far more than a creative thumbnail. Across the search and per-ad detail endpoints you can assemble roughly <strong>32 fields per ad</strong>: the creative URLs, advertiser identity and registered business location, the sponsor/payer, first- and last-shown dates, and — the valuable part — <strong>audience targeting and reach broken down by region, age bracket, and gender</strong>.</p>
+<p>That demographic breakdown is richer than the comparable Meta Ad Library, which only exposes reach and spend data for political and social-issue ads (outside the EU, where the DSA forces broader disclosure). On TikTok&#39;s DSA library, the targeting tree is available for commercial ads broadly. If you are doing competitive ad intelligence or studying how a brand splits spend across age and gender in different EU markets, that tree is the whole point.</p>
+<h2 id="a-faster-way-to-explore-before-you-build">A faster way to explore before you build</h2>
+<p>Hand-building region codes, Unix timestamps, and <code>query_type</code> values gets tedious when you are just trying to see whether a brand or keyword has any coverage. I maintain a small free query-builder, <a href="https://datatooly.xyz/tiktok-ad-library-search/">TikTok Ad Library Search</a>, that lets you assemble a valid query — keywords plus one of the 33 supported regions — and preview the request you would send. To be clear about what it is: it is a <strong>query builder and previewer</strong>, not a live in-browser scraper, so it helps you get the parameters right before you run anything.</p>
+<p>When you are ready to actually pull ads at volume — paginating past the 12-per-page cap, enriching each ad with its full targeting tree, and handling the soft-rate-limit and signed-URL quirks above — that is what my Apify actor, <a href="https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu" target="_blank" rel="noopener">TikTok Ad Library Pro</a>, automates. It takes keywords, advertiser names, or business IDs, returns the ~32-field records described above across all 33 DSA regions, and is <strong>free to start, then pay-as-you-go</strong> (the first chargeable events on each run are free, so you can validate it against your own use case before committing).</p>
+<p><em>Disclosure: I built both the free query-builder and the Apify actor linked above.</em></p>
+<h2 id="the-honest-bottom-line">The honest bottom line</h2>
+<p>The <strong>TikTok ad library API</strong> is real and, for the DSA region, surprisingly rich — but it is an EU-transparency tool, not a global ad-spying firehose. Internalize three things and you will avoid every common trap: the data is <strong>EU/EEA + UK/CH/TR only (no US)</strong>, the <strong>official API is gated to non-commercial researchers</strong>, and the public library&#39;s endpoints are usable but <strong>rate-limited and full of small typing quirks</strong> (string enums, 12-per-page caps, plain-text rate-limit bodies, mandatory Unix-second time bounds). Build with those constraints in mind and the targeting data you get back is some of the most detailed ad transparency available anywhere.</p>
+
+</div>
+<p class="guide-end"><a href="../../tiktok-ad-library-search/">Open the free Search the TikTok Ad Library (EU/DSA) tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/facebook-ad-library-scraper/">Facebook Ad Library Scraper: API Limits and the Real Approach →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

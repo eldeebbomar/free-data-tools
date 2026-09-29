@@ -1,23 +1,97 @@
 [
   {
-    "title": "Bitcoin ETF inflows hit record as price tests resistance",
-    "author": "CT Markets",
-    "publishedAt": "2026-05-30",
-    "views": 18420,
-    "url": "https://cointelegraph.com/news/..."
+    "id": "140000",
+    "post_url": "https://cointelegraph.com/news/bitcoin-etf-inflows-weekly-example",
+    "postTranslate": {
+      "title": "Bitcoin ETF inflows climb for a third straight week",
+      "published": "2026-09-28T14:05:00.000Z"
+    },
+    "category": {
+      "id": "10",
+      "category_url": "https://cointelegraph.com/tags/markets",
+      "categoryTranslates": [
+        {
+          "id": "20",
+          "title": "Markets"
+        }
+      ]
+    },
+    "views": 18420
   },
   {
-    "title": "Ethereum staking yields shift after upgrade",
-    "author": "CT Markets",
-    "publishedAt": "2026-05-29",
-    "views": 9210,
-    "url": "https://cointelegraph.com/news/..."
+    "id": "140001",
+    "post_url": "https://cointelegraph.com/news/ethereum-staking-yields-example",
+    "postTranslate": {
+      "title": "Ethereum staking yields shift after validator queue clears",
+      "published": "2026-09-27T09:30:00.000Z"
+    },
+    "category": {
+      "id": "11",
+      "category_url": "https://cointelegraph.com/tags/ethereum",
+      "categoryTranslates": [
+        {
+          "id": "21",
+          "title": "Ethereum"
+        }
+      ]
+    },
+    "views": 9210
   },
   {
-    "title": "Regulators weigh new stablecoin framework",
-    "author": "CT Policy",
-    "publishedAt": "2026-05-28",
-    "views": 12750,
-    "url": "https://cointelegraph.com/news/..."
+    "id": "140002",
+    "post_url": "https://cointelegraph.com/news/stablecoin-supply-record-example",
+    "postTranslate": {
+      "title": "Stablecoin supply reaches a new high as trading volumes recover",
+      "published": "2026-09-26T17:45:00.000Z"
+    },
+    "category": {
+      "id": "12",
+      "category_url": "https://cointelegraph.com/tags/markets",
+      "categoryTranslates": [
+        {
+          "id": "22",
+          "title": "Markets"
+        }
+      ]
+    },
+    "views": 12760
+  },
+  {
+    "id": "140003",
+    "post_url": "https://cointelegraph.com/news/defi-lending-rates-example",
+    "postTranslate": {
+      "title": "DeFi lending rates drift lower as borrowing demand cools",
+      "published": "2026-09-25T11:10:00.000Z"
+    },
+    "category": {
+      "id": "13",
+      "category_url": "https://cointelegraph.com/tags/defi",
+      "categoryTranslates": [
+        {
+          "id": "23",
+          "title": "DeFi"
+        }
+      ]
+    },
+    "views": 6340
+  },
+  {
+    "id": "140004",
+    "post_url": "https://cointelegraph.com/news/bitcoin-miners-hashrate-example",
+    "postTranslate": {
+      "title": "Bitcoin miners add hashrate ahead of difficulty adjustment",
+      "published": "2026-09-24T08:20:00.000Z"
+    },
+    "category": {
+      "id": "14",
+      "category_url": "https://cointelegraph.com/tags/bitcoin",
+      "categoryTranslates": [
+        {
+          "id": "24",
+          "title": "Bitcoin"
+        }
+      ]
+    },
+    "views": 7985
   }
 ]

@@ -1,0 +1,149 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>How to Scrape Reddit Without the API (After the 2023 Price Changes)</title>
+<meta name="description" content="A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.">
+<link rel="canonical" href="https://datatooly.xyz/guides/scrape-reddit-without-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to Scrape Reddit Without the API (After the 2023 Price Changes)"><meta property="og:description" content="A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML."><meta property="og:url" content="https://datatooly.xyz/guides/scrape-reddit-without-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-scrape-reddit-without-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How to Scrape Reddit Without the API (After the 2023 Price Changes)">
+<meta property="article:published_time" content="2026-05-31"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="python"><meta property="article:tag" content="api"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Scrape Reddit Without the API (After the 2023 Price Changes)"><meta name="twitter:description" content="A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-scrape-reddit-without-api.jpg"><meta name="twitter:image:alt" content="How to Scrape Reddit Without the API (After the 2023 Price Changes)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/scrape-reddit-without-api/#article","headline":"How to Scrape Reddit Without the API (After the 2023 Price Changes)","description":"A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-05-31","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-scrape-reddit-without-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/scrape-reddit-without-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"webscraping, python, api, datascience","about":{"@type":"SoftwareApplication","name":"Search Reddit by keyword or subreddit — and export it clean","url":"https://datatooly.xyz/reddit-search-builder/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/scrape-reddit-without-api/#webpage","url":"https://datatooly.xyz/guides/scrape-reddit-without-api/","name":"How to Scrape Reddit Without the API (After the 2023 Price Changes)","description":"A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/scrape-reddit-without-api/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-scrape-reddit-without-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/scrape-reddit-without-api/#article"},"datePublished":"2026-05-31"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/scrape-reddit-without-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"How to Scrape Reddit Without the API (After the 2023 Price Changes)","item":"https://datatooly.xyz/guides/scrape-reddit-without-api/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/social-community/">Social &amp; Community</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Social &amp; Community</span>
+<h1>How to Scrape Reddit Without the API (After the 2023 Price Changes)</h1>
+<p class="lede">A precise, honest guide to scraping Reddit without the API: what actually works in 2024, the 403/CORS traps, and old.reddit.com HTML.</p>
+<p class="updated">Published <time datetime="2026-05-31">May 31, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Search Reddit by keyword or subreddit — and export it clean</p><p class="gcta-s">Build a Reddit keyword/subreddit search query free in your browser, preview the output, then export posts + comments to CSV/JSON. No API key, no login.</p><a class="btn btn-primary" href="../../reddit-search-builder/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you&#39;ve landed here, you already know the backstory: in 2023 Reddit&#39;s API went from free-and-generous to metered-and-expensive, third-party apps shut down, and a lot of data pipelines broke overnight. So the practical question for developers and data folks is no longer &quot;should I use the API?&quot; but <strong>how to scrape Reddit without the API</strong> at all — cleanly, legally-aware, and without burning hours on requests that silently return <code>403</code>.</p>
+<p>This article walks through what genuinely works in 2026, what <em>looks</em> like it works but doesn&#39;t, and the constraints you&#39;ll hit no matter which path you choose. The code paths you can verify yourself in a terminal; the rate limits, the ~250 search cap and the Pushshift/terms details are drawn from Reddit&#39;s docs and widely-reported community experience (links where it matters), and real-world enforcement is more erratic than any documented figure.</p>
+<h2 id="the-thing-everyone-tries-first-and-why-it-fails">The thing everyone tries first (and why it fails)</h2>
+<p>The classic &quot;no API&quot; trick is appending <code>.json</code> to any Reddit URL:</p>
+<div class="code-block"><pre><code>https://www.reddit.com/r/programming/.json
+https://www.reddit.com/r/programming/comments/&lt;id&gt;/.json</code></pre></div>
+<p>This is a real, undocumented JSON view of the page. The problem is <em>where</em> you call it from.</p>
+<ul>
+<li><strong>From a browser (client-side JS):</strong> it&#39;s <strong>CORS-blocked</strong>. Reddit doesn&#39;t send <code>Access-Control-Allow-Origin</code> for these endpoints, so <code>fetch()</code> from your web app throws before you ever see data. No amount of header tweaking fixes CORS from the browser — it&#39;s enforced by the browser, not by your code.</li>
+<li><strong>From a server:</strong> <code>www.reddit.com/.../.json</code> returns <strong>HTTP 403</strong>. When I re-tested on 29 September 2026 it did so for every user agent I tried, from a residential connection as well as from datacenter IPs. Reddit tightened this after the API changes specifically to stop the &quot;just hit <code>.json</code> from a Lambda&quot; pattern.</li>
+</ul>
+<p>So the <code>www.reddit.com</code> <code>.json</code> approach dies in the two places people most want to use it: the browser and servers. It is not a foundation you want a pipeline on.</p>
+<h2 id="what-actually-works-old-reddit-com-server-rendered-html">What actually works: old.reddit.com server-rendered HTML</h2>
+<p>The long-standing no-API path is the <strong>old Reddit interface</strong>, <code>old.reddit.com</code>. Unlike the modern React SPA (which hydrates data client-side and is painful to parse), old Reddit ships <strong>fully server-rendered HTML, cookie-free</strong>. You request a page, you get the listing already in the markup.</p>
+<p>Two important nuances I want to be honest about:</p>
+<ol>
+<li><strong>The gate is the user agent, not the IP.</strong> In 2026 <code>old.reddit.com</code> answers ordinary browser user agents, and custom bot user agents like the one below, with a <code>302</code> redirect to <code>/login/?reason=lor2</code>, from residential and datacenter IPs alike. When I tested on 29 September 2026, only link-preview crawler user agents (the bots that build link previews for chat and social apps) still received the public page.</li>
+<li><strong>Past that gate, datacenter IPs are fine.</strong> In my actor&#39;s runs, subreddit listings, search, user pages and comment threads all load from datacenter IPs. The limit you actually hit is Reddit&#39;s rate limiting (HTTP <code>429</code>), so pace your requests and back off.</li>
+</ol>
+<p>Here&#39;s the classic minimal example that pulls the front page of a subreddit from old Reddit and extracts post titles and links. It uses <code>requests</code> + <code>BeautifulSoup</code>, with a real, descriptive User-Agent (Reddit reliably rejects the default <code>python-requests</code> UA). <strong>Heads-up:</strong> when I ran it on 29 September 2026 it stopped at the login check, because that descriptive UA is now redirected to the login page. The parsing logic is still correct for the page old Reddit serves to clients it lets through. I haven&#39;t rewritten it to pose as another company&#39;s crawler, because that contradicts the honest-User-Agent advice at the end of this post; if you need data today, use Reddit&#39;s official Data API or a managed scraper.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import requests
+from bs4 import BeautifulSoup
+
+HEADERS = {
+    # A real, descriptive UA. Reddit blocks the default python-requests UA.
+    &quot;User-Agent&quot;: &quot;research-bot/1.0 (contact: you@example.com)&quot;
+}
+
+def scrape_subreddit(subreddit: str):
+    url = f&quot;https://old.reddit.com/r/{subreddit}/&quot;
+    resp = requests.get(url, headers=HEADERS, timeout=20)
+    resp.raise_for_status()  # 403/429 will surface here
+    if &quot;/login&quot; in resp.url:
+        # Since 2026 old.reddit redirects most user agents to a login page.
+        raise RuntimeError(f&quot;Redirected to Reddit's login wall: {resp.url}&quot;)
+
+    soup = BeautifulSoup(resp.text, &quot;html.parser&quot;)
+    posts = []
+    for thing in soup.select(&quot;div.thing[data-fullname]&quot;):
+        title_el = thing.select_one(&quot;a.title&quot;)
+        if not title_el:
+            continue
+        posts.append({
+            &quot;id&quot;: thing.get(&quot;data-fullname&quot;),
+            &quot;title&quot;: title_el.get_text(strip=True),
+            &quot;permalink&quot;: thing.get(&quot;data-permalink&quot;),
+            &quot;score&quot;: thing.get(&quot;data-score&quot;),
+            &quot;author&quot;: thing.get(&quot;data-author&quot;),
+            &quot;subreddit&quot;: thing.get(&quot;data-subreddit&quot;),
+        })
+    return posts
+
+if __name__ == &quot;__main__&quot;:
+    for p in scrape_subreddit(&quot;programming&quot;)[:5]:
+        print(p[&quot;score&quot;], &quot;-&quot;, p[&quot;title&quot;])</code></pre></div>
+<p>The <code>div.thing</code> element carries most of what you need as <code>data-*</code> attributes — <code>data-fullname</code> (the post ID like <code>t3_abc123</code>), <code>data-score</code>, <code>data-author</code>, <code>data-permalink</code>. That&#39;s why old Reddit is so pleasant: the structure is stable and the data is right there in attributes instead of buried in a hydration blob.</p>
+<h3 id="pagination">Pagination</h3>
+<p>Old Reddit paginates with a <code>?count=25&amp;after=&lt;fullname&gt;</code> query string. The &quot;next&quot; button&#39;s <code>href</code> gives you the URL directly:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">next_btn = soup.select_one(&quot;span.next-button a&quot;)
+next_url = next_btn[&quot;href&quot;] if next_btn else None</code></pre></div>
+<p>Follow that link to walk listings. Add a polite delay (1–2 seconds) between requests and reuse a <code>requests.Session</code> so connections are kept alive.</p>
+<h2 id="the-hard-limits-you-cannot-engineer-around">The hard limits you cannot engineer around</h2>
+<p>Before you build anything ambitious, internalize these constraints. They&#39;re properties of Reddit, not of your scraper.</p>
+<p><strong>Search caps at ~250 results (observed).</strong> In practice Reddit&#39;s search — whether via the API or the HTML interface — appears to return roughly the top ~250 matches for a query and then stops, with no deep pagination past that. It&#39;s widely-observed behavior rather than an officially documented number, but it&#39;s consistent enough to plan around. If your use case is &quot;give me every post ever mentioning X,&quot; search alone will not deliver it.</p>
+<p><strong>Comment indexing is weak.</strong> Reddit search indexes <em>post</em> titles and bodies far better than it indexes <em>comments</em>. A keyword that lives only in comment threads will frequently not surface in search at all. This trips up sentiment and brand-monitoring projects constantly.</p>
+<p><strong>Pushshift is gone for you (probably).</strong> Pushshift used to be the answer for historical, full-text, deep Reddit search. Since 2023 it has been <strong>restricted to verified subreddit moderators</strong>. Unless you&#39;re a mod with approved access, treat Pushshift as unavailable.</p>
+<p><strong>The official Data API is metered and commercial-use-restricted.</strong> For completeness: the official route allows roughly <strong>100 requests/minute with OAuth</strong> (about <strong>10/minute unauthenticated</strong>), and Reddit&#39;s terms <strong>restrict commercial use</strong> without a separate licensing/paid agreement. So even if you go &quot;official,&quot; you&#39;re capped and legally boxed in for anything revenue-adjacent.</p>
+<p>Put together: there is no magic endpoint that gives you unlimited, deep, full-text Reddit history for free. Anyone who tells you otherwise is selling something or about to get blocked.</p>
+<h2 id="a-sane-workflow-build-the-query-first-then-export">A sane workflow: build the query first, then export</h2>
+<p>A mistake I see often is jumping straight to code, then discovering the query was wrong after burning a bunch of requests. Because search is capped at ~250 results and comment indexing is weak, <strong>the precision of your query matters more than the speed of your scraper</strong>.</p>
+<p>So the workflow I&#39;d recommend:</p>
+<ol>
+<li><p><strong>Compose and preview the query before you fetch anything.</strong> A free, no-signup helper for this is the <a href="https://datatooly.xyz/reddit-search-builder/">Reddit Search Builder</a>. It lets you assemble a precise Reddit query (subreddit filters, time windows, sort, exact-phrase syntax) and previews the result schema so you know exactly which fields you&#39;ll get back before committing to a run. Getting the query right up front is the single biggest lever given the 250-result ceiling.</p>
+</li>
+<li><p><strong>Run small to validate</strong> the HTML parser against real markup, and confirm you are getting listings rather than the login redirect (selectors drift; verify before scaling).</p>
+</li>
+<li><p><strong>Scale the export with proper IP rotation.</strong> This is where a DIY scraper gets painful — you need a way past the login wall that fits your terms-of-use position, rotating IPs, retry/backoff on <code>403</code>/<code>429</code>, and dedup across pages. Maintaining that yourself is a real project.</p>
+</li>
+</ol>
+<p>If you&#39;d rather not run and maintain the proxy + retry + parsing stack, the <a href="https://apify.com/constructive_calm/reddit-scraper-pro?fpr=v77kxu" target="_blank" rel="noopener">Reddit Scraper</a> actor on Apify is the do-this-at-scale option I built around exactly the constraints above (disclosure: it&#39;s my actor). It takes <strong>one list of targets</strong> (keywords, <code>r/subreddit</code>, <code>r/subreddit keyword</code>, <code>u/user</code> or any Reddit link, each auto-detected), fetches comment threads for post links, has an <code>onlyNew</code> switch for scheduled monitoring, and handles <strong>datacenter-first with residential fallback</strong> so the easy routes stay cheap and the hard routes still work, with retry/backoff on <code>403</code>/<code>429</code> to keep success rates high. Pricing is <strong>$0.0025 per post, billed from the first item</strong>; Apify&#39;s free monthly credit covers a small test run on a real query. It reads the same public <code>old.reddit.com</code> pages described here, just with the IP rotation, backoff, and schema normalization already wired up.</p>
+<h2 id="a-quick-decision-guide">A quick decision guide</h2>
+<ul>
+<li><strong>Need a few subreddit or user listings, occasionally?</strong> The parsing logic above is enough once you have page access. Since the 2026 login wall, the simplest compliant route at small volume is Reddit&#39;s official Data API.</li>
+<li><strong>Need search results or comment trees at any volume?</strong> Plan for Reddit&#39;s rate limits and accept the ~250-result search ceiling. Build your query carefully first.</li>
+<li><strong>Need scale, reliability, or scheduled monitoring?</strong> Either invest serious time in a rotating-proxy pipeline, or hand it to a managed actor and spend your time on the analysis instead of the plumbing.</li>
+</ul>
+<h2 id="one-honest-closing-note">One honest closing note</h2>
+<p>Whatever path you pick, respect the source. Reddit&#39;s terms prohibit unauthorized commercial use of its data, the official API is rate-limited for a reason, and aggressive scraping gets IPs and projects banned. Scrape conservatively, identify your bot honestly in the <code>User-Agent</code>, cache what you fetch so you don&#39;t re-hammer the same pages, and don&#39;t republish content in ways that violate users&#39; or Reddit&#39;s rights. &quot;Without the API&quot; is a technical choice — it isn&#39;t a license to ignore the terms behind it. Build accordingly, and your pipeline will outlast the next round of changes.</p>
+
+</div>
+<p class="guide-end"><a href="../../reddit-search-builder/">Open the free Search Reddit by keyword or subreddit tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/scrape-telegram-channel-without-login/">How to Scrape a Telegram Channel Without Login (No API Key) →</a><a href="../../guides/threads-keyword-search-without-app-review/">Threads Keyword Search Without App Review: Monitor in Python →</a><a href="../../guides/build-threads-scraper-profiles-posts/">How to Build a Threads Scraper for Meta Profiles and Posts →</a><a href="../../guides/scrape-youtube-shorts-data/">How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts) →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

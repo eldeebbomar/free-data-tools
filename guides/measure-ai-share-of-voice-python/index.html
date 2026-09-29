@@ -1,0 +1,227 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity</title>
+<meta name="description" content="Measure your brand&#39;s AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores &#39;I&#39;m not familiar with X&#39; answers.">
+<link rel="canonical" href="https://datatooly.xyz/guides/measure-ai-share-of-voice-python/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity"><meta property="og:description" content="Measure your brand&#39;s AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores &#39;I&#39;m not familiar with X&#39; answers."><meta property="og:url" content="https://datatooly.xyz/guides/measure-ai-share-of-voice-python/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-measure-ai-share-of-voice-python.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="ai"><meta property="article:tag" content="seo"><meta property="article:tag" content="llm">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity"><meta name="twitter:description" content="Measure your brand&#39;s AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores &#39;I&#39;m not familiar with X&#39; answers."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-measure-ai-share-of-voice-python.jpg"><meta name="twitter:image:alt" content="Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/#article","headline":"Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity","description":"Measure your brand's AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores 'I'm not familiar with X' answers.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-measure-ai-share-of-voice-python.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, ai, seo, llm","about":{"@type":"SoftwareApplication","name":"Is your brand visible in ChatGPT & AI search?","url":"https://datatooly.xyz/llm-visibility-monitor-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/#webpage","url":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/","name":"Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity","description":"Measure your brand's AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores 'I'm not familiar with X' answers.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-measure-ai-share-of-voice-python.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity","item":"https://datatooly.xyz/guides/measure-ai-share-of-voice-python/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/ai-seo/">AI &amp; SEO</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · AI &amp; SEO</span>
+<h1>Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity</h1>
+<p class="lede">Measure your brand's AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores 'I'm not familiar with X' answers.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Is your brand visible in ChatGPT &amp; AI search?</p><p class="gcta-s">Build a ready-to-run query to track brand mentions in ChatGPT and 4 other AI engines. Preview the output shape, then run it live on Apify. Free to start.</p><a class="btn btn-primary" href="../../llm-visibility-monitor-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>AI share of voice is your brand&#39;s mentions divided by the combined mentions of your brand and the competitors you track, counted across a fixed set of buyer-style prompts and several AI models. To measure it in Python, send every prompt to every model through one API, count mentions sentence by sentence, skip sentences where the model says it doesn&#39;t know you, then divide.</p>
+<p>Most write-ups on this topic stop at the formula and a spreadsheet. This one gives you a script that runs, plus the counting mistakes that make a visibility report say the opposite of the truth.</p>
+<h2 id="what-you-are-actually-measuring">What you are actually measuring</h2>
+<p>An LLM answer is sampled, not looked up. Ask the same model the same question twice and the list of brands, their order, and the wording can all change. So &quot;are we in ChatGPT?&quot; has no single yes/no answer. It has a rate, and a rate needs three fixed things:</p>
+<ol>
+<li><strong>A prompt set.</strong> Questions a buyer would really ask, like &quot;best note-taking app for a small startup team&quot;, not &quot;what is Notion&quot;. Keep the set stable between runs, or your trend is measuring your prompt edits.</li>
+<li><strong>A model set.</strong> Visibility differs between engines, so measure each one separately and report them side by side.</li>
+<li><strong>Repeated samples.</strong> One answer per prompt is an anecdote. Run each prompt several times per model and average.</li>
+</ol>
+<p>A second distinction matters just as much: <strong>mention versus citation.</strong> A mention is your brand name appearing in the answer text. A citation is your domain appearing as a linked source. Web-searching models can cite you without naming you prominently, and model-knowledge answers can name you without linking anything. Record both.</p>
+<h2 id="the-source-and-its-limits">The source, and its limits</h2>
+<p>The script uses <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a>, an OpenAI-compatible endpoint that routes one request format to OpenAI, Google, Perplexity, Anthropic and others. That saves you writing five clients. The <code>~…-latest</code> model IDs it exposes (for example <code>~openai/gpt-mini-latest</code>) follow each vendor&#39;s newest model in that line, which is convenient for monitoring but means the model underneath can change between runs.</p>
+<p>Be clear about what an API answer is. It isn&#39;t a screenshot of someone&#39;s ChatGPT app. Consumer apps add memory, account personalization, location and product experiments that an API call doesn&#39;t have. API sampling is the repeatable, comparable baseline, not a reproduction of any one user&#39;s screen.</p>
+<h2 id="runnable-python">Runnable Python</h2>
+<p>Set <code>OPENROUTER_API_KEY</code> in your environment, edit the brand, competitors, prompts and models, and run it. Each call is billed by OpenRouter per token, so start with one prompt and one sample.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import os, re, time, json, requests
+
+API = &quot;https://openrouter.ai/api/v1/chat/completions&quot;
+KEY = os.environ[&quot;OPENROUTER_API_KEY&quot;]
+
+BRAND = [&quot;Notion&quot;]                                    # brand + aliases (no overlapping aliases)
+COMPETITORS = {&quot;Obsidian&quot;: [&quot;Obsidian&quot;], &quot;Evernote&quot;: [&quot;Evernote&quot;], &quot;OneNote&quot;: [&quot;OneNote&quot;]}
+PROMPTS = [&quot;What is the best note-taking app for a small startup team?&quot;]
+MODELS = [&quot;~openai/gpt-mini-latest&quot;, &quot;~google/gemini-flash-latest&quot;, &quot;perplexity/sonar&quot;]
+SAMPLES = 1                                           # raise to 3+ for a real audit
+
+# A sentence where the model says it does NOT know the brand is absence, not visibility.
+ABSENCE = re.compile(
+    r&quot;\b(not familiar|not aware|couldn't find|could not find|unable to find|&quot;
+    r&quot;no (?:information|data|results)|does(?:n't| not) (?:appear|exist)|never heard|fictional)\b&quot;,
+    re.I,
+)
+
+def ask(model, prompt, attempts=3):
+    for i in range(attempts):
+        try:
+            r = requests.post(API, timeout=90,
+                              headers={&quot;Authorization&quot;: f&quot;Bearer {KEY}&quot;},
+                              json={&quot;model&quot;: model, &quot;temperature&quot;: 0.2, &quot;max_tokens&quot;: 1200,
+                                    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: prompt}]})
+            if r.status_code in (401, 403):
+                raise SystemExit(f&quot;auth failed: {r.text[:200]}&quot;)   # a dead key never recovers
+            r.raise_for_status()
+            return r.json()[&quot;choices&quot;][0][&quot;message&quot;].get(&quot;content&quot;) or &quot;&quot;
+        except (requests.RequestException, ValueError, KeyError):
+            if i == attempts - 1:
+                raise
+            time.sleep(2 ** i)                                   # 1s, 2s backoff
+
+def hits(text, aliases):
+    return [m.start() for a in aliases
+            for m in re.finditer(rf&quot;(?&lt;![\w.]){re.escape(a)}(?!\w)&quot;, text, re.I)]
+
+def score(answer):
+    sentences = [s for s in re.split(r&quot;(?&lt;=[.!?])\s+|\n+&quot;, answer) if s.strip()]
+    brand = sum(len(hits(s, BRAND)) for s in sentences if not ABSENCE.search(s))
+    comps = {name: len(hits(answer, al)) for name, al in COMPETITORS.items()}
+    first_seen = {name: min(hits(answer, al)) for name, al in COMPETITORS.items() if hits(answer, al)}
+    if brand:
+        first_seen[&quot;__brand__&quot;] = min(hits(answer, BRAND))
+    order = sorted(first_seen, key=first_seen.get)
+    return {&quot;brandMentionCount&quot;: brand, &quot;brandMentioned&quot;: brand &gt; 0,
+            &quot;brandPosition&quot;: order.index(&quot;__brand__&quot;) + 1 if brand else None,
+            &quot;competitorMentions&quot;: comps}
+
+if __name__ == &quot;__main__&quot;:
+    rows = []
+    for prompt in PROMPTS:
+        for model in MODELS:
+            for s in range(SAMPLES):
+                rows.append({&quot;prompt&quot;: prompt, &quot;model&quot;: model, &quot;sample&quot;: s, **score(ask(model, prompt))})
+
+    brand_total = sum(r[&quot;brandMentionCount&quot;] for r in rows)
+    comp_total = sum(sum(r[&quot;competitorMentions&quot;].values()) for r in rows)
+    print(json.dumps(rows, indent=2))
+    if brand_total + comp_total:
+        print(f&quot;share of voice: {brand_total / (brand_total + comp_total):.0%}&quot;)</code></pre></div>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">pip install requests
+export OPENROUTER_API_KEY=sk-or-...
+python ai_share_of_voice.py</code></pre></div>
+<p>You get one row per prompt × model × sample, then a single share-of-voice figure. Don&#39;t read much into the number from one prompt and one sample. It moves from run to run, which is the whole reason to sample repeatedly.</p>
+<p>The absence filter is the part worth testing yourself. Feed <code>score()</code> a sentence like <em>&quot;I&#39;m not familiar with Notion, so I can&#39;t compare it. Obsidian and Evernote are popular choices.&quot;</em> and it returns <code>brandMentioned: False</code> with the competitors counted. A naive &quot;is the name in the text&quot; check would call that a mention.</p>
+<h2 id="fields-worth-recording">Fields worth recording</h2>
+<p>The script keeps the minimum. A production audit usually stores these per answer:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>brandMentioned</code></td>
+<td>bool</td>
+<td>Brand named in at least one substantive sentence</td>
+</tr>
+<tr>
+<td><code>brandMentionCount</code></td>
+<td>int</td>
+<td>Substantive mentions (absence sentences excluded)</td>
+</tr>
+<tr>
+<td><code>brandPosition</code></td>
+<td>int or null</td>
+<td>Order of first appearance among brand + tracked competitors</td>
+</tr>
+<tr>
+<td><code>competitorMentions</code></td>
+<td>object</td>
+<td>Mention count per competitor</td>
+</tr>
+<tr>
+<td><code>shareOfVoice</code></td>
+<td>float</td>
+<td>brand ÷ (brand + competitors) for that answer</td>
+</tr>
+<tr>
+<td><code>citedDomains</code></td>
+<td>array</td>
+<td>Domains linked or written out in the answer</td>
+</tr>
+<tr>
+<td><code>ownedDomainCited</code></td>
+<td>bool</td>
+<td>Your domain is among <code>citedDomains</code></td>
+</tr>
+<tr>
+<td><code>sentimentLabel</code></td>
+<td>string</td>
+<td>Scored on the brand&#39;s own sentences only</td>
+</tr>
+<tr>
+<td><code>model</code>, <code>prompt</code>, <code>sample</code>, <code>observedAt</code></td>
+<td>—</td>
+<td>So you can compare like with like over time</td>
+</tr>
+</tbody></table></div>
+<h2 id="pitfalls-that-flip-the-result">Pitfalls that flip the result</h2>
+<ul>
+<li><strong>Absence counted as presence.</strong> Models often echo your brand name while saying they don&#39;t recognise it. Count mentions per sentence and drop absence sentences. Otherwise an invisible brand shows up as &quot;mentioned&quot;.</li>
+<li><strong>Borrowed sentiment.</strong> If you score sentiment over the whole answer, praise for a competitor becomes praise for you. Score only the sentences that mention your brand.</li>
+<li><strong>Alias collisions.</strong> Aliases that contain each other (a brand name and its domain, say) double-count the same mention. Keep aliases disjoint, and match on word boundaries so short names don&#39;t hit inside other words.</li>
+<li><strong>Reasoning models returning fragments.</strong> Some models spend their token budget on hidden reasoning and return a short or empty <code>content</code>. OpenRouter accepts <code>&quot;reasoning&quot;: {&quot;enabled&quot;: false}</code> for models that allow it, but some endpoints require reasoning and will reject that. Check <code>finish_reason</code>, and treat an empty or cut-off answer as &quot;no data&quot;, not as &quot;not mentioned&quot;.</li>
+<li><strong>Citations outside URLs.</strong> Model-knowledge answers often write &quot;Notion (notion.so)&quot; without <code>https://</code>. A URL-only extractor misses these, so add a bare-domain pass with a short list of allowed TLDs.</li>
+<li><strong>Web search changes both answers and cost.</strong> Letting a model search the web gives you citations, but per-call cost varies widely between models. Measure a few calls on each model before you schedule hundreds.</li>
+<li><strong>Auth errors must stop the run.</strong> A 401 or 403 affects every call. If you soft-fail it, you get a &quot;successful&quot; run full of empty rows.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/llm-visibility-monitor-tool/">LLM visibility query builder</a> takes a brand name, a market category and competitors, and generates a ready-to-run input with a fixed example of the output shape. It doesn&#39;t query any AI model from your browser. It&#39;s a query builder, and the fixed example isn&#39;t live data for your brand.</p>
+<h2 id="at-scale">At scale</h2>
+<p><a href="https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu" target="_blank" rel="noopener">LLM Visibility Monitor on Apify</a> runs this as a scheduled audit. It covers OpenAI, Anthropic Claude, Google Gemini, Perplexity and xAI Grok surfaces, runs every sample with web search on and labels each row with the search surface used (the model&#39;s native search or OpenRouter web search), and can generate a buyer-intent prompt set from your market category. It applies the absence and brand-only sentiment rules above and writes a scorecard, competitor share of voice, citation opportunities, prompt gaps and an agency-style report to the run&#39;s key-value store. It defaults to a dry-run mode that makes no LLM calls, supports your own OpenRouter key, and is free to start, then pay-as-you-go. Samples that come back empty or truncated aren&#39;t charged.</p>
+<p><em>Disclosure: I built the query builder and the actor. The script above works on its own with any OpenRouter key.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-ai-share-of-voice">What is AI share of voice?</h3>
+<p>It&#39;s your brand&#39;s share of the brand mentions in AI answers for a defined set of prompts: your mentions divided by your mentions plus your tracked competitors&#39; mentions. It&#39;s a relative measure. Adding or removing a competitor changes it.</p>
+<h3 id="how-do-i-track-brand-mentions-in-chatgpt-automatically">How do I track brand mentions in ChatGPT automatically?</h3>
+<p>Send a fixed prompt set to an OpenAI model through the API on a schedule, several samples per prompt, and store mention, position, citation and sentiment per answer. Compare runs over time instead of reading any single answer.</p>
+<h3 id="is-the-api-answer-the-same-as-what-users-see-in-the-chatgpt-app">Is the API answer the same as what users see in the ChatGPT app?</h3>
+<p>No. The app adds memory, personalization, location and experiments. API sampling gives you a repeatable baseline for trends and competitor comparison. It doesn&#39;t show you any individual user&#39;s screen.</p>
+<h3 id="how-many-prompts-and-samples-do-i-need">How many prompts and samples do I need?</h3>
+<p>Enough that one odd answer can&#39;t swing the result. Start with a small stable set of buyer-intent prompts and at least a few samples per model. Then keep the set fixed so changes over time reflect the models, not your prompt edits.</p>
+<h3 id="does-this-cover-google-ai-overviews">Does this cover Google AI Overviews?</h3>
+<p>Not directly. AI Overviews live on Google&#39;s results page, and a plain HTTP request to google.com/search now gets a JavaScript-required page, not results. Querying a Gemini model gives you a signal about what Google&#39;s model says. It isn&#39;t the Overview itself.</p>
+<h3 id="what-s-the-difference-between-a-mention-and-a-citation">What&#39;s the difference between a mention and a citation?</h3>
+<p>A mention is your brand name in the answer text. A citation is your website linked or named as a source. Track them separately. You can be mentioned without being cited, and cited without being prominently mentioned.</p>
+
+</div>
+<p class="guide-end"><a href="../../llm-visibility-monitor-tool/">Open the free Is your brand visible in ChatGPT &amp; AI search? tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

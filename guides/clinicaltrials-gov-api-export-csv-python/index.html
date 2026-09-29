@@ -1,0 +1,237 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>ClinicalTrials.gov API to CSV: Export Trials by Phase in Python</title>
+<meta name="description" content="Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.">
+<link rel="canonical" href="https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="ClinicalTrials.gov API to CSV: Export Trials by Phase in Python"><meta property="og:description" content="Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works."><meta property="og:url" content="https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-api-export-csv-python.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ClinicalTrials.gov API to CSV: Export Trials by Phase in Python">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="api"><meta property="article:tag" content="datascience"><meta property="article:tag" content="healthcare">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ClinicalTrials.gov API to CSV: Export Trials by Phase in Python"><meta name="twitter:description" content="Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-api-export-csv-python.jpg"><meta name="twitter:image:alt" content="ClinicalTrials.gov API to CSV: Export Trials by Phase in Python">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/#article","headline":"ClinicalTrials.gov API to CSV: Export Trials by Phase in Python","description":"Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-api-export-csv-python.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, api, datascience, healthcare","about":{"@type":"SoftwareApplication","name":"Search ClinicalTrials.gov live — by condition, drug, or phase","url":"https://datatooly.xyz/clinical-trials-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/#webpage","url":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/","name":"ClinicalTrials.gov API to CSV: Export Trials by Phase in Python","description":"Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-api-export-csv-python.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"ClinicalTrials.gov API to CSV: Export Trials by Phase in Python","item":"https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/health-pharma/">Health &amp; Pharma</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Health &amp; Pharma</span>
+<h1>ClinicalTrials.gov API to CSV: Export Trials by Phase in Python</h1>
+<p class="lede">Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Search ClinicalTrials.gov live — by condition, drug, or phase</p><p class="gcta-s">Search ClinicalTrials.gov live by condition, drug, or phase. Free browser tool hits the official v2 REST API (no key, CORS-open) and shows real NCT studies.</p><a class="btn btn-primary" href="../../clinical-trials-search/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>To export ClinicalTrials.gov search results to CSV, call <code>https://clinicaltrials.gov/api/v2/studies?format=csv</code>. No API key is needed. In CSV mode the cursor for the next page comes back in the <code>x-next-page-token</code> <strong>response header</strong>, not in the body. Only the first page includes a header row. Filter phases with <code>filter.advanced=AREA[Phase]PHASE3</code>, because <code>filter.phase</code> does not exist and the API rejects it with HTTP 400.</p>
+<p>Most tutorials cover the JSON flavour of the v2 API and stop there. This guide covers the CSV path end to end and the three details that break naive scripts. Every URL, header and error message below was checked against the live API on 2026-09-29.</p>
+<h2 id="the-source-and-what-it-gives-you">The source and what it gives you</h2>
+<p>ClinicalTrials.gov is the U.S. National Library of Medicine&#39;s public trial registry. Its v2 REST API has one search endpoint:</p>
+<div class="code-block"><pre><code>https://clinicaltrials.gov/api/v2/studies</code></pre></div>
+<p>It needs no key and no signup. It also sends <code>Access-Control-Allow-Origin: *</code>, so you can call it from a browser as well as from a script. By default it returns JSON. Add <code>format=csv</code> and you get <code>text/csv</code> with 30 columns per study:</p>
+<p><code>NCT Number, Study Title, Study URL, Acronym, Study Status, Brief Summary, Study Results, Conditions, Interventions, Primary Outcome Measures, Secondary Outcome Measures, Other Outcome Measures, Sponsor, Collaborators, Sex, Age, Phases, Enrollment, Funder Type, Study Type, Study Design, Other IDs, Start Date, Primary Completion Date, Completion Date, First Posted, Results First Posted, Last Update Posted, Locations, Study Documents</code></p>
+<p>The parameters you&#39;ll use most:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What it does</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>query.cond</code></td>
+<td>Condition or disease search</td>
+<td><code>query.cond=non-small cell lung cancer</code></td>
+</tr>
+<tr>
+<td><code>query.intr</code></td>
+<td>Drug or intervention search</td>
+<td><code>query.intr=semaglutide</code></td>
+</tr>
+<tr>
+<td><code>query.term</code></td>
+<td>Free-text search</td>
+<td><code>query.term=GLP-1</code></td>
+</tr>
+<tr>
+<td><code>filter.overallStatus</code></td>
+<td>Status filter (comma or pipe separated)</td>
+<td><code>RECRUITING,NOT_YET_RECRUITING</code></td>
+</tr>
+<tr>
+<td><code>filter.advanced</code></td>
+<td>Essie expression for fields without a dedicated filter</td>
+<td><code>AREA[Phase]PHASE3</code></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td>Limit columns (CSV uses display names)</td>
+<td><code>NCT Number,Study Title,Phases</code></td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td>Studies per page, max 1000</td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td><code>pageToken</code></td>
+<td>Cursor for the next page</td>
+<td>value of <code>x-next-page-token</code></td>
+</tr>
+<tr>
+<td><code>countTotal</code></td>
+<td>Adds the total match count</td>
+<td><code>true</code></td>
+</tr>
+</tbody></table></div>
+<h2 id="runnable-python-search-to-csv-every-page">Runnable Python: search to CSV, every page</h2>
+<p>This script exports recruiting Phase 2 and Phase 3 non-small cell lung cancer trials. It needs only <code>requests</code>.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import csv
+import io
+import time
+import requests
+
+BASE = &quot;https://clinicaltrials.gov/api/v2/studies&quot;
+
+params = {
+    &quot;format&quot;: &quot;csv&quot;,
+    &quot;query.cond&quot;: &quot;non-small cell lung cancer&quot;,
+    &quot;filter.overallStatus&quot;: &quot;RECRUITING&quot;,
+    &quot;filter.advanced&quot;: &quot;AREA[Phase](PHASE2 OR PHASE3)&quot;,  # filter.phase does not exist (HTTP 400)
+    &quot;fields&quot;: &quot;NCT Number,Study Title,Study Status,Phases,Sponsor,Start Date&quot;,
+    &quot;countTotal&quot;: &quot;true&quot;,
+    &quot;pageSize&quot;: 1000,  # the maximum per page
+}
+
+def get_page(session, p):
+    for attempt in range(5):
+        r = session.get(BASE, params=p, timeout=60)
+        if r.status_code == 429 or r.status_code &gt;= 500:
+            time.sleep(2 ** attempt)  # back off, then retry
+            continue
+        r.raise_for_status()  # a 400 here usually means a bad parameter name or value
+        return r
+    raise RuntimeError(&quot;gave up after 5 attempts&quot;)
+
+def export_csv(path, params, max_pages=100):
+    session = requests.Session()
+    token, written = None, 0
+    with open(path, &quot;w&quot;, encoding=&quot;utf-8&quot;, newline=&quot;&quot;) as f:
+        writer = csv.writer(f)
+        for page in range(max_pages):
+            p = dict(params, **({&quot;pageToken&quot;: token} if token else {}))
+            r = get_page(session, p)
+            rows = list(csv.reader(io.StringIO(r.text)))
+            if page == 0:
+                print(&quot;matching studies:&quot;, r.headers.get(&quot;x-total-count&quot;))
+                writer.writerow(rows.pop(0))  # only the FIRST page carries a header row
+            for row in rows:
+                writer.writerow(row)
+                written += 1
+            # In CSV mode the cursor is a response HEADER, not a JSON field.
+            token = r.headers.get(&quot;x-next-page-token&quot;)
+            if not token:
+                break
+            time.sleep(0.5)
+    return written
+
+if __name__ == &quot;__main__&quot;:
+    n = export_csv(&quot;nsclc_ph2_ph3_recruiting.csv&quot;, params)
+    print(&quot;rows written:&quot;, n)</code></pre></div>
+<p>When I ran it on 2026-09-29 it printed <code>matching studies: 710</code> and wrote 710 rows. The first lines of the file:</p>
+<div class="code-block"><span class="code-lang">csv</span><pre><code class="language-csv">NCT Number,Study Title,Study Status,Sponsor,Phases,Start Date
+NCT07103395,&quot;A Study Evaluating Neoadjuvant Chemotherapy, Concurrent Chemoradiotherapy ...&quot;,RECRUITING,Sun Yat-sen University,PHASE2,2026-01-01
+NCT06236438,&quot;Study to Evaluate Adverse Events, Optimal Dose, and Change in Disease Activity ...&quot;,RECRUITING,AbbVie,PHASE2|PHASE3,2024-04-10</code></pre></div>
+<p>To test the pagination, I re-ran the export with <code>pageSize=200</code>, which forces four pages. It returned the same 710 rows with 710 unique NCT numbers.</p>
+<h2 id="the-three-details-that-break-scripts">The three details that break scripts</h2>
+<h3 id="1-the-page-cursor-moves-to-a-header">1. The page cursor moves to a header</h3>
+<p>In JSON mode, the next-page cursor is the <code>nextPageToken</code> field in the body. In CSV mode the body is pure CSV, so the API puts the cursor in response headers instead:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x-next-page-token</code></td>
+<td>Pass it back as <code>pageToken</code>. It is absent on the last page.</td>
+</tr>
+<tr>
+<td><code>x-total-count</code></td>
+<td>Total matches (only when <code>countTotal=true</code>)</td>
+</tr>
+</tbody></table></div>
+<p>If you look for <code>nextPageToken</code> in a CSV response, you&#39;ll never find a second page.</p>
+<h3 id="2-page-2-and-later-have-no-header-row">2. Page 2 and later have no header row</h3>
+<p>Only the first page starts with the column names. Later pages are data rows only. If you parse each page with <code>csv.DictReader</code>, it treats the first study of page 2 as a header and your columns silently shift. Read page one&#39;s header once, then append raw rows, as the script does.</p>
+<h3 id="3-there-is-no-filter-phase">3. There is no <code>filter.phase</code></h3>
+<p>Several tutorials show <code>filter.phase=PHASE3</code>. The live API answers with HTTP 400 and the body <code>`filter.phase` is unknown parameter</code>. Use one of these instead. Both returned the same 1,402 Phase 3 lung-cancer studies:</p>
+<div class="code-block"><pre><code>filter.advanced=AREA[Phase]PHASE3
+aggFilters=phase:3</code></pre></div>
+<p>For several phases, use <code>AREA[Phase](PHASE2 OR PHASE3)</code>. Studies that span two phases show both values in the <code>Phases</code> column, separated by a pipe (<code>PHASE2|PHASE3</code>). Split on <code>|</code> before you count by phase.</p>
+<h2 id="smaller-pitfalls">Smaller pitfalls</h2>
+<ul>
+<li><strong>CSV <code>fields</code> uses display names.</strong> <code>fields=NCT Number,Study Title</code> works. The JSON-style name fails with <code>Parameter &#39;fields&#39; contains invalid CSV column name: &#39;NCTId&#39;</code>. In JSON mode it&#39;s the other way round (<code>NCTId</code>, <code>BriefTitle</code>).</li>
+<li><strong>Column order is fixed.</strong> The API returns the columns you ask for in its own order, not yours. I asked for <code>Phases,Sponsor</code> and got <code>Sponsor,Phases</code>. Map columns by header name, not by position.</li>
+<li><strong><code>pageSize</code> tops out at 1000.</strong> A request for 1,001 still returns 1,000 studies without an error. Don&#39;t compute page counts from the number you asked for.</li>
+<li><strong>Status values are validated.</strong> A typo such as <code>RECRUITNG</code> returns HTTP 400 with <code>Invalid value in parameter overallStatus</code>. Treat a 400 as a query bug, not something to retry.</li>
+<li><strong>Date ranges go through <code>filter.advanced</code> too.</strong> For example <code>AREA[StartDate]RANGE[2024-01-01,MAX]</code>. You can combine clauses with <code>AND</code>.</li>
+<li><strong>Rate limits aren&#39;t published.</strong> NLM doesn&#39;t publish a fixed request quota. Community reports put the practical ceiling around 50 requests per minute per IP, which is an estimate, not a documented limit. Use <code>pageSize=1000</code>, pause between pages, and back off on 429.</li>
+<li><strong>CORS is open.</strong> You can make the same call from browser JavaScript with <code>fetch()</code>. That is how the free tool below works.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>If you only need to see which trials match before you write any code, try the free <a href="https://datatooly.xyz/clinical-trials-search/">ClinicalTrials.gov search tool</a>. It&#39;s a <strong>live</strong> tool: it calls the official v2 API directly from your browser and shows real studies with NCT ID, status, phase and lead sponsor. You can filter by condition, drug, phase and status. There&#39;s no login and no key.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The script covers one registry. Things get harder when you need trials joined with FDA drug approvals, 510(k) and PMA device clearances, adverse events, recalls and drug shortages, rolled up per sponsor and re-checked on a schedule. For that I run the <a href="https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu" target="_blank" rel="noopener">Clinical Trials &amp; FDA Pipeline actor</a> on Apify. It uses the same <code>nextPageToken</code> pagination internally. It resolves sponsors by ticker or name, has a monitor mode for change detection, and exports to JSON, CSV or Excel. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly tool and the Apify actor. The API details and the script above work without either.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-the-clinicaltrials-gov-api-need-an-api-key">Does the ClinicalTrials.gov API need an API key?</h3>
+<p>No. The v2 endpoint <code>https://clinicaltrials.gov/api/v2/studies</code> is public, with no key, no signup and no authentication. It also sends <code>Access-Control-Allow-Origin: *</code>, so browser <code>fetch()</code> calls work too.</p>
+<h3 id="how-do-i-get-csv-instead-of-json">How do I get CSV instead of JSON?</h3>
+<p>Add <code>format=csv</code> to the query. The response is <code>text/csv</code> with 30 default columns. Narrow it with <code>fields=</code> using the CSV display names, such as <code>NCT Number,Study Title,Phases</code>.</p>
+<h3 id="how-do-i-paginate-csv-results">How do I paginate CSV results?</h3>
+<p>Read the <code>x-next-page-token</code> response header and send it back as <code>pageToken</code> on the next request. Stop when the header is missing. Remember that only the first page has a header row.</p>
+<h3 id="why-does-filter-phase-return-http-400">Why does <code>filter.phase</code> return HTTP 400?</h3>
+<p>That parameter doesn&#39;t exist in the v2 API. Filter phases with <code>filter.advanced=AREA[Phase]PHASE3</code>, or <code>aggFilters=phase:3</code>. For several phases use <code>AREA[Phase](PHASE2 OR PHASE3)</code>.</p>
+<h3 id="what-is-the-maximum-page-size">What is the maximum page size?</h3>
+<p>1,000 studies per request. Larger values are clamped to 1,000 without an error.</p>
+<h3 id="can-i-search-by-drug-instead-of-condition">Can I search by drug instead of condition?</h3>
+<p>Yes. Use <code>query.intr</code> for interventions, for example <code>query.intr=semaglutide</code>, or <code>query.term</code> for free-text search. You can combine either with <code>query.cond</code> and the status and phase filters.</p>
+
+</div>
+<p class="guide-end"><a href="../../clinical-trials-search/">Open the free Search ClinicalTrials.gov live tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/track-peptide-glp1-mentions-youtube-python/">Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key) →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

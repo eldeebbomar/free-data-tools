@@ -1,20 +1,112 @@
 [
   {
-    "employer": "Amazon",
-    "role": "Software Development Engineer",
-    "city": "Seattle",
-    "medianSalary": "$165,000"
+    "type": "sponsor-aggregate",
+    "employer": "Example Cloud Inc.",
+    "role": "software engineer",
+    "filings": 412,
+    "approved": 405,
+    "denied": 3,
+    "withdrawn": 4,
+    "approvalRate": 98.3,
+    "medianSalary": 158000,
+    "p25Salary": 142000,
+    "p75Salary": 181000,
+    "topCity": "Seattle",
+    "topState": "WA",
+    "visaTypeBreakdown": {
+      "H-1B": 363,
+      "PERM": 49
+    },
+    "latestFiling": "2026-06-30",
+    "earliestFiling": "2023-10-02",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "employer": "Google",
-    "role": "Software Engineer III",
-    "city": "Mountain View",
-    "medianSalary": "$184,000"
+    "type": "sponsor-aggregate",
+    "employer": "Sample Retail Technologies LLC",
+    "role": "software engineer",
+    "filings": 236,
+    "approved": 229,
+    "denied": 2,
+    "withdrawn": 5,
+    "approvalRate": 97,
+    "medianSalary": 149500,
+    "p25Salary": 132000,
+    "p75Salary": 170000,
+    "topCity": "Seattle",
+    "topState": "WA",
+    "visaTypeBreakdown": {
+      "H-1B": 208,
+      "PERM": 28
+    },
+    "latestFiling": "2026-06-30",
+    "earliestFiling": "2023-10-02",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "employer": "Microsoft",
-    "role": "Senior SDE",
-    "city": "Redmond",
-    "medianSalary": "$178,000"
+    "type": "sponsor-aggregate",
+    "employer": "Placeholder Software Corp",
+    "role": "software engineer",
+    "filings": 118,
+    "approved": 116,
+    "denied": 0,
+    "withdrawn": 2,
+    "approvalRate": 98.3,
+    "medianSalary": 165000,
+    "p25Salary": 150000,
+    "p75Salary": 188000,
+    "topCity": "Bellevue",
+    "topState": "WA",
+    "visaTypeBreakdown": {
+      "H-1B": 104,
+      "PERM": 14
+    },
+    "latestFiling": "2026-06-30",
+    "earliestFiling": "2023-10-02",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "type": "sponsor-aggregate",
+    "employer": "Demo Analytics Group",
+    "role": "software engineer",
+    "filings": 64,
+    "approved": 61,
+    "denied": 1,
+    "withdrawn": 2,
+    "approvalRate": 95.3,
+    "medianSalary": 131000,
+    "p25Salary": 118000,
+    "p75Salary": 146000,
+    "topCity": "Redmond",
+    "topState": "WA",
+    "visaTypeBreakdown": {
+      "H-1B": 56,
+      "PERM": 8
+    },
+    "latestFiling": "2026-06-30",
+    "earliestFiling": "2023-10-02",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "type": "sponsor-aggregate",
+    "employer": "Acme Systems Consulting",
+    "role": "software engineer",
+    "filings": 57,
+    "approved": 52,
+    "denied": 3,
+    "withdrawn": 2,
+    "approvalRate": 91.2,
+    "medianSalary": 112000,
+    "p25Salary": 98000,
+    "p75Salary": 125000,
+    "topCity": "Seattle",
+    "topState": "WA",
+    "visaTypeBreakdown": {
+      "H-1B": 50,
+      "PERM": 7
+    },
+    "latestFiling": "2026-06-30",
+    "earliestFiling": "2023-10-02",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

@@ -1,0 +1,217 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Shopify products.json Pagination: 250 Limit and the 25,000 Cap</title>
+<meta name="description" content="Paginate any Shopify store&#39;s public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.">
+<link rel="canonical" href="https://datatooly.xyz/guides/shopify-products-json-pagination/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Shopify products.json Pagination: 250 Limit and the 25,000 Cap"><meta property="og:description" content="Paginate any Shopify store&#39;s public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products."><meta property="og:url" content="https://datatooly.xyz/guides/shopify-products-json-pagination/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-shopify-products-json-pagination.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Shopify products.json Pagination: 250 Limit and the 25,000 Cap">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="shopify"><meta property="article:tag" content="python"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="ecommerce">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Shopify products.json Pagination: 250 Limit and the 25,000 Cap"><meta name="twitter:description" content="Paginate any Shopify store&#39;s public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-shopify-products-json-pagination.jpg"><meta name="twitter:image:alt" content="Shopify products.json Pagination: 250 Limit and the 25,000 Cap">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/shopify-products-json-pagination/#article","headline":"Shopify products.json Pagination: 250 Limit and the 25,000 Cap","description":"Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-shopify-products-json-pagination.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/shopify-products-json-pagination/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"shopify, python, webscraping, ecommerce","about":{"@type":"SoftwareApplication","name":"See any Shopify store's products — live, free, no app","url":"https://datatooly.xyz/shopify-store-products/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/shopify-products-json-pagination/#webpage","url":"https://datatooly.xyz/guides/shopify-products-json-pagination/","name":"Shopify products.json Pagination: 250 Limit and the 25,000 Cap","description":"Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/shopify-products-json-pagination/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-shopify-products-json-pagination.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/shopify-products-json-pagination/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/shopify-products-json-pagination/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Shopify products.json Pagination: 250 Limit and the 25,000 Cap","item":"https://datatooly.xyz/guides/shopify-products-json-pagination/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/ecommerce-intelligence/">E-commerce Intelligence</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · E-commerce Intelligence</span>
+<h1>Shopify products.json Pagination: 250 Limit and the 25,000 Cap</h1>
+<p class="lede">Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">See any Shopify store's products — live, free, no app</p><p class="gcta-s">Free live tool: enter a Shopify domain and read its public /products.json in your browser — real titles, vendors, variants, prices, stock. No app, no key.</p><a class="btn btn-primary" href="../../shopify-store-products/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>To paginate a Shopify store&#39;s public <code>/products.json</code>, request <code>?limit=250&amp;page=1</code>, then <code>page=2</code>, and so on until the response is <code>{&quot;products&quot;:[]}</code>. 250 is the most products you can get per page. Asking for more is silently clamped to 250, and leaving <code>limit</code> out gives you 30. Pagination also stops at 25,000 products: once <code>page × limit</code> goes past 25,000, the store returns HTTP 400 <code>&quot;Page * Limit exceeds the 25000 limit.&quot;</code></p>
+<p>That&#39;s the whole answer. The rest of this guide shows a runnable export script and what each response looks like. It also covers why the advice you&#39;ll find elsewhere often mixes this up with Shopify&#39;s authenticated Admin API. Every behavior below was tested on live stores on 2026-09-29.</p>
+<h2 id="two-different-products-apis">Two different &quot;products&quot; APIs</h2>
+<p>Most confusion comes from mixing up two different endpoints:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Storefront <code>/products.json</code></th>
+<th>Admin REST API</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>URL</td>
+<td><code>https://{store}/products.json</code></td>
+<td><code>https://{store}.myshopify.com/admin/api/{version}/products.json</code></td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>None, it&#39;s public</td>
+<td>Access token from the store owner</td>
+</tr>
+<tr>
+<td>Pagination</td>
+<td><code>page</code> numbers</td>
+<td>Cursor (<code>page_info</code> in the <code>Link</code> header)</td>
+</tr>
+<tr>
+<td>Who can use it</td>
+<td>Anyone, on any store that leaves it open</td>
+<td>Only the store&#39;s owner or installed apps</td>
+</tr>
+</tbody></table></div>
+<p>Forum answers saying &quot;<code>page</code> is deprecated, use <code>page_info</code>&quot; are about the Admin API. The public storefront endpoint still pages by number. It has no <code>Link</code> header, no total count and no cursor. An empty <code>products</code> array is the only end signal.</p>
+<h2 id="what-one-page-contains">What one page contains</h2>
+<p>Each element of <code>products</code> looks like this (fields verified on a live store):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Product</td>
+<td><code>id</code>, <code>title</code>, <code>handle</code>, <code>body_html</code>, <code>published_at</code>, <code>created_at</code>, <code>updated_at</code>, <code>vendor</code>, <code>product_type</code>, <code>tags</code>, <code>variants</code>, <code>images</code>, <code>options</code></td>
+</tr>
+<tr>
+<td>Variant</td>
+<td><code>id</code>, <code>title</code>, <code>option1</code>–<code>option3</code>, <code>sku</code>, <code>requires_shipping</code>, <code>taxable</code>, <code>featured_image</code>, <code>available</code>, <code>price</code>, <code>grams</code>, <code>compare_at_price</code>, <code>position</code>, <code>product_id</code>, <code>created_at</code>, <code>updated_at</code></td>
+</tr>
+</tbody></table></div>
+<p>Two things to know before you write any code:</p>
+<ul>
+<li><strong>Price and stock are on the variant, not the product.</strong> A shoe in 12 sizes is one product with 12 variant rows, each with its own <code>price</code> and <code>available</code>.</li>
+<li><strong><code>price</code> is a string in dollars</strong> (<code>&quot;25.00&quot;</code>). The per-product <code>.js</code> endpoint, covered below, returns an integer in cents (<code>2500</code>). Don&#39;t mix the two sources without converting.</li>
+</ul>
+<h2 id="runnable-python-export-a-full-catalog-to-csv">Runnable Python: export a full catalog to CSV</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import csv
+import sys
+import time
+import requests
+
+HEADERS = {&quot;User-Agent&quot;: &quot;Mozilla/5.0 (compatible; catalog-export/1.0)&quot;}
+LIMIT = 250          # the maximum; larger values are silently clamped to 250
+OFFSET_CAP = 25_000  # page * limit may not exceed this
+
+def fetch_all_products(domain, base_path=&quot;/products.json&quot;):
+    products, page = [], 1
+    while page * LIMIT &lt;= OFFSET_CAP:
+        url = f&quot;https://{domain}{base_path}?limit={LIMIT}&amp;page={page}&quot;
+        r = requests.get(url, headers=HEADERS, timeout=30)
+        if r.status_code == 429:
+            time.sleep(10)                      # throttled: wait and retry the same page
+            continue
+        if r.status_code in (401, 403, 404):
+            sys.exit(f&quot;{url} -&gt; HTTP {r.status_code}: endpoint closed, password-protected or bot-blocked&quot;)
+        r.raise_for_status()
+        batch = r.json().get(&quot;products&quot;, [])
+        if not batch:                           # an empty page is the only end signal
+            break
+        products.extend(batch)
+        page += 1
+        time.sleep(1)                           # be polite
+    else:
+        print(f&quot;warning: stopped at the {OFFSET_CAP:,}-product offset cap; &quot;
+              &quot;split the catalog by collection to get the rest&quot;, file=sys.stderr)
+    return products
+
+def to_rows(domain, products):
+    for p in products:
+        for v in p[&quot;variants&quot;]:                 # price and stock live on variants
+            yield {
+                &quot;product_id&quot;: p[&quot;id&quot;],
+                &quot;title&quot;: p[&quot;title&quot;],
+                &quot;vendor&quot;: p[&quot;vendor&quot;],
+                &quot;product_type&quot;: p[&quot;product_type&quot;],
+                &quot;handle&quot;: p[&quot;handle&quot;],
+                &quot;variant_id&quot;: v[&quot;id&quot;],
+                &quot;variant_title&quot;: v[&quot;title&quot;],
+                &quot;sku&quot;: v.get(&quot;sku&quot;),
+                &quot;price&quot;: v[&quot;price&quot;],            # a string, e.g. &quot;25.00&quot;
+                &quot;compare_at_price&quot;: v.get(&quot;compare_at_price&quot;),
+                &quot;available&quot;: v.get(&quot;available&quot;),
+                &quot;url&quot;: f&quot;https://{domain}/products/{p['handle']}&quot;,
+            }
+
+if __name__ == &quot;__main__&quot;:
+    domain = sys.argv[1] if len(sys.argv) &gt; 1 else &quot;www.allbirds.com&quot;
+    products = fetch_all_products(domain)
+    rows = list(to_rows(domain, products))
+    with open(&quot;catalog.csv&quot;, &quot;w&quot;, newline=&quot;&quot;, encoding=&quot;utf-8&quot;) as f:
+        w = csv.DictWriter(f, fieldnames=rows[0].keys())
+        w.writeheader()
+        w.writerows(rows)
+    print(f&quot;{domain}: {len(products)} products, {len(rows)} variant rows -&gt; catalog.csv&quot;)</code></pre></div>
+<p>On the day I tested it, <code>python export.py www.allbirds.com</code> walked three full pages, stopped on an empty fourth page, and printed <code>692 products, 7454 variant rows</code>. On a store that blocks the endpoint (Gymshark answered 403 from behind a CDN), the script exits with a clear message instead of writing an empty file.</p>
+<h2 id="pitfalls-stated-precisely">Pitfalls, stated precisely</h2>
+<h3 id="limit-is-silently-clamped"><code>limit</code> is silently clamped</h3>
+<p><code>?limit=500</code> returns 250 products with HTTP 200, not an error. Leaving <code>limit</code> off returns 30. If your loop assumes &quot;I asked for 500, so fewer than 500 means the last page&quot;, it stops after page one. Always stop on an empty page, never on a short one.</p>
+<h3 id="the-25-000-product-cap">The 25,000-product cap</h3>
+<p>On a store with a very large catalog, the last accepted request was <code>limit=250&amp;page=100</code>. <code>page=101</code> returned:</p>
+<div class="code-block"><pre><code>HTTP 400
+{&quot;errors&quot;:&quot;Page * Limit exceeds the 25000 limit.&quot;}</code></pre></div>
+<p>The same cap applied with <code>limit=100</code> (page 250 was the last accepted page). It&#39;s based on offset, so a smaller page size doesn&#39;t buy you more products. It only costs you more requests. To go past it, split the catalog by collection. List collections with <code>/collections.json?limit=250</code> and page through each one at <code>/collections/{handle}/products.json</code>. You page through each collection separately, so as long as no single collection holds more than 25,000 products, this covers the catalog. Deduplicate by product <code>id</code>, because a product can belong to several collections.</p>
+<h3 id="products-count-doesn-t-match-what-you-get"><code>products_count</code> doesn&#39;t match what you get</h3>
+<p><code>/collections.json</code> reports a <code>products_count</code> per collection. In testing, one collection reported 107 while its <code>products.json</code> returned 43. Count the products you actually receive and don&#39;t trust that field.</p>
+<h3 id="stock-numbers-are-store-dependent">Stock numbers are store-dependent</h3>
+<p>The list endpoint only gives a boolean <code>available</code> per variant. The single-product endpoints give more:</p>
+<ul>
+<li><code>/products/{handle}.json</code> returns a much richer variant object. On one store it included <code>inventory_quantity</code>. On another it didn&#39;t.</li>
+<li><code>/products/{handle}.js</code> returns the storefront theme&#39;s JSON, including <code>price_min</code>, <code>price_max</code> and <code>price_varies</code>. Its prices are integers in cents.</li>
+</ul>
+<p>Treat <code>inventory_quantity</code> as a bonus field when it&#39;s present. It won&#39;t always be there.</p>
+<h3 id="blocked-stores-403s-and-throttling">Blocked stores, 403s and throttling</h3>
+<p>Some stores sit behind a WAF or CDN rule that returns 403 to non-browser clients. Password-protected stores and non-Shopify sites fail as well. Some sites also serve HTML instead of JSON, so check the content type before you parse. If a store starts answering 429, slow down. The script waits and retries the same page.</p>
+<h3 id="cors">CORS</h3>
+<p><code>/products.json</code> answers with <code>Access-Control-Allow-Origin: *</code> on open stores, so browser JavaScript can read it directly. That&#39;s what makes an in-browser tool possible.</p>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>To check whether a store leaves <code>/products.json</code> open, and to see what&#39;s in it, paste the domain into the free <a href="https://datatooly.xyz/shopify-store-products/">Shopify store products tool</a>. It&#39;s a <strong>live</strong> tool: it fetches the store&#39;s real <code>/products.json</code> from your browser and previews the first page with titles, vendors, types, prices and stock status. It tells you plainly when a store is blocked. There&#39;s no app, login or key.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The script above gives you one catalog, once. Competitor monitoring means running it on a schedule across many stores and diffing each run against the last. You&#39;d flag variant price changes, new product IDs and <code>available</code> flips, and fall back to the sitemap when <code>/products.json</code> is blocked. For that I built the <a href="https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu" target="_blank" rel="noopener">Shopify Store Intelligence actor</a> on Apify. It has catalog-snapshot, new-launch, price-change and stock-signal modes and an AI store audit, and exports JSON or CSV. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly tool and the Apify actor. The endpoint behavior and the script above work without either.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="what-is-the-maximum-limit-for-shopify-products-json">What is the maximum <code>limit</code> for Shopify <code>products.json</code>?</h3>
+<p>250 products per request. Higher values are clamped to 250 without an error, and leaving <code>limit</code> off returns 30.</p>
+<h3 id="how-do-i-know-i-ve-reached-the-last-page">How do I know I&#39;ve reached the last page?</h3>
+<p>The response is <code>{&quot;products&quot;:[]}</code>. There&#39;s no total-count header and no next-page link on the storefront endpoint, so an empty array is the only reliable stop signal.</p>
+<h3 id="why-do-i-get-http-400-page-limit-exceeds-the-25000-limit">Why do I get HTTP 400 &quot;Page * Limit exceeds the 25000 limit&quot;?</h3>
+<p>The storefront endpoint won&#39;t page past an offset of 25,000 products. Page through <code>/collections/{handle}/products.json</code> for each collection instead, and deduplicate by product <code>id</code>.</p>
+<h3 id="is-page-deprecated-for-products-json">Is <code>page</code> deprecated for <code>products.json</code>?</h3>
+<p>Not on the public storefront endpoint, where numbered pages still work. The deprecation you&#39;ve read about applies to the authenticated Admin REST API, which uses cursor-based <code>page_info</code> pagination.</p>
+<h3 id="can-i-get-inventory-quantities-from-products-json">Can I get inventory quantities from <code>products.json</code>?</h3>
+<p>The list endpoint only returns a boolean <code>available</code> per variant. Some stores expose <code>inventory_quantity</code> on <code>/products/{handle}.json</code> or <code>.js</code>, but many don&#39;t, so treat it as optional.</p>
+<h3 id="why-does-products-json-return-403-for-some-stores">Why does <code>products.json</code> return 403 for some stores?</h3>
+<p>The store blocks non-browser clients with a WAF or CDN rule, or is password-protected. The endpoint may still exist, but you can&#39;t reach it from that client without a different route, such as the store&#39;s sitemap.</p>
+
+</div>
+<p class="guide-end"><a href="../../shopify-store-products/">Open the free See any Shopify store's products tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

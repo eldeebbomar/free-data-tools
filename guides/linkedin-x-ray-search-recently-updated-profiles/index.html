@@ -1,0 +1,196 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)</title>
+<meta name="description" content="Add Google&#39;s past-week filter to a LinkedIn X-ray search to surface recently re-indexed profiles, then dedupe by slug so each run shows only new people.">
+<link rel="canonical" href="https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)"><meta property="og:description" content="Add Google&#39;s past-week filter to a LinkedIn X-ray search to surface recently re-indexed profiles, then dedupe by slug so each run shows only new people."><meta property="og:url" content="https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-linkedin-x-ray-search-recently-updated-profiles.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="linkedin"><meta property="article:tag" content="recruiting"><meta property="article:tag" content="python"><meta property="article:tag" content="career">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)"><meta name="twitter:description" content="Add Google&#39;s past-week filter to a LinkedIn X-ray search to surface recently re-indexed profiles, then dedupe by slug so each run shows only new people."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-linkedin-x-ray-search-recently-updated-profiles.jpg"><meta name="twitter:image:alt" content="LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/#article","headline":"LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)","description":"Add Google's past-week filter to a LinkedIn X-ray search to surface recently re-indexed profiles, then dedupe by slug so each run shows only new people.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-linkedin-x-ray-search-recently-updated-profiles.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"linkedin, recruiting, python, career","about":{"@type":"SoftwareApplication","name":"Find LinkedIn profiles by job title and location","url":"https://datatooly.xyz/linkedin-people-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/#webpage","url":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/","name":"LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)","description":"Add Google's past-week filter to a LinkedIn X-ray search to surface recently re-indexed profiles, then dedupe by slug so each run shows only new people.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-linkedin-x-ray-search-recently-updated-profiles.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)","item":"https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/lead-generation/">Lead Generation</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Lead Generation</span>
+<h1>LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)</h1>
+<p class="lede">Add Google's past-week filter to a LinkedIn X-ray search to surface recently re-indexed profiles, then dedupe by slug so each run shows only new people.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Find LinkedIn profiles by job title and location</p><p class="gcta-s">Free LinkedIn people search builder: enter job titles and locations, preview name, headline, company and profile URL rows, then run it on Apify. No cookies.</p><a class="btn btn-primary" href="../../linkedin-people-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>To run a LinkedIn X-ray search for recently updated profiles, add Google&#39;s time filter to a <code>site:linkedin.com/in</code> query: pick <strong>Tools → Past week</strong> or append <code>&amp;tbs=qdr:w</code> to the URL (<code>qdr:m</code> for past month). Only profiles Google has re-indexed in that window come back. A profile often gets re-crawled after it changes, so this works as a rough job-change signal. Dedupe by profile slug to see only new people each week.</p>
+<p>That&#39;s the core technique. Below is how to build the queries so they stay precise, a small script that generates them and dedupes what you collect, and a clear list of what this public route can&#39;t see.</p>
+<h2 id="how-an-x-ray-search-works">How an X-ray search works</h2>
+<p>LinkedIn&#39;s own people search needs you to be logged in. Public profiles, though, are indexed by search engines, and an X-ray search asks Google for them directly:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">site:linkedin.com/in &quot;Data Engineer&quot; &quot;Lisbon&quot; -recruiter -hiring</code></pre></div>
+<ul>
+<li><code>site:linkedin.com/in</code> limits results to personal profiles. Company pages (<code>/company/</code>), posts (<code>/posts/</code>) and schools fall out.</li>
+<li>Quote <strong>every</strong> term, even single words. Unquoted, Google stems and substitutes (&quot;engineer&quot; pulls in &quot;engineering&quot;, a city pulls in its country), which quietly widens the search past what you asked for.</li>
+<li><code>-recruiter -hiring</code> removes the recruiters who put the same title and city in their own headlines.</li>
+</ul>
+<p>The time filter is a URL parameter: <code>tbs=qdr:w</code> is the past week and <code>tbs=qdr:m</code> the past month. It&#39;s the same filter as the Tools menu.</p>
+<h2 id="what-recently-updated-really-means">What &quot;recently updated&quot; really means</h2>
+<p>The filter keeps pages Google has indexed recently. It doesn&#39;t read any &quot;last updated&quot; date from LinkedIn. In practice, Google re-crawls a public profile when something on it changes (a new employer, a rewritten headline, an &quot;open to work&quot; line), so a past-week slice tends to be enriched for people who just moved. It&#39;s a proxy, not proof. Some re-crawls are routine, and some changes take longer than a week to be picked up. Treat the result as a shortlist to read, not a list of confirmed job changes.</p>
+<h2 id="runnable-python-build-the-queries-dedupe-the-results">Runnable Python: build the queries, dedupe the results</h2>
+<p>The script below does two things you&#39;d otherwise do by hand. It turns titles × locations into ready-to-open Google URLs with the freshness filter applied. Then it normalizes whatever profile links you collect, so the same person isn&#39;t counted twice across country subdomains, letter case, tracking parameters and trailing slashes.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">from itertools import product
+from urllib.parse import urlencode, urlparse, unquote
+
+FRESHNESS = {&quot;any&quot;: None, &quot;past_month&quot;: &quot;qdr:m&quot;, &quot;past_week&quot;: &quot;qdr:w&quot;}
+
+def xray_queries(titles, locations, exclude=(), freshness=&quot;past_week&quot;):
+    &quot;&quot;&quot;One Google URL per title x location, every term quoted, profiles only (/in/).&quot;&quot;&quot;
+    urls = []
+    for title, loc in product(titles, locations):
+        q = &quot; &quot;.join([&quot;site:linkedin.com/in&quot;, f'&quot;{title}&quot;', f'&quot;{loc}&quot;', *[f&quot;-{w}&quot; for w in exclude]])
+        params = {&quot;q&quot;: q}
+        if FRESHNESS[freshness]:
+            params[&quot;tbs&quot;] = FRESHNESS[freshness]
+        urls.append(&quot;https://www.google.com/search?&quot; + urlencode(params))
+    return urls
+
+def profile_key(url):
+    &quot;&quot;&quot;Canonical key for dedupe: country subdomains, case, query strings and trailing slashes collapse.&quot;&quot;&quot;
+    u = urlparse(url.strip())
+    host = u.hostname or &quot;&quot;
+    if not (host == &quot;linkedin.com&quot; or host.endswith(&quot;.linkedin.com&quot;)):   # rejects notlinkedin.com
+        return None
+    parts = [p for p in u.path.split(&quot;/&quot;) if p]
+    if len(parts) &lt; 2 or parts[0].lower() != &quot;in&quot;:
+        return None                                                       # company/school/post pages
+    return unquote(parts[1]).lower()
+
+if __name__ == &quot;__main__&quot;:
+    for url in xray_queries([&quot;Data Engineer&quot;, &quot;Analytics Engineer&quot;], [&quot;Lisbon&quot;, &quot;Porto&quot;],
+                            exclude=[&quot;recruiter&quot;, &quot;hiring&quot;]):
+        print(url)
+
+    seen = set()   # persist this between runs (a file, a DB table) to get &quot;new people only&quot;
+    pasted = [
+        &quot;https://pt.linkedin.com/in/jane-example-123a45b&quot;,
+        &quot;https://www.linkedin.com/in/Jane-Example-123a45b/?originalSubdomain=pt&quot;,
+        &quot;https://www.linkedin.com/company/example-corp&quot;,
+        &quot;https://notlinkedin.com/in/fake&quot;,
+    ]
+    for link in pasted:
+        key = profile_key(link)
+        status = &quot;skip&quot; if key is None else (&quot;dupe&quot; if key in seen else &quot;new&quot;)
+        if key:
+            seen.add(key)
+        print(f&quot;{status:5} {key}  &lt;- {link}&quot;)</code></pre></div>
+<p>Running it prints four search URLs, then:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">new   jane-example-123a45b  &lt;- https://pt.linkedin.com/in/jane-example-123a45b
+dupe  jane-example-123a45b  &lt;- https://www.linkedin.com/in/Jane-Example-123a45b/?originalSubdomain=pt
+skip  None  &lt;- https://www.linkedin.com/company/example-corp
+skip  None  &lt;- https://notlinkedin.com/in/fake</code></pre></div>
+<p>(The profile links are fictional.) Open the URLs in your browser and collect the profile links. Save <code>seen</code> between weekly sessions, and next week only genuinely new people count.</p>
+<p>The host check uses an exact match or a leading-dot suffix on purpose. A looser pattern like &quot;ends with linkedin.com&quot; also accepts <code>notlinkedin.com</code>.</p>
+<h2 id="why-the-script-doesn-t-fetch-google-for-you">Why the script doesn&#39;t fetch Google for you</h2>
+<p>A plain HTTP request to <code>google.com/search</code> now gets a page that requires JavaScript, not results. I checked this while writing: the response contained the <code>enablejs</code> / <code>noscript</code> interstitial and zero profile links. Scripted scraping of Google&#39;s result pages is also against Google&#39;s terms. Run the queries by hand, use an official search API, or use a hosted tool that handles discovery. Don&#39;t point a loop of <code>requests.get</code> at Google.</p>
+<h2 id="what-one-result-gives-you">What one result gives you</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Where it comes from</th>
+<th>Reliability</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Profile URL / slug</td>
+<td>Result link</td>
+<td>High. Vanity slugs are case-insensitive, so lowercase them.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Result title, before the first separator</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Headline</td>
+<td>Result title or snippet</td>
+<td>High. This is the field to filter on.</td>
+</tr>
+<tr>
+<td>Current employer</td>
+<td>&quot;Role at Company&quot; in the headline, or the snippet</td>
+<td>Patchy. Google truncates titles, so a cut-off employer name looks plausible and is wrong.</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>Country subdomain such as <code>pt.</code> or <code>ae.</code></td>
+<td>Useful hint, not an address</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Snippet text</td>
+<td>A text match, not a geo filter</td>
+</tr>
+</tbody></table></div>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li><strong>One query has a ceiling.</strong> A public-index site search tops out at a few hundred results (roughly 300–400 per query in the actor&#39;s measurements). You widen coverage by asking different questions (title variants, neighbouring cities, both freshness windows), not by paging deeper.</li>
+<li><strong>Location is text, not geography.</strong> People whose headline merely <em>mentions</em> your city match too. Tag each person by whether the evidence came from their location field or just a mention, rather than silently mixing the two.</li>
+<li><strong>Truncated titles corrupt employers.</strong> &quot;Registered Nurse at Dubai Health …&quot; is not an employer name. Recover the employer from the snippet, or leave it empty.</li>
+<li><strong>Only vanity URLs are public.</strong> ID-style links (<code>/in/ACoAAA…</code>) resolve only for logged-in users. If a spreadsheet gives you those, find the column with the public vanity URL.</li>
+<li><strong>Private profiles don&#39;t exist here.</strong> When an owner switches public visibility off, the profile isn&#39;t indexed and can&#39;t be reached without an account. That&#39;s the design working, not a bug to route around.</li>
+<li><strong>Headline beats title.</strong> Public profiles often blank role titles and dates in the experience section. The headline is almost always present.</li>
+<li><strong>It&#39;s still personal data.</strong> Public doesn&#39;t mean unregulated. Under GDPR and similar laws you need a lawful basis for storing and contacting these people, and LinkedIn&#39;s terms still apply.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/linkedin-people-search/">LinkedIn people search builder</a> takes job titles, locations, optional raw queries, a mode and a freshness window (any, past month or past week), and produces a ready-to-run input with a fixed example of the output shape. The example people are fictional. It&#39;s a query builder: LinkedIn doesn&#39;t allow other sites to read it from your browser, so it doesn&#39;t return live profiles.</p>
+<h2 id="at-scale">At scale</h2>
+<p><a href="https://apify.com/constructive_calm/linkedin-people-finder?fpr=v77kxu" target="_blank" rel="noopener">LinkedIn People Search on Apify</a> runs the discovery for you through a public search index, with no LinkedIn login, account or cookies. It turns titles × locations into quoted queries, can expand title synonyms and nearby cities, and applies <code>freshness: &quot;past_week&quot;</code> or <code>&quot;past_month&quot;</code>. Every row carries <code>locationConfidence</code> (<code>exact</code>, <code>mentioned</code> or <code>unknown</code>). Short mode returns name, headline, current title, company and URL. Full mode also opens each public profile for about, work history, education and follower counts. Set <code>dedupeMode: &quot;auto&quot;</code> with a weekly Apify schedule and each run returns only people you haven&#39;t been given before. The seen-set lives in a named key-value store in your own account. It&#39;s free to start, then pay-as-you-go per profile delivered. Search pages and deduplicated profiles are never billed.</p>
+<p><em>Disclosure: I built the query builder and the actor. The script above works on its own.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-do-i-find-recently-updated-linkedin-profiles">How do I find recently updated LinkedIn profiles?</h3>
+<p>Run an X-ray search (<code>site:linkedin.com/in &quot;Title&quot; &quot;City&quot;</code>) and apply Google&#39;s time filter: Tools → Past week, or <code>&amp;tbs=qdr:w</code> in the URL. You get profiles Google re-indexed in that window, which leans toward people who recently changed something on their profile.</p>
+<h3 id="does-the-past-week-filter-mean-the-person-changed-jobs">Does the past-week filter mean the person changed jobs?</h3>
+<p>No. It means Google re-indexed the public page recently. Profile changes are a common reason for that, so the slice is useful for spotting movers, but check each headline and employer before acting on it.</p>
+<h3 id="can-i-do-a-linkedin-x-ray-search-without-logging-in">Can I do a LinkedIn X-ray search without logging in?</h3>
+<p>Yes. X-ray searching uses Google&#39;s index of public profiles, so no LinkedIn account is involved. You&#39;ll only see profiles whose owners made them public, and only what those public pages show.</p>
+<h3 id="why-do-i-only-get-a-few-hundred-results-for-a-search">Why do I only get a few hundred results for a search?</h3>
+<p>A site search over a public index has a hard ceiling per query. Split one broad search into several narrower ones (title variants, individual cities, different freshness windows) and dedupe the merged results by slug.</p>
+<h3 id="can-i-export-x-ray-results-to-csv">Can I export X-ray results to CSV?</h3>
+<p>Collect the profile URLs, normalize them to slugs, and write name, headline, URL and the query that found each person to a CSV. The script above handles normalization and dedupe. A hosted tool can return the same rows as CSV or JSON directly.</p>
+
+</div>
+<p class="guide-end"><a href="../../linkedin-people-search/">Open the free Find LinkedIn profiles by job title and location tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/build-linkedin-profile-scraper/">How to Build a LinkedIn Profile Scraper: The Honest Technical Guide →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

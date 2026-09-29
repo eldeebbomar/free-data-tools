@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Facebook Ad Library Scraper: API Limits and the Real Approach</title>
+<meta name="description" content="Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.">
+<link rel="canonical" href="https://datatooly.xyz/guides/facebook-ad-library-scraper/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Facebook Ad Library Scraper: API Limits and the Real Approach"><meta property="og:description" content="Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead."><meta property="og:url" content="https://datatooly.xyz/guides/facebook-ad-library-scraper/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-facebook-ad-library-scraper.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Facebook Ad Library Scraper: API Limits and the Real Approach">
+<meta property="article:published_time" content="2026-06-13"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="webdev"><meta property="article:tag" content="api"><meta property="article:tag" content="marketing"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Facebook Ad Library Scraper: API Limits and the Real Approach"><meta name="twitter:description" content="Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-facebook-ad-library-scraper.jpg"><meta name="twitter:image:alt" content="Facebook Ad Library Scraper: API Limits and the Real Approach">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/facebook-ad-library-scraper/#article","headline":"Facebook Ad Library Scraper: API Limits and the Real Approach","description":"Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-13","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-facebook-ad-library-scraper.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/facebook-ad-library-scraper/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"webdev, api, marketing, datascience","about":{"@type":"SoftwareApplication","name":"Facebook Ad Library Scraper — search & export competitor ads","url":"https://datatooly.xyz/facebook-ad-library-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/facebook-ad-library-scraper/#webpage","url":"https://datatooly.xyz/guides/facebook-ad-library-scraper/","name":"Facebook Ad Library Scraper: API Limits and the Real Approach","description":"Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/facebook-ad-library-scraper/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-facebook-ad-library-scraper.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/facebook-ad-library-scraper/#article"},"datePublished":"2026-06-13"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/facebook-ad-library-scraper/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Facebook Ad Library Scraper: API Limits and the Real Approach","item":"https://datatooly.xyz/guides/facebook-ad-library-scraper/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/ads-intelligence/">Ads Intelligence</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Ads Intelligence</span>
+<h1>Facebook Ad Library Scraper: API Limits and the Real Approach</h1>
+<p class="lede">Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.</p>
+<p class="updated">Published <time datetime="2026-06-13">June 13, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Facebook Ad Library Scraper — search &amp; export competitor ads</p><p class="gcta-s">Build a ready-to-run Facebook Ad Library scraper query — keyword, country, active status — and preview the export shape, then run it live on Apify.</p><a class="btn btn-primary" href="../../facebook-ad-library-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you want to pull a competitor&#39;s running ads programmatically, building a <strong>Facebook ad library scraper</strong> sounds like it should be a solved problem. Meta has a public Ad Library <em>and</em> an official API, so surely you just grab a token and query? Not quite. The gap between what the official API covers and what most people actually need is the single most expensive misunderstanding in this space, and it sends a lot of developers down a dead end on day one.</p>
+<p>This post walks through what&#39;s real: where the data lives, exactly what the official API will and won&#39;t give you, what the data shape looks like, and what it actually takes to extract commercial ads at scale.</p>
+<h2 id="two-different-things-the-library-vs-the-api">Two different things: the Library vs. the API</h2>
+<p>The <strong>Meta/Facebook Ad Library</strong> is a public, browser-accessible database of ads. You can open <code>https://www.facebook.com/ads/library/</code>, pick a country from the dropdown, choose <strong>&quot;All ads&quot;</strong> for general commercial advertising, type in an advertiser name or keyword, and results load immediately. No login, no account required for commercial ads. For each ad you can see the creative (image, video, or carousel), the primary text and headline, the call-to-action, the advertiser&#39;s Page name, which platforms it runs on (Facebook, Instagram, Messenger, Audience Network), its start date, and active/inactive status — including the multiple variations a brand is split-testing at once. It&#39;s a genuinely rich competitive-intelligence surface.</p>
+<p>The <strong>Meta Ad Library API</strong> is a separate, gated product — and this is where expectations break.</p>
+<h2 id="the-api-only-covers-political-and-issue-ads">The API only covers political and issue ads</h2>
+<p>Here&#39;s the fact that isn&#39;t obvious until you&#39;ve already spent an afternoon on it: the official Ad Library API is scoped to <strong>ads about social issues, elections, or politics</strong>, plus ads delivered to the EU and associated territories. General <strong>commercial / &quot;All ads&quot; content is not queryable through the API.</strong> The public website lets you <em>browse</em> commercial ads; the API does not let you <em>pull</em> them.</p>
+<p>On top of the scope limit, getting access is a process:</p>
+<ol>
+<li><strong>Identity verification.</strong> You confirm your identity and location at <code>facebook.com/ID</code>, uploading a government ID (passport, national ID, or driver&#39;s license) and confirming your country of residence. Approval typically takes one to three business days.</li>
+<li><strong>A Meta for Developers app.</strong> Once verified, you create an app and add the &quot;Ad Library API&quot; product.</li>
+<li><strong>Tokens and permissions.</strong> You issue an access token with the appropriate scopes (<code>ads_read</code>, and for the archive, <code>ads_archive</code>).</li>
+</ol>
+<p>Worth noting for anyone targeting Europe: as of October 6, 2025, Meta no longer permits political, electoral, or social-issue ads in the EU at all. So the API&#39;s &quot;EU-delivered ads&quot; coverage now effectively means the historical archive of those ads — not new ones going forward.</p>
+<p>So if your verified token <em>does</em> clear all those hoops and you&#39;re researching, say, election spending, a call looks like this:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import requests
+
+# Official Meta Ad Library API — POLITICAL / ISSUE ads ONLY.
+# Commercial &quot;All ads&quot; are NOT available through this endpoint.
+TOKEN = &quot;YOUR_VERIFIED_ACCESS_TOKEN&quot;
+
+params = {
+    &quot;access_token&quot;: TOKEN,
+    &quot;search_terms&quot;: &quot;climate&quot;,
+    &quot;ad_reached_countries&quot;: &quot;['US']&quot;,
+    &quot;ad_type&quot;: &quot;POLITICAL_AND_ISSUE_ADS&quot;,  # the only broadly supported type
+    &quot;ad_active_status&quot;: &quot;ALL&quot;,
+    &quot;fields&quot;: &quot;,&quot;.join([
+        &quot;id&quot;, &quot;page_name&quot;, &quot;ad_creative_bodies&quot;,
+        &quot;ad_delivery_start_time&quot;, &quot;publisher_platforms&quot;,
+        &quot;impressions&quot;, &quot;spend&quot;,
+    ]),
+    &quot;limit&quot;: 50,
+}
+
+resp = requests.get(
+    &quot;https://graph.facebook.com/v25.0/ads_archive&quot;,  # use the current Graph API version
+    params=params,
+    timeout=30,
+)
+resp.raise_for_status()
+for ad in resp.json().get(&quot;data&quot;, []):
+    print(ad[&quot;id&quot;], ad.get(&quot;page_name&quot;), ad.get(&quot;ad_delivery_start_time&quot;))</code></pre></div>
+<p>That&#39;s the entire official path — and it&#39;s a fine path for political-transparency research. But if you&#39;re doing competitor analysis, e-commerce product research, or creative inspiration, none of those ads are political, so the API returns nothing useful to you.</p>
+<h2 id="the-commercial-use-case-scraping-the-public-library">The commercial use case = scraping the public Library</h2>
+<p>When people search for a &quot;facebook ad library scraper,&quot; they almost always mean the commercial case: <em>&quot;show me every active ad this brand is running, with the creatives and copy.&quot;</em> Since the API doesn&#39;t serve that, the only route is extracting it from the public Library website. And the public Library is built to resist exactly that.</p>
+<p>What you run into, in roughly the order you&#39;ll hit it:</p>
+<ul>
+<li><strong>It&#39;s a JavaScript application.</strong> The ads aren&#39;t in the initial HTML. A plain <code>requests.get()</code> returns a shell. You either drive a real browser engine (Playwright/Puppeteer) that executes JS and lets the results render, or replay the page&#39;s own internal data requests from an HTTP client, which is what my actor does.</li>
+<li><strong>Fingerprint and handshake checks.</strong> Meta inspects the TLS handshake, the HTTP/2 settings frame, and the browser fingerprint <em>before</em> serving content. A default headless Chromium can get flagged on the very first navigation, and an HTTP client gets an anti-bot challenge page instead of results. A browser-grade TLS client such as <code>got-scraping</code> gets through once it solves that challenge and carries the resulting cookies.</li>
+<li><strong>IP reputation and rate limiting.</strong> Requests from datacenter IPs or repetitive patterns get throttled or blocked quickly. Rotate IPs, and keep residential proxies as a fallback for requests that get challenged.</li>
+<li><strong>Shifting selectors.</strong> Meta restructures the layout and renames element classes regularly, so brittle CSS selectors break without warning. Extraction logic has to be defensive.</li>
+</ul>
+<p>None of this is impossible — it&#39;s just real engineering with ongoing maintenance, not a weekend script. Build it yourself and you&#39;re signing up to babysit a headless-browser fleet or a challenge solver, a proxy budget, and a parser that breaks every time Meta ships a redesign.</p>
+<h2 id="what-the-extracted-data-actually-looks-like">What the extracted data actually looks like</h2>
+<p>Whether you build it or buy it, here&#39;s a realistic shape for one commercial ad pulled from the public Library. Designing your downstream code against this shape early saves a lot of rework:</p>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{
+  &quot;ad_archive_id&quot;: &quot;1234567890123456&quot;,
+  &quot;page_name&quot;: &quot;Acme Outdoor Co.&quot;,
+  &quot;page_id&quot;: &quot;100064123456789&quot;,
+  &quot;ad_creative&quot;: {
+    &quot;title&quot;: &quot;Built for the Trail&quot;,
+    &quot;body&quot;: &quot;Our lightest pack yet. Free shipping this week only.&quot;,
+    &quot;cta_text&quot;: &quot;Shop Now&quot;,
+    &quot;link_url&quot;: &quot;https://acmeoutdoor.example/packs&quot;,
+    &quot;images&quot;: [&quot;https://scontent.example/ad_img_01.jpg&quot;],
+    &quot;videos&quot;: []
+  },
+  &quot;publisher_platforms&quot;: [&quot;FACEBOOK&quot;, &quot;INSTAGRAM&quot;],
+  &quot;ad_delivery_start_time&quot;: &quot;2026-05-28&quot;,
+  &quot;ad_delivery_stop_time&quot;: null,
+  &quot;is_active&quot;: true,
+  &quot;ad_snapshot_url&quot;: &quot;https://www.facebook.com/ads/library/?id=1234567890123456&quot;,
+  &quot;country&quot;: &quot;US&quot;
+}</code></pre></div>
+<p>Note what&#39;s present here that the <em>political</em> API doesn&#39;t expose for commercial advertisers — the creative assets, CTA, and destination URL — and what&#39;s absent: there are no <code>impressions</code> or <code>spend</code> ranges. Those metrics are only published for political/issue ads. For commercial ads, you get creative and delivery metadata, not spend. The exception is the EU: under the Digital Services Act the Library shows estimated reach with an age, gender and country breakdown for ads delivered there. My actor requests it as <code>demographicReach</code> when ad-detail scraping is on, though Meta returns it empty for many commercial ads, and it is reach, not spend. Knowing that boundary keeps you from promising a stakeholder numbers that don&#39;t exist.</p>
+<h2 id="a-faster-path-query-builder-a-hosted-scraper">A faster path: query builder + a hosted scraper</h2>
+<p>If you&#39;d rather not hand-roll the browser-and-proxy stack, two tools shorten the loop. I work on these, so treat this as a disclosure, not a neutral review.</p>
+<p>To get the request right before you write any code, the free <strong><a href="https://datatooly.xyz/facebook-ad-library-search/">Facebook Ad Library search builder</a></strong> lets you assemble a search config — keyword, advertiser, country, filters — and preview the output shape you&#39;ll get back. It&#39;s a <strong>query builder</strong>: it constructs the configuration and shows you the structure, not a live in-browser scrape (Meta isn&#39;t CORS-open, so no browser-side tool can fetch results directly). It&#39;s a quick way to nail down your parameters and field expectations up front.</p>
+<p>When you&#39;re ready to actually pull data, <strong><a href="https://apify.com/constructive_calm/facebook-ad-library-pro?fpr=v77kxu" target="_blank" rel="noopener">Facebook Ad Library Pro</a></strong> runs the extraction on the Apify platform — search by keyword, advertiser, or country, and get ad creatives, text, platforms, and dates, plus deeper ad-detail scraping, with Meta&#39;s anti-bot challenge, proxy rotation, and parser maintenance handled for you. It&#39;s <strong>free to start, then pay-as-you-go</strong> through Apify platform credits, so you can validate it against a real competitor before committing budget.</p>
+<h2 id="the-takeaway">The takeaway</h2>
+<p>For a <strong>facebook ad library scraper</strong>, draw the line clearly: the official Meta Ad Library API is real but narrow — political and issue ads, ID-verified access, no commercial coverage. The broad competitor-research use case lives in the public Library, which means JavaScript rendering or request replay, fingerprinting, proxies, and shifting selectors. Decide which side of that line your project sits on <em>before</em> you write code, design against the actual data shape (creatives yes, commercial spend no), and you&#39;ll skip the most common multi-day detour in this whole space.</p>
+
+</div>
+<p class="guide-end"><a href="../../facebook-ad-library-search/">Open the free Facebook Ad Library Scraper tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/tiktok-ad-library-api/">The TikTok Ad Library API: A Developer's Guide to the DSA Library →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

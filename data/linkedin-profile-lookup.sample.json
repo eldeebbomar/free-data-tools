@@ -1,20 +1,107 @@
 [
   {
-    "name": "Jane Doe",
-    "headline": "VP Engineering at Acme",
-    "location": "San Francisco",
-    "followers": 8400
+    "name": "Jane Example",
+    "headline": "Head of Product at Example Analytics",
+    "country": "US",
+    "city": "Austin",
+    "url": "https://linkedin.example.com/in/jane-example",
+    "followers": 4210,
+    "connections": 500,
+    "workHistory": [
+      {
+        "company": "Example Analytics",
+        "companyLinkedInUrl": null,
+        "title": null,
+        "startDate": null,
+        "endDate": null,
+        "isCurrent": true
+      }
+    ],
+    "recentPosts": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "name": "John Smith",
-    "headline": "Founder & CEO, DataCo",
-    "location": "London",
-    "followers": 15200
+    "name": "Omar Sample",
+    "headline": "Senior Data Engineer | Streaming pipelines",
+    "country": "AE",
+    "city": "Dubai",
+    "url": "https://linkedin.example.com/in/omar-sample",
+    "followers": 1830,
+    "connections": 500,
+    "workHistory": [
+      {
+        "company": "Sample Cloud FZ-LLC",
+        "companyLinkedInUrl": null,
+        "title": null,
+        "startDate": null,
+        "endDate": null,
+        "isCurrent": true
+      }
+    ],
+    "recentPosts": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "name": "Maria Garcia",
-    "headline": "Head of Growth",
-    "location": "Berlin",
-    "followers": 4300
+    "name": "Priya Placeholder",
+    "headline": "Growth Marketing Lead at Placeholder Labs",
+    "country": "IN",
+    "city": "Bengaluru",
+    "url": "https://linkedin.example.com/in/priya-placeholder",
+    "followers": 2975,
+    "connections": 500,
+    "workHistory": [
+      {
+        "company": "Placeholder Labs",
+        "companyLinkedInUrl": null,
+        "title": null,
+        "startDate": null,
+        "endDate": null,
+        "isCurrent": true
+      }
+    ],
+    "recentPosts": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "name": "Alex Demo",
+    "headline": "Founder, Demo Robotics",
+    "country": "GB",
+    "city": "London",
+    "url": "https://linkedin.example.com/in/alex-demo",
+    "followers": 12640,
+    "connections": 500,
+    "workHistory": [
+      {
+        "company": "Demo Robotics",
+        "companyLinkedInUrl": null,
+        "title": null,
+        "startDate": null,
+        "endDate": null,
+        "isCurrent": true
+      }
+    ],
+    "recentPosts": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "name": "Maria Muster",
+    "headline": "Talent Acquisition Partner",
+    "country": "DE",
+    "city": "Berlin",
+    "url": "https://linkedin.example.com/in/maria-muster",
+    "followers": 950,
+    "connections": 812,
+    "workHistory": [
+      {
+        "company": "Beispiel GmbH",
+        "companyLinkedInUrl": null,
+        "title": null,
+        "startDate": null,
+        "endDate": null,
+        "isCurrent": true
+      }
+    ],
+    "recentPosts": [],
+    "fetchedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

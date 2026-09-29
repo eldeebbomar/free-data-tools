@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts)</title>
+<meta name="description" content="A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.">
+<link rel="canonical" href="https://datatooly.xyz/guides/scrape-youtube-shorts-data/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts)"><meta property="og:description" content="A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts."><meta property="og:url" content="https://datatooly.xyz/guides/scrape-youtube-shorts-data/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-scrape-youtube-shorts-data.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts)">
+<meta property="article:published_time" content="2026-07-06"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="youtube"><meta property="article:tag" content="api"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts)"><meta name="twitter:description" content="A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-scrape-youtube-shorts-data.jpg"><meta name="twitter:image:alt" content="How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/#article","headline":"How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)","description":"A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-07-06","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-scrape-youtube-shorts-data.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"webscraping, youtube, api, datascience","about":{"@type":"SoftwareApplication","name":"YouTube Shorts Scraper — find viral Shorts by channel or keyword","url":"https://datatooly.xyz/youtube-shorts-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/#webpage","url":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/","name":"How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)","description":"A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-scrape-youtube-shorts-data.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/#article"},"datePublished":"2026-07-06"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)","item":"https://datatooly.xyz/guides/scrape-youtube-shorts-data/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/social-community/">Social &amp; Community</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Social &amp; Community</span>
+<h1>How to Scrape YouTube Shorts Data (Exact View, Like &amp; Comment Counts)</h1>
+<p class="lede">A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.</p>
+<p class="updated">Published <time datetime="2026-07-06">July 6, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">YouTube Shorts Scraper — find viral Shorts by channel or keyword</p><p class="gcta-s">Scrape YouTube Shorts by channel, keyword, hashtag, or URL. Get exact view, like, and comment counts, viral scores, and 360p downloads — no API key or quota.</p><a class="btn btn-primary" href="../../youtube-shorts-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you have ever tried to figure out <strong>how to scrape YouTube Shorts data</strong> — the view counts, like counts, publish dates, and channel stats for a batch of Shorts — you have probably discovered that it is more annoying than it looks. Shorts are technically just videos, but YouTube treats them as a distinct surface, and the tools most people reach for either cost quota you do not have or return numbers that are rounded and incomplete.</p>
+<p>This post walks through the real options: what the official API does and does not give you, how the &quot;internal API&quot; scraping approach actually works, and a runnable example you can drop into a script today.</p>
+<h2 id="why-scraping-youtube-shorts-data-is-harder-than-it-should-be">Why scraping YouTube Shorts data is harder than it should be</h2>
+<p>The obvious first stop is the <strong>YouTube Data API v3</strong>. It is a legitimate, well-documented REST API, and for many jobs it is the right tool. But three things make it awkward specifically for Shorts work:</p>
+<ol>
+<li><p><strong>Quota.</strong> Every Google Cloud project gets a default allocation of <strong>10,000 units per day</strong>. That sounds like a lot until you learn the pricing: a <code>search.list</code> call costs <strong>100 units</strong>, so you get roughly <strong>100 searches per day</strong> before you hit <code>quotaExceeded</code>. A plain <code>videos.list</code> read is only 1 unit, but you can only call it once you already have the video IDs — and getting those IDs by keyword or hashtag is the expensive search step. (<a href="https://developers.google.com/youtube/v3/determine_quota_cost" target="_blank" rel="noopener">Google&#39;s quota calculator</a> lists the per-method costs.)</p>
+</li>
+<li><p><strong>No clean Shorts filter.</strong> The Data API has no <code>type=short</code> parameter. A Short is returned as an ordinary video resource. You can heuristically guess (short duration, vertical aspect ratio, <code>#shorts</code> in the description) but there is no first-class &quot;give me this channel&#39;s Shorts&quot; endpoint.</p>
+</li>
+<li><p><strong>API key / OAuth setup.</strong> You need a Google Cloud project, an enabled API, and a key — and for some data, OAuth. That is fine for a product, but heavy for a one-off dataset.</p>
+</li>
+</ol>
+<p>To be clear: the official API is <strong>not</strong> unusable. If you need a handful of videos per day and you already manage an API key, it is a fine, fully-supported choice. The friction is real but bounded — it is the quota and the missing Shorts isolation that push people toward scraping when they need volume or richer data.</p>
+<h2 id="the-internal-api-approach-how-scraping-actually-works">The internal-API approach (how scraping actually works)</h2>
+<p>Here is the part most tutorials get wrong. You do <strong>not</strong> scrape YouTube Shorts by parsing HTML with regex, and there is <strong>no secret public REST endpoint</strong> you can <code>curl</code>. What actually powers <code>youtube.com</code> in your browser is an internal JSON API (the same backend the web player talks to as you scroll). When you load a Shorts feed, a channel page, or a search results page, the site sends structured JSON payloads containing every field the UI renders — titles, exact view counts, like counts, publish timestamps, channel subscriber counts, and more.</p>
+<p>The scraping approach, conceptually, is:</p>
+<ul>
+<li>Issue the same requests the browser issues, with the right context/client parameters, so YouTube returns those JSON payloads instead of a rendered page.</li>
+<li>Walk the (deeply nested, frequently-renamed) JSON to pull out the fields you care about.</li>
+<li>Rotate residential proxies so you are not making thousands of requests from one datacenter IP.</li>
+</ul>
+<p>The payoff over the official API: because you are reading the <strong>same data the site itself renders</strong>, you get <strong>exact</strong> counts (e.g. <code>viewCount: 4823117</code>) rather than the rounded values (<code>4.8M</code>) you often see, no API key, no OAuth, and no 10,000-unit ceiling.</p>
+<p>The cost is engineering time. YouTube renames those JSON keys and changes the request envelope regularly, so a scraper you write today will quietly break in a few months. That is the maintenance treadmill you are signing up for if you build it yourself — and the reason a maintained tool is often worth it for this specific target.</p>
+<h2 id="doing-it-without-building-the-parser-yourself">Doing it without building the parser yourself</h2>
+<p>Rather than reverse-engineer the payload walking, you can call a maintained actor that already does it. Here is a complete, runnable Node.js example using the Apify client to scrape Shorts by channel handle, keyword, hashtag, or a direct Short URL — each input line is auto-detected, so you do not configure any &quot;mode&quot;:</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">import { ApifyClient } from 'apify-client';
+
+const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
+
+const run = await client.actor('constructive_calm/youtube-shorts-scraper-pro').call({
+  // Each line is auto-detected: @handle, keyword, #hashtag, or a Short URL
+  startUrls: [
+    '@MrBeast',
+    'cooking tips',
+    '#asmr',
+    'https://www.youtube.com/shorts/abcdEFGhijk',
+  ],
+  maxResults: 25,            // per input line
+  publishedAfter: '30 days', // date &quot;2026-01-01&quot; or relative &quot;7 days&quot;
+  sortOrder: 'popular',      // newest | popular | oldest
+  includeComments: true,
+  maxComments: 20,
+});
+
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+
+for (const s of items) {
+  console.log(
+    `${s.viewCount.toLocaleString()} views | ` +
+    `viralScore ${s.viralScore} | ${s.title}`
+  );
+}</code></pre></div>
+<p><code>startUrls</code> is the only required input. Everything else has sensible defaults (<code>maxResults</code> is 10, <code>maxComments</code> is 20). If you flip on <code>downloadVideos</code>, each result also gets a <code>videoDownloadUrl</code> pointing at a 360p MP4 saved to storage with a shareable link.</p>
+<h3 id="what-you-get-back-per-short">What you get back per Short</h3>
+<p>Each dataset item is a flat object, which makes it trivial to dump to CSV or load into pandas:</p>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;abcdEFGhijk&quot;,
+  &quot;url&quot;: &quot;https://www.youtube.com/shorts/abcdEFGhijk&quot;,
+  &quot;title&quot;: &quot;60-second garlic butter trick&quot;,
+  &quot;description&quot;: &quot;…&quot;,
+  &quot;hashtags&quot;: [&quot;cooking&quot;, &quot;shorts&quot;],
+  &quot;viewCount&quot;: 4823117,
+  &quot;likeCount&quot;: 312044,
+  &quot;commentCount&quot;: 1876,
+  &quot;durationSeconds&quot;: 58,
+  &quot;publishedAt&quot;: &quot;2026-06-14T09:32:00Z&quot;,
+  &quot;thumbnail&quot;: &quot;https://i.ytimg.com/…&quot;,
+  &quot;channelName&quot;: &quot;Example Kitchen&quot;,
+  &quot;channelId&quot;: &quot;UC…&quot;,
+  &quot;channelSubscribers&quot;: 2450000,
+  &quot;channelVerified&quot;: true,
+  &quot;viralScore&quot;: 1.969,
+  &quot;engagementRate&quot;: 0.06509
+}</code></pre></div>
+<p>The first block of fields comes straight from YouTube&#39;s own data. The last two — <code>viralScore</code> (views ÷ channel subscribers, so anything above 1 beat the channel&#39;s own audience) and <code>engagementRate</code> ((likes + comments) ÷ views) — are <strong>computed by the actor</strong>, not values YouTube publishes. They are handy for ranking a batch of Shorts by breakout potential without writing your own formula, but treat them as a derived heuristic, not an official metric.</p>
+<h2 id="a-quick-note-on-choosing-your-approach">A quick note on choosing your approach</h2>
+<ul>
+<li><strong>A few Shorts, occasionally, and you already have an API key?</strong> Use the official Data API. It is free within quota and fully supported.</li>
+<li><strong>You need Shorts isolated by channel/keyword/hashtag, exact counts, and volume?</strong> Either write an internal-API scraper (and accept the maintenance) or use a maintained one.</li>
+</ul>
+<p>If you want to see the exact input/output shape before running anything, there is a free <strong><a href="https://datatooly.xyz/youtube-shorts-search/">query-builder tool</a></strong> where you paste your inputs and preview the resulting output schema in the browser. It does not fetch live results client-side — YouTube is not CORS-open, so no browser page can — it just helps you construct and understand the request.</p>
+<p>To run it for real against live data, the backing actor is <strong><a href="https://apify.com/constructive_calm/youtube-shorts-scraper-pro?fpr=v77kxu" target="_blank" rel="noopener">youtube-shorts-scraper-pro</a></strong> on Apify. It is free to start, then pay-as-you-go, and it handles the residential-proxy rotation and the JSON-walking so you do not inherit the breakage treadmill.</p>
+<p>However you go about it, keep it to <strong>public data only</strong> — public Shorts, public channel stats, public comments — and you have a clean, repeatable way to pull YouTube Shorts data with exact numbers instead of rounded guesses.</p>
+<p><em>Disclosure: I build and maintain the youtube-shorts-scraper-pro actor referenced above.</em></p>
+
+</div>
+<p class="guide-end"><a href="../../youtube-shorts-search/">Open the free YouTube Shorts Scraper tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/scrape-reddit-without-api/">How to Scrape Reddit Without the API (After the 2023 Price Changes) →</a><a href="../../guides/scrape-telegram-channel-without-login/">How to Scrape a Telegram Channel Without Login (No API Key) →</a><a href="../../guides/threads-keyword-search-without-app-review/">Threads Keyword Search Without App Review: Monitor in Python →</a><a href="../../guides/build-threads-scraper-profiles-posts/">How to Build a Threads Scraper for Meta Profiles and Posts →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

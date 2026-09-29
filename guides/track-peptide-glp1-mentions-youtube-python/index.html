@@ -1,0 +1,248 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key)</title>
+<meta name="description" content="Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.">
+<link rel="canonical" href="https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key)"><meta property="og:description" content="Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV."><meta property="og:url" content="https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-track-peptide-glp1-mentions-youtube-python.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key)">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="webscraping"><meta property="article:tag" content="youtube"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key)"><meta name="twitter:description" content="Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-track-peptide-glp1-mentions-youtube-python.jpg"><meta name="twitter:image:alt" content="Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/#article","headline":"Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)","description":"Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-track-peptide-glp1-mentions-youtube-python.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, webscraping, youtube, datascience","about":{"@type":"SoftwareApplication","name":"Peptide & GLP-1 market intelligence","url":"https://datatooly.xyz/peptide-market-intel-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/#webpage","url":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/","name":"Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)","description":"Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-track-peptide-glp1-mentions-youtube-python.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)","item":"https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/health-pharma/">Health &amp; Pharma</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Health &amp; Pharma</span>
+<h1>Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key)</h1>
+<p class="lede">Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Peptide &amp; GLP-1 market intelligence</p><p class="gcta-s">Build a ready-to-run query for peptide market research data: track GLP-1, BPC-157 and 30+ compounds across YouTube, Amazon and optional Reddit with sentiment.</p><a class="btn btn-primary" href="../../peptide-market-intel-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>You can track YouTube mentions of semaglutide, tirzepatide or BPC-157 without an API key. Fetch the search results page, parse the <code>ytInitialData</code> JSON embedded in the HTML, and match titles and snippets against an alias list that maps brands (Ozempic, Wegovy, Mounjaro, Zepbound) to the generic compound. Dedupe by video ID and log the counts daily.</p>
+<p>This is market-research plumbing: it measures what people publish about these compounds. It says nothing about safety, efficacy or use, and nothing here is medical advice.</p>
+<h2 id="why-youtube-and-what-the-source-can-t-tell-you">Why YouTube, and what the source can&#39;t tell you</h2>
+<p>For consumer-demand signal on peptides and GLP-1 drugs, YouTube has two advantages. Its search pages are public, and every result carries a title, a snippet, a channel, a view count and a rough upload age. The official route is the YouTube Data API, which needs a Google Cloud key and has a daily quota. The approach below reads the same search page a browser loads.</p>
+<p>Its limits are real, and they shape how you should use the numbers:</p>
+<ul>
+<li><strong>It is a sample, not a census.</strong> Search results are ranked by relevance, so older popular videos dominate. You measure &quot;share of what YouTube shows for this query&quot;, not every video ever posted.</li>
+<li><strong>Results vary between requests.</strong> I ran the same three searches three times in a row on 29 September 2026 and got 45, 48 and 117 unique matching videos. Treat single runs as noisy and compare trends across many runs.</li>
+<li><strong>The page structure is undocumented.</strong> <code>ytInitialData</code> has been stable for years, but YouTube can rename things at any time. Fail loudly when the parse finds nothing.</li>
+</ul>
+<h2 id="runnable-python">Runnable Python</h2>
+<p>This script needs only <code>requests</code>. It searches three queries, keeps only videos whose title or snippet actually mentions a tracked compound, dedupes them, and writes a CSV.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import json
+import re
+import csv
+import time
+import requests
+
+# Canonical compound -&gt; aliases. Brand names map to the generic ingredient.
+VOCAB = {
+    &quot;semaglutide&quot;: [&quot;semaglutide&quot;, &quot;Ozempic&quot;, &quot;Wegovy&quot;, &quot;Rybelsus&quot;],
+    &quot;tirzepatide&quot;: [&quot;tirzepatide&quot;, &quot;Mounjaro&quot;, &quot;Zepbound&quot;],
+    &quot;retatrutide&quot;: [&quot;retatrutide&quot;],
+    &quot;BPC-157&quot;: [&quot;BPC-157&quot;, &quot;BPC 157&quot;, &quot;BPC157&quot;],
+    &quot;TB-500&quot;: [&quot;TB-500&quot;, &quot;TB 500&quot;, &quot;TB500&quot;],
+    &quot;GHK-Cu&quot;: [&quot;GHK-Cu&quot;, &quot;GHK Cu&quot;],
+}
+
+# One regex per compound; \b stops &quot;sema&quot; matching &quot;semantic&quot;, and escaping
+# keeps the hyphen in &quot;BPC-157&quot; literal.
+PATTERNS = {
+    canon: re.compile(r&quot;\b(&quot; + &quot;|&quot;.join(re.escape(a) for a in aliases) + r&quot;)\b&quot;, re.I)
+    for canon, aliases in VOCAB.items()
+}
+
+HEADERS = {
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 &quot;
+                  &quot;(KHTML, like Gecko) Chrome/124.0 Safari/537.36&quot;,
+    &quot;Accept-Language&quot;: &quot;en-US,en;q=0.9&quot;,
+}
+
+
+def text_of(node) -&gt; str:
+    &quot;&quot;&quot;YouTube text is either {'simpleText': ...} or {'runs': [{'text': ...}]}.&quot;&quot;&quot;
+    if not isinstance(node, dict):
+        return &quot;&quot;
+    if &quot;simpleText&quot; in node:
+        return node[&quot;simpleText&quot;]
+    return &quot;&quot;.join(r.get(&quot;text&quot;, &quot;&quot;) for r in node.get(&quot;runs&quot;, []))
+
+
+def video_renderers(node):
+    &quot;&quot;&quot;Walk ytInitialData and yield every videoRenderer, wherever it is nested.&quot;&quot;&quot;
+    if isinstance(node, dict):
+        if &quot;videoRenderer&quot; in node:
+            yield node[&quot;videoRenderer&quot;]
+        for v in node.values():
+            yield from video_renderers(v)
+    elif isinstance(node, list):
+        for v in node:
+            yield from video_renderers(v)
+
+
+def search_youtube(query: str) -&gt; list[dict]:
+    html = requests.get(
+        &quot;https://www.youtube.com/results&quot;,
+        params={&quot;search_query&quot;: query},
+        headers=HEADERS,
+        timeout=30,
+    ).text
+    m = re.search(r'(?:var ytInitialData|window\[&quot;ytInitialData&quot;\])\s*=\s*(\{.*?\});\s*&lt;/script&gt;',
+                  html, re.S)
+    if not m:
+        raise RuntimeError(&quot;ytInitialData not found (consent page or layout change?)&quot;)
+    data = json.loads(m.group(1))
+
+    rows = []
+    for v in video_renderers(data):
+        title = text_of(v.get(&quot;title&quot;))
+        snippet = text_of((v.get(&quot;detailedMetadataSnippets&quot;) or [{}])[0].get(&quot;snippetText&quot;))
+        haystack = f&quot;{title} {snippet}&quot;
+        compounds = sorted(c for c, p in PATTERNS.items() if p.search(haystack))
+        if not compounds:
+            continue  # search results drift off-topic; keep only real matches
+        rows.append({
+            &quot;query&quot;: query,
+            &quot;video_id&quot;: v[&quot;videoId&quot;],
+            &quot;title&quot;: title,
+            &quot;channel&quot;: text_of(v.get(&quot;ownerText&quot;)),
+            &quot;published&quot;: text_of(v.get(&quot;publishedTimeText&quot;)),  # relative, e.g. &quot;3 days ago&quot;
+            &quot;views&quot;: text_of(v.get(&quot;viewCountText&quot;)),
+            &quot;compounds&quot;: &quot;|&quot;.join(compounds),
+            &quot;collected_at&quot;: time.strftime(&quot;%Y-%m-%dT%H:%M:%SZ&quot;, time.gmtime()),
+        })
+    return rows
+
+
+if __name__ == &quot;__main__&quot;:
+    seen, out = set(), []
+    for q in [&quot;semaglutide&quot;, &quot;tirzepatide&quot;, &quot;BPC-157 peptide&quot;]:
+        for row in search_youtube(q):
+            if row[&quot;video_id&quot;] not in seen:  # the same video surfaces for many queries
+                seen.add(row[&quot;video_id&quot;])
+                out.append(row)
+        time.sleep(2)  # be polite
+
+    with open(&quot;peptide_mentions.csv&quot;, &quot;w&quot;, newline=&quot;&quot;, encoding=&quot;utf-8&quot;) as fh:
+        w = csv.DictWriter(fh, fieldnames=list(out[0].keys()))
+        w.writeheader()
+        w.writerows(out)
+
+    counts = {}
+    for r in out:
+        for c in r[&quot;compounds&quot;].split(&quot;|&quot;):
+            counts[c] = counts.get(c, 0) + 1
+    print(len(out), &quot;videos;&quot;, counts)</code></pre></div>
+<p>The output is one CSV row per unique video, and a video can count toward more than one compound (an &quot;Ozempic vs Mounjaro&quot; video counts for both). Run it on a schedule, append a date column, and plot the counts per compound over time. That trend line is the signal. Any single day&#39;s number is not.</p>
+<h2 id="output-fields">Output fields</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Source in <code>videoRenderer</code></th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>video_id</code></td>
+<td><code>videoId</code></td>
+<td>Stable dedupe key across queries and days</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>title.runs[].text</code></td>
+<td>Text can be <code>runs</code> or <code>simpleText</code>. <code>text_of()</code> handles both</td>
+</tr>
+<tr>
+<td><code>channel</code></td>
+<td><code>ownerText</code></td>
+<td>Channel display name</td>
+</tr>
+<tr>
+<td><code>published</code></td>
+<td><code>publishedTimeText</code></td>
+<td>Relative and coarse: <code>1y ago</code>, <code>2w ago</code>, <code>Streamed 2w ago</code></td>
+</tr>
+<tr>
+<td><code>views</code></td>
+<td><code>viewCountText</code></td>
+<td>A formatted string (<code>&quot;129,025 views&quot;</code>), not a number</td>
+</tr>
+<tr>
+<td><code>compounds</code></td>
+<td>your alias match</td>
+<td>Canonical names joined with <code>|</code></td>
+</tr>
+<tr>
+<td><code>collected_at</code></td>
+<td>your clock</td>
+<td>When you saw it. Keep it separate from <code>published</code></td>
+</tr>
+</tbody></table></div>
+<h2 id="pitfalls">Pitfalls</h2>
+<ol>
+<li><strong>Brand names hide the compound.</strong> Ozempic, Wegovy and Rybelsus are all semaglutide, and Mounjaro and Zepbound are both tirzepatide. Count brands separately and you split one compound&#39;s signal across several labels. Resolve aliases to one canonical name first.</li>
+<li><strong>Short slang is a false-positive trap.</strong> Community shorthand like &quot;sema&quot;, &quot;tirz&quot; or &quot;reta&quot; catches real mentions, but &quot;sema&quot; also matches unrelated things, such as the SEMA automotive trade show. The vocabulary above leaves slang out on purpose. If you add it, keep the <code>\b</code> word boundaries and spot-check the matches.</li>
+<li><strong>Upload-date filters leak.</strong> When I added YouTube&#39;s &quot;this week&quot; filter, results still included videos marked <code>4mo ago</code> and <code>6mo ago</code>, which come from recommendation shelves mixed into the page. If recency matters, filter on <code>published</code> yourself.</li>
+<li><strong><code>published</code> isn&#39;t a date.</strong> &quot;1y ago&quot; can mean anything from 12 to 23 months. For exact dates, look the video IDs up through the official Data API, or use relative age only for coarse buckets.</li>
+<li><strong>Don&#39;t record the collection time as the publish time.</strong> It&#39;s an easy mistake when building a unified mention schema, and it makes every video look brand new. Keep <code>collected_at</code> and <code>published</code> in separate columns.</li>
+<li><strong>Count unique videos, not rows.</strong> The same video appears under several queries. Dedupe by <code>video_id</code> before you count, as the script does.</li>
+</ol>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/peptide-market-intel-tool/">peptide market intelligence query builder</a> lets you pick sources, compound categories (GLP-1, healing, GH-GHRP and others) and an item limit. It then generates a ready-to-run input and shows a fixed example of the output shape. It is a query builder: it doesn&#39;t collect live mentions in your browser.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu" target="_blank" rel="noopener">Peptide Market Intelligence actor on Apify</a> runs this kind of collection across YouTube and Amazon search results by default, with Reddit as an opt-in source. It resolves 30+ compounds and their aliases to canonical names, and it optionally adds AI-labelled sentiment, intent and vendor/brand mentions to each row. It also writes aggregate reports (top compounds, vendor leaderboard, sentiment by compound, plus week-over-week deltas when you reuse a named dataset). The first 10 chargeable events in each run are free, then it&#39;s pay-as-you-go. The same caveat applies to its output: it is public-conversation data for market research, not medical information.</p>
+<p><em>Disclosure: I built the query builder and the actor. The script above works on its own with no account.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="can-i-get-youtube-search-results-without-an-api-key">Can I get YouTube search results without an API key?</h3>
+<p>Yes. The search results page embeds its data as JSON in a <code>ytInitialData</code> script variable, and parsing it gives you titles, channels, view counts and relative upload ages. The official YouTube Data API is the supported alternative, but it needs a Google Cloud key and has a daily quota.</p>
+<h3 id="why-not-use-reddit-for-peptide-mentions">Why not use Reddit for peptide mentions?</h3>
+<p>Reddit has plenty of community discussion, but its unauthenticated JSON endpoints returned a redirect or a 403 with ordinary browser user agents in my tests on 29 September 2026. The reliable route is Reddit&#39;s official API with a registered OAuth app.</p>
+<h3 id="how-do-i-count-semaglutide-mentions-when-people-say-ozempic">How do I count semaglutide mentions when people say &quot;Ozempic&quot;?</h3>
+<p>Map every brand to its generic ingredient before counting: Ozempic, Wegovy and Rybelsus to semaglutide, and Mounjaro and Zepbound to tirzepatide. The <code>VOCAB</code> dictionary in the script does exactly this.</p>
+<h3 id="are-mention-counts-a-measure-of-market-size">Are mention counts a measure of market size?</h3>
+<p>No. They measure attention in public content, which reacts to news cycles and to how YouTube ranks results. They work best as a relative trend, comparing compounds against each other or the same compound over time, not as sales or usage figures.</p>
+<h3 id="is-this-data-medical-information">Is this data medical information?</h3>
+<p>No. It is a record of what people publish online. It shouldn&#39;t be used to judge safety, efficacy or dosing.</p>
+
+</div>
+<p class="guide-end"><a href="../../peptide-market-intel-tool/">Open the free Peptide &amp; GLP-1 market intelligence tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

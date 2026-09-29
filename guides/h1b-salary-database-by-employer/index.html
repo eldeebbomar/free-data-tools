@@ -1,0 +1,189 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>How to Build an H-1B Salary Database by Employer (with Python)</title>
+<meta name="description" content="A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.">
+<link rel="canonical" href="https://datatooly.xyz/guides/h1b-salary-database-by-employer/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="How to Build an H-1B Salary Database by Employer (with Python)"><meta property="og:description" content="A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python."><meta property="og:url" content="https://datatooly.xyz/guides/h1b-salary-database-by-employer/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-h1b-salary-database-by-employer.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How to Build an H-1B Salary Database by Employer (with Python)">
+<meta property="article:published_time" content="2026-06-30"><meta property="article:modified_time" content="2026-06-30"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="datascience"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="career">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Build an H-1B Salary Database by Employer (with Python)"><meta name="twitter:description" content="A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-h1b-salary-database-by-employer.jpg"><meta name="twitter:image:alt" content="How to Build an H-1B Salary Database by Employer (with Python)">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/#article","headline":"How to Build an H-1B Salary Database by Employer (with Python)","description":"A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-30","dateModified":"2026-06-30","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-h1b-salary-database-by-employer.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"datascience, api, python, career","about":{"@type":"SoftwareApplication","name":"What does a role pay? H-1B/PERM salary benchmarks","url":"https://datatooly.xyz/salary-benchmark-lookup/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/#webpage","url":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/","name":"How to Build an H-1B Salary Database by Employer (with Python)","description":"A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/#breadcrumb"},"dateModified":"2026-06-30","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-h1b-salary-database-by-employer.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/#article"},"datePublished":"2026-06-30"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"How to Build an H-1B Salary Database by Employer (with Python)","item":"https://datatooly.xyz/guides/h1b-salary-database-by-employer/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/jobs-visas/">Jobs &amp; Visas</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Jobs &amp; Visas</span>
+<h1>How to Build an H-1B Salary Database by Employer (with Python)</h1>
+<p class="lede">A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.</p>
+<p class="updated">Published <time datetime="2026-06-30">June 30, 2026</time> · Updated <time datetime="2026-06-30">June 30, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">What does a role pay? H-1B/PERM salary benchmarks</p><p class="gcta-s">Benchmark what a role pays using public DOL H-1B/PERM wage disclosure data — percentiles by city, state, or employer, or individual records. Free to start.</p><a class="btn btn-primary" href="../../salary-benchmark-lookup/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you&#39;ve searched for an <strong>H-1B salary database by employer</strong> and hoped to find a clean JSON API you could just hit, you&#39;ve probably been disappointed. There isn&#39;t one — at least not from the government. But the underlying data is fully public, authoritative, and very queryable once you know where it actually lives. This post shows you the real source, what&#39;s in it, and how to query H-1B salary data by employer and role programmatically with Python.</p>
+<h2 id="where-the-data-actually-comes-from">Where the data actually comes from</h2>
+<p>Every site you&#39;ve seen with H-1B salaries — h1bdata.info, h1bgrader, and the rest — is re-publishing the same upstream source: the <strong>LCA (Labor Condition Application) disclosure data</strong> released by the U.S. Department of Labor&#39;s Office of Foreign Labor Certification (OFLC).</p>
+<p>Here&#39;s how it works. Before an employer can file an H-1B petition, it must submit a Labor Condition Application to the DOL attesting to the wage it will pay. By law, OFLC publishes these applications as <strong>public disclosure data</strong>. The files cover the H-1B, H-1B1, and E-3 programs and are released <strong>quarterly</strong> on the OFLC performance-data page:</p>
+<blockquote>
+<p><a href="https://www.dol.gov/agencies/eta/foreign-labor/performance" target="_blank" rel="noopener">https://www.dol.gov/agencies/eta/foreign-labor/performance</a></p>
+</blockquote>
+<p>A few things worth being precise about, because most blog posts get them fuzzy:</p>
+<ul>
+<li><strong>It&#39;s bulk download, not a live API.</strong> OFLC posts Excel (<code>.xlsx</code>) files — one per quarter since FY2020, and one per year for older years going back to 2008. There is no real-time query endpoint. You download the file and parse it yourself.</li>
+<li><strong>Each row is one application, not one approval.</strong> The <code>CASE_STATUS</code> column tells you whether it was Certified, Denied, Withdrawn, etc. If you want &quot;real&quot; offers, filter to <code>Certified</code>.</li>
+<li><strong>The wage is a disclosed offered wage, not actual paid salary.</strong> It&#39;s the wage the employer attested to on the application. That&#39;s still the single best public benchmark for &quot;what does Company X pay for Role Y,&quot; but it&#39;s not the same as a verified paystub.</li>
+</ul>
+<p>Each file has 75+ columns. The ones you almost always care about:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>CASE_STATUS</code></td>
+<td>Certified / Denied / Withdrawn</td>
+</tr>
+<tr>
+<td><code>EMPLOYER_NAME</code></td>
+<td>The sponsoring employer</td>
+</tr>
+<tr>
+<td><code>JOB_TITLE</code></td>
+<td>Employer-supplied job title</td>
+</tr>
+<tr>
+<td><code>SOC_TITLE</code></td>
+<td>Standardized occupation (e.g. &quot;Software Developers&quot;)</td>
+</tr>
+<tr>
+<td><code>WAGE_RATE_OF_PAY_FROM</code> / <code>..._TO</code></td>
+<td>Offered wage range</td>
+</tr>
+<tr>
+<td><code>WAGE_UNIT_OF_PAY</code></td>
+<td>Year / Hour / Month</td>
+</tr>
+<tr>
+<td><code>WORKSITE_CITY</code> / <code>WORKSITE_STATE</code></td>
+<td>Where the role sits</td>
+</tr>
+<tr>
+<td><code>RECEIVED_DATE</code></td>
+<td>When it was filed</td>
+</tr>
+</tbody></table></div>
+<p>Column names have drifted slightly over the years (older files used names like <code>LCA_CASE_EMPLOYER_NAME</code>), so always check the record layout PDF that ships alongside each year&#39;s file.</p>
+<h2 id="querying-it-in-python">Querying it in Python</h2>
+<p>Here&#39;s a complete, runnable example. Download a quarterly LCA disclosure <code>.xlsx</code> from the OFLC page first (they&#39;re large — tens to over a hundred MB, hundreds of thousands of rows), then point this at it. It filters to certified cases, normalizes everything to an annual wage, and lets you query by employer and SOC role.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import pandas as pd
+
+# Path to a quarterly LCA disclosure file downloaded from
+# https://www.dol.gov/agencies/eta/foreign-labor/performance
+FILE = &quot;LCA_Disclosure_Data_FY2026_Q1.xlsx&quot;
+
+# Only read the columns we need — the full file has 75+ and is slow to load whole.
+COLS = [
+    &quot;CASE_STATUS&quot;, &quot;EMPLOYER_NAME&quot;, &quot;JOB_TITLE&quot;, &quot;SOC_TITLE&quot;,
+    &quot;WAGE_RATE_OF_PAY_FROM&quot;, &quot;WAGE_UNIT_OF_PAY&quot;,
+    &quot;WORKSITE_CITY&quot;, &quot;WORKSITE_STATE&quot;,
+]
+
+df = pd.read_excel(FILE, usecols=COLS, engine=&quot;openpyxl&quot;)
+
+# 1. Keep only certified applications.
+df = df[df[&quot;CASE_STATUS&quot;].str.upper() == &quot;CERTIFIED&quot;].copy()
+
+# 2. Normalize every wage to an annual figure. DOL's WAGE_UNIT_OF_PAY values are
+# Year / Month / Bi-Weekly / Week / Hour, but the exact label and casing drift
+# across years — so match case-insensitively and cover the common variants
+# (otherwise an unmatched unit silently becomes NaN and the row is dropped).
+PERIODS = {&quot;YEAR&quot;: 1, &quot;MONTH&quot;: 12, &quot;BI-WEEKLY&quot;: 26,
+           &quot;WEEK&quot;: 52, &quot;WEEKLY&quot;: 52, &quot;HOUR&quot;: 2080}  # 2080 = 40h * 52w
+
+df[&quot;wage&quot;] = pd.to_numeric(df[&quot;WAGE_RATE_OF_PAY_FROM&quot;], errors=&quot;coerce&quot;)
+unit = df[&quot;WAGE_UNIT_OF_PAY&quot;].astype(str).str.strip().str.upper()
+df[&quot;annual_wage&quot;] = df[&quot;wage&quot;] * unit.map(PERIODS)
+df = df.dropna(subset=[&quot;annual_wage&quot;])
+
+def query(employer=None, role=None, state=None):
+    out = df
+    if employer:
+        out = out[out[&quot;EMPLOYER_NAME&quot;].str.contains(employer, case=False, na=False)]
+    if role:
+        out = out[out[&quot;SOC_TITLE&quot;].str.contains(role, case=False, na=False)]
+    if state:
+        out = out[out[&quot;WORKSITE_STATE&quot;].str.upper() == state.upper()]
+    return out
+
+# Example: software roles at Stripe in California
+res = query(employer=&quot;Stripe&quot;, role=&quot;Software&quot;, state=&quot;CA&quot;)
+
+print(f&quot;{len(res)} matching certified applications&quot;)
+print(res[&quot;annual_wage&quot;].describe()[[&quot;count&quot;, &quot;mean&quot;, &quot;min&quot;, &quot;max&quot;]].round(0))
+print(&quot;Median:&quot;, round(res[&quot;annual_wage&quot;].median()))</code></pre></div>
+<p>A few practical notes:</p>
+<ul>
+<li><code>pandas.read_excel</code> with <code>usecols</code> is dramatically faster than loading all 75 columns. For repeated queries, convert the file to Parquet once (<code>df.to_parquet(...)</code>) and read that instead — it&#39;s an order of magnitude quicker.</li>
+<li>Always normalize <code>WAGE_UNIT_OF_PAY</code>. A surprising share of records are filed hourly, and if you don&#39;t convert them you&#39;ll get a &quot;median salary&quot; of $85 that quietly ruins your analysis.</li>
+<li>The example uses <code>WAGE_RATE_OF_PAY_FROM</code> (the floor, and the conservative benchmark). The file also carries <code>WAGE_RATE_OF_PAY_TO</code> for the ceiling of the posted range — add it to <code>COLS</code> if you want both ends.</li>
+<li>Employer names are not deduplicated. &quot;Amazon.com Services LLC&quot;, &quot;Amazon Web Services&quot;, and &quot;Amazon Development Center&quot; are separate strings. Substring matching (as above) is the pragmatic fix; for serious work you&#39;ll want a normalization pass.</li>
+</ul>
+<h2 id="scaling-it-many-quarters-many-years">Scaling it: many quarters, many years</h2>
+<p>One quarter is a snapshot. To build a real <strong>H-1B salary database by employer</strong> you&#39;ll want to concatenate several years of files so you can see trends and have enough rows per employer/role to compute a stable median:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import glob
+
+frames = []
+for f in glob.glob(&quot;LCA_Disclosure_Data_FY20*.xlsx&quot;):
+    # usecols errors if any name is missing, and column names drift across years —
+    # so read the header row first and request only the columns that exist in this file.
+    avail = pd.read_excel(f, nrows=0, engine=&quot;openpyxl&quot;).columns
+    frames.append(pd.read_excel(f, usecols=[c for c in COLS if c in avail], engine=&quot;openpyxl&quot;))
+full = pd.concat(frames, ignore_index=True)</code></pre></div>
+<p>That&#39;s also where the work starts to add up: downloading every quarterly file, handling the column-name drift between years, deduplicating employers, and keeping it refreshed each quarter when OFLC posts new data. None of it is hard — it&#39;s just plumbing — but it&#39;s the part that turns &quot;I found a CSV&quot; into &quot;I have a queryable benchmark.&quot;</p>
+<h2 id="a-shortcut-if-you-d-rather-skip-the-plumbing">A shortcut if you&#39;d rather skip the plumbing</h2>
+<p>If you just want to sketch the query you&#39;d run — employer + role + state — before committing to the full ETL, I put together a small free <strong>query-builder</strong> that lets you compose the lookup and preview the shape of the result: <a href="https://datatooly.xyz/salary-benchmark-lookup/">datatooly.xyz/salary-benchmark-lookup</a>. It builds the query for you; it does not run the dataset live in your browser (these files are far too large for that).</p>
+<p>And if you want the parsed, normalized, deduplicated data delivered as structured JSON without maintaining the pipeline yourself, I built an Apify actor for exactly this — <strong><a href="https://apify.com/constructive_calm/salarybench-iq?fpr=v77kxu" target="_blank" rel="noopener">SalaryBench IQ</a></strong> — which queries the DOL LCA disclosure data by employer/role/state and returns clean records. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I built both of those tools, so treat that section as me telling you about my own work — the DOL-source facts and the code above stand entirely on their own.</em></p>
+<h2 id="the-honest-takeaway">The honest takeaway</h2>
+<p>There is no official H-1B salary JSON API. But the data behind every H-1B salary site is one well-documented, free, public source: the DOL OFLC LCA disclosure files. Download a quarter, filter to <code>Certified</code>, normalize the wage unit, and you have a defensible salary benchmark by employer and role in about 30 lines of Python. Everything past that — multi-year history, employer normalization, quarterly refresh — is just engineering you can do yourself or offload.</p>
+
+</div>
+<p class="guide-end"><a href="../../salary-benchmark-lookup/">Open the free What does a role pay? H-1B/PERM salary benchmarks tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/perm-disclosure-data-python-green-card-sponsors/">PERM Disclosure Data in Python: Find Green Card Sponsors by City →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

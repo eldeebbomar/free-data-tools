@@ -1,20 +1,87 @@
 [
   {
-    "pageName": "Nike",
-    "adText": "Just Do It — new Pegasus drop",
-    "platforms": "facebook, instagram",
-    "startDate": "2026-05-12"
+    "adArchiveId": "1200000000000000",
+    "pageName": "Stride Running Co.",
+    "isActive": true,
+    "startDate": 1756684800,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM"
+    ],
+    "displayFormat": "IMAGE",
+    "bodyText": "Our lightest trail shoe yet. Built for long miles and rocky descents.",
+    "ctaText": "Shop Now",
+    "linkUrl": "https://www.example.com/landing-1",
+    "country": "US",
+    "sourceUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=running%20shoes",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "pageName": "Adidas",
-    "adText": "Run the city. Ultraboost.",
-    "platforms": "facebook",
-    "startDate": "2026-05-18"
+    "adArchiveId": "1200000000007919",
+    "pageName": "Stride Running Co.",
+    "isActive": true,
+    "startDate": 1754006400,
+    "publisherPlatform": [
+      "INSTAGRAM"
+    ],
+    "displayFormat": "VIDEO",
+    "bodyText": "Free returns for 60 days. Find your fit with our online size guide.",
+    "ctaText": "Learn More",
+    "linkUrl": "https://www.example.com/landing-2",
+    "country": "US",
+    "sourceUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=running%20shoes",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   },
   {
-    "pageName": "On Running",
-    "adText": "Cloudmonster — try it free",
-    "platforms": "instagram, facebook",
-    "startDate": "2026-05-20"
+    "adArchiveId": "1200000000015838",
+    "pageName": "PaceLab Fitness",
+    "isActive": true,
+    "startDate": 1757462400,
+    "publisherPlatform": [
+      "FACEBOOK"
+    ],
+    "displayFormat": "IMAGE",
+    "bodyText": "Train for your first half marathon with a 12-week plan built by coaches.",
+    "ctaText": "Sign Up",
+    "linkUrl": "https://www.example.com/landing-3",
+    "country": "US",
+    "sourceUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=running%20shoes",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "adArchiveId": "1200000000023757",
+    "pageName": "Northfield Outdoor Gear",
+    "isActive": false,
+    "startDate": 1751328000,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "MESSENGER"
+    ],
+    "displayFormat": "DCO",
+    "bodyText": "End-of-season sale: up to 40% off running jackets.",
+    "ctaText": "Shop Now",
+    "linkUrl": "https://www.example.com/landing-4",
+    "country": "US",
+    "sourceUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=running%20shoes",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
+  },
+  {
+    "adArchiveId": "1200000000031676",
+    "pageName": "Kinetic Sole",
+    "isActive": true,
+    "startDate": 1758067200,
+    "publisherPlatform": [
+      "FACEBOOK",
+      "INSTAGRAM",
+      "AUDIENCE_NETWORK"
+    ],
+    "displayFormat": "VIDEO",
+    "bodyText": "Recycled materials, same cushioning. Meet the new everyday runner.",
+    "ctaText": "Shop Now",
+    "linkUrl": "https://www.example.com/landing-5",
+    "country": "US",
+    "sourceUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=running%20shoes",
+    "scrapedAt": "2026-09-29T08:00:00.000Z"
   }
 ]

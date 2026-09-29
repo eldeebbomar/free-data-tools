@@ -51,7 +51,8 @@
     var btn = $("#copy-json");
     if (!btn) return;
     btn.addEventListener("click", function () {
-      var txt = JSON.stringify(buildInput(), null, 2);
+      // live runners put their run-specific input in window.__ctaInput (shown in the panel) — copy exactly that
+      var txt = JSON.stringify(window.__ctaInput || buildInput(), null, 2);
       navigator.clipboard.writeText(txt).then(function () {
         btn.classList.add("copied"); var o = btn.textContent; btn.textContent = "copied ✓";
         setTimeout(function () { btn.classList.remove("copied"); btn.textContent = o; }, 1600);
@@ -115,7 +116,7 @@
       // feed the CTA input with this company
       var tmpl = (TOOL && TOOL.inputTemplate) || {};
       var demoBox = $("#json-code");
-      if (demoBox) { var inp = JSON.parse(JSON.stringify(tmpl)); inp.atsTargets = [{ ats: "greenhouse", slug: token }]; demoBox.innerHTML = highlightJSON(inp); window.__ctaInput = inp; }
+      if (demoBox) { var inp = JSON.parse(JSON.stringify(tmpl)); inp.atsTargets = ["greenhouse:" + token]; /* actor schema: stringList of 'platform:slug' */ demoBox.innerHTML = highlightJSON(inp); window.__ctaInput = inp; }
     }).catch(function (e) {
       status.innerHTML = '<span class="err">' + esc(e.message) + '</span>';
     });

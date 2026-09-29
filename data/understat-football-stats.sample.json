@@ -1,20 +1,107 @@
 [
   {
-    "player": "Erling Haaland",
+    "type": "player_season",
+    "id": 90001,
+    "name": "Luca Vellano",
     "team": "Manchester City",
+    "position": "F",
+    "league": "EPL",
+    "season": 2025,
+    "seasonLabel": "2025/26",
+    "games": 35,
+    "goals": 27,
+    "assists": 5,
     "xG": 24.6,
-    "goals": 27
+    "xA": 4.1,
+    "npxG": 21.4,
+    "_meta": {
+      "mode": "league_players",
+      "scrapedAt": "2026-09-29T08:00:00.000Z",
+      "source": "understat"
+    }
   },
   {
-    "player": "Mohamed Salah",
+    "type": "player_season",
+    "id": 90002,
+    "name": "Daniel Okafor",
     "team": "Liverpool",
+    "position": "F M",
+    "league": "EPL",
+    "season": 2025,
+    "seasonLabel": "2025/26",
+    "games": 38,
+    "goals": 19,
+    "assists": 12,
     "xG": 18.2,
-    "goals": 19
+    "xA": 10.3,
+    "npxG": 14.9,
+    "_meta": {
+      "mode": "league_players",
+      "scrapedAt": "2026-09-29T08:00:00.000Z",
+      "source": "understat"
+    }
   },
   {
-    "player": "Alexander Isak",
-    "team": "Newcastle",
+    "type": "player_season",
+    "id": 90003,
+    "name": "Samuel Brennan",
+    "team": "Arsenal",
+    "position": "M",
+    "league": "EPL",
+    "season": 2025,
+    "seasonLabel": "2025/26",
+    "games": 36,
+    "goals": 12,
+    "assists": 9,
+    "xG": 10.8,
+    "xA": 8.7,
+    "npxG": 10.1,
+    "_meta": {
+      "mode": "league_players",
+      "scrapedAt": "2026-09-29T08:00:00.000Z",
+      "source": "understat"
+    }
+  },
+  {
+    "type": "player_season",
+    "id": 90004,
+    "name": "Tomas Lindqvist",
+    "team": "Newcastle United",
+    "position": "F",
+    "league": "EPL",
+    "season": 2025,
+    "seasonLabel": "2025/26",
+    "games": 34,
+    "goals": 21,
+    "assists": 3,
     "xG": 16.8,
-    "goals": 21
+    "xA": 2.2,
+    "npxG": 14.5,
+    "_meta": {
+      "mode": "league_players",
+      "scrapedAt": "2026-09-29T08:00:00.000Z",
+      "source": "understat"
+    }
+  },
+  {
+    "type": "player_season",
+    "id": 90005,
+    "name": "Rafael Castellan",
+    "team": "Chelsea",
+    "position": "M S",
+    "league": "EPL",
+    "season": 2025,
+    "seasonLabel": "2025/26",
+    "games": 37,
+    "goals": 14,
+    "assists": 8,
+    "xG": 11.9,
+    "xA": 7.4,
+    "npxG": 9.6,
+    "_meta": {
+      "mode": "league_players",
+      "scrapedAt": "2026-09-29T08:00:00.000Z",
+      "source": "understat"
+    }
   }
 ]

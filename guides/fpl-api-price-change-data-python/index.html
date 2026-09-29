@@ -1,0 +1,212 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>FPL API Price Change Data in Python: The Official 2026/27 Fields</title>
+<meta name="description" content="Read FPL&#39;s own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule.">
+<link rel="canonical" href="https://datatooly.xyz/guides/fpl-api-price-change-data-python/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="FPL API Price Change Data in Python: The Official 2026/27 Fields"><meta property="og:description" content="Read FPL&#39;s own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule."><meta property="og:url" content="https://datatooly.xyz/guides/fpl-api-price-change-data-python/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-fpl-api-price-change-data-python.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="FPL API Price Change Data in Python: The Official 2026/27 Fields">
+<meta property="article:published_time" content="2026-09-29"><meta property="article:modified_time" content="2026-09-29"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="api"><meta property="article:tag" content="football"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="FPL API Price Change Data in Python: The Official 2026/27 Fields"><meta name="twitter:description" content="Read FPL&#39;s own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-fpl-api-price-change-data-python.jpg"><meta name="twitter:image:alt" content="FPL API Price Change Data in Python: The Official 2026/27 Fields">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/#article","headline":"FPL API Price Change Data in Python: The Official 2026/27 Fields","description":"Read FPL's own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-09-29","dateModified":"2026-09-29","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-api-price-change-data-python.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, api, football, datascience","about":{"@type":"SoftwareApplication","name":"Fantasy Premier League data & picks","url":"https://datatooly.xyz/fpl-intelligence-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/#webpage","url":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/","name":"FPL API Price Change Data in Python: The Official 2026/27 Fields","description":"Read FPL's own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/#breadcrumb"},"dateModified":"2026-09-29","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-api-price-change-data-python.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/#article"},"datePublished":"2026-09-29"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"FPL API Price Change Data in Python: The Official 2026/27 Fields","item":"https://datatooly.xyz/guides/fpl-api-price-change-data-python/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/sports-analytics/">Sports Analytics</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Sports Analytics</span>
+<h1>FPL API Price Change Data in Python: The Official 2026/27 Fields</h1>
+<p class="lede">Read FPL's own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule.</p>
+<p class="updated">Published <time datetime="2026-09-29">September 29, 2026</time> · Updated <time datetime="2026-09-29">September 29, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Fantasy Premier League data &amp; picks</p><p class="gcta-s">Build a ready-to-run Fantasy Premier League API query for gameweek picks and manager dashboards, preview the output shape, then run it live on Apify.</p><a class="btn btn-primary" href="../../fpl-intelligence-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Since 2026/27, the free Fantasy Premier League API includes its own price-change predictions. Each player in <code>bootstrap-static</code> carries <code>price_change_percent</code> (progress toward a rise or fall) and <code>price_change_projections</code> (projected progress at the next three updates, with a -5 to +5 likelihood). No API key is needed. A projection past ±100 means FPL expects a price move at the next update.</p>
+<p>Most FPL price-change tutorials still teach the old approach: estimate a player&#39;s &quot;net transfer rate&quot; and compare it to thresholds the community reverse-engineered. You no longer have to guess. The numbers the official Price Change Predictor page shows come from the same JSON feed you can already fetch.</p>
+<h2 id="where-the-data-lives-and-its-limits">Where the data lives, and its limits</h2>
+<p>Everything is in one request: <code>https://fantasy.premierleague.com/api/bootstrap-static/</code>. It returns every player (<code>elements</code>), all 20 teams, the 38 gameweeks (<code>events</code>), and game settings. When I fetched it on 29 September 2026 it held 667 players, and every one of them carried these five fields:</p>
+<ul>
+<li><code>price_change_percent</code></li>
+<li><code>price_change_hourly_rate</code></li>
+<li><code>price_change_projections</code></li>
+<li><code>price_change_locked_until</code></li>
+<li><code>price_change_calibrating</code></li>
+</ul>
+<p>Know the limits before you build on it:</p>
+<ul>
+<li><strong>FPL does not document these fields.</strong> The Premier League&#39;s announcement explains the tool in plain English: &quot;Anything over 100 per cent will indicate that the player is expected to surpass the threshold for an increase or decrease.&quot; Changes happen at 00:00 UK time, the predictor page refreshes every 15 minutes, and a player can move by up to £0.3m in a gameweek. Everything else about the field shapes comes from reading the live JSON.</li>
+<li><strong>It is a guide, not a guarantee.</strong> The Premier League says so directly: late selling can pull a player back under the threshold before midnight.</li>
+<li><strong>Your browser can&#39;t call it directly.</strong> The response has no <code>Access-Control-Allow-Origin</code> header, so client-side <code>fetch()</code> is blocked by CORS. Call it from a script, a server, or a scheduled job.</li>
+<li><strong>It only shows today.</strong> The API has no endpoint for yesterday&#39;s progress. If you want history (for example, to check how accurate the projections are), you have to save it yourself every day.</li>
+</ul>
+<h2 id="runnable-python-tonight-s-projected-risers-and-fallers">Runnable Python: tonight&#39;s projected risers and fallers</h2>
+<p>This script needs <code>requests</code> and <code>pandas</code>. It lists every player projected at or past ±100 at the next update, and it appends a dated snapshot of all players to a CSV ledger.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import os
+from datetime import datetime, timezone
+
+import pandas as pd
+import requests
+
+URL = &quot;https://fantasy.premierleague.com/api/bootstrap-static/&quot;
+
+boot = requests.get(URL, headers={&quot;User-Agent&quot;: &quot;fpl-price-log/1.0&quot;}, timeout=30).json()
+teams = {t[&quot;id&quot;]: t[&quot;short_name&quot;] for t in boot[&quot;teams&quot;]}
+positions = {p[&quot;id&quot;]: p[&quot;singular_name_short&quot;] for p in boot[&quot;element_types&quot;]}
+
+
+def projection(el, offset):
+    &quot;&quot;&quot;projected_percent for a given offset (0 = next update), as a float.&quot;&quot;&quot;
+    for p in el.get(&quot;price_change_projections&quot;) or []:
+        if p[&quot;offset&quot;] == offset:
+            return float(p[&quot;projected_percent&quot;]), p[&quot;likelihood&quot;]
+    return None, None
+
+
+rows = []
+for el in boot[&quot;elements&quot;]:
+    next_pct, next_lik = projection(el, 0)
+    rows.append({
+        &quot;id&quot;: el[&quot;id&quot;],
+        &quot;player&quot;: el[&quot;web_name&quot;],
+        &quot;team&quot;: teams[el[&quot;team&quot;]],
+        &quot;pos&quot;: positions[el[&quot;element_type&quot;]],
+        &quot;price&quot;: el[&quot;now_cost&quot;] / 10,                         # now_cost is in tenths of £m
+        &quot;owned_pct&quot;: float(el[&quot;selected_by_percent&quot;]),        # a string in the JSON
+        &quot;progress_pct&quot;: float(el[&quot;price_change_percent&quot;]),    # also a string
+        &quot;next_update_pct&quot;: next_pct,
+        &quot;likelihood&quot;: next_lik,                               # integer, -5 .. +5
+        &quot;locked_until&quot;: el[&quot;price_change_locked_until&quot;],
+        &quot;calibrating&quot;: el[&quot;price_change_calibrating&quot;],
+        &quot;net_transfers_gw&quot;: el[&quot;transfers_in_event&quot;] - el[&quot;transfers_out_event&quot;],
+    })
+
+df = pd.DataFrame(rows)
+risers = df[df.next_update_pct &gt;= 100].sort_values(&quot;next_update_pct&quot;, ascending=False)
+fallers = df[df.next_update_pct &lt;= -100].sort_values(&quot;next_update_pct&quot;)
+
+cols = [&quot;player&quot;, &quot;team&quot;, &quot;pos&quot;, &quot;price&quot;, &quot;progress_pct&quot;, &quot;next_update_pct&quot;, &quot;likelihood&quot;]
+print(&quot;Projected to RISE at the next update:\n&quot;, risers[cols].to_string(index=False))
+print(&quot;\nProjected to FALL at the next update:\n&quot;, fallers[cols].to_string(index=False))
+
+# The API only ever shows *today*. Append a dated snapshot so you can score
+# yesterday's projections against today's prices later.
+df.insert(0, &quot;snapshot_utc&quot;, datetime.now(timezone.utc).isoformat(timespec=&quot;seconds&quot;))
+ledger = &quot;fpl_price_ledger.csv&quot;
+df.to_csv(ledger, mode=&quot;a&quot;, index=False, header=not os.path.exists(ledger))</code></pre></div>
+<p>I ran this against the live API on 29 September 2026. It returned one projected faller and no risers, and it wrote 667 rows to the ledger. On a quiet day, empty tables are normal.</p>
+<p>Schedule the script to run once a day, after the midnight update. Within a week the ledger lets you answer the question that matters: when FPL projected ≥100, did the price actually move? You can check this by comparing <code>now_cost</code> between consecutive snapshots.</p>
+<h2 id="field-reference">Field reference</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type in JSON</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>price_change_percent</code></td>
+<td>string, e.g. <code>&quot;98.0&quot;</code></td>
+<td>Current progress toward a change. Positive values point toward a rise, negative toward a fall.</td>
+</tr>
+<tr>
+<td><code>price_change_projections</code></td>
+<td>array of 3 objects</td>
+<td><code>{offset, projected_percent, likelihood}</code> for offsets 0, 1 and 2. From the live values, these appear to be the next three nightly updates. <code>projected_percent</code> is a string.</td>
+</tr>
+<tr>
+<td><code>likelihood</code> (inside projections)</td>
+<td>integer, -5 to +5</td>
+<td>A banded confidence. In my snapshot, ±5 matched projections past ±100 and ±4 matched values just short of the line.</td>
+</tr>
+<tr>
+<td><code>price_change_hourly_rate</code></td>
+<td>number</td>
+<td>How fast the counter is moving. The units aren&#39;t documented. I wouldn&#39;t build on it.</td>
+</tr>
+<tr>
+<td><code>price_change_locked_until</code></td>
+<td>ISO timestamp or <code>null</code></td>
+<td>Set for only a handful of players (8 of 667 in my snapshot). The name suggests that player&#39;s price can&#39;t change before that time.</td>
+</tr>
+<tr>
+<td><code>price_change_calibrating</code></td>
+<td>boolean</td>
+<td><code>true</code> while FPL is still calibrating a player. Don&#39;t trust projections while it&#39;s true.</td>
+</tr>
+<tr>
+<td><code>now_cost</code></td>
+<td>integer</td>
+<td>Price in tenths of £m (<code>61</code> = £6.1m).</td>
+</tr>
+<tr>
+<td><code>cost_change_event</code> / <code>cost_change_start</code></td>
+<td>integer</td>
+<td>How much the price has changed this gameweek and since the season started, in tenths. Use these to confirm that a projected change actually happened.</td>
+</tr>
+</tbody></table></div>
+<h2 id="pitfalls-that-will-bite-you">Pitfalls that will bite you</h2>
+<ol>
+<li><strong>Some numbers arrive as strings.</strong> <code>price_change_percent</code>, <code>projected_percent</code>, <code>selected_by_percent</code>, <code>form</code> and <code>expected_goals</code> are all JSON strings. If you compare <code>&quot;98.0&quot; &gt;= 100</code> in JavaScript, you get string coercion instead of a numeric comparison. Cast every one of them.</li>
+<li><strong>&quot;UK midnight&quot; isn&#39;t a fixed UTC time.</strong> It is 23:00 UTC during British Summer Time and 00:00 UTC in winter. If you schedule in UTC, pick a time that is safely after both, such as 01:30 UTC.</li>
+<li><strong>Reaching 100 doesn&#39;t guarantee a change.</strong> A projection of 100.3 two nights out (<code>offset: 2</code>) can still fall back if managers stop buying. Treat <code>offset: 0</code> as the actionable number.</li>
+<li><strong>Early in the season the feed isn&#39;t ready.</strong> The Premier League says the predicted-progress figure appears only after a calibration period of at least one gameweek. Check <code>price_change_calibrating</code> before you act on any projection.</li>
+<li><strong>Responses are cached.</strong> The endpoint returned <code>cache-control: max-age=300</code> when I tested it, so polling faster than every five minutes gives you the same data.</li>
+<li><strong>Snapshots can&#39;t be backfilled.</strong> If your job misses a day, that day is gone.</li>
+</ol>
+<h2 id="the-old-way-still-has-a-use">The old way still has a use</h2>
+<p>Before this feed existed, predictors divided net transfers by ownership and compared the result to community-derived thresholds. That approach is still useful as a cross-check: <code>net_transfers_gw</code> is already in the script above. Keep in mind that the thresholds are approximations, not FPL&#39;s formula.</p>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>If you want an FPL query without writing Python, the free <a href="https://datatooly.xyz/fpl-intelligence-tool/">FPL query builder</a> lets you pick a mode (gameweek picks, mini-league intel, manager dashboard, price-change predictor) and a gameweek. It then generates a ready-to-run input and shows a fixed example of the output shape. It is a query builder: it does not fetch live FPL data in your browser, because of the CORS restriction described above.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu" target="_blank" rel="noopener">FPL Intelligence actor on Apify</a> runs these calls server-side on a schedule, with no CORS problems and no cron job to maintain. It covers captain and transfer picks, a wildcard optimizer, mini-league differentials, manager dashboards, live gameweek tracking, and historical seasons from the community vaastav archive. One thing to know: its <code>price_change_predictor</code> mode uses the net-transfer heuristic, not the official fields in this guide, so treat it as a second opinion next to FPL&#39;s own projection. Pricing is pay-per-event: the first 10 chargeable events in each run are free, then it&#39;s pay-as-you-go.</p>
+<p><em>Disclosure: I built the query builder and the actor. The Python above works on its own without either of them.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-the-fpl-api-have-official-price-change-predictions">Does the FPL API have official price change predictions?</h3>
+<p>Yes, since the 2026/27 season. Each player in <code>bootstrap-static</code> has <code>price_change_percent</code> and a three-entry <code>price_change_projections</code> array. FPL doesn&#39;t document the fields, but they back the official Price Change Predictor, and the Premier League&#39;s explanation says values over 100% signal an expected change.</p>
+<h3 id="what-does-100-mean-in-fpl-price-changes">What does 100% mean in FPL price changes?</h3>
+<p>The Premier League says anything over 100% indicates the player is expected to cross the rise or fall threshold at the next update, which happens at 00:00 UK time. Negative values work the same way for falls. It is not a guarantee: late transfers can pull the number back.</p>
+<h3 id="do-i-need-an-api-key-or-login">Do I need an API key or login?</h3>
+<p>No. <code>bootstrap-static</code> is public and unauthenticated. You do need to call it from a script or server rather than browser JavaScript, because the response has no CORS header.</p>
+<h3 id="can-i-get-historical-fpl-price-change-progress">Can I get historical FPL price change progress?</h3>
+<p>Not from the API. It reports only the current state. Save a snapshot on a schedule, as the script&#39;s ledger does. For past seasons&#39; prices, weekly per-player data (including <code>value</code>) exists in the community vaastav/Fantasy-Premier-League archive on GitHub.</p>
+<h3 id="why-are-all-the-price-change-fields-zero-or-calibrating">Why are all the price change fields zero or calibrating?</h3>
+<p>Early in a season FPL needs a calibration period of at least one gameweek before it shows predicted progress. Check <code>price_change_calibrating</code> and wait for it to turn false before trusting projections.</p>
+
+</div>
+<p class="guide-end"><a href="../../fpl-intelligence-tool/">Open the free Fantasy Premier League data &amp; picks tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/understat-xg-data-export/">Understat xG Data Export: Pull Expected Goals with Python + CSV →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>

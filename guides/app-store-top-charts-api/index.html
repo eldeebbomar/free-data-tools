@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZMND343WK1');</script>
+<title>App Store Top Charts API: Free, Key-Free, and CORS-Open</title>
+<meta name="description" content="Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.">
+<link rel="canonical" href="https://datatooly.xyz/guides/app-store-top-charts-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="App Store Top Charts API: Free, Key-Free, and CORS-Open"><meta property="og:description" content="Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included."><meta property="og:url" content="https://datatooly.xyz/guides/app-store-top-charts-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-app-store-top-charts-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="App Store Top Charts API: Free, Key-Free, and CORS-Open">
+<meta property="article:published_time" content="2026-06-01"><meta property="article:modified_time" content="2026-06-01"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="javascript"><meta property="article:tag" content="mobile"><meta property="article:tag" content="webdev">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="App Store Top Charts API: Free, Key-Free, and CORS-Open"><meta name="twitter:description" content="Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-app-store-top-charts-api.jpg"><meta name="twitter:image:alt" content="App Store Top Charts API: Free, Key-Free, and CORS-Open">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=7b890fdd">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/app-store-top-charts-api/#article","headline":"App Store Top Charts API: Free, Key-Free, and CORS-Open","description":"Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-06-01","dateModified":"2026-06-01","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-app-store-top-charts-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/app-store-top-charts-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, javascript, mobile, webdev","about":{"@type":"SoftwareApplication","name":"App Store Top Charts — live, any country, free","url":"https://datatooly.xyz/app-store-top-charts/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/app-store-top-charts-api/#webpage","url":"https://datatooly.xyz/guides/app-store-top-charts-api/","name":"App Store Top Charts API: Free, Key-Free, and CORS-Open","description":"Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/app-store-top-charts-api/#breadcrumb"},"dateModified":"2026-06-01","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-app-store-top-charts-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/app-store-top-charts-api/#article"},"datePublished":"2026-06-01"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/app-store-top-charts-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"App Store Top Charts API: Free, Key-Free, and CORS-Open","item":"https://datatooly.xyz/guides/app-store-top-charts-api/"}]}</script>
+</head><body><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/app-intelligence/">App Intelligence</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · App Intelligence</span>
+<h1>App Store Top Charts API: Free, Key-Free, and CORS-Open</h1>
+<p class="lede">Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.</p>
+<p class="updated">Published <time datetime="2026-06-01">June 1, 2026</time> · Updated <time datetime="2026-06-01">June 1, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">App Store Top Charts — live, any country, free</p><p class="gcta-s">See the App Store top charts live, free, in any country. Real-time Top Free, Top Paid &amp; Top Grossing apps straight from Apple's official iTunes RSS feed.</p><a class="btn btn-primary" href="../../app-store-top-charts/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>If you&#39;ve ever wanted an <strong>app store top charts API</strong> that you can hit straight from a browser tab — no API key, no OAuth dance, no server proxy — there&#39;s good news. Apple still serves a legacy iTunes RSS feed that returns the App Store top charts as plain JSON, and (the part most people miss) it&#39;s CORS-open. That means a single <code>fetch()</code> from client-side JavaScript works. No backend required.</p>
+<p>This post walks through exactly how the endpoint is shaped, what the JSON looks like, the limits you&#39;ll hit, and where it stops being usable from the browser. Everything here is verified against the live feed, with a runnable example you can paste into your console right now.</p>
+<h2 id="the-endpoint">The endpoint</h2>
+<p>The pattern is:</p>
+<div class="code-block"><pre><code>https://itunes.apple.com/{cc}/rss/{chart}/limit={N}/json</code></pre></div>
+<p>Three pieces matter:</p>
+<ul>
+<li><strong><code>{cc}</code></strong> — a two-letter country code (<code>us</code>, <code>gb</code>, <code>jp</code>, <code>de</code>, <code>br</code>, …). Charts are per-country, so the US top free list is often very different from Japan&#39;s.</li>
+<li><strong><code>{chart}</code></strong> — one of three values:<ul>
+<li><code>topfreeapplications</code> — ranked by download velocity (free apps)</li>
+<li><code>toppaidapplications</code> — ranked by download velocity (paid apps)</li>
+<li><code>topgrossingapplications</code> — ranked by revenue, which <strong>includes in-app purchases</strong> (this is why a free-to-download game with aggressive IAP can top grossing while sitting far down the free chart)</li>
+</ul>
+</li>
+<li><strong><code>{N}</code></strong> — how many entries you want, e.g. <code>limit=100</code>.</li>
+</ul>
+<p>So the US top free applications, top 100, is:</p>
+<div class="code-block"><pre><code>https://itunes.apple.com/us/rss/topfreeapplications/limit=100/json</code></pre></div>
+<p>That&#39;s the whole API. No registration.</p>
+<h2 id="why-this-works-from-a-browser">Why this works from a browser</h2>
+<p>The thing that makes this endpoint special for front-end developers is that <code>itunes.apple.com</code> returns a permissive <code>Access-Control-Allow-Origin</code> header on these RSS responses. Your browser won&#39;t block the cross-origin read. You can build a chart widget, a dashboard, or a quick research tool entirely client-side.</p>
+<p>Here&#39;s a real, runnable example. Drop it into your browser console or a <code>&lt;script&gt;</code> tag and it returns immediately:</p>
+<div class="code-block"><span class="code-lang">js</span><pre><code class="language-js">async function getTopCharts(country = &quot;us&quot;, chart = &quot;topfreeapplications&quot;, limit = 25) {
+  const url = `https://itunes.apple.com/${country}/rss/${chart}/limit=${limit}/json`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Apple RSS responded ${res.status}`);
+
+  const data = await res.json();
+  const entries = data.feed.entry ?? [];
+
+  return entries.map((entry, i) =&gt; ({
+    rank: i + 1,
+    name: entry[&quot;im:name&quot;].label,
+    developer: entry[&quot;im:artist&quot;].label,
+    category: entry.category?.attributes?.label ?? null,
+    url: entry.link?.attributes?.href ?? null,
+  }));
+}
+
+// Top 10 free apps in the US App Store
+getTopCharts(&quot;us&quot;, &quot;topfreeapplications&quot;, 10).then(console.table);</code></pre></div>
+<p>And the equivalent one-liner with curl, for shell and CI use:</p>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl -s &quot;https://itunes.apple.com/us/rss/topfreeapplications/limit=10/json&quot; \
+  | jq '.feed.entry[] | {name: .[&quot;im:name&quot;].label, dev: .[&quot;im:artist&quot;].label}'</code></pre></div>
+<h2 id="the-json-shape">The JSON shape</h2>
+<p>The response is a single object with one top-level <code>feed</code> key. The chart itself lives in <code>feed.entry</code>, an array where each element is one ranked app. Position in the array <strong>is</strong> the rank — index 0 is #1.</p>
+<p>Each entry I pulled from the live feed contains these fields:</p>
+<ul>
+<li><code>im:name</code> — the app name (read <code>.label</code>)</li>
+<li><code>im:artist</code> — the developer/publisher (read <code>.label</code>; it may also carry a developer URL in <code>attributes.href</code>)</li>
+<li><code>category</code> — genre, with the human-readable name under <code>attributes.label</code> and the genre ID under <code>attributes.im:id</code></li>
+<li><code>link</code> — the App Store URL under <code>attributes.href</code></li>
+<li><code>id</code> — the canonical app store id, including the numeric <code>im:id</code> attribute</li>
+<li><code>im:image</code> — usually three sizes of icon</li>
+<li><code>im:price</code> — formatted price plus an <code>amount</code>/<code>currency</code> attribute pair</li>
+<li><code>summary</code>, <code>rights</code>, <code>title</code>, <code>im:contentType</code></li>
+</ul>
+<p>The slightly awkward part is Apple&#39;s namespaced keys (<code>im:name</code>, <code>im:artist</code>) and the consistent <code>{ label, attributes }</code> wrapper on almost every field. Once you internalize &quot;the value I want is usually under <code>.label</code>, and the metadata is under <code>.attributes</code>,&quot; parsing is trivial. The mapping function above handles it.</p>
+<h2 id="the-limits-so-you-don-t-get-surprised">The limits (so you don&#39;t get surprised)</h2>
+<p>A few honest constraints worth knowing before you build on this:</p>
+<ol>
+<li><strong>The feed caps at 100 entries per chart.</strong> You can ask for <code>limit=200</code>, but you&#39;ll get at most 100 back. There is no offset/pagination parameter to walk deeper into the rankings. If you need rank 101+, this feed can&#39;t give it to you.</li>
+<li><strong>It&#39;s per-country, one country per request.</strong> Want the top charts for 30 markets? That&#39;s 30 requests. There&#39;s no &quot;all countries&quot; call.</li>
+<li><strong>It&#39;s overall charts only via this simple path.</strong> The three chart types above are the clean, reliable ones. Category-scoped charts exist on Apple&#39;s side but aren&#39;t a first-class part of this simple RSS path.</li>
+<li><strong>It&#39;s the <em>legacy</em> feed.</strong> Apple has a newer marketing-tools feed (more on that next), and while the iTunes RSS endpoint has been stable for years, it&#39;s not formally a &quot;supported product.&quot; Treat it as best-effort.</li>
+</ol>
+<p>For a huge share of use cases — a &quot;what&#39;s trending today&quot; widget, competitor monitoring, a side-project leaderboard — 100 apps per chart per country is plenty.</p>
+<h2 id="the-newer-feed-server-side-only">The newer feed: server-side only</h2>
+<p>You may run into Apple&#39;s newer endpoints at <code>rss.marketingtools.apple.com</code> (also referenced as <code>applemarketingtools.com</code>). These return similar top-charts data and are perfectly usable — <strong>but not from a browser.</strong> Those endpoints do <strong>not</strong> send permissive CORS headers, so a client-side <code>fetch()</code> to them will be blocked by the browser&#39;s same-origin policy.</p>
+<p>So the rule of thumb is simple:</p>
+<ul>
+<li><strong>Browser / client-side code →</strong> use <code>itunes.apple.com/{cc}/rss/...</code> (CORS-open).</li>
+<li><strong>Server-side code (Node, Python, a cron job, a backend route) →</strong> either feed works, including the newer marketing-tools one.</li>
+</ul>
+<p>Don&#39;t try to call <code>rss.marketingtools.apple.com</code> from front-end JavaScript and expect it to work; it won&#39;t, and the failure looks like a confusing CORS error rather than a clear message.</p>
+<h2 id="what-about-google-play">What about Google Play?</h2>
+<p>This is the other honest caveat. There is <strong>no equivalent CORS-open, key-free JSON feed for Google Play top charts.</strong> Play&#39;s charts aren&#39;t exposed as a browser-fetchable JSON endpoint the way Apple&#39;s RSS is, so any &quot;Play top charts&quot; lookup needs to run server-side (typically through a proxy or a scraping layer) rather than from the browser. If your project needs both stores, plan for an App Store-from-browser / Play-from-server split.</p>
+<h2 id="try-it-live-then-scale-it-up">Try it live, then scale it up</h2>
+<p>If you just want to <em>see</em> the App Store top charts right now without writing a line of code, I built a free tool that runs this exact iTunes RSS feed <strong>live in your browser</strong>: <strong><a href="https://datatooly.xyz/app-store-top-charts/">datatooly.xyz/app-store-top-charts</a></strong>. Pick a country and a chart type and it fetches the real feed client-side — the same endpoint described above, no key, nothing fake. It&#39;s a good way to eyeball the data shape before you wire it into your own code.</p>
+<p>When you outgrow the 100-app, one-country-at-a-time, no-history ceiling of the raw feed, the same data is available at scale through the <strong><a href="https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu" target="_blank" rel="noopener">App Store + Google Play Rank Tracker actor on Apify</a></strong>. It covers 150+ countries, all chart types plus category charts, per-app enrichment (ratings, reviews, screenshots), rank deltas with risers/fallers and a forecast, scheduled history so you can track movement over time, and JSON/CSV/API output — including Google Play, which (as noted) you can&#39;t reach from the browser. It&#39;s free to start, then pay-as-you-go.</p>
+<p>Disclosure: I built both the free tool and the Apify actor.</p>
+<h2 id="tl-dr">TL;DR</h2>
+<ul>
+<li>Endpoint: <code>https://itunes.apple.com/{cc}/rss/{topfree|toppaid|topgrossing}applications/limit={N}/json</code></li>
+<li>CORS-open → works from a browser, no API key</li>
+<li>Parse <code>feed.entry[]</code>; read names/devs/categories under <code>.label</code>, links/ids under <code>.attributes</code></li>
+<li>Caps at 100 per chart, one country per call, no deep pagination</li>
+<li>Top Free/Paid = download velocity; Top Grossing = revenue incl. IAP</li>
+<li>Use the newer <code>rss.marketingtools.apple.com</code> feed <strong>server-side only</strong> (not CORS-open)</li>
+<li>Google Play has no browser-fetchable equivalent — proxy it server-side</li>
+</ul>
+<p>Copy the <code>fetch()</code> snippet above and you&#39;ll have live App Store top charts in under a minute.</p>
+
+</div>
+<p class="guide-end"><a href="../../app-store-top-charts/">Open the free App Store Top Charts tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API to CSV: Export Trials by Phase in Python →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/linkedin-x-ray-search-recently-updated-profiles/">LinkedIn X-Ray Search for Recently Updated Profiles (Past Week) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+</body></html>
