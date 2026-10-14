@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
+- Another example on Apify: [Run a daily change-detection filing monitor](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-incremental-daily-monitor?fpr=v77kxu)
 - Tags: api, python, finance, webscraping
 
 SEC EDGAR's fair-access rules are short. Send a `User-Agent` with your name or company and a contact email, such as `Acme Research admin@acme.com`, and stay at or under 10 requests per second in total across all your machines. No User-Agent, or a library default, gets HTTP 403. Go over the rate and your IP can be limited until it stays under it for 10 minutes.

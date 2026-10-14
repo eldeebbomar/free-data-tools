@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Track SaaS pricing & plan changes](https://datatooly.xyz/saas-pricing-tracker-tool/)
+- Run this exact query on Apify: [Scrape a competitor's SaaS pricing page](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-track-competitor-pricing-pages?fpr=v77kxu)
+- Another example on Apify: [Fast static SaaS pricing scrape](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-fast-static-pricing-scrape?fpr=v77kxu)
 - Tags: python, webscraping, saas, json
 
 To scrape both the monthly and the annual price from a SaaS pricing page without clicking the billing toggle, check the page's JSON-LD first. Many pricing pages embed schema.org `Offer` objects whose `priceSpecification` lists one `UnitPriceSpecification` per billing period: `unitCode: "MON"` or `"ANN"`, or `billingDuration: "P1M"` or `"P1Y"`. One plain HTTP request gets you both numbers.

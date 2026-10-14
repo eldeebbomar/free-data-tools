@@ -7,6 +7,7 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 Yes, EDGAR has an API, and it's free with no API key. Map a ticker to a CIK with `https://www.sec.gov/files/company_tickers.json`, then fetch `https://data.sec.gov/submissions/CIK##########.json`, with the CIK zero-padded to 10 digits, to get the company's details and full filing history. The one requirement is a User-Agent header with your name and email.

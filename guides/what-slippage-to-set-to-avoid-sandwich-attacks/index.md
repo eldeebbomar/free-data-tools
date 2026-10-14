@@ -7,6 +7,7 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Run this exact query on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
 - Tags: defi, crypto, ethereum, solana
 
 Set the lowest slippage tolerance that still lets your swap fill under normal price movement. As a starting point, that's about 0.1–0.5% on deep major pairs and about 0.5–1% on mid-size tokens. Go higher only on thin, fast-moving pools, and there an MEV-protected route matters more than the exact number. Your tolerance is the most a sandwich bot can push your price: 5% on a $1,000 swap lets your fill land up to $50 below the quote. Check whether the pool is actually being sandwiched before you choose.

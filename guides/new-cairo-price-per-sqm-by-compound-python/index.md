@@ -7,6 +7,7 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Egypt real-estate listings — search & export](https://datatooly.xyz/egypt-real-estate-search/)
+- Run this exact query on Apify: [Compare price per sqm for New Cairo apartments](https://apify.com/constructive_calm/egypt-real-estate-scraper/examples/egy-re-investor-price-per-sqm-newcairo?fpr=v77kxu)
 - Tags: python, webscraping, realestate, pandas
 
 To get New Cairo price per square meter by compound, compute it from live listings instead of trusting a blog figure. Property Finder Egypt's search pages embed each listing's price, size, compound and completion status in `__NEXT_DATA__` JSON. Fetch a few pages, divide price by size, and take the median per compound, keeping ready and off-plan units separate.

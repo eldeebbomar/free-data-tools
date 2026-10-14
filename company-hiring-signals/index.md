@@ -6,7 +6,9 @@
 - Category: [Hiring & Sales Signals](https://datatooly.xyz/category/hiring-sales-signals/)
 - URL: https://datatooly.xyz/company-hiring-signals/
 - Backing Apify actor: [ats-hiring-intent-scraper](https://apify.com/constructive_calm/ats-hiring-intent-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape a Greenhouse job board by company slug (Stripe, Databricks)](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-scrape-greenhouse-board-by-slug?fpr=v77kxu)
+- Another example on Apify: [Generate B2B hiring-intent signals from a prospect list](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-hiring-intent-signals-prospect-list?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Read Company Hiring Signals From Public Job Board APIs (with code)](https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/)
 
 Type a company name. Get its live open roles straight from Greenhouse, plus an instant read on where it's investing — sales, engineering, data, or leadership. Free, no login, no API key.

@@ -7,6 +7,8 @@
 - Published: 2026-06-13
 - Updated: 2026-09-29
 - Free tool: [Extract LinkedIn profiles — posts & articles](https://datatooly.xyz/linkedin-profile-lookup/)
+- Run this exact query on Apify: [Scrape a LinkedIn profile by URL (no login)](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-scrape-profile-by-url?fpr=v77kxu)
+- Another example on Apify: [Bulk-enrich a list of LinkedIn profiles](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-bulk-profile-enrichment-clay?fpr=v77kxu)
 - Tags: api, webscraping, datascience, leadgen
 
 If you have ever tried to build a **LinkedIn profile scraper**, you have probably discovered that the obvious path — "just call the API" — is a dead end. LinkedIn does not hand out programmatic access to arbitrary member profiles, and most of the tutorials that promise a five-line solution quietly skip the parts that actually matter: the data source, the legal posture, and why naive HTML parsing breaks.

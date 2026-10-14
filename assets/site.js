@@ -47,6 +47,7 @@
       var tid = pageToolId();
       if (tid) p.tool_id = tid;
       track("outbound_apify", p);
+      markCtaClicked(); // the visitor already went to Apify from this page: never show the slide-in here again
       return;
     }
     // guide page -> one of the tool pages (/<tool-id>/ on this site)
@@ -57,6 +58,125 @@
   }
   // capture phase: runs before navigation for same-tab links, and for target=_blank links too
   document.addEventListener("click", onLinkClick, true);
+
+  /* ---------- slide-in "Run this exact query on Apify" (tool + guide pages only) ----------
+     Server-rendered as <aside id="slidein" hidden> inside an aria-live="polite" wrapper. Shown once the reader
+     scrolls past ~50% of the page or after ~25 s of engaged time (tab visible, after a first interaction),
+     never while an inline Apify CTA is on screen. Never shown to navigator.webdriver browsers, after a
+     dismissal (site-wide, localStorage), or after an apify.com link was clicked on this page. No focus trap:
+     it only takes focus if the visitor tabs into it; Esc or the close button dismisses it. */
+  var SI_DISMISSED = "dt_slidein_dismissed", SI_CLICKED = "dt_cta_clicked:";
+  function lsGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* private mode / blocked storage */ } }
+  var ctaClickedHere = false, slideHide = null;
+  function markCtaClicked() {
+    ctaClickedHere = true;
+    lsSet(SI_CLICKED + location.pathname, "1");
+    if (slideHide) slideHide(null);
+  }
+  function initSlideIn() {
+    var box = document.getElementById("slidein");
+    if (!box || navigator.webdriver) return;
+    if (lsGet(SI_DISMISSED) || lsGet(SI_CLICKED + location.pathname)) return;
+    var shown = false, done = false, engaged = 0, interacted = false, tick = null;
+    var pageType = document.querySelector("article.guide") ? "guide" : "tool";
+    var barMode = window.matchMedia ? window.matchMedia("(max-width: 1359px)") : { matches: false };
+    function inlineCtaOnScreen() {
+      var els = document.querySelectorAll(".cta, .run-cta, .postrun");
+      for (var i = 0; i < els.length; i++) {
+        var r = els[i].getBoundingClientRect();
+        if (r.height && r.top < window.innerHeight && r.bottom > 0) return true;
+      }
+      return false;
+    }
+    function pad() {
+      // bottom bar on small screens: reserve its height so it never covers the end of the page
+      document.body.style.paddingBottom = shown && !done && barMode.matches ? box.offsetHeight + "px" : "";
+    }
+    function show(trigger) {
+      if (shown || done || ctaClickedHere || inlineCtaOnScreen()) return;
+      shown = true;
+      box.hidden = false;
+      document.body.classList.add("slidein-on");
+      pad();
+      requestAnimationFrame(function () { requestAnimationFrame(function () { box.classList.add("is-in"); }); });
+      var p = { trigger: trigger, page_type: pageType };
+      var tid = pageToolId();
+      if (tid) p.tool_id = tid;
+      track("slidein_shown", p);
+      stop();
+    }
+    function hide(method) {
+      if (done) return;
+      done = true;
+      stop();
+      if (!shown) return;
+      var hadFocus = box.contains(document.activeElement);
+      box.classList.remove("is-in");
+      setTimeout(function () { box.hidden = true; document.body.classList.remove("slidein-on"); pad(); }, 260);
+      if (method) {
+        lsSet(SI_DISMISSED, String(Date.now()));
+        var p = { method: method, page_type: pageType };
+        var tid = pageToolId();
+        if (tid) p.tool_id = tid;
+        track("slidein_dismiss", p);
+      }
+      if (hadFocus) { var m = document.querySelector("main"); if (m) { m.setAttribute("tabindex", "-1"); m.focus({ preventScroll: true }); } }
+    }
+    slideHide = hide;
+    function onScroll() {
+      interacted = true;
+      if (shown || done) return;
+      var d = document.documentElement;
+      var max = Math.max(d.scrollHeight, document.body.scrollHeight);
+      if (max > 0 && (window.scrollY + window.innerHeight) / max >= 0.5) show("scroll");
+    }
+    function onInteract() { interacted = true; }
+    function stop() {
+      if (tick) { clearInterval(tick); tick = null; }
+      window.removeEventListener("scroll", onScroll);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    ["pointerdown", "keydown", "touchstart"].forEach(function (ev) { window.addEventListener(ev, onInteract, { passive: true, once: true }); });
+    tick = setInterval(function () {
+      if (document.visibilityState !== "visible" || !interacted) return;
+      engaged++;
+      if (engaged >= 25) show("time");
+    }, 1000);
+    box.querySelector(".slidein-x").addEventListener("click", function () { hide("button"); });
+    document.addEventListener("keydown", function (e) { if ((e.key === "Escape" || e.key === "Esc") && shown && !done) hide("esc"); });
+    if (barMode.addEventListener) barMode.addEventListener("change", pad);
+    window.addEventListener("resize", pad);
+  }
+
+  /* ---------- post-run CTA (live tools): real counts from the API, neutral wording when there is none ---------- */
+  function fmtN(n) { try { return Number(n).toLocaleString("en-US"); } catch (e) { return String(n); } }
+  function postRunCTA(out, o) {
+    var pr = TOOL && TOOL.postRun;
+    if (!pr || !out) return;
+    var box = el("div", "postrun");
+    box.setAttribute("data-pos", "post-run");
+    var msg;
+    if (typeof o.matched === "number" && isFinite(o.matched) && o.matched > 0) {
+      msg = o.matched <= o.shown
+        ? o.lead + " " + fmtN(o.matched) + " " + o.noun + ", and this page shows all of them. " + (o.allShownAction || "Run it on a schedule and export it as JSON or CSV on Apify.")
+        : o.lead + " " + (o.approx ? "about " : "") + fmtN(o.matched) + " " + o.noun + "; this page shows " + o.shown + ". " + o.action;
+    } else {
+      msg = o.neutral;
+    }
+    box.appendChild(el("p", "pr-t", msg));
+    var acts = el("div", "pr-actions");
+    var a = el("a", "btn btn-primary", "Open the " + pr.actorName + " actor on Apify ");
+    a.href = pr.actorHref; a.target = "_blank"; a.rel = "noopener";
+    var arr = el("span", "arr", "→"); a.appendChild(arr);
+    acts.appendChild(a);
+    var c = el("a", "pr-copy", "Copy this run's input ↓");
+    c.href = "#run-it";
+    acts.appendChild(c);
+    box.appendChild(acts);
+    box.appendChild(el("p", "pr-f", "The input box below now holds this exact run: copy it, open the actor, paste it and start. " + pr.freeTier));
+    out.appendChild(box);
+  }
 
   /* ---------- helpers ---------- */
   function $(s, r) { return (r || document).querySelector(s); }
@@ -210,6 +330,10 @@
       var tmpl = (TOOL && TOOL.inputTemplate) || {};
       var demoBox = $("#json-code");
       if (demoBox) { var inp = JSON.parse(JSON.stringify(tmpl)); inp.atsTargets = ["greenhouse:" + token]; /* actor schema: stringList of 'platform:slug' */ demoBox.innerHTML = highlightJSON(inp); window.__ctaInput = inp; }
+      // the board endpoint returns every open job in one response, so jobs.length is the real total
+      postRunCTA(out, { lead: "This Greenhouse board lists", matched: jobs.length, approx: false, shown: Math.min(8, jobs.length), noun: "open roles",
+        action: "Pull every role (and other companies' boards, with weekly changes) on Apify.",
+        allShownAction: "Track this board, or many companies at once, with weekly change alerts on Apify." });
     }).catch(function (e) {
       status.innerHTML = '<span class="err">' + esc(e.message) + '</span>';
     });
@@ -256,6 +380,11 @@
       note.textContent = "↑ Live from the public HN Algolia API (the same source the actor uses). The actor adds 9 modes — full nested comment trees, user histories, the monthly Who-is-hiring parser, date/score/domain filters — and exports JSON/CSV/API at scale.";
       out.appendChild(note);
       setCTA({ mode: "search", searchQuery: q, sortSearchBy: sort, searchTags: [tag], minScore: minp, maxItems: 30 });
+      // nbHits is Algolia's total for this query; it is an estimate when exhaustiveNbHits is false
+      if (hits.length) postRunCTA(out, { lead: "Your search matched", matched: data.nbHits, approx: data.exhaustiveNbHits === false,
+        shown: Math.min(10, hits.length), noun: "Hacker News " + (tag === "comment" ? "comments" : tag === "story" ? "stories" : "items"),
+        action: "Export all of them on Apify: set maxItems in the input below (it starts at 30).",
+        neutral: "This page shows the first " + Math.min(10, hits.length) + " matches. Export the full result set on Apify." });
     }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
   }
 
@@ -291,6 +420,9 @@
       note.textContent = "↑ Live from Apple's official iTunes RSS feed (top 10 shown; Apple caps this feed at 100/chart). The actor tracks 150+ countries × all 3 charts + categories, enriches each app (ratings, reviews, developer, screenshots), computes rank deltas + risers/fallers + a forecast, and exports JSON/CSV/API. (Google Play is server-side only.)";
       out.appendChild(note);
       setCTA({ platforms: ["apple"], countries: [cc], chartTypes: [chart], resultsPerChart: 100 });
+      // the RSS feed has no total count, so the wording stays neutral
+      postRunCTA(out, { matched: null, shown: Math.min(10, entries.length),
+        neutral: "This page shows the top " + Math.min(10, entries.length) + " of one chart (" + chart + ", " + cc.toUpperCase() + "). Track all three charts across many countries, every day, on Apify." });
     }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
   }
 
@@ -305,7 +437,8 @@
     var qlabel = cond || intervention;
     status.innerHTML = '<span class="run">› searching ClinicalTrials.gov for "' + esc(qlabel) + '"…</span>';
     out.innerHTML = "";
-    var p = ["pageSize=20", "fields=NCTId,BriefTitle,OverallStatus,Phase,LeadSponsorName,StartDate"];
+    // countTotal=true: without it the v2 API omits totalCount entirely
+    var p = ["pageSize=20", "countTotal=true", "fields=NCTId,BriefTitle,OverallStatus,Phase,LeadSponsorName,StartDate"];
     if (cond) p.push("query.cond=" + encodeURIComponent(cond));
     if (intervention) p.push("query.intr=" + encodeURIComponent(intervention));
     var filters = [];
@@ -318,8 +451,8 @@
     }).then(function (d) {
       var studies = d.studies || [];
       if (!studies.length) { status.innerHTML = '<span class="err">No studies matched. Try a broader condition or fewer filters.</span>'; return; }
-      var total = d.totalCount != null ? d.totalCount : studies.length;
-      status.innerHTML = '<span class="ok">✓ ' + total.toLocaleString() + ' matching studies · live from ClinicalTrials.gov (showing ' + Math.min(10, studies.length) + ')</span>';
+      var hasTotal = typeof d.totalCount === "number";
+      status.innerHTML = '<span class="ok">✓ ' + (hasTotal ? fmtN(d.totalCount) + ' matching studies' : studies.length + ' studies returned') + ' · live from ClinicalTrials.gov (showing ' + Math.min(10, studies.length) + ')</span>';
       var ul = el("ul", "result-list");
       studies.slice(0, 10).forEach(function (s) {
         var id = (s.protocolSection && s.protocolSection.identificationModule) || {};
@@ -346,6 +479,9 @@
       if (phase) inp.phases = [phase];
       if (st) inp.statuses = [st];
       setCTA(inp);
+      postRunCTA(out, { lead: "Your search matched", matched: hasTotal ? d.totalCount : null, approx: false, shown: Math.min(10, studies.length), noun: "studies on ClinicalTrials.gov",
+        action: "Export all of them on Apify: set maxItems in the input below (it starts at 100).",
+        neutral: "This page shows the first " + Math.min(10, studies.length) + " studies. Export the full result set on Apify." });
     }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
   }
 
@@ -392,6 +528,9 @@
       note.textContent = "↑ Live from the store's public /products.json. The actor scans many stores at once and adds price-change deltas, new-launch detection, stock signals, true inventory levels, and an AI store-audit — exported as JSON/CSV/API, with a server-side fallback for WAF-protected stores.";
       out.appendChild(note);
       setCTA({ mode: "catalog_snapshot", storeDomains: [domain], maxProductsPerStore: 500 });
+      // products.json has no total count, so the wording stays neutral
+      postRunCTA(out, { matched: null, shown: Math.min(8, products.length),
+        neutral: "This page shows " + Math.min(8, products.length) + " of the first " + products.length + " products " + domain + "/products.json returned (the browser asks for 20 at most). Export the full catalog, with price and stock changes over time, on Apify." });
     }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
   }
 
@@ -455,6 +594,7 @@
 
   /* ---------- boot ---------- */
   function boot() {
+    initSlideIn();
     if (!TOOL) return;
     wireCopy();
     renderJSON();

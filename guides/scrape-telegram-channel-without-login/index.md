@@ -7,6 +7,8 @@
 - Published: 2026-06-30
 - Updated: 2026-09-29
 - Free tool: [Extract Telegram public channel posts](https://datatooly.xyz/telegram-channel-search/)
+- Run this exact query on Apify: [Pull a channel's Telegram post history](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-posts-history-archive?fpr=v77kxu)
+- Another example on Apify: [Snapshot public Telegram channels and their recent posts](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-channel-snapshot-news?fpr=v77kxu)
 - Tags: python, webscraping, api, osint
 
 If you want to **scrape a Telegram channel without login**, you do not need MTProto, you do not need a bot token, and you do not need to hand Telegram a phone number. Every public channel quietly exposes a server-rendered HTML preview that you can fetch with a plain HTTP request and parse with any HTML library. No account. No risk to an account you don't even have to create.

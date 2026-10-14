@@ -6,6 +6,8 @@
 - Category: [Health & Pharma](https://datatooly.xyz/category/health-pharma/)
 - URL: https://datatooly.xyz/clinical-trials-search/
 - Backing Apify actor: [clinical-trials-fda-scraper](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Find Phase 3 recruiting trials for one condition (non-small cell lung cancer)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-nsclc-phase3-recruiting-trials?fpr=v77kxu)
+- Another example on Apify: [Find every clinical trial for one drug (semaglutide)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-trials-by-drug-intervention-semaglutide?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - More guides: [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)

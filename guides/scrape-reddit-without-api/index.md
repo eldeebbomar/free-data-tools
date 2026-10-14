@@ -7,6 +7,8 @@
 - Published: 2026-05-31
 - Updated: 2026-09-29
 - Free tool: [Search Reddit by keyword or subreddit — and export it clean](https://datatooly.xyz/reddit-search-builder/)
+- Run this exact query on Apify: [Search all of Reddit for a keyword](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-sitewide-keyword-search?fpr=v77kxu)
+- Another example on Apify: [Scrape a subreddit's top posts of the week](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-scrape-subreddit-top-posts?fpr=v77kxu)
 - Tags: webscraping, python, api, datascience
 
 If you've landed here, you already know the backstory: in 2023 Reddit's API went from free-and-generous to metered-and-expensive, third-party apps shut down, and a lot of data pipelines broke overnight. So the practical question for developers and data folks is no longer "should I use the API?" but **how to scrape Reddit without the API** at all — cleanly, legally-aware, and without burning hours on requests that silently return `403`.

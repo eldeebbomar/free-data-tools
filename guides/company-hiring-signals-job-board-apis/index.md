@@ -7,6 +7,8 @@
 - Published: 2026-05-31
 - Updated: 2026-05-31
 - Free tool: [Company Hiring Signals — read buying intent from job postings](https://datatooly.xyz/company-hiring-signals/)
+- Run this exact query on Apify: [Scrape all open jobs across Greenhouse, Lever and Ashby](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-scrape-greenhouse-lever-ashby-open-jobs?fpr=v77kxu)
+- Another example on Apify: [Generate B2B hiring-intent signals from a prospect list](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-hiring-intent-signals-prospect-list?fpr=v77kxu)
 - Tags: webdev, javascript, api, sales
 
 A company's open roles are the most honest document it publishes. The careers page is marketing; the job board is the budget. If you learn to read **company hiring signals** straight from the open requisitions, you can infer where a business is investing months before it shows up in a press release.

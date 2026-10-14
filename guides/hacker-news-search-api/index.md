@@ -7,6 +7,8 @@
 - Published: 2026-06-01
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News stories within a date range](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-date-ranged-research-corpus?fpr=v77kxu)
 - Tags: api, javascript, webdev, datascience
 
 ## The Hacker News search API you don't need a key for

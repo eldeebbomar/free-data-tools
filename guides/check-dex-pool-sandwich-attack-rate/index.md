@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Run this exact query on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
+- Another example on Apify: [Scan a token's top DEX pools for MEV risk (Ethereum)](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-scan-token-top-pools-ethereum?fpr=v77kxu)
 - Tags: ethereum, defi, python, blockchain
 
 To check a DEX pool's sandwich attack rate, query its hourly bars from Codex's GraphQL `getBars` endpoint. Each bar carries `sandwichRate` (sandwiched events divided by transactions), `mevRiskLevel`, and a fee split into gas, builder tips and LP fees. Weight each hour by its transaction count to get the 24-hour rate. A free Codex key covers light use.

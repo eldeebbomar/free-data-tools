@@ -7,6 +7,8 @@
 - Published: 2026-06-13
 - Updated: 2026-09-29
 - Free tool: [Facebook Ad Library Scraper — search & export competitor ads](https://datatooly.xyz/facebook-ad-library-search/)
+- Run this exact query on Apify: [Scrape Facebook Ad Library ads by keyword](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/facebook-ads-by-keyword?fpr=v77kxu)
+- Another example on Apify: [Get all active ads from one Facebook Page](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/facebook-page-active-ads?fpr=v77kxu)
 - Tags: webdev, api, marketing, datascience
 
 If you want to pull a competitor's running ads programmatically, building a **Facebook ad library scraper** sounds like it should be a solved problem. Meta has a public Ad Library *and* an official API, so surely you just grab a token and query? Not quite. The gap between what the official API covers and what most people actually need is the single most expensive misunderstanding in this space, and it sends a lot of developers down a dead end on day one.

@@ -6,7 +6,9 @@
 - Category: [E-commerce Intelligence](https://datatooly.xyz/category/ecommerce-intelligence/)
 - URL: https://datatooly.xyz/shopify-store-products/
 - Backing Apify actor: [shopify-store-intel](https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Export one Shopify store's product catalog (allbirds.com)](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-catalog-snapshot-single-store?fpr=v77kxu)
+- Another example on Apify: [Monitor competitor Shopify price changes](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-price-change-monitor?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Shopify products.json Pagination: 250 Limit and the 25,000 Cap](https://datatooly.xyz/guides/shopify-products-json-pagination/)
 
 Enter a Shopify store domain and pull its live product catalog right in your browser — title, vendor, type, price, and stock status, straight from the store's public feed. Free, no login, no API key.

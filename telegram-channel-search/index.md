@@ -6,7 +6,9 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/telegram-channel-search/
 - Backing Apify actor: [telegram-intelligence-pro](https://apify.com/constructive_calm/telegram-intelligence-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Snapshot public Telegram channels and their recent posts](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-channel-snapshot-news?fpr=v77kxu)
+- Another example on Apify: [Pull a channel's Telegram post history](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-posts-history-archive?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 
 Enter public Telegram channel handles and a post limit, and preview the post records the actor extracts from t.me with no login: text, views, reactions and forwards.

@@ -7,6 +7,8 @@
 - Published: 2026-05-31
 - Updated: 2026-05-31
 - Free tool: [Search Google Patents by company, inventor, or keyword — the structured way](https://datatooly.xyz/google-patents-search-builder/)
+- Run this exact query on Apify: [Bulk-export basic patent metadata](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-cheap-basic-bulk-metadata-export?fpr=v77kxu)
+- Another example on Apify: [Search AI patents by keyword across US and EU offices](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-ai-patents-keyword-search-us-ep?fpr=v77kxu)
 - Tags: python, api, datascience, tutorial
 
 If you've ever needed to pull a few thousand patents into a spreadsheet — every filing by a competitor, every patent citing your portfolio, the legal status of an entire technology cluster — you've probably searched **how to export Google Patents to CSV** and found a maze of half-answers. This guide cuts through it. I'll show you exactly what works, what's capped, and what's quietly impossible, with verified facts and a runnable example.

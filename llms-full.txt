@@ -288,7 +288,7 @@ On crypto pages only — the tools [Search & export Cointelegraph crypto news](h
 
 ## Privacy
 
-Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. Through the same Google Analytics tag it also records five kinds of clicks: opening a link to apify.com, opening a referral-partner link on the crypto pages, copying a tool's query, pressing a tool's run button, and going from a guide to its tool. Those events carry only the tool's name, the apify.com or partner page a link points to (never a token or pool address you typed), where on the page the click happened, and whether the tool is live; what you type into a tool is never sent to Google Analytics. Google Analytics is not loaded at all in automated browsers (those that report `navigator.webdriver`). There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
+Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. Through the same Google Analytics tag it also records five kinds of clicks: opening a link to apify.com, opening a referral-partner link on the crypto pages, copying a tool's query, pressing a tool's run button, and going from a guide to its tool. It also records when the small “Run this exact query on Apify” suggestion box at the bottom of tool and guide pages is shown or closed. Those events carry only the tool's name, the apify.com or partner page a link points to (never a token or pool address you typed), where on the page the click happened, and whether the tool is live; what you type into a tool is never sent to Google Analytics. If you close the suggestion box, or open an apify.com link from a page, the site remembers that in your browser's local storage (nothing is sent anywhere) so the box does not show again. Google Analytics is not loaded at all in automated browsers (those that report `navigator.webdriver`). There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
 
 ## Contact
 
@@ -1068,7 +1068,9 @@ Source: https://datatooly.xyz/company-hiring-signals/
 - Category: [Hiring & Sales Signals](https://datatooly.xyz/category/hiring-sales-signals/)
 - URL: https://datatooly.xyz/company-hiring-signals/
 - Backing Apify actor: [ats-hiring-intent-scraper](https://apify.com/constructive_calm/ats-hiring-intent-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape a Greenhouse job board by company slug (Stripe, Databricks)](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-scrape-greenhouse-board-by-slug?fpr=v77kxu)
+- Another example on Apify: [Generate B2B hiring-intent signals from a prospect list](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-hiring-intent-signals-prospect-list?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Read Company Hiring Signals From Public Job Board APIs (with code)](https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/)
 
 Type a company name. Get its live open roles straight from Greenhouse, plus an instant read on where it's investing — sales, engineering, data, or leadership. Free, no login, no API key.
@@ -1188,7 +1190,9 @@ Source: https://datatooly.xyz/google-patents-search-builder/
 - Category: [Patents & IP](https://datatooly.xyz/category/patents-ip/)
 - URL: https://datatooly.xyz/google-patents-search-builder/
 - Backing Apify actor: [google-patents-intelligence](https://apify.com/constructive_calm/google-patents-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Search AI patents by keyword across US and EU offices](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-ai-patents-keyword-search-us-ep?fpr=v77kxu)
+- Another example on Apify: [Pull a company's granted US patent portfolio by assignee](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-company-portfolio-sweep-by-assignee?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Export Google Patents to CSV (Honest Guide to Every Real Path)](https://datatooly.xyz/guides/export-google-patents-to-csv/)
 
 Compose a precise patent query — by keyword, assignee (company), or inventor — and see an example of the clean, structured records the actor returns: titles, assignees, filing/grant dates, citation counts, and legal status across USPTO, EPO, WIPO and 100+ offices.
@@ -1316,7 +1320,9 @@ Source: https://datatooly.xyz/reddit-search-builder/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/reddit-search-builder/
 - Backing Apify actor: [reddit-scraper-pro](https://apify.com/constructive_calm/reddit-scraper-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Search all of Reddit for a keyword](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-sitewide-keyword-search?fpr=v77kxu)
+- Another example on Apify: [Search for a keyword inside one subreddit](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-search-within-subreddit?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 
 Compose a precise Reddit query as a simple list of targets — a keyword, r/subreddit, r/subreddit keyword, u/user or any Reddit link, one per entry — with sort and time range, and see an example of the structured posts the actor returns: title, subreddit, score, comment count, author, URL. Free to set up; export at scale with the actor.
@@ -1450,6 +1456,8 @@ Source: https://datatooly.xyz/hacker-news-search/
 - Category: [Dev & Community](https://datatooly.xyz/category/dev-community/)
 - URL: https://datatooly.xyz/hacker-news-search/
 - Backing Apify actor: [hacker-news-scraper](https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News stories within a date range](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-date-ranged-research-corpus?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/)
 - More guides: [HN Algolia API Reference: Search, Tags, Filters, Limits](https://datatooly.xyz/guides/hacker-news-algolia-api-reference/)
@@ -1565,6 +1573,8 @@ Source: https://datatooly.xyz/app-store-top-charts/
 - Category: [App Intelligence](https://datatooly.xyz/category/app-intelligence/)
 - URL: https://datatooly.xyz/app-store-top-charts/
 - Backing Apify actor: [app-store-rank-tracker](https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Track the US Top Free App Store chart](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-us-top-free-snapshot?fpr=v77kxu)
+- Another example on Apify: [Track all App Store charts across the EU G5 markets](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-europe-g5-all-charts?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/)
 
@@ -1685,6 +1695,8 @@ Source: https://datatooly.xyz/clinical-trials-search/
 - Category: [Health & Pharma](https://datatooly.xyz/category/health-pharma/)
 - URL: https://datatooly.xyz/clinical-trials-search/
 - Backing Apify actor: [clinical-trials-fda-scraper](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Find Phase 3 recruiting trials for one condition (non-small cell lung cancer)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-nsclc-phase3-recruiting-trials?fpr=v77kxu)
+- Another example on Apify: [Find every clinical trial for one drug (semaglutide)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-trials-by-drug-intervention-semaglutide?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - More guides: [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
@@ -1804,7 +1816,9 @@ Source: https://datatooly.xyz/shopify-store-products/
 - Category: [E-commerce Intelligence](https://datatooly.xyz/category/ecommerce-intelligence/)
 - URL: https://datatooly.xyz/shopify-store-products/
 - Backing Apify actor: [shopify-store-intel](https://apify.com/constructive_calm/shopify-store-intel?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Export one Shopify store's product catalog (allbirds.com)](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-catalog-snapshot-single-store?fpr=v77kxu)
+- Another example on Apify: [Monitor competitor Shopify price changes](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-price-change-monitor?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Shopify products.json Pagination: 250 Limit and the 25,000 Cap](https://datatooly.xyz/guides/shopify-products-json-pagination/)
 
 Enter a Shopify store domain and pull its live product catalog right in your browser — title, vendor, type, price, and stock status, straight from the store's public feed. Free, no login, no API key.
@@ -1914,6 +1928,8 @@ Source: https://datatooly.xyz/crypto-news-search/
 - Category: [News & Crypto](https://datatooly.xyz/category/news-crypto/)
 - URL: https://datatooly.xyz/crypto-news-search/
 - Backing Apify actor: [crypto-news-scraper](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Get the latest crypto news from Cointelegraph](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-latest-crypto-news-feed?fpr=v77kxu)
+- Another example on Apify: [Scrape Bitcoin news articles with full text](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-bitcoin-news-full-text?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 
@@ -2035,7 +2051,9 @@ Source: https://datatooly.xyz/egypt-real-estate-search/
 - Category: [Real Estate](https://datatooly.xyz/category/real-estate/)
 - URL: https://datatooly.xyz/egypt-real-estate-search/
 - Backing Apify actor: [egypt-real-estate-scraper](https://apify.com/constructive_calm/egypt-real-estate-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape apartments for sale in Cairo across all platforms](https://apify.com/constructive_calm/egypt-real-estate-scraper/examples/egy-re-all-platforms-cairo-sale?fpr=v77kxu)
+- Another example on Apify: [Compare price per sqm for New Cairo apartments](https://apify.com/constructive_calm/egypt-real-estate-scraper/examples/egy-re-investor-price-per-sqm-newcairo?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 
 Pick Aqarmap, Property Finder or Dubizzle, a listing type and an area, and preview the Egyptian property listings the actor exports: price in EGP, area, bedrooms and location.
@@ -2164,7 +2182,9 @@ Source: https://datatooly.xyz/facebook-ad-library-search/
 - Category: [Ads Intelligence](https://datatooly.xyz/category/ads-intelligence/)
 - URL: https://datatooly.xyz/facebook-ad-library-search/
 - Backing Apify actor: [facebook-ad-library-pro](https://apify.com/constructive_calm/facebook-ad-library-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape Facebook Ad Library ads by keyword](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/facebook-ads-by-keyword?fpr=v77kxu)
+- Another example on Apify: [Track a competitor's Facebook ads](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/track-competitor-facebook-ads?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/)
 
 Search Meta's public Ad Library by keyword, advertiser and country, then preview the ad records the actor exports: advertiser page, ad copy, platforms and start date.
@@ -2292,6 +2312,8 @@ Source: https://datatooly.xyz/fpl-intelligence-tool/
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/fpl-intelligence-tool/
 - Backing Apify actor: [fpl-intelligence](https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Get FPL gameweek captain, transfer and differential picks](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-gameweek-captain-transfer-picks?fpr=v77kxu)
+- Another example on Apify: [Predict tonight's FPL price risers and fallers](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-price-change-risers-fallers-tonight?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 - More guides: [FPL API Endpoints: Complete Reference for 2026/27](https://datatooly.xyz/guides/fpl-api-endpoints-reference/)
@@ -2423,7 +2445,9 @@ Source: https://datatooly.xyz/gulf-used-car-search/
 - Category: [Automotive](https://datatooly.xyz/category/automotive/)
 - URL: https://datatooly.xyz/gulf-used-car-search/
 - Backing Apify actor: [gulf-used-car-scraper](https://apify.com/constructive_calm/gulf-used-car-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape used cars across DubiCars and Dubizzle UAE](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-whole-market-both-platforms?fpr=v77kxu)
+- Another example on Apify: [Track Toyota Land Cruiser prices in the UAE](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-toyota-land-cruiser-watch?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Extract Dubai Used Car Listings Data from Gulf Marketplaces](https://datatooly.xyz/guides/dubai-used-car-listings-data/)
 
 Choose DubiCars or Dubizzle, a make and a model, and preview the UAE used-car listings the actor exports: price, year, mileage and GCC spec.
@@ -2547,6 +2571,8 @@ Source: https://datatooly.xyz/linkedin-profile-lookup/
 - Category: [Lead Generation](https://datatooly.xyz/category/lead-generation/)
 - URL: https://datatooly.xyz/linkedin-profile-lookup/
 - Backing Apify actor: [linkedin-profile-pro](https://apify.com/constructive_calm/linkedin-profile-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scrape a LinkedIn profile by URL (no login)](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-scrape-profile-by-url?fpr=v77kxu)
+- Another example on Apify: [Pull a profile's recent LinkedIn posts](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-recent-posts-for-outreach?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
 
@@ -2675,6 +2701,8 @@ Source: https://datatooly.xyz/llm-visibility-monitor-tool/
 - Category: [AI & SEO](https://datatooly.xyz/category/ai-seo/)
 - URL: https://datatooly.xyz/llm-visibility-monitor-tool/
 - Backing Apify actor: [llm-visibility-monitor](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Audit a brand's visibility across AI answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-ai-visibility-audit?fpr=v77kxu)
+- Another example on Apify: [Compare AI share of voice against competitors](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-share-of-voice-vs-competitors?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/)
 - More guides: [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)
@@ -2814,6 +2842,8 @@ Source: https://datatooly.xyz/mev-pair-scanner-tool/
 - Category: [Crypto & DeFi](https://datatooly.xyz/category/crypto-defi/)
 - URL: https://datatooly.xyz/mev-pair-scanner-tool/
 - Backing Apify actor: [mev-pair-scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scan a token's top DEX pools for MEV risk (Ethereum)](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-scan-token-top-pools-ethereum?fpr=v77kxu)
+- Another example on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
 - More guides: [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
@@ -2941,7 +2971,9 @@ Source: https://datatooly.xyz/peptide-market-intel-tool/
 - Category: [Health & Pharma](https://datatooly.xyz/category/health-pharma/)
 - URL: https://datatooly.xyz/peptide-market-intel-tool/
 - Backing Apify actor: [peptide-market-intel](https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Track GLP-1 (semaglutide, tirzepatide) demand and sentiment](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-glp1-sentiment-reddit-youtube-amazon?fpr=v77kxu)
+- Another example on Apify: [Monitor BPC-157 and TB-500 mentions](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-bpc157-tb500-healing-tracker?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
 
 Pick sources and compound categories and preview the peptide and GLP-1 mentions the actor extracts from YouTube, Amazon and Reddit: compound, intent, sentiment and vendors.
@@ -3069,7 +3101,9 @@ Source: https://datatooly.xyz/saas-pricing-tracker-tool/
 - Category: [SaaS & SEO](https://datatooly.xyz/category/saas-seo/)
 - URL: https://datatooly.xyz/saas-pricing-tracker-tool/
 - Backing Apify actor: [saas-pricing-tracker](https://apify.com/constructive_calm/saas-pricing-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape a competitor's SaaS pricing page](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-track-competitor-pricing-pages?fpr=v77kxu)
+- Another example on Apify: [Monitor competitor pricing changes monthly](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-monitor-competitor-price-changes?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD](https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/)
 
 Paste competitors' homepage or pricing URLs and preview the structured pricing data the actor extracts: plans, prices, free-tier and enterprise flags, ready to re-run for change alerts.
@@ -3192,7 +3226,9 @@ Source: https://datatooly.xyz/saudi-real-estate-search/
 - Category: [Real Estate](https://datatooly.xyz/category/real-estate/)
 - URL: https://datatooly.xyz/saudi-real-estate-search/
 - Backing Apify actor: [saudi-real-estate-scraper](https://apify.com/constructive_calm/saudi-real-estate-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape Riyadh apartments for sale on Bayut.sa](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-bayut-riyadh-apartments-sale?fpr=v77kxu)
+- Another example on Apify: [Scrape all 4 Saudi property portals in one run](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-all-platforms-saudi-sweep?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/)
 
 Choose Bayut.sa, Wasalt, Aqar.fm or PropertyFinder.sa, cities and a listing type, and preview the Saudi property listings the actor exports: price in SAR, area, city and REGA licence.
@@ -3317,6 +3353,8 @@ Source: https://datatooly.xyz/sec-edgar-search/
 - Category: [Finance & Filings](https://datatooly.xyz/category/finance-filings/)
 - URL: https://datatooly.xyz/sec-edgar-search/
 - Backing Apify actor: [sec-edgar-scraper](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
+- Another example on Apify: [Track insider buying (Form 4 purchases)](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-insider-buying-form4?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
 - More guides: [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
@@ -3450,7 +3488,9 @@ Source: https://datatooly.xyz/telegram-channel-search/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/telegram-channel-search/
 - Backing Apify actor: [telegram-intelligence-pro](https://apify.com/constructive_calm/telegram-intelligence-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Snapshot public Telegram channels and their recent posts](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-channel-snapshot-news?fpr=v77kxu)
+- Another example on Apify: [Pull a channel's Telegram post history](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-posts-history-archive?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 
 Enter public Telegram channel handles and a post limit, and preview the post records the actor extracts from t.me with no login: text, views, reactions and forwards.
@@ -3569,7 +3609,9 @@ Source: https://datatooly.xyz/threads-profile-search/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/threads-profile-search/
 - Backing Apify actor: [threads-scraper](https://apify.com/constructive_calm/threads-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape recent Threads posts from a list of users](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-user-posts?fpr=v77kxu)
+- Another example on Apify: [Scrape Threads profile data, bio and follower counts](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-profile-data?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 
 Enter Threads usernames and preview the public profile records the actor extracts without a login: bio, follower count, verification and links.
@@ -3692,6 +3734,8 @@ Source: https://datatooly.xyz/tiktok-ad-library-search/
 - Category: [Ads Intelligence](https://datatooly.xyz/category/ads-intelligence/)
 - URL: https://datatooly.xyz/tiktok-ad-library-search/
 - Backing Apify actor: [tiktok-ad-library-pro](https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Search EU TikTok ads by keyword, with targeting](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-keyword-search-targeting?fpr=v77kxu)
+- Another example on Apify: [Pull one advertiser's ads from the EU TikTok Ad Library](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-advertiser-deep-drill?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
 
@@ -3818,6 +3862,8 @@ Source: https://datatooly.xyz/understat-football-stats/
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/understat-football-stats/
 - Backing Apify actor: [understat-football-analytics](https://apify.com/constructive_calm/understat-football-analytics?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scrape Premier League player xG and xA for a season](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-player-xg-season?fpr=v77kxu)
+- Another example on Apify: [Scrape the EPL team xG table with PPDA and xPoints](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-team-table-xg-ppda?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
 
@@ -3950,6 +3996,8 @@ Source: https://datatooly.xyz/visa-sponsor-finder/
 - Category: [Jobs & Visas](https://datatooly.xyz/category/jobs-visas/)
 - URL: https://datatooly.xyz/visa-sponsor-finder/
 - Backing Apify actor: [visa-sponsor-tracker](https://apify.com/constructive_calm/visa-sponsor-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Find H-1B software engineer sponsors in California](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/h1b-software-engineer-sponsors-california?fpr=v77kxu)
+- Another example on Apify: [Find PERM green card sponsors for software engineers](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/perm-green-card-sponsors-software-engineer?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
 
@@ -4072,7 +4120,9 @@ Source: https://datatooly.xyz/salary-benchmark-lookup/
 - Category: [Jobs & Visas](https://datatooly.xyz/category/jobs-visas/)
 - URL: https://datatooly.xyz/salary-benchmark-lookup/
 - Backing Apify actor: [salarybench-iq](https://apify.com/constructive_calm/salarybench-iq?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Benchmark US H-1B software engineer salaries](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-h1b-software-engineer-benchmark?fpr=v77kxu)
+- Another example on Apify: [Benchmark product manager salaries in New York City](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-product-manager-nyc?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/)
 
 Enter a role and location and preview the salary percentiles SalaryBench IQ computes from public H-1B and PERM wage filings, P10 to P90 per role and city.
@@ -4203,6 +4253,8 @@ Source: https://datatooly.xyz/threads-keyword-monitor/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/threads-keyword-monitor/
 - Backing Apify actor: [threads-search-monitor](https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Search Threads posts by keyword](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-search-keyword-posts-2?fpr=v77kxu)
+- Another example on Apify: [Monitor Threads keywords for new posts](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-monitor-keywords-schedule?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 
@@ -4333,6 +4385,8 @@ Source: https://datatooly.xyz/youtube-shorts-search/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/youtube-shorts-search/
 - Backing Apify actor: [youtube-shorts-scraper-pro](https://apify.com/constructive_calm/youtube-shorts-scraper-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scrape YouTube Shorts by keyword search](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-by-keyword?fpr=v77kxu)
+- Another example on Apify: [Find viral YouTube Shorts by view count](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-find-viral?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
 
@@ -4456,7 +4510,9 @@ Source: https://datatooly.xyz/linkedin-people-search/
 - Category: [Lead Generation](https://datatooly.xyz/category/lead-generation/)
 - URL: https://datatooly.xyz/linkedin-people-search/
 - Backing Apify actor: [linkedin-people-finder](https://apify.com/constructive_calm/linkedin-people-finder?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Find people on LinkedIn by job title and location](https://apify.com/constructive_calm/linkedin-people-finder/examples/find-candidates-by-job-title-and-location?fpr=v77kxu)
+- Another example on Apify: [Get only new people every run (weekly fresh leads)](https://apify.com/constructive_calm/linkedin-people-finder/examples/weekly-fresh-leads-no-duplicates?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 Enter job titles and locations and preview the LinkedIn people the actor finds (name, headline, current company and profile URL) with no LinkedIn login or cookies.
@@ -4655,6 +4711,8 @@ Source: https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Compare AI share of voice against competitors](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-share-of-voice-vs-competitors?fpr=v77kxu)
+- Another example on Apify: [Track brand citations in Perplexity answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-perplexity-citation-tracking?fpr=v77kxu)
 - Tags: ai, seo, marketing, analytics
 
 AI share of voice is your share of the brand mentions in AI answers to a fixed set of buyer questions: answers naming you ÷ the sum of answers naming each tracked brand (you plus competitors). Measure it separately for ChatGPT, Perplexity and others, from repeated runs of unbranded prompts. Track citations of your domain as a second number.
@@ -4840,6 +4898,8 @@ Source: https://datatooly.xyz/guides/app-store-top-charts-api/
 - Published: 2026-06-01
 - Updated: 2026-10-14
 - Free tool: [App Store Top Charts — live, any country, free](https://datatooly.xyz/app-store-top-charts/)
+- Run this exact query on Apify: [Track the US Top Free App Store chart](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-us-top-free-snapshot?fpr=v77kxu)
+- Another example on Apify: [Track all App Store charts across the EU G5 markets](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-europe-g5-all-charts?fpr=v77kxu)
 - Tags: api, javascript, mobile, webdev
 
 If you've ever wanted an **app store top charts API** that you can hit straight from a browser tab — no API key, no OAuth dance, no server proxy — there's good news. Apple still serves a legacy iTunes RSS feed that returns the App Store top charts as plain JSON, and (the part most people miss) it's CORS-open. That means a single `fetch()` from client-side JavaScript works. No backend required.
@@ -4990,6 +5050,8 @@ Source: https://datatooly.xyz/guides/check-if-chatgpt-mentions-your-brand/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Track how ChatGPT (OpenAI) mentions your brand](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-chatgpt-brand-mentions?fpr=v77kxu)
+- Another example on Apify: [Audit a brand's visibility across AI answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-ai-visibility-audit?fpr=v77kxu)
 - Tags: ai, seo, marketing, chatgpt
 
 To check if ChatGPT mentions your brand for free, write 10–20 questions a buyer would ask without naming you. Ask each one in a new, unpersonalised chat, at least three times, and note every brand named, its position and the cited sites. The share of runs that name you is your mention rate. One answer proves nothing; the rate does.
@@ -5171,6 +5233,8 @@ Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Find Phase 3 recruiting trials for one condition (non-small cell lung cancer)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-nsclc-phase3-recruiting-trials?fpr=v77kxu)
+- Another example on Apify: [Find recruiting trials in one country (Germany)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-recruiting-trials-by-country-germany?fpr=v77kxu)
 - Tags: python, api, datascience, healthcare
 
 To export ClinicalTrials.gov search results to CSV, call `https://clinicaltrials.gov/api/v2/studies?format=csv`. No API key is needed. In CSV mode the cursor for the next page comes back in the `x-next-page-token` **response header**, not in the body. Only the first page includes a header row. Filter phases with `filter.advanced=AREA[Phase]PHASE3`, because `filter.phase` does not exist and the API rejects it with HTTP 400.
@@ -5374,6 +5438,7 @@ Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-resu
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Find completed trials with posted results](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-completed-trials-with-results?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 To find results of completed clinical trials, search ClinicalTrials.gov for completed studies that have posted results. With the free v2 API that's `https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com`. Then fetch a study with `fields=ResultsSection` to get its outcome measures, statistical analyses, participant flow and adverse events as JSON. No API key is needed.
@@ -5578,6 +5643,7 @@ Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Get full trial details by NCT ID](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-full-trial-details-by-nct-id?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 To look up a clinical trial by NCT number, call `https://clinicaltrials.gov/api/v2/studies/{nctId}`, for example `/api/v2/studies/NCT04437511`. It returns the full record as JSON, with no API key and no signup. Add `fields=` to return only what you need. An unknown NCT number returns HTTP 404, and a malformed one returns HTTP 400.
@@ -5795,6 +5861,8 @@ Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Filter trials by condition, phase and status (Phase 3, recruiting)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-nsclc-phase3-recruiting-trials?fpr=v77kxu)
+- Another example on Apify: [Find every clinical trial for one drug (semaglutide)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-trials-by-drug-intervention-semaglutide?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 The ClinicalTrials.gov API v2 has one search endpoint, `https://clinicaltrials.gov/api/v2/studies`. You search with `query.*` parameters (`query.cond`, `query.term`, `query.intr`, `query.spons`), narrow with `filter.*` and `aggFilters`, choose output with `fields` and `format`, and page with `pageSize` and `pageToken`. There is no API key. There is also no `filter.phase`; use `filter.advanced=AREA[Phase]PHASE3`.
@@ -6026,6 +6094,8 @@ Source: https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Find every clinical trial for one drug (semaglutide)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-trials-by-drug-intervention-semaglutide?fpr=v77kxu)
+- Another example on Apify: [Get full trial details by NCT ID](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-full-trial-details-by-nct-id?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 The classic ClinicalTrials.gov API (`/api/query/full_studies`, `/api/query/study_fields`, `/api/info/...`) was retired on June 25, 2024, and those URLs now return HTTP 404. Move to API v2 at `https://clinicaltrials.gov/api/v2/studies`. Put your classic `expr` into `query.term`, replace `min_rnk`/`max_rnk` with `pageSize` and `pageToken`, and use `format=json` or `csv`. For XML in the old shape, NLM runs `/api/legacy/` endpoints.
@@ -6215,6 +6285,8 @@ Source: https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/
 - Published: 2026-05-31
 - Updated: 2026-05-31
 - Free tool: [Company Hiring Signals — read buying intent from job postings](https://datatooly.xyz/company-hiring-signals/)
+- Run this exact query on Apify: [Scrape all open jobs across Greenhouse, Lever and Ashby](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-scrape-greenhouse-lever-ashby-open-jobs?fpr=v77kxu)
+- Another example on Apify: [Generate B2B hiring-intent signals from a prospect list](https://apify.com/constructive_calm/ats-hiring-intent-scraper/examples/ats-hiring-intent-signals-prospect-list?fpr=v77kxu)
 - Tags: webdev, javascript, api, sales
 
 A company's open roles are the most honest document it publishes. The careers page is marketing; the job board is the budget. If you learn to read **company hiring signals** straight from the open requisitions, you can infer where a business is investing months before it shows up in a press release.
@@ -6394,6 +6466,8 @@ Source: https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Search & export Cointelegraph crypto news](https://datatooly.xyz/crypto-news-search/)
+- Run this exact query on Apify: [Get the latest crypto news from Cointelegraph](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-latest-crypto-news-feed?fpr=v77kxu)
+- Another example on Apify: [Scrape Bitcoin news articles with full text](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-bitcoin-news-full-text?fpr=v77kxu)
 - Tags: python, crypto, api, webscraping
 
 Cointelegraph doesn't publish a documented news API. Its website, though, loads articles from a GraphQL endpoint at `https://conpletus.cointelegraph.com/v1/` that answers plain POST requests with no key. One query gives you the latest articles or keyword search results as JSON: title, publish time, lead text, category and view count. Full article bodies need a second query per article, by slug. For just the headlines, `https://cointelegraph.com/rss` is simpler.
@@ -6640,6 +6714,7 @@ Source: https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Egypt real-estate listings — search & export](https://datatooly.xyz/egypt-real-estate-search/)
+- Run this exact query on Apify: [Compare price per sqm for New Cairo apartments](https://apify.com/constructive_calm/egypt-real-estate-scraper/examples/egy-re-investor-price-per-sqm-newcairo?fpr=v77kxu)
 - Tags: python, webscraping, realestate, pandas
 
 To get New Cairo price per square meter by compound, compute it from live listings instead of trusting a blog figure. Property Finder Egypt's search pages embed each listing's price, size, compound and completion status in `__NEXT_DATA__` JSON. Fetch a few pages, divide price by size, and take the median per compound, keeping ready and off-plan units separate.
@@ -6818,6 +6893,8 @@ Source: https://datatooly.xyz/guides/facebook-ad-library-scraper/
 - Published: 2026-06-13
 - Updated: 2026-09-29
 - Free tool: [Facebook Ad Library Scraper — search & export competitor ads](https://datatooly.xyz/facebook-ad-library-search/)
+- Run this exact query on Apify: [Scrape Facebook Ad Library ads by keyword](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/facebook-ads-by-keyword?fpr=v77kxu)
+- Another example on Apify: [Get all active ads from one Facebook Page](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/facebook-page-active-ads?fpr=v77kxu)
 - Tags: webdev, api, marketing, datascience
 
 If you want to pull a competitor's running ads programmatically, building a **Facebook ad library scraper** sounds like it should be a solved problem. Meta has a public Ad Library *and* an official API, so surely you just grab a token and query? Not quite. The gap between what the official API covers and what most people actually need is the single most expensive misunderstanding in this space, and it sends a lot of developers down a dead end on day one.
@@ -6951,6 +7028,8 @@ Source: https://datatooly.xyz/guides/fpl-api-endpoints-reference/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Download per-gameweek FPL player data for a season](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-historical-per-gameweek-archive?fpr=v77kxu)
+- Another example on Apify: [Build an FPL manager season dashboard](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-manager-season-dashboard?fpr=v77kxu)
 - Tags: api, python, football, datascience
 
 The Fantasy Premier League API is a free, keyless JSON API at `https://fantasy.premierleague.com/api/`. Its main endpoints are `bootstrap-static/` (all players, teams and gameweeks), `fixtures/`, `element-summary/{player_id}/`, `event/{gw}/live/`, `entry/{manager_id}/` with `/history/`, `/event/{gw}/picks/` and `/transfers/`, and `leagues-classic/{league_id}/standings/`. It has no official documentation and no CORS header.
@@ -7179,6 +7258,7 @@ Source: https://datatooly.xyz/guides/fpl-fixture-difficulty-api/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Get FPL captain and transfer picks with a 3-gameweek fixture lookahead](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-gameweek-captain-transfer-picks?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 FPL fixture difficulty ratings are in `https://fantasy.premierleague.com/api/fixtures/`: every fixture carries `team_h_difficulty` and `team_a_difficulty` on a 1–5 scale, where higher is harder. Use `fixtures/?future=1` for upcoming matches only, and map team IDs to names with `bootstrap-static/` → `teams`. No key is needed, but there's no CORS header, so call it from a script.
@@ -7371,6 +7451,8 @@ Source: https://datatooly.xyz/guides/fpl-api-price-change-data-python/
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Predict tonight's FPL price risers and fallers](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-price-change-risers-fallers-tonight?fpr=v77kxu)
+- Another example on Apify: [Track high-confidence FPL price rises only](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-high-confidence-price-rises?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 Since 2026/27, the free Fantasy Premier League API includes its own price-change predictions. Each player in `bootstrap-static` carries `price_change_percent` (progress toward a rise or fall) and `price_change_projections` (projected progress at the next three updates, with a -5 to +5 likelihood). No API key is needed. A projection past ±100 means FPL expects a price move at the next update.
@@ -7543,6 +7625,8 @@ Source: https://datatooly.xyz/guides/fpl-live-gameweek-points-api/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Get a live FPL gameweek points snapshot](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-live-gameweek-points-snapshot?fpr=v77kxu)
+- Another example on Apify: [Poll live FPL points throughout a gameweek](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-live-tracker-poll-during-gameweek?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 A Fantasy Premier League team's gameweek score is each picked player's `total_points` from `https://fantasy.premierleague.com/api/event/{gw}/live/`, multiplied by the pick's `multiplier` from `entry/{manager_id}/event/{gw}/picks/`, summed, minus `event_transfers_cost`. Multipliers are 0 for the bench, 1 for starters, 2 for the captain and 3 for a triple captain. Auto-subs and vice-captaincy change them.
@@ -7804,6 +7888,8 @@ Source: https://datatooly.xyz/guides/fpl-manager-id-team-history-api/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Build an FPL manager season dashboard](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-manager-season-dashboard?fpr=v77kxu)
+- Another example on Apify: [Compare your FPL team to your mini-league rivals](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-mini-league-you-vs-the-field?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 Your FPL manager ID is the number after `/entry/` in the address bar when you open the Points tab on the Fantasy Premier League website, for example `/entry/1234567/event/6`. With it, `https://fantasy.premierleague.com/api/entry/{id}/history/` returns your points, rank, bank and team value for every gameweek, the chips you've used and your past seasons. No login or key is needed.
@@ -8015,6 +8101,8 @@ Source: https://datatooly.xyz/guides/export-google-patents-to-csv/
 - Published: 2026-05-31
 - Updated: 2026-05-31
 - Free tool: [Search Google Patents by company, inventor, or keyword — the structured way](https://datatooly.xyz/google-patents-search-builder/)
+- Run this exact query on Apify: [Bulk-export basic patent metadata](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-cheap-basic-bulk-metadata-export?fpr=v77kxu)
+- Another example on Apify: [Search AI patents by keyword across US and EU offices](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-ai-patents-keyword-search-us-ep?fpr=v77kxu)
 - Tags: python, api, datascience, tutorial
 
 If you've ever needed to pull a few thousand patents into a spreadsheet — every filing by a competitor, every patent citing your portfolio, the legal status of an entire technology cluster — you've probably searched **how to export Google Patents to CSV** and found a maze of half-answers. This guide cuts through it. I'll show you exactly what works, what's capped, and what's quietly impossible, with verified facts and a runnable example.
@@ -8141,6 +8229,8 @@ Source: https://datatooly.xyz/guides/dubai-used-car-listings-data/
 - Published: 2026-06-30
 - Updated: 2026-06-30
 - Free tool: [Gulf used-car listings — search & export](https://datatooly.xyz/gulf-used-car-search/)
+- Run this exact query on Apify: [Scrape used cars listed in Dubai](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-dubai-city-listings?fpr=v77kxu)
+- Another example on Apify: [Scrape used cars across DubiCars and Dubizzle UAE](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-whole-market-both-platforms?fpr=v77kxu)
 - Tags: webscraping, datascience, api, automotive
 
 If you need **Dubai used car listings data** — make, model, year, price, mileage, location, and dealer for thousands of vehicles — the good news is that the major Gulf marketplaces are far friendlier to extraction than most modern web apps. The listings render server-side, and the detail pages carry structured data you can parse without a headless browser. This post walks through the actual shape of that data on DubiCars and Dubizzle Motors, with a runnable example you can adapt today.
@@ -8315,6 +8405,8 @@ Source: https://datatooly.xyz/guides/hacker-news-algolia-api-reference/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News comments by one author](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-search-comments-by-author?fpr=v77kxu)
 - Tags: api, python, webdev, datascience
 
 The Hacker News Algolia API is a free, keyless REST API at `https://hn.algolia.com/api/v1/`. Use `/search` for relevance order or `/search_by_date` for newest first. Filter with `tags` (story, comment, show_hn, ask_hn, author_NAME, story_ID) and `numericFilters` on `points`, `num_comments` and `created_at_i`. One query returns at most 1,000 hits.
@@ -8549,6 +8641,8 @@ Source: https://datatooly.xyz/guides/hacker-news-api-get-all-comments/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Export HN stories with their full comment trees](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-stories-with-comment-trees-rag?fpr=v77kxu)
+- Another example on Apify: [Export HN comments as a flat, spreadsheet-ready list](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-flat-comments-spreadsheet-export?fpr=v77kxu)
 - Tags: python, api, webscraping, datascience
 
 To get every comment on a Hacker News story, request `https://hn.algolia.com/api/v1/items/{story_id}`. It returns the story with the full comment tree nested in `children`, in one call, with no key. It skips deleted and dead comments and every reply under them. For a complete set, use the search index (`tags=comment,story_{id}`) or walk the official Firebase API.
@@ -8795,6 +8889,8 @@ Source: https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Scrape the Hacker News front page (top stories)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-top-front-page-stories?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
 - Tags: api, python, webdev, datascience
 
 Use the official Firebase API (`https://hacker-news.firebaseio.com/v0/`) for the front-page ranking (`topstories`), live lists and exact item lookups. Use the Algolia API (`https://hn.algolia.com/api/v1/`) for anything you need to search or filter by keyword, author, points or date. Firebase has no search and returns IDs you fetch one by one. Algolia returns full records in one call.
@@ -8983,6 +9079,8 @@ Source: https://datatooly.xyz/guides/hacker-news-search-api/
 - Published: 2026-06-01
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News stories within a date range](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-date-ranged-research-corpus?fpr=v77kxu)
 - Tags: api, javascript, webdev, datascience
 
 ## The Hacker News search API you don't need a key for
@@ -9154,6 +9252,8 @@ Source: https://datatooly.xyz/guides/how-ai-assistants-choose-brands-sources/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Find which domains AI answers cite instead of your site](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-citation-gap-analysis?fpr=v77kxu)
+- Another example on Apify: [Audit a brand's visibility across AI answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-ai-visibility-audit?fpr=v77kxu)
 - Tags: ai, seo, marketing, python
 
 AI assistants answer from two places: what the model learned in training and, when they search the web, the pages the search returns, which they show as citations. Vendors document the crawlers and controls (robots.txt tokens, location, search settings) but not how they rank sources, so treat any "ranking factor" list as a guess unless it cites the vendor.
@@ -9326,6 +9426,8 @@ Source: https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-prof
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Find LinkedIn profiles by job title and location](https://datatooly.xyz/linkedin-people-search/)
+- Run this exact query on Apify: [Find people who recently changed jobs or updated their profile](https://apify.com/constructive_calm/linkedin-people-finder/examples/find-people-who-recently-updated-profiles?fpr=v77kxu)
+- Another example on Apify: [Find people on LinkedIn by job title and location](https://apify.com/constructive_calm/linkedin-people-finder/examples/find-candidates-by-job-title-and-location?fpr=v77kxu)
 - Tags: linkedin, recruiting, python, career
 
 To run a LinkedIn X-ray search for recently updated profiles, add Google's time filter to a `site:linkedin.com/in` query: pick **Tools → Past week** or append `&tbs=qdr:w` to the URL (`qdr:m` for past month). Only profiles Google has re-indexed in that window come back. A profile often gets re-crawled after it changes, so this works as a rough job-change signal. Dedupe by profile slug to see only new people each week.
@@ -9493,6 +9595,8 @@ Source: https://datatooly.xyz/guides/build-linkedin-profile-scraper/
 - Published: 2026-06-13
 - Updated: 2026-09-29
 - Free tool: [Extract LinkedIn profiles — posts & articles](https://datatooly.xyz/linkedin-profile-lookup/)
+- Run this exact query on Apify: [Scrape a LinkedIn profile by URL (no login)](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-scrape-profile-by-url?fpr=v77kxu)
+- Another example on Apify: [Bulk-enrich a list of LinkedIn profiles](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-bulk-profile-enrichment-clay?fpr=v77kxu)
 - Tags: api, webscraping, datascience, leadgen
 
 If you have ever tried to build a **LinkedIn profile scraper**, you have probably discovered that the obvious path — "just call the API" — is a dead end. LinkedIn does not hand out programmatic access to arbitrary member profiles, and most of the tutorials that promise a five-line solution quietly skip the parts that actually matter: the data source, the legal posture, and why naive HTML parsing breaks.
@@ -9637,6 +9741,8 @@ Source: https://datatooly.xyz/guides/measure-ai-share-of-voice-python/
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Compare AI share of voice against competitors](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-share-of-voice-vs-competitors?fpr=v77kxu)
+- Another example on Apify: [Run a deep audit across all five AI surfaces](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-deep-multi-platform-audit?fpr=v77kxu)
 - Tags: python, ai, seo, llm
 
 AI share of voice is your brand's mentions divided by the combined mentions of your brand and the competitors you track, counted across a fixed set of buyer-style prompts and several AI models. To measure it in Python, send every prompt to every model through one API, count mentions sentence by sentence, skip sentences where the model says it doesn't know you, then divide.
@@ -9828,6 +9934,8 @@ Source: https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Run this exact query on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
+- Another example on Apify: [Scan a token's top DEX pools for MEV risk (Ethereum)](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-scan-token-top-pools-ethereum?fpr=v77kxu)
 - Tags: ethereum, defi, python, blockchain
 
 To check a DEX pool's sandwich attack rate, query its hourly bars from Codex's GraphQL `getBars` endpoint. Each bar carries `sandwichRate` (sandwiched events divided by transactions), `mevRiskLevel`, and a fee split into gas, builder tips and LP fees. Weight each hour by its transaction count to get the 24-hour rate. A free Codex key covers light use.
@@ -10012,6 +10120,8 @@ Source: https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Peptide & GLP-1 market intelligence](https://datatooly.xyz/peptide-market-intel-tool/)
+- Run this exact query on Apify: [Scrape YouTube peptide videos with sentiment](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-youtube-mentions-sentiment-scraper?fpr=v77kxu)
+- Another example on Apify: [Track GLP-1 (semaglutide, tirzepatide) demand and sentiment](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-glp1-sentiment-reddit-youtube-amazon?fpr=v77kxu)
 - Tags: python, webscraping, youtube, datascience
 
 You can track YouTube mentions of semaglutide, tirzepatide or BPC-157 without an API key. Fetch the search results page, parse the `ytInitialData` JSON embedded in the HTML, and match titles and snippets against an alias list that maps brands (Ozempic, Wegovy, Mounjaro, Zepbound) to the generic compound. Dedupe by video ID and log the counts daily.
@@ -10215,6 +10325,8 @@ Source: https://datatooly.xyz/guides/scrape-reddit-without-api/
 - Published: 2026-05-31
 - Updated: 2026-09-29
 - Free tool: [Search Reddit by keyword or subreddit — and export it clean](https://datatooly.xyz/reddit-search-builder/)
+- Run this exact query on Apify: [Search all of Reddit for a keyword](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-sitewide-keyword-search?fpr=v77kxu)
+- Another example on Apify: [Scrape a subreddit's top posts of the week](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-scrape-subreddit-top-posts?fpr=v77kxu)
 - Tags: webscraping, python, api, datascience
 
 If you've landed here, you already know the backstory: in 2023 Reddit's API went from free-and-generous to metered-and-expensive, third-party apps shut down, and a lot of data pipelines broke overnight. So the practical question for developers and data folks is no longer "should I use the API?" but **how to scrape Reddit without the API** at all — cleanly, legally-aware, and without burning hours on requests that silently return `403`.
@@ -10358,6 +10470,8 @@ Source: https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Track SaaS pricing & plan changes](https://datatooly.xyz/saas-pricing-tracker-tool/)
+- Run this exact query on Apify: [Scrape a competitor's SaaS pricing page](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-track-competitor-pricing-pages?fpr=v77kxu)
+- Another example on Apify: [Fast static SaaS pricing scrape](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-fast-static-pricing-scrape?fpr=v77kxu)
 - Tags: python, webscraping, saas, json
 
 To scrape both the monthly and the annual price from a SaaS pricing page without clicking the billing toggle, check the page's JSON-LD first. Many pricing pages embed schema.org `Offer` objects whose `priceSpecification` lists one `UnitPriceSpecification` per billing period: `unitCode: "MON"` or `"ANN"`, or `billingDuration: "P1M"` or `"P1Y"`. One plain HTTP request gets you both numbers.
@@ -10578,6 +10692,8 @@ Source: https://datatooly.xyz/guides/h1b-salary-database-by-employer/
 - Published: 2026-06-30
 - Updated: 2026-06-30
 - Free tool: [What does a role pay? H-1B/PERM salary benchmarks](https://datatooly.xyz/salary-benchmark-lookup/)
+- Run this exact query on Apify: [Export raw H-1B salary filings for one company](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-raw-h1b-filings-by-company?fpr=v77kxu)
+- Another example on Apify: [Benchmark Google software engineer salaries](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-google-engineer-pay?fpr=v77kxu)
 - Tags: datascience, api, python, career
 
 If you've searched for an **H-1B salary database by employer** and hoped to find a clean JSON API you could just hit, you've probably been disappointed. There isn't one — at least not from the government. But the underlying data is fully public, authoritative, and very queryable once you know where it actually lives. This post shows you the real source, what's in it, and how to query H-1B salary data by employer and role programmatically with Python.
@@ -10722,6 +10838,8 @@ Source: https://datatooly.xyz/guides/saudi-arabia-property-data/
 - Published: 2026-06-30
 - Updated: 2026-09-29
 - Free tool: [Saudi real-estate listings — search & export](https://datatooly.xyz/saudi-real-estate-search/)
+- Run this exact query on Apify: [Scrape all 4 Saudi property portals in one run](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-all-platforms-saudi-sweep?fpr=v77kxu)
+- Another example on Apify: [Scrape Riyadh apartments for sale on Bayut.sa](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-bayut-riyadh-apartments-sale?fpr=v77kxu)
 - Tags: webscraping, datascience, api, realestate
 
 If you have ever tried to assemble a clean dataset of **Saudi Arabia property data**, you already know the pain: the same villa in Riyadh shows up on Bayut.sa, on PropertyFinder.sa, and on Aqar.fm — three different listing IDs, three slightly different prices, three different agents. Naively concatenate them and your "market" is 30–40% duplicates. This post walks through how the Saudi portals actually expose their data, and the one field that quietly solves the deduplication problem: the REGA advertisement license number.
@@ -10873,6 +10991,8 @@ Source: https://datatooly.xyz/guides/search-hacker-news-by-date-range-points/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Search Hacker News stories within a date range](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-date-ranged-research-corpus?fpr=v77kxu)
+- Another example on Apify: [Build a Hacker News digest above a points threshold](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-best-stories-digest?fpr=v77kxu)
 - Tags: python, javascript, api, datascience
 
 To search Hacker News by date, call `https://hn.algolia.com/api/v1/search_by_date` with `numericFilters=created_at_i>=START,created_at_i<END` in Unix seconds. To filter by score, add `points>100` to the same parameter, comma-separated. Use `/search` instead when you want the highest-scoring stories first. No API key is needed. One query returns at most 1,000 hits, so split long ranges.
@@ -11081,6 +11201,8 @@ Source: https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get a company's revenue, net income and EPS history (XBRL)](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-xbrl-revenue-eps-history?fpr=v77kxu)
+- Another example on Apify: [Export normalized income statements for a stock](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-normalized-income-statement?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 The SEC's XBRL APIs on data.sec.gov return reported financials as JSON, free and with no API key. `companyfacts/CIK##########.json` gives every fact for one company. `companyconcept/CIK##########/us-gaap/{Tag}.json` gives one tag for one company. `frames/us-gaap/{Tag}/{Unit}/CY{Year}.json` gives one tag across all companies for one period. Pad the CIK to 10 digits and send a User-Agent.
@@ -11312,6 +11434,8 @@ Source: https://datatooly.xyz/guides/sec-edgar-full-text-search-api/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Full-text search: find 10-Ks that mention "artificial intelligence"](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-fulltext-search-ai-10k?fpr=v77kxu)
+- Another example on Apify: [Full-text search within specific companies' filings](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-fulltext-search-within-companies?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 EDGAR full-text search has a JSON endpoint: `https://efts.sec.gov/LATEST/search-index?q=...`. Pass a phrase in `q`, filter with `forms`, `ciks` (10-digit) and `startdt`/`enddt`, and page with `from` in steps of 100. No API key is needed, but you must send a User-Agent naming you. The SEC doesn't document this endpoint as an API; it's the backend of its Full-Text Search page.
@@ -11534,6 +11658,8 @@ Source: https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
+- Another example on Apify: [Run a daily change-detection filing monitor](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-incremental-daily-monitor?fpr=v77kxu)
 - Tags: api, python, finance, webscraping
 
 SEC EDGAR's fair-access rules are short. Send a `User-Agent` with your name or company and a contact email, such as `Acme Research admin@acme.com`, and stay at or under 10 requests per second in total across all your machines. No User-Agent, or a library default, gets HTTP 403. Go over the rate and your IP can be limited until it stays under it for 10 minutes.
@@ -11740,6 +11866,8 @@ Source: https://datatooly.xyz/guides/sec-edgar-api-python-guide/
 - Published: 2026-06-13
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
+- Another example on Apify: [Get a company's revenue, net income and EPS history (XBRL)](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-xbrl-revenue-eps-history?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 The **SEC EDGAR API** is one of the best-kept secrets in financial data engineering: every mandatory disclosure filed by every U.S. public company, available as clean JSON, for free, with no API key. If you've ever paid for a "fundamentals" data vendor or scraped a brokerage page for a balance sheet, you've been working harder than you need to. The raw, authoritative source — quarterly revenue, insider trades, institutional holdings, 8-K event filings — is sitting on `data.sec.gov` waiting for an HTTP GET.
@@ -11891,6 +12019,7 @@ Source: https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 Yes, EDGAR has an API, and it's free with no API key. Map a ticker to a CIK with `https://www.sec.gov/files/company_tickers.json`, then fetch `https://data.sec.gov/submissions/CIK##########.json`, with the CIK zero-padded to 10 digits, to get the company's details and full filing history. The one requirement is a User-Agent header with your name and email.
@@ -12076,6 +12205,8 @@ Source: https://datatooly.xyz/guides/shopify-products-json-pagination/
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [See any Shopify store's products — live, free, no app](https://datatooly.xyz/shopify-store-products/)
+- Run this exact query on Apify: [Export one Shopify store's product catalog (allbirds.com)](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-catalog-snapshot-single-store?fpr=v77kxu)
+- Another example on Apify: [Scrape competitor Shopify catalogs side by side](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-multi-store-competitor-catalog?fpr=v77kxu)
 - Tags: shopify, python, webscraping, ecommerce
 
 To paginate a Shopify store's public `/products.json`, request `?limit=250&page=1`, then `page=2`, and so on until the response is `{"products":[]}`. 250 is the most products you can get per page. Asking for more is silently clamped to 250, and leaving `limit` out gives you 30. Pagination also stops at 25,000 products: once `page × limit` goes past 25,000, the store returns HTTP 400 `"Page * Limit exceeds the 25000 limit."`
@@ -12269,6 +12400,8 @@ Source: https://datatooly.xyz/guides/scrape-telegram-channel-without-login/
 - Published: 2026-06-30
 - Updated: 2026-09-29
 - Free tool: [Extract Telegram public channel posts](https://datatooly.xyz/telegram-channel-search/)
+- Run this exact query on Apify: [Pull a channel's Telegram post history](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-posts-history-archive?fpr=v77kxu)
+- Another example on Apify: [Snapshot public Telegram channels and their recent posts](https://apify.com/constructive_calm/telegram-intelligence-pro/examples/tg-channel-snapshot-news?fpr=v77kxu)
 - Tags: python, webscraping, api, osint
 
 If you want to **scrape a Telegram channel without login**, you do not need MTProto, you do not need a bot token, and you do not need to hand Telegram a phone number. Every public channel quietly exposes a server-rendered HTML preview that you can fetch with a plain HTTP request and parse with any HTML library. No account. No risk to an account you don't even have to create.
@@ -12437,6 +12570,8 @@ Source: https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Run this exact query on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
+- Another example on Apify: [Check Solana memecoin pools for sandwich attacks](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-solana-memecoin-sandwich-check?fpr=v77kxu)
 - Tags: defi, crypto, ethereum, solana
 
 To tell whether a token's pool is getting sandwiched, look through its recent trades for one wallet that buys just before someone else's buy and sells just after it, in the same block. Then check two numbers for the last 24 hours: the share of the pool's transactions that were sandwiched, and the share of its fees that went to MEV. If either is high, trade with tight slippage through an MEV-protected route, or trade smaller.
@@ -12585,6 +12720,8 @@ Source: https://datatooly.xyz/guides/threads-keyword-search-without-app-review/
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Monitor Threads by keyword or hashtag](https://datatooly.xyz/threads-keyword-monitor/)
+- Run this exact query on Apify: [Search Threads posts by keyword](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-search-keyword-posts-2?fpr=v77kxu)
+- Another example on Apify: [Search Threads within a date range](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-date-window-search?fpr=v77kxu)
 - Tags: python, webscraping, socialmedia, api
 
 Without app review, Meta's Threads `keyword_search` endpoint only searches posts owned by the authenticated user. Public posts become searchable only after Meta approves your app for the `threads_keyword_search` permission. To monitor public keywords before (or instead of) that approval, read the public search page at `threads.com/search?q=…` and dedupe posts by their `code` between runs.
@@ -12809,6 +12946,8 @@ Source: https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/
 - Published: 2026-06-13
 - Updated: 2026-09-29
 - Free tool: [Scrape Threads profiles, posts & hashtags](https://datatooly.xyz/threads-profile-search/)
+- Run this exact query on Apify: [Scrape Threads profile data, bio and follower counts](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-profile-data?fpr=v77kxu)
+- Another example on Apify: [Scrape recent Threads posts from a list of users](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-user-posts?fpr=v77kxu)
 - Tags: api, webscraping, socialmedia, datascience
 
 If you want to build a **Threads scraper**, the first thing to get straight is *what Threads actually is in 2026* — because the surface has changed under everyone's feet. Threads is Meta's X-competitor, and it is no longer a small experiment: Meta reported it crossed **400 million monthly active users** in August 2025. That growth is exactly why marketers, researchers, and data teams suddenly want programmatic access to profiles, posts, and hashtags.
@@ -12942,6 +13081,8 @@ Source: https://datatooly.xyz/guides/tiktok-ad-library-api/
 - Published: 2026-06-13
 - Updated: 2026-10-14
 - Free tool: [Search the TikTok Ad Library (EU/DSA)](https://datatooly.xyz/tiktok-ad-library-search/)
+- Run this exact query on Apify: [Search EU TikTok ads by keyword, with targeting](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-keyword-search-targeting?fpr=v77kxu)
+- Another example on Apify: [Pull a TikTok advertiser's EU ads by business ID](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-by-biz-id?fpr=v77kxu)
 - Tags: api, marketing, webdev, tiktok
 
 If you have ever tried to find a clean, documented TikTok ad library API, you have probably hit a wall of marketing pages, half-answers, and tools that promise "global TikTok ads" without telling you what is actually inside. This guide cuts through that. I will explain exactly what TikTok exposes, what it does *not*, where the data comes from, and how to query it programmatically without guessing.
@@ -13074,6 +13215,8 @@ Source: https://datatooly.xyz/guides/track-ai-brand-mentions-over-time/
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Track how AI describes your brand's sentiment](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-sentiment-tracking?fpr=v77kxu)
+- Another example on Apify: [Track how ChatGPT (OpenAI) mentions your brand](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-chatgpt-brand-mentions?fpr=v77kxu)
 - Tags: ai, seo, marketing, python
 
 To track AI brand mentions over time, run the same buyer questions in the same assistants with the same settings on a schedule (monthly by hand, weekly with a script). Log every brand and cited domain per answer and compare runs prompt by prompt. Record the model and whether web search ran, to separate real change from updates and noise.
@@ -13256,6 +13399,8 @@ Source: https://datatooly.xyz/guides/understat-xg-data-export/
 - Published: 2026-06-30
 - Updated: 2026-06-30
 - Free tool: [Understat xG football analytics — export](https://datatooly.xyz/understat-football-stats/)
+- Run this exact query on Apify: [Scrape Premier League player xG and xA for a season](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-player-xg-season?fpr=v77kxu)
+- Another example on Apify: [Scrape a full EPL season of shot-level xG data](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-season-shots-heatmap?fpr=v77kxu)
 - Tags: python, datascience, api, football
 
 If you've searched for an **Understat xG data export** and come up empty, here's the honest truth up front: Understat does not publish an official public API. There's no documented REST endpoint, no API key, no `/v1/xg` route. But the expected-goals data is absolutely reachable programmatically — it's sitting right inside the HTML of every page, and once you know the trick, exporting it to CSV is a dozen lines of Python.
@@ -13406,6 +13551,8 @@ Source: https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-spon
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Find H-1B & green-card visa sponsors + salary data](https://datatooly.xyz/visa-sponsor-finder/)
+- Run this exact query on Apify: [Find PERM green card sponsors for software engineers](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/perm-green-card-sponsors-software-engineer?fpr=v77kxu)
+- Another example on Apify: [Find PERM green card sponsors for data engineers](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/perm-green-card-sponsors-data-engineer?fpr=v77kxu)
 - Tags: python, datascience, career, immigration
 
 To find green card (PERM) sponsors by city, download the Department of Labor's free PERM disclosure file and filter it in pandas. Keep `CASE_STATUS` values starting with "Certified", match `PRIMARY_WORKSITE_CITY` and `PRIMARY_WORKSITE_STATE`, optionally narrow by `PWD_SOC_CODE`, then count cases per `EMP_BUSINESS_NAME`. The current file is about 156 MB of XLSX. There's no API key and no signup, and the whole analysis is about 40 lines of Python.
@@ -13613,6 +13760,7 @@ Source: https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-atta
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Run this exact query on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
 - Tags: defi, crypto, ethereum, solana
 
 Set the lowest slippage tolerance that still lets your swap fill under normal price movement. As a starting point, that's about 0.1–0.5% on deep major pairs and about 0.5–1% on mid-size tokens. Go higher only on thin, fast-moving pools, and there an MEV-protected route matters more than the exact number. Your tolerance is the most a sandwich bot can push your price: 5% on a $1,000 swap lets your fill land up to $50 below the quote. Check whether the pool is actually being sandwiched before you choose.
@@ -13761,6 +13909,8 @@ Source: https://datatooly.xyz/guides/scrape-youtube-shorts-data/
 - Published: 2026-07-06
 - Updated: 2026-10-14
 - Free tool: [YouTube Shorts Scraper — find viral Shorts by channel or keyword](https://datatooly.xyz/youtube-shorts-search/)
+- Run this exact query on Apify: [Get data for a single YouTube Short URL](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-single-url?fpr=v77kxu)
+- Another example on Apify: [Scrape a YouTube channel's newest Shorts](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-channel-newest?fpr=v77kxu)
 - Tags: webscraping, youtube, api, datascience
 
 If you have ever tried to figure out **how to scrape YouTube Shorts data** — the view counts, like counts, publish dates, and channel stats for a batch of Shorts — you have probably discovered that it is more annoying than it looks. Shorts are technically just videos, but YouTube treats them as a distinct surface, and the tools most people reach for either cost quota you do not have or return numbers that are rounded and incomplete.

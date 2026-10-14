@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Monitor Threads by keyword or hashtag](https://datatooly.xyz/threads-keyword-monitor/)
+- Run this exact query on Apify: [Search Threads posts by keyword](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-search-keyword-posts-2?fpr=v77kxu)
+- Another example on Apify: [Search Threads within a date range](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-date-window-search?fpr=v77kxu)
 - Tags: python, webscraping, socialmedia, api
 
 Without app review, Meta's Threads `keyword_search` endpoint only searches posts owned by the authenticated user. Public posts become searchable only after Meta approves your app for the `threads_keyword_search` permission. To monitor public keywords before (or instead of) that approval, read the public search page at `threads.com/search?q=…` and dedupe posts by their `code` between runs.

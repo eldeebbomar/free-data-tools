@@ -7,6 +7,8 @@
 - Published: 2026-06-30
 - Updated: 2026-06-30
 - Free tool: [Gulf used-car listings — search & export](https://datatooly.xyz/gulf-used-car-search/)
+- Run this exact query on Apify: [Scrape used cars listed in Dubai](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-dubai-city-listings?fpr=v77kxu)
+- Another example on Apify: [Scrape used cars across DubiCars and Dubizzle UAE](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-whole-market-both-platforms?fpr=v77kxu)
 - Tags: webscraping, datascience, api, automotive
 
 If you need **Dubai used car listings data** — make, model, year, price, mileage, location, and dealer for thousands of vehicles — the good news is that the major Gulf marketplaces are far friendlier to extraction than most modern web apps. The listings render server-side, and the detail pages carry structured data you can parse without a headless browser. This post walks through the actual shape of that data on DubiCars and Dubizzle Motors, with a runnable example you can adapt today.

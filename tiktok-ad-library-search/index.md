@@ -6,6 +6,8 @@
 - Category: [Ads Intelligence](https://datatooly.xyz/category/ads-intelligence/)
 - URL: https://datatooly.xyz/tiktok-ad-library-search/
 - Backing Apify actor: [tiktok-ad-library-pro](https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Search EU TikTok ads by keyword, with targeting](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-keyword-search-targeting?fpr=v77kxu)
+- Another example on Apify: [Pull one advertiser's ads from the EU TikTok Ad Library](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-advertiser-deep-drill?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
 

@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Filter trials by condition, phase and status (Phase 3, recruiting)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-nsclc-phase3-recruiting-trials?fpr=v77kxu)
+- Another example on Apify: [Find every clinical trial for one drug (semaglutide)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-trials-by-drug-intervention-semaglutide?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 The ClinicalTrials.gov API v2 has one search endpoint, `https://clinicaltrials.gov/api/v2/studies`. You search with `query.*` parameters (`query.cond`, `query.term`, `query.intr`, `query.spons`), narrow with `filter.*` and `aggFilters`, choose output with `fields` and `format`, and page with `pageSize` and `pageToken`. There is no API key. There is also no `filter.phase`; use `filter.advanced=AREA[Phase]PHASE3`.

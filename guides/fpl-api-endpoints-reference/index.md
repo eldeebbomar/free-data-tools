@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Download per-gameweek FPL player data for a season](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-historical-per-gameweek-archive?fpr=v77kxu)
+- Another example on Apify: [Build an FPL manager season dashboard](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-manager-season-dashboard?fpr=v77kxu)
 - Tags: api, python, football, datascience
 
 The Fantasy Premier League API is a free, keyless JSON API at `https://fantasy.premierleague.com/api/`. Its main endpoints are `bootstrap-static/` (all players, teams and gameweeks), `fixtures/`, `element-summary/{player_id}/`, `event/{gw}/live/`, `entry/{manager_id}/` with `/history/`, `/event/{gw}/picks/` and `/transfers/`, and `leagues-classic/{league_id}/standings/`. It has no official documentation and no CORS header.

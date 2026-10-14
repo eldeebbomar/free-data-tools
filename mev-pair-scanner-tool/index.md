@@ -6,6 +6,8 @@
 - Category: [Crypto & DeFi](https://datatooly.xyz/category/crypto-defi/)
 - URL: https://datatooly.xyz/mev-pair-scanner-tool/
 - Backing Apify actor: [mev-pair-scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scan a token's top DEX pools for MEV risk (Ethereum)](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-scan-token-top-pools-ethereum?fpr=v77kxu)
+- Another example on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
 - More guides: [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)

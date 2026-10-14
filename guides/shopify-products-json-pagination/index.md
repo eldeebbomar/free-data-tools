@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [See any Shopify store's products — live, free, no app](https://datatooly.xyz/shopify-store-products/)
+- Run this exact query on Apify: [Export one Shopify store's product catalog (allbirds.com)](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-catalog-snapshot-single-store?fpr=v77kxu)
+- Another example on Apify: [Scrape competitor Shopify catalogs side by side](https://apify.com/constructive_calm/shopify-store-intel/examples/shopify-multi-store-competitor-catalog?fpr=v77kxu)
 - Tags: shopify, python, webscraping, ecommerce
 
 To paginate a Shopify store's public `/products.json`, request `?limit=250&page=1`, then `page=2`, and so on until the response is `{"products":[]}`. 250 is the most products you can get per page. Asking for more is silently clamped to 250, and leaving `limit` out gives you 30. Pagination also stops at 25,000 products: once `page × limit` goes past 25,000, the store returns HTTP 400 `"Page * Limit exceeds the 25000 limit."`

@@ -7,6 +7,8 @@
 - Published: 2026-06-13
 - Updated: 2026-10-14
 - Free tool: [Search the TikTok Ad Library (EU/DSA)](https://datatooly.xyz/tiktok-ad-library-search/)
+- Run this exact query on Apify: [Search EU TikTok ads by keyword, with targeting](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-keyword-search-targeting?fpr=v77kxu)
+- Another example on Apify: [Pull a TikTok advertiser's EU ads by business ID](https://apify.com/constructive_calm/tiktok-ad-library-pro/examples/tiktok-ads-eu-by-biz-id?fpr=v77kxu)
 - Tags: api, marketing, webdev, tiktok
 
 If you have ever tried to find a clean, documented TikTok ad library API, you have probably hit a wall of marketing pages, half-answers, and tools that promise "global TikTok ads" without telling you what is actually inside. This guide cuts through that. I will explain exactly what TikTok exposes, what it does *not*, where the data comes from, and how to query it programmatically without guessing.

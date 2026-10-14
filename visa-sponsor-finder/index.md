@@ -6,6 +6,8 @@
 - Category: [Jobs & Visas](https://datatooly.xyz/category/jobs-visas/)
 - URL: https://datatooly.xyz/visa-sponsor-finder/
 - Backing Apify actor: [visa-sponsor-tracker](https://apify.com/constructive_calm/visa-sponsor-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Find H-1B software engineer sponsors in California](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/h1b-software-engineer-sponsors-california?fpr=v77kxu)
+- Another example on Apify: [Find PERM green card sponsors for software engineers](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/perm-green-card-sponsors-software-engineer?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
 

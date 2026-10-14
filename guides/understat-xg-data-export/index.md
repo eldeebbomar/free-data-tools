@@ -7,6 +7,8 @@
 - Published: 2026-06-30
 - Updated: 2026-06-30
 - Free tool: [Understat xG football analytics — export](https://datatooly.xyz/understat-football-stats/)
+- Run this exact query on Apify: [Scrape Premier League player xG and xA for a season](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-player-xg-season?fpr=v77kxu)
+- Another example on Apify: [Scrape a full EPL season of shot-level xG data](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-season-shots-heatmap?fpr=v77kxu)
 - Tags: python, datascience, api, football
 
 If you've searched for an **Understat xG data export** and come up empty, here's the honest truth up front: Understat does not publish an official public API. There's no documented REST endpoint, no API key, no `/v1/xg` route. But the expected-goals data is absolutely reachable programmatically — it's sitting right inside the HTML of every page, and once you know the trick, exporting it to CSV is a dozen lines of Python.

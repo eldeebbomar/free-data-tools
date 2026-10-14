@@ -6,7 +6,9 @@
 - Category: [SaaS & SEO](https://datatooly.xyz/category/saas-seo/)
 - URL: https://datatooly.xyz/saas-pricing-tracker-tool/
 - Backing Apify actor: [saas-pricing-tracker](https://apify.com/constructive_calm/saas-pricing-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape a competitor's SaaS pricing page](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-track-competitor-pricing-pages?fpr=v77kxu)
+- Another example on Apify: [Monitor competitor pricing changes monthly](https://apify.com/constructive_calm/saas-pricing-tracker/examples/saas-pricing-monitor-competitor-price-changes?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD](https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/)
 
 Paste competitors' homepage or pricing URLs and preview the structured pricing data the actor extracts: plans, prices, free-tier and enterprise flags, ready to re-run for change alerts.

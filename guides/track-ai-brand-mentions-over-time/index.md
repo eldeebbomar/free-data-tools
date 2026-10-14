@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Track how AI describes your brand's sentiment](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-sentiment-tracking?fpr=v77kxu)
+- Another example on Apify: [Track how ChatGPT (OpenAI) mentions your brand](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-chatgpt-brand-mentions?fpr=v77kxu)
 - Tags: ai, seo, marketing, python
 
 To track AI brand mentions over time, run the same buyer questions in the same assistants with the same settings on a schedule (monthly by hand, weekly with a script). Log every brand and cited domain per answer and compare runs prompt by prompt. Record the model and whether web search ran, to separate real change from updates and noise.

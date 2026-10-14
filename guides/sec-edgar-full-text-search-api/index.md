@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Full-text search: find 10-Ks that mention "artificial intelligence"](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-fulltext-search-ai-10k?fpr=v77kxu)
+- Another example on Apify: [Full-text search within specific companies' filings](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-fulltext-search-within-companies?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 EDGAR full-text search has a JSON endpoint: `https://efts.sec.gov/LATEST/search-index?q=...`. Pass a phrase in `q`, filter with `forms`, `ciks` (10-digit) and `startdt`/`enddt`, and page with `from` in steps of 100. No API key is needed, but you must send a User-Agent naming you. The SEC doesn't document this endpoint as an API; it's the backend of its Full-Text Search page.

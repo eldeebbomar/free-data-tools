@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Get a live FPL gameweek points snapshot](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-live-gameweek-points-snapshot?fpr=v77kxu)
+- Another example on Apify: [Poll live FPL points throughout a gameweek](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-live-tracker-poll-during-gameweek?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 A Fantasy Premier League team's gameweek score is each picked player's `total_points` from `https://fantasy.premierleague.com/api/event/{gw}/live/`, multiplied by the pick's `multiplier` from `entry/{manager_id}/event/{gw}/picks/`, summed, minus `event_transfers_cost`. Multipliers are 0 for the bench, 1 for starters, 2 for the captain and 3 for a triple captain. Auto-subs and vice-captaincy change them.

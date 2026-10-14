@@ -6,7 +6,9 @@
 - Category: [Lead Generation](https://datatooly.xyz/category/lead-generation/)
 - URL: https://datatooly.xyz/linkedin-people-search/
 - Backing Apify actor: [linkedin-people-finder](https://apify.com/constructive_calm/linkedin-people-finder?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Find people on LinkedIn by job title and location](https://apify.com/constructive_calm/linkedin-people-finder/examples/find-candidates-by-job-title-and-location?fpr=v77kxu)
+- Another example on Apify: [Get only new people every run (weekly fresh leads)](https://apify.com/constructive_calm/linkedin-people-finder/examples/weekly-fresh-leads-no-duplicates?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 Enter job titles and locations and preview the LinkedIn people the actor finds (name, headline, current company and profile URL) with no LinkedIn login or cookies.

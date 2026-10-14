@@ -7,6 +7,8 @@
 - Published: 2026-06-01
 - Updated: 2026-10-14
 - Free tool: [App Store Top Charts — live, any country, free](https://datatooly.xyz/app-store-top-charts/)
+- Run this exact query on Apify: [Track the US Top Free App Store chart](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-us-top-free-snapshot?fpr=v77kxu)
+- Another example on Apify: [Track all App Store charts across the EU G5 markets](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-europe-g5-all-charts?fpr=v77kxu)
 - Tags: api, javascript, mobile, webdev
 
 If you've ever wanted an **app store top charts API** that you can hit straight from a browser tab — no API key, no OAuth dance, no server proxy — there's good news. Apple still serves a legacy iTunes RSS feed that returns the App Store top charts as plain JSON, and (the part most people miss) it's CORS-open. That means a single `fetch()` from client-side JavaScript works. No backend required.

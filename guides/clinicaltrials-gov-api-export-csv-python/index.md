@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Find Phase 3 recruiting trials for one condition (non-small cell lung cancer)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-nsclc-phase3-recruiting-trials?fpr=v77kxu)
+- Another example on Apify: [Find recruiting trials in one country (Germany)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-recruiting-trials-by-country-germany?fpr=v77kxu)
 - Tags: python, api, datascience, healthcare
 
 To export ClinicalTrials.gov search results to CSV, call `https://clinicaltrials.gov/api/v2/studies?format=csv`. No API key is needed. In CSV mode the cursor for the next page comes back in the `x-next-page-token` **response header**, not in the body. Only the first page includes a header row. Filter phases with `filter.advanced=AREA[Phase]PHASE3`, because `filter.phase` does not exist and the API rejects it with HTTP 400.

@@ -6,7 +6,9 @@
 - Category: [Jobs & Visas](https://datatooly.xyz/category/jobs-visas/)
 - URL: https://datatooly.xyz/salary-benchmark-lookup/
 - Backing Apify actor: [salarybench-iq](https://apify.com/constructive_calm/salarybench-iq?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Benchmark US H-1B software engineer salaries](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-h1b-software-engineer-benchmark?fpr=v77kxu)
+- Another example on Apify: [Benchmark product manager salaries in New York City](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-product-manager-nyc?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/)
 
 Enter a role and location and preview the salary percentiles SalaryBench IQ computes from public H-1B and PERM wage filings, P10 to P90 per role and city.

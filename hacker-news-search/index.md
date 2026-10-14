@@ -6,6 +6,8 @@
 - Category: [Dev & Community](https://datatooly.xyz/category/dev-community/)
 - URL: https://datatooly.xyz/hacker-news-search/
 - Backing Apify actor: [hacker-news-scraper](https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News stories within a date range](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-date-ranged-research-corpus?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/)
 - More guides: [HN Algolia API Reference: Search, Tags, Filters, Limits](https://datatooly.xyz/guides/hacker-news-algolia-api-reference/)

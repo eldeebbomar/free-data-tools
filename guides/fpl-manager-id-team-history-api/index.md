@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Build an FPL manager season dashboard](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-manager-season-dashboard?fpr=v77kxu)
+- Another example on Apify: [Compare your FPL team to your mini-league rivals](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-mini-league-you-vs-the-field?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 Your FPL manager ID is the number after `/entry/` in the address bar when you open the Points tab on the Fantasy Premier League website, for example `/entry/1234567/event/6`. With it, `https://fantasy.premierleague.com/api/entry/{id}/history/` returns your points, rank, bank and team value for every gameweek, the chips you've used and your past seasons. No login or key is needed.

@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Predict tonight's FPL price risers and fallers](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-price-change-risers-fallers-tonight?fpr=v77kxu)
+- Another example on Apify: [Track high-confidence FPL price rises only](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-high-confidence-price-rises?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 Since 2026/27, the free Fantasy Premier League API includes its own price-change predictions. Each player in `bootstrap-static` carries `price_change_percent` (progress toward a rise or fall) and `price_change_projections` (projected progress at the next three updates, with a -5 to +5 likelihood). No API key is needed. A projection past ±100 means FPL expects a price move at the next update.

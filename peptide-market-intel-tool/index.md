@@ -6,7 +6,9 @@
 - Category: [Health & Pharma](https://datatooly.xyz/category/health-pharma/)
 - URL: https://datatooly.xyz/peptide-market-intel-tool/
 - Backing Apify actor: [peptide-market-intel](https://apify.com/constructive_calm/peptide-market-intel?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Track GLP-1 (semaglutide, tirzepatide) demand and sentiment](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-glp1-sentiment-reddit-youtube-amazon?fpr=v77kxu)
+- Another example on Apify: [Monitor BPC-157 and TB-500 mentions](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-bpc157-tb500-healing-tracker?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
 
 Pick sources and compound categories and preview the peptide and GLP-1 mentions the actor extracts from YouTube, Amazon and Reddit: compound, intent, sentiment and vendors.

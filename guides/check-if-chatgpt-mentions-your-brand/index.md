@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Track how ChatGPT (OpenAI) mentions your brand](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-chatgpt-brand-mentions?fpr=v77kxu)
+- Another example on Apify: [Audit a brand's visibility across AI answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-ai-visibility-audit?fpr=v77kxu)
 - Tags: ai, seo, marketing, chatgpt
 
 To check if ChatGPT mentions your brand for free, write 10–20 questions a buyer would ask without naming you. Ask each one in a new, unpersonalised chat, at least three times, and note every brand named, its position and the cited sites. The share of runs that name you is your mention rate. One answer proves nothing; the rate does.

@@ -7,6 +7,8 @@
 - Published: 2026-06-30
 - Updated: 2026-09-29
 - Free tool: [Saudi real-estate listings — search & export](https://datatooly.xyz/saudi-real-estate-search/)
+- Run this exact query on Apify: [Scrape all 4 Saudi property portals in one run](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-all-platforms-saudi-sweep?fpr=v77kxu)
+- Another example on Apify: [Scrape Riyadh apartments for sale on Bayut.sa](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-bayut-riyadh-apartments-sale?fpr=v77kxu)
 - Tags: webscraping, datascience, api, realestate
 
 If you have ever tried to assemble a clean dataset of **Saudi Arabia property data**, you already know the pain: the same villa in Riyadh shows up on Bayut.sa, on PropertyFinder.sa, and on Aqar.fm — three different listing IDs, three slightly different prices, three different agents. Naively concatenate them and your "market" is 30–40% duplicates. This post walks through how the Saudi portals actually expose their data, and the one field that quietly solves the deduplication problem: the REGA advertisement license number.

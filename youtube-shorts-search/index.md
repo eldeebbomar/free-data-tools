@@ -6,6 +6,8 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/youtube-shorts-search/
 - Backing Apify actor: [youtube-shorts-scraper-pro](https://apify.com/constructive_calm/youtube-shorts-scraper-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scrape YouTube Shorts by keyword search](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-by-keyword?fpr=v77kxu)
+- Another example on Apify: [Find viral YouTube Shorts by view count](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-find-viral?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
 

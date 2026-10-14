@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Export HN stories with their full comment trees](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-stories-with-comment-trees-rag?fpr=v77kxu)
+- Another example on Apify: [Export HN comments as a flat, spreadsheet-ready list](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-flat-comments-spreadsheet-export?fpr=v77kxu)
 - Tags: python, api, webscraping, datascience
 
 To get every comment on a Hacker News story, request `https://hn.algolia.com/api/v1/items/{story_id}`. It returns the story with the full comment tree nested in `children`, in one call, with no key. It skips deleted and dead comments and every reply under them. For a complete set, use the search index (`tags=comment,story_{id}`) or walk the official Firebase API.

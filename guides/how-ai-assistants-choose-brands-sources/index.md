@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Find which domains AI answers cite instead of your site](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-citation-gap-analysis?fpr=v77kxu)
+- Another example on Apify: [Audit a brand's visibility across AI answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-ai-visibility-audit?fpr=v77kxu)
 - Tags: ai, seo, marketing, python
 
 AI assistants answer from two places: what the model learned in training and, when they search the web, the pages the search returns, which they show as citations. Vendors document the crawlers and controls (robots.txt tokens, location, search settings) but not how they rank sources, so treat any "ranking factor" list as a guess unless it cites the vendor.

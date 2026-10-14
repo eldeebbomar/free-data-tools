@@ -6,6 +6,8 @@
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/fpl-intelligence-tool/
 - Backing Apify actor: [fpl-intelligence](https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Get FPL gameweek captain, transfer and differential picks](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-gameweek-captain-transfer-picks?fpr=v77kxu)
+- Another example on Apify: [Predict tonight's FPL price risers and fallers](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-price-change-risers-fallers-tonight?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 - More guides: [FPL API Endpoints: Complete Reference for 2026/27](https://datatooly.xyz/guides/fpl-api-endpoints-reference/)

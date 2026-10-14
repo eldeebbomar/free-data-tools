@@ -6,6 +6,8 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/threads-keyword-monitor/
 - Backing Apify actor: [threads-search-monitor](https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Search Threads posts by keyword](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-search-keyword-posts-2?fpr=v77kxu)
+- Another example on Apify: [Monitor Threads keywords for new posts](https://apify.com/constructive_calm/threads-search-monitor/examples/threads-monitor-keywords-schedule?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 

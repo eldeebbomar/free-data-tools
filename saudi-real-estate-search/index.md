@@ -6,7 +6,9 @@
 - Category: [Real Estate](https://datatooly.xyz/category/real-estate/)
 - URL: https://datatooly.xyz/saudi-real-estate-search/
 - Backing Apify actor: [saudi-real-estate-scraper](https://apify.com/constructive_calm/saudi-real-estate-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape Riyadh apartments for sale on Bayut.sa](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-bayut-riyadh-apartments-sale?fpr=v77kxu)
+- Another example on Apify: [Scrape all 4 Saudi property portals in one run](https://apify.com/constructive_calm/saudi-real-estate-scraper/examples/ksa-re-all-platforms-saudi-sweep?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/)
 
 Choose Bayut.sa, Wasalt, Aqar.fm or PropertyFinder.sa, cities and a listing type, and preview the Saudi property listings the actor exports: price in SAR, area, city and REGA licence.

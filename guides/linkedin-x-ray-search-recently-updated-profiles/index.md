@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Find LinkedIn profiles by job title and location](https://datatooly.xyz/linkedin-people-search/)
+- Run this exact query on Apify: [Find people who recently changed jobs or updated their profile](https://apify.com/constructive_calm/linkedin-people-finder/examples/find-people-who-recently-updated-profiles?fpr=v77kxu)
+- Another example on Apify: [Find people on LinkedIn by job title and location](https://apify.com/constructive_calm/linkedin-people-finder/examples/find-candidates-by-job-title-and-location?fpr=v77kxu)
 - Tags: linkedin, recruiting, python, career
 
 To run a LinkedIn X-ray search for recently updated profiles, add Google's time filter to a `site:linkedin.com/in` query: pick **Tools → Past week** or append `&tbs=qdr:w` to the URL (`qdr:m` for past month). Only profiles Google has re-indexed in that window come back. A profile often gets re-crawled after it changes, so this works as a rough job-change signal. Dedupe by profile slug to see only new people each week.

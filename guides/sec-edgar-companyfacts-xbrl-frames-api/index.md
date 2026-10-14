@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get a company's revenue, net income and EPS history (XBRL)](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-xbrl-revenue-eps-history?fpr=v77kxu)
+- Another example on Apify: [Export normalized income statements for a stock](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-normalized-income-statement?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 The SEC's XBRL APIs on data.sec.gov return reported financials as JSON, free and with no API key. `companyfacts/CIK##########.json` gives every fact for one company. `companyconcept/CIK##########/us-gaap/{Tag}.json` gives one tag for one company. `frames/us-gaap/{Tag}/{Unit}/CY{Year}.json` gives one tag across all companies for one period. Pad the CIK to 10 digits and send a User-Agent.

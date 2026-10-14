@@ -6,6 +6,8 @@
 - Category: [Lead Generation](https://datatooly.xyz/category/lead-generation/)
 - URL: https://datatooly.xyz/linkedin-profile-lookup/
 - Backing Apify actor: [linkedin-profile-pro](https://apify.com/constructive_calm/linkedin-profile-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scrape a LinkedIn profile by URL (no login)](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-scrape-profile-by-url?fpr=v77kxu)
+- Another example on Apify: [Pull a profile's recent LinkedIn posts](https://apify.com/constructive_calm/linkedin-profile-pro/examples/linkedin-recent-posts-for-outreach?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
 

@@ -7,6 +7,8 @@
 - Published: 2026-06-30
 - Updated: 2026-06-30
 - Free tool: [What does a role pay? H-1B/PERM salary benchmarks](https://datatooly.xyz/salary-benchmark-lookup/)
+- Run this exact query on Apify: [Export raw H-1B salary filings for one company](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-raw-h1b-filings-by-company?fpr=v77kxu)
+- Another example on Apify: [Benchmark Google software engineer salaries](https://apify.com/constructive_calm/salarybench-iq/examples/salarybench-google-engineer-pay?fpr=v77kxu)
 - Tags: datascience, api, python, career
 
 If you've searched for an **H-1B salary database by employer** and hoped to find a clean JSON API you could just hit, you've probably been disappointed. There isn't one — at least not from the government. But the underlying data is fully public, authoritative, and very queryable once you know where it actually lives. This post shows you the real source, what's in it, and how to query H-1B salary data by employer and role programmatically with Python.

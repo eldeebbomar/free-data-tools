@@ -6,6 +6,8 @@
 - Category: [News & Crypto](https://datatooly.xyz/category/news-crypto/)
 - URL: https://datatooly.xyz/crypto-news-search/
 - Backing Apify actor: [crypto-news-scraper](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Get the latest crypto news from Cointelegraph](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-latest-crypto-news-feed?fpr=v77kxu)
+- Another example on Apify: [Scrape Bitcoin news articles with full text](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-bitcoin-news-full-text?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 

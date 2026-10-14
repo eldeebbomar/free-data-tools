@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Search & export Cointelegraph crypto news](https://datatooly.xyz/crypto-news-search/)
+- Run this exact query on Apify: [Get the latest crypto news from Cointelegraph](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-latest-crypto-news-feed?fpr=v77kxu)
+- Another example on Apify: [Scrape Bitcoin news articles with full text](https://apify.com/constructive_calm/crypto-news-scraper/examples/ct-bitcoin-news-full-text?fpr=v77kxu)
 - Tags: python, crypto, api, webscraping
 
 Cointelegraph doesn't publish a documented news API. Its website, though, loads articles from a GraphQL endpoint at `https://conpletus.cointelegraph.com/v1/` that answers plain POST requests with no key. One query gives you the latest articles or keyword search results as JSON: title, publish time, lead text, category and view count. Full article bodies need a second query per article, by slug. For just the headlines, `https://cointelegraph.com/rss` is simpler.

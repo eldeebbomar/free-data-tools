@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News comments by one author](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-search-comments-by-author?fpr=v77kxu)
 - Tags: api, python, webdev, datascience
 
 The Hacker News Algolia API is a free, keyless REST API at `https://hn.algolia.com/api/v1/`. Use `/search` for relevance order or `/search_by_date` for newest first. Filter with `tags` (story, comment, show_hn, ask_hn, author_NAME, story_ID) and `numericFilters` on `points`, `num_comments` and `created_at_i`. One query returns at most 1,000 hits.

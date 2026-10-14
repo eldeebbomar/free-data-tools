@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Run this exact query on Apify: [Pre-trade MEV safety check on a known pool](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-pre-trade-pool-safety-check?fpr=v77kxu)
+- Another example on Apify: [Check Solana memecoin pools for sandwich attacks](https://apify.com/constructive_calm/mev-pair-scanner/examples/mev-solana-memecoin-sandwich-check?fpr=v77kxu)
 - Tags: defi, crypto, ethereum, solana
 
 To tell whether a token's pool is getting sandwiched, look through its recent trades for one wallet that buys just before someone else's buy and sells just after it, in the same block. Then check two numbers for the last 24 hours: the share of the pool's transactions that were sandwiched, and the share of its fees that went to MEV. If either is high, trade with tight slippage through an MEV-protected route, or trade smaller.

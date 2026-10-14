@@ -6,6 +6,8 @@
 - Category: [Finance & Filings](https://datatooly.xyz/category/finance-filings/)
 - URL: https://datatooly.xyz/sec-edgar-search/
 - Backing Apify actor: [sec-edgar-scraper](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
+- Another example on Apify: [Track insider buying (Form 4 purchases)](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-insider-buying-form4?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
 - More guides: [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)

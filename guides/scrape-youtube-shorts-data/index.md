@@ -7,6 +7,8 @@
 - Published: 2026-07-06
 - Updated: 2026-10-14
 - Free tool: [YouTube Shorts Scraper — find viral Shorts by channel or keyword](https://datatooly.xyz/youtube-shorts-search/)
+- Run this exact query on Apify: [Get data for a single YouTube Short URL](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-single-url?fpr=v77kxu)
+- Another example on Apify: [Scrape a YouTube channel's newest Shorts](https://apify.com/constructive_calm/youtube-shorts-scraper-pro/examples/yt-shorts-channel-newest?fpr=v77kxu)
 - Tags: webscraping, youtube, api, datascience
 
 If you have ever tried to figure out **how to scrape YouTube Shorts data** — the view counts, like counts, publish dates, and channel stats for a batch of Shorts — you have probably discovered that it is more annoying than it looks. Shorts are technically just videos, but YouTube treats them as a distinct surface, and the tools most people reach for either cost quota you do not have or return numbers that are rounded and incomplete.

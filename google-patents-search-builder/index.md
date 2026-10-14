@@ -6,7 +6,9 @@
 - Category: [Patents & IP](https://datatooly.xyz/category/patents-ip/)
 - URL: https://datatooly.xyz/google-patents-search-builder/
 - Backing Apify actor: [google-patents-intelligence](https://apify.com/constructive_calm/google-patents-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Search AI patents by keyword across US and EU offices](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-ai-patents-keyword-search-us-ep?fpr=v77kxu)
+- Another example on Apify: [Pull a company's granted US patent portfolio by assignee](https://apify.com/constructive_calm/google-patents-intelligence/examples/gpat-company-portfolio-sweep-by-assignee?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Export Google Patents to CSV (Honest Guide to Every Real Path)](https://datatooly.xyz/guides/export-google-patents-to-csv/)
 
 Compose a precise patent query — by keyword, assignee (company), or inventor — and see an example of the clean, structured records the actor returns: titles, assignees, filing/grant dates, citation counts, and legal status across USPTO, EPO, WIPO and 100+ offices.

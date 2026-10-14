@@ -7,6 +7,8 @@
 - Published: 2026-06-13
 - Updated: 2026-09-29
 - Free tool: [Scrape Threads profiles, posts & hashtags](https://datatooly.xyz/threads-profile-search/)
+- Run this exact query on Apify: [Scrape Threads profile data, bio and follower counts](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-profile-data?fpr=v77kxu)
+- Another example on Apify: [Scrape recent Threads posts from a list of users](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-user-posts?fpr=v77kxu)
 - Tags: api, webscraping, socialmedia, datascience
 
 If you want to build a **Threads scraper**, the first thing to get straight is *what Threads actually is in 2026* — because the surface has changed under everyone's feet. Threads is Meta's X-competitor, and it is no longer a small experiment: Meta reported it crossed **400 million monthly active users** in August 2025. That growth is exactly why marketers, researchers, and data teams suddenly want programmatic access to profiles, posts, and hashtags.

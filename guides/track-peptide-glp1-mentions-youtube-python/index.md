@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-09-29
 - Free tool: [Peptide & GLP-1 market intelligence](https://datatooly.xyz/peptide-market-intel-tool/)
+- Run this exact query on Apify: [Scrape YouTube peptide videos with sentiment](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-youtube-mentions-sentiment-scraper?fpr=v77kxu)
+- Another example on Apify: [Track GLP-1 (semaglutide, tirzepatide) demand and sentiment](https://apify.com/constructive_calm/peptide-market-intel/examples/peptide-glp1-sentiment-reddit-youtube-amazon?fpr=v77kxu)
 - Tags: python, webscraping, youtube, datascience
 
 You can track YouTube mentions of semaglutide, tirzepatide or BPC-157 without an API key. Fetch the search results page, parse the `ytInitialData` JSON embedded in the HTML, and match titles and snippets against an alias list that maps brands (Ozempic, Wegovy, Mounjaro, Zepbound) to the generic compound. Dedupe by video ID and log the counts daily.

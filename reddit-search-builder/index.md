@@ -6,7 +6,9 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/reddit-search-builder/
 - Backing Apify actor: [reddit-scraper-pro](https://apify.com/constructive_calm/reddit-scraper-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Search all of Reddit for a keyword](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-sitewide-keyword-search?fpr=v77kxu)
+- Another example on Apify: [Search for a keyword inside one subreddit](https://apify.com/constructive_calm/reddit-scraper-pro/examples/reddit-search-within-subreddit?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 
 Compose a precise Reddit query as a simple list of targets — a keyword, r/subreddit, r/subreddit keyword, u/user or any Reddit link, one per entry — with sort and time range, and see an example of the structured posts the actor returns: title, subreddit, score, comment count, author, URL. Free to set up; export at scale with the actor.

@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Compare AI share of voice against competitors](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-share-of-voice-vs-competitors?fpr=v77kxu)
+- Another example on Apify: [Run a deep audit across all five AI surfaces](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-deep-multi-platform-audit?fpr=v77kxu)
 - Tags: python, ai, seo, llm
 
 AI share of voice is your brand's mentions divided by the combined mentions of your brand and the competitors you track, counted across a fixed set of buyer-style prompts and several AI models. To measure it in Python, send every prompt to every model through one API, count mentions sentence by sentence, skip sentences where the model says it doesn't know you, then divide.

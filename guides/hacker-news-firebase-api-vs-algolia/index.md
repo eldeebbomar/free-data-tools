@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Scrape the Hacker News front page (top stories)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-top-front-page-stories?fpr=v77kxu)
+- Another example on Apify: [Search Hacker News stories for a keyword ("Claude", 50+ points, newest first)](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-keyword-brand-monitor-search?fpr=v77kxu)
 - Tags: api, python, webdev, datascience
 
 Use the official Firebase API (`https://hacker-news.firebaseio.com/v0/`) for the front-page ranking (`topstories`), live lists and exact item lookups. Use the Algolia API (`https://hn.algolia.com/api/v1/`) for anything you need to search or filter by keyword, author, points or date. Firebase has no search and returns IDs you fetch one by one. Algolia returns full records in one call.

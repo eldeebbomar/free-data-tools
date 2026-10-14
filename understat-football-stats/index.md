@@ -6,6 +6,8 @@
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/understat-football-stats/
 - Backing Apify actor: [understat-football-analytics](https://apify.com/constructive_calm/understat-football-analytics?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Scrape Premier League player xG and xA for a season](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-player-xg-season?fpr=v77kxu)
+- Another example on Apify: [Scrape the EPL team xG table with PPDA and xPoints](https://apify.com/constructive_calm/understat-football-analytics/examples/understat-epl-team-table-xg-ppda?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
 

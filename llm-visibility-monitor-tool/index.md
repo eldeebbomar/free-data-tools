@@ -6,6 +6,8 @@
 - Category: [AI & SEO](https://datatooly.xyz/category/ai-seo/)
 - URL: https://datatooly.xyz/llm-visibility-monitor-tool/
 - Backing Apify actor: [llm-visibility-monitor](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Audit a brand's visibility across AI answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-brand-ai-visibility-audit?fpr=v77kxu)
+- Another example on Apify: [Compare AI share of voice against competitors](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-share-of-voice-vs-competitors?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/)
 - More guides: [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)

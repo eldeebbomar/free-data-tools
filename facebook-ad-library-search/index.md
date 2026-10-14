@@ -6,7 +6,9 @@
 - Category: [Ads Intelligence](https://datatooly.xyz/category/ads-intelligence/)
 - URL: https://datatooly.xyz/facebook-ad-library-search/
 - Backing Apify actor: [facebook-ad-library-pro](https://apify.com/constructive_calm/facebook-ad-library-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape Facebook Ad Library ads by keyword](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/facebook-ads-by-keyword?fpr=v77kxu)
+- Another example on Apify: [Track a competitor's Facebook ads](https://apify.com/constructive_calm/facebook-ad-library-pro/examples/track-competitor-facebook-ads?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/)
 
 Search Meta's public Ad Library by keyword, advertiser and country, then preview the ad records the actor exports: advertiser page, ad copy, platforms and start date.

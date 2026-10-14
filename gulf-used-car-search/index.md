@@ -6,7 +6,9 @@
 - Category: [Automotive](https://datatooly.xyz/category/automotive/)
 - URL: https://datatooly.xyz/gulf-used-car-search/
 - Backing Apify actor: [gulf-used-car-scraper](https://apify.com/constructive_calm/gulf-used-car-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape used cars across DubiCars and Dubizzle UAE](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-whole-market-both-platforms?fpr=v77kxu)
+- Another example on Apify: [Track Toyota Land Cruiser prices in the UAE](https://apify.com/constructive_calm/gulf-used-car-scraper/examples/uae-cars-toyota-land-cruiser-watch?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Extract Dubai Used Car Listings Data from Gulf Marketplaces](https://datatooly.xyz/guides/dubai-used-car-listings-data/)
 
 Choose DubiCars or Dubizzle, a make and a model, and preview the UAE used-car listings the actor exports: price, year, mileage and GCC spec.

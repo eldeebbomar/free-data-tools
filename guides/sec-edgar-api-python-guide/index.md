@@ -7,6 +7,8 @@
 - Published: 2026-06-13
 - Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Run this exact query on Apify: [Get all 10-K and 10-Q filings for a company](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-company-filings-10k-10q?fpr=v77kxu)
+- Another example on Apify: [Get a company's revenue, net income and EPS history (XBRL)](https://apify.com/constructive_calm/sec-edgar-scraper/examples/sec-xbrl-revenue-eps-history?fpr=v77kxu)
 - Tags: api, python, finance, datascience
 
 The **SEC EDGAR API** is one of the best-kept secrets in financial data engineering: every mandatory disclosure filed by every U.S. public company, available as clean JSON, for free, with no API key. If you've ever paid for a "fundamentals" data vendor or scraped a brokerage page for a balance sheet, you've been working harder than you need to. The raw, authoritative source — quarterly revenue, insider trades, institutional holdings, 8-K event filings — is sitting on `data.sec.gov` waiting for an HTTP GET.

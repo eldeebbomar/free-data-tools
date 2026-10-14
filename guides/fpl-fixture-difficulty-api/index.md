@@ -7,6 +7,7 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
+- Run this exact query on Apify: [Get FPL captain and transfer picks with a 3-gameweek fixture lookahead](https://apify.com/constructive_calm/fpl-intelligence/examples/fpl-gameweek-captain-transfer-picks?fpr=v77kxu)
 - Tags: python, api, football, datascience
 
 FPL fixture difficulty ratings are in `https://fantasy.premierleague.com/api/fixtures/`: every fixture carries `team_h_difficulty` and `team_a_difficulty` on a 1–5 scale, where higher is harder. Use `fixtures/?future=1` for upcoming matches only, and map team IDs to names with `bootstrap-static/` → `teams`. No key is needed, but there's no CORS header, so call it from a script.

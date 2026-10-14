@@ -7,6 +7,7 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Get full trial details by NCT ID](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-full-trial-details-by-nct-id?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 To look up a clinical trial by NCT number, call `https://clinicaltrials.gov/api/v2/studies/{nctId}`, for example `/api/v2/studies/NCT04437511`. It returns the full record as JSON, with no API key and no signup. Add `fields=` to return only what you need. An unknown NCT number returns HTTP 404, and a malformed one returns HTTP 400.

@@ -7,6 +7,7 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Find completed trials with posted results](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-completed-trials-with-results?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 To find results of completed clinical trials, search ClinicalTrials.gov for completed studies that have posted results. With the free v2 API that's `https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com`. Then fetch a study with `fields=ResultsSection` to get its outcome measures, statistical analyses, participant flow and adverse events as JSON. No API key is needed.

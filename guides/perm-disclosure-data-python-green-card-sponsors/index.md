@@ -7,6 +7,8 @@
 - Published: 2026-09-29
 - Updated: 2026-10-14
 - Free tool: [Find H-1B & green-card visa sponsors + salary data](https://datatooly.xyz/visa-sponsor-finder/)
+- Run this exact query on Apify: [Find PERM green card sponsors for software engineers](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/perm-green-card-sponsors-software-engineer?fpr=v77kxu)
+- Another example on Apify: [Find PERM green card sponsors for data engineers](https://apify.com/constructive_calm/visa-sponsor-tracker/examples/perm-green-card-sponsors-data-engineer?fpr=v77kxu)
 - Tags: python, datascience, career, immigration
 
 To find green card (PERM) sponsors by city, download the Department of Labor's free PERM disclosure file and filter it in pandas. Keep `CASE_STATUS` values starting with "Certified", match `PRIMARY_WORKSITE_CITY` and `PRIMARY_WORKSITE_STATE`, optionally narrow by `PWD_SOC_CODE`, then count cases per `EMP_BUSINESS_NAME`. The current file is about 156 MB of XLSX. There's no API key and no signup, and the whole analysis is about 40 lines of Python.

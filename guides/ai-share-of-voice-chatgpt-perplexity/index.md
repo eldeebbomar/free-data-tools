@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
+- Run this exact query on Apify: [Compare AI share of voice against competitors](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-share-of-voice-vs-competitors?fpr=v77kxu)
+- Another example on Apify: [Track brand citations in Perplexity answers](https://apify.com/constructive_calm/llm-visibility-monitor/examples/llm-vis-perplexity-citation-tracking?fpr=v77kxu)
 - Tags: ai, seo, marketing, analytics
 
 AI share of voice is your share of the brand mentions in AI answers to a fixed set of buyer questions: answers naming you ÷ the sum of answers naming each tracked brand (you plus competitors). Measure it separately for ChatGPT, Perplexity and others, from repeated runs of unbranded prompts. Track citations of your domain as a second number.

@@ -6,6 +6,8 @@
 - Category: [App Intelligence](https://datatooly.xyz/category/app-intelligence/)
 - URL: https://datatooly.xyz/app-store-top-charts/
 - Backing Apify actor: [app-store-rank-tracker](https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
+- Run this exact query on Apify: [Track the US Top Free App Store chart](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-us-top-free-snapshot?fpr=v77kxu)
+- Another example on Apify: [Track all App Store charts across the EU G5 markets](https://apify.com/constructive_calm/app-store-rank-tracker/examples/appstore-europe-g5-all-charts?fpr=v77kxu)
 - Updated: 2026-10-14
 - Full guide: [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/)
 

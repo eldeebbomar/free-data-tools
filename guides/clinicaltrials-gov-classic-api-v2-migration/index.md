@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Run this exact query on Apify: [Find every clinical trial for one drug (semaglutide)](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-trials-by-drug-intervention-semaglutide?fpr=v77kxu)
+- Another example on Apify: [Get full trial details by NCT ID](https://apify.com/constructive_calm/clinical-trials-fda-scraper/examples/ctfda-full-trial-details-by-nct-id?fpr=v77kxu)
 - Tags: api, python, healthcare, datascience
 
 The classic ClinicalTrials.gov API (`/api/query/full_studies`, `/api/query/study_fields`, `/api/info/...`) was retired on June 25, 2024, and those URLs now return HTTP 404. Move to API v2 at `https://clinicaltrials.gov/api/v2/studies`. Put your classic `expr` into `query.term`, replace `min_rnk`/`max_rnk` with `pageSize` and `pageToken`, and use `format=json` or `csv`. For XML in the old shape, NLM runs `/api/legacy/` endpoints.

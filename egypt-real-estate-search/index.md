@@ -6,7 +6,9 @@
 - Category: [Real Estate](https://datatooly.xyz/category/real-estate/)
 - URL: https://datatooly.xyz/egypt-real-estate-search/
 - Backing Apify actor: [egypt-real-estate-scraper](https://apify.com/constructive_calm/egypt-real-estate-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape apartments for sale in Cairo across all platforms](https://apify.com/constructive_calm/egypt-real-estate-scraper/examples/egy-re-all-platforms-cairo-sale?fpr=v77kxu)
+- Another example on Apify: [Compare price per sqm for New Cairo apartments](https://apify.com/constructive_calm/egypt-real-estate-scraper/examples/egy-re-investor-price-per-sqm-newcairo?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 
 Pick Aqarmap, Property Finder or Dubizzle, a listing type and an area, and preview the Egyptian property listings the actor exports: price in EGP, area, bedrooms and location.

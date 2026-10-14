@@ -7,6 +7,8 @@
 - Published: 2026-10-14
 - Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
+- Run this exact query on Apify: [Search Hacker News stories within a date range](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-date-ranged-research-corpus?fpr=v77kxu)
+- Another example on Apify: [Build a Hacker News digest above a points threshold](https://apify.com/constructive_calm/hacker-news-scraper/examples/hn-best-stories-digest?fpr=v77kxu)
 - Tags: python, javascript, api, datascience
 
 To search Hacker News by date, call `https://hn.algolia.com/api/v1/search_by_date` with `numericFilters=created_at_i>=START,created_at_i<END` in Unix seconds. To filter by score, add `points>100` to the same parameter, comma-separated. Use `/search` instead when you want the highest-scoring stories first. No API key is needed. One query returns at most 1,000 hits, so split long ranges.

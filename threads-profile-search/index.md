@@ -6,7 +6,9 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/threads-profile-search/
 - Backing Apify actor: [threads-scraper](https://apify.com/constructive_calm/threads-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Run this exact query on Apify: [Scrape recent Threads posts from a list of users](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-user-posts?fpr=v77kxu)
+- Another example on Apify: [Scrape Threads profile data, bio and follower counts](https://apify.com/constructive_calm/threads-scraper/examples/threads-scrape-profile-data?fpr=v77kxu)
+- Updated: 2026-10-14
 - Full guide: [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 
 Enter Threads usernames and preview the public profile records the actor extracts without a login: bio, follower count, verification and links.
