@@ -33,7 +33,7 @@ Three details matter in practice:
 
 1. **The limit is per user, not per IP.** Ten workers each doing 2 requests per second is 20 per second, which is over the limit.
 2. **The block is not a fixed 10 minutes.** It lasts until your rate has stayed below the threshold for 10 minutes. If you keep retrying at full speed while blocked, the 10 minutes never start.
-3. **It covers all of SEC.gov.** That includes data.sec.gov (submissions, XBRL), efts.sec.gov (full-text search) and www.sec.gov (Archives, `company_tickers.json`).
+3. **It covers all of SEC.gov.** That includes `data.sec.gov` (submissions, XBRL), `efts.sec.gov` (full-text search) and `www.sec.gov` (Archives, `company_tickers.json`).
 
 The SEC also says it doesn't "offer technical support for developing or debugging scripted downloading processes", and that the policy "may change".
 
@@ -52,7 +52,7 @@ Each User-Agent below was sent to `https://data.sec.gov/submissions/CIK000078901
 | `Jane Doe jane@example.com` | 200 |
 | `Data Tooly research contact@example.com` | 200 |
 
-curl's default also got 403 from efts.sec.gov and from www.sec.gov (`/files/company_tickers.json` and an Archives document).
+curl's default also got 403 from `efts.sec.gov` and from `www.sec.gov` (`/files/company_tickers.json` and an Archives document).
 
 What this shows: the automatic 403 catches **missing and default library** User-Agents. It didn't check whether an email was present. A 200 doesn't make a request compliant, though. The policy asks for company-specific information and a contact, and the SEC can manage traffic it can't identify. Send `Name or Company contact@yourdomain` and you meet the rule as written.
 

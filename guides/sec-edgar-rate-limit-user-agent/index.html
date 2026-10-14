@@ -61,7 +61,7 @@ User-Agent: Sample Company Name AdminContact@&lt;sample company domain&gt;.com</
 <ol>
 <li><strong>The limit is per user, not per IP.</strong> Ten workers each doing 2 requests per second is 20 per second, which is over the limit.</li>
 <li><strong>The block is not a fixed 10 minutes.</strong> It lasts until your rate has stayed below the threshold for 10 minutes. If you keep retrying at full speed while blocked, the 10 minutes never start.</li>
-<li><strong>It covers all of SEC.gov.</strong> That includes data.sec.gov (submissions, XBRL), efts.sec.gov (full-text search) and <a href="http://www.sec.gov" target="_blank" rel="noopener">www.sec.gov</a> (Archives, <code>company_tickers.json</code>).</li>
+<li><strong>It covers all of SEC.gov.</strong> That includes <code>data.sec.gov</code> (submissions, XBRL), <code>efts.sec.gov</code> (full-text search) and <code>www.sec.gov</code> (Archives, <code>company_tickers.json</code>).</li>
 </ol>
 <p>The SEC also says it doesn&#39;t &quot;offer technical support for developing or debugging scripted downloading processes&quot;, and that the policy &quot;may change&quot;.</p>
 <h2 id="what-the-server-did-on-2026-10-14">What the server did on 2026-10-14</h2>
@@ -106,7 +106,7 @@ User-Agent: Sample Company Name AdminContact@&lt;sample company domain&gt;.com</
 <td>200</td>
 </tr>
 </tbody></table></div>
-<p>curl&#39;s default also got 403 from efts.sec.gov and from <a href="http://www.sec.gov" target="_blank" rel="noopener">www.sec.gov</a> (<code>/files/company_tickers.json</code> and an Archives document).</p>
+<p>curl&#39;s default also got 403 from <code>efts.sec.gov</code> and from <code>www.sec.gov</code> (<code>/files/company_tickers.json</code> and an Archives document).</p>
 <p>What this shows: the automatic 403 catches <strong>missing and default library</strong> User-Agents. It didn&#39;t check whether an email was present. A 200 doesn&#39;t make a request compliant, though. The policy asks for company-specific information and a contact, and the SEC can manage traffic it can&#39;t identify. Send <code>Name or Company contact@yourdomain</code> and you meet the rule as written.</p>
 <h3 id="the-403-page">The 403 page</h3>
 <p>The 403 body is an HTML page, not JSON. Its key lines:</p>
