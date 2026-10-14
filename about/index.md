@@ -14,7 +14,7 @@ Data Tooly is built and maintained by **Omar Eldeeb**, a data engineer who publi
 
 ## What this site is
 
-Data Tooly is a static collection of 28 free, no-login data tools grouped into 18 categories, plus 28 long-form [guides](https://datatooly.xyz/guides/). Each tool answers one concrete question about a public data source — what a company is hiring for, what an app ranks, what a Reddit search returns — and hands its exact configuration to an Apify actor when you need the same thing in bulk, on a schedule, or as clean JSON or CSV.
+Data Tooly is a static collection of 28 free, no-login data tools grouped into 18 categories, plus 30 long-form [guides](https://datatooly.xyz/guides/). Each tool answers one concrete question about a public data source — what a company is hiring for, what an app ranks, what a Reddit search returns — and hands its exact configuration to an Apify actor when you need the same thing in bulk, on a schedule, or as clean JSON or CSV.
 
 ## Live tools vs. query builders
 

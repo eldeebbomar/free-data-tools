@@ -1,0 +1,203 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>What Slippage Should I Set to Avoid Sandwich Attacks?</title>
+<meta name="description" content="Pick a slippage tolerance from pool depth and the pool&#39;s MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.">
+<link rel="canonical" href="https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="What Slippage Should I Set to Avoid Sandwich Attacks?"><meta property="og:description" content="Pick a slippage tolerance from pool depth and the pool&#39;s MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first."><meta property="og:url" content="https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-what-slippage-to-set-to-avoid-sandwich-attacks.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="What Slippage Should I Set to Avoid Sandwich Attacks?">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="defi"><meta property="article:tag" content="crypto"><meta property="article:tag" content="ethereum"><meta property="article:tag" content="solana">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What Slippage Should I Set to Avoid Sandwich Attacks?"><meta name="twitter:description" content="Pick a slippage tolerance from pool depth and the pool&#39;s MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-what-slippage-to-set-to-avoid-sandwich-attacks.jpg"><meta name="twitter:image:alt" content="What Slippage Should I Set to Avoid Sandwich Attacks?">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/#article","headline":"What Slippage Should I Set to Avoid Sandwich Attacks?","description":"Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-what-slippage-to-set-to-avoid-sandwich-attacks.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"defi, crypto, ethereum, solana","about":{"@type":"SoftwareApplication","name":"Scan DEX pairs for MEV & sandwich risk","url":"https://datatooly.xyz/mev-pair-scanner-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/#webpage","url":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/","name":"What Slippage Should I Set to Avoid Sandwich Attacks?","description":"Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-what-slippage-to-set-to-avoid-sandwich-attacks.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"What Slippage Should I Set to Avoid Sandwich Attacks?","item":"https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/"}]}</script>
+</head><body data-tool-id="mev-pair-scanner-tool"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/crypto-defi/">Crypto &amp; DeFi</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Crypto &amp; DeFi</span>
+<h1>What Slippage Should I Set to Avoid Sandwich Attacks?</h1>
+<p class="lede">Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Scan DEX pairs for MEV &amp; sandwich risk</p><p class="gcta-s">Build a ready-to-run query for DEX sandwich attack MEV data — preview the per-pair output shape (sandwich rate, MEV fee ratio, risk level), then run it live.</p><a class="btn btn-primary" href="../../mev-pair-scanner-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Set the lowest slippage tolerance that still lets your swap fill under normal price movement. As a starting point, that&#39;s about 0.1–0.5% on deep major pairs and about 0.5–1% on mid-size tokens. Go higher only on thin, fast-moving pools, and there an MEV-protected route matters more than the exact number. Your tolerance is the most a sandwich bot can push your price: 5% on a $1,000 swap lets your fill land up to $50 below the quote. Check whether the pool is actually being sandwiched before you choose.</p>
+<p><em>This is an explainer about trade execution, not financial advice. It doesn&#39;t tell you what to buy or sell.</em></p>
+<h2 id="what-slippage-tolerance-actually-does">What slippage tolerance actually does</h2>
+<p>When you request a swap, the app quotes an output amount. That quote already includes your <strong>price impact</strong>, which is how far your own trade moves the pool&#39;s price. Slippage tolerance is the extra room you allow on top of the quote, to cover price moves between the moment you sign and the moment your transaction lands in a block. The app turns it into a minimum output:</p>
+<p><code>minimum output = quoted output × (1 − slippage tolerance)</code></p>
+<p>If the price moves further than that before your swap executes, the swap fails instead of filling. On a normal public route you still pay the network fee for the failed transaction. Uniswap says its web app suggests a tolerance &quot;usually between 0.1% and 5%&quot;, based on live gas fees and your swap size.</p>
+<h2 id="why-high-slippage-invites-sandwich-attacks">Why high slippage invites sandwich attacks</h2>
+<p>A sandwich bot sees your pending swap and buys just before it, which pushes the price up. Your swap then fills at that worse price, and the bot sells just after you. The only thing that limits how far the bot can push you is your minimum output. Set it loosely, and you&#39;ve told the bot exactly how much room it has.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Swap size</th>
+<th>Tolerance</th>
+<th>Most your fill can land below the quote</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1,000</td>
+<td>0.5%</td>
+<td>$5</td>
+</tr>
+<tr>
+<td>$1,000</td>
+<td>1%</td>
+<td>$10</td>
+</tr>
+<tr>
+<td>$1,000</td>
+<td>5%</td>
+<td>$50</td>
+</tr>
+<tr>
+<td>$1,000</td>
+<td>10%</td>
+<td>$100</td>
+</tr>
+</tbody></table></div>
+<p>The table is plain arithmetic. It shows a ceiling, not the bot&#39;s profit: the bot also pays its own price impact, pool fees and gas or tips, so it only attacks when what it can take beats those costs. That&#39;s why academic work on sandwiches describes the trade-off as two-sided. A tolerance that&#39;s too small makes trades fail, and one that&#39;s too large lets bots profit. Larger trades and looser settings make you a more attractive target. Meme-coin traders get hit hard because they tend to set high slippage on thin, volatile pools.</p>
+<h2 id="a-rule-of-thumb-table">A rule-of-thumb table</h2>
+<p>These are my starting points, not guarantees. They assume you&#39;ve already checked your price impact on the swap screen, and the &quot;MEV risk&quot; columns come from the pool checks in the next section.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pool and trade</th>
+<th>Low MEV risk, no sandwiches seen</th>
+<th>Medium MEV risk, or a few sandwiches</th>
+<th>High MEV risk, or regular sandwiches</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Stablecoin to stablecoin, deep pool</td>
+<td>0.05–0.1%</td>
+<td>0.05–0.1%, protected route</td>
+<td>0.05–0.1%, protected route</td>
+</tr>
+<tr>
+<td>Major pair (ETH/USDC, SOL/USDC), price impact under 0.1%</td>
+<td>0.1–0.5%</td>
+<td>0.1–0.3%, protected route</td>
+<td>0.1–0.3%, protected route, split large orders</td>
+</tr>
+<tr>
+<td>Mid-size token, price impact under 1%</td>
+<td>0.5–1%</td>
+<td>0.5%, protected route</td>
+<td>Lowest that fills, protected route, trade smaller</td>
+</tr>
+<tr>
+<td>Thin or new pool, price impact over 1%</td>
+<td>1–3%</td>
+<td>Protected route, trade smaller</td>
+<td>Rethink the size; don&#39;t fix failed fills by raising slippage</td>
+</tr>
+</tbody></table></div>
+<p>Read across a row, not down a column. The same token can sit in a calm pool on one DEX and a heavily sandwiched pool on another, and the tolerance you pick should follow the pool you&#39;re actually routing through.</p>
+<h2 id="use-the-pool-s-mev-numbers-to-pick-a-setting">Use the pool&#39;s MEV numbers to pick a setting</h2>
+<p>The <a href="https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu" target="_blank" rel="noopener">MEV Risk Scanner</a> reads Codex&#39;s per-pool data for the last 24 hours. Four of its fields decide which column of the table you&#39;re in:</p>
+<ul>
+<li><code>sandwich_rate_24h</code> and <code>estimated_sandwich_attacks_24h</code>: the share of the pool&#39;s transactions that were sandwiched, and that rate multiplied by the day&#39;s transaction count. Anything above zero means bots are active in that pool right now.</li>
+<li><code>mev_risk_level</code>: the most common hourly label. Codex labels each hour <code>low</code> when builder tips are under 3% of fees, <code>medium</code> at 3–30%, and <code>high</code> above 30%. It measures how hard bots of every kind compete in the pool, not sandwiches alone.</li>
+<li><code>data_availability</code>: if the sandwich or fee fields weren&#39;t populated, treat the pool as unknown, which means the middle column.</li>
+<li><code>safer_trading_windows_utc</code>: the hours in the last day that were labelled <code>low</code>. Use it as a hint about busy hours, not a schedule.</li>
+</ul>
+<p>Two example rows, abbreviated and rounded, from a test run on 1 October 2026 (not live data):</p>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">[
+  { &quot;token0_symbol&quot;: &quot;WETH&quot;, &quot;token1_symbol&quot;: &quot;USDt&quot;, &quot;exchange&quot;: &quot;UniswapV3&quot;,
+    &quot;liquidity_usd&quot;: 56961580, &quot;transactions_24h&quot;: 708,
+    &quot;mev_risk_level&quot;: &quot;low&quot;, &quot;mev_to_total_fees_ratio_24h&quot;: 0.034,
+    &quot;sandwich_rate_24h&quot;: 0, &quot;estimated_sandwich_attacks_24h&quot;: 0 },
+  { &quot;token0_symbol&quot;: &quot;USDC&quot;, &quot;token1_symbol&quot;: &quot;WETH&quot;, &quot;exchange&quot;: &quot;UniswapV3&quot;,
+    &quot;liquidity_usd&quot;: 3417730, &quot;transactions_24h&quot;: 22633,
+    &quot;mev_risk_level&quot;: &quot;high&quot;, &quot;mev_to_total_fees_ratio_24h&quot;: 0.305,
+    &quot;sandwich_rate_24h&quot;: 0.00063, &quot;estimated_sandwich_attacks_24h&quot;: 14 }
+]</code></pre></div>
+<p>Both pools trade ETH against a dollar stablecoin on Ethereum. The first had no detected sandwiches and a low builder-tip share, so it falls in the left-hand column. The second had about 14 estimated sandwiches in a day and 30% of its fees going to builders, so it&#39;s the right-hand column: a tight setting and a protected route. A router may split your trade across both pools, so if you&#39;re choosing a pool by hand, choose with this in mind.</p>
+<h2 id="check-the-chart-before-you-trade">Check the chart before you trade</h2>
+<p>The numbers above cover the last 24 hours. Before you sign, look at the live chart too. Open the token on <a href="https://www.defined.fi/tokens?ref=CUKLU" target="_blank" rel="sponsored nofollow noopener" data-partner="defined">Defined</a> (referral link), switch the chart to 1-minute candles, and check two things:</p>
+<ol>
+<li><strong>How much the price moves in a minute.</strong> If recent 1-minute candles swing by 2%, a 0.3% tolerance will fail often. Wait, or trade smaller, rather than opening the gate wide.</li>
+<li><strong>Whether the trade list shows sandwiches.</strong> Look for the same wallet buying just before someone else and selling just after, at the same timestamp. <a href="https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/">How to tell if a token&#39;s pool is getting sandwiched</a> walks through it step by step.</li>
+</ol>
+<h2 id="when-your-swap-keeps-failing-at-low-slippage">When your swap keeps failing at low slippage</h2>
+<ul>
+<li><strong>Raise it in small steps,</strong> for example from 0.5% to 0.8%, not straight to 10%.</li>
+<li><strong>Use a protected route.</strong> <a href="https://docs.flashbots.net/flashbots-protect/overview" target="_blank" rel="noopener">Flashbots Protect</a> on Ethereum keeps your transaction out of the public mempool, and it doesn&#39;t include transactions that would revert, so a too-tight setting doesn&#39;t cost you a fee. On Solana, Jupiter offers dynamic slippage and an MEV-protect mode that routes through Jito block engines, for slightly higher fees.</li>
+<li><strong>Trade smaller,</strong> so your price impact and the room you leave both shrink.</li>
+<li><strong>Taxed tokens are a special case.</strong> If a token charges a transfer tax, your tolerance has to cover the tax or the swap fails, and a bot gets that same room. Be extra careful with size on those.</li>
+</ul>
+<p><em>Disclosure: I built the MEV Risk Scanner. The link marked &quot;referral link&quot; is a referral: if you sign up through it and trade, I get a share of the trading fees.</em></p>
+<h2 id="faq">FAQ</h2>
+<h3 id="is-0-5-slippage-safe-from-sandwich-attacks">Is 0.5% slippage safe from sandwich attacks?</h3>
+<p>On a deep major pair with small price impact, 0.5% leaves a bot little room, and an MEV-protected route closes most of the rest. No setting is completely safe, though. On a thin pool with regular sandwiches, even 0.5% of a large trade can be worth attacking.</p>
+<h3 id="what-slippage-should-i-use-for-meme-coins">What slippage should I use for meme coins?</h3>
+<p>Use the lowest setting that fills, usually higher than for major pairs because these prices move fast. Check the pool first. If it shows regular sandwiches, use a protected route and trade smaller instead of raising slippage.</p>
+<h3 id="why-does-my-swap-fail-when-i-set-low-slippage">Why does my swap fail when I set low slippage?</h3>
+<p>The price moved past your minimum output before your transaction landed, either from normal volatility or from other trades in the same block. Raise the tolerance a little at a time, or use a route that doesn&#39;t charge you for reverted transactions.</p>
+<h3 id="does-auto-slippage-protect-me-from-mev">Does auto slippage protect me from MEV?</h3>
+<p>Auto or dynamic slippage sets the tolerance from the current market for each trade, which usually keeps it tighter than a fixed high value. That reduces the room a bot gets, but it doesn&#39;t hide your transaction. A protected route does that.</p>
+<h3 id="can-i-use-high-slippage-if-i-send-through-a-private-rpc">Can I use high slippage if I send through a private RPC?</h3>
+<p>A private RPC hides your swap from public-mempool bots, which is the biggest risk. A 2026 study still found sandwiches against &quot;protected&quot; transactions on several chains, so keep slippage sensible even on a private route.</p>
+<h3 id="what-s-the-difference-between-price-impact-and-slippage">What&#39;s the difference between price impact and slippage?</h3>
+<p>Price impact is how far your own trade moves the pool&#39;s price, and it&#39;s already built into your quote. Slippage tolerance is the extra movement you accept on top of the quote before the swap fails.</p>
+<h3 id="does-a-low-mev-risk-level-mean-i-can-loosen-slippage">Does a low <code>mev_risk_level</code> mean I can loosen slippage?</h3>
+<p>Not by itself. <code>mev_risk_level</code> reflects the builder-tip share of fees, not sandwiches. Check <code>sandwich_rate_24h</code> too, and remember that both describe the last 24 hours, not your next block.</p>
+<h3 id="what-slippage-should-i-set-for-stablecoin-swaps">What slippage should I set for stablecoin swaps?</h3>
+<p>Stablecoin pairs barely move, so 0.05–0.1% usually fills in a deep pool. Anything much looser only gives a bot room to work with.</p>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Uniswap, &quot;What is slippage in crypto?&quot;: <a href="https://blog.uniswap.org/what-is-slippage-crypto" target="_blank" rel="noopener">https://blog.uniswap.org/what-is-slippage-crypto</a></li>
+<li>MEV Blocker, &quot;Sandwich attacks&quot;: <a href="https://docs.mevblocker.io/concepts/mev-attack-types/sandwich-attacks" target="_blank" rel="noopener">https://docs.mevblocker.io/concepts/mev-attack-types/sandwich-attacks</a></li>
+<li>Heimbach and Wattenhofer, &quot;Eliminating Sandwich Attacks with the Help of Game Theory&quot; (2022): <a href="https://arxiv.org/abs/2202.03762" target="_blank" rel="noopener">https://arxiv.org/abs/2202.03762</a></li>
+<li>Helius, &quot;Solana MEV report&quot; (memecoin slippage, Jupiter dynamic slippage and MEV Protect): <a href="https://www.helius.dev/blog/solana-mev-report" target="_blank" rel="noopener">https://www.helius.dev/blog/solana-mev-report</a></li>
+<li>Heimbach, Solmaz, Öz and Torres, &quot;No Place to Hide: An Analysis on Protected Order Flow Sandwich Attacks&quot; (2026): <a href="https://arxiv.org/abs/2609.28115" target="_blank" rel="noopener">https://arxiv.org/abs/2609.28115</a></li>
+<li>Flashbots Protect overview: <a href="https://docs.flashbots.net/flashbots-protect/overview" target="_blank" rel="noopener">https://docs.flashbots.net/flashbots-protect/overview</a></li>
+</ul>
+
+</div>
+<p class="guide-end"><a href="../../mev-pair-scanner-tool/">Open the free Scan DEX pairs for MEV &amp; sandwich risk tool →</a></p>
+</div>
+</article>
+<div class="wrap-narrow"><aside class="partner-card" data-pos="guide" aria-label="Referral partner: Defined">
+<span class="pc-k">Referral partner · live charts</span>
+<p class="pc-t">Check the live chart first</p>
+<p class="pc-s">Defined charts any token or pool on the chains covered here, built on the same Codex data as the queries above — check price, liquidity and recent trades before you trade or provide liquidity.</p>
+<a class="btn btn-ghost" href="https://www.defined.fi/tokens?ref=CUKLU" target="_blank" rel="sponsored nofollow noopener" data-partner="defined">Open live charts on Defined <span class="arr">→</span></a>
+<p class="pc-d">Referral link — the site earns a share of trading fees if you sign up. Not financial advice; crypto trading is high-risk. <a href="../../about/#affiliate">Disclosure</a>.</p>
+</aside></div>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/check-dex-pool-sandwich-attack-rate/">How to Check a DEX Pool's Sandwich Attack Rate (Python + API) →</a><a href="../../guides/tell-if-token-pool-is-getting-sandwiched/">How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap →</a><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV →</a><a href="../../guides/cointelegraph-api-crypto-news-json/">Cointelegraph API: Get Crypto News as JSON Without a Key →</a><a href="../../guides/new-cairo-price-per-sqm-by-compound-python/">Price per sqm by Compound in New Cairo: Compute It with Python →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter, and links to defined.fi carry a referral code (the site earns a share of trading fees from users who sign up through them) — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

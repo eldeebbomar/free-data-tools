@@ -158,8 +158,8 @@ Go build something. The index is wide open.
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)

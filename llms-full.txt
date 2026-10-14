@@ -160,11 +160,13 @@ Hub: https://datatooly.xyz/category/jobs-visas/
 - [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 - [Shopify products.json Pagination: 250 Limit and the 25,000 Cap](https://datatooly.xyz/guides/shopify-products-json-pagination/): Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/): A verified, runnable guide to scraping public Telegram channels without login, an API key or a phone number, using the t.me/s/ preview and plain HTTP.
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/): A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.
 - [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/): How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/): A practical guide to Understat xG data export: how the data is embedded in the page, a Python scraper that decodes it, and league and player xG to CSV.
 - [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 
 ## Key facts
@@ -238,7 +240,7 @@ Data Tooly is built and maintained by **Omar Eldeeb**, a data engineer who publi
 
 ## What this site is
 
-Data Tooly is a static collection of 28 free, no-login data tools grouped into 18 categories, plus 28 long-form [guides](https://datatooly.xyz/guides/). Each tool answers one concrete question about a public data source — what a company is hiring for, what an app ranks, what a Reddit search returns — and hands its exact configuration to an Apify actor when you need the same thing in bulk, on a schedule, or as clean JSON or CSV.
+Data Tooly is a static collection of 28 free, no-login data tools grouped into 18 categories, plus 30 long-form [guides](https://datatooly.xyz/guides/). Each tool answers one concrete question about a public data source — what a company is hiring for, what an app ranks, what a Reddit search returns — and hands its exact configuration to an Apify actor when you need the same thing in bulk, on a schedule, or as clean JSON or CSV.
 
 ## Live tools vs. query builders
 
@@ -860,7 +862,7 @@ Source: https://datatooly.xyz/category/crypto-defi/
 
 - URL: https://datatooly.xyz/category/crypto-defi/
 - Tools: 1 (0 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -869,6 +871,8 @@ Source: https://datatooly.xyz/category/crypto-defi/
 ## Guides
 
 - [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/): Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 
 ## Other categories
 
@@ -4518,13 +4522,15 @@ Source: https://datatooly.xyz/guides/
 
 # Guides to public data APIs and scraping
 
-> 28 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
+> 30 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
 
 - URL: https://datatooly.xyz/guides/
 - Updated: 2026-10-14
 
 ## Guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/) (2026-10-14): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/) (2026-10-14): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/) (2026-09-29): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/) (2026-09-29): Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/) (2026-09-29): Stop trusting broker blogs: compute New Cairo apartment price per square meter by compound from live Property Finder Egypt listings, split ready vs off-plan.
@@ -4698,11 +4704,11 @@ Copy the `fetch()` snippet above and you'll have live App Store top charts in un
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -4901,10 +4907,10 @@ Pass the condition as `query.cond` on the studies endpoint: `https://clinicaltri
 ## Related guides
 
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -5079,11 +5085,11 @@ One honest note: these endpoints are public because companies *want* their jobs 
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -5325,11 +5331,11 @@ Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
-- [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/)
 
 ---
 
@@ -5504,10 +5510,10 @@ Yes. The script writes `new_cairo_listings.csv` directly. The Apify actor also e
 ## Related guides
 
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -5637,10 +5643,10 @@ For a **facebook ad library scraper**, draw the line clearly: the official Meta 
 ## Related guides
 
 - [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 ---
 
@@ -5808,10 +5814,10 @@ All sit under `https://fantasy.premierleague.com/api/`: `bootstrap-static/` (pla
 ## Related guides
 
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -5933,11 +5939,11 @@ A closing note on doing this responsibly: scraping any site, Google Patents incl
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -6107,11 +6113,11 @@ The reason **Dubai used car listings data** is approachable comes down to one th
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -6277,11 +6283,11 @@ Go build something. The index is wide open.
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -6445,10 +6451,10 @@ Collect the profile URLs, normalize them to slugs, and write name, headline, URL
 ## Related guides
 
 - [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 ---
 
@@ -6589,10 +6595,10 @@ The durable lesson is that a good **LinkedIn profile scraper** is mostly an exer
 ## Related guides
 
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 ---
 
@@ -6778,11 +6784,11 @@ Yes, by hand in the apps: ask the same buyer-style questions in each one, note e
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -6962,11 +6968,11 @@ Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -7166,10 +7172,10 @@ No. It is a record of what people publish online. It shouldn't be used to judge 
 ## Related guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -7312,7 +7318,7 @@ Whatever path you pick, respect the source. Reddit's terms prohibit unauthorized
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
 
 ---
 
@@ -7528,11 +7534,11 @@ Pricing pages are published for anyone to read, but legality depends on your jur
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -7673,10 +7679,10 @@ There is no official H-1B salary JSON API. But the data behind every H-1B salary
 ## Related guides
 
 - [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 ---
 
@@ -7824,10 +7830,10 @@ The takeaway, tool or no tool: in Saudi Arabia, the regulator handed you a free 
 ## Related guides
 
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -7973,11 +7979,11 @@ The SEC's current maximum is 10 requests per second, and it reserves the right t
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -8166,11 +8172,11 @@ The store blocks non-browser clients with a WAF or CDN rule, or is password-prot
 
 ## Related guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -8338,7 +8344,155 @@ To **scrape a Telegram channel without login**: fetch `https://t.me/s/<channel>`
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+
+---
+
+Source: https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/
+
+# How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap
+
+> Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
+
+- URL: https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Tags: defi, crypto, ethereum, solana
+
+To tell whether a token's pool is getting sandwiched, look through its recent trades for one wallet that buys just before someone else's buy and sells just after it, in the same block. Then check two numbers for the last 24 hours: the share of the pool's transactions that were sandwiched, and the share of its fees that went to MEV. If either is high, trade with tight slippage through an MEV-protected route, or trade smaller.
+
+*This is an explainer about how trades get executed. It is not financial advice and says nothing about whether any token is worth buying.*
+
+## What a sandwich attack is
+
+A sandwich attack is three swaps in one block. A bot buys the token just before your pending buy (the front-run), your buy fills at the higher price the bot just created, and the bot sells right after you (the back-run) and keeps the difference. Your slippage tolerance caps how far the bot can push your price: if the front-run moves the price past your minimum output, your swap reverts instead of filling.
+
+The bot has to see your swap before it lands in a block. On Ethereum that usually means the public mempool. Solana has no public mempool, but sandwiches still happen there through private mempools and validators that see transactions before they're included.
+
+## Check 1: read the pool's trade feed
+
+The most direct evidence is in the trades themselves. Open the pool's chart and trade list, for example this [USDC/WETH Uniswap v3 pool on Defined](https://www.defined.fi/eth/0xe0554a476a092703abdb3ef35c80e0d76d32939f?ref=CUKLU) (referral link), and work through these steps:
+
+1. Switch the chart to a 1-minute timeframe and click a busy candle. The trade table then shows only the trades inside that candle.
+2. Look for a triplet: wallet A buys, a different wallet B buys, then wallet A sells about the same amount it bought, with the same timestamp.
+3. Filter the trade table by wallet A's address. A sandwich bot repeats that buy-then-sell rhythm around other people's trades, often many times a day on the same pool.
+4. To confirm a single case, open the three transactions in a block explorer (Etherscan, Solscan, Basescan) and check that they share a block number and appear in that order.
+
+Some patterns look similar but aren't sandwiches. A wallet that buys and sells minutes apart is just a trader, and a lone sell right after a big swap is usually arbitrage. A sandwich needs both legs, one on each side of a victim. Checking by eye also only covers one pool for one hour. It can't tell you how often the pool gets hit.
+
+## Check 2: measure the sandwich rate and the MEV share
+
+[Codex](https://www.codex.io/) indexes DEX trades and flags sandwiched transactions for each pool. The [MEV Risk Scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) on Apify reads that data for a token's top pools, for specific pool addresses, or for a chain's busiest pools. For each pool it returns these fields covering the last 24 hours:
+
+| Field | What it tells you |
+|---|---|
+| `sandwich_rate_24h` | Share of the pool's transactions that were sandwiched (the average of the hourly rates) |
+| `estimated_sandwich_attacks_24h` | That rate multiplied by the 24h transaction count, rounded. It's an estimate, not a list of attacks |
+| `mev_to_total_fees_ratio_24h` | Share of the pool's fees paid to block builders as tips |
+| `mev_risk_level` | The most common hourly label. Codex labels each hour `low` (under 3% builder tips), `medium` (3–30%) or `high` (over 30%) |
+| `fee_regime_24h` | `mev-dominated`, `gas-dominated` or `pool-fee-dominated` |
+| `safer_trading_windows_utc` | Start times of the hours labelled `low` |
+| `data_availability` | How much of each field was populated, so you can tell "zero" from "not indexed" |
+
+Here's an example row, abbreviated and rounded, from a test run on 1 October 2026. It isn't live data:
+
+```json
+{
+  "pair_address": "0xe0554a476a092703abdb3ef35c80e0d76d32939f",
+  "chain": "ethereum",
+  "exchange": "UniswapV3",
+  "token0_symbol": "USDC",
+  "token1_symbol": "WETH",
+  "liquidity_usd": 3417730,
+  "transactions_24h": 22633,
+  "mev_risk_level": "high",
+  "mev_to_total_fees_ratio_24h": 0.305,
+  "fee_regime_24h": "mev-dominated",
+  "sandwich_rate_24h": 0.00063,
+  "estimated_sandwich_attacks_24h": 14,
+  "safer_trading_windows_utc": []
+}
+```
+
+In plain terms, about 0.06% of roughly 22,600 transactions were sandwiched, around 14 in a day. Meanwhile about 30% of the pool's fees went to block builders, and no hour was quiet enough to count as `low`.
+
+Those are two different signals. `mev_risk_level` measures builder tips, and builder tips pay for every kind of MEV, including arbitrage, back-runs and liquidations, not just sandwiches. A pool can be `high` and see few sandwiches, or `low` and still get sandwiched. Use `sandwich_rate_24h` as your sandwich signal, and `mev_risk_level` as a measure of how hard bots compete in that pool. Compare pools that trade the same pair: one whose rate is several times higher than its siblings is the one to route around.
+
+## Check 3: compare your trade size with the pool
+
+A sandwich only pays if the bot's profit beats its own gas, fees and tips. That profit grows with two things: how far your trade moves the price, and how much slippage you allow. Your swap screen's **price impact** figure shows how much your trade alone moves the price. A trade with almost no price impact in a deep pool is a thin target. A trade that moves a thin meme-coin pool by several percent, sent with a loose slippage setting, is exactly what bots look for.
+
+Liquidity figures aren't always comparable across sites, because they count pool depth differently. Compare figures from the same source.
+
+## Check 4: decide how to send the trade
+
+- **Use an MEV-protected route.** On Ethereum, [Flashbots Protect](https://docs.flashbots.net/flashbots-protect/overview) sends your transaction to a private mempool that sandwich bots can't see. It doesn't include transactions that would revert, so you don't pay for failed swaps. [MEV Blocker](https://docs.mevblocker.io/) works in a similar way. On Solana, some aggregators offer an MEV-protect mode that routes through Jito block engines, at slightly higher fees.
+- **Keep slippage tight.** The tighter it is, the less room a front-run has. The companion guide [What slippage should I set to avoid sandwich attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/) covers how to choose a number.
+- **Trade smaller, or split the order,** when your price impact is high.
+- **Treat timing as a hint.** `safer_trading_windows_utc` shows which hours yesterday had a low builder-tip share. It doesn't promise anything about tomorrow.
+
+## What these checks can't tell you
+
+- **They describe the past 24 hours, not your next transaction.** The bot that targets you only needs to see your swap once.
+- **Detection comes from Codex,** and coverage varies. Some Solana pools return a sandwich rate but no fee breakdown. On L2s like Base, builder tips are empty or zero, so `mev_to_total_fees_ratio_24h` comes back null there. Read `data_availability` before trusting a zero.
+- **Protected routes reduce the risk but don't remove it.** A 2026 measurement study found sandwich attacks against "protected" transactions on every chain it examined, and noted that these often don't sit tightly around the victim. That means they won't always show up as the neat triplet from Check 1.
+
+## Run it for your own tokens
+
+The free [MEV pair scanner query builder](https://datatooly.xyz/mev-pair-scanner-tool/) turns a token or pool address and a chain into a ready-to-run input, and shows the output shape. It doesn't call Codex from your browser. The [actor](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) runs the scan: up to 20 pools per run, at 1-hour bars by default (5-minute to 1-day bars are also available), with an optional one-line AI verdict. It's free to start, then pay-as-you-go per pool scanned. If you'd rather write the code yourself, [the Python version of this check](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/) calls Codex directly.
+
+*Disclosure: I built the query builder and the actor. The link marked "referral link" is a referral: if you sign up through it and trade, I get a share of the trading fees.*
+
+## FAQ
+
+### Can I see a sandwich attack on a DEX chart?
+
+Not on the candles themselves. You can see one in the trade list: the same wallet buys just before another trader's buy and sells just after it, in the same block. Click a 1-minute candle to filter the trades down to that minute, then filter by the suspected bot's wallet.
+
+### Does a high MEV risk level mean the pool is getting sandwiched?
+
+Not necessarily. `mev_risk_level` comes from the share of fees paid to block builders, and that covers arbitrage and liquidations as well as sandwiches. Check `sandwich_rate_24h` for sandwiches specifically.
+
+### Is a pool with a 0% sandwich rate safe to swap in?
+
+It means few or no sandwiches were detected in the last 24 hours, or, if `data_availability` shows the field as missing, that nothing was measured. A loose slippage setting on a public route can still get you sandwiched, so keep slippage tight either way.
+
+### Are meme coins sandwiched more than major pairs?
+
+Meme-coin traders are an easy target because they often set high slippage when trading thin, volatile pools. The pool's own numbers matter more than the category, though, so check each pool.
+
+### Do private RPCs stop sandwich attacks?
+
+They hide your transaction from the public mempool, and that removes the most common way bots find victims. Research published in 2026 still found sandwiches against protected transactions on several chains, so treat a private RPC as a big risk reduction, not a guarantee.
+
+### Why are some fields null for Solana or Base pools?
+
+Codex's fee indexing varies by pool on Solana, and L2s like Base don't have a builder-tip market like Ethereum mainnet's. A null value means "not available", not zero.
+
+### Which chains can I check?
+
+Any network Codex indexes, which is more than a hundred, including Ethereum, Solana, Base, BNB Chain and Arbitrum. Paste a bare `0x` address with a default chain selected, a Solana address as-is, or `chain:address` to mix chains in one run.
+
+## Sources
+
+- MEV Blocker, "Sandwich attacks": https://docs.mevblocker.io/concepts/mev-attack-types/sandwich-attacks
+- Helius, "Solana MEV report" (private mempools, memecoin slippage, Jupiter MEV Protect): https://www.helius.dev/blog/solana-mev-report
+- Heimbach and Wattenhofer, "Eliminating Sandwich Attacks with the Help of Game Theory" (2022): https://arxiv.org/abs/2202.03762
+- Heimbach, Solmaz, Öz and Torres, "No Place to Hide: An Analysis on Protected Order Flow Sandwich Attacks" (2026): https://arxiv.org/abs/2609.28115
+- Flashbots Protect overview: https://docs.flashbots.net/flashbots-protect/overview
+- Defined docs, transaction filtering: https://docs.defined.fi/trading/defined-features/transaction-filtering
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
+
+## Related guides
+
+- [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 
 ---
 
@@ -8562,7 +8716,7 @@ It lets an app call `GET /keyword_search` on the Threads API, together with `thr
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
 
 ---
 
@@ -8695,7 +8849,7 @@ Whether you hand-roll it with the snippet here or run the actor, the takeaways a
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
 
 ---
 
@@ -8824,10 +8978,10 @@ The **TikTok ad library API** is real and, for the DSA region, surprisingly rich
 ## Related guides
 
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 ---
 
@@ -8974,10 +9128,10 @@ There's no official Understat API, but there doesn't need to be. The xG, xA, and
 ## Related guides
 
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
 
 ---
 
@@ -9181,10 +9335,158 @@ Employer names are free text in the source. Trailing spaces, punctuation and sub
 ## Related guides
 
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+
+---
+
+Source: https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/
+
+# What Slippage Should I Set to Avoid Sandwich Attacks?
+
+> Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
+
+- URL: https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/)
+- Tags: defi, crypto, ethereum, solana
+
+Set the lowest slippage tolerance that still lets your swap fill under normal price movement. As a starting point, that's about 0.1–0.5% on deep major pairs and about 0.5–1% on mid-size tokens. Go higher only on thin, fast-moving pools, and there an MEV-protected route matters more than the exact number. Your tolerance is the most a sandwich bot can push your price: 5% on a $1,000 swap lets your fill land up to $50 below the quote. Check whether the pool is actually being sandwiched before you choose.
+
+*This is an explainer about trade execution, not financial advice. It doesn't tell you what to buy or sell.*
+
+## What slippage tolerance actually does
+
+When you request a swap, the app quotes an output amount. That quote already includes your **price impact**, which is how far your own trade moves the pool's price. Slippage tolerance is the extra room you allow on top of the quote, to cover price moves between the moment you sign and the moment your transaction lands in a block. The app turns it into a minimum output:
+
+`minimum output = quoted output × (1 − slippage tolerance)`
+
+If the price moves further than that before your swap executes, the swap fails instead of filling. On a normal public route you still pay the network fee for the failed transaction. Uniswap says its web app suggests a tolerance "usually between 0.1% and 5%", based on live gas fees and your swap size.
+
+## Why high slippage invites sandwich attacks
+
+A sandwich bot sees your pending swap and buys just before it, which pushes the price up. Your swap then fills at that worse price, and the bot sells just after you. The only thing that limits how far the bot can push you is your minimum output. Set it loosely, and you've told the bot exactly how much room it has.
+
+| Swap size | Tolerance | Most your fill can land below the quote |
+|---|---|---|
+| $1,000 | 0.5% | $5 |
+| $1,000 | 1% | $10 |
+| $1,000 | 5% | $50 |
+| $1,000 | 10% | $100 |
+
+The table is plain arithmetic. It shows a ceiling, not the bot's profit: the bot also pays its own price impact, pool fees and gas or tips, so it only attacks when what it can take beats those costs. That's why academic work on sandwiches describes the trade-off as two-sided. A tolerance that's too small makes trades fail, and one that's too large lets bots profit. Larger trades and looser settings make you a more attractive target. Meme-coin traders get hit hard because they tend to set high slippage on thin, volatile pools.
+
+## A rule-of-thumb table
+
+These are my starting points, not guarantees. They assume you've already checked your price impact on the swap screen, and the "MEV risk" columns come from the pool checks in the next section.
+
+| Pool and trade | Low MEV risk, no sandwiches seen | Medium MEV risk, or a few sandwiches | High MEV risk, or regular sandwiches |
+|---|---|---|---|
+| Stablecoin to stablecoin, deep pool | 0.05–0.1% | 0.05–0.1%, protected route | 0.05–0.1%, protected route |
+| Major pair (ETH/USDC, SOL/USDC), price impact under 0.1% | 0.1–0.5% | 0.1–0.3%, protected route | 0.1–0.3%, protected route, split large orders |
+| Mid-size token, price impact under 1% | 0.5–1% | 0.5%, protected route | Lowest that fills, protected route, trade smaller |
+| Thin or new pool, price impact over 1% | 1–3% | Protected route, trade smaller | Rethink the size; don't fix failed fills by raising slippage |
+
+Read across a row, not down a column. The same token can sit in a calm pool on one DEX and a heavily sandwiched pool on another, and the tolerance you pick should follow the pool you're actually routing through.
+
+## Use the pool's MEV numbers to pick a setting
+
+The [MEV Risk Scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) reads Codex's per-pool data for the last 24 hours. Four of its fields decide which column of the table you're in:
+
+- `sandwich_rate_24h` and `estimated_sandwich_attacks_24h`: the share of the pool's transactions that were sandwiched, and that rate multiplied by the day's transaction count. Anything above zero means bots are active in that pool right now.
+- `mev_risk_level`: the most common hourly label. Codex labels each hour `low` when builder tips are under 3% of fees, `medium` at 3–30%, and `high` above 30%. It measures how hard bots of every kind compete in the pool, not sandwiches alone.
+- `data_availability`: if the sandwich or fee fields weren't populated, treat the pool as unknown, which means the middle column.
+- `safer_trading_windows_utc`: the hours in the last day that were labelled `low`. Use it as a hint about busy hours, not a schedule.
+
+Two example rows, abbreviated and rounded, from a test run on 1 October 2026 (not live data):
+
+```json
+[
+  { "token0_symbol": "WETH", "token1_symbol": "USDt", "exchange": "UniswapV3",
+    "liquidity_usd": 56961580, "transactions_24h": 708,
+    "mev_risk_level": "low", "mev_to_total_fees_ratio_24h": 0.034,
+    "sandwich_rate_24h": 0, "estimated_sandwich_attacks_24h": 0 },
+  { "token0_symbol": "USDC", "token1_symbol": "WETH", "exchange": "UniswapV3",
+    "liquidity_usd": 3417730, "transactions_24h": 22633,
+    "mev_risk_level": "high", "mev_to_total_fees_ratio_24h": 0.305,
+    "sandwich_rate_24h": 0.00063, "estimated_sandwich_attacks_24h": 14 }
+]
+```
+
+Both pools trade ETH against a dollar stablecoin on Ethereum. The first had no detected sandwiches and a low builder-tip share, so it falls in the left-hand column. The second had about 14 estimated sandwiches in a day and 30% of its fees going to builders, so it's the right-hand column: a tight setting and a protected route. A router may split your trade across both pools, so if you're choosing a pool by hand, choose with this in mind.
+
+## Check the chart before you trade
+
+The numbers above cover the last 24 hours. Before you sign, look at the live chart too. Open the token on [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link), switch the chart to 1-minute candles, and check two things:
+
+1. **How much the price moves in a minute.** If recent 1-minute candles swing by 2%, a 0.3% tolerance will fail often. Wait, or trade smaller, rather than opening the gate wide.
+2. **Whether the trade list shows sandwiches.** Look for the same wallet buying just before someone else and selling just after, at the same timestamp. [How to tell if a token's pool is getting sandwiched](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/) walks through it step by step.
+
+## When your swap keeps failing at low slippage
+
+- **Raise it in small steps,** for example from 0.5% to 0.8%, not straight to 10%.
+- **Use a protected route.** [Flashbots Protect](https://docs.flashbots.net/flashbots-protect/overview) on Ethereum keeps your transaction out of the public mempool, and it doesn't include transactions that would revert, so a too-tight setting doesn't cost you a fee. On Solana, Jupiter offers dynamic slippage and an MEV-protect mode that routes through Jito block engines, for slightly higher fees.
+- **Trade smaller,** so your price impact and the room you leave both shrink.
+- **Taxed tokens are a special case.** If a token charges a transfer tax, your tolerance has to cover the tax or the swap fails, and a bot gets that same room. Be extra careful with size on those.
+
+*Disclosure: I built the MEV Risk Scanner. The link marked "referral link" is a referral: if you sign up through it and trade, I get a share of the trading fees.*
+
+## FAQ
+
+### Is 0.5% slippage safe from sandwich attacks?
+
+On a deep major pair with small price impact, 0.5% leaves a bot little room, and an MEV-protected route closes most of the rest. No setting is completely safe, though. On a thin pool with regular sandwiches, even 0.5% of a large trade can be worth attacking.
+
+### What slippage should I use for meme coins?
+
+Use the lowest setting that fills, usually higher than for major pairs because these prices move fast. Check the pool first. If it shows regular sandwiches, use a protected route and trade smaller instead of raising slippage.
+
+### Why does my swap fail when I set low slippage?
+
+The price moved past your minimum output before your transaction landed, either from normal volatility or from other trades in the same block. Raise the tolerance a little at a time, or use a route that doesn't charge you for reverted transactions.
+
+### Does auto slippage protect me from MEV?
+
+Auto or dynamic slippage sets the tolerance from the current market for each trade, which usually keeps it tighter than a fixed high value. That reduces the room a bot gets, but it doesn't hide your transaction. A protected route does that.
+
+### Can I use high slippage if I send through a private RPC?
+
+A private RPC hides your swap from public-mempool bots, which is the biggest risk. A 2026 study still found sandwiches against "protected" transactions on several chains, so keep slippage sensible even on a private route.
+
+### What's the difference between price impact and slippage?
+
+Price impact is how far your own trade moves the pool's price, and it's already built into your quote. Slippage tolerance is the extra movement you accept on top of the quote before the swap fails.
+
+### Does a low `mev_risk_level` mean I can loosen slippage?
+
+Not by itself. `mev_risk_level` reflects the builder-tip share of fees, not sandwiches. Check `sandwich_rate_24h` too, and remember that both describe the last 24 hours, not your next block.
+
+### What slippage should I set for stablecoin swaps?
+
+Stablecoin pairs barely move, so 0.05–0.1% usually fills in a deep pool. Anything much looser only gives a bot room to work with.
+
+## Sources
+
+- Uniswap, "What is slippage in crypto?": https://blog.uniswap.org/what-is-slippage-crypto
+- MEV Blocker, "Sandwich attacks": https://docs.mevblocker.io/concepts/mev-attack-types/sandwich-attacks
+- Heimbach and Wattenhofer, "Eliminating Sandwich Attacks with the Help of Game Theory" (2022): https://arxiv.org/abs/2202.03762
+- Helius, "Solana MEV report" (memecoin slippage, Jupiter dynamic slippage and MEV Protect): https://www.helius.dev/blog/solana-mev-report
+- Heimbach, Solmaz, Öz and Torres, "No Place to Hide: An Analysis on Protected Order Flow Sandwich Attacks" (2026): https://arxiv.org/abs/2609.28115
+- Flashbots Protect overview: https://docs.flashbots.net/flashbots-protect/overview
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
+
+## Related guides
+
+- [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 ---
 
@@ -9314,4 +9616,4 @@ However you go about it, keep it to **public data only** — public Shorts, publ
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)

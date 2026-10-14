@@ -43,7 +43,7 @@
   <url><loc>https://datatooly.xyz/category/automotive/</loc><lastmod>2026-09-29</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/category/lead-generation/</loc><lastmod>2026-09-29</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/category/ai-seo/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
-  <url><loc>https://datatooly.xyz/category/crypto-defi/</loc><lastmod>2026-09-29</lastmod><priority>0.6</priority></url>
+  <url><loc>https://datatooly.xyz/category/crypto-defi/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/category/saas-seo/</loc><lastmod>2026-09-29</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/category/finance-filings/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/category/jobs-visas/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
@@ -70,11 +70,13 @@
   <url><loc>https://datatooly.xyz/guides/sec-edgar-api-python-guide/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/shopify-products-json-pagination/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/scrape-telegram-channel-without-login/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/threads-keyword-search-without-app-review/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/tiktok-ad-library-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/understat-xg-data-export/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/scrape-youtube-shorts-data/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/about/</loc><lastmod>2026-10-14</lastmod><priority>0.4</priority></url>
 </urlset>

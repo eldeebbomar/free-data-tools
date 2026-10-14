@@ -4,7 +4,7 @@
 
 - URL: https://datatooly.xyz/category/crypto-defi/
 - Tools: 1 (0 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -13,6 +13,8 @@
 ## Guides
 
 - [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/): Measure how often a Uniswap, Raydium or Aerodrome pool gets sandwiched: pull per-hour sandwichRate and MEV fee data from Codex getBars in Python.
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 
 ## Other categories
 

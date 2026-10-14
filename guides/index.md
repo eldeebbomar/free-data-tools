@@ -1,12 +1,14 @@
 # Guides to public data APIs and scraping
 
-> 28 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
+> 30 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
 
 - URL: https://datatooly.xyz/guides/
 - Updated: 2026-10-14
 
 ## Guides
 
+- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/) (2026-10-14): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
+- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/) (2026-10-14): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/) (2026-09-29): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/) (2026-09-29): Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/) (2026-09-29): Stop trusting broker blogs: compute New Cairo apartment price per square meter by compound from live Property Finder Egypt listings, split ready vs off-plan.
