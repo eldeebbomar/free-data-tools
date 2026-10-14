@@ -223,4 +223,4 @@ Yes. The ClinicalTrials.gov v2 REST API from the U.S. National Library of Medici
 - [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
 - [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
-- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)

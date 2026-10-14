@@ -138,8 +138,8 @@ There's no official Understat API, but there doesn't need to be. The xG, xA, and
 
 ## Related guides
 
+- [FPL API Endpoints: Complete Reference for 2026/27](https://datatooly.xyz/guides/fpl-api-endpoints-reference/)
+- [FPL Fixture Difficulty (FDR) from the API in Python](https://datatooly.xyz/guides/fpl-fixture-difficulty-api/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
-- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
-- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
-- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [FPL Live Gameweek Points from the API: Picks Math](https://datatooly.xyz/guides/fpl-live-gameweek-points-api/)
+- [Find Your FPL Manager ID and Pull Your Team History](https://datatooly.xyz/guides/fpl-manager-id-team-history-api/)

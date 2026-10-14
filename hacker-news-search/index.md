@@ -8,6 +8,10 @@
 - Backing Apify actor: [hacker-news-scraper](https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/)
+- More guides: [HN Algolia API Reference: Search, Tags, Filters, Limits](https://datatooly.xyz/guides/hacker-news-algolia-api-reference/)
+- More guides: [Get All Comments for a Hacker News Story with the API](https://datatooly.xyz/guides/hacker-news-api-get-all-comments/)
+- More guides: [Hacker News Firebase API vs Algolia: Which One to Use](https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/)
+- More guides: [Search Hacker News by Date Range or Points (API)](https://datatooly.xyz/guides/search-hacker-news-by-date-range-points/)
 
 Type a keyword and search Hacker News live, right here in your browser — real matching stories with points, comments, author, and date. Filter by type, sort by relevance or date, set a minimum score. Free, no login, no API key.
 

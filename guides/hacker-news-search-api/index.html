@@ -111,7 +111,7 @@ const { hits } = await res.json();</code></pre></div>
 <ol>
 <li><p><strong>~1,000 retrievable results per query.</strong> This is Algolia&#39;s standard pagination ceiling — you can page through results, but only down to roughly the first 1,000. If you need <em>everything</em> matching a broad query, you can&#39;t just deep-paginate; you have to <strong>slice by time</strong> instead. Run several narrower <code>created_at_i</code> ranges and stitch the results together.</p>
 </li>
-<li><p><strong>A rough rate ceiling of ~10,000 requests/hour/IP.</strong> Important caveat: this is a community / Algolia-staff figure that&#39;s been cited over the years, <strong>not a published SLA</strong>. Treat it as a courtesy budget, not a guarantee — add backoff, cache responses, and don&#39;t hammer it.</p>
+<li><p><strong>A rate limit of 10,000 requests per hour per IP.</strong> The official HN Search API page (hn.algolia.com/api) states this limit. Treat it as a ceiling, not a target: add backoff, cache responses, and don&#39;t hammer it.</p>
 </li>
 </ol>
 <p>Neither limit is a problem for normal use, but both shape how you architect a large backfill.</p>
@@ -145,7 +145,7 @@ const { hits } = await res.json();</code></pre></div>
 </article>
 <section class="section" style="padding:48px 0"><div class="wrap-narrow">
 <h2 class="h3">Related guides</h2>
-<div class="related"><a href="../../guides/clinicaltrials-gov-api-completed-trial-results/">Get Completed Clinical Trial Results with the API →</a><a href="../../guides/clinicaltrials-gov-api-nct-number-lookup/">ClinicalTrials.gov API: Look Up a Study by NCT Number →</a><a href="../../guides/clinicaltrials-gov-api-v2-query-parameters/">ClinicalTrials.gov API v2 Query Parameters: Full Reference →</a><a href="../../guides/clinicaltrials-gov-classic-api-v2-migration/">ClinicalTrials.gov Classic API to v2: Migration Guide →</a><a href="../../guides/sec-edgar-companyfacts-xbrl-frames-api/">SEC Company Facts API: companyfacts, concept &amp; frames →</a><a href="../../guides/">All guides →</a></div>
+<div class="related"><a href="../../guides/hacker-news-algolia-api-reference/">HN Algolia API Reference: Search, Tags, Filters, Limits →</a><a href="../../guides/hacker-news-api-get-all-comments/">Get All Comments for a Hacker News Story with the API →</a><a href="../../guides/hacker-news-firebase-api-vs-algolia/">Hacker News Firebase API vs Algolia: Which One to Use →</a><a href="../../guides/search-hacker-news-by-date-range-points/">Search Hacker News by Date Range or Points (API) →</a><a href="../../guides/ai-share-of-voice-chatgpt-perplexity/">AI Share of Voice: Measure It in ChatGPT and Perplexity →</a><a href="../../guides/check-if-chatgpt-mentions-your-brand/">How to Check if ChatGPT Mentions Your Brand (Free) →</a><a href="../../guides/">All guides →</a></div>
 </div></section>
 <section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
 </main>

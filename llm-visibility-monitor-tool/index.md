@@ -8,6 +8,10 @@
 - Backing Apify actor: [llm-visibility-monitor](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/)
+- More guides: [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)
+- More guides: [How to Check if ChatGPT Mentions Your Brand (Free)](https://datatooly.xyz/guides/check-if-chatgpt-mentions-your-brand/)
+- More guides: [How AI Assistants Choose Which Brands and Sources to Cite](https://datatooly.xyz/guides/how-ai-assistants-choose-brands-sources/)
+- More guides: [Track AI Brand Mentions Over Time: Schedules and Drift](https://datatooly.xyz/guides/track-ai-brand-mentions-over-time/)
 
 Enter a brand, a market category and competitors, and preview how the actor records brand mentions across ChatGPT, Claude, Gemini, Perplexity and Grok: mention, position and share of voice per answer.
 

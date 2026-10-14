@@ -160,4 +160,4 @@ To **scrape a Telegram channel without login**: fetch `https://t.me/s/<channel>`
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)

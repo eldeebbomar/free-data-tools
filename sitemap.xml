@@ -48,7 +48,9 @@
   <url><loc>https://datatooly.xyz/category/finance-filings/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/category/jobs-visas/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/guides/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
+  <url><loc>https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/app-store-top-charts-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/check-if-chatgpt-mentions-your-brand/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
@@ -58,10 +60,18 @@
   <url><loc>https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/facebook-ad-library-scraper/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/fpl-api-endpoints-reference/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/fpl-fixture-difficulty-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/fpl-api-price-change-data-python/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/fpl-live-gameweek-points-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/fpl-manager-id-team-history-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/export-google-patents-to-csv/</loc><lastmod>2026-05-31</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/dubai-used-car-listings-data/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/hacker-news-algolia-api-reference/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/hacker-news-api-get-all-comments/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/hacker-news-search-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/how-ai-assistants-choose-brands-sources/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/build-linkedin-profile-scraper/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/measure-ai-share-of-voice-python/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
@@ -71,6 +81,7 @@
   <url><loc>https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/h1b-salary-database-by-employer/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/saudi-arabia-property-data/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/search-hacker-news-by-date-range-points/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/sec-edgar-full-text-search-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
@@ -82,6 +93,7 @@
   <url><loc>https://datatooly.xyz/guides/threads-keyword-search-without-app-review/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/tiktok-ad-library-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/track-ai-brand-mentions-over-time/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/understat-xg-data-export/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>

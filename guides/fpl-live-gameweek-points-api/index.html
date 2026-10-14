@@ -1,0 +1,315 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>FPL Live Gameweek Points from the API: Picks Math</title>
+<meta name="description" content="Compute any FPL team&#39;s gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams.">
+<link rel="canonical" href="https://datatooly.xyz/guides/fpl-live-gameweek-points-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="FPL Live Gameweek Points from the API: Picks Math"><meta property="og:description" content="Compute any FPL team&#39;s gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams."><meta property="og:url" content="https://datatooly.xyz/guides/fpl-live-gameweek-points-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-fpl-live-gameweek-points-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="FPL Live Gameweek Points from the API: Picks Math">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="api"><meta property="article:tag" content="football"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="FPL Live Gameweek Points from the API: Picks Math"><meta name="twitter:description" content="Compute any FPL team&#39;s gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-fpl-live-gameweek-points-api.jpg"><meta name="twitter:image:alt" content="FPL Live Gameweek Points from the API: Picks Math">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#article","headline":"FPL Live Gameweek Points from the API: Picks Math","description":"Compute any FPL team's gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-live-gameweek-points-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, api, football, datascience","about":{"@type":"SoftwareApplication","name":"Fantasy Premier League data & picks","url":"https://datatooly.xyz/fpl-intelligence-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#webpage","url":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/","name":"FPL Live Gameweek Points from the API: Picks Math","description":"Compute any FPL team's gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-live-gameweek-points-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"FPL Live Gameweek Points from the API: Picks Math","item":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/fpl-live-gameweek-points-api/#quick-answers","mainEntity":[{"@type":"Question","name":"How do I get live FPL points from the API?","acceptedAnswer":{"@type":"Answer","text":"Fetch https://fantasy.premierleague.com/api/event/{gw}/live/ for every player's stats.total_points that gameweek, then entry/{manager_id}/event/{gw}/picks/ for the manager's 15 picks. Multiply each player's points by the pick's multiplier (0 bench, 1 starter, 2 captain, 3 triple captain), add them up, and subtract entry_history.event_transfers_cost."}},{"@type":"Question","name":"What does multiplier mean in the FPL picks endpoint?","acceptedAnswer":{"@type":"Answer","text":"It's how many times the player's points count: 0 on the bench, 1 in the starting XI, 2 for the captain and 3 for a triple captain. With Bench Boost active, bench players get 1. After a gameweek, multipliers already reflect auto-subs and a vice-captain taking over."}},{"@type":"Question","name":"Does FPL entry_history points include the transfer hit?","acceptedAnswer":{"@type":"Answer","text":"No. entry_history.points is the gameweek score before the hit, and event_transfers_cost is the deduction. For one manager in GW6 of 2026/27, points was 100, the cost was 4, and total_points rose from 409 to 505."}},{"@type":"Question","name":"What does event/{gw}/live return for a gameweek that hasn't started?","acceptedAnswer":{"@type":"Answer","text":"{\"elements\":[]}, an empty list, with HTTP 200. The picks endpoint for that gameweek returned 404 with {\"detail\":\"Not found.\"} (tested on gameweek 7, three days before its deadline)."}}]}</script>
+</head><body data-tool-id="fpl-intelligence-tool"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/sports-analytics/">Sports Analytics</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Sports Analytics</span>
+<h1>FPL Live Gameweek Points from the API: Picks Math</h1>
+<p class="lede">Compute any FPL team's gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Fantasy Premier League data &amp; picks</p><p class="gcta-s">The main public FPL API endpoints in one list (bootstrap-static, fixtures, picks, live gameweek), plus a free builder for manager and gameweek queries.</p><a class="btn btn-primary" href="../../fpl-intelligence-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>A Fantasy Premier League team&#39;s gameweek score is each picked player&#39;s <code>total_points</code> from <code>https://fantasy.premierleague.com/api/event/{gw}/live/</code>, multiplied by the pick&#39;s <code>multiplier</code> from <code>entry/{manager_id}/event/{gw}/picks/</code>, summed, minus <code>event_transfers_cost</code>. Multipliers are 0 for the bench, 1 for starters, 2 for the captain and 3 for a triple captain. Auto-subs and vice-captaincy change them.</p>
+<p>The Python below rebuilds the score from those two endpoints, including automatic substitutions and the captain falling back to the vice-captain. I checked it against FPL&#39;s own numbers for 300 team-gameweeks on 2026-10-14 (gameweeks 4 to 6 of 2026/27, 100 managers from four depths of the Overall league): all 300 matched, including 91 automatic substitutions.</p>
+<h2 id="the-two-endpoints">The two endpoints</h2>
+<p><strong><code>event/{gw}/live/</code></strong> returns <code>elements</code>, one row per player:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>id</code></td>
+<td>Player ID (matches <code>bootstrap-static/</code> → <code>elements[].id</code>)</td>
+</tr>
+<tr>
+<td><code>stats.total_points</code></td>
+<td>Points this gameweek so far</td>
+</tr>
+<tr>
+<td><code>stats.minutes</code>, <code>goals_scored</code>, <code>assists</code>, <code>clean_sheets</code>, <code>bonus</code>, <code>bps</code>, <code>saves</code>, <code>defensive_contribution</code>, <code>expected_goals</code>...</td>
+<td>The counters behind the points</td>
+</tr>
+<tr>
+<td><code>explain</code></td>
+<td>Points broken down per fixture, e.g. <code>{&quot;identifier&quot;: &quot;goals_scored&quot;, &quot;points&quot;: 10, &quot;value&quot;: 2}</code></td>
+</tr>
+</tbody></table></div>
+<p><strong><code>entry/{manager_id}/event/{gw}/picks/</code></strong> returns:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>picks</code></td>
+<td>15 rows: <code>element</code>, <code>position</code> (1–11 starters, 12–15 bench in priority order), <code>multiplier</code>, <code>is_captain</code>, <code>is_vice_captain</code>, <code>element_type</code></td>
+</tr>
+<tr>
+<td><code>active_chip</code></td>
+<td><code>null</code>, <code>bboost</code>, <code>3xc</code>, <code>freehit</code> or <code>wildcard</code></td>
+</tr>
+<tr>
+<td><code>automatic_subs</code></td>
+<td><code>[{element_in, element_out, event}]</code> once FPL has processed them</td>
+</tr>
+<tr>
+<td><code>entry_history</code></td>
+<td><code>points</code> (before the hit), <code>event_transfers_cost</code>, <code>total_points</code>, <code>points_on_bench</code>, <code>rank</code>, <code>overall_rank</code>, <code>bank</code>, <code>value</code></td>
+</tr>
+</tbody></table></div>
+<p>For a gameweek that hasn&#39;t started, <code>event/{gw}/live/</code> returns <code>{&quot;elements&quot;:[]}</code> and the picks endpoint returns 404 <code>{&quot;detail&quot;:&quot;Not found.&quot;}</code>.</p>
+<h2 id="the-simple-version-after-a-gameweek">The simple version: after a gameweek</h2>
+<p>Once a gameweek is over, FPL has already applied auto-subs and captaincy to the picks, so the sum is direct:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">score = sum(live[p.element].total_points * p.multiplier for p in picks) - event_transfers_cost</code></pre></div>
+<p>For manager 895045 in gameweek 6 that gives 77, and <code>entry_history.points</code> is 77. <code>points_on_bench</code> (6) is the sum for the four <code>multiplier: 0</code> players.</p>
+<h2 id="the-full-version-projecting-the-rules-yourself">The full version: projecting the rules yourself</h2>
+<p>During a gameweek you want the score as it stands, with the substitutions that will happen. This script works from the lineup set at the deadline. For a finished gameweek it first swaps FPL&#39;s processed auto-subs back out, which is what makes it testable against FPL&#39;s numbers.</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import sys
+import time
+
+import requests
+
+API = &quot;https://fantasy.premierleague.com/api/&quot;
+s = requests.Session()
+s.headers[&quot;User-Agent&quot;] = &quot;fpl-live-points/1.0 (personal script)&quot;
+
+
+def get(path, attempts=4):
+    for i in range(attempts):
+        r = s.get(API + path, timeout=30)
+        if r.status_code == 200:
+            return r.json()
+        if r.status_code == 404:
+            raise LookupError(f&quot;{path}: {r.json().get('detail')}&quot;)
+        time.sleep(2 ** i)  # 429 / 5xx: back off 1, 2, 4 s
+    r.raise_for_status()
+
+
+boot = get(&quot;bootstrap-static/&quot;)
+PLAYER = {p[&quot;id&quot;]: p for p in boot[&quot;elements&quot;]}
+MIN_PLAY = {t[&quot;id&quot;]: t[&quot;squad_min_play&quot;] for t in boot[&quot;element_types&quot;]}  # 1 GKP, 3 DEF, 2 MID, 1 FWD
+MAX_PLAY = {t[&quot;id&quot;]: t[&quot;squad_max_play&quot;] for t in boot[&quot;element_types&quot;]}
+
+
+def deadline_lineup(picks, auto_subs):
+    &quot;&quot;&quot;After a gameweek, FPL's picks already have the auto-subs swapped in.
+    Swap them back to get the 15 players in the order the manager set.&quot;&quot;&quot;
+    by_el = {p[&quot;element&quot;]: dict(p) for p in picks}
+    for sub in auto_subs:
+        a, b = by_el[sub[&quot;element_in&quot;]], by_el[sub[&quot;element_out&quot;]]
+        a[&quot;position&quot;], b[&quot;position&quot;] = b[&quot;position&quot;], a[&quot;position&quot;]
+    return sorted(by_el.values(), key=lambda p: p[&quot;position&quot;])
+
+
+def gameweek_points(manager_id, gw):
+    live = {e[&quot;id&quot;]: e[&quot;stats&quot;] for e in get(f&quot;event/{gw}/live/&quot;)[&quot;elements&quot;]}
+    fixtures = get(f&quot;fixtures/?event={gw}&quot;)
+    picks = get(f&quot;entry/{manager_id}/event/{gw}/picks/&quot;)
+    chip = picks[&quot;active_chip&quot;]
+
+    # A player &quot;didn't play&quot; only once all of their team's matches this gameweek are over.
+    done = {}
+    for f in fixtures:
+        for team in (f[&quot;team_h&quot;], f[&quot;team_a&quot;]):
+            done[team] = done.get(team, True) and f[&quot;finished_provisional&quot;]
+    mins = lambda el: live.get(el, {}).get(&quot;minutes&quot;, 0)
+    gw_over = all(f[&quot;finished_provisional&quot;] for f in fixtures)  # also covers teams with no match (blank)
+    out_for_good = lambda el: mins(el) == 0 and done.get(PLAYER[el][&quot;team&quot;], gw_over)
+    pos = lambda el: PLAYER[el][&quot;element_type&quot;]
+
+    order = deadline_lineup(picks[&quot;picks&quot;], picks[&quot;automatic_subs&quot;])
+    xi = [p[&quot;element&quot;] for p in order[:11]]
+    bench = [p[&quot;element&quot;] for p in order[11:]]
+
+    subs = []
+    if chip != &quot;bboost&quot;:
+        for out in list(xi):
+            if not out_for_good(out):
+                continue
+            for cand in bench:  # bench order = substitution priority
+                if mins(cand) == 0 or (pos(out) == 1) != (pos(cand) == 1):
+                    continue
+                trial = [cand if e == out else e for e in xi]
+                counts = {t: sum(pos(e) == t for e in trial) for t in MIN_PLAY}
+                if all(MIN_PLAY[t] &lt;= counts[t] &lt;= MAX_PLAY[t] for t in MIN_PLAY):
+                    xi = trial
+                    bench.remove(cand)
+                    subs.append((cand, out))
+                    break
+
+    mult = {el: 1 for el in xi + (bench if chip == &quot;bboost&quot; else [])}
+    cap = next(p[&quot;element&quot;] for p in order if p[&quot;is_captain&quot;])
+    vice = next(p[&quot;element&quot;] for p in order if p[&quot;is_vice_captain&quot;])
+    armband = cap if not out_for_good(cap) else vice if not out_for_good(vice) else None
+    if armband in mult:
+        mult[armband] = 3 if chip == &quot;3xc&quot; else 2
+
+    gross = sum(live.get(el, {}).get(&quot;total_points&quot;, 0) * m for el, m in mult.items())
+    hit = picks[&quot;entry_history&quot;][&quot;event_transfers_cost&quot;]
+    return {&quot;chip&quot;: chip, &quot;subs&quot;: subs, &quot;mult&quot;: mult, &quot;live&quot;: live, &quot;gross&quot;: gross,
+            &quot;hit&quot;: hit, &quot;net&quot;: gross - hit, &quot;fpl_points&quot;: picks[&quot;entry_history&quot;][&quot;points&quot;]}
+
+
+if __name__ == &quot;__main__&quot;:
+    manager_id, gw = int(sys.argv[1]), int(sys.argv[2])
+    r = gameweek_points(manager_id, gw)
+    for el, m in r[&quot;mult&quot;].items():
+        tag = {2: &quot; (C)&quot;, 3: &quot; (TC)&quot;}.get(m, &quot;&quot;)
+        print(f&quot;  {PLAYER[el]['web_name']:&lt;14} {r['live'][el]['total_points']:&gt;3} x{m}{tag}&quot;)
+    for cand, out in r[&quot;subs&quot;]:
+        print(f&quot;  auto-sub: {PLAYER[cand]['web_name']} in for {PLAYER[out]['web_name']}&quot;)
+    print(f&quot;chip={r['chip']}  gross={r['gross']}  hit=-{r['hit']}  net={r['net']}  &quot;
+          f&quot;(FPL's own gameweek points: {r['fpl_points']})&quot;)</code></pre></div>
+<p><code>python fpl_live_points.py 895045 6</code> (the Overall league leader on 2026-10-14):</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">  Raya             3 x1
+  Gabriel          2 x1
+  De Cuyper       15 x1
+  Hall             0 x1
+  O'Shea          11 x1
+  Rogers           9 x1
+  Palmer           8 x2 (C)
+  Schade           1 x1
+  João Pedro      12 x1
+  Haaland          6 x1
+  Wissa            2 x1
+  auto-sub: O'Shea in for Szoboszlai
+chip=None  gross=77  hit=-0  net=77  (FPL's own gameweek points: 77)</code></pre></div>
+<p>Szoboszlai started but played 0 minutes, so the first eligible bench player, O&#39;Shea (11 points), came in. Two more cases from the same run:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">$ python fpl_live_points.py 895045 3 | tail -1
+chip=3xc  gross=90  hit=-0  net=90  (FPL's own gameweek points: 90)
+$ python fpl_live_points.py 2098553 6 | tail -1
+chip=None  gross=100  hit=-4  net=96  (FPL's own gameweek points: 100)</code></pre></div>
+<p>The second shows that <code>entry_history.points</code> is the score before the hit: that manager&#39;s <code>total_points</code> went from 409 to 505, which is 100 − 4 added.</p>
+<h2 id="the-rules-the-script-applies">The rules the script applies</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>In the code</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A starter who plays 0 minutes, once their team&#39;s matches are over, is replaced by the first bench player who played</td>
+<td><code>out_for_good</code>, bench loop in position order</td>
+</tr>
+<tr>
+<td>Goalkeepers only swap with goalkeepers</td>
+<td><code>(pos(out) == 1) != (pos(cand) == 1)</code></td>
+</tr>
+<tr>
+<td>The XI must stay a legal formation: at least 1 GK, 3 DEF, 2 MID, 1 FWD</td>
+<td><code>squad_min_play</code> / <code>squad_max_play</code> from <code>bootstrap-static/</code> → <code>element_types</code></td>
+</tr>
+<tr>
+<td>If the captain doesn&#39;t play, the vice-captain&#39;s points are doubled; if neither plays, nobody&#39;s are</td>
+<td><code>armband</code></td>
+</tr>
+<tr>
+<td>Triple Captain triples instead of doubles</td>
+<td><code>3 if chip == &quot;3xc&quot;</code></td>
+</tr>
+<tr>
+<td>Bench Boost counts all 15 players and makes no substitutions</td>
+<td><code>chip != &quot;bboost&quot;</code></td>
+</tr>
+<tr>
+<td>Transfer hits are taken off the total</td>
+<td><code>event_transfers_cost</code></td>
+</tr>
+</tbody></table></div>
+<p>The Premier League describes the vice-captain rule in its <a href="https://www.premierleague.com/news/1609337" target="_blank" rel="noopener">postponements explainer</a>. The formation limits come from the API&#39;s own <code>element_types</code>.</p>
+<p><strong>One known difference.</strong> When two starters are both replaced, the script can pair them with the bench players differently than FPL records in <code>automatic_subs</code>. The same players end up in the XI, so the score is the same. That happened once in the 300 checks. In one Bench Boost gameweek FPL also recorded an entry in <code>automatic_subs</code> (the script records none); with all 15 players counting, the score was the same either way. The other 298 matched FPL&#39;s substitutions exactly.</p>
+<h2 id="using-it-during-a-live-gameweek">Using it during a live gameweek</h2>
+<p>All 300 checks were on finished gameweeks. On 2026-10-14 no gameweek was in progress (gameweek 7&#39;s deadline is 2026-10-17 10:00 UTC), so the live behaviour below is how the code is designed to work, not something I tested:</p>
+<ul>
+<li>A starter whose match hasn&#39;t kicked off isn&#39;t substituted yet, because <code>out_for_good</code> waits for <code>finished_provisional</code> on all of that team&#39;s fixtures.</li>
+<li>A bench player whose match hasn&#39;t started can&#39;t come on yet (<code>mins(cand) == 0</code>), so the projection can change as matches finish.</li>
+<li><code>total_points</code> changes during matches. Bonus points are added later: check <code>event-status/</code> for <code>&quot;bonus_added&quot;: true</code> on each day before treating a score as final.</li>
+<li><code>event/{gw}/live/</code> has no published cache rule. Polling it every minute or two is plenty; matches don&#39;t change faster than that.</li>
+</ul>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li><strong>Points before the hit.</strong> Compare like with like: <code>entry_history.points</code> against <code>gross</code>, <code>net</code> against FPL&#39;s displayed net score.</li>
+<li><strong>Free Hit and Wildcard don&#39;t change the maths.</strong> They change the squad, and the picks endpoint already returns the squad used that gameweek.</li>
+<li><strong>Double gameweeks.</strong> A player with two fixtures has one <code>total_points</code> covering both. <code>explain</code> lists them per fixture.</li>
+<li><strong>No CORS.</strong> The API can&#39;t be called from browser JavaScript; run this as a script or on a server.</li>
+</ul>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/fpl-api-endpoints-reference/">FPL API endpoints: complete reference</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-manager-id-team-history-api/">Find your FPL manager ID and pull your team history</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-fixture-difficulty-api/">FPL fixture difficulty from the API</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-api-price-change-data-python/">FPL API price change data in Python</a>.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/fpl-intelligence-tool/">FPL query builder</a> builds a ready-to-run input for gameweek picks, mini-league intel, manager dashboards and more, and shows a fixed example of the output shape. It doesn&#39;t fetch live points in your browser; the API blocks that.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu" target="_blank" rel="noopener">FPL Intelligence actor</a> on Apify has a <code>live_tracker</code> mode that takes a gameweek plus manager or league IDs and returns live points per manager and live standings per league, as a single snapshot or refreshed on an interval. Other modes cover captain and transfer picks, a wildcard optimizer, mini-league intel and manager dashboards. It exports JSON, CSV or Excel. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly query builder and the Apify actor. The script above needs neither.</em></p>
+<p>Sources: live responses from <code>fantasy.premierleague.com/api/</code> on 2026-10-14 (FPL publishes no API documentation), and the Premier League&#39;s article <a href="https://www.premierleague.com/news/1609337" target="_blank" rel="noopener">How postponements affect FPL managers</a>.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>How do I get live FPL points from the API?</h3>
+<p>Fetch <code>https://fantasy.premierleague.com/api/event/{gw}/live/</code> for every player's <code>stats.total_points</code> that gameweek, then <code>entry/{manager_id}/event/{gw}/picks/</code> for the manager's 15 picks. Multiply each player's points by the pick's <code>multiplier</code> (0 bench, 1 starter, 2 captain, 3 triple captain), add them up, and subtract <code>entry_history.event_transfers_cost</code>.</p>
+<h3>What does multiplier mean in the FPL picks endpoint?</h3>
+<p>It's how many times the player's points count: 0 on the bench, 1 in the starting XI, 2 for the captain and 3 for a triple captain. With Bench Boost active, bench players get 1. After a gameweek, multipliers already reflect auto-subs and a vice-captain taking over.</p>
+<h3>Does FPL entry_history points include the transfer hit?</h3>
+<p>No. <code>entry_history.points</code> is the gameweek score before the hit, and <code>event_transfers_cost</code> is the deduction. For one manager in GW6 of 2026/27, <code>points</code> was 100, the cost was 4, and <code>total_points</code> rose from 409 to 505.</p>
+<h3>What does event/{gw}/live return for a gameweek that hasn't started?</h3>
+<p><code>{&quot;elements&quot;:[]}</code>, an empty list, with HTTP 200. The picks endpoint for that gameweek returned 404 with <code>{&quot;detail&quot;:&quot;Not found.&quot;}</code> (tested on gameweek 7, three days before its deadline).</p>
+</section>
+<p class="guide-end"><a href="../../fpl-intelligence-tool/">Open the free Fantasy Premier League data &amp; picks tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/fpl-api-endpoints-reference/">FPL API Endpoints: Complete Reference for 2026/27 →</a><a href="../../guides/fpl-fixture-difficulty-api/">FPL Fixture Difficulty (FDR) from the API in Python →</a><a href="../../guides/fpl-manager-id-team-history-api/">Find Your FPL Manager ID and Pull Your Team History →</a><a href="../../guides/understat-xg-data-export/">Understat xG Data Export: Pull Expected Goals with Python + CSV →</a><a href="../../guides/ai-share-of-voice-chatgpt-perplexity/">AI Share of Voice: Measure It in ChatGPT and Perplexity →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

@@ -13,7 +13,11 @@
 
 ## Guides
 
+- [FPL API Endpoints: Complete Reference for 2026/27](https://datatooly.xyz/guides/fpl-api-endpoints-reference/): Every public Fantasy Premier League API endpoint, checked live in 2026/27: bootstrap-static, fixtures, live, entry, picks, leagues, with key fields and errors.
+- [FPL Fixture Difficulty (FDR) from the API in Python](https://datatooly.xyz/guides/fpl-fixture-difficulty-api/): Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks.
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/): Read FPL's own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule.
+- [FPL Live Gameweek Points from the API: Picks Math](https://datatooly.xyz/guides/fpl-live-gameweek-points-api/): Compute any FPL team's gameweek score from event/{gw}/live and picks: multipliers, captaincy, chips, hits and auto-subs. Python checked against 300 teams.
+- [Find Your FPL Manager ID and Pull Your Team History](https://datatooly.xyz/guides/fpl-manager-id-team-history-api/): Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python.
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/): A practical guide to Understat xG data export: how the data is embedded in the page, a Python scraper that decodes it, and league and player xG to CSV.
 
 ## Other categories

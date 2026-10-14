@@ -1,0 +1,249 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>Find Your FPL Manager ID and Pull Your Team History</title>
+<meta name="description" content="Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python.">
+<link rel="canonical" href="https://datatooly.xyz/guides/fpl-manager-id-team-history-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Find Your FPL Manager ID and Pull Your Team History"><meta property="og:description" content="Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python."><meta property="og:url" content="https://datatooly.xyz/guides/fpl-manager-id-team-history-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-fpl-manager-id-team-history-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Find Your FPL Manager ID and Pull Your Team History">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="api"><meta property="article:tag" content="football"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Find Your FPL Manager ID and Pull Your Team History"><meta name="twitter:description" content="Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-fpl-manager-id-team-history-api.jpg"><meta name="twitter:image:alt" content="Find Your FPL Manager ID and Pull Your Team History">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#article","headline":"Find Your FPL Manager ID and Pull Your Team History","description":"Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-manager-id-team-history-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, api, football, datascience","about":{"@type":"SoftwareApplication","name":"Fantasy Premier League data & picks","url":"https://datatooly.xyz/fpl-intelligence-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#webpage","url":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/","name":"Find Your FPL Manager ID and Pull Your Team History","description":"Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-manager-id-team-history-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Find Your FPL Manager ID and Pull Your Team History","item":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/fpl-manager-id-team-history-api/#quick-answers","mainEntity":[{"@type":"Question","name":"How do I find my FPL manager ID?","acceptedAnswer":{"@type":"Answer","text":"Log in at fantasy.premierleague.com and open the Points tab. The address bar shows /entry/1234567/event/6: the number after /entry/ is your manager ID (also called team ID or entry ID). The My Team page doesn't show it."}},{"@type":"Question","name":"What is a manager ID in FPL?","acceptedAnswer":{"@type":"Answer","text":"It's the number FPL gives your team, used in every manager endpoint of the API: entry/{id}/, entry/{id}/history/, entry/{id}/event/{gw}/picks/ and entry/{id}/transfers/. It's different from a league ID, which appears in /leagues/{id}/standings/ URLs."}},{"@type":"Question","name":"Can I find someone's FPL ID by their name?","acceptedAnswer":{"@type":"Answer","text":"The API has no search by name. Find the manager in a league they play in: leagues-classic/{league_id}/standings/ lists each row's entry (the manager ID), entry_name and player_name, 50 per page."}},{"@type":"Question","name":"Does my FPL team ID change every season?","acceptedAnswer":{"@type":"Answer","text":"FPL creates your team fresh each season, and the history endpoint links your earlier seasons to it. In the 2026/27 data, manager ID 1 had a joined_time of 2026-07-23 yet listed 10 past seasons under history.past. Look up your ID again at the start of each season rather than reusing last year's."}}]}</script>
+</head><body data-tool-id="fpl-intelligence-tool"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/sports-analytics/">Sports Analytics</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Sports Analytics</span>
+<h1>Find Your FPL Manager ID and Pull Your Team History</h1>
+<p class="lede">Where to find your Fantasy Premier League manager (team) ID, then pull every gameweek, chip, transfer and past season for it from the free FPL API in Python.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Fantasy Premier League data &amp; picks</p><p class="gcta-s">The main public FPL API endpoints in one list (bootstrap-static, fixtures, picks, live gameweek), plus a free builder for manager and gameweek queries.</p><a class="btn btn-primary" href="../../fpl-intelligence-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Your FPL manager ID is the number after <code>/entry/</code> in the address bar when you open the Points tab on the Fantasy Premier League website, for example <code>/entry/1234567/event/6</code>. With it, <code>https://fantasy.premierleague.com/api/entry/{id}/history/</code> returns your points, rank, bank and team value for every gameweek, the chips you&#39;ve used and your past seasons. No login or key is needed.</p>
+<p>This guide shows where the ID is, how to find someone else&#39;s, and a Python script that pulls a whole season&#39;s history, run against the live API on 2026-10-14 (2026/27 season, after gameweek 6).</p>
+<h2 id="where-to-find-the-id">Where to find the ID</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Where</th>
+<th>What to look for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Points tab, on the website</td>
+<td>The URL reads <code>.../entry/{manager_id}/event/{gw}</code></td>
+</tr>
+<tr>
+<td>A league table, through the API</td>
+<td>Each standings row&#39;s <code>entry</code> field (see below)</td>
+</tr>
+<tr>
+<td>The My Team page</td>
+<td>Not here: its URL has no ID</td>
+</tr>
+</tbody></table></div>
+<p>Don&#39;t mix it up with a <strong>league ID</strong>, which appears in <code>/leagues/{league_id}/standings/c</code> URLs and goes into <code>leagues-classic/{league_id}/standings/</code>.</p>
+<h3 id="someone-else-s-id">Someone else&#39;s ID</h3>
+<p>There is no &quot;search by name&quot; endpoint. Find them in a league you share instead:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import requests
+
+r = requests.get(&quot;https://fantasy.premierleague.com/api/leagues-classic/314/standings/&quot;,
+                 headers={&quot;User-Agent&quot;: &quot;fpl-history/1.0&quot;}, timeout=30).json()
+for row in r[&quot;standings&quot;][&quot;results&quot;][:3]:
+    print(row[&quot;rank&quot;], row[&quot;entry&quot;], row[&quot;total&quot;])</code></pre></div>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">1 895045 545
+2 4182037 532
+3 6313482 531</code></pre></div>
+<p>That was the top of the Overall league on 2026-10-14: rank, manager ID, total points. Each row has <code>entry</code> (the manager ID), <code>entry_name</code> (team name), <code>player_name</code>, <code>rank</code> and <code>total</code>. Swap <code>314</code> (the Overall league) for your mini-league&#39;s ID and page through with <code>?page_standings=2</code>, <code>3</code> and so on while <code>has_next</code> is <code>true</code>.</p>
+<h2 id="pull-a-season-s-history">Pull a season&#39;s history</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import csv
+import sys
+import time
+
+import requests
+
+API = &quot;https://fantasy.premierleague.com/api/&quot;
+s = requests.Session()
+s.headers[&quot;User-Agent&quot;] = &quot;fpl-history/1.0 (personal script)&quot;
+
+
+def get(path, attempts=4):
+    for i in range(attempts):
+        r = s.get(API + path, timeout=30)
+        if r.status_code == 200:
+            return r.json()
+        if r.status_code == 404:
+            raise SystemExit(f&quot;{path}: {r.json().get('detail')}&quot;)  # wrong ID: retrying won't help
+        time.sleep(2 ** i)
+    r.raise_for_status()
+
+
+manager_id = int(sys.argv[1])
+entry = get(f&quot;entry/{manager_id}/&quot;)
+hist = get(f&quot;entry/{manager_id}/history/&quot;)
+transfers = get(f&quot;entry/{manager_id}/transfers/&quot;)
+names = {p[&quot;id&quot;]: p[&quot;web_name&quot;] for p in get(&quot;bootstrap-static/&quot;)[&quot;elements&quot;]}
+
+print(f&quot;Manager {manager_id}: started GW{entry['started_event']}, &quot;
+      f&quot;{entry['summary_overall_points']} pts, overall rank {entry['summary_overall_rank']:,}&quot;)
+print(f&quot;Classic leagues: {len(entry['leagues']['classic'])}&quot;)
+
+print(&quot;\nGW  pts  hit  bench  overall rank   value  bank&quot;)
+for gw in hist[&quot;current&quot;]:
+    print(f&quot;{gw['event']:&gt;2} {gw['points']:&gt;4} {-gw['event_transfers_cost']:&gt;4} &quot;
+          f&quot;{gw['points_on_bench']:&gt;6} {gw['overall_rank']:&gt;13,} &quot;
+          f&quot;{gw['value'] / 10:&gt;6.1f} {gw['bank'] / 10:&gt;5.1f}&quot;)
+
+print(&quot;\nChips:&quot;, &quot;, &quot;.join(f&quot;{c['name']} (GW{c['event']})&quot; for c in hist[&quot;chips&quot;]) or &quot;none&quot;)
+print(&quot;Past seasons:&quot;, &quot;, &quot;.join(f&quot;{p['season_name']}: {p['total_points']} pts, rank {p['rank']:,}&quot;
+                                 for p in hist[&quot;past&quot;][-3:]) or &quot;none&quot;)
+
+last = transfers[0] if transfers else None  # newest first
+if last:
+    print(f&quot;\n{len(transfers)} transfers; latest GW{last['event']}: &quot;
+          f&quot;{names[last['element_out']]} (£{last['element_out_cost'] / 10}m) -&gt; &quot;
+          f&quot;{names[last['element_in']]} (£{last['element_in_cost'] / 10}m)&quot;)
+
+with open(f&quot;fpl_{manager_id}_history.csv&quot;, &quot;w&quot;, newline=&quot;&quot;) as f:
+    w = csv.DictWriter(f, fieldnames=hist[&quot;current&quot;][0].keys())
+    w.writeheader()
+    w.writerows(hist[&quot;current&quot;])
+print(f&quot;wrote fpl_{manager_id}_history.csv&quot;)</code></pre></div>
+<p><code>python fpl_history.py 1</code> on 2026-10-14 (manager ID 1, chosen only because it&#39;s easy to remember):</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">Manager 1: started GW1, 394 pts, overall rank 1,922,103
+Classic leagues: 24
+
+GW  pts  hit  bench  overall rank   value  bank
+ 1   41    0      4     6,875,541  100.0   0.0
+ 2  121    0      0       912,695  100.1   0.0
+ 3   36    0      7     2,523,055  100.7   0.0
+ 4   82    0      7     1,917,475  101.2   0.0
+ 5   55    0     11     1,514,974  101.5   0.0
+ 6   59    0      6     1,922,109  101.6   0.1
+
+Chips: bboost (GW2), wildcard (GW3), freehit (GW5)
+Past seasons: 2023/24: 2708 pts, rank 19, 2024/25: 2502 pts, rank 120,612, 2025/26: 2419 pts, rank 4,119
+
+43 transfers; latest GW6: Wissa (£6.1m) -&gt; Gonzalo (£6.0m)
+wrote fpl_1_history.csv</code></pre></div>
+<p>A wrong ID stops the script with the API&#39;s message: <code>entry/999999999/: No Entry matches the given query.</code></p>
+<h2 id="what-each-field-means">What each field means</h2>
+<h3 id="entry-id-history-current-one-row-per-gameweek"><code>entry/{id}/history/</code> → <code>current</code> (one row per gameweek)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>event</code></td>
+<td>Gameweek number</td>
+</tr>
+<tr>
+<td><code>points</code></td>
+<td>Points scored that gameweek, <strong>before</strong> the transfer hit</td>
+</tr>
+<tr>
+<td><code>event_transfers</code>, <code>event_transfers_cost</code></td>
+<td>Transfers made and points deducted for them</td>
+</tr>
+<tr>
+<td><code>total_points</code></td>
+<td>Season total after the hit: for one manager, 409 + 100 − 4 = 505</td>
+</tr>
+<tr>
+<td><code>overall_rank</code>, <code>rank</code></td>
+<td>Overall rank after the gameweek, and rank for that gameweek alone</td>
+</tr>
+<tr>
+<td><code>percentile_rank</code></td>
+<td>Gameweek percentile band</td>
+</tr>
+<tr>
+<td><code>value</code>, <code>bank</code></td>
+<td>Team value and money in the bank, in tenths of £m</td>
+</tr>
+<tr>
+<td><code>points_on_bench</code></td>
+<td>Points left on the bench</td>
+</tr>
+</tbody></table></div>
+<p><code>past</code> lists earlier seasons (<code>season_name</code>, <code>total_points</code>, <code>rank</code>), and <code>chips</code> lists each chip played (<code>name</code>: <code>bboost</code>, <code>3xc</code>, <code>wildcard</code>, <code>freehit</code>; <code>event</code>; <code>time</code>).</p>
+<h3 id="entry-id"><code>entry/{id}/</code></h3>
+<p><code>summary_overall_points</code>, <code>summary_overall_rank</code>, <code>summary_event_points</code>, <code>current_event</code>, <code>started_event</code>, <code>last_deadline_value</code>, <code>last_deadline_bank</code>, <code>name</code> (the team name), <code>player_first_name</code>, <code>player_last_name</code>, and <code>leagues</code> with <code>classic</code>, <code>h2h</code> and <code>cup</code> arrays. Each classic league carries <code>id</code>, <code>name</code>, <code>entry_rank</code> and <code>entry_last_rank</code>, which is how you list a manager&#39;s mini-leagues.</p>
+<h3 id="entry-id-transfers"><code>entry/{id}/transfers/</code></h3>
+<p>One row per transfer: <code>element_in</code>, <code>element_in_cost</code>, <code>element_out</code>, <code>element_out_cost</code>, <code>event</code> and <code>time</code>, newest first. Player IDs map to names through <code>bootstrap-static/</code> → <code>elements</code>.</p>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li><strong><code>points</code> doesn&#39;t include the hit.</strong> Subtract <code>event_transfers_cost</code> for the net score, or use the difference in <code>total_points</code>.</li>
+<li><strong>The two rank fields can disagree slightly.</strong> <code>entry/1/</code> said overall rank 1,922,103 while the last <code>history</code> row said 1,922,109. They appear to be updated at different moments; use one source consistently.</li>
+<li><strong>The ID belongs to this season&#39;s team.</strong> FPL creates your team fresh each season. Manager ID 1 above joined on 2026-07-23 but still lists ten past seasons under <code>past</code>, because FPL links them for you. Old IDs in your scripts may point at last season&#39;s team.</li>
+<li><strong>Prices are in tenths.</strong> <code>value: 1016</code> is £101.6m.</li>
+<li><strong>Server-side only.</strong> The API sends no CORS header, so this doesn&#39;t work from browser JavaScript.</li>
+<li><strong>Names are personal data.</strong> Manager names are visible to anyone on FPL, but if you publish a table, consider showing team names or IDs only.</li>
+</ul>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/fpl-api-endpoints-reference/">FPL API endpoints: complete reference</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-live-gameweek-points-api/">FPL live gameweek points from the API</a>, which uses the picks endpoint for one gameweek.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-fixture-difficulty-api/">FPL fixture difficulty from the API</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-api-price-change-data-python/">FPL API price change data in Python</a>.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/fpl-intelligence-tool/">FPL query builder</a> has a manager-dashboard mode: enter one or more manager IDs and a gameweek and it gives you a ready-to-run input, with a fixed example of the output shape. It doesn&#39;t fetch live FPL data in your browser, because the API blocks cross-origin requests.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu" target="_blank" rel="noopener">FPL Intelligence actor</a> on Apify has a <code>manager_dashboard</code> mode that takes manager IDs and returns the season trajectory, chip usage, best and worst captains and per-transfer gains and losses. It also has <code>mini_league_intel</code> for whole leagues and <code>live_tracker</code> for live gameweeks. It exports JSON, CSV or Excel and runs on a schedule. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly query builder and the Apify actor. The script above needs neither.</em></p>
+<p>Sources: live responses from <code>fantasy.premierleague.com/api/</code> on 2026-10-14 (FPL publishes no API documentation); the Points-page URL pattern is the one FPL&#39;s own site uses.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>How do I find my FPL manager ID?</h3>
+<p>Log in at <code>fantasy.premierleague.com</code> and open the Points tab. The address bar shows <code>/entry/1234567/event/6</code>: the number after <code>/entry/</code> is your manager ID (also called team ID or entry ID). The My Team page doesn't show it.</p>
+<h3>What is a manager ID in FPL?</h3>
+<p>It's the number FPL gives your team, used in every manager endpoint of the API: <code>entry/{id}/</code>, <code>entry/{id}/history/</code>, <code>entry/{id}/event/{gw}/picks/</code> and <code>entry/{id}/transfers/</code>. It's different from a league ID, which appears in <code>/leagues/{id}/standings/</code> URLs.</p>
+<h3>Can I find someone's FPL ID by their name?</h3>
+<p>The API has no search by name. Find the manager in a league they play in: <code>leagues-classic/{league_id}/standings/</code> lists each row's <code>entry</code> (the manager ID), <code>entry_name</code> and <code>player_name</code>, 50 per page.</p>
+<h3>Does my FPL team ID change every season?</h3>
+<p>FPL creates your team fresh each season, and the history endpoint links your earlier seasons to it. In the 2026/27 data, manager ID 1 had a <code>joined_time</code> of 2026-07-23 yet listed 10 past seasons under <code>history.past</code>. Look up your ID again at the start of each season rather than reusing last year's.</p>
+</section>
+<p class="guide-end"><a href="../../fpl-intelligence-tool/">Open the free Fantasy Premier League data &amp; picks tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/fpl-api-endpoints-reference/">FPL API Endpoints: Complete Reference for 2026/27 →</a><a href="../../guides/fpl-fixture-difficulty-api/">FPL Fixture Difficulty (FDR) from the API in Python →</a><a href="../../guides/fpl-live-gameweek-points-api/">FPL Live Gameweek Points from the API: Picks Math →</a><a href="../../guides/understat-xg-data-export/">Understat xG Data Export: Pull Expected Goals with Python + CSV →</a><a href="../../guides/ai-share-of-voice-chatgpt-perplexity/">AI Share of Voice: Measure It in ChatGPT and Perplexity →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

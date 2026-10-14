@@ -1,0 +1,311 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>Hacker News Firebase API vs Algolia: Which One to Use</title>
+<meta name="description" content="HN&#39;s official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python.">
+<link rel="canonical" href="https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Hacker News Firebase API vs Algolia: Which One to Use"><meta property="og:description" content="HN&#39;s official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python."><meta property="og:url" content="https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-hacker-news-firebase-api-vs-algolia.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Hacker News Firebase API vs Algolia: Which One to Use">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="webdev"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Hacker News Firebase API vs Algolia: Which One to Use"><meta name="twitter:description" content="HN&#39;s official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-hacker-news-firebase-api-vs-algolia.jpg"><meta name="twitter:image:alt" content="Hacker News Firebase API vs Algolia: Which One to Use">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#article","headline":"Hacker News Firebase API vs Algolia: Which One to Use","description":"HN's official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-hacker-news-firebase-api-vs-algolia.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, webdev, datascience","about":{"@type":"SoftwareApplication","name":"Search Hacker News by keyword — live, with points and comments","url":"https://datatooly.xyz/hacker-news-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#webpage","url":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/","name":"Hacker News Firebase API vs Algolia: Which One to Use","description":"HN's official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-hacker-news-firebase-api-vs-algolia.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Hacker News Firebase API vs Algolia: Which One to Use","item":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/#quick-answers","mainEntity":[{"@type":"Question","name":"Where is the official Hacker News API documentation?","acceptedAnswer":{"@type":"Answer","text":"The official Hacker News API is documented in the HackerNews/API repository on GitHub. Its base URL is https://hacker-news.firebaseio.com/v0/, with endpoints such as /item/{id}.json, /user/{id}.json, /maxitem.json, /topstories.json, /newstories.json, /beststories.json, /askstories.json, /showstories.json, /jobstories.json and /updates.json."}},{"@type":"Question","name":"How many stories does the Hacker News topstories endpoint return?","acceptedAnswer":{"@type":"Answer","text":"Up to 500 IDs, according to the official docs; newstories also returns up to 500, and askstories, showstories and jobstories up to 200 each. On 2026-10-14 the endpoints returned 500 (top), 500 (new), 200 (best), 22 (ask), 177 (show) and 31 (job) IDs. They are IDs only: fetch each with /v0/item/{id}.json."}},{"@type":"Question","name":"Does the Hacker News API have a rate limit?","acceptedAnswer":{"@type":"Answer","text":"The official Firebase API's README says \"There is currently no rate limit.\" The Algolia search API, a separate service, says it limits each IP to 10,000 requests per hour."}},{"@type":"Question","name":"Can I search Hacker News with the Firebase API?","acceptedAnswer":{"@type":"Answer","text":"No. The Firebase API has no search, keyword or filter endpoint, only lists of IDs and lookups by ID. To search by keyword, author, points or date, use the Algolia API at https://hn.algolia.com/api/v1/search."}}]}</script>
+</head><body data-tool-id="hacker-news-search"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/dev-community/">Dev &amp; Community</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Dev &amp; Community</span>
+<h1>Hacker News Firebase API vs Algolia: Which One to Use</h1>
+<p class="lede">HN's official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Search Hacker News by keyword — live, with points and comments</p><p class="gcta-s">Search Hacker News live in your browser with the public HN Algolia API: no key, no login. Filter by type, points and date, then copy the query for bulk export.</p><a class="btn btn-primary" href="../../hacker-news-search/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Use the official Firebase API (<code>https://hacker-news.firebaseio.com/v0/</code>) for the front-page ranking (<code>topstories</code>), live lists and exact item lookups. Use the Algolia API (<code>https://hn.algolia.com/api/v1/</code>) for anything you need to search or filter by keyword, author, points or date. Firebase has no search and returns IDs you fetch one by one. Algolia returns full records in one call.</p>
+<p>Both are free, need no key, and send <code>Access-Control-Allow-Origin: *</code>. I ran the same tasks through both on 2026-10-14. Here is how they differ.</p>
+<h2 id="side-by-side">Side by side</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Firebase (official)</th>
+<th>Algolia (HN Search)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Base URL</td>
+<td><code>https://hacker-news.firebaseio.com/v0/</code></td>
+<td><code>https://hn.algolia.com/api/v1/</code></td>
+</tr>
+<tr>
+<td>Docs</td>
+<td><a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">HackerNews/API on GitHub</a></td>
+<td><a href="https://hn.algolia.com/api" target="_blank" rel="noopener">HN Search API page</a></td>
+</tr>
+<tr>
+<td>Run by</td>
+<td>Hacker News, on Firebase</td>
+<td>Algolia</td>
+</tr>
+<tr>
+<td>Search, filters</td>
+<td>None</td>
+<td>Full-text query, <code>tags</code>, <code>numericFilters</code></td>
+</tr>
+<tr>
+<td>Front-page ranking</td>
+<td><code>topstories</code>, in rank order</td>
+<td><code>tags=front_page</code>: the same set, not in rank order</td>
+</tr>
+<tr>
+<td>Response shape</td>
+<td>Lists of IDs, then one item per request</td>
+<td>Full hits, up to 1,000 per request</td>
+</tr>
+<tr>
+<td>Comment trees</td>
+<td><code>kids</code> IDs only; walk them yourself</td>
+<td><code>/items/{id}</code> returns the nested tree</td>
+</tr>
+<tr>
+<td>Deleted and dead items</td>
+<td>Returned, flagged <code>deleted</code> / <code>dead</code></td>
+<td>Not returned</td>
+</tr>
+<tr>
+<td>Rate limit</td>
+<td>&quot;There is currently no rate limit.&quot;</td>
+<td>&quot;10,000 per hour&quot; per IP</td>
+</tr>
+<tr>
+<td>Field names</td>
+<td><code>by</code>, <code>score</code>, <code>time</code>, <code>descendants</code>, <code>kids</code></td>
+<td><code>author</code>, <code>points</code>, <code>created_at_i</code>, <code>num_comments</code>, <code>children</code></td>
+</tr>
+</tbody></table></div>
+<h2 id="firebase-endpoints">Firebase endpoints</h2>
+<p>Every path ends in <code>.json</code>. Without it, the server answered HTTP 301.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Returns</th>
+<th>Count on 2026-10-14</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/v0/topstories.json</code></td>
+<td>Front-page ranking, including jobs</td>
+<td>500 IDs (docs: up to 500)</td>
+</tr>
+<tr>
+<td><code>/v0/newstories.json</code></td>
+<td>Newest stories</td>
+<td>500 IDs (docs: up to 500)</td>
+</tr>
+<tr>
+<td><code>/v0/beststories.json</code></td>
+<td>Best stories</td>
+<td>200 IDs</td>
+</tr>
+<tr>
+<td><code>/v0/askstories.json</code></td>
+<td>Latest Ask HN</td>
+<td>22 IDs (docs: up to 200)</td>
+</tr>
+<tr>
+<td><code>/v0/showstories.json</code></td>
+<td>Latest Show HN</td>
+<td>177 IDs (docs: up to 200)</td>
+</tr>
+<tr>
+<td><code>/v0/jobstories.json</code></td>
+<td>Latest jobs</td>
+<td>31 IDs (docs: up to 200)</td>
+</tr>
+<tr>
+<td><code>/v0/item/{id}.json</code></td>
+<td>One story, comment, job, poll or poll option</td>
+<td></td>
+</tr>
+<tr>
+<td><code>/v0/user/{id}.json</code></td>
+<td><code>id</code>, <code>created</code>, <code>karma</code>, <code>about</code>, <code>submitted</code></td>
+<td>Usernames are case-sensitive: <code>PG</code> returned <code>null</code></td>
+</tr>
+<tr>
+<td><code>/v0/maxitem.json</code></td>
+<td>The highest item ID</td>
+<td>50090563 at the time</td>
+</tr>
+<tr>
+<td><code>/v0/updates.json</code></td>
+<td><code>items</code> and <code>profiles</code> that changed recently</td>
+<td>97 items, 26 profiles</td>
+</tr>
+</tbody></table></div>
+<p>The item fields, per the official docs: <code>id</code>, <code>deleted</code>, <code>type</code>, <code>by</code>, <code>time</code>, <code>text</code>, <code>dead</code>, <code>parent</code>, <code>poll</code>, <code>kids</code>, <code>url</code>, <code>score</code>, <code>title</code>, <code>parts</code> and <code>descendants</code>. The docs say <code>kids</code> are &quot;in ranked display order&quot; and <code>descendants</code> is &quot;the total comment count&quot; of a story or poll. Only <code>id</code> is guaranteed; a field that doesn&#39;t apply is absent, not <code>null</code>.</p>
+<p>Firebase also accepts its REST query parameters. <code>topstories.json?orderBy=&quot;$key&quot;&amp;limitToFirst=3</code> returned only the first three IDs, and <code>?print=pretty</code> indents the output.</p>
+<h2 id="same-task-both-apis">Same task, both APIs</h2>
+<p>Fetching the current front page:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import time
+from concurrent.futures import ThreadPoolExecutor
+
+import requests
+
+FB = &quot;https://hacker-news.firebaseio.com/v0&quot;
+ALGOLIA = &quot;https://hn.algolia.com/api/v1&quot;
+s = requests.Session()
+
+
+def fb(path):
+    r = s.get(f&quot;{FB}/{path}.json&quot;, timeout=30)
+    r.raise_for_status()
+    return r.json()  # a missing item is HTTP 200 with the body `null`
+
+
+# Official API: the ranked list, then one request per story.
+t0 = time.time()
+ids = fb(&quot;topstories&quot;)[:30]
+with ThreadPoolExecutor(10) as ex:
+    stories = [x for x in ex.map(lambda i: fb(f&quot;item/{i}&quot;), ids) if x]
+print(f&quot;Firebase: {len(stories)} stories in {time.time() - t0:.1f}s ({len(ids) + 1} requests)&quot;)
+for rank, st in enumerate(stories[:3], 1):
+    print(f&quot;  #{rank} {st['score']} pts, {st.get('descendants', 0)} comments: {st['title']}&quot;)
+
+# Algolia: one request for the stories on the front page now (not in rank order).
+t0 = time.time()
+hits = s.get(f&quot;{ALGOLIA}/search&quot;, params={&quot;tags&quot;: &quot;front_page&quot;, &quot;hitsPerPage&quot;: 50}, timeout=30).json()[&quot;hits&quot;]
+print(f&quot;Algolia front_page: {len(hits)} stories in {time.time() - t0:.1f}s (1 request)&quot;)
+print(f&quot;  same IDs as Firebase top 30: {len({int(h['objectID']) for h in hits} &amp; set(ids))}&quot;)
+
+# Firebase list endpoints and how many IDs each returned today.
+for name in [&quot;topstories&quot;, &quot;newstories&quot;, &quot;beststories&quot;, &quot;askstories&quot;, &quot;showstories&quot;, &quot;jobstories&quot;]:
+    print(f&quot;{name:&lt;12} {len(fb(name))} ids&quot;)</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">Firebase: 30 stories in 14.2s (31 requests)
+  #1 524 pts, 211 comments: Iosevka is an open-source, sans-serif and slab-serif monospace font
+  #2 25 pts, 3 comments: Submarine cable resilience
+  #3 134 pts, 39 comments: Pg_vectorsearch: An index that is faster than pgvector's IVFFlat and HNSW
+Algolia front_page: 30 stories in 3.0s (1 request)
+  same IDs as Firebase top 30: 28
+topstories   500 ids
+newstories   500 ids
+beststories  200 ids
+askstories   22 ids
+showstories  177 ids
+jobstories   31 ids</code></pre></div>
+<p>Request times vary a lot from run to run. In an earlier test the same thread pool fetched 200 Firebase items in 4.4 seconds. The shape is what matters: Firebase is one request per item, and Algolia is one request per page of up to 1,000 items.</p>
+<p>The two front pages overlapped on 28 of 30 IDs in this run and on 29 of 30 in an earlier one. The front page changes from minute to minute, and the two requests weren&#39;t simultaneous. If you need the exact ranking, <code>topstories</code> is the source: it&#39;s ordered, and <code>front_page</code> isn&#39;t.</p>
+<h2 id="freshness">Freshness</h2>
+<p>On 2026-10-14 the newest item in Algolia&#39;s <code>/search_by_date</code> had the same ID as Firebase&#39;s <code>maxitem</code>, 27 seconds after it was posted. Points and comment counts for the five top stories matched exactly between the two APIs. On that day Algolia was effectively live. Firebase is still the source of truth: Algolia indexes what Firebase publishes, so if the two ever disagree, trust Firebase.</p>
+<h2 id="rate-behaviour">Rate behaviour</h2>
+<ul>
+<li><strong>Firebase:</strong> the README says &quot;There is currently no rate limit.&quot; That&#39;s not an invitation to hammer it. Use a small thread pool, as above, and cache items that no longer change (old stories and comments).</li>
+<li><strong>Algolia:</strong> the API page says &quot;We are limiting the number of API requests from a single IP to 10,000 per hour.&quot; That&#39;s about 2.7 requests per second, sustained. Because one request can return 1,000 hits, you rarely need that many.</li>
+<li><strong>Neither publishes an error format for throttling.</strong> Back off and retry on 429 and 5xx.</li>
+</ul>
+<h2 id="which-one-to-use">Which one to use</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Front page in rank order</td>
+<td>Firebase <code>topstories</code></td>
+</tr>
+<tr>
+<td>New, Ask, Show or job lists as HN shows them</td>
+<td>Firebase list endpoints</td>
+</tr>
+<tr>
+<td>Search by keyword, author, domain or points</td>
+<td>Algolia <code>/search</code></td>
+</tr>
+<tr>
+<td>Everything posted between two dates</td>
+<td>Algolia <code>/search_by_date</code> with <code>created_at_i</code></td>
+</tr>
+<tr>
+<td>A whole comment thread fast</td>
+<td>Algolia <code>/items/{id}</code></td>
+</tr>
+<tr>
+<td>A complete thread including removed comments</td>
+<td>Firebase, walking <code>kids</code></td>
+</tr>
+<tr>
+<td>A user&#39;s karma and submissions</td>
+<td>Firebase <code>/user/{id}</code> (<code>submitted</code> lists every item ID); Algolia <code>/users/{name}</code> returns only karma and about</td>
+</tr>
+<tr>
+<td>Watching for changes</td>
+<td>Firebase <code>/updates</code> or <code>maxitem</code></td>
+</tr>
+</tbody></table></div>
+<p>Most real projects use both. Find IDs with Algolia, then read the authoritative item from Firebase when it matters.</p>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/hacker-news-algolia-api-reference/">HN Algolia API reference</a>.</li>
+<li><a href="https://datatooly.xyz/guides/hacker-news-api-get-all-comments/">Get all comments for a Hacker News story</a>, which compares all three ways of reading a thread.</li>
+<li><a href="https://datatooly.xyz/guides/search-hacker-news-by-date-range-points/">Search Hacker News by date range or points</a>.</li>
+<li><a href="https://datatooly.xyz/guides/hacker-news-search-api/">The Hacker News Search API: free, no key</a>.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/hacker-news-search/">Hacker News search tool</a> runs Algolia searches live in your browser: keyword, type (story, comment, Show HN, Ask HN), relevance or date order, and a minimum score.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu" target="_blank" rel="noopener">Hacker News Scraper actor</a> on Apify combines both APIs. Its list modes (top, new, best, ask, show and job) read the Firebase rankings, its search mode uses Algolia, and it can attach comment trees, author karma, and filters on score, comments, date and domain. It also parses the monthly &quot;Who is hiring?&quot; thread into job rows. It exports JSON, CSV or Excel, and it&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly tool and the Apify actor. Both APIs work fine without them.</em></p>
+<p>Sources: <a href="https://github.com/HackerNews/API" target="_blank" rel="noopener">Hacker News API on GitHub (official)</a>, <a href="https://hn.algolia.com/api" target="_blank" rel="noopener">HN Search API</a>, and live responses from both APIs on 2026-10-14.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>Where is the official Hacker News API documentation?</h3>
+<p>The official Hacker News API is documented in the <code>HackerNews/API</code> repository on GitHub. Its base URL is <code>https://hacker-news.firebaseio.com/v0/</code>, with endpoints such as <code>/item/{id}.json</code>, <code>/user/{id}.json</code>, <code>/maxitem.json</code>, <code>/topstories.json</code>, <code>/newstories.json</code>, <code>/beststories.json</code>, <code>/askstories.json</code>, <code>/showstories.json</code>, <code>/jobstories.json</code> and <code>/updates.json</code>.</p>
+<h3>How many stories does the Hacker News topstories endpoint return?</h3>
+<p>Up to 500 IDs, according to the official docs; <code>newstories</code> also returns up to 500, and <code>askstories</code>, <code>showstories</code> and <code>jobstories</code> up to 200 each. On 2026-10-14 the endpoints returned 500 (top), 500 (new), 200 (best), 22 (ask), 177 (show) and 31 (job) IDs. They are IDs only: fetch each with <code>/v0/item/{id}.json</code>.</p>
+<h3>Does the Hacker News API have a rate limit?</h3>
+<p>The official Firebase API's README says &quot;There is currently no rate limit.&quot; The Algolia search API, a separate service, says it limits each IP to 10,000 requests per hour.</p>
+<h3>Can I search Hacker News with the Firebase API?</h3>
+<p>No. The Firebase API has no search, keyword or filter endpoint, only lists of IDs and lookups by ID. To search by keyword, author, points or date, use the Algolia API at <code>https://hn.algolia.com/api/v1/search</code>.</p>
+</section>
+<p class="guide-end"><a href="../../hacker-news-search/">Open the free Search Hacker News by keyword tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/hacker-news-search-api/">The Hacker News Search API: Free, No-Key, and Surprisingly Powerful →</a><a href="../../guides/hacker-news-algolia-api-reference/">HN Algolia API Reference: Search, Tags, Filters, Limits →</a><a href="../../guides/hacker-news-api-get-all-comments/">Get All Comments for a Hacker News Story with the API →</a><a href="../../guides/search-hacker-news-by-date-range-points/">Search Hacker News by Date Range or Points (API) →</a><a href="../../guides/ai-share-of-voice-chatgpt-perplexity/">AI Share of Voice: Measure It in ChatGPT and Perplexity →</a><a href="../../guides/check-if-chatgpt-mentions-your-brand/">How to Check if ChatGPT Mentions Your Brand (Free) →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

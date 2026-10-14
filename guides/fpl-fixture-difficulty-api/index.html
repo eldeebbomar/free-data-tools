@@ -1,0 +1,212 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>FPL Fixture Difficulty (FDR) from the API in Python</title>
+<meta name="description" content="Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks.">
+<link rel="canonical" href="https://datatooly.xyz/guides/fpl-fixture-difficulty-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="FPL Fixture Difficulty (FDR) from the API in Python"><meta property="og:description" content="Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks."><meta property="og:url" content="https://datatooly.xyz/guides/fpl-fixture-difficulty-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-fpl-fixture-difficulty-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="FPL Fixture Difficulty (FDR) from the API in Python">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="python"><meta property="article:tag" content="api"><meta property="article:tag" content="football"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="FPL Fixture Difficulty (FDR) from the API in Python"><meta name="twitter:description" content="Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-fpl-fixture-difficulty-api.jpg"><meta name="twitter:image:alt" content="FPL Fixture Difficulty (FDR) from the API in Python">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#article","headline":"FPL Fixture Difficulty (FDR) from the API in Python","description":"Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-fixture-difficulty-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"python, api, football, datascience","about":{"@type":"SoftwareApplication","name":"Fantasy Premier League data & picks","url":"https://datatooly.xyz/fpl-intelligence-tool/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#webpage","url":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/","name":"FPL Fixture Difficulty (FDR) from the API in Python","description":"Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-fpl-fixture-difficulty-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"FPL Fixture Difficulty (FDR) from the API in Python","item":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/fpl-fixture-difficulty-api/#quick-answers","mainEntity":[{"@type":"Question","name":"Where is fixture difficulty in the FPL API?","acceptedAnswer":{"@type":"Answer","text":"In https://fantasy.premierleague.com/api/fixtures/. Each fixture has team_h_difficulty (how hard the match is for the home team) and team_a_difficulty (for the away team), on FPL's 1 to 5 scale. element-summary/{player_id}/ repeats it from one player's side as difficulty, alongside is_home."}},{"@type":"Question","name":"How is FPL fixture difficulty calculated?","acceptedAnswer":{"@type":"Answer","text":"FPL doesn't publish a formula. In the 2026/27 data, every fixture's difficulty equalled the opponent's strength_overall_home (when you play at home) or strength_overall_away (when you play away) from bootstrap-static/ → teams: 380 of 380 fixtures for both sides on 2026-10-14. So it's a fixed rating per opponent and venue, not a model of form."}},{"@type":"Question","name":"How do I get only upcoming FPL fixtures?","acceptedAnswer":{"@type":"Answer","text":"Call fixtures/?future=1; on 2026-10-14 it returned the 320 fixtures not yet played. Use fixtures/?event=7 for one gameweek. A fixture with event: null hasn't been given a gameweek yet."}}]}</script>
+</head><body data-tool-id="fpl-intelligence-tool"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/sports-analytics/">Sports Analytics</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Sports Analytics</span>
+<h1>FPL Fixture Difficulty (FDR) from the API in Python</h1>
+<p class="lede">Read FPL fixture difficulty from the free API: team_h_difficulty, team_a_difficulty, how they map to team strength, and a Python table of the next 5 gameweeks.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Fantasy Premier League data &amp; picks</p><p class="gcta-s">The main public FPL API endpoints in one list (bootstrap-static, fixtures, picks, live gameweek), plus a free builder for manager and gameweek queries.</p><a class="btn btn-primary" href="../../fpl-intelligence-tool/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>FPL fixture difficulty ratings are in <code>https://fantasy.premierleague.com/api/fixtures/</code>: every fixture carries <code>team_h_difficulty</code> and <code>team_a_difficulty</code> on a 1–5 scale, where higher is harder. Use <code>fixtures/?future=1</code> for upcoming matches only, and map team IDs to names with <code>bootstrap-static/</code> → <code>teams</code>. No key is needed, but there&#39;s no CORS header, so call it from a script.</p>
+<p>Below: the fields, what the rating appears to be based on, and a Python script that prints every team&#39;s next five fixtures with difficulty, run on 2026-10-14 (2026/27 season, before gameweek 7).</p>
+<h2 id="where-the-ratings-are">Where the ratings are</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Field</th>
+<th>Point of view</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>fixtures/</code> (add <code>?future=1</code> or <code>?event={gw}</code>)</td>
+<td><code>team_h_difficulty</code>, <code>team_a_difficulty</code></td>
+<td>Home side and away side</td>
+</tr>
+<tr>
+<td><code>element-summary/{player_id}/</code> → <code>fixtures</code></td>
+<td><code>difficulty</code>, <code>is_home</code></td>
+<td>The player&#39;s team</td>
+</tr>
+<tr>
+<td><code>bootstrap-static/</code> → <code>teams</code></td>
+<td><code>strength_overall_home</code>, <code>strength_overall_away</code></td>
+<td>The ratings the difficulties match (see below)</td>
+</tr>
+</tbody></table></div>
+<p>A fixture row looks like this (gameweek 7, from the live API):</p>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{&quot;id&quot;: 64, &quot;event&quot;: 7, &quot;kickoff_time&quot;: &quot;2026-10-17T11:30:00Z&quot;, &quot;team_h&quot;: 9, &quot;team_a&quot;: 6,
+ &quot;team_h_difficulty&quot;: 4, &quot;team_a_difficulty&quot;: 3, &quot;finished&quot;: false, &quot;started&quot;: false}</code></pre></div>
+<h2 id="next-five-gameweeks-easiest-first">Next five gameweeks, easiest first</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import requests
+
+API = &quot;https://fantasy.premierleague.com/api/&quot;
+s = requests.Session()
+s.headers[&quot;User-Agent&quot;] = &quot;fpl-fdr/1.0 (personal script)&quot;
+
+boot = s.get(API + &quot;bootstrap-static/&quot;, timeout=30).json()
+teams = {t[&quot;id&quot;]: t[&quot;short_name&quot;] for t in boot[&quot;teams&quot;]}
+next_gw = next(e[&quot;id&quot;] for e in boot[&quot;events&quot;] if e[&quot;is_next&quot;])
+horizon = range(next_gw, next_gw + 5)                        # the next five gameweeks
+
+fixtures = s.get(API + &quot;fixtures/?future=1&quot;, timeout=30).json()
+
+# One row per team: list of (gw, opponent, H/A, difficulty), from that team's point of view.
+runs = {tid: [] for tid in teams}
+for f in fixtures:
+    if f[&quot;event&quot;] not in horizon:                            # event is None for unscheduled games
+        continue
+    runs[f[&quot;team_h&quot;]].append((f[&quot;event&quot;], teams[f[&quot;team_a&quot;]], &quot;H&quot;, f[&quot;team_h_difficulty&quot;]))
+    runs[f[&quot;team_a&quot;]].append((f[&quot;event&quot;], teams[f[&quot;team_h&quot;]], &quot;A&quot;, f[&quot;team_a_difficulty&quot;]))
+
+table = []
+for tid, games in runs.items():
+    games.sort()
+    total = sum(g[3] for g in games)
+    # Blank gameweeks lower the sum, so rank on the average and show the game count.
+    table.append((total / len(games) if games else 99, len(games), teams[tid],
+                  &quot;  &quot;.join(f&quot;{opp}({ha}){d}&quot; for _, opp, ha, d in games)))
+
+print(f&quot;Fixture difficulty, GW{horizon.start}-GW{horizon.stop - 1} (easiest first)&quot;)
+for avg, n, team, run in sorted(table):
+    print(f&quot;{team:&lt;4} avg {avg:.1f} over {n}: {run}&quot;)
+
+unscheduled = sum(1 for f in fixtures if f[&quot;event&quot;] is None)
+print(f&quot;\nunscheduled future fixtures (event is null): {unscheduled}&quot;)</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">Fixture difficulty, GW7-GW11 (easiest first)
+COV  avg 2.6 over 5: TOT(A)3  FUL(H)2  SUN(H)3  EVE(A)3  CRY(H)2
+MCI  avg 2.6 over 5: IPS(H)2  AVL(A)3  BHA(H)3  NFO(A)3  FUL(H)2
+TOT  avg 2.6 over 5: COV(H)2  CHE(A)4  CRY(H)2  LEE(A)3  IPS(H)2
+ARS  avg 3.0 over 5: NFO(A)3  EVE(H)3  LIV(A)4  HUL(H)2  NEW(A)3
+BOU  avg 3.0 over 5: SUN(H)3  MUN(A)4  LEE(H)3  IPS(A)2  NFO(H)3
+CHE  avg 3.0 over 5: EVE(A)3  TOT(H)2  MUN(H)4  SUN(A)3  LEE(H)3
+FUL  avg 3.0 over 5: HUL(H)2  COV(A)2  AVL(A)3  NEW(H)3  MCI(A)5
+SUN  avg 3.0 over 5: BOU(A)3  LEE(H)3  COV(A)2  CHE(H)4  AVL(A)3
+AVL  avg 3.2 over 5: NEW(A)3  MCI(H)4  FUL(H)2  MUN(A)4  SUN(H)3
+BHA  avg 3.2 over 5: CRY(H)2  LIV(A)4  MCI(A)5  BRE(H)3  HUL(A)2
+BRE  avg 3.2 over 5: LIV(H)4  HUL(A)2  NFO(H)3  BHA(A)4  EVE(H)3
+CRY  avg 3.2 over 5: BHA(A)4  NEW(H)3  TOT(A)3  LIV(H)4  COV(A)2
+HUL  avg 3.2 over 5: FUL(A)3  BRE(H)3  IPS(H)2  ARS(A)5  BHA(H)3
+IPS  avg 3.2 over 5: MCI(A)5  NFO(H)3  HUL(A)2  BOU(H)3  TOT(A)3
+LEE  avg 3.2 over 5: MUN(H)4  SUN(A)3  BOU(A)3  TOT(H)2  CHE(A)4
+NEW  avg 3.2 over 5: AVL(H)3  CRY(A)3  EVE(H)3  FUL(A)3  ARS(H)4
+NFO  avg 3.2 over 5: ARS(H)4  IPS(A)2  BRE(A)3  MCI(H)4  BOU(A)3
+EVE  avg 3.4 over 5: CHE(H)4  ARS(A)5  NEW(A)3  COV(H)2  BRE(A)3
+LIV  avg 3.4 over 5: BRE(A)3  BHA(H)3  ARS(H)4  CRY(A)3  MUN(H)4
+MUN  avg 3.4 over 5: LEE(A)3  BOU(H)3  CHE(A)4  AVL(H)3  LIV(A)4
+
+unscheduled future fixtures (event is null): 0</code></pre></div>
+<p>As a cross-check, <code>element-summary/101/</code> (a Chelsea player) listed EVE (A) 3, TOT (H) 2, MUN (H) 4, SUN (A) 3 and LEE (H) 3 for gameweeks 7 to 11, the same as the CHE row.</p>
+<h2 id="what-the-rating-is-based-on">What the rating is based on</h2>
+<p>FPL doesn&#39;t document the formula. The data shows a simple relationship, at least in 2026/27:</p>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">from collections import Counter
+
+import requests
+
+API = &quot;https://fantasy.premierleague.com/api/&quot;
+h = {&quot;User-Agent&quot;: &quot;fpl-fdr/1.0 (personal script)&quot;}
+teams = {t[&quot;id&quot;]: t for t in requests.get(API + &quot;bootstrap-static/&quot;, headers=h, timeout=30).json()[&quot;teams&quot;]}
+fixtures = requests.get(API + &quot;fixtures/&quot;, headers=h, timeout=30).json()
+
+print(&quot;difficulty values:&quot;, sorted(Counter(
+    d for f in fixtures for d in (f[&quot;team_h_difficulty&quot;], f[&quot;team_a_difficulty&quot;])).items()))
+print(&quot;home side's difficulty == away team's strength_overall_home:&quot;,
+      sum(f[&quot;team_h_difficulty&quot;] == teams[f[&quot;team_a&quot;]][&quot;strength_overall_home&quot;] for f in fixtures), &quot;of&quot;, len(fixtures))
+print(&quot;away side's difficulty == home team's strength_overall_away:&quot;,
+      sum(f[&quot;team_a_difficulty&quot;] == teams[f[&quot;team_h&quot;]][&quot;strength_overall_away&quot;] for f in fixtures), &quot;of&quot;, len(fixtures))
+ars = next(t for t in teams.values() if t[&quot;short_name&quot;] == &quot;ARS&quot;)
+print(&quot;ARS:&quot;, {k: ars[k] for k in (&quot;strength&quot;, &quot;strength_overall_home&quot;, &quot;strength_overall_away&quot;,
+                                   &quot;strength_attack_home&quot;, &quot;strength_defence_away&quot;)})</code></pre></div>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">difficulty values: [(2, 171), (3, 380), (4, 171), (5, 38)]
+home side's difficulty == away team's strength_overall_home: 380 of 380
+away side's difficulty == home team's strength_overall_away: 380 of 380
+ARS: {'strength': None, 'strength_overall_home': 4, 'strength_overall_away': 5, 'strength_attack_home': 0, 'strength_defence_away': 0}</code></pre></div>
+<p>What that means:</p>
+<ul>
+<li><strong>Each team has two ratings, and they describe the team as an opponent.</strong> Arsenal&#39;s <code>strength_overall_home</code> is 4 and <code>strength_overall_away</code> is 5. Hosting Arsenal is rated 4; visiting Arsenal is rated 5. The field names read as if they described Arsenal&#39;s own home and away strength, but the fixtures say otherwise.</li>
+<li><strong>The rating doesn&#39;t change with form within a fixture list.</strong> It&#39;s a lookup per opponent and venue, so two teams playing the same opponent at the same venue get the same number. FPL may update the ratings during a season, so re-read <code>fixtures/</code> rather than caching it for months.</li>
+<li><strong>This season uses 2 to 5.</strong> No fixture was rated 1 on 2026-10-14.</li>
+<li><strong>Some team fields are empty.</strong> <code>strength</code> was <code>null</code> and the <code>strength_attack_*</code> / <code>strength_defence_*</code> fields were 0 for every team, so build nothing on them this season.</li>
+</ul>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li><strong>Blank and double gameweeks.</strong> A team with no match in a gameweek contributes nothing to the sum, which makes its run look easier. The script averages over games played and shows the count. A double gameweek adds a sixth fixture to the five-week window; that&#39;s two chances to score, not a harder run.</li>
+<li><strong><code>event: null</code>.</strong> Postponed or unscheduled fixtures have no gameweek. The script skips them and counts them at the end.</li>
+<li><strong>Difficulty isn&#39;t attack and defence.</strong> A defender cares about the opponent&#39;s attack, a forward about its defence. FPL&#39;s single number blends both. For something sharper, combine fixtures with expected goals from <code>element-summary</code> history or another source.</li>
+<li><strong>No CORS.</strong> Server-side only.</li>
+</ul>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/fpl-api-endpoints-reference/">FPL API endpoints: complete reference</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-live-gameweek-points-api/">FPL live gameweek points from the API</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-manager-id-team-history-api/">Find your FPL manager ID and pull your team history</a>.</li>
+<li><a href="https://datatooly.xyz/guides/fpl-api-price-change-data-python/">FPL API price change data in Python</a>.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/fpl-intelligence-tool/">FPL query builder</a> builds a ready-to-run input for the gameweek-picks mode, which weighs upcoming fixtures, and shows a fixed example of the output shape. It doesn&#39;t fetch live FPL data in your browser.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu" target="_blank" rel="noopener">FPL Intelligence actor</a> on Apify uses these difficulty ratings in its <code>gameweek_picks</code> mode, with a configurable fixture look-ahead (<code>picksFixtureLookahead</code>), to rank captain, transfer-in, differential and sell candidates. It also runs a wildcard optimizer and mini-league and live-gameweek modes, and exports JSON, CSV or Excel. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly query builder and the Apify actor. The scripts above need neither.</em></p>
+<p>Sources: live responses from <code>fantasy.premierleague.com/api/</code> on 2026-10-14. FPL publishes no API documentation or difficulty formula.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>Where is fixture difficulty in the FPL API?</h3>
+<p>In <code>https://fantasy.premierleague.com/api/fixtures/</code>. Each fixture has <code>team_h_difficulty</code> (how hard the match is for the home team) and <code>team_a_difficulty</code> (for the away team), on FPL's 1 to 5 scale. <code>element-summary/{player_id}/</code> repeats it from one player's side as <code>difficulty</code>, alongside <code>is_home</code>.</p>
+<h3>How is FPL fixture difficulty calculated?</h3>
+<p>FPL doesn't publish a formula. In the 2026/27 data, every fixture's difficulty equalled the opponent's <code>strength_overall_home</code> (when you play at home) or <code>strength_overall_away</code> (when you play away) from <code>bootstrap-static/</code> → <code>teams</code>: 380 of 380 fixtures for both sides on 2026-10-14. So it's a fixed rating per opponent and venue, not a model of form.</p>
+<h3>How do I get only upcoming FPL fixtures?</h3>
+<p>Call <code>fixtures/?future=1</code>; on 2026-10-14 it returned the 320 fixtures not yet played. Use <code>fixtures/?event=7</code> for one gameweek. A fixture with <code>event: null</code> hasn't been given a gameweek yet.</p>
+</section>
+<p class="guide-end"><a href="../../fpl-intelligence-tool/">Open the free Fantasy Premier League data &amp; picks tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/fpl-api-price-change-data-python/">FPL API Price Change Data in Python: The Official 2026/27 Fields →</a><a href="../../guides/fpl-api-endpoints-reference/">FPL API Endpoints: Complete Reference for 2026/27 →</a><a href="../../guides/fpl-live-gameweek-points-api/">FPL Live Gameweek Points from the API: Picks Math →</a><a href="../../guides/fpl-manager-id-team-history-api/">Find Your FPL Manager ID and Pull Your Team History →</a><a href="../../guides/understat-xg-data-export/">Understat xG Data Export: Pull Expected Goals with Python + CSV →</a><a href="../../guides/ai-share-of-voice-chatgpt-perplexity/">AI Share of Voice: Measure It in ChatGPT and Perplexity →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

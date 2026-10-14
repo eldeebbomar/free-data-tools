@@ -197,5 +197,5 @@ Every request to SEC.gov's APIs (data.sec.gov, efts.sec.gov and www.sec.gov file
 - [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 - [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/)
 - [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/)
-- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
-- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)
+- [How to Check if ChatGPT Mentions Your Brand (Free)](https://datatooly.xyz/guides/check-if-chatgpt-mentions-your-brand/)

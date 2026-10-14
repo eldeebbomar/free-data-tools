@@ -12,7 +12,11 @@
 
 ## Guides
 
+- [HN Algolia API Reference: Search, Tags, Filters, Limits](https://datatooly.xyz/guides/hacker-news-algolia-api-reference/): The Hacker News Algolia API in one page: /search vs /search_by_date, every tag, numericFilters, hitsPerPage, the 1,000-hit cap, /items and /users. Tested live.
+- [Get All Comments for a Hacker News Story with the API](https://datatooly.xyz/guides/hacker-news-api-get-all-comments/): Three ways to download every comment on a Hacker News thread: the Algolia item tree, the search index and the Firebase API. Tested Python, and what each misses.
+- [Hacker News Firebase API vs Algolia: Which One to Use](https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/): HN's official Firebase API (topstories, item, user) vs the Algolia search API: endpoints, rate limits, freshness and speed, tested side by side in Python.
 - [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/): A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.
+- [Search Hacker News by Date Range or Points (API)](https://datatooly.xyz/guides/search-hacker-news-by-date-range-points/): Find Hacker News stories between two dates or above a points threshold with the free Algolia API, and get past the 1,000-result cap. Tested Python and JS.
 
 ## Other categories
 

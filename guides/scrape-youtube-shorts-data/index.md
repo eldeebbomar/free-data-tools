@@ -122,4 +122,4 @@ However you go about it, keep it to **public data only** — public Shorts, publ
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)

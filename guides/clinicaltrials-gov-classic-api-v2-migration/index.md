@@ -181,4 +181,4 @@ Put the classic `expr` search expression into `query.term` on `/api/v2/studies`,
 - [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
 - [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
-- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)

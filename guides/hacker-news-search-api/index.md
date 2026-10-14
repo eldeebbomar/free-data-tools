@@ -113,7 +113,7 @@ Two limits are worth internalizing so you don't design something that quietly br
 
 1. **~1,000 retrievable results per query.** This is Algolia's standard pagination ceiling — you can page through results, but only down to roughly the first 1,000. If you need *everything* matching a broad query, you can't just deep-paginate; you have to **slice by time** instead. Run several narrower `created_at_i` ranges and stitch the results together.
 
-2. **A rough rate ceiling of ~10,000 requests/hour/IP.** Important caveat: this is a community / Algolia-staff figure that's been cited over the years, **not a published SLA**. Treat it as a courtesy budget, not a guarantee — add backoff, cache responses, and don't hammer it.
+2. **A rate limit of 10,000 requests per hour per IP.** The official HN Search API page (hn.algolia.com/api) states this limit. Treat it as a ceiling, not a target: add backoff, cache responses, and don't hammer it.
 
 Neither limit is a problem for normal use, but both shape how you architect a large backfill.
 
@@ -158,8 +158,9 @@ Go build something. The index is wide open.
 
 ## Related guides
 
-- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
-- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
-- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
-- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
-- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [HN Algolia API Reference: Search, Tags, Filters, Limits](https://datatooly.xyz/guides/hacker-news-algolia-api-reference/)
+- [Get All Comments for a Hacker News Story with the API](https://datatooly.xyz/guides/hacker-news-api-get-all-comments/)
+- [Hacker News Firebase API vs Algolia: Which One to Use](https://datatooly.xyz/guides/hacker-news-firebase-api-vs-algolia/)
+- [Search Hacker News by Date Range or Points (API)](https://datatooly.xyz/guides/search-hacker-news-by-date-range-points/)
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/)
+- [How to Check if ChatGPT Mentions Your Brand (Free)](https://datatooly.xyz/guides/check-if-chatgpt-mentions-your-brand/)

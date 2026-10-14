@@ -8,6 +8,10 @@
 - Backing Apify actor: [fpl-intelligence](https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
+- More guides: [FPL API Endpoints: Complete Reference for 2026/27](https://datatooly.xyz/guides/fpl-api-endpoints-reference/)
+- More guides: [FPL Fixture Difficulty (FDR) from the API in Python](https://datatooly.xyz/guides/fpl-fixture-difficulty-api/)
+- More guides: [FPL Live Gameweek Points from the API: Picks Math](https://datatooly.xyz/guides/fpl-live-gameweek-points-api/)
+- More guides: [Find Your FPL Manager ID and Pull Your Team History](https://datatooly.xyz/guides/fpl-manager-id-team-history-api/)
 
 Pick a mode and gameweek and preview the ranked captain, transfer and differential picks the actor computes from the official Fantasy Premier League API.
 

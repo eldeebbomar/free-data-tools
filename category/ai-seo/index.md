@@ -12,7 +12,11 @@
 
 ## Guides
 
+- [AI Share of Voice: Measure It in ChatGPT and Perplexity](https://datatooly.xyz/guides/ai-share-of-voice-chatgpt-perplexity/): What AI share of voice means, the formula, mentions vs citations, how many answers you need, and a free script to score your ChatGPT and Perplexity runs.
+- [How to Check if ChatGPT Mentions Your Brand (Free)](https://datatooly.xyz/guides/check-if-chatgpt-mentions-your-brand/): A free, step-by-step way to check if ChatGPT and other AI assistants mention your brand: buyer prompts, clean chats, repeat runs, a simple log, and scoring.
+- [How AI Assistants Choose Which Brands and Sources to Cite](https://datatooly.xyz/guides/how-ai-assistants-choose-brands-sources/): What OpenAI, Perplexity, Anthropic and Google document about how their assistants pick sources: web search, crawlers, robots.txt. Plus a crawler check script.
 - [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/): Measure your brand's AI share of voice in Python: one prompt set, several LLMs, mention counting that ignores 'I'm not familiar with X' answers.
+- [Track AI Brand Mentions Over Time: Schedules and Drift](https://datatooly.xyz/guides/track-ai-brand-mentions-over-time/): Monitor how often ChatGPT and other AI assistants mention your brand over time: what to hold fixed, how often to run, what causes drift, how to compare runs.
 
 ## Other categories
 
