@@ -5,7 +5,7 @@
 - URL: https://datatooly.xyz/guides/hacker-news-search-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-01
-- Updated: 2026-06-01
+- Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
 - Tags: api, javascript, webdev, datascience
 
@@ -158,7 +158,7 @@ Go build something. The index is wide open.
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)

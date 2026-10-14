@@ -123,6 +123,6 @@ Whether you hand-roll it with the snippet here or run the actor, the takeaways a
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)

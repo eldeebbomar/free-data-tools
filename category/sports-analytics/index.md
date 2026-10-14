@@ -4,11 +4,11 @@
 
 - URL: https://datatooly.xyz/category/sports-analytics/
 - Tools: 2 (0 live, 2 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/) (query builder): Build a ready-to-run Fantasy Premier League API query for gameweek picks and manager dashboards, preview the output shape, then run it live on Apify.
+- [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/) (query builder): The main public FPL API endpoints in one list (bootstrap-static, fixtures, picks, live gameweek), plus a free builder for manager and gameweek queries.
 - [Understat xG football analytics — export](https://datatooly.xyz/understat-football-stats/) (query builder): Build a ready-to-run query for Understat xG data — players, teams, shots across 6 leagues since 2014/15 — preview the output shape, then run it live.
 
 ## Guides

@@ -6,8 +6,8 @@
 - Category: [App Intelligence](https://datatooly.xyz/category/app-intelligence/)
 - URL: https://datatooly.xyz/app-store-top-charts/
 - Backing Apify actor: [app-store-rank-tracker](https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [App Store Top Charts API: Free, Key-Free, and CORS-Open](https://datatooly.xyz/guides/app-store-top-charts-api/)
+- Updated: 2026-10-14
+- Full guide: [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/)
 
 Pick a country and a chart — Top Free, Top Paid, or Top Grossing — and see the live App Store rankings right in your browser: rank, app, developer, category. Straight from Apple's official feed. Free, no login, no API key.
 
@@ -110,6 +110,6 @@ Those platforms layer analytics, history, and estimates on top of chart data, us
 ## Related tools
 
 - [Browse all free data tools](https://datatooly.xyz/)
-- [Hacker News search](https://datatooly.xyz/hacker-news-search/)
+- [Search Hacker News live (HN Algolia API)](https://datatooly.xyz/hacker-news-search/)
 - [Shopify product scraper](https://datatooly.xyz/shopify-store-products/)
 - [SaaS pricing tracker](https://datatooly.xyz/saas-pricing-tracker-tool/)

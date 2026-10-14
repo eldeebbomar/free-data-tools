@@ -6,8 +6,8 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/youtube-shorts-search/
 - Backing Apify actor: [youtube-shorts-scraper-pro](https://apify.com/constructive_calm/youtube-shorts-scraper-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- Updated: 2026-10-14
+- Full guide: [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
 
 Enter channels, keywords, hashtags or Short URLs and preview the YouTube Shorts records the actor returns: views, likes, comments, viralScore and engagementRate.
 

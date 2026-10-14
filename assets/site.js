@@ -4,6 +4,51 @@
   "use strict";
   var TOOL = window.TOOL || null;
 
+  /* ---------- analytics (GA4 events through the page's gtag) ----------
+     The <head> tag skips Google Analytics entirely when navigator.webdriver is true and leaves a no-op
+     gtag(), so these calls are harmless there. Params never include anything the visitor typed.
+     Key events to mark in GA4 admin: outbound_apify, copy_input, run_tool, guide_to_tool. */
+  function track(name, params) {
+    try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) { /* analytics must never break the page */ }
+  }
+  function pageToolId() { return (TOOL && TOOL.id) || (document.body && document.body.getAttribute("data-tool-id")) || ""; }
+  function isLiveTool() { return !!(TOOL && /^live-/.test(TOOL.mode || "")); }
+  // first matching ancestor wins (most specific first)
+  var LINK_POSITIONS = [
+    [".masthead", "nav"], [".foot", "footer"], [".guide-cta", "guide-cta"], [".guide-end", "guide-end"],
+    [".guide-quick", "guide-answers"], [".guide-body", "guide-body"], [".cta", "cta"], [".disclaimer", "disclaimer"],
+    [".term-out", "widget"], [".faq", "faq"], [".related", "related"], [".hero", "hero"], [".prose", "body"],
+  ];
+  function linkPosition(a) {
+    var explicit = a.closest("[data-pos]");
+    if (explicit) return explicit.getAttribute("data-pos");
+    for (var i = 0; i < LINK_POSITIONS.length; i++) if (a.closest(LINK_POSITIONS[i][0])) return LINK_POSITIONS[i][1];
+    return "other";
+  }
+  var NOT_TOOL_PATHS = { guides: 1, category: 1, about: 1, assets: 1, og: 1, data: 1 };
+  function onLinkClick(e) {
+    var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+    if (!a) return;
+    var url;
+    try { url = new URL(a.getAttribute("href"), location.href); } catch (err) { return; }
+    var pos = linkPosition(a);
+    if (/(^|\.)apify\.com$/i.test(url.hostname)) {
+      if (pos === "cta" && url.hash === "#pricing") pos = "cta-pricing";
+      var p = { link_position: pos, link_url: url.hostname + url.pathname, transport_type: "beacon" };
+      var tid = pageToolId();
+      if (tid) p.tool_id = tid;
+      track("outbound_apify", p);
+      return;
+    }
+    // guide page -> one of the tool pages (/<tool-id>/ on this site)
+    if (url.origin === location.origin && document.querySelector("article.guide")) {
+      var m = url.pathname.match(/^\/([a-z0-9]+(?:-[a-z0-9]+)*)\/(?:index\.html)?$/);
+      if (m && !NOT_TOOL_PATHS[m[1]]) track("guide_to_tool", { tool_id: m[1], link_position: pos, transport_type: "beacon" });
+    }
+  }
+  // capture phase: runs before navigation for same-tab links, and for target=_blank links too
+  document.addEventListener("click", onLinkClick, true);
+
   /* ---------- helpers ---------- */
   function $(s, r) { return (r || document).querySelector(s); }
   function $all(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
@@ -51,6 +96,7 @@
     var btn = $("#copy-json");
     if (!btn) return;
     btn.addEventListener("click", function () {
+      track("copy_input", { tool_id: pageToolId(), live: isLiveTool() ? "true" : "false" });
       // live runners put their run-specific input in window.__ctaInput (shown in the panel) — copy exactly that
       var txt = JSON.stringify(window.__ctaInput || buildInput(), null, 2);
       navigator.clipboard.writeText(txt).then(function () {
@@ -337,6 +383,7 @@
     var runBtn = $("#run");
     var RUNNERS = { "live-greenhouse": runGreenhouse, "live-hackernews": runHackerNews, "live-appstore": runAppStore, "live-clinicaltrials": runClinicalTrials, "live-shopify": runShopify };
     if (runBtn) runBtn.addEventListener("click", function () {
+      track("run_tool", { tool_id: pageToolId(), live: isLiveTool() ? "true" : "false" });
       (RUNNERS[TOOL.mode] || runConfigurator)();
     });
     // allow Enter to run from a text field

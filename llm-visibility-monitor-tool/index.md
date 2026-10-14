@@ -1,12 +1,12 @@
 # Is your brand visible in ChatGPT & AI search?
 
-> To track brand mentions in ChatGPT, run a fixed set of prompts through it on a recurring cadence and parse each answer for your brand name, position, citations, and sentiment. This builder generates a ready-to-run query and previews the output shape for the LLM Visibility Monitor actor, which queries ChatGPT plus Claude, Gemini, Perplexity, and Grok. Run it live on Apify (free to start with Apify's platform credits, then pay-as-you-go).
+> To check if ChatGPT mentions your brand for free, ask it 5 to 10 questions a buyer would ask, each in a new chat, and note whether your brand appears, where it ranks and which sources are cited. Repeat each question a few times, because answers vary. This free query builder turns that test into a ready-to-run config for an actor that repeats it across ChatGPT, Claude, Gemini, Perplexity and Grok.
 
 - Type: Query builder (builds a ready-to-run query; the example output below is a fixed sample, not live results)
 - Category: [AI & SEO](https://datatooly.xyz/category/ai-seo/)
 - URL: https://datatooly.xyz/llm-visibility-monitor-tool/
 - Backing Apify actor: [llm-visibility-monitor](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/)
 
 Enter a brand, a market category and competitors, and preview how the actor records brand mentions across ChatGPT, Claude, Gemini, Perplexity and Grok: mention, position and share of voice per answer.
@@ -74,6 +74,18 @@ A fixed sample of the fields the llm-visibility-monitor actor returns — exampl
 
 ## FAQ
 
+### How can I check if ChatGPT mentions my brand for free?
+
+Do it by hand. Write 5 to 10 questions a real buyer would ask, such as "What are the best [category] tools for [use case]?". Ask each one in a new chat, so earlier messages don't steer the answer, and record whether your brand is named, its position in the list, and which websites are cited. Repeat each question two or three times, because ChatGPT can answer the same prompt differently. It costs nothing but is slow to repeat every week, which is the part the actor behind this page automates.
+
+### Is there a free tool to see if ChatGPT mentions your brand?
+
+This page is free: it builds the query and shows a fixed example of the output, but it does not query ChatGPT from your browser. The LLM Visibility Monitor actor runs the real check. Its demo mode writes clearly labelled fake answers, calls no AI model and charges nothing, so you can see the output format first. Live runs are pay-per-event, and new Apify accounts get free platform credits to start.
+
+### How do I measure share of voice in ChatGPT or Perplexity?
+
+Pick a fixed set of buyer-style prompts, run it on each AI engine, and count brand mentions. Share of voice = your mentions divided by (your mentions + the mentions of every competitor you track) across the set. Calculate it per engine, since each model answers differently, and record citations (linked sources) separately from mentions (your name in the text).
+
 ### How do I track brand mentions in ChatGPT?
 
 Run a fixed set of buyer-intent prompts through ChatGPT on a schedule and parse each response for your brand name, its position among competitors, any citations to your domain, and sentiment. Doing this manually is unreliable because answers vary per session, so most teams automate it. This builder generates the query and previews the output shape; the backing LLM Visibility Monitor actor runs the prompts live across ChatGPT and four other engines.
@@ -115,4 +127,4 @@ Yes. When you run the actor you can supply a competitor list by brand name or UR
 - [Browse all free data tools](https://datatooly.xyz/)
 - [Facebook Ad Library scraper](https://datatooly.xyz/facebook-ad-library-search/)
 - [TikTok Ad Library API tool](https://datatooly.xyz/tiktok-ad-library-search/)
-- [Fantasy Premier League data](https://datatooly.xyz/fpl-intelligence-tool/)
+- [Find brand mentions on Hacker News (live)](https://datatooly.xyz/hacker-news-search/)

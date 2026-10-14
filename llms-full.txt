@@ -1,6 +1,6 @@
 # Data Tooly — full text
 
-> Every page of https://datatooly.xyz as markdown, concatenated. Generated 2026-09-29.
+> Every page of https://datatooly.xyz as markdown, concatenated. Generated 2026-10-14.
 
 ---
 
@@ -14,7 +14,7 @@ Source: https://datatooly.xyz/
 
 - URL: https://datatooly.xyz/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools by category
 
@@ -44,7 +44,7 @@ Hub: https://datatooly.xyz/category/social-community/
 
 Hub: https://datatooly.xyz/category/dev-community/
 
-- [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/) (live): Search Hacker News by keyword live — real stories, points, comments, author, date. Free browser tool on the public HN Algolia API, no key. Filters + scale upsell.
+- [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/) (live): Search Hacker News live in your browser with the public HN Algolia API: no key, no login. Filter by type, points and date, then copy the query for bulk export.
 
 ### App Intelligence
 
@@ -56,7 +56,7 @@ Hub: https://datatooly.xyz/category/app-intelligence/
 
 Hub: https://datatooly.xyz/category/health-pharma/
 
-- [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/) (live): Search ClinicalTrials.gov live by condition, drug, or phase. Free browser tool hits the official v2 REST API (no key, CORS-open) and shows real NCT studies.
+- [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/) (live): Search ClinicalTrials.gov live by condition, drug, phase or status with the official v2 API. No key, no signup: real NCT IDs, status, phase and lead sponsor.
 - [Peptide & GLP-1 market intelligence](https://datatooly.xyz/peptide-market-intel-tool/) (query builder): Build a ready-to-run query for peptide market research data: track GLP-1, BPC-157 and 30+ compounds across YouTube, Amazon and optional Reddit with sentiment.
 
 ### E-commerce Intelligence
@@ -89,7 +89,7 @@ Hub: https://datatooly.xyz/category/ads-intelligence/
 
 Hub: https://datatooly.xyz/category/sports-analytics/
 
-- [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/) (query builder): Build a ready-to-run Fantasy Premier League API query for gameweek picks and manager dashboards, preview the output shape, then run it live on Apify.
+- [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/) (query builder): The main public FPL API endpoints in one list (bootstrap-static, fixtures, picks, live gameweek), plus a free builder for manager and gameweek queries.
 - [Understat xG football analytics — export](https://datatooly.xyz/understat-football-stats/) (query builder): Build a ready-to-run query for Understat xG data — players, teams, shots across 6 leagues since 2014/15 — preview the output shape, then run it live.
 
 ### Automotive
@@ -109,7 +109,7 @@ Hub: https://datatooly.xyz/category/lead-generation/
 
 Hub: https://datatooly.xyz/category/ai-seo/
 
-- [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/) (query builder): Build a ready-to-run query to track brand mentions in ChatGPT and 4 other AI engines. Preview the output shape, then run it live on Apify. Free to start.
+- [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/) (query builder): Check your brand in ChatGPT for free: a manual prompt test you can run now, plus a free query builder to track mentions, citations and AI share of voice.
 
 ### Crypto & DeFi
 
@@ -138,8 +138,8 @@ Hub: https://datatooly.xyz/category/jobs-visas/
 
 ## Guides
 
-- [App Store Top Charts API: Free, Key-Free, and CORS-Open](https://datatooly.xyz/guides/app-store-top-charts-api/): Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.
+- [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/): Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 - [Read Company Hiring Signals From Public Job Board APIs (with code)](https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/): Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/): Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/): Stop trusting broker blogs: compute New Cairo apartment price per square meter by compound from live Property Finder Egypt listings, split ready vs off-plan.
@@ -157,15 +157,15 @@ Hub: https://datatooly.xyz/category/jobs-visas/
 - [Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD](https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/): Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/): A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/): A practical guide to collecting Saudi Arabia property data from the major portals, including the REGA license trick that dedupes listings across platforms.
-- [The SEC EDGAR API: A Practical Guide to Free Filing Data in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 - [Shopify products.json Pagination: 250 Limit and the 25,000 Cap](https://datatooly.xyz/guides/shopify-products-json-pagination/): Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/): A verified, runnable guide to scraping public Telegram channels without login, an API key or a phone number, using the t.me/s/ preview and plain HTTP.
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/): A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.
-- [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/): A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.
+- [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/): How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/): A practical guide to Understat xG data export: how the data is embedded in the page, a Python scraper that decodes it, and league and player xG to CSV.
-- [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Use the DOL's free PERM disclosure file to list green card sponsors by city and occupation in Python: where the file lives, key columns, and the traps.
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.
+- [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 
 ## Key facts
 
@@ -227,7 +227,7 @@ Source: https://datatooly.xyz/about/
 > Who builds Data Tooly, how its live tools and query builders differ, where the data comes from, plus the affiliate disclosure and privacy note.
 
 - URL: https://datatooly.xyz/about/
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Who builds it
 
@@ -265,7 +265,7 @@ Links to apify.com on this site carry an affiliate parameter (`fpr=v77kxu`). If 
 
 ## Privacy
 
-Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
+Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. Through the same Google Analytics tag it also records four kinds of clicks: opening a link to apify.com, copying a tool's query, pressing a tool's run button, and going from a guide to its tool. Those events carry only the tool's name, the apify.com page a link points to, where on the page the click happened, and whether the tool is live; what you type into a tool is never sent to Google Analytics. Google Analytics is not loaded at all in automated browsers (those that report `navigator.webdriver`). There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
 
 ## Contact
 
@@ -361,7 +361,7 @@ Source: https://datatooly.xyz/category/social-community/
 
 - URL: https://datatooly.xyz/category/social-community/
 - Tools: 5 (0 live, 5 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -375,9 +375,9 @@ Source: https://datatooly.xyz/category/social-community/
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/): A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/): A verified, runnable guide to scraping public Telegram channels without login, an API key or a phone number, using the t.me/s/ preview and plain HTTP.
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/): A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 
 ## Other categories
 
@@ -409,11 +409,11 @@ Source: https://datatooly.xyz/category/dev-community/
 
 - URL: https://datatooly.xyz/category/dev-community/
 - Tools: 1 (1 live, 0 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/) (live tool): Search Hacker News by keyword live — real stories, points, comments, author, date. Free browser tool on the public HN Algolia API, no key. Filters + scale upsell.
+- [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/) (live tool): Search Hacker News live in your browser with the public HN Algolia API: no key, no login. Filter by type, points and date, then copy the query for bulk export.
 
 ## Guides
 
@@ -449,7 +449,7 @@ Source: https://datatooly.xyz/category/app-intelligence/
 
 - URL: https://datatooly.xyz/category/app-intelligence/
 - Tools: 1 (1 live, 0 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -457,7 +457,7 @@ Source: https://datatooly.xyz/category/app-intelligence/
 
 ## Guides
 
-- [App Store Top Charts API: Free, Key-Free, and CORS-Open](https://datatooly.xyz/guides/app-store-top-charts-api/): Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.
+- [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/): Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
 
 ## Other categories
 
@@ -489,16 +489,16 @@ Source: https://datatooly.xyz/category/health-pharma/
 
 - URL: https://datatooly.xyz/category/health-pharma/
 - Tools: 2 (1 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/) (live tool): Search ClinicalTrials.gov live by condition, drug, or phase. Free browser tool hits the official v2 REST API (no key, CORS-open) and shows real NCT studies.
+- [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/) (live tool): Search ClinicalTrials.gov live by condition, drug, phase or status with the official v2 API. No key, no signup: real NCT IDs, status, phase and lead sponsor.
 - [Peptide & GLP-1 market intelligence](https://datatooly.xyz/peptide-market-intel-tool/) (query builder): Build a ready-to-run query for peptide market research data: track GLP-1, BPC-157 and 30+ compounds across YouTube, Amazon and optional Reddit with sentiment.
 
 ## Guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/): Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.
 
 ## Other categories
@@ -653,7 +653,7 @@ Source: https://datatooly.xyz/category/ads-intelligence/
 
 - URL: https://datatooly.xyz/category/ads-intelligence/
 - Tools: 2 (0 live, 2 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -663,7 +663,7 @@ Source: https://datatooly.xyz/category/ads-intelligence/
 ## Guides
 
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/): Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.
-- [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/): A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.
+- [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/): How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
 
 ## Other categories
 
@@ -695,11 +695,11 @@ Source: https://datatooly.xyz/category/sports-analytics/
 
 - URL: https://datatooly.xyz/category/sports-analytics/
 - Tools: 2 (0 live, 2 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/) (query builder): Build a ready-to-run Fantasy Premier League API query for gameweek picks and manager dashboards, preview the output shape, then run it live on Apify.
+- [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/) (query builder): The main public FPL API endpoints in one list (bootstrap-static, fixtures, picks, live gameweek), plus a free builder for manager and gameweek queries.
 - [Understat xG football analytics — export](https://datatooly.xyz/understat-football-stats/) (query builder): Build a ready-to-run query for Understat xG data — players, teams, shots across 6 leagues since 2014/15 — preview the output shape, then run it live.
 
 ## Guides
@@ -819,11 +819,11 @@ Source: https://datatooly.xyz/category/ai-seo/
 
 - URL: https://datatooly.xyz/category/ai-seo/
 - Tools: 1 (0 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/) (query builder): Build a ready-to-run query to track brand mentions in ChatGPT and 4 other AI engines. Preview the output shape, then run it live on Apify. Free to start.
+- [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/) (query builder): Check your brand in ChatGPT for free: a manual prompt test you can run now, plus a free query builder to track mentions, citations and AI share of voice.
 
 ## Guides
 
@@ -939,7 +939,7 @@ Source: https://datatooly.xyz/category/finance-filings/
 
 - URL: https://datatooly.xyz/category/finance-filings/
 - Tools: 1 (0 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -947,7 +947,7 @@ Source: https://datatooly.xyz/category/finance-filings/
 
 ## Guides
 
-- [The SEC EDGAR API: A Practical Guide to Free Filing Data in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 
 ## Other categories
 
@@ -979,7 +979,7 @@ Source: https://datatooly.xyz/category/jobs-visas/
 
 - URL: https://datatooly.xyz/category/jobs-visas/
 - Tools: 2 (0 live, 2 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -989,7 +989,7 @@ Source: https://datatooly.xyz/category/jobs-visas/
 ## Guides
 
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/): A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.
-- [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Use the DOL's free PERM disclosure file to list green card sponsors by city and occupation in Python: where the file lives, key columns, and the traps.
+- [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
 
 ## Other categories
 
@@ -1405,7 +1405,7 @@ Source: https://datatooly.xyz/hacker-news-search/
 - Category: [Dev & Community](https://datatooly.xyz/category/dev-community/)
 - URL: https://datatooly.xyz/hacker-news-search/
 - Backing Apify actor: [hacker-news-scraper](https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/)
 
 Type a keyword and search Hacker News live, right here in your browser — real matching stories with points, comments, author, and date. Filter by type, sort by relevance or date, set a minimum score. Free, no login, no API key.
@@ -1516,8 +1516,8 @@ Source: https://datatooly.xyz/app-store-top-charts/
 - Category: [App Intelligence](https://datatooly.xyz/category/app-intelligence/)
 - URL: https://datatooly.xyz/app-store-top-charts/
 - Backing Apify actor: [app-store-rank-tracker](https://apify.com/constructive_calm/app-store-rank-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [App Store Top Charts API: Free, Key-Free, and CORS-Open](https://datatooly.xyz/guides/app-store-top-charts-api/)
+- Updated: 2026-10-14
+- Full guide: [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/)
 
 Pick a country and a chart — Top Free, Top Paid, or Top Grossing — and see the live App Store rankings right in your browser: rank, app, developer, category. Straight from Apple's official feed. Free, no login, no API key.
 
@@ -1620,7 +1620,7 @@ Those platforms layer analytics, history, and estimates on top of chart data, us
 ## Related tools
 
 - [Browse all free data tools](https://datatooly.xyz/)
-- [Hacker News search](https://datatooly.xyz/hacker-news-search/)
+- [Search Hacker News live (HN Algolia API)](https://datatooly.xyz/hacker-news-search/)
 - [Shopify product scraper](https://datatooly.xyz/shopify-store-products/)
 - [SaaS pricing tracker](https://datatooly.xyz/saas-pricing-tracker-tool/)
 
@@ -1636,8 +1636,8 @@ Source: https://datatooly.xyz/clinical-trials-search/
 - Category: [Health & Pharma](https://datatooly.xyz/category/health-pharma/)
 - URL: https://datatooly.xyz/clinical-trials-search/
 - Backing Apify actor: [clinical-trials-fda-scraper](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- Updated: 2026-10-14
+- Full guide: [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 
 Type a medical condition or drug and search the official ClinicalTrials.gov registry live in your browser — real studies with NCT ID, status, phase, and lead sponsor. Free, no login, no API key.
 
@@ -1691,6 +1691,10 @@ The Clinical Trials & FDA Pipeline actor merges trials with FDA drug approvals, 
 - The backing Clinical Trials & FDA Pipeline actor is free to start, then pay-as-you-go: the first 10 chargeable events per run are free and a 100-trial search costs about $0.04 ($0.01 run start + 90 paid trials at $0.0003). (Source: Apify Store listing, constructive_calm/clinical-trials-fda-scraper, pay-per-event pricing section.)
 
 ## FAQ
+
+### Why does filter.phase return HTTP 400 on clinicaltrials.gov/api/v2/studies?
+
+Because the v2 API has no filter.phase parameter; it answers HTTP 400 with "filter.phase is unknown parameter". Filter phase with filter.advanced=AREA[Phase]PHASE3, or AREA[Phase](PHASE2 OR PHASE3) for several phases, alongside query.cond for the condition, for example /api/v2/studies?query.cond=diabetes&filter.advanced=AREA[Phase]PHASE3. Checked live on 2026-10-14.
 
 ### Does the ClinicalTrials.gov API require an API key?
 
@@ -2233,7 +2237,7 @@ Source: https://datatooly.xyz/fpl-intelligence-tool/
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/fpl-intelligence-tool/
 - Backing Apify actor: [fpl-intelligence](https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 Pick a mode and gameweek and preview the ranked captain, transfer and differential picks the actor computes from the official Fantasy Premier League API.
@@ -2300,6 +2304,10 @@ A fixed sample of the fields the fpl-intelligence actor returns — example data
 - The backing Apify actor uses pay-per-event pricing. A typical weekly picks run lists at roughly six cents, but the actor's first 10 chargeable events per run are free, so a casual weekly run usually costs only the $0.01 run-start fee. (Source: From the actor's README (constructive_calm/fpl-intelligence); confirm current pricing before running.)
 
 ## FAQ
+
+### What are the main FPL API endpoints?
+
+All sit under https://fantasy.premierleague.com/api/: bootstrap-static/ (players, teams, gameweeks), fixtures/ (add ?event={gw} for one gameweek), element-summary/{player_id}/ (a player's fixtures and history), event/{gw}/live/ (live player stats), entry/{manager_id}/ (manager profile), entry/{manager_id}/history/, entry/{manager_id}/event/{gw}/picks/ (a squad), entry/{manager_id}/transfers/, leagues-classic/{league_id}/standings/, event-status/ and dream-team/{gw}/. Each returned HTTP 200 on 2026-10-14. They are undocumented and send no CORS header, so call them server-side.
 
 ### Is there an official Fantasy Premier League API?
 
@@ -2480,7 +2488,7 @@ Source: https://datatooly.xyz/linkedin-profile-lookup/
 - Category: [Lead Generation](https://datatooly.xyz/category/lead-generation/)
 - URL: https://datatooly.xyz/linkedin-profile-lookup/
 - Backing Apify actor: [linkedin-profile-pro](https://apify.com/constructive_calm/linkedin-profile-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
 
 Paste public LinkedIn profile URLs and preview the records the actor extracts without logging in: name, headline, location, followers, work history and recent posts.
@@ -2547,6 +2555,10 @@ A fixed sample of the fields the linkedin-profile-pro actor returns — example 
 
 ## FAQ
 
+### How do I find public LinkedIn profiles with consent?
+
+Without logging in you only see a member's public profile, and each member controls it: LinkedIn's public profile settings (linkedin.com/public-profile/settings) let members opt out of appearing on search tools like Google or Bing and choose which sections are public. Public is not the same as consent for every use. A 2023 joint statement by 12 data-protection authorities, including the UK ICO, says publicly accessible personal information is still subject to data protection and privacy laws in most jurisdictions. If your use needs consent, for example outreach or storing profiles, ask the person, and keep only what you need.
+
 ### What is a LinkedIn profile scraper?
 
 A LinkedIn profile scraper is a tool that extracts structured data from public LinkedIn profile pages — name, headline, location, work history, education, follower counts, recent posts, and articles — and returns it as JSON. This page is a query builder: you paste profile URLs and it generates a ready-to-run config plus a preview of the output shape. The actual extraction runs on the backing Apify actor, not in your browser.
@@ -2598,13 +2610,13 @@ Source: https://datatooly.xyz/llm-visibility-monitor-tool/
 
 # Is your brand visible in ChatGPT & AI search?
 
-> To track brand mentions in ChatGPT, run a fixed set of prompts through it on a recurring cadence and parse each answer for your brand name, position, citations, and sentiment. This builder generates a ready-to-run query and previews the output shape for the LLM Visibility Monitor actor, which queries ChatGPT plus Claude, Gemini, Perplexity, and Grok. Run it live on Apify (free to start with Apify's platform credits, then pay-as-you-go).
+> To check if ChatGPT mentions your brand for free, ask it 5 to 10 questions a buyer would ask, each in a new chat, and note whether your brand appears, where it ranks and which sources are cited. Repeat each question a few times, because answers vary. This free query builder turns that test into a ready-to-run config for an actor that repeats it across ChatGPT, Claude, Gemini, Perplexity and Grok.
 
 - Type: Query builder (builds a ready-to-run query; the example output below is a fixed sample, not live results)
 - Category: [AI & SEO](https://datatooly.xyz/category/ai-seo/)
 - URL: https://datatooly.xyz/llm-visibility-monitor-tool/
 - Backing Apify actor: [llm-visibility-monitor](https://apify.com/constructive_calm/llm-visibility-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [Measure AI Share of Voice in Python: ChatGPT, Gemini, Perplexity](https://datatooly.xyz/guides/measure-ai-share-of-voice-python/)
 
 Enter a brand, a market category and competitors, and preview how the actor records brand mentions across ChatGPT, Claude, Gemini, Perplexity and Grok: mention, position and share of voice per answer.
@@ -2672,6 +2684,18 @@ A fixed sample of the fields the llm-visibility-monitor actor returns — exampl
 
 ## FAQ
 
+### How can I check if ChatGPT mentions my brand for free?
+
+Do it by hand. Write 5 to 10 questions a real buyer would ask, such as "What are the best [category] tools for [use case]?". Ask each one in a new chat, so earlier messages don't steer the answer, and record whether your brand is named, its position in the list, and which websites are cited. Repeat each question two or three times, because ChatGPT can answer the same prompt differently. It costs nothing but is slow to repeat every week, which is the part the actor behind this page automates.
+
+### Is there a free tool to see if ChatGPT mentions your brand?
+
+This page is free: it builds the query and shows a fixed example of the output, but it does not query ChatGPT from your browser. The LLM Visibility Monitor actor runs the real check. Its demo mode writes clearly labelled fake answers, calls no AI model and charges nothing, so you can see the output format first. Live runs are pay-per-event, and new Apify accounts get free platform credits to start.
+
+### How do I measure share of voice in ChatGPT or Perplexity?
+
+Pick a fixed set of buyer-style prompts, run it on each AI engine, and count brand mentions. Share of voice = your mentions divided by (your mentions + the mentions of every competitor you track) across the set. Calculate it per engine, since each model answers differently, and record citations (linked sources) separately from mentions (your name in the text).
+
 ### How do I track brand mentions in ChatGPT?
 
 Run a fixed set of buyer-intent prompts through ChatGPT on a schedule and parse each response for your brand name, its position among competitors, any citations to your domain, and sentiment. Doing this manually is unreliable because answers vary per session, so most teams automate it. This builder generates the query and previews the output shape; the backing LLM Visibility Monitor actor runs the prompts live across ChatGPT and four other engines.
@@ -2713,7 +2737,7 @@ Yes. When you run the actor you can supply a competitor list by brand name or UR
 - [Browse all free data tools](https://datatooly.xyz/)
 - [Facebook Ad Library scraper](https://datatooly.xyz/facebook-ad-library-search/)
 - [TikTok Ad Library API tool](https://datatooly.xyz/tiktok-ad-library-search/)
-- [Fantasy Premier League data](https://datatooly.xyz/fpl-intelligence-tool/)
+- [Find brand mentions on Hacker News (live)](https://datatooly.xyz/hacker-news-search/)
 
 ---
 
@@ -3226,8 +3250,8 @@ Source: https://datatooly.xyz/sec-edgar-search/
 - Category: [Finance & Filings](https://datatooly.xyz/category/finance-filings/)
 - URL: https://datatooly.xyz/sec-edgar-search/
 - Backing Apify actor: [sec-edgar-scraper](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [The SEC EDGAR API: A Practical Guide to Free Filing Data in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- Updated: 2026-10-14
+- Full guide: [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
 
 Enter tickers and a mode (filings, XBRL financials, full-text search or insider trades) and preview the SEC EDGAR records the actor returns.
 
@@ -3296,6 +3320,10 @@ A fixed sample of the fields the sec-edgar-scraper actor returns — example dat
 
 ## FAQ
 
+### What User-Agent format does the SEC fair access policy require?
+
+The SEC asks automated tools to declare a User-Agent that names you and gives a contact email. Its own example is "Sample Company Name AdminContact@<sample company domain>.com", so in practice: User-Agent: Acme Research admin@acme.com. The current maximum rate is 10 requests per second. On 2026-10-14 a request to data.sec.gov with curl's default User-Agent returned HTTP 403, and the same request with a declared User-Agent returned 200. Browsers can't set this header, which is why this page builds the query instead of fetching live.
+
 ### Is the SEC EDGAR API free and does it need an API key?
 
 Yes. The SEC EDGAR API is free, public, and requires no API key, token, or login. The only requirement is a descriptive User-Agent header that names your application and a contact email (for example, "Sample Company AdminContact@example.com"). Requests without it return 403 Forbidden. The backing actor that runs your query is separate: it is free to start, then pay-as-you-go per event.
@@ -3337,7 +3365,7 @@ EDGAR reflects filings as companies submit them, so new documents appear shortly
 - [Browse all free data tools](https://datatooly.xyz/)
 - [MEV pair scanner](https://datatooly.xyz/mev-pair-scanner-tool/)
 - [Crypto news scraper](https://datatooly.xyz/crypto-news-search/)
-- [Fantasy Premier League data](https://datatooly.xyz/fpl-intelligence-tool/)
+- [ClinicalTrials.gov API search (live, no key)](https://datatooly.xyz/clinical-trials-search/)
 
 ---
 
@@ -3593,8 +3621,8 @@ Source: https://datatooly.xyz/tiktok-ad-library-search/
 - Category: [Ads Intelligence](https://datatooly.xyz/category/ads-intelligence/)
 - URL: https://datatooly.xyz/tiktok-ad-library-search/
 - Backing Apify actor: [tiktok-ad-library-pro](https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/)
+- Updated: 2026-10-14
+- Full guide: [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
 
 Enter keywords and EU/DSA regions and preview the TikTok Ad Library records the actor exports: advertiser, ad name, region, dates and estimated audience.
 
@@ -3719,7 +3747,7 @@ Source: https://datatooly.xyz/understat-football-stats/
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/understat-football-stats/
 - Backing Apify actor: [understat-football-analytics](https://apify.com/constructive_calm/understat-football-analytics?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
 
 Pick a mode, league and season and preview the Understat xG data the actor exports: xG, xA, npxG and goals per player, team, match or shot.
@@ -3835,7 +3863,7 @@ Yes — the backing actor supports a match_shots mode that returns shot-level da
 ## Related tools
 
 - [Browse all free data tools](https://datatooly.xyz/)
-- [Fantasy Premier League data](https://datatooly.xyz/fpl-intelligence-tool/)
+- [Fantasy Premier League API query builder](https://datatooly.xyz/fpl-intelligence-tool/)
 - [Hacker News search](https://datatooly.xyz/hacker-news-search/)
 - [App Store top charts](https://datatooly.xyz/app-store-top-charts/)
 
@@ -3851,8 +3879,8 @@ Source: https://datatooly.xyz/visa-sponsor-finder/
 - Category: [Jobs & Visas](https://datatooly.xyz/category/jobs-visas/)
 - URL: https://datatooly.xyz/visa-sponsor-finder/
 - Backing Apify actor: [visa-sponsor-tracker](https://apify.com/constructive_calm/visa-sponsor-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
+- Updated: 2026-10-14
+- Full guide: [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
 
 Enter a role and city and preview the H-1B and green-card sponsors the actor ranks from U.S. Department of Labor disclosure data: filings, approval rate and median salary per employer.
 
@@ -4104,8 +4132,8 @@ Source: https://datatooly.xyz/threads-keyword-monitor/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/threads-keyword-monitor/
 - Backing Apify actor: [threads-search-monitor](https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- Updated: 2026-10-14
+- Full guide: [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 
 Enter keywords or hashtags and preview the matching public Threads posts the actor finds (author, text, likes, replies and the query that matched), or schedule it as a monitor.
 
@@ -4220,6 +4248,7 @@ Public, cookie-free search reads what Threads serves to anonymous visitors, so i
 - [Threads profile scraper](https://datatooly.xyz/threads-profile-search/)
 - [Reddit search tool](https://datatooly.xyz/reddit-search-builder/)
 - [Telegram channel scraper](https://datatooly.xyz/telegram-channel-search/)
+- [Search Hacker News for the same keyword (live)](https://datatooly.xyz/hacker-news-search/)
 
 ---
 
@@ -4233,8 +4262,8 @@ Source: https://datatooly.xyz/youtube-shorts-search/
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/youtube-shorts-search/
 - Backing Apify actor: [youtube-shorts-scraper-pro](https://apify.com/constructive_calm/youtube-shorts-scraper-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- Updated: 2026-10-14
+- Full guide: [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
 
 Enter channels, keywords, hashtags or Short URLs and preview the YouTube Shorts records the actor returns: views, likes, comments, viralScore and engagementRate.
 
@@ -4487,11 +4516,11 @@ Source: https://datatooly.xyz/guides/
 > 28 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
 
 - URL: https://datatooly.xyz/guides/
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/) (2026-09-29): Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/) (2026-09-29): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/) (2026-09-29): Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/) (2026-09-29): Stop trusting broker blogs: compute New Cairo apartment price per square meter by compound from live Property Finder Egypt listings, split ready vs off-plan.
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/) (2026-09-29): Read FPL's own price-change predictions from the free bootstrap-static API in Python: price_change_percent, projections, likelihood, and the ±100 rule.
@@ -4501,9 +4530,9 @@ Source: https://datatooly.xyz/guides/
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/) (2026-09-29): Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.
 - [Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD](https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/) (2026-09-29): Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.
 - [Shopify products.json Pagination: 250 Limit and the 25,000 Cap](https://datatooly.xyz/guides/shopify-products-json-pagination/) (2026-09-29): Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/) (2026-09-29): Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
-- [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/) (2026-09-29): Use the DOL's free PERM disclosure file to list green card sponsors by city and occupation in Python: where the file lives, key columns, and the traps.
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/) (2026-07-06): A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/) (2026-09-29): What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
+- [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/) (2026-09-29): Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/) (2026-07-06): Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 - [How to Extract Dubai Used Car Listings Data from Gulf Marketplaces](https://datatooly.xyz/guides/dubai-used-car-listings-data/) (2026-06-30): A practical, honest guide to extracting Dubai used car listings data from DubiCars, YallaMotor, and Dubizzle Motors using JSON-LD and embedded __NEXT_DATA__.
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/) (2026-06-30): A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/) (2026-06-30): A practical guide to collecting Saudi Arabia property data from the major portals, including the REGA license trick that dedupes listings across platforms.
@@ -4511,10 +4540,10 @@ Source: https://datatooly.xyz/guides/
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/) (2026-06-30): A practical guide to Understat xG data export: how the data is embedded in the page, a Python scraper that decodes it, and league and player xG to CSV.
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/) (2026-06-13): Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.
 - [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/) (2026-06-13): A practical, honest guide to building a LinkedIn profile scraper: why there's no public API, how public pages embed JSON-LD, and the legal reality.
-- [The SEC EDGAR API: A Practical Guide to Free Filing Data in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/) (2026-06-13): A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/) (2026-06-13): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/) (2026-06-13): A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.
-- [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/) (2026-06-13): A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.
-- [App Store Top Charts API: Free, Key-Free, and CORS-Open](https://datatooly.xyz/guides/app-store-top-charts-api/) (2026-06-01): Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.
+- [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/) (2026-06-13): How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
+- [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/) (2026-06-01): Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
 - [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/) (2026-06-01): A practical guide to the free, no-key Hacker News search API (hn.algolia.com): tags, numeric filters, relevance vs. date sorting, and runnable code.
 - [Read Company Hiring Signals From Public Job Board APIs (with code)](https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/) (2026-05-31): Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.
 - [How to Export Google Patents to CSV (Honest Guide to Every Real Path)](https://datatooly.xyz/guides/export-google-patents-to-csv/) (2026-05-31): A precise, no-hype guide to exporting Google Patents search results to CSV — the built-in 1,000-row cap, the BigQuery bulk path, and why browser scraping fails.
@@ -4524,14 +4553,14 @@ Source: https://datatooly.xyz/guides/
 
 Source: https://datatooly.xyz/guides/app-store-top-charts-api/
 
-# App Store Top Charts API: Free, Key-Free, and CORS-Open
+# App Store Top Charts API: Free JSON by Country, No Key
 
-> Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.
+> Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
 
 - URL: https://datatooly.xyz/guides/app-store-top-charts-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-01
-- Updated: 2026-06-01
+- Updated: 2026-10-14
 - Free tool: [App Store Top Charts — live, any country, free](https://datatooly.xyz/app-store-top-charts/)
 - Tags: api, javascript, mobile, webdev
 
@@ -4664,7 +4693,7 @@ Copy the `fetch()` snippet above and you'll have live App Store top charts in un
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -4674,14 +4703,14 @@ Copy the `fetch()` snippet above and you'll have live App Store top charts in un
 
 Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/
 
-# ClinicalTrials.gov API to CSV: Export Trials by Phase in Python
+# ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV
 
-> Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.
+> Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 
 - URL: https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
 - Tags: python, api, datascience, healthcare
 
@@ -4857,6 +4886,12 @@ That parameter doesn't exist in the v2 API. Filter phases with `filter.advanced=
 ### Can I search by drug instead of condition?
 
 Yes. Use `query.intr` for interventions, for example `query.intr=semaglutide`, or `query.term` for free-text search. You can combine either with `query.cond` and the status and phase filters.
+
+## Quick answers
+
+### How do I use query.cond in the ClinicalTrials.gov v2 API?
+
+Pass the condition as `query.cond` on the studies endpoint: `https://clinicaltrials.gov/api/v2/studies?query.cond=diabetes`. Combine it with `query.intr` for a drug (`&query.intr=semaglutide`), `filter.overallStatus=RECRUITING` for status, and `filter.advanced=AREA[Phase]PHASE3` for phase, because `filter.phase` is not a parameter (HTTP 400). Add `countTotal=true` to get `totalCount`, or `format=csv` for CSV. All of these returned HTTP 200 when checked on 2026-10-14.
 
 ## Related guides
 
@@ -5039,7 +5074,7 @@ One honest note: these endpoints are public because companies *want* their jobs 
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -5283,7 +5318,7 @@ These 14 codes all returned articles on 2026-09-29: `en`, `tr`, `de`, `es`, `fr`
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
@@ -5462,7 +5497,7 @@ Yes. The script writes `new_cairo_listings.csv` directly. The Apify actor also e
 ## Related guides
 
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
@@ -5594,8 +5629,8 @@ For a **facebook ad library scraper**, draw the line clearly: the official Meta 
 
 ## Related guides
 
-- [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -5611,7 +5646,7 @@ Source: https://datatooly.xyz/guides/fpl-api-price-change-data-python/
 - URL: https://datatooly.xyz/guides/fpl-api-price-change-data-python/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
 - Tags: python, api, football, datascience
 
@@ -5757,10 +5792,16 @@ Not from the API. It reports only the current state. Save a snapshot on a schedu
 
 Early in a season FPL needs a calibration period of at least one gameweek before it shows predicted progress. Check `price_change_calibrating` and wait for it to turn false before trusting projections.
 
+## Quick answers
+
+### What are the main FPL API endpoints?
+
+All sit under `https://fantasy.premierleague.com/api/`: `bootstrap-static/` (players, teams, gameweeks), `fixtures/` (add `?event={gw}` for one gameweek), `element-summary/{player_id}/` (a player's fixtures and history), `event/{gw}/live/` (live player stats), `entry/{manager_id}/` (manager profile), `entry/{manager_id}/history/`, `entry/{manager_id}/event/{gw}/picks/` (a squad), `entry/{manager_id}/transfers/`, `leagues-classic/{league_id}/standings/`, `event-status/` and `dream-team/{gw}/`. Each returned HTTP 200 on 2026-10-14. They are undocumented and send no CORS header, so call them server-side.
+
 ## Related guides
 
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
@@ -5885,7 +5926,7 @@ A closing note on doing this responsibly: scraping any site, Google Patents incl
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -6059,7 +6100,7 @@ The reason **Dubai used car listings data** is approachable comes down to one th
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -6076,7 +6117,7 @@ Source: https://datatooly.xyz/guides/hacker-news-search-api/
 - URL: https://datatooly.xyz/guides/hacker-news-search-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-01
-- Updated: 2026-06-01
+- Updated: 2026-10-14
 - Free tool: [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/)
 - Tags: api, javascript, webdev, datascience
 
@@ -6229,7 +6270,7 @@ Go build something. The index is wide open.
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -6397,7 +6438,7 @@ Collect the profile URLs, normalize them to slugs, and write name, headline, URL
 ## Related guides
 
 - [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -6541,7 +6582,7 @@ The durable lesson is that a good **LinkedIn profile scraper** is mostly an exer
 ## Related guides
 
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -6557,7 +6598,7 @@ Source: https://datatooly.xyz/guides/measure-ai-share-of-voice-python/
 - URL: https://datatooly.xyz/guides/measure-ai-share-of-voice-python/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
 - Tags: python, ai, seo, llm
 
@@ -6722,9 +6763,15 @@ Not directly. AI Overviews live on Google's results page, and a plain HTTP reque
 
 A mention is your brand name in the answer text. A citation is your website linked or named as a source. Track them separately. You can be mentioned without being cited, and cited without being prominently mentioned.
 
+## Quick answers
+
+### Can I measure share of voice inside ChatGPT or Perplexity for free?
+
+Yes, by hand in the apps: ask the same buyer-style questions in each one, note every brand named, and divide your mentions by your mentions plus your competitors' mentions. Use a new chat for each question and repeat each one a few times, because answers vary. Scripted runs through the APIs cost per call, and API answers can differ from what the apps show.
+
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -6906,7 +6953,7 @@ No. It means the pool was rarely sandwiched recently. Your own slippage toleranc
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -7109,7 +7156,7 @@ No. It is a record of what people publish online. It shouldn't be used to judge 
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -7253,10 +7300,10 @@ Whatever path you pick, respect the source. Reddit's terms prohibit unauthorized
 ## Related guides
 
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 
 ---
 
@@ -7472,7 +7519,7 @@ Pricing pages are published for anyone to read, but legality depends on your jur
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -7616,8 +7663,8 @@ There is no official H-1B salary JSON API. But the data behind every H-1B salary
 
 ## Related guides
 
-- [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -7768,7 +7815,7 @@ The takeaway, tool or no tool: in Saudi Arabia, the regulator handed you a free 
 ## Related guides
 
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
@@ -7777,14 +7824,14 @@ The takeaway, tool or no tool: in Saudi Arabia, the regulator handed you a free 
 
 Source: https://datatooly.xyz/guides/sec-edgar-api-python-guide/
 
-# The SEC EDGAR API: A Practical Guide to Free Filing Data in Python
+# SEC EDGAR API in Python: User-Agent Format & Rate Limits
 
-> A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.
+> Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 
 - URL: https://datatooly.xyz/guides/sec-edgar-api-python-guide/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-13
-- Updated: 2026-06-13
+- Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
 - Tags: api, python, finance, datascience
 
@@ -7905,9 +7952,19 @@ The SEC EDGAR API gives you institutional-grade financial data for the price of 
 
 Sources: [SEC: Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), [SEC: EDGAR APIs](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), [SEC: EDGAR Full Text Search FAQ](https://www.sec.gov/edgar/search/efts-faq.html).
 
+## Quick answers
+
+### What User-Agent format does the SEC fair access policy require?
+
+The SEC asks automated tools to declare a User-Agent that names you and gives a contact email. Its own example is `Sample Company Name AdminContact@<sample company domain>.com`, so in practice: `User-Agent: Acme Research admin@acme.com`. On 2026-10-14 a request to data.sec.gov with curl's default User-Agent returned HTTP 403; the same request with a declared User-Agent returned 200. Source: sec.gov, Accessing EDGAR Data.
+
+### What are the SEC EDGAR API rate limits?
+
+The SEC's current maximum is 10 requests per second, and it reserves the right to limit request rates to keep access fair for all users. No API key is needed. Pace your script (for example `time.sleep(0.12)` between calls) and slow down when requests start failing. Source: sec.gov, Accessing EDGAR Data and the SEC webmaster FAQ.
+
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -8100,7 +8157,7 @@ The store blocks non-browser clients with a WAF or CDN rule, or is password-prot
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -8269,23 +8326,23 @@ To **scrape a Telegram channel without login**: fetch `https://t.me/s/<channel>`
 ## Related guides
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 
 ---
 
 Source: https://datatooly.xyz/guides/threads-keyword-search-without-app-review/
 
-# Threads Keyword Search Without App Review: Monitor in Python
+# threads_keyword_search: App Review, 2,200 Limit, Workaround
 
-> Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
+> What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
 
 - URL: https://datatooly.xyz/guides/threads-keyword-search-without-app-review/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Monitor Threads by keyword or hashtag](https://datatooly.xyz/threads-keyword-monitor/)
 - Tags: python, webscraping, socialmedia, api
 
@@ -8484,13 +8541,19 @@ Store each post's `code` plus the newest `taken_at` you've seen for that term. O
 
 `threads.com`. Old `threads.net` links still redirect, but build URLs on `threads.com` directly.
 
+## Quick answers
+
+### What does the threads_keyword_search permission allow?
+
+It lets an app call `GET /keyword_search` on the Threads API, together with `threads_basic`. Until Meta approves the app for `threads_keyword_search`, searches only cover posts owned by the authenticated user; after approval they cover public posts. A user can send at most 2,200 queries in a rolling 24-hour period, and queries that return no results don't count. `limit` goes up to 100. Source: Meta's Threads keyword search documentation, checked 2026-10-14.
+
 ## Related guides
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 
 ---
 
@@ -8621,22 +8684,22 @@ Whether you hand-roll it with the snippet here or run the actor, the takeaways a
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 
 ---
 
 Source: https://datatooly.xyz/guides/tiktok-ad-library-api/
 
-# The TikTok Ad Library API: A Developer's Guide to the DSA Library
+# TikTok Ad Library API: Who Gets Access + a Working Request
 
-> A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.
+> How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
 
 - URL: https://datatooly.xyz/guides/tiktok-ad-library-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-13
-- Updated: 2026-06-13
+- Updated: 2026-10-14
 - Free tool: [Search the TikTok Ad Library (EU/DSA)](https://datatooly.xyz/tiktok-ad-library-search/)
 - Tags: api, marketing, webdev, tiktok
 
@@ -8752,7 +8815,7 @@ The **TikTok ad library API** is real and, for the DSA region, surprisingly rich
 ## Related guides
 
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -8902,7 +8965,7 @@ There's no official Understat API, but there doesn't need to be. The xG, xA, and
 ## Related guides
 
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
@@ -8911,14 +8974,14 @@ There's no official Understat API, but there doesn't need to be. The xG, xA, and
 
 Source: https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/
 
-# PERM Disclosure Data in Python: Find Green Card Sponsors by City
+# PERM Disclosure Data FY2026 in Python: Green Card Sponsors
 
-> Use the DOL's free PERM disclosure file to list green card sponsors by city and occupation in Python: where the file lives, key columns, and the traps.
+> Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
 
 - URL: https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Find H-1B & green-card visa sponsors + salary data](https://datatooly.xyz/visa-sponsor-finder/)
 - Tags: python, datascience, career, immigration
 
@@ -9109,7 +9172,7 @@ Employer names are free text in the source. Trailing spaces, punctuation and sub
 ## Related guides
 
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
@@ -9118,14 +9181,14 @@ Employer names are free text in the source. Trailing spaces, punctuation and sub
 
 Source: https://datatooly.xyz/guides/scrape-youtube-shorts-data/
 
-# How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)
+# Scrape YouTube Shorts Data: Exact Views, Likes & Comments
 
-> A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.
+> Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 
 - URL: https://datatooly.xyz/guides/scrape-youtube-shorts-data/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-07-06
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [YouTube Shorts Scraper — find viral Shorts by channel or keyword](https://datatooly.xyz/youtube-shorts-search/)
 - Tags: webscraping, youtube, api, datascience
 
@@ -9240,6 +9303,6 @@ However you go about it, keep it to **public data only** — public Shorts, publ
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)

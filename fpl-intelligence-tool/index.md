@@ -6,7 +6,7 @@
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/fpl-intelligence-tool/
 - Backing Apify actor: [fpl-intelligence](https://apify.com/constructive_calm/fpl-intelligence?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
 
 Pick a mode and gameweek and preview the ranked captain, transfer and differential picks the actor computes from the official Fantasy Premier League API.
@@ -73,6 +73,10 @@ A fixed sample of the fields the fpl-intelligence actor returns — example data
 - The backing Apify actor uses pay-per-event pricing. A typical weekly picks run lists at roughly six cents, but the actor's first 10 chargeable events per run are free, so a casual weekly run usually costs only the $0.01 run-start fee. (Source: From the actor's README (constructive_calm/fpl-intelligence); confirm current pricing before running.)
 
 ## FAQ
+
+### What are the main FPL API endpoints?
+
+All sit under https://fantasy.premierleague.com/api/: bootstrap-static/ (players, teams, gameweeks), fixtures/ (add ?event={gw} for one gameweek), element-summary/{player_id}/ (a player's fixtures and history), event/{gw}/live/ (live player stats), entry/{manager_id}/ (manager profile), entry/{manager_id}/history/, entry/{manager_id}/event/{gw}/picks/ (a squad), entry/{manager_id}/transfers/, leagues-classic/{league_id}/standings/, event-status/ and dream-team/{gw}/. Each returned HTTP 200 on 2026-10-14. They are undocumented and send no CORS header, so call them server-side.
 
 ### Is there an official Fantasy Premier League API?
 

@@ -4,11 +4,11 @@
 
 - URL: https://datatooly.xyz/category/dev-community/
 - Tools: 1 (1 live, 0 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/) (live tool): Search Hacker News by keyword live — real stories, points, comments, author, date. Free browser tool on the public HN Algolia API, no key. Filters + scale upsell.
+- [Search Hacker News by keyword — live, with points and comments](https://datatooly.xyz/hacker-news-search/) (live tool): Search Hacker News live in your browser with the public HN Algolia API: no key, no login. Filter by type, points and date, then copy the query for bulk export.
 
 ## Guides
 

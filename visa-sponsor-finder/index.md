@@ -6,8 +6,8 @@
 - Category: [Jobs & Visas](https://datatooly.xyz/category/jobs-visas/)
 - URL: https://datatooly.xyz/visa-sponsor-finder/
 - Backing Apify actor: [visa-sponsor-tracker](https://apify.com/constructive_calm/visa-sponsor-tracker?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
+- Updated: 2026-10-14
+- Full guide: [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
 
 Enter a role and city and preview the H-1B and green-card sponsors the actor ranks from U.S. Department of Labor disclosure data: filings, approval rate and median salary per employer.
 

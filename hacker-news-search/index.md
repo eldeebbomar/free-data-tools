@@ -6,7 +6,7 @@
 - Category: [Dev & Community](https://datatooly.xyz/category/dev-community/)
 - URL: https://datatooly.xyz/hacker-news-search/
 - Backing Apify actor: [hacker-news-scraper](https://apify.com/constructive_calm/hacker-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [The Hacker News Search API: Free, No-Key, and Surprisingly Powerful](https://datatooly.xyz/guides/hacker-news-search-api/)
 
 Type a keyword and search Hacker News live, right here in your browser — real matching stories with points, comments, author, and date. Filter by type, sort by relevance or date, set a minimum score. Free, no login, no API key.

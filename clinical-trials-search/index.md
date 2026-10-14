@@ -6,8 +6,8 @@
 - Category: [Health & Pharma](https://datatooly.xyz/category/health-pharma/)
 - URL: https://datatooly.xyz/clinical-trials-search/
 - Backing Apify actor: [clinical-trials-fda-scraper](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- Updated: 2026-10-14
+- Full guide: [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 
 Type a medical condition or drug and search the official ClinicalTrials.gov registry live in your browser — real studies with NCT ID, status, phase, and lead sponsor. Free, no login, no API key.
 
@@ -61,6 +61,10 @@ The Clinical Trials & FDA Pipeline actor merges trials with FDA drug approvals, 
 - The backing Clinical Trials & FDA Pipeline actor is free to start, then pay-as-you-go: the first 10 chargeable events per run are free and a 100-trial search costs about $0.04 ($0.01 run start + 90 paid trials at $0.0003). (Source: Apify Store listing, constructive_calm/clinical-trials-fda-scraper, pay-per-event pricing section.)
 
 ## FAQ
+
+### Why does filter.phase return HTTP 400 on clinicaltrials.gov/api/v2/studies?
+
+Because the v2 API has no filter.phase parameter; it answers HTTP 400 with "filter.phase is unknown parameter". Filter phase with filter.advanced=AREA[Phase]PHASE3, or AREA[Phase](PHASE2 OR PHASE3) for several phases, alongside query.cond for the condition, for example /api/v2/studies?query.cond=diabetes&filter.advanced=AREA[Phase]PHASE3. Checked live on 2026-10-14.
 
 ### Does the ClinicalTrials.gov API require an API key?
 

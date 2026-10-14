@@ -1,11 +1,11 @@
-# PERM Disclosure Data in Python: Find Green Card Sponsors by City
+# PERM Disclosure Data FY2026 in Python: Green Card Sponsors
 
-> Use the DOL's free PERM disclosure file to list green card sponsors by city and occupation in Python: where the file lives, key columns, and the traps.
+> Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
 
 - URL: https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Find H-1B & green-card visa sponsors + salary data](https://datatooly.xyz/visa-sponsor-finder/)
 - Tags: python, datascience, career, immigration
 
@@ -196,7 +196,7 @@ Employer names are free text in the source. Trailing spaces, punctuation and sub
 ## Related guides
 
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)

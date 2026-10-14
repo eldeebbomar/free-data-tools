@@ -1,11 +1,11 @@
-# App Store Top Charts API: Free, Key-Free, and CORS-Open
+# App Store Top Charts API: Free JSON by Country, No Key
 
-> Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.
+> Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
 
 - URL: https://datatooly.xyz/guides/app-store-top-charts-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-01
-- Updated: 2026-06-01
+- Updated: 2026-10-14
 - Free tool: [App Store Top Charts — live, any country, free](https://datatooly.xyz/app-store-top-charts/)
 - Tags: api, javascript, mobile, webdev
 
@@ -138,7 +138,7 @@ Copy the `fetch()` snippet above and you'll have live App Store top charts in un
 
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)

@@ -4,7 +4,7 @@
 
 - URL: https://datatooly.xyz/category/ads-intelligence/
 - Tools: 2 (0 live, 2 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -14,7 +14,7 @@
 ## Guides
 
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/): Why the official Meta Ad Library API only covers political ads, and how to build a Facebook ad library scraper for commercial competitor ads instead.
-- [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/): A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.
+- [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/): How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
 
 ## Other categories
 

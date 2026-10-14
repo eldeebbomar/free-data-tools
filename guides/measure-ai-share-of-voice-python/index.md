@@ -5,7 +5,7 @@
 - URL: https://datatooly.xyz/guides/measure-ai-share-of-voice-python/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/)
 - Tags: python, ai, seo, llm
 
@@ -170,9 +170,15 @@ Not directly. AI Overviews live on Google's results page, and a plain HTTP reque
 
 A mention is your brand name in the answer text. A citation is your website linked or named as a source. Track them separately. You can be mentioned without being cited, and cited without being prominently mentioned.
 
+## Quick answers
+
+### Can I measure share of voice inside ChatGPT or Perplexity for free?
+
+Yes, by hand in the apps: ask the same buyer-style questions in each one, note every brand named, and divide your mentions by your mentions plus your competitors' mentions. Use a new chat for each question and repeat each one a few times, because answers vary. Scripted runs through the APIs cost per call, and API answers can differ from what the apps show.
+
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)

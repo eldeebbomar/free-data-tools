@@ -4,7 +4,7 @@
 
 - URL: https://datatooly.xyz/category/jobs-visas/
 - Tools: 2 (0 live, 2 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -14,7 +14,7 @@
 ## Guides
 
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/): A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.
-- [PERM Disclosure Data in Python: Find Green Card Sponsors by City](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Use the DOL's free PERM disclosure file to list green card sponsors by city and occupation in Python: where the file lives, key columns, and the traps.
+- [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/): Find green card sponsors by employer, city and job in the DOL's free PERM disclosure Excel files with Python: where the FY2026 files moved, key columns, traps.
 
 ## Other categories
 

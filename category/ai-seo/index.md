@@ -4,11 +4,11 @@
 
 - URL: https://datatooly.xyz/category/ai-seo/
 - Tools: 1 (0 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/) (query builder): Build a ready-to-run query to track brand mentions in ChatGPT and 4 other AI engines. Preview the output shape, then run it live on Apify. Free to start.
+- [Is your brand visible in ChatGPT & AI search?](https://datatooly.xyz/llm-visibility-monitor-tool/) (query builder): Check your brand in ChatGPT for free: a manual prompt test you can run now, plus a free query builder to track mentions, citations and AI share of voice.
 
 ## Guides
 

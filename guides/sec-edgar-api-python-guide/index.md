@@ -1,11 +1,11 @@
-# The SEC EDGAR API: A Practical Guide to Free Filing Data in Python
+# SEC EDGAR API in Python: User-Agent Format & Rate Limits
 
-> A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.
+> Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 
 - URL: https://datatooly.xyz/guides/sec-edgar-api-python-guide/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-13
-- Updated: 2026-06-13
+- Updated: 2026-10-14
 - Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
 - Tags: api, python, finance, datascience
 
@@ -126,9 +126,19 @@ The SEC EDGAR API gives you institutional-grade financial data for the price of 
 
 Sources: [SEC: Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), [SEC: EDGAR APIs](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), [SEC: EDGAR Full Text Search FAQ](https://www.sec.gov/edgar/search/efts-faq.html).
 
+## Quick answers
+
+### What User-Agent format does the SEC fair access policy require?
+
+The SEC asks automated tools to declare a User-Agent that names you and gives a contact email. Its own example is `Sample Company Name AdminContact@<sample company domain>.com`, so in practice: `User-Agent: Acme Research admin@acme.com`. On 2026-10-14 a request to data.sec.gov with curl's default User-Agent returned HTTP 403; the same request with a declared User-Agent returned 200. Source: sec.gov, Accessing EDGAR Data.
+
+### What are the SEC EDGAR API rate limits?
+
+The SEC's current maximum is 10 requests per second, and it reserves the right to limit request rates to keep access fair for all users. No API key is needed. Pace your script (for example `time.sleep(0.12)` between calls) and slow down when requests start failing. Source: sec.gov, Accessing EDGAR Data and the SEC webmaster FAQ.
+
 ## Related guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)

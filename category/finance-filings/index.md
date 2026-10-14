@@ -4,7 +4,7 @@
 
 - URL: https://datatooly.xyz/category/finance-filings/
 - Tools: 1 (0 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -12,7 +12,7 @@
 
 ## Guides
 
-- [The SEC EDGAR API: A Practical Guide to Free Filing Data in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): A hands-on guide to the free SEC EDGAR API: the required User-Agent header, ticker-to-CIK mapping, XBRL financials, and full-text search in Python.
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
 
 ## Other categories
 

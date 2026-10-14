@@ -5,7 +5,7 @@
 - URL: https://datatooly.xyz/guides/fpl-api-price-change-data-python/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Fantasy Premier League data & picks](https://datatooly.xyz/fpl-intelligence-tool/)
 - Tags: python, api, football, datascience
 
@@ -151,10 +151,16 @@ Not from the API. It reports only the current state. Save a snapshot on a schedu
 
 Early in a season FPL needs a calibration period of at least one gameweek before it shows predicted progress. Check `price_change_calibrating` and wait for it to turn false before trusting projections.
 
+## Quick answers
+
+### What are the main FPL API endpoints?
+
+All sit under `https://fantasy.premierleague.com/api/`: `bootstrap-static/` (players, teams, gameweeks), `fixtures/` (add `?event={gw}` for one gameweek), `element-summary/{player_id}/` (a player's fixtures and history), `event/{gw}/live/` (live player stats), `entry/{manager_id}/` (manager profile), `entry/{manager_id}/history/`, `entry/{manager_id}/event/{gw}/picks/` (a squad), `entry/{manager_id}/transfers/`, `leagues-classic/{league_id}/standings/`, `event-status/` and `dream-team/{gw}/`. Each returned HTTP 200 on 2026-10-14. They are undocumented and send no CORS header, so call them server-side.
+
 ## Related guides
 
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)

@@ -4,7 +4,7 @@
 
 - URL: https://datatooly.xyz/category/app-intelligence/
 - Tools: 1 (1 live, 0 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -12,7 +12,7 @@
 
 ## Guides
 
-- [App Store Top Charts API: Free, Key-Free, and CORS-Open](https://datatooly.xyz/guides/app-store-top-charts-api/): Pull Apple App Store top charts straight from the browser with the legacy iTunes RSS feed — no key, CORS-open, runnable fetch() + curl included.
+- [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/): Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
 
 ## Other categories
 

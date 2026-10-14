@@ -4,16 +4,16 @@
 
 - URL: https://datatooly.xyz/category/health-pharma/
 - Tools: 2 (1 live, 1 query builder)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
-- [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/) (live tool): Search ClinicalTrials.gov live by condition, drug, or phase. Free browser tool hits the official v2 REST API (no key, CORS-open) and shows real NCT studies.
+- [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/) (live tool): Search ClinicalTrials.gov live by condition, drug, phase or status with the official v2 API. No key, no signup: real NCT IDs, status, phase and lead sponsor.
 - [Peptide & GLP-1 market intelligence](https://datatooly.xyz/peptide-market-intel-tool/) (query builder): Build a ready-to-run query for peptide market research data: track GLP-1, BPC-157 and 30+ compounds across YouTube, Amazon and optional Reddit with sentiment.
 
 ## Guides
 
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/): Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.
 
 ## Other categories

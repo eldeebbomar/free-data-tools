@@ -6,7 +6,7 @@
 - Category: [Lead Generation](https://datatooly.xyz/category/lead-generation/)
 - URL: https://datatooly.xyz/linkedin-profile-lookup/
 - Backing Apify actor: [linkedin-profile-pro](https://apify.com/constructive_calm/linkedin-profile-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
 
 Paste public LinkedIn profile URLs and preview the records the actor extracts without logging in: name, headline, location, followers, work history and recent posts.
@@ -72,6 +72,10 @@ A fixed sample of the fields the linkedin-profile-pro actor returns — example 
 - Cookie-free LinkedIn scrapers cannot return skills, certifications, per-reaction breakdowns, or comment-thread bodies — that data only loads behind a login wall. (Source: From the LinkedIn Profile Pro actor's README ("Known limits" section) and cookie-free architecture.)
 
 ## FAQ
+
+### How do I find public LinkedIn profiles with consent?
+
+Without logging in you only see a member's public profile, and each member controls it: LinkedIn's public profile settings (linkedin.com/public-profile/settings) let members opt out of appearing on search tools like Google or Bing and choose which sections are public. Public is not the same as consent for every use. A 2023 joint statement by 12 data-protection authorities, including the UK ICO, says publicly accessible personal information is still subject to data protection and privacy laws in most jurisdictions. If your use needs consent, for example outreach or storing profiles, ask the person, and keep only what you need.
 
 ### What is a LinkedIn profile scraper?
 

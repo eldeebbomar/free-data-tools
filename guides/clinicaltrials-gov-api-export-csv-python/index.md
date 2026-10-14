@@ -1,11 +1,11 @@
-# ClinicalTrials.gov API to CSV: Export Trials by Phase in Python
+# ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV
 
-> Export ClinicalTrials.gov search results to CSV with the free v2 API: format=csv, the x-next-page-token header, and the phase filter that actually works.
+> Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
 
 - URL: https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
 - Tags: python, api, datascience, healthcare
 
@@ -181,6 +181,12 @@ That parameter doesn't exist in the v2 API. Filter phases with `filter.advanced=
 ### Can I search by drug instead of condition?
 
 Yes. Use `query.intr` for interventions, for example `query.intr=semaglutide`, or `query.term` for free-text search. You can combine either with `query.cond` and the status and phase filters.
+
+## Quick answers
+
+### How do I use query.cond in the ClinicalTrials.gov v2 API?
+
+Pass the condition as `query.cond` on the studies endpoint: `https://clinicaltrials.gov/api/v2/studies?query.cond=diabetes`. Combine it with `query.intr` for a drug (`&query.intr=semaglutide`), `filter.overallStatus=RECRUITING` for status, and `filter.advanced=AREA[Phase]PHASE3` for phase, because `filter.phase` is not a parameter (HTTP 400). Add `countTotal=true` to get `totalCount`, or `format=csv` for CSV. All of these returned HTTP 200 when checked on 2026-10-14.
 
 ## Related guides
 

@@ -6,8 +6,8 @@
 - Category: [Ads Intelligence](https://datatooly.xyz/category/ads-intelligence/)
 - URL: https://datatooly.xyz/tiktok-ad-library-search/
 - Backing Apify actor: [tiktok-ad-library-pro](https://apify.com/constructive_calm/tiktok-ad-library-pro?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [The TikTok Ad Library API: A Developer's Guide to the DSA Library](https://datatooly.xyz/guides/tiktok-ad-library-api/)
+- Updated: 2026-10-14
+- Full guide: [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
 
 Enter keywords and EU/DSA regions and preview the TikTok Ad Library records the actor exports: advertiser, ad name, region, dates and estimated audience.
 

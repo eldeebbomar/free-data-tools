@@ -6,8 +6,8 @@
 - Category: [Finance & Filings](https://datatooly.xyz/category/finance-filings/)
 - URL: https://datatooly.xyz/sec-edgar-search/
 - Backing Apify actor: [sec-edgar-scraper](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [The SEC EDGAR API: A Practical Guide to Free Filing Data in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- Updated: 2026-10-14
+- Full guide: [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
 
 Enter tickers and a mode (filings, XBRL financials, full-text search or insider trades) and preview the SEC EDGAR records the actor returns.
 
@@ -76,6 +76,10 @@ A fixed sample of the fields the sec-edgar-scraper actor returns — example dat
 
 ## FAQ
 
+### What User-Agent format does the SEC fair access policy require?
+
+The SEC asks automated tools to declare a User-Agent that names you and gives a contact email. Its own example is "Sample Company Name AdminContact@<sample company domain>.com", so in practice: User-Agent: Acme Research admin@acme.com. The current maximum rate is 10 requests per second. On 2026-10-14 a request to data.sec.gov with curl's default User-Agent returned HTTP 403, and the same request with a declared User-Agent returned 200. Browsers can't set this header, which is why this page builds the query instead of fetching live.
+
 ### Is the SEC EDGAR API free and does it need an API key?
 
 Yes. The SEC EDGAR API is free, public, and requires no API key, token, or login. The only requirement is a descriptive User-Agent header that names your application and a contact email (for example, "Sample Company AdminContact@example.com"). Requests without it return 403 Forbidden. The backing actor that runs your query is separate: it is free to start, then pay-as-you-go per event.
@@ -117,4 +121,4 @@ EDGAR reflects filings as companies submit them, so new documents appear shortly
 - [Browse all free data tools](https://datatooly.xyz/)
 - [MEV pair scanner](https://datatooly.xyz/mev-pair-scanner-tool/)
 - [Crypto news scraper](https://datatooly.xyz/crypto-news-search/)
-- [Fantasy Premier League data](https://datatooly.xyz/fpl-intelligence-tool/)
+- [ClinicalTrials.gov API search (live, no key)](https://datatooly.xyz/clinical-trials-search/)

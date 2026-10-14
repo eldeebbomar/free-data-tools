@@ -4,7 +4,7 @@
 
 - URL: https://datatooly.xyz/category/social-community/
 - Tools: 5 (0 live, 5 query builders)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Tools
 
@@ -18,9 +18,9 @@
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/): A precise, honest guide to scraping Reddit without the API: what still works in 2026, the login-wall and 403/CORS traps, and old.reddit.com.
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/): A verified, runnable guide to scraping public Telegram channels without login, an API key or a phone number, using the t.me/s/ preview and plain HTTP.
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/): What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/): A practical, honest guide to building a Threads scraper for Meta's threads.com — what loads cookie-free, what doesn't, and a runnable example.
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/): Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 
 ## Other categories
 

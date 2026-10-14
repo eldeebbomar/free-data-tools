@@ -1,11 +1,11 @@
-# Threads Keyword Search Without App Review: Monitor in Python
+# threads_keyword_search: App Review, 2,200 Limit, Workaround
 
-> Threads' keyword_search API only searches your own posts until Meta approves your app. Monitor public Threads keywords in Python without app review.
+> What Meta's threads_keyword_search permission unlocks, why unapproved apps only search your own posts, the 2,200 queries/24h cap, and a Python monitor.
 
 - URL: https://datatooly.xyz/guides/threads-keyword-search-without-app-review/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-09-29
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [Monitor Threads by keyword or hashtag](https://datatooly.xyz/threads-keyword-monitor/)
 - Tags: python, webscraping, socialmedia, api
 
@@ -204,10 +204,16 @@ Store each post's `code` plus the newest `taken_at` you've seen for that term. O
 
 `threads.com`. Old `threads.net` links still redirect, but build URLs on `threads.com` directly.
 
+## Quick answers
+
+### What does the threads_keyword_search permission allow?
+
+It lets an app call `GET /keyword_search` on the Threads API, together with `threads_basic`. Until Meta approves the app for `threads_keyword_search`, searches only cover posts owned by the authenticated user; after approval they cover public posts. A user can send at most 2,200 queries in a rolling 24-hour period, and queries that return no results don't count. `limit` goes up to 100. Source: Meta's Threads keyword search documentation, checked 2026-10-14.
+
 ## Related guides
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)

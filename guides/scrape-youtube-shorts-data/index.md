@@ -1,11 +1,11 @@
-# How to Scrape YouTube Shorts Data (Exact View, Like & Comment Counts)
+# Scrape YouTube Shorts Data: Exact Views, Likes & Comments
 
-> A practical guide to scraping YouTube Shorts data: why the official API falls short, how the internal API works, and a runnable example with exact counts.
+> Scrape YouTube Shorts data with exact view, like and comment counts: where the official Data API falls short, how the internal API works, and runnable code.
 
 - URL: https://datatooly.xyz/guides/scrape-youtube-shorts-data/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-07-06
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Free tool: [YouTube Shorts Scraper — find viral Shorts by channel or keyword](https://datatooly.xyz/youtube-shorts-search/)
 - Tags: webscraping, youtube, api, datascience
 
@@ -120,6 +120,6 @@ However you go about it, keep it to **public data only** — public Shorts, publ
 
 - [How to Scrape Reddit Without the API (After the 2023 Price Changes)](https://datatooly.xyz/guides/scrape-reddit-without-api/)
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
-- [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)

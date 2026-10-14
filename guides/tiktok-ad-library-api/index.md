@@ -1,11 +1,11 @@
-# The TikTok Ad Library API: A Developer's Guide to the DSA Library
+# TikTok Ad Library API: Who Gets Access + a Working Request
 
-> A practical, accurate guide to the TikTok ad library API: what the DSA Commercial Content Library covers, the official researcher path, and how to query it.
+> How to query the TikTok Ad Library: what the EU DSA library covers, who qualifies for the official Commercial Content API, and a working public request.
 
 - URL: https://datatooly.xyz/guides/tiktok-ad-library-api/
 - Author: Omar Eldeeb (https://datatooly.xyz/about/)
 - Published: 2026-06-13
-- Updated: 2026-06-13
+- Updated: 2026-10-14
 - Free tool: [Search the TikTok Ad Library (EU/DSA)](https://datatooly.xyz/tiktok-ad-library-search/)
 - Tags: api, marketing, webdev, tiktok
 
@@ -121,7 +121,7 @@ The **TikTok ad library API** is real and, for the DSA region, surprisingly rich
 ## Related guides
 
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/)
-- [ClinicalTrials.gov API to CSV: Export Trials by Phase in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)

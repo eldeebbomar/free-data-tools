@@ -3,7 +3,7 @@
 > Who builds Data Tooly, how its live tools and query builders differ, where the data comes from, plus the affiliate disclosure and privacy note.
 
 - URL: https://datatooly.xyz/about/
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 
 ## Who builds it
 
@@ -41,7 +41,7 @@ Links to apify.com on this site carry an affiliate parameter (`fpr=v77kxu`). If 
 
 ## Privacy
 
-Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
+Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. Through the same Google Analytics tag it also records four kinds of clicks: opening a link to apify.com, copying a tool's query, pressing a tool's run button, and going from a guide to its tool. Those events carry only the tool's name, the apify.com page a link points to, where on the page the click happened, and whether the tool is live; what you type into a tool is never sent to Google Analytics. Google Analytics is not loaded at all in automated browsers (those that report `navigator.webdriver`). There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
 
 ## Contact
 

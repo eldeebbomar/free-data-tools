@@ -6,8 +6,8 @@
 - Category: [Social & Community](https://datatooly.xyz/category/social-community/)
 - URL: https://datatooly.xyz/threads-keyword-monitor/
 - Backing Apify actor: [threads-search-monitor](https://apify.com/constructive_calm/threads-search-monitor?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
-- Full guide: [Threads Keyword Search Without App Review: Monitor in Python](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
+- Updated: 2026-10-14
+- Full guide: [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 
 Enter keywords or hashtags and preview the matching public Threads posts the actor finds (author, text, likes, replies and the query that matched), or schedule it as a monitor.
 
@@ -122,3 +122,4 @@ Public, cookie-free search reads what Threads serves to anonymous visitors, so i
 - [Threads profile scraper](https://datatooly.xyz/threads-profile-search/)
 - [Reddit search tool](https://datatooly.xyz/reddit-search-builder/)
 - [Telegram channel scraper](https://datatooly.xyz/telegram-channel-search/)
+- [Search Hacker News for the same keyword (live)](https://datatooly.xyz/hacker-news-search/)

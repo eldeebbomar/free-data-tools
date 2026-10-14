@@ -6,7 +6,7 @@
 - Category: [Sports Analytics](https://datatooly.xyz/category/sports-analytics/)
 - URL: https://datatooly.xyz/understat-football-stats/
 - Backing Apify actor: [understat-football-analytics](https://apify.com/constructive_calm/understat-football-analytics?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
 
 Pick a mode, league and season and preview the Understat xG data the actor exports: xG, xA, npxG and goals per player, team, match or shot.
@@ -122,6 +122,6 @@ Yes — the backing actor supports a match_shots mode that returns shot-level da
 ## Related tools
 
 - [Browse all free data tools](https://datatooly.xyz/)
-- [Fantasy Premier League data](https://datatooly.xyz/fpl-intelligence-tool/)
+- [Fantasy Premier League API query builder](https://datatooly.xyz/fpl-intelligence-tool/)
 - [Hacker News search](https://datatooly.xyz/hacker-news-search/)
 - [App Store top charts](https://datatooly.xyz/app-store-top-charts/)
