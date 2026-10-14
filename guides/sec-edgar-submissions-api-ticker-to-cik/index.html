@@ -1,0 +1,210 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>SEC EDGAR API: Submissions JSON and Ticker to CIK</title>
+<meta name="description" content="Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.">
+<link rel="canonical" href="https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="SEC EDGAR API: Submissions JSON and Ticker to CIK"><meta property="og:description" content="Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python."><meta property="og:url" content="https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-sec-edgar-submissions-api-ticker-to-cik.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="SEC EDGAR API: Submissions JSON and Ticker to CIK">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="finance"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SEC EDGAR API: Submissions JSON and Ticker to CIK"><meta name="twitter:description" content="Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-sec-edgar-submissions-api-ticker-to-cik.jpg"><meta name="twitter:image:alt" content="SEC EDGAR API: Submissions JSON and Ticker to CIK">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#article","headline":"SEC EDGAR API: Submissions JSON and Ticker to CIK","description":"Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-sec-edgar-submissions-api-ticker-to-cik.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, finance, datascience","about":{"@type":"SoftwareApplication","name":"Search SEC EDGAR filings, financials & insider trades","url":"https://datatooly.xyz/sec-edgar-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#webpage","url":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/","name":"SEC EDGAR API: Submissions JSON and Ticker to CIK","description":"Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-sec-edgar-submissions-api-ticker-to-cik.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"SEC EDGAR API: Submissions JSON and Ticker to CIK","item":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/#quick-answers","mainEntity":[{"@type":"Question","name":"Does EDGAR have an API?","acceptedAnswer":{"@type":"Answer","text":"Yes. The SEC runs free REST APIs on data.sec.gov: submissions/CIK##########.json for a company's filing history and api/xbrl/... for financial data. There's also full-text search at efts.sec.gov. The SEC says these APIs \"do not require any authentication or API keys to access.\" You only need a User-Agent header that identifies you."}},{"@type":"Question","name":"Do I need an SEC API key?","acceptedAnswer":{"@type":"Answer","text":"No. There's no API key, token or signup for EDGAR data. Send a User-Agent such as Your Company you@example.com and stay under 10 requests per second. (The SEC does issue API tokens to filers, but only for submitting filings, not for reading data.)"}},{"@type":"Question","name":"How do I convert a stock ticker to a CIK?","acceptedAnswer":{"@type":"Answer","text":"Download https://www.sec.gov/files/company_tickers.json. Each entry has cik_str, ticker and title, for example {\"cik_str\": 320193, \"ticker\": \"AAPL\", \"title\": \"Apple Inc.\"}. Pad the CIK to 10 digits for API URLs: CIK0000320193. On 2026-10-14 the file had 10,447 tickers for 8,032 CIKs."}},{"@type":"Question","name":"What is the SEC submissions API URL?","acceptedAnswer":{"@type":"Answer","text":"https://data.sec.gov/submissions/CIK##########.json, with the 10-digit zero-padded CIK, for example https://data.sec.gov/submissions/CIK0000320193.json for Apple. It returns company metadata plus filings.recent (at least one year or 1,000 filings, whichever is more) and filings.files for older history."}}]}</script>
+</head><body data-tool-id="sec-edgar-search"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/finance-filings/">Finance &amp; Filings</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Finance &amp; Filings</span>
+<h1>SEC EDGAR API: Submissions JSON and Ticker to CIK</h1>
+<p class="lede">Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Search SEC EDGAR filings, financials &amp; insider trades</p><p class="gcta-s">Build a ready-to-run SEC EDGAR API query for filings, XBRL financials &amp; insider trades by ticker, preview the output shape, then run it live on the actor.</p><a class="btn btn-primary" href="../../sec-edgar-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>Yes, EDGAR has an API, and it&#39;s free with no API key. Map a ticker to a CIK with <code>https://www.sec.gov/files/company_tickers.json</code>, then fetch <code>https://data.sec.gov/submissions/CIK##########.json</code>, with the CIK zero-padded to 10 digits, to get the company&#39;s details and full filing history. The one requirement is a User-Agent header with your name and email.</p>
+<p>This page covers the two building blocks every EDGAR project starts with: ticker-to-CIK and the submissions API. The code was run on 2026-10-14.</p>
+<h2 id="the-sec-s-apis-at-a-glance">The SEC&#39;s APIs at a glance</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>URL</th>
+<th>Key?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ticker → CIK map</td>
+<td><code>https://www.sec.gov/files/company_tickers.json</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>Ticker → CIK + exchange</td>
+<td><code>https://www.sec.gov/files/company_tickers_exchange.json</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>Filing history + metadata</td>
+<td><code>https://data.sec.gov/submissions/CIK##########.json</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>XBRL financials</td>
+<td><code>https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json</code> (and <code>companyconcept</code>, <code>frames</code>)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Full-text search</td>
+<td><code>https://efts.sec.gov/LATEST/search-index?q=...</code></td>
+<td>No</td>
+</tr>
+<tr>
+<td>Filing documents</td>
+<td><code>https://www.sec.gov/Archives/edgar/data/{cik}/{accession}/...</code></td>
+<td>No</td>
+</tr>
+</tbody></table></div>
+<p>The SEC&#39;s <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces" target="_blank" rel="noopener">EDGAR APIs page</a> says data.sec.gov&#39;s APIs &quot;do not require any authentication or API keys to access.&quot; What is required is a declared User-Agent and a rate of no more than 10 requests per second; see the <a href="https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/">SEC rate limit and User-Agent guide</a>. A search for &quot;SEC API key&quot; often leads to filer API tokens. Those exist, but they are for submitting filings to EDGAR, not for reading data.</p>
+<h2 id="ticker-to-cik">Ticker to CIK</h2>
+<p>EDGAR identifies every filer by a Central Index Key (CIK). The SEC says CIKs &quot;remain unique to the filer; they are not recycled.&quot; <code>company_tickers.json</code> maps tickers to CIKs:</p>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl -s -A &quot;Data Tooly research contact@example.com&quot; &quot;https://www.sec.gov/files/company_tickers.json&quot;</code></pre></div>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{&quot;0&quot;:{&quot;cik_str&quot;:1045810,&quot;ticker&quot;:&quot;NVDA&quot;,&quot;title&quot;:&quot;NVIDIA CORP&quot;},&quot;1&quot;:{&quot;cik_str&quot;:320193,&quot;ticker&quot;:&quot;AAPL&quot;,&quot;title&quot;:&quot;Apple Inc.&quot;},&quot;2&quot;:{&quot;cik_str&quot;:1652044,&quot;ticker&quot;:&quot;GOOGL&quot;,&quot;title&quot;:&quot;Alphabet Inc.&quot;}, ...}</code></pre></div>
+<p>What to know about the file (checked on 2026-10-14):</p>
+<ul>
+<li>The top-level keys (<code>&quot;0&quot;</code>, <code>&quot;1&quot;</code>, ...) are just row numbers. Build your own index by ticker.</li>
+<li><code>cik_str</code> is an <strong>integer</strong> despite its name. Pad it yourself: <code>f&quot;CIK{cik:010d}&quot;</code>.</li>
+<li>It held 10,447 tickers for 8,032 CIKs. 1,440 companies have more than one ticker; GOOGL and GOOG both map to 1652044, for example.</li>
+<li>Share classes use a dash: Berkshire Class B is <code>BRK-B</code>, not <code>BRK.B</code>. Normalize user input.</li>
+<li>The SEC says it updates these files periodically &quot;but do[es] not guarantee accuracy or scope&quot;. Delisted tickers drop out. For historical work, keep the CIK, not the ticker.</li>
+</ul>
+<p><code>company_tickers_exchange.json</code> has the same mapping in a columnar layout with the exchange added: <code>{&quot;fields&quot;: [&quot;cik&quot;, &quot;name&quot;, &quot;ticker&quot;, &quot;exchange&quot;], &quot;data&quot;: [[1045810, &quot;NVIDIA CORP&quot;, &quot;NVDA&quot;, &quot;Nasdaq&quot;], ...]}</code>.</p>
+<h2 id="the-submissions-api">The submissions API</h2>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl -s -A &quot;Data Tooly research contact@example.com&quot; &quot;https://data.sec.gov/submissions/CIK0000320193.json&quot;</code></pre></div>
+<p>The top-level fields for Apple: <code>cik</code>, <code>entityType</code>, <code>sic</code>, <code>sicDescription</code>, <code>ownerOrg</code>, <code>insiderTransactionForOwnerExists</code>, <code>insiderTransactionForIssuerExists</code>, <code>name</code>, <code>tickers</code>, <code>exchanges</code>, <code>ein</code>, <code>lei</code>, <code>description</code>, <code>website</code>, <code>investorWebsite</code>, <code>category</code>, <code>fiscalYearEnd</code>, <code>stateOfIncorporation</code>, <code>stateOfIncorporationDescription</code>, <code>addresses</code>, <code>phone</code>, <code>flags</code>, <code>formerNames</code>, <code>filings</code>.</p>
+<p><code>filings</code> has two parts:</p>
+<ul>
+<li><strong><code>filings.recent</code></strong>: per the SEC, &quot;at least one year&#39;s of filing or to 1,000 (whichever is more) of the most recent filings in a compact columnar data array&quot;. Apple&#39;s had 1,001 rows.</li>
+<li><strong><code>filings.files</code></strong>: extra JSON files for older filings, each with <code>name</code>, <code>filingCount</code>, <code>filingFrom</code> and <code>filingTo</code>. Apple had one, <code>CIK0000320193-submissions-001.json</code>, with 1,264 filings from 1994-01-26 to 2015-09-15.</li>
+</ul>
+<p><code>recent</code> is <strong>column-oriented</strong>: one array per field (<code>accessionNumber</code>, <code>filingDate</code>, <code>reportDate</code>, <code>acceptanceDateTime</code>, <code>act</code>, <code>form</code>, <code>fileNumber</code>, <code>filmNumber</code>, <code>items</code>, <code>core_type</code>, <code>size</code>, <code>isXBRL</code>, <code>isInlineXBRL</code>, <code>isXBRLNumeric</code>, <code>primaryDocument</code>, <code>primaryDocDescription</code>). Row <code>i</code> is the <code>i</code>th element of every array.</p>
+<p>The SEC says the submissions API updates in real time &quot;with a typical processing delay of less than a second&quot;.</p>
+<h2 id="python-ticker-cik-filings-document-urls">Python: ticker → CIK → filings → document URLs</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import time
+import requests
+
+HEADERS = {&quot;User-Agent&quot;: &quot;Data Tooly research contact@example.com&quot;}  # use your own name + email
+
+def get(url):
+    r = requests.get(url, headers=HEADERS, timeout=60)
+    r.raise_for_status()
+    time.sleep(0.15)  # stay under 10 requests/second
+    return r.json()
+
+# 1. Ticker -&gt; CIK, from the SEC's own mapping file.
+tickers = get(&quot;https://www.sec.gov/files/company_tickers.json&quot;)
+by_ticker = {row[&quot;ticker&quot;]: row for row in tickers.values()}
+print(len(by_ticker), &quot;tickers;&quot;, by_ticker[&quot;AAPL&quot;], by_ticker[&quot;BRK-B&quot;])
+
+def cik_for(ticker):
+    return by_ticker[ticker.upper()][&quot;cik_str&quot;]
+
+# 2. Submissions: company metadata plus filing history.
+cik = cik_for(&quot;aapl&quot;)
+sub = get(f&quot;https://data.sec.gov/submissions/CIK{cik:010d}.json&quot;)
+print(sub[&quot;name&quot;], sub[&quot;tickers&quot;], sub[&quot;exchanges&quot;], &quot;| SIC&quot;, sub[&quot;sic&quot;], sub[&quot;sicDescription&quot;],
+      &quot;| FY ends&quot;, sub[&quot;fiscalYearEnd&quot;])
+
+# `recent` is column-oriented: one list per field. Zip it into rows.
+recent = sub[&quot;filings&quot;][&quot;recent&quot;]
+rows = [dict(zip(recent, values)) for values in zip(*recent.values())]
+print(len(rows), &quot;recent filings; older pages:&quot;, [f[&quot;name&quot;] for f in sub[&quot;filings&quot;][&quot;files&quot;]])
+
+def filing_urls(cik, row):
+    folder = f&quot;https://www.sec.gov/Archives/edgar/data/{cik}/{row['accessionNumber'].replace('-', '')}&quot;
+    return f&quot;{folder}/{row['primaryDocument']}&quot;, f&quot;{folder}/{row['accessionNumber']}-index.htm&quot;
+
+for row in [r for r in rows if r[&quot;form&quot;] in (&quot;10-K&quot;, &quot;10-Q&quot;)][:3]:
+    doc, index = filing_urls(cik, row)
+    print(row[&quot;form&quot;], row[&quot;filingDate&quot;], &quot;period&quot;, row[&quot;reportDate&quot;], doc)
+
+# 3. Older filings live in extra files listed under filings.files.
+older = get(f&quot;https://data.sec.gov/submissions/{sub['filings']['files'][0]['name']}&quot;)
+print(&quot;oldest filing on record:&quot;, min(older[&quot;filingDate&quot;]), &quot;| rows in older file:&quot;, len(older[&quot;accessionNumber&quot;]))</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">10447 tickers; {'cik_str': 320193, 'ticker': 'AAPL', 'title': 'Apple Inc.'} {'cik_str': 1067983, 'ticker': 'BRK-B', 'title': 'BERKSHIRE HATHAWAY INC'}
+Apple Inc. ['AAPL'] ['Nasdaq'] | SIC 3571 Electronic Computers | FY ends 0926
+1001 recent filings; older pages: ['CIK0000320193-submissions-001.json']
+10-Q 2026-07-31 period 2026-06-27 https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm
+10-Q 2026-05-01 period 2026-03-28 https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm
+10-Q 2026-01-30 period 2025-12-27 https://www.sec.gov/Archives/edgar/data/320193/000032019326000006/aapl-20251227.htm</code></pre></div>
+<p>The older file is a bare column dictionary, with no <code>filings.recent</code> wrapper, which is why the last step reads <code>older[&quot;filingDate&quot;]</code> directly.</p>
+<h2 id="gotchas">Gotchas</h2>
+<ul>
+<li><strong>Pad the CIK in data.sec.gov URLs.</strong> <code>submissions/CIK320193.json</code> returned HTTP 404 with an XML body. Archive paths (<code>/Archives/edgar/data/320193/...</code>) take the unpadded number.</li>
+<li><strong><code>cik</code> comes back as a string here.</strong> The submissions JSON has <code>&quot;cik&quot;: &quot;0000320193&quot;</code> (padded string), while <code>company_tickers.json</code> has an integer. Normalize with <code>int()</code> before you compare.</li>
+<li><strong>Accession numbers appear in two forms.</strong> The JSON uses <code>0000320193-25-000079</code>. Folder paths drop the dashes: <code>000032019325000079</code>.</li>
+<li><strong><code>fiscalYearEnd</code> is <code>MMDD</code>.</strong> Apple&#39;s <code>0926</code> means its fiscal year ends around September 26.</li>
+<li><strong>Recent isn&#39;t everything.</strong> For a full history, also fetch every file in <code>filings.files</code>.</li>
+<li><strong>Bulk option.</strong> The SEC publishes all submissions as one nightly ZIP: <code>https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip</code>.</li>
+</ul>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/">Company facts, company concept and frames</a>: the financial numbers, using the same CIK.</li>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-full-text-search-api/">EDGAR full-text search API</a>: find filings by their text, filtered by CIK.</li>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/">SEC rate limits and User-Agent rules</a>.</li>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-api-python-guide/">SEC EDGAR API in Python</a>, the overview guide.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/sec-edgar-search/">SEC EDGAR query builder</a> takes plain tickers, so you don&#39;t have to look up or pad CIKs, plus a mode (filings, financials, full-text search or insider trades) and form types. It shows the output shape. It builds the query rather than fetching live, because browsers can&#39;t send the User-Agent the SEC requires.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu" target="_blank" rel="noopener">SEC EDGAR Scraper actor</a> on Apify resolves tickers to CIKs and pulls filings, financials, Form 4 insider trades, 13F holdings, 13D/G stakes and parsed 8-K items, with the User-Agent and pacing handled. It exports JSON, CSV or Excel. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly query builder and the Apify actor. The endpoints above work without either.</em></p>
+<p>Sources: <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces" target="_blank" rel="noopener">SEC: EDGAR Application Programming Interfaces</a>, <a href="https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data" target="_blank" rel="noopener">SEC: Accessing EDGAR Data</a>, <a href="https://www.sec.gov/about/webmaster-frequently-asked-questions" target="_blank" rel="noopener">SEC webmaster FAQ</a>, and live responses on 2026-10-14.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>Does EDGAR have an API?</h3>
+<p>Yes. The SEC runs free REST APIs on data.sec.gov: <code>submissions/CIK##########.json</code> for a company's filing history and <code>api/xbrl/...</code> for financial data. There's also full-text search at efts.sec.gov. The SEC says these APIs &quot;do not require any authentication or API keys to access.&quot; You only need a User-Agent header that identifies you.</p>
+<h3>Do I need an SEC API key?</h3>
+<p>No. There's no API key, token or signup for EDGAR data. Send a User-Agent such as <code>Your Company you@example.com</code> and stay under 10 requests per second. (The SEC does issue API tokens to filers, but only for submitting filings, not for reading data.)</p>
+<h3>How do I convert a stock ticker to a CIK?</h3>
+<p>Download <code>https://www.sec.gov/files/company_tickers.json</code>. Each entry has <code>cik_str</code>, <code>ticker</code> and <code>title</code>, for example <code>{&quot;cik_str&quot;: 320193, &quot;ticker&quot;: &quot;AAPL&quot;, &quot;title&quot;: &quot;Apple Inc.&quot;}</code>. Pad the CIK to 10 digits for API URLs: <code>CIK0000320193</code>. On 2026-10-14 the file had 10,447 tickers for 8,032 CIKs.</p>
+<h3>What is the SEC submissions API URL?</h3>
+<p><code>https://data.sec.gov/submissions/CIK##########.json</code>, with the 10-digit zero-padded CIK, for example <code>https://data.sec.gov/submissions/CIK0000320193.json</code> for Apple. It returns company metadata plus <code>filings.recent</code> (at least one year or 1,000 filings, whichever is more) and <code>filings.files</code> for older history.</p>
+</section>
+<p class="guide-end"><a href="../../sec-edgar-search/">Open the free Search SEC EDGAR filings, financials &amp; insider trades tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/sec-edgar-api-python-guide/">SEC EDGAR API in Python: User-Agent Format &amp; Rate Limits →</a><a href="../../guides/sec-edgar-companyfacts-xbrl-frames-api/">SEC Company Facts API: companyfacts, concept &amp; frames →</a><a href="../../guides/sec-edgar-full-text-search-api/">EDGAR Full-Text Search API: efts.sec.gov Parameters →</a><a href="../../guides/sec-edgar-rate-limit-user-agent/">SEC EDGAR Rate Limit and User-Agent: Fair Access Rules →</a><a href="../../guides/clinicaltrials-gov-api-completed-trial-results/">Get Completed Clinical Trial Results with the API →</a><a href="../../guides/clinicaltrials-gov-api-nct-number-lookup/">ClinicalTrials.gov API: Look Up a Study by NCT Number →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

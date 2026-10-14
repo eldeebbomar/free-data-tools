@@ -50,6 +50,10 @@
   <url><loc>https://datatooly.xyz/guides/</loc><lastmod>2026-10-14</lastmod><priority>0.6</priority></url>
   <url><loc>https://datatooly.xyz/guides/app-store-top-charts-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/</loc><lastmod>2026-05-31</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
@@ -67,7 +71,11 @@
   <url><loc>https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/h1b-salary-database-by-employer/</loc><lastmod>2026-06-30</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/saudi-arabia-property-data/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/sec-edgar-full-text-search-api/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/sec-edgar-api-python-guide/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/shopify-products-json-pagination/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/scrape-telegram-channel-without-login/</loc><lastmod>2026-09-29</lastmod><priority>0.7</priority></url>
   <url><loc>https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/</loc><lastmod>2026-10-14</lastmod><priority>0.7</priority></url>

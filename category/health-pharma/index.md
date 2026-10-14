@@ -14,6 +14,10 @@
 ## Guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/): Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/): Fetch one trial by NCT number with the ClinicalTrials.gov v2 API: the /studies/{nctId} endpoint, NCT format, fields, 404 vs 400, aliases and batch lookups.
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/): Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/): The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/): Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.
 
 ## Other categories

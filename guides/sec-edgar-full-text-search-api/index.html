@@ -1,0 +1,287 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>EDGAR Full-Text Search API: efts.sec.gov Parameters</title>
+<meta name="description" content="How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.">
+<link rel="canonical" href="https://datatooly.xyz/guides/sec-edgar-full-text-search-api/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="EDGAR Full-Text Search API: efts.sec.gov Parameters"><meta property="og:description" content="How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code."><meta property="og:url" content="https://datatooly.xyz/guides/sec-edgar-full-text-search-api/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-sec-edgar-full-text-search-api.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="EDGAR Full-Text Search API: efts.sec.gov Parameters">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="finance"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="EDGAR Full-Text Search API: efts.sec.gov Parameters"><meta name="twitter:description" content="How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-sec-edgar-full-text-search-api.jpg"><meta name="twitter:image:alt" content="EDGAR Full-Text Search API: efts.sec.gov Parameters">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#article","headline":"EDGAR Full-Text Search API: efts.sec.gov Parameters","description":"How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-sec-edgar-full-text-search-api.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, finance, datascience","about":{"@type":"SoftwareApplication","name":"Search SEC EDGAR filings, financials & insider trades","url":"https://datatooly.xyz/sec-edgar-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#webpage","url":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/","name":"EDGAR Full-Text Search API: efts.sec.gov Parameters","description":"How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-sec-edgar-full-text-search-api.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"EDGAR Full-Text Search API: efts.sec.gov Parameters","item":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/sec-edgar-full-text-search-api/#quick-answers","mainEntity":[{"@type":"Question","name":"What are the efts.sec.gov LATEST search-index API parameters?","acceptedAnswer":{"@type":"Answer","text":"q (search text, quoted for a phrase), forms (comma-separated, upper case, e.g. 10-K,8-K), ciks (10-digit, zero-padded), startdt and enddt (yyyy-mm-dd), from (offset), sort (desc or asc by filing date), locationCodes and locationType=incorporated, and entityName. The page size is fixed at 100 and from stops at 9,900. Checked against the echoed query on 2026-10-14."}},{"@type":"Question","name":"Is there SEC EDGAR full text search API documentation?","acceptedAnswer":{"@type":"Answer","text":"The SEC documents the Full-Text Search page in its FAQ (sec.gov/edgar/search/efts-faq.html), including the query syntax, but it doesn't publish efts.sec.gov/LATEST/search-index as a documented API. The parameter behavior on this page comes from live tests and the query object each response echoes back. Treat it as an interface that can change without notice."}},{"@type":"Question","name":"How do I call efts.sec.gov from Python with requests?","acceptedAnswer":{"@type":"Answer","text":"requests.get('https://efts.sec.gov/LATEST/search-index', params={'q': '\"supply chain disruption\"', 'forms': '10-K', 'startdt': '2025-01-01', 'enddt': '2025-12-31'}, headers={'User-Agent': 'Your Name you@example.com'}). Without a declared User-Agent, python-requests' default got HTTP 403 on 2026-10-14. Read hits.total.value for the count and hits.hits[]._source for each document."}},{"@type":"Question","name":"How far back does EDGAR full-text search go?","acceptedAnswer":{"@type":"Answer","text":"The SEC's FAQ says Full-Text Search covers \"the full text of all EDGAR filings submitted electronically since 2001\", including attachments such as exhibits."}}]}</script>
+</head><body data-tool-id="sec-edgar-search"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/finance-filings/">Finance &amp; Filings</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Finance &amp; Filings</span>
+<h1>EDGAR Full-Text Search API: efts.sec.gov Parameters</h1>
+<p class="lede">How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free query builder</span><p class="gcta-t">Search SEC EDGAR filings, financials &amp; insider trades</p><p class="gcta-s">Build a ready-to-run SEC EDGAR API query for filings, XBRL financials &amp; insider trades by ticker, preview the output shape, then run it live on the actor.</p><a class="btn btn-primary" href="../../sec-edgar-search/">Build the query — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>EDGAR full-text search has a JSON endpoint: <code>https://efts.sec.gov/LATEST/search-index?q=...</code>. Pass a phrase in <code>q</code>, filter with <code>forms</code>, <code>ciks</code> (10-digit) and <code>startdt</code>/<code>enddt</code>, and page with <code>from</code> in steps of 100. No API key is needed, but you must send a User-Agent naming you. The SEC doesn&#39;t document this endpoint as an API; it&#39;s the backend of its Full-Text Search page.</p>
+<p>This page documents what each parameter actually does. Every response from the endpoint includes a <code>query</code> object, the Elasticsearch query it ran, so the table below comes from those echoes plus live tests on 2026-10-14. It is not from an official spec, because there isn&#39;t one.</p>
+<h2 id="what-full-text-search-covers">What full-text search covers</h2>
+<p>From the SEC&#39;s <a href="https://www.sec.gov/edgar/search/efts-faq.html" target="_blank" rel="noopener">Full-Text Search FAQ</a>: it searches &quot;the full text of all EDGAR filings submitted electronically since 2001&quot;, and &quot;the full text of a filing includes all data in the filing itself as well as all attachments (such as exhibits)&quot;. Natural-language queries aren&#39;t supported.</p>
+<p>Each result is one <strong>document</strong>, not one filing. A 10-K and its exhibits are separate hits that share an accession number. In one page of 100 hits I found 99 distinct filings.</p>
+<h2 id="parameters">Parameters</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What it does (from the echoed query)</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>q</code></td>
+<td>Searches document text. A quoted phrase is a phrase match. Words without quotes are each required.</td>
+<td><code>q=&quot;supply chain disruption&quot;</code></td>
+</tr>
+<tr>
+<td><code>forms</code></td>
+<td>Filters on <code>root_forms</code>, comma-separated. Upper case only: <code>8-k</code> matched 0 documents where <code>8-K</code> matched 831. <code>10-K</code> also returns <code>10-K/A</code>.</td>
+<td><code>forms=10-K,8-K</code></td>
+</tr>
+<tr>
+<td><code>ciks</code></td>
+<td>Filters on <code>ciks</code>. Must be zero-padded to 10 digits: <code>320193</code> matched 0, <code>0000320193</code> matched 12.</td>
+<td><code>ciks=0000320193</code></td>
+</tr>
+<tr>
+<td><code>startdt</code>, <code>enddt</code></td>
+<td>Range on <code>file_date</code>, format <code>yyyy-mm-dd</code>. Works with or without <code>dateRange=custom</code>.</td>
+<td><code>startdt=2025-01-01&amp;enddt=2025-12-31</code></td>
+</tr>
+<tr>
+<td><code>dateRange</code></td>
+<td>Ignored by the endpoint. <code>30d</code>, <code>1y</code>, <code>5y</code> and <code>all</code> produced no date filter; the website turns them into <code>startdt</code>/<code>enddt</code> itself.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>Offset of the first hit. <code>from=9900</code> worked; <code>from=10000</code> returned no hits.</td>
+<td><code>from=100</code></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td><code>desc</code> or <code>asc</code> sorts by <code>file_date</code>. Without it, results are ranked by relevance.</td>
+<td><code>sort=desc</code></td>
+</tr>
+<tr>
+<td><code>locationCodes</code></td>
+<td>Filters on business-address state (<code>biz_states</code>).</td>
+<td><code>locationCodes=CA</code></td>
+</tr>
+<tr>
+<td><code>locationType=incorporated</code></td>
+<td>Makes <code>locationCodes</code> filter on state of incorporation (<code>inc_states</code>) instead.</td>
+<td><code>locationType=incorporated&amp;locationCodes=DE</code></td>
+</tr>
+<tr>
+<td><code>entityName</code></td>
+<td>Adds a loose word match on company names. <code>Apple Inc.</code> became separate matches for <code>Apple</code> and <code>Inc.</code>, giving 43 results against 12 for Apple&#39;s CIK. Prefer <code>ciks</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hits</code>, <code>size</code>, <code>page</code></td>
+<td>Ignored. The page size is always 100.</td>
+<td></td>
+</tr>
+</tbody></table></div>
+<h3 id="query-syntax-in-q">Query syntax in <code>q</code></h3>
+<p>These all ran on 2026-10-14. The syntax matches the FAQ.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>You type</th>
+<th>It becomes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&quot;supply chain disruption&quot;</code></td>
+<td>Exact phrase</td>
+</tr>
+<tr>
+<td><code>software hardware</code></td>
+<td>Both words required (implied AND)</td>
+</tr>
+<tr>
+<td><code>tariff OR tariffs -china</code></td>
+<td>Either word, and not &quot;china&quot; (<code>-</code> or <code>NOT</code> excludes)</td>
+</tr>
+<tr>
+<td><code>tariff NEAR(5) china</code></td>
+<td>Both words within 5 words of each other, in any order (default 10)</td>
+</tr>
+<tr>
+<td><code>gas*</code></td>
+<td>Prefix wildcard (only at the end of a word)</td>
+</tr>
+</tbody></table></div>
+<p>An empty <code>q</code> with no other filter returns nothing. But <code>forms</code> plus dates with no <code>q</code> works: <code>forms=8-K&amp;startdt=2026-10-13&amp;enddt=2026-10-13</code> returned the day&#39;s 252 8-K documents.</p>
+<h2 id="the-response">The response</h2>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{
+  &quot;took&quot;: 293,
+  &quot;hits&quot;: {
+    &quot;total&quot;: {&quot;value&quot;: 331, &quot;relation&quot;: &quot;eq&quot;},
+    &quot;hits&quot;: [{
+      &quot;_id&quot;: &quot;0001640334-25-001300:acro_10k.htm&quot;,
+      &quot;_source&quot;: {
+        &quot;ciks&quot;: [&quot;0001622996&quot;],
+        &quot;display_names&quot;: [&quot;ACRO BIOMEDICAL CO., LTD.  (CIK 0001622996)&quot;],
+        &quot;form&quot;: &quot;10-K&quot;, &quot;root_forms&quot;: [&quot;10-K&quot;], &quot;file_type&quot;: &quot;10-K&quot;,
+        &quot;file_date&quot;: &quot;2025-07-24&quot;, &quot;period_ending&quot;: &quot;2024-12-31&quot;,
+        &quot;adsh&quot;: &quot;0001640334-25-001300&quot;, &quot;sequence&quot;: 1,
+        &quot;sics&quot;: [&quot;7900&quot;], &quot;biz_states&quot;: [&quot;IN&quot;], &quot;inc_states&quot;: [&quot;NV&quot;],
+        &quot;biz_locations&quot;: [&quot;Fishers, IN&quot;], &quot;file_num&quot;: [&quot;000-55643&quot;], &quot;items&quot;: []
+      }
+    }]
+  },
+  &quot;aggregations&quot;: {&quot;entity_filter&quot;: {}, &quot;sic_filter&quot;: {}, &quot;biz_states_filter&quot;: {}, &quot;form_filter&quot;: {}},
+  &quot;query&quot;: {}
+}</code></pre></div>
+<p>That&#39;s a trimmed real hit from the query below. The fields you&#39;ll use most:</p>
+<ul>
+<li><code>hits.total.value</code> with <code>relation</code>. When <code>relation</code> is <code>&quot;gte&quot;</code>, the value is capped at 10,000 and the true count is higher.</li>
+<li><code>_id</code> is <code>accession:filename</code>. Together with the first CIK, it gives the document URL (see <code>doc_url</code> below).</li>
+<li><code>adsh</code> is the accession number, the same for every document in a filing.</li>
+<li><code>items</code> lists 8-K item numbers when the document belongs to an 8-K.</li>
+<li><code>aggregations</code> gives the top 30 companies, SIC codes, states and forms for the whole result set. That&#39;s useful for counts without paging.</li>
+</ul>
+<h2 id="python-search-page-and-link-to-documents">Python: search, page and link to documents</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import time
+import requests
+
+EFTS = &quot;https://efts.sec.gov/LATEST/search-index&quot;
+HEADERS = {&quot;User-Agent&quot;: &quot;Data Tooly research contact@example.com&quot;}  # use your own name + email
+
+def search(q, forms=None, ciks=None, start=None, end=None, max_hits=300):
+    &quot;&quot;&quot;Yield full-text search hits, 100 per page, following `from`.&quot;&quot;&quot;
+    params = {&quot;q&quot;: q}
+    if forms:
+        params[&quot;forms&quot;] = &quot;,&quot;.join(forms)           # upper case: &quot;8-K&quot;, not &quot;8-k&quot;
+    if ciks:
+        params[&quot;ciks&quot;] = &quot;,&quot;.join(f&quot;{int(c):010d}&quot; for c in ciks)  # must be 10 digits
+    if start or end:
+        params.update(dateRange=&quot;custom&quot;, startdt=start, enddt=end)  # yyyy-mm-dd
+    offset = 0
+    while offset &lt; max_hits:
+        r = requests.get(EFTS, params={**params, &quot;from&quot;: offset}, headers=HEADERS, timeout=60)
+        r.raise_for_status()
+        hits = r.json()[&quot;hits&quot;][&quot;hits&quot;]
+        if not hits:
+            return
+        yield from hits
+        offset += len(hits)                         # the page size is fixed at 100
+        time.sleep(0.2)                             # stay well under 10 requests/second
+
+def doc_url(hit):
+    &quot;&quot;&quot;Build the sec.gov URL of the matching document.&quot;&quot;&quot;
+    adsh, filename = hit[&quot;_id&quot;].split(&quot;:&quot;, 1)
+    cik = int(hit[&quot;_source&quot;][&quot;ciks&quot;][0])
+    return f&quot;https://www.sec.gov/Archives/edgar/data/{cik}/{adsh.replace('-', '')}/{filename}&quot;
+
+first = requests.get(EFTS, headers=HEADERS, timeout=60, params={
+    &quot;q&quot;: '&quot;supply chain disruption&quot;', &quot;forms&quot;: &quot;10-K&quot;,
+    &quot;dateRange&quot;: &quot;custom&quot;, &quot;startdt&quot;: &quot;2025-01-01&quot;, &quot;enddt&quot;: &quot;2025-12-31&quot;}).json()
+print(&quot;total:&quot;, first[&quot;hits&quot;][&quot;total&quot;])
+print(&quot;forms:&quot;, [(b[&quot;key&quot;], b[&quot;doc_count&quot;]) for b in first[&quot;aggregations&quot;][&quot;form_filter&quot;][&quot;buckets&quot;]])
+print(&quot;top states:&quot;, [(b[&quot;key&quot;], b[&quot;doc_count&quot;]) for b in first[&quot;aggregations&quot;][&quot;biz_states_filter&quot;][&quot;buckets&quot;][:3]])
+
+hits = list(search('&quot;supply chain disruption&quot;', forms=[&quot;10-K&quot;], start=&quot;2025-01-01&quot;, end=&quot;2025-12-31&quot;))
+print(len(hits), &quot;hits,&quot;, len({h[&quot;_source&quot;][&quot;adsh&quot;] for h in hits}), &quot;distinct filings&quot;)
+h = hits[0][&quot;_source&quot;]
+print(h[&quot;display_names&quot;][0], &quot;|&quot;, h[&quot;form&quot;], h[&quot;file_date&quot;], &quot;| period&quot;, h[&quot;period_ending&quot;])
+print(doc_url(hits[0]))
+
+apple = list(search(&quot;tariff&quot;, ciks=[320193]))
+print(&quot;Apple filings mentioning tariff:&quot;, len(apple), sorted({x[&quot;_source&quot;][&quot;form&quot;] for x in apple}))</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">total: {'value': 331, 'relation': 'eq'}
+forms: [('10-K', 331)]
+top states: [('CA', 68), ('NY', 28), ('TX', 26)]
+300 hits, 299 distinct filings
+ACRO BIOMEDICAL CO., LTD.  (CIK 0001622996) | 10-K 2025-07-24 | period 2024-12-31
+https://www.sec.gov/Archives/edgar/data/1622996/000164033425001300/acro_10k.htm
+Apple filings mentioning tariff: 12 ['10-K', '10-K405', '10-Q', '8-K', 'DEF 14A', 'PX14A6G', 'SC TO-I']</code></pre></div>
+<p>The document URL returned HTTP 200. The filing&#39;s index is at the same folder plus <code>{accession}-index.htm</code>, or <code>index.json</code> for a machine-readable listing.</p>
+<p>The same first query with curl:</p>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl -s -A &quot;Data Tooly research contact@example.com&quot; \
+  &quot;https://efts.sec.gov/LATEST/search-index?q=%22supply+chain+disruption%22&amp;forms=10-K&amp;dateRange=custom&amp;startdt=2025-01-01&amp;enddt=2025-12-31&quot;</code></pre></div>
+<h2 id="traps-that-return-wrong-data-without-an-error">Traps that return wrong data without an error</h2>
+<p>None of these return an error. You just get wrong or empty results:</p>
+<ol>
+<li><strong>Unpadded CIK → 0 results.</strong> <code>ciks=320193</code> returns an empty result with HTTP 200. Always pad: <code>f&quot;{cik:010d}&quot;</code>.</li>
+<li><strong>Lowercase form → 0 results.</strong> <code>forms=8-k</code> matched nothing.</li>
+<li><strong><code>dateRange=30d</code> does nothing.</strong> Send <code>startdt</code> and <code>enddt</code> yourself.</li>
+<li><strong>A badly formatted date is ignored.</strong> <code>startdt=2026/01/01</code> returned unfiltered results. Use <code>yyyy-mm-dd</code>.</li>
+<li><strong>The 10,000-hit ceiling.</strong> <code>from</code> can&#39;t go past 9,900. To collect more, split the date range into smaller windows, for example month by month, so each window stays under 10,000.</li>
+<li><strong>Hits are documents.</strong> Count filings with distinct <code>adsh</code>, not with <code>len(hits)</code>.</li>
+</ol>
+<h2 id="rate-limit-and-user-agent">Rate limit and User-Agent</h2>
+<p>The endpoint follows SEC.gov&#39;s fair-access rules: at most 10 requests per second, and a declared User-Agent. With no User-Agent, or with curl&#39;s or python-requests&#39; default, efts.sec.gov answered HTTP 403. The <a href="https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/">SEC rate limit and User-Agent guide</a> covers the exact format and the block behavior.</p>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-api-python-guide/">SEC EDGAR API in Python: User-Agent, rate limits, XBRL</a>, the overview.</li>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/">Submissions API and ticker to CIK</a>: get the 10-digit CIK that <code>ciks=</code> needs.</li>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/">Company facts, company concept and frames</a>: the numbers inside the filings you found.</li>
+<li><a href="https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/">SEC rate limits and User-Agent rules</a>.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/sec-edgar-search/">SEC EDGAR query builder</a> assembles a full-text search configuration, with tickers, forms and dates, and shows the output shape. It&#39;s a query builder, not a live search: browsers can&#39;t send the User-Agent the SEC requires, so the query runs server-side.</p>
+<h2 id="at-scale">At scale</h2>
+<p>The <a href="https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu" target="_blank" rel="noopener">SEC EDGAR Scraper actor</a> on Apify has a <code>full_text_search</code> mode (<code>searchQuery</code>, <code>searchCiks</code>, <code>forms</code>, <code>dateFrom</code>, <code>dateTo</code>) that handles the User-Agent, pacing and paging, and returns clean rows as JSON, CSV or Excel. It also has a <code>latest_feed</code> mode for new filings. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly query builder and the Apify actor. The endpoint works the same without them.</em></p>
+<p>Sources: <a href="https://www.sec.gov/edgar/search/efts-faq.html" target="_blank" rel="noopener">SEC Full-Text Search FAQ</a>, <a href="https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data" target="_blank" rel="noopener">SEC: Accessing EDGAR Data</a>, and live responses from efts.sec.gov on 2026-10-14, including each response&#39;s echoed <code>query</code> object.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>What are the efts.sec.gov LATEST search-index API parameters?</h3>
+<p><code>q</code> (search text, quoted for a phrase), <code>forms</code> (comma-separated, upper case, e.g. <code>10-K,8-K</code>), <code>ciks</code> (10-digit, zero-padded), <code>startdt</code> and <code>enddt</code> (<code>yyyy-mm-dd</code>), <code>from</code> (offset), <code>sort</code> (<code>desc</code> or <code>asc</code> by filing date), <code>locationCodes</code> and <code>locationType=incorporated</code>, and <code>entityName</code>. The page size is fixed at 100 and <code>from</code> stops at 9,900. Checked against the echoed query on 2026-10-14.</p>
+<h3>Is there SEC EDGAR full text search API documentation?</h3>
+<p>The SEC documents the Full-Text Search page in its FAQ (sec.gov/edgar/search/efts-faq.html), including the query syntax, but it doesn't publish <code>efts.sec.gov/LATEST/search-index</code> as a documented API. The parameter behavior on this page comes from live tests and the <code>query</code> object each response echoes back. Treat it as an interface that can change without notice.</p>
+<h3>How do I call efts.sec.gov from Python with requests?</h3>
+<p><code>requests.get('https://efts.sec.gov/LATEST/search-index', params={'q': '&quot;supply chain disruption&quot;', 'forms': '10-K', 'startdt': '2025-01-01', 'enddt': '2025-12-31'}, headers={'User-Agent': 'Your Name you@example.com'})</code>. Without a declared User-Agent, python-requests' default got HTTP 403 on 2026-10-14. Read <code>hits.total.value</code> for the count and <code>hits.hits[]._source</code> for each document.</p>
+<h3>How far back does EDGAR full-text search go?</h3>
+<p>The SEC's FAQ says Full-Text Search covers &quot;the full text of all EDGAR filings submitted electronically since 2001&quot;, including attachments such as exhibits.</p>
+</section>
+<p class="guide-end"><a href="../../sec-edgar-search/">Open the free Search SEC EDGAR filings, financials &amp; insider trades tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/sec-edgar-api-python-guide/">SEC EDGAR API in Python: User-Agent Format &amp; Rate Limits →</a><a href="../../guides/sec-edgar-companyfacts-xbrl-frames-api/">SEC Company Facts API: companyfacts, concept &amp; frames →</a><a href="../../guides/sec-edgar-rate-limit-user-agent/">SEC EDGAR Rate Limit and User-Agent: Fair Access Rules →</a><a href="../../guides/sec-edgar-submissions-api-ticker-to-cik/">SEC EDGAR API: Submissions JSON and Ticker to CIK →</a><a href="../../guides/clinicaltrials-gov-api-completed-trial-results/">Get Completed Clinical Trial Results with the API →</a><a href="../../guides/clinicaltrials-gov-api-nct-number-lookup/">ClinicalTrials.gov API: Look Up a Study by NCT Number →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

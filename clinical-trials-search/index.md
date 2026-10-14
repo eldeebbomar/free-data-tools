@@ -8,6 +8,10 @@
 - Backing Apify actor: [clinical-trials-fda-scraper](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- More guides: [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- More guides: [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- More guides: [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- More guides: [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 Type a medical condition or drug and search the official ClinicalTrials.gov registry live in your browser — real studies with NCT ID, status, phase, and lead sponsor. Free, no login, no API key.
 

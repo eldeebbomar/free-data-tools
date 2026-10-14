@@ -1,12 +1,20 @@
 # Guides to public data APIs and scraping
 
-> 30 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
+> 38 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
 
 - URL: https://datatooly.xyz/guides/
 - Updated: 2026-10-14
 
 ## Guides
 
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/) (2026-10-14): Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/) (2026-10-14): Fetch one trial by NCT number with the ClinicalTrials.gov v2 API: the /studies/{nctId} endpoint, NCT format, fields, 404 vs 400, aliases and batch lookups.
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/) (2026-10-14): Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/) (2026-10-14): The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/) (2026-10-14): Pull XBRL financials from data.sec.gov: companyfacts, companyconcept and frames URLs, the JSON shape, the fy and frame traps, and a CSV export. Tested Python.
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/) (2026-10-14): How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/) (2026-10-14): SEC fair access in practice: the User-Agent format, the 10 requests/second cap across all machines, what the 403 means, how long a block lasts. Tested client.
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/) (2026-10-14): Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.
 - [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/) (2026-10-14): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
 - [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/) (2026-10-14): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/) (2026-09-29): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.

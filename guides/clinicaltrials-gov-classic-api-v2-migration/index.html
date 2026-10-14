@@ -1,0 +1,292 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>ClinicalTrials.gov Classic API to v2: Migration Guide</title>
+<meta name="description" content="The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.">
+<link rel="canonical" href="https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="ClinicalTrials.gov Classic API to v2: Migration Guide"><meta property="og:description" content="The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims."><meta property="og:url" content="https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-classic-api-v2-migration.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ClinicalTrials.gov Classic API to v2: Migration Guide">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="healthcare"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ClinicalTrials.gov Classic API to v2: Migration Guide"><meta name="twitter:description" content="The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-classic-api-v2-migration.jpg"><meta name="twitter:image:alt" content="ClinicalTrials.gov Classic API to v2: Migration Guide">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#article","headline":"ClinicalTrials.gov Classic API to v2: Migration Guide","description":"The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-classic-api-v2-migration.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, healthcare, datascience","about":{"@type":"SoftwareApplication","name":"Search ClinicalTrials.gov live — by condition, drug, or phase","url":"https://datatooly.xyz/clinical-trials-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#webpage","url":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/","name":"ClinicalTrials.gov Classic API to v2: Migration Guide","description":"The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-classic-api-v2-migration.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"ClinicalTrials.gov Classic API to v2: Migration Guide","item":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/#quick-answers","mainEntity":[{"@type":"Question","name":"What is the ClinicalTrials.gov API v2?","acceptedAnswer":{"@type":"Answer","text":"It is the current REST API of ClinicalTrials.gov, at https://clinicaltrials.gov/api/v2/. It returns JSON or CSV, needs no key, and replaced the classic API, which NLM retired on June 25, 2024. On 2026-10-14, /api/v2/version reported apiVersion 2.0.5."}},{"@type":"Question","name":"Does the old clinicaltrials.gov/api/query/full_studies endpoint still work?","acceptedAnswer":{"@type":"Answer","text":"No. On 2026-10-14, https://clinicaltrials.gov/api/query/full_studies and /api/query/study_fields returned HTTP 404, and classic.clinicaltrials.gov redirected to them. Use /api/v2/studies, or /api/legacy/full-studies and /api/legacy/study-fields, which keep the classic parameters but return XML only."}},{"@type":"Question","name":"How do I replace the expr parameter from the classic ClinicalTrials.gov API?","acceptedAnswer":{"@type":"Answer","text":"Put the classic expr search expression into query.term on /api/v2/studies, as NLM's migration guide says. Add sort=@relevance to get the classic ranking order. In a test on 2026-10-14, expr=heart attack and query.term=heart attack both matched 13,807 studies and returned the same top three NCT IDs."}}]}</script>
+</head><body data-tool-id="clinical-trials-search"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/health-pharma/">Health &amp; Pharma</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Health &amp; Pharma</span>
+<h1>ClinicalTrials.gov Classic API to v2: Migration Guide</h1>
+<p class="lede">The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Search ClinicalTrials.gov live — by condition, drug, or phase</p><p class="gcta-s">Search ClinicalTrials.gov live by condition, drug, phase or status with the official v2 API. No key, no signup: real NCT IDs, status, phase and lead sponsor.</p><a class="btn btn-primary" href="../../clinical-trials-search/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>The classic ClinicalTrials.gov API (<code>/api/query/full_studies</code>, <code>/api/query/study_fields</code>, <code>/api/info/...</code>) was retired on June 25, 2024, and those URLs now return HTTP 404. Move to API v2 at <code>https://clinicaltrials.gov/api/v2/studies</code>. Put your classic <code>expr</code> into <code>query.term</code>, replace <code>min_rnk</code>/<code>max_rnk</code> with <code>pageSize</code> and <code>pageToken</code>, and use <code>format=json</code> or <code>csv</code>. For XML in the old shape, NLM runs <code>/api/legacy/</code> endpoints.</p>
+<p>This guide maps every classic endpoint and parameter to its v2 replacement. It&#39;s based on NLM&#39;s official <a href="https://clinicaltrials.gov/data-api/about-api/api-migration" target="_blank" rel="noopener">API Migration Guide</a>, and every URL was checked live on 2026-10-14.</p>
+<h2 id="what-happened-to-the-classic-api">What happened to the classic API</h2>
+<p>NLM&#39;s Technical Bulletin of June 25, 2024 says: <em>&quot;Effective today, the classic ClinicalTrials.gov website and its application programming interface (API) are retired and no longer available.&quot;</em> (<a href="https://www.nlm.nih.gov/pubs/techbull/mj24/mj24_Modern_Clinical_Trials_Website.html" target="_blank" rel="noopener">NLM Technical Bulletin</a>). NLM&#39;s earlier announcement said attempts to use the classic website would be &quot;automatically redirected to the modernized ClinicalTrials.gov website&quot; (<a href="https://www.nlm.nih.gov/news/Modernized_ClinicalTrials.html" target="_blank" rel="noopener">NLM news</a>), but API calls get no such redirect to a working endpoint.</p>
+<p>What the old URLs do now:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Result on 2026-10-14</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://clinicaltrials.gov/api/query/study_fields?...</code></td>
+<td>HTTP 404</td>
+</tr>
+<tr>
+<td><code>https://clinicaltrials.gov/api/query/full_studies?...</code></td>
+<td>HTTP 404</td>
+</tr>
+<tr>
+<td><code>https://clinicaltrials.gov/api/info/study_fields_list</code></td>
+<td>HTTP 404</td>
+</tr>
+<tr>
+<td><code>https://classic.clinicaltrials.gov/api/query/...</code></td>
+<td>HTTP 301 to the same path on clinicaltrials.gov, which then returns 404</td>
+</tr>
+<tr>
+<td><code>https://clinicaltrials.gov/ct2/results?cond=diabetes</code></td>
+<td>HTTP 301 to the new website search</td>
+</tr>
+</tbody></table></div>
+<p>If a script started failing with 404s or empty responses in mid-2024, this is why.</p>
+<h2 id="endpoint-mapping">Endpoint mapping</h2>
+<p>The path prefixes, from the migration guide: classic endpoints start with <code>/api/info/</code> or <code>/api/query/</code>, the new API with <code>/api/v2/</code>, and the legacy support endpoints with <code>/api/legacy/</code>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Classic endpoint</th>
+<th>v2 replacement</th>
+<th>Legacy endpoint (XML only)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/api/query/full_studies</code></td>
+<td><code>/api/v2/studies</code></td>
+<td><code>/api/legacy/full-studies</code></td>
+</tr>
+<tr>
+<td><code>/api/query/study_fields</code></td>
+<td><code>/api/v2/studies</code> with <code>fields=</code></td>
+<td><code>/api/legacy/study-fields</code></td>
+</tr>
+<tr>
+<td><code>/api/query/field_values</code></td>
+<td><code>/api/v2/stats/field/values</code> (all studies, at most 250 values), or <code>/api/v2/studies?fields=...</code></td>
+<td>none</td>
+</tr>
+<tr>
+<td><code>/api/info/data_vrs</code></td>
+<td><code>/api/v2/version</code> (<code>dataTimestamp</code>)</td>
+<td><code>DataVrs</code> tag in legacy responses</td>
+</tr>
+<tr>
+<td><code>/api/info/api_vrs</code></td>
+<td><code>/api/v2/version</code> (<code>apiVersion</code>)</td>
+<td><code>APIVrs</code> tag in legacy responses</td>
+</tr>
+<tr>
+<td><code>/api/info/study_structure</code>, <code>/api/info/api_defs</code></td>
+<td><code>/api/v2/studies/metadata</code>, <code>/api/v2/stats/field/values</code>, <code>/api/v2/stats/field/sizes</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>/api/info/study_fields_list</code></td>
+<td><code>/api/v2/studies/metadata</code></td>
+<td><code>/api/legacy/study-fields-list</code></td>
+</tr>
+<tr>
+<td><code>/api/info/search_areas</code></td>
+<td><code>/api/v2/studies/search-areas</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Single study without results</td>
+<td><code>/api/v2/studies/{nctId}</code></td>
+<td><code>/api/legacy/public-xml/{nctId}</code></td>
+</tr>
+<tr>
+<td>Single study with results</td>
+<td><code>/api/v2/studies/{nctId}</code></td>
+<td><code>/api/legacy/public-xml/{nctId}?full=true</code></td>
+</tr>
+<tr>
+<td>All public data as a ZIP</td>
+<td><code>/api/v2/studies/download?format=json.zip</code></td>
+<td><code>/api/legacy/public-xml?format=zip</code></td>
+</tr>
+<tr>
+<td><code>/ct2/download_studies</code> (search as ZIP)</td>
+<td><code>/api/v2/studies</code></td>
+<td><code>/api/legacy/public-xml?format=zip&amp;term=...</code></td>
+</tr>
+</tbody></table></div>
+<p>In the v2 column, one endpoint replaces both <code>full_studies</code> and <code>study_fields</code>: <code>/api/v2/studies</code> returns full records by default and only the requested fields when you pass <code>fields</code>.</p>
+<h2 id="parameter-mapping">Parameter mapping</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Classic parameter</th>
+<th>v2 equivalent</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>expr</code></td>
+<td><code>query.term</code></td>
+<td>The migration guide: &quot;The Search expression, classic expr parameter, can be set in the query.term parameter.&quot; Default search areas differ slightly.</td>
+</tr>
+<tr>
+<td><code>min_rnk</code>, <code>max_rnk</code></td>
+<td><code>pageSize</code> + <code>pageToken</code></td>
+<td>v2 uses a cursor. Each response has <code>nextPageToken</code>; pass it back as <code>pageToken</code>. Default page size 10, maximum 1,000.</td>
+</tr>
+<tr>
+<td><code>fmt=json</code> / <code>xml</code> / <code>csv</code></td>
+<td><code>format=json</code> / <code>csv</code></td>
+<td>v2 has no XML. Only the <code>/api/legacy/</code> endpoints return XML.</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>fields</code></td>
+<td>v2 accepts the same piece names (<code>NCTId</code>, <code>BriefTitle</code>, <code>OverallStatus</code>), but returns them nested inside <code>protocolSection</code>.</td>
+</tr>
+<tr>
+<td>Ranking by relevance</td>
+<td><code>sort=@relevance</code></td>
+<td>v2 results are unsorted by default.</td>
+</tr>
+<tr>
+<td><code>cond</code>, <code>term</code>, <code>intr</code>, <code>lead</code>, <code>id</code> (website search URLs)</td>
+<td><code>query.cond</code>, <code>query.term</code>, <code>query.intr</code>, <code>query.lead</code>, <code>query.id</code></td>
+<td></td>
+</tr>
+</tbody></table></div>
+<h2 id="data-model-changes-that-break-parsers">Data model changes that break parsers</h2>
+<p>From the migration guide&#39;s Study Data Model section:</p>
+<ul>
+<li><strong>Shorter, reused field names in a nested structure.</strong> <code>NCTId</code> is now at <code>protocolSection.identificationModule.nctId</code>. The Study Data Structure page lists each field&#39;s classic XPath next to its new path.</li>
+<li><strong>Lists are plain arrays.</strong> There are no wrapper objects any more, and list fields have plural names, such as <code>conditions</code> and <code>phases</code>.</li>
+<li><strong>Enums are upper-case codes.</strong> <code>Recruiting</code> is now <code>RECRUITING</code>, <code>Phase 2</code> is <code>PHASE2</code>, <code>Not Applicable</code> is <code>NA</code>. <code>/api/v2/studies/enums</code> gives every value with its <code>legacyValue</code>, so you can build the mapping in code (below).</li>
+<li><strong>Dates are ISO 8601.</strong> They come as <code>yyyy</code>, <code>yyyy-MM</code>, <code>yyyy-MM-dd</code> or <code>yyyy-MM-dd&#39;T&#39;HH:mm</code>. Classic values like &quot;June 2020&quot; are gone. Two booleans were added for the old <code>Unknown</code> dates: <code>SubmissionUnreleaseDateUnknown</code> and <code>UnpostedEventDateUnknown</code>.</li>
+<li><strong>Rich text is Markdown.</strong> Pass <code>markupFormat=legacy</code> to get the classic formatting.</li>
+</ul>
+<h2 id="side-by-side-classic-legacy-and-v2">Side by side: classic, legacy and v2</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import xml.etree.ElementTree as ET
+import requests
+
+CT = &quot;https://clinicaltrials.gov&quot;
+
+# 1. The classic endpoint is gone.
+r = requests.get(f&quot;{CT}/api/query/study_fields&quot;,
+                 params={&quot;expr&quot;: &quot;heart attack&quot;, &quot;fields&quot;: &quot;NCTId,BriefTitle&quot;, &quot;fmt&quot;: &quot;json&quot;}, timeout=60)
+print(&quot;classic /api/query/study_fields:&quot;, r.status_code)
+
+# 2. The legacy shim answers in the classic XML shape (XML only).
+r = requests.get(f&quot;{CT}/api/legacy/study-fields&quot;,
+                 params={&quot;expr&quot;: &quot;heart attack&quot;, &quot;fields&quot;: &quot;NCTId,BriefTitle&quot;, &quot;min_rnk&quot;: 1, &quot;max_rnk&quot;: 3}, timeout=60)
+root = ET.fromstring(r.content)
+print(&quot;legacy study-fields:&quot;, r.status_code, &quot;APIVrs&quot;, root.findtext(&quot;APIVrs&quot;),
+      &quot;found&quot;, root.findtext(&quot;NStudiesFound&quot;),
+      [v.text for v in root.iter(&quot;FieldValue&quot;)][:2])
+
+# 3. The v2 equivalent: expr -&gt; query.term, min_rnk/max_rnk -&gt; pageSize + pageToken.
+r = requests.get(f&quot;{CT}/api/v2/studies&quot;, params={
+    &quot;query.term&quot;: &quot;heart attack&quot;, &quot;fields&quot;: &quot;NCTId,BriefTitle&quot;,
+    &quot;pageSize&quot;: 3, &quot;countTotal&quot;: &quot;true&quot;}, timeout=60)
+d = r.json()
+print(&quot;v2 /api/v2/studies:&quot;, r.status_code, &quot;totalCount&quot;, d[&quot;totalCount&quot;],
+      [s[&quot;protocolSection&quot;][&quot;identificationModule&quot;][&quot;nctId&quot;] for s in d[&quot;studies&quot;]],
+      &quot;nextPageToken&quot; in d)
+
+# 4. Map classic display values (&quot;Recruiting&quot;) to v2 enums (&quot;RECRUITING&quot;).
+enums = requests.get(f&quot;{CT}/api/v2/studies/enums&quot;, timeout=60).json()
+legacy_to_v2 = {
+    e[&quot;type&quot;]: {v[&quot;legacyValue&quot;]: v[&quot;value&quot;] for v in e[&quot;values&quot;]}
+    for e in enums if e[&quot;type&quot;] in (&quot;Status&quot;, &quot;Phase&quot;, &quot;StudyType&quot;)
+}
+print(legacy_to_v2[&quot;Status&quot;][&quot;Active, not recruiting&quot;], legacy_to_v2[&quot;Phase&quot;][&quot;Phase 2&quot;],
+      legacy_to_v2[&quot;Phase&quot;][&quot;Not Applicable&quot;], legacy_to_v2[&quot;StudyType&quot;])</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">classic /api/query/study_fields: 404
+legacy study-fields: 200 APIVrs 1.2.0 found 13807 ['NCT01401036', 'Nobori And Uncoated Stent In Coronary Attack']
+v2 /api/v2/studies: 200 totalCount 13807 ['NCT05513248', 'NCT04345848', 'NCT04619355'] True
+ACTIVE_NOT_RECRUITING PHASE2 NA {'Expanded Access': 'EXPANDED_ACCESS', 'Interventional': 'INTERVENTIONAL', 'Observational': 'OBSERVATIONAL'}</code></pre></div>
+<p>Both APIs found 13,807 studies, but in a different order. The legacy endpoint ranks by relevance, and v2 doesn&#39;t sort unless you ask. Adding <code>sort=@relevance</code> to the v2 call returned <code>NCT01401036</code>, <code>NCT04838808</code>, <code>NCT05392712</code>, the same top three as the legacy endpoint:</p>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl -s &quot;https://clinicaltrials.gov/api/v2/studies?query.term=heart+attack&amp;fields=NCTId&amp;pageSize=3&amp;sort=@relevance&quot;</code></pre></div>
+<h2 id="should-you-use-the-legacy-endpoints">Should you use the legacy endpoints?</h2>
+<p>They&#39;re a bridge, not a destination. The migration guide says they are &quot;designed to replicate the behavior of classic system endpoints as closely as possible&quot; so clients can move &quot;at their own pace&quot;. Their documented limits:</p>
+<ul>
+<li>XML only. <code>fmt=json</code> returns HTTP 400: <code>Allowed values for parameter `fmt` are `xml`</code>.</li>
+<li>When <code>expr</code> is set, only the first 10,000 studies can be retrieved.</li>
+<li><code>/api/legacy/study-fields</code> lacks <code>FlowReasonNumUnits</code> and <code>OrgStudyIdDomain</code>. The guide notes these fields hold no data in any study.</li>
+<li>They report their own version (<code>APIVrs</code> 1.2.0 on 2026-10-14), separate from <code>/api/v2/version</code>.</li>
+</ul>
+<p>If you have XML parsers you can&#39;t rewrite yet, point them at <code>/api/legacy/</code> today. Then move to v2 JSON, which is where new fields and features go.</p>
+<h2 id="bulk-download">Bulk download</h2>
+<p>To mirror the whole registry, skip paging. <code>https://clinicaltrials.gov/api/v2/studies/download?format=json.zip</code> answered with <code>content-type: application/zip</code> and the file name <code>ctg-studies.json.zip</code>. Per the migration guide, each JSON file in it has the same schema as <code>/api/v2/studies/{nctId}</code>. The registry held 606,964 studies on 2026-10-14, so expect a large download.</p>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/">ClinicalTrials.gov API v2 query parameters</a>: everything that replaced <code>expr</code>, with tested examples.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/">Look up a study by NCT number</a>: the v2 replacement for single-study XML.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/">Get completed trial results</a>: reading <code>resultsSection</code>.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/">Export search results to CSV in Python</a>: v2&#39;s CSV mode and its header-based paging.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/clinical-trials-search/">ClinicalTrials.gov search tool</a> already runs on API v2. Use it to check that a migrated query returns what you expect, live in your browser.</p>
+<h2 id="at-scale">At scale</h2>
+<p>If you&#39;d rather not maintain an API client at all, the <a href="https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu" target="_blank" rel="noopener">Clinical Trials &amp; FDA Pipeline actor</a> on Apify uses API v2 with <code>nextPageToken</code> paging, and adds FDA approvals, device clearances, adverse events, recalls and shortages. It exports JSON, CSV or Excel. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly tool and the Apify actor. The migration steps above don&#39;t depend on either.</em></p>
+<p>Sources: <a href="https://clinicaltrials.gov/data-api/about-api/api-migration" target="_blank" rel="noopener">ClinicalTrials.gov API Migration Guide</a>, <a href="https://www.nlm.nih.gov/pubs/techbull/mj24/mj24_Modern_Clinical_Trials_Website.html" target="_blank" rel="noopener">NLM Technical Bulletin, June 25, 2024</a>, <a href="https://www.nlm.nih.gov/news/Modernized_ClinicalTrials.html" target="_blank" rel="noopener">NLM news: classic website to retire</a>, <a href="https://clinicaltrials.gov/data-api/api" target="_blank" rel="noopener">ClinicalTrials.gov API, interactive OpenAPI docs</a>, and live responses on 2026-10-14.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>What is the ClinicalTrials.gov API v2?</h3>
+<p>It is the current REST API of ClinicalTrials.gov, at <code>https://clinicaltrials.gov/api/v2/</code>. It returns JSON or CSV, needs no key, and replaced the classic API, which NLM retired on June 25, 2024. On 2026-10-14, <code>/api/v2/version</code> reported <code>apiVersion</code> 2.0.5.</p>
+<h3>Does the old clinicaltrials.gov/api/query/full_studies endpoint still work?</h3>
+<p>No. On 2026-10-14, <code>https://clinicaltrials.gov/api/query/full_studies</code> and <code>/api/query/study_fields</code> returned HTTP 404, and <code>classic.clinicaltrials.gov</code> redirected to them. Use <code>/api/v2/studies</code>, or <code>/api/legacy/full-studies</code> and <code>/api/legacy/study-fields</code>, which keep the classic parameters but return XML only.</p>
+<h3>How do I replace the expr parameter from the classic ClinicalTrials.gov API?</h3>
+<p>Put the classic <code>expr</code> search expression into <code>query.term</code> on <code>/api/v2/studies</code>, as NLM's migration guide says. Add <code>sort=@relevance</code> to get the classic ranking order. In a test on 2026-10-14, <code>expr=heart attack</code> and <code>query.term=heart attack</code> both matched 13,807 studies and returned the same top three NCT IDs.</p>
+</section>
+<p class="guide-end"><a href="../../clinical-trials-search/">Open the free Search ClinicalTrials.gov live tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV →</a><a href="../../guides/clinicaltrials-gov-api-completed-trial-results/">Get Completed Clinical Trial Results with the API →</a><a href="../../guides/clinicaltrials-gov-api-nct-number-lookup/">ClinicalTrials.gov API: Look Up a Study by NCT Number →</a><a href="../../guides/clinicaltrials-gov-api-v2-query-parameters/">ClinicalTrials.gov API v2 Query Parameters: Full Reference →</a><a href="../../guides/track-peptide-glp1-mentions-youtube-python/">Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key) →</a><a href="../../guides/sec-edgar-companyfacts-xbrl-frames-api/">SEC Company Facts API: companyfacts, concept &amp; frames →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

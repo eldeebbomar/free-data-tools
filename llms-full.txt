@@ -140,6 +140,10 @@ Hub: https://datatooly.xyz/category/jobs-visas/
 
 - [App Store Top Charts API: Free JSON by Country, No Key](https://datatooly.xyz/guides/app-store-top-charts-api/): Get the App Store top free, paid and grossing charts as JSON for any country from the iTunes RSS feed. No key, works in the browser, with fetch() and curl code.
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/): Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/): Fetch one trial by NCT number with the ClinicalTrials.gov v2 API: the /studies/{nctId} endpoint, NCT format, fields, 404 vs 400, aliases and batch lookups.
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/): Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/): The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.
 - [Read Company Hiring Signals From Public Job Board APIs (with code)](https://datatooly.xyz/guides/company-hiring-signals-job-board-apis/): Open job postings leak strategy. Learn to read company hiring signals from the public, no-auth Greenhouse API with a runnable JS classifier.
 - [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/): Cointelegraph has no public news API, but its site runs on a keyless GraphQL endpoint and RSS feeds. Pull articles, search results and full text as JSON.
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/): Stop trusting broker blogs: compute New Cairo apartment price per square meter by compound from live Property Finder Egypt listings, split ready vs off-plan.
@@ -157,7 +161,11 @@ Hub: https://datatooly.xyz/category/jobs-visas/
 - [Scrape Monthly vs Annual SaaS Prices From Pricing-Page JSON-LD](https://datatooly.xyz/guides/scrape-saas-pricing-monthly-annual-json-ld/): Get both sides of a SaaS pricing page's monthly/annual toggle without a browser: read schema.org Offer JSON-LD in Python, then diff it on a schedule.
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/): A practical guide to querying H-1B salary data by employer and role, using the authoritative DOL OFLC LCA disclosure files with runnable Python.
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/): A practical guide to collecting Saudi Arabia property data from the major portals, including the REGA license trick that dedupes listings across platforms.
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/): Pull XBRL financials from data.sec.gov: companyfacts, companyconcept and frames URLs, the JSON shape, the fy and frame traps, and a CSV export. Tested Python.
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/): How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/): SEC fair access in practice: the User-Agent format, the 10 requests/second cap across all machines, what the 403 means, how long a block lasts. Tested client.
 - [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/): Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.
 - [Shopify products.json Pagination: 250 Limit and the 25,000 Cap](https://datatooly.xyz/guides/shopify-products-json-pagination/): Paginate any Shopify store's public /products.json: limit=250, page numbers, the empty-page stop signal, and the HTTP 400 you hit at 25,000 products.
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/): A verified, runnable guide to scraping public Telegram channels without login, an API key or a phone number, using the t.me/s/ preview and plain HTTP.
 - [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
@@ -240,7 +248,7 @@ Data Tooly is built and maintained by **Omar Eldeeb**, a data engineer who publi
 
 ## What this site is
 
-Data Tooly is a static collection of 28 free, no-login data tools grouped into 18 categories, plus 30 long-form [guides](https://datatooly.xyz/guides/). Each tool answers one concrete question about a public data source — what a company is hiring for, what an app ranks, what a Reddit search returns — and hands its exact configuration to an Apify actor when you need the same thing in bulk, on a schedule, or as clean JSON or CSV.
+Data Tooly is a static collection of 28 free, no-login data tools grouped into 18 categories, plus 38 long-form [guides](https://datatooly.xyz/guides/). Each tool answers one concrete question about a public data source — what a company is hiring for, what an app ranks, what a Reddit search returns — and hands its exact configuration to an Apify actor when you need the same thing in bulk, on a schedule, or as clean JSON or CSV.
 
 ## Live tools vs. query builders
 
@@ -502,6 +510,10 @@ Source: https://datatooly.xyz/category/health-pharma/
 ## Guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/): Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/): Fetch one trial by NCT number with the ClinicalTrials.gov v2 API: the /studies/{nctId} endpoint, NCT format, fields, 404 vs 400, aliases and batch lookups.
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/): Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/): The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/): Count YouTube videos mentioning semaglutide, tirzepatide or BPC-157 without an API key: parse ytInitialData, map brand names to compounds, export to CSV.
 
 ## Other categories
@@ -952,7 +964,11 @@ Source: https://datatooly.xyz/category/finance-filings/
 
 ## Guides
 
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/): Pull XBRL financials from data.sec.gov: companyfacts, companyconcept and frames URLs, the JSON shape, the fy and frame traps, and a CSV export. Tested Python.
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/): How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/): SEC fair access in practice: the User-Agent format, the 10 requests/second cap across all machines, what the 403 means, how long a block lasts. Tested client.
 - [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/): Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.
 
 ## Other categories
 
@@ -1643,6 +1659,10 @@ Source: https://datatooly.xyz/clinical-trials-search/
 - Backing Apify actor: [clinical-trials-fda-scraper](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- More guides: [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- More guides: [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- More guides: [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- More guides: [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 Type a medical condition or drug and search the official ClinicalTrials.gov registry live in your browser — real studies with NCT ID, status, phase, and lead sponsor. Free, no login, no API key.
 
@@ -2760,6 +2780,8 @@ Source: https://datatooly.xyz/mev-pair-scanner-tool/
 - Backing Apify actor: [mev-pair-scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
+- More guides: [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- More guides: [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
 
 Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
 
@@ -3261,6 +3283,10 @@ Source: https://datatooly.xyz/sec-edgar-search/
 - Backing Apify actor: [sec-edgar-scraper](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
 - Updated: 2026-10-14
 - Full guide: [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- More guides: [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- More guides: [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/)
+- More guides: [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/)
+- More guides: [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/)
 
 Enter tickers and a mode (filings, XBRL financials, full-text search or insider trades) and preview the SEC EDGAR records the actor returns.
 
@@ -4522,13 +4548,21 @@ Source: https://datatooly.xyz/guides/
 
 # Guides to public data APIs and scraping
 
-> 30 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
+> 38 practical, code-first guides to public data sources: which official APIs exist, what they block, and how to get the data out as JSON or CSV.
 
 - URL: https://datatooly.xyz/guides/
 - Updated: 2026-10-14
 
 ## Guides
 
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/) (2026-10-14): Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/) (2026-10-14): Fetch one trial by NCT number with the ClinicalTrials.gov v2 API: the /studies/{nctId} endpoint, NCT format, fields, 404 vs 400, aliases and batch lookups.
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/) (2026-10-14): Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/) (2026-10-14): The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/) (2026-10-14): Pull XBRL financials from data.sec.gov: companyfacts, companyconcept and frames URLs, the JSON shape, the fy and frame traps, and a CSV export. Tested Python.
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/) (2026-10-14): How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/) (2026-10-14): SEC fair access in practice: the User-Agent format, the 10 requests/second cap across all machines, what the 403 means, how long a block lasts. Tested client.
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/) (2026-10-14): Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.
 - [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/) (2026-10-14): Before you swap, check whether a DEX pool is being sandwiched: read its trade feed, check its 24h sandwich rate and MEV fee share, then route your trade.
 - [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/) (2026-10-14): Pick a slippage tolerance from pool depth and the pool's MEV risk: why loose settings invite sandwich bots, a rule-of-thumb table, and what to check first.
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/) (2026-09-29): Query the free ClinicalTrials.gov v2 API with query.cond, filter by phase (filter.phase returns HTTP 400; use filter.advanced) and export CSV. No key needed.
@@ -4704,11 +4738,11 @@ Copy the `fetch()` snippet above and you'll have live App Store top charts in un
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -4906,11 +4940,853 @@ Pass the condition as `query.cond` on the studies endpoint: `https://clinicaltri
 
 ## Related guides
 
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 - [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+
+---
+
+Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/
+
+# Get Completed Clinical Trial Results with the API
+
+> Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.
+
+- URL: https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Tags: api, python, healthcare, datascience
+
+To find results of completed clinical trials, search ClinicalTrials.gov for completed studies that have posted results. With the free v2 API that's `https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com`. Then fetch a study with `fields=ResultsSection` to get its outcome measures, statistical analyses, participant flow and adverse events as JSON. No API key is needed.
+
+This guide shows how to find those trials, what the results JSON looks like, and how to read it in Python. Everything was run against the live API on 2026-10-14.
+
+## How many trials have posted results
+
+Counts from the API on 2026-10-14:
+
+| Query | Studies |
+|---|---|
+| All registered studies | 606,964 |
+| Studies with posted results (`AREA[HasResults]true`) | 80,504 |
+| Completed studies (`filter.overallStatus=COMPLETED`) | 331,828 |
+| Completed and with posted results (`aggFilters=results:with,status:com`) | 67,158 |
+| Results first posted in 2026 (`AREA[ResultsFirstPostDate]RANGE[2026-01-01,MAX]`) | 4,757 |
+
+So about one in five completed studies has summary results on ClinicalTrials.gov. A trial without posted results may still have published them in a journal. See the section on publications below.
+
+## Step 1: find completed trials with results
+
+Two filters give the same set. Both returned 67,158 studies:
+
+```
+aggFilters=results:with,status:com
+filter.overallStatus=COMPLETED&filter.advanced=AREA[HasResults]true
+```
+
+Results are often posted while a study is still `ACTIVE_NOT_RECRUITING`, for example after the primary completion date while long-term follow-up continues. To include those, drop the status filter and keep `AREA[HasResults]true`.
+
+To get the newest results first, sort by `ResultsFirstPostDate:desc`. That field is "the date on which summary results information was first available on ClinicalTrials.gov after National Library of Medicine (NLM) quality control (QC) review has concluded", according to the API's field definitions.
+
+## Step 2: what the results JSON contains
+
+`resultsSection` is present only when `hasResults` is `true`. It has five modules:
+
+| Module | What's in it |
+|---|---|
+| `participantFlowModule` | Arms (`groups`) and `periods`: how many started, completed, and dropped out, and why |
+| `baselineCharacteristicsModule` | Baseline measures per arm, such as age, sex and race, with `denoms` (participants analyzed) |
+| `outcomeMeasuresModule` | `outcomeMeasures`: each has `type` (`PRIMARY`, `SECONDARY`, ...), `title`, `unitOfMeasure`, `paramType`, `timeFrame`, `groups`, `classes` (the values) and `analyses` (the statistics) |
+| `adverseEventsModule` | `eventGroups` with serious and other adverse event counts per arm, plus `seriousEvents` and `otherEvents` broken down by term |
+| `moreInfoModule` | Point of contact and any restriction on the investigators publishing (`certainAgreement`) |
+
+An outcome value sits at `classes[].categories[].measurements[]`, keyed by `groupId` (for example `OG000`). Map it back to the arm name through the outcome's own `groups` list. The IDs are local to each outcome, not shared across the record.
+
+## Step 3: read it in Python
+
+```python
+import requests
+
+BASE = "https://clinicaltrials.gov/api/v2/studies"
+
+# 1. Find completed trials that have posted results, newest results first.
+r = requests.get(BASE, params={
+    "query.intr": "semaglutide",
+    "aggFilters": "results:with,status:com",   # = has results + completed
+    "sort": "ResultsFirstPostDate:desc",
+    "fields": "NCTId,BriefTitle,ResultsFirstPostDate",
+    "countTotal": "true",
+    "pageSize": 5,
+}, timeout=60)
+r.raise_for_status()
+data = r.json()
+print("completed semaglutide trials with results:", data["totalCount"])
+for st in data["studies"]:
+    p = st["protocolSection"]
+    print(" ", p["identificationModule"]["nctId"],
+          p["statusModule"]["resultsFirstPostDateStruct"]["date"],
+          p["identificationModule"]["briefTitle"][:70])
+
+# 2. Pull the results section of one of them.
+nct = "NCT06045221"  # pinned so the output below is reproducible
+study = requests.get(f"{BASE}/{nct}", params={"fields": "NCTId,ResultsSection"}, timeout=60).json()
+res = study["resultsSection"]
+print("\n", nct, "result modules:", list(res))
+
+# 3. Primary outcomes: one value per arm, plus the statistical analysis.
+for om in res["outcomeMeasuresModule"]["outcomeMeasures"]:
+    if om["type"] != "PRIMARY":
+        continue
+    print("\nPRIMARY:", om["title"])
+    print("  unit:", om.get("unitOfMeasure"), "| param:", om.get("paramType"), "| time frame:", om.get("timeFrame"))
+    arms = {g["id"]: g["title"] for g in om["groups"]}
+    for cls in om.get("classes", []):
+        for cat in cls["categories"]:
+            for m in cat["measurements"]:
+                print(f"  {arms[m['groupId']]}: {m['value']} (spread {m.get('spread')})")
+    for a in om.get("analyses", []):
+        print("  p-value:", a.get("pValue"), "|", a.get("statisticalMethod"),
+              "|", a.get("paramType"), a.get("paramValue"),
+              f"[{a.get('ciLowerLimit')}, {a.get('ciUpperLimit')}]")
+
+# 4. Serious adverse events per arm.
+for g in res["adverseEventsModule"]["eventGroups"]:
+    print(f"\nSAE {g['title']}: {g.get('seriousNumAffected')}/{g.get('seriousNumAtRisk')} participants")
+```
+
+Output on 2026-10-14:
+
+```text
+completed semaglutide trials with results: 104
+  NCT06771115 2026-09-29 Phase 2a Placebo-Controlled Study of VTX3232 Alone or in Combination W
+  NCT06045221 2026-09-15 A Study of Orforglipron (LY3502970) Compared With Semaglutide in Parti
+  NCT06401746 2026-08-31 Body Surface Gastric Mapping in Patients on Semaglutide
+  NCT04596631 2026-08-21 A Research Study to Compare a New Medicine Oral Semaglutide to a Dummy
+  NCT05132088 2026-08-14 Research Study to Investigate How Well Semaglutide Tablets Taken Once 
+
+ NCT06045221 result modules: ['participantFlowModule', 'baselineCharacteristicsModule', 'outcomeMeasuresModule', 'adverseEventsModule', 'moreInfoModule']
+
+PRIMARY: Change From Baseline in Hemoglobin A1c (HbA1c) [Non-inferiority of 36 mg Orforglipron Versus 14 mg Semaglutide and 12 mg Orforglipron Versus 7 mg Semaglutide]
+  unit: Percentage of HbA1c | param: LEAST_SQUARES_MEAN | time frame: Baseline, Week 52
+  12 mg Orforglipron: -1.91 (spread 0.058)
+  36 mg Orforglipron: -2.16 (spread 0.051)
+  7 mg Semaglutide: -1.11 (spread 0.063)
+  14 mg Semaglutide: -1.45 (spread 0.061)
+  p-value: <.001 | Mixed Models Analysis | Least Squares Mean difference -0.71 [-0.86, -0.55]
+  p-value: <.001 | Mixed Models Analysis | Least Squares Mean difference -0.79 [-0.96, -0.62]
+
+SAE 12 mg Orforglipron: 21/424 participants
+
+SAE 36 mg Orforglipron: 40/423 participants
+
+SAE 7 mg Semaglutide: 19/426 participants
+
+SAE 14 mg Semaglutide: 24/425 participants
+```
+
+That is the ACHIEVE-3 trial: Lilly's oral orforglipron against oral semaglutide in type 2 diabetes.
+
+## Things to watch in results data
+
+- **Values are strings.** `value`, `spread`, `pValue` and the confidence limits all come back as text, and `pValue` can be `"<.001"`. Parse them yourself and keep the original string.
+- **Read `paramType` and `dispersionType`.** A value can be a least-squares mean, a median or a count of participants. `spread` can be a standard error, a standard deviation or an interquartile range. The type tells you which.
+- **Not every primary outcome has an analysis.** In the first trial listed above (NCT06771115), the primary outcome was a count of participants with adverse events and had no `analyses` entry.
+- **Large records.** A full record with results can be well over 100 KB. Ask for `fields=NCTId,ResultsSection`, or narrower pieces such as `OutcomeMeasuresModule`, when you don't need the protocol.
+- **There is no separate results endpoint.** Results are part of the study record from `/api/v2/studies/{nctId}`. The website shows them on the study page's Results tab (`https://clinicaltrials.gov/study/NCT06045221?tab=results`).
+
+## When a trial has no posted results: look for publications
+
+Many completed trials report only in a journal. Each record's `protocolSection.referencesModule.references` lists publications with a PubMed ID (`pmid`) and a `type`: `BACKGROUND`, `RESULT` or `DERIVED`. `RESULT` marks a publication the record identifies as reporting the study's results. `DERIVED` references are publications ClinicalTrials.gov links to the study by its NCT number. ACHIEVE-3's Lancet paper, for example, is attached as `DERIVED` (PMID 41765029).
+
+On 2026-10-14, 83,614 completed studies had no posted results but did have a `RESULT` or `DERIVED` reference:
+
+```
+filter.overallStatus=COMPLETED&filter.advanced=AREA[HasResults]false AND AREA[ReferenceType](RESULT OR DERIVED)
+```
+
+## Related guides for this API
+
+- [Look up a study by NCT number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/): the `/studies/{nctId}` endpoint and its errors.
+- [ClinicalTrials.gov API v2 query parameters](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/): every filter used above, and more.
+- [Classic API to v2 migration](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/), if older code read results from the classic XML.
+- [Export search results to CSV in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/). The CSV has a `Study Results` column (YES/NO).
+
+## Do it without code
+
+Use the free [ClinicalTrials.gov search tool](https://datatooly.xyz/clinical-trials-search/) to find trials by condition, drug, phase and status, live in your browser, and get their NCT numbers before you pull results.
+
+## At scale
+
+To track a sponsor's or an indication's trials over time, use the [Clinical Trials & FDA Pipeline actor](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) on Apify. It returns `hasResults` and the completion dates for each trial. Its `monitor` mode re-checks the trials you list and emits a `trial_results_posted` change when results appear. The actor doesn't parse the outcome tables themselves; use the script above for that. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly tool and the Apify actor. The API and the script above work without either.*
+
+Sources: [ClinicalTrials.gov API, interactive OpenAPI docs](https://clinicaltrials.gov/data-api/api), [Study Data Structure](https://clinicaltrials.gov/data-api/about-api/study-data-structure), and live API responses on 2026-10-14.
+
+## Quick answers
+
+### Where can I search for results of completed clinical trials?
+
+On ClinicalTrials.gov. On the website, use the Study Results filter set to "With results" with status Completed. With the API, call `https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com`. On 2026-10-14 that matched 67,158 completed studies with posted results, out of 331,828 completed studies. The results themselves are in each record's `resultsSection`.
+
+### How do I get clinicaltrials.gov results data from the API?
+
+Request one study with `fields=ResultsSection`, for example `https://clinicaltrials.gov/api/v2/studies/NCT06045221?fields=NCTId,ResultsSection`. The section has five modules: `participantFlowModule`, `baselineCharacteristicsModule`, `outcomeMeasuresModule`, `adverseEventsModule` and `moreInfoModule`. It's present only when `hasResults` is `true`.
+
+### Is there a clinical trial results database?
+
+ClinicalTrials.gov is the main public one for trials registered there: on 2026-10-14, 80,504 of its 606,964 studies had summary results posted. Many other trials report results only in journals. For those, check the record's `referencesModule` for publications of type `RESULT` or `DERIVED`, which carry PubMed IDs.
+
+## Related guides
+
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+
+---
+
+Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/
+
+# ClinicalTrials.gov API: Look Up a Study by NCT Number
+
+> Fetch one trial by NCT number with the ClinicalTrials.gov v2 API: the /studies/{nctId} endpoint, NCT format, fields, 404 vs 400, aliases and batch lookups.
+
+- URL: https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Tags: api, python, healthcare, datascience
+
+To look up a clinical trial by NCT number, call `https://clinicaltrials.gov/api/v2/studies/{nctId}`, for example `/api/v2/studies/NCT04437511`. It returns the full record as JSON, with no API key and no signup. Add `fields=` to return only what you need. An unknown NCT number returns HTTP 404, and a malformed one returns HTTP 400.
+
+This page covers the single-study endpoint of the ClinicalTrials.gov v2 API: the NCT number format, the response, the errors, aliases, and how to fetch many trials at once. Everything below was run against the live API on 2026-10-14 (API version 2.0.5).
+
+## The NCT number format
+
+An NCT number is the ClinicalTrials.gov Identifier. The API's own field definition (from `/api/v2/studies/metadata`) says: *"The format is "NCT" followed by an 8-digit number."* For example, `NCT04437511` is Eli Lilly's TRAILBLAZER-ALZ 2 donanemab trial.
+
+What the endpoint accepts, as tested:
+
+| Input | Result |
+|---|---|
+| `NCT04437511` | HTTP 200, the study |
+| `nct04437511` (lowercase) | HTTP 200, the same study |
+| `NCT4437511` (leading zero dropped) | HTTP 200, `nctId` comes back as `NCT04437511` |
+| `NCT99999999` (well-formed, doesn't exist) | HTTP 404, text body `NCT number NCT99999999 not found` |
+| `04437511` (no `NCT` prefix) | HTTP 400, text body `` Parameter `nctId` has incorrect format `` |
+| `NCT00009113` (an old alias) | HTTP 301 redirect to `NCT00010647` |
+
+Error bodies are `text/plain`, not JSON, so check the status code before you call `.json()`.
+
+## The endpoint
+
+```
+GET https://clinicaltrials.gov/api/v2/studies/{nctId}
+```
+
+| Parameter | Values | Notes |
+|---|---|---|
+| `format` | `json` (default), `csv`, `json.zip`, `fhir.json`, `ris` | `fhir.json` ignores `fields`. `ris` is a citation record. |
+| `fields` | Field, piece or module names, comma- or pipe-separated | JSON uses names like `NCTId`, `BriefTitle`, `ConditionsModule`. CSV uses column names like `NCT Number`. |
+| `markupFormat` | `markdown` (default), `legacy` | Applies to JSON only. |
+
+These are the parameters listed for `/studies/{nctId}` in the [official OpenAPI spec](https://clinicaltrials.gov/data-api/api).
+
+### What the JSON contains
+
+The full record for NCT04437511 has five top-level keys: `protocolSection`, `resultsSection`, `documentSection`, `derivedSection` and `hasResults`. The spec also defines an `annotationSection`, which appears only on some studies.
+
+| Section | What's in it |
+|---|---|
+| `protocolSection` | Registration data in modules: `identificationModule`, `statusModule`, `sponsorCollaboratorsModule`, `descriptionModule`, `conditionsModule`, `designModule`, `armsInterventionsModule`, `outcomesModule`, `eligibilityModule`, `contactsLocationsModule`, and more. |
+| `resultsSection` | Posted results: participant flow, baseline, outcome measures, adverse events. Present only when `hasResults` is `true`. |
+| `documentSection` | Uploaded protocol, statistical analysis plan and consent PDFs. |
+| `derivedSection` | Fields ClinicalTrials.gov adds, such as MeSH terms for conditions and interventions. |
+| `hasResults` | `true` when results are posted. |
+
+A full record can be large (the API's `/api/v2/stats/size` reported an average of 17,304 bytes per study and a 99th percentile of 149,567 bytes), so use `fields` when you only need a few values.
+
+## curl: one study, a few fields
+
+```bash
+curl -s "https://clinicaltrials.gov/api/v2/studies/NCT04437511?fields=NCTId,BriefTitle,OverallStatus,Phase,LeadSponsorName,HasResults"
+```
+
+Result:
+
+```json
+{"protocolSection":{"identificationModule":{"nctId":"NCT04437511","briefTitle":"A Study of Donanemab (LY3002813) in Participants With Early Alzheimer's Disease (TRAILBLAZER-ALZ 2)"},"statusModule":{"overallStatus":"ACTIVE_NOT_RECRUITING"},"sponsorCollaboratorsModule":{"leadSponsor":{"name":"Eli Lilly and Company"}},"designModule":{"phases":["PHASE3"]}},"hasResults":true}
+```
+
+Even with `fields`, the response keeps the nested path of each field. `Phase` comes back as `designModule.phases`, a list.
+
+The same lookup as a one-row CSV:
+
+```bash
+curl -s "https://clinicaltrials.gov/api/v2/studies/NCT04437511?format=csv&fields=NCT%20Number,Study%20Title,Study%20Status,Phases,Sponsor"
+```
+
+```csv
+NCT Number,Study Title,Study Status,Sponsor,Phases
+NCT04437511,A Study of Donanemab (LY3002813) in Participants With Early Alzheimer's Disease (TRAILBLAZER-ALZ 2),ACTIVE_NOT_RECRUITING,Eli Lilly and Company,PHASE3
+```
+
+The columns come back in the API's order, not the order you asked for.
+
+## Python: a lookup that handles every case
+
+```python
+import re
+import requests
+
+BASE = "https://clinicaltrials.gov/api/v2/studies"
+
+def normalize_nct(raw):
+    """'nct4437511', ' NCT04437511 ' -> 'NCT04437511' (NCT + 8 digits)."""
+    s = raw.strip().upper().replace(" ", "")
+    m = re.fullmatch(r"NCT(\d{1,8})", s)
+    if not m:
+        raise ValueError(f"not an NCT number: {raw!r}")
+    return "NCT" + m.group(1).zfill(8)
+
+def get_study(nct_id, fields=None):
+    nct_id = normalize_nct(nct_id)
+    params = {"fields": ",".join(fields)} if fields else {}
+    r = requests.get(f"{BASE}/{nct_id}", params=params, timeout=30)
+    if r.status_code == 404:
+        return None  # body is plain text: "NCT number ... not found"
+    r.raise_for_status()
+    # An old alias NCT ID answers 301 to the current record. The redirect drops
+    # the query string, so re-request the canonical ID to keep `fields`.
+    if r.history and fields:
+        canonical = r.url.rstrip("/").rsplit("/", 1)[-1]
+        r = requests.get(f"{BASE}/{canonical}", params=params, timeout=30)
+        r.raise_for_status()
+    return r.json()
+
+def get_many(nct_ids, fields):
+    """Up to 1,000 trials in one call with filter.ids."""
+    ids = [normalize_nct(x) for x in nct_ids]
+    r = requests.get(BASE, params={
+        "filter.ids": ",".join(ids),
+        "fields": ",".join(fields),
+        "pageSize": 1000,
+    }, timeout=60)
+    r.raise_for_status()
+    return r.json()["studies"]
+
+if __name__ == "__main__":
+    FIELDS = ["NCTId", "BriefTitle", "OverallStatus", "Phase", "LeadSponsorName", "HasResults"]
+    s = get_study("nct4437511", FIELDS)
+    p = s["protocolSection"]
+    print(p["identificationModule"]["nctId"], "|", p["identificationModule"]["briefTitle"])
+    print(p["statusModule"]["overallStatus"], p["designModule"]["phases"],
+          p["sponsorCollaboratorsModule"]["leadSponsor"]["name"], "hasResults:", s["hasResults"])
+
+    print(get_study("NCT99999999"))  # -> None
+
+    alias = get_study("NCT00009113", ["NCTId", "NCTIdAlias", "BriefTitle"])
+    print(alias["protocolSection"]["identificationModule"])
+
+    for st in get_many(["NCT04437511", "NCT04368728", "NCT00010647"], ["NCTId", "OverallStatus"]):
+        p = st["protocolSection"]
+        print(p["identificationModule"]["nctId"], p["statusModule"]["overallStatus"])
+```
+
+Output on 2026-10-14:
+
+```text
+NCT04437511 | A Study of Donanemab (LY3002813) in Participants With Early Alzheimer's Disease (TRAILBLAZER-ALZ 2)
+ACTIVE_NOT_RECRUITING ['PHASE3'] Eli Lilly and Company hasResults: True
+None
+{'nctId': 'NCT00010647', 'nctIdAliases': ['NCT00009113'], 'briefTitle': 'Cost-Effectiveness of and Long-Term Outcomes Following Acupuncture Treatment for Osteoarthritis of the Knee'}
+NCT00010647 COMPLETED
+NCT04437511 ACTIVE_NOT_RECRUITING
+NCT04368728 COMPLETED
+```
+
+## Details that trip people up
+
+- **Aliases redirect and drop your query string.** Some studies were registered twice and merged. The old ID is kept in `nctIdAliases`, and requesting it returns a 301 to the current ID. In the test above, the redirect target had no `?fields=` on it, so following it blindly returns the full record. On 2026-10-14 there were 3,164 studies with at least one alias.
+- **Batch lookups don't keep your order.** `filter.ids` returned the three studies in the API's order, not the order I sent. Index the results by `nctId`.
+- **NCT IDs in a search query switch filters off.** The `/studies` docs say: "If any query parameter contains only NCT IDs (comma- and/or space-separated), filters are ignored." I sent `query.term=NCT04437511 NCT04368728` with `filter.overallStatus=RECRUITING` and got both studies back, although neither is recruiting. Use `filter.ids` when you want the filters applied.
+- **Document PDFs live on a CDN.** `documentSection.largeDocumentModule.largeDocs` lists file names such as `Prot_000.pdf`. For NCT04437511 the file was at `https://cdn.clinicaltrials.gov/large-docs/11/NCT04437511/Prot_000.pdf`, where `11` is the last two digits of the NCT number. That path pattern is what I observed; it isn't documented in the API spec.
+- **There is no history endpoint.** The v2 API returns only the current version. Past versions are on the website's History of Changes tab (`https://clinicaltrials.gov/study/NCT04437511?tab=history`). The internal endpoint the site appears to use, `/api/int/studies/{nctId}/history`, returned HTTP 403 to a script.
+
+## Related guides for this API
+
+- [ClinicalTrials.gov API v2 query parameters: the full reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/), for searching rather than fetching one ID.
+- [Get completed trial results with the ClinicalTrials.gov API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/), which reads the `resultsSection` this page skipped.
+- [Migrating from the classic ClinicalTrials.gov API to v2](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/), if your code still calls `/api/query/full_studies`.
+- [Export ClinicalTrials.gov search results to CSV in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/).
+
+## Do it without code
+
+The free [ClinicalTrials.gov search tool](https://datatooly.xyz/clinical-trials-search/) calls this same API live from your browser. Search by condition or drug and filter by phase and status. It shows each study's NCT ID, title, status, phase and lead sponsor. No login, no key.
+
+## At scale
+
+To look up hundreds of NCT numbers and join the trials with FDA approvals, device clearances, adverse events and recalls, use the [Clinical Trials & FDA Pipeline actor](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) on Apify. Its `trial_details` mode takes a list of NCT IDs (`nctIds`) and returns one flat row per trial: status, phase, enrollment, primary and secondary endpoints, eligibility criteria, sponsors and locations. It exports JSON, CSV or Excel. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly tool and the Apify actor. Everything above works with the public API alone.*
+
+Sources: [ClinicalTrials.gov API (interactive OpenAPI docs)](https://clinicaltrials.gov/data-api/api), [Study data structure](https://clinicaltrials.gov/data-api/about-api/study-data-structure), and live responses from `clinicaltrials.gov/api/v2` on 2026-10-14.
+
+## Quick answers
+
+### How do I look up a clinical trial by NCT number?
+
+Call `https://clinicaltrials.gov/api/v2/studies/NCT04437511` (swap in your NCT number). It returns the full study record as JSON, with no API key. Add `fields=NCTId,BriefTitle,OverallStatus` to get only the fields you need. On the website, the same record is at `https://clinicaltrials.gov/study/NCT04437511`.
+
+### What is the clinicaltrials.gov API endpoint for a single study (api/v2/studies/{nctId})?
+
+`GET https://clinicaltrials.gov/api/v2/studies/{nctId}`. It accepts `format` (json, csv, json.zip, fhir.json, ris), `fields` and `markupFormat`. An unknown NCT number returns HTTP 404 with `NCT number ... not found`; a malformed one returns HTTP 400 with the text: Parameter nctId has incorrect format. Checked live on 2026-10-14.
+
+### What is a ClinicalTrials.gov identifier (NCT number)?
+
+It is the unique ID ClinicalTrials.gov gives a study when it is first registered. The API's own field definition says the format is "NCT" followed by an 8-digit number, for example NCT04437511. It is also called the ClinicalTrials.gov Identifier or NCT ID.
+
+### Is there a ClinicalTrials.gov API endpoint for historical versions of a study?
+
+Not in the public v2 API. Its OpenAPI spec (version 2.0.5) lists no history endpoint, and `/api/v2/studies/{nctId}/history` returned HTTP 404 on 2026-10-14. Earlier versions are on the website's History of Changes tab: `https://clinicaltrials.gov/study/NCT04437511?tab=history`.
+
+## Related guides
+
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+
+---
+
+Source: https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/
+
+# ClinicalTrials.gov API v2 Query Parameters: Full Reference
+
+> Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.
+
+- URL: https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Tags: api, python, healthcare, datascience
+
+The ClinicalTrials.gov API v2 has one search endpoint, `https://clinicaltrials.gov/api/v2/studies`. You search with `query.*` parameters (`query.cond`, `query.term`, `query.intr`, `query.spons`), narrow with `filter.*` and `aggFilters`, choose output with `fields` and `format`, and page with `pageSize` and `pageToken`. There is no API key. There is also no `filter.phase`; use `filter.advanced=AREA[Phase]PHASE3`.
+
+This is a complete reference for the `/studies` endpoint, built from the [official OpenAPI spec](https://clinicaltrials.gov/data-api/api) (API version 2.0.5) and checked against the live API on 2026-10-14. Every count below comes from that day's data, so your numbers will drift as the registry grows.
+
+## Query parameters: what to search
+
+`query.*` parameters search text and affect relevance ranking. Each one targets a "search area", a group of fields defined by the API (the full list is at `/api/v2/studies/search-areas`).
+
+| Parameter | Search area | Searches in (examples) | Example | Matches on 2026-10-14 |
+|---|---|---|---|---|
+| `query.cond` | ConditionSearch | Condition, titles, condition MeSH terms, keywords, NCT ID (7 fields) | `query.cond=lung cancer` | 14,620 |
+| `query.term` | BasicSearch | 57 fields, incl. NCT ID, acronym, titles, conditions, interventions, summary ("Other terms" on the website) | `query.term=GLP-1` | 4,273 |
+| `query.intr` | InterventionSearch | Intervention name, type, other names, arm groups, MeSH terms (12 fields) | `query.intr=pembrolizumab` | 2,977 |
+| `query.titles` | TitleSearch | Acronym, brief title, official title | `query.titles=TRAILBLAZER` | 12 |
+| `query.outc` | OutcomeSearch | Primary, secondary and other outcome measures and descriptions (9 fields) | `query.outc=HbA1c` | 12,125 |
+| `query.spons` | SponsorSearch | Lead sponsor, collaborators, organization name | `query.spons=Pfizer` | 6,091 |
+| `query.lead` | `LeadSponsorName` field only | Lead sponsor only | `query.lead=Pfizer` | 3,884 |
+| `query.locn` | LocationSearch | Location city, state, country, facility, ZIP | `query.locn=Boston` | 21,515 |
+| `query.id` | IdSearch | NCT ID, NCT ID aliases, acronym, org study ID, secondary IDs | `query.id=NCT04437511` | 1 |
+| `query.patient` | PatientSearch | 47 fields, a patient-oriented mix of conditions, titles, summary and interventions | | |
+
+`query.spons` vs `query.lead`: Pfizer appears as lead sponsor or collaborator on 6,091 studies, and as lead sponsor on 3,884.
+
+Every `query.*` value uses Essie expression syntax, so `"exact phrase"`, `AND`, `OR`, `NOT` and parentheses all work. For example `query.term="continuous glucose monitor"` matched 234 type 2 diabetes studies.
+
+## Filter parameters: what to keep
+
+Filters narrow the result set without changing ranking.
+
+| Parameter | Format | Example |
+|---|---|---|
+| `filter.overallStatus` | Comma- or pipe-separated statuses | `RECRUITING\|NOT_YET_RECRUITING` |
+| `filter.ids` | Comma- or pipe-separated NCT IDs | `NCT04437511,NCT04368728` |
+| `filter.geo` | `distance(lat,lon,radius)` with `mi` or `km` | `distance(42.3601,-71.0589,50mi)` |
+| `filter.advanced` | An Essie expression, usually `AREA[Field]value` | `AREA[Phase]PHASE3` |
+| `filter.synonyms` | `area:synonym_id` pairs | `ConditionSearch:1651367` |
+| `aggFilters` | `filter_id:option` pairs, the website's sidebar filters | `results:with,status:com` |
+| `postFilter.*` | Same as the `filter.*` versions | `postFilter.overallStatus=RECRUITING` |
+
+The spec says `filter.*` and `postFilter.*` "have same effect", and both exist "just to simplify applying parameters from search request".
+
+Valid `filter.overallStatus` values (from the spec): `ACTIVE_NOT_RECRUITING`, `COMPLETED`, `ENROLLING_BY_INVITATION`, `NOT_YET_RECRUITING`, `RECRUITING`, `SUSPENDED`, `TERMINATED`, `WITHDRAWN`, `AVAILABLE`, `NO_LONGER_AVAILABLE`, `TEMPORARILY_NOT_AVAILABLE`, `APPROVED_FOR_MARKETING`, `WITHHELD`, `UNKNOWN`. Anything else, such as `OPEN`, returns HTTP 400: `` Invalid value in parameter `overallStatus`: `OPEN` ``.
+
+### filter.advanced and the AREA[] syntax
+
+Most fields have no dedicated filter. You reach them with `filter.advanced`, which takes an Essie expression. `AREA[FieldName]` points the expression at one field. All of these returned HTTP 200 on 2026-10-14, combined with `query.cond=type 2 diabetes` (11,987 studies):
+
+| Goal | `filter.advanced` value | Studies |
+|---|---|---|
+| Phase 3 | `AREA[Phase]PHASE3` | 1,642 |
+| Phase 2 or 3 | `AREA[Phase](PHASE2 OR PHASE3)` | 2,811 |
+| Started on or after 2024-01-01 | `AREA[StartDate]RANGE[2024-01-01,MAX]` | 1,903 |
+| Enrollment of 1,000 or more | `AREA[EnrollmentCount]RANGE[1000,MAX]` | 1,059 |
+| Industry lead sponsor | `AREA[LeadSponsorClass]INDUSTRY` | 4,350 |
+| Phase field empty | `AREA[Phase]MISSING` | 2,113 |
+| Exclude "not applicable" phase | `NOT AREA[Phase]NA` | 7,497 |
+| Completed, no results posted | `AREA[OverallStatus]COMPLETED AND AREA[HasResults]false` | 5,955 |
+| A recruiting site in Boston | `SEARCH[Location](AREA[LocationCity]Boston AND AREA[LocationStatus]RECRUITING)` | 26 |
+
+`SEARCH[Location](...)` makes both conditions apply to the same location. Without it, a study with a recruiting site in Chicago and a closed site in Boston would match. Phase values are `NA`, `EARLY_PHASE1`, `PHASE1`, `PHASE2`, `PHASE3` and `PHASE4`.
+
+### aggFilters
+
+`aggFilters` uses the short keys behind the website's filter sidebar. The spec gives `results:with,status:com` and `status:not rec,sex:f,healthy:y` as examples. `phase:3` matched exactly the same 1,642 studies as `AREA[Phase]PHASE3`. Separate several options for one filter with spaces (`status:not rec`) and separate filters with commas.
+
+## Output and paging parameters
+
+| Parameter | What it does | Notes from testing |
+|---|---|---|
+| `fields` | Which fields to return | JSON uses field names (`NCTId`, `BriefTitle`), piece names or module names. CSV uses column names (`NCT Number`). An unknown name returns HTTP 400. `@query` returns the fields your query matched. |
+| `format` | `json` (default) or `csv` | In CSV mode the next-page token comes in the `x-next-page-token` response header. |
+| `markupFormat` | `markdown` (default) or `legacy` | JSON only. |
+| `sort` | Up to 2 sort keys, `Field:asc` or `Field:desc` | Only date and numeric fields, plus `@relevance`. `sort=BriefTitle` returned HTTP 400: `Unsupported sort field type: text`. Results are unsorted by default. |
+| `countTotal` | `true` adds `totalCount` to the first page | CSV puts it in the `x-total-count` header. |
+| `pageSize` | Studies per page | Default 10. Values above 1,000 are quietly reduced to 1,000. `0` means the default. |
+| `pageToken` | The `nextPageToken` from the previous page | Every other parameter must stay the same, apart from `countTotal`, `pageSize` and `pageToken`. |
+| `geoDecay` | How distance from `filter.geo` affects ranking | Ignored without `filter.geo`. |
+
+## curl: one request with several parameters
+
+```bash
+curl -s "https://clinicaltrials.gov/api/v2/studies?query.cond=type+2+diabetes&filter.advanced=AREA%5BPhase%5DPHASE3&filter.overallStatus=RECRUITING&countTotal=true&pageSize=2&fields=NCTId,BriefTitle"
+```
+
+Result (trimmed titles):
+
+```json
+{"totalCount":74,"studies":[
+{"protocolSection":{"identificationModule":{"nctId":"NCT07797335","briefTitle":"AMBITION 7: A Research Study Investigating How Well Zenagamtide Lowers Blood Sugar ..."}}},
+{"protocolSection":{"identificationModule":{"nctId":"NCT07613307","briefTitle":"A Study of Orforglipron (LY3502970) in Participants With Type 2 Diabetes Who Observe Ramadan Fasting"}}}
+],"nextPageToken":"ZVNj7o2Elu8o3lpzC8-7qrbumpOQJJxuZPKj2PAW"}
+```
+
+URL-encode the brackets in `AREA[...]` (`%5B`, `%5D`) when you build URLs by hand. `requests` and `curl --data-urlencode` do it for you.
+
+## Python: counting and paging
+
+```python
+import time
+import requests
+
+BASE = "https://clinicaltrials.gov/api/v2/studies"
+session = requests.Session()
+
+def count(**params):
+    """Total matching studies for a query (countTotal=true, one tiny page)."""
+    p = {**params, "countTotal": "true", "pageSize": 1, "fields": "NCTId"}
+    r = session.get(BASE, params=p, timeout=60)
+    r.raise_for_status()  # a 400 means a bad parameter name or value
+    return r.json()["totalCount"]
+
+def search(params, fields, page_size=1000, max_pages=50):
+    """Yield every matching study, following nextPageToken."""
+    p = {**params, "fields": ",".join(fields), "pageSize": page_size}
+    for _ in range(max_pages):
+        r = session.get(BASE, params=p, timeout=60)
+        r.raise_for_status()
+        data = r.json()
+        yield from data.get("studies", [])  # a page may be empty
+        token = data.get("nextPageToken")
+        if not token:
+            return
+        p["pageToken"] = token  # every other parameter must stay the same
+        time.sleep(0.5)
+
+q = {"query.cond": "type 2 diabetes"}
+print("all T2D studies:          ", count(**q))
+print("+ Phase 3:                ", count(**q, **{"filter.advanced": "AREA[Phase]PHASE3"}))
+print("+ recruiting:             ", count(**q, **{"filter.overallStatus": "RECRUITING"}))
+print("+ within 50 mi of Boston: ", count(**q, **{"filter.geo": "distance(42.3601,-71.0589,50mi)"}))
+print("+ semaglutide:            ", count(**q, **{"query.intr": "semaglutide"}))
+
+rows = list(search(
+    {**q, "query.intr": "semaglutide", "filter.overallStatus": "RECRUITING", "sort": "LastUpdatePostDate:desc"},
+    ["NCTId", "BriefTitle", "Phase", "LeadSponsorName", "LastUpdatePostDate"],
+))
+print(len(rows), "recruiting semaglutide T2D trials; newest update:")
+for st in rows[:3]:
+    p = st["protocolSection"]
+    print(p["identificationModule"]["nctId"], p["statusModule"]["lastUpdatePostDateStruct"]["date"],
+          p.get("designModule", {}).get("phases"), p["sponsorCollaboratorsModule"]["leadSponsor"]["name"])
+```
+
+Output on 2026-10-14:
+
+```text
+all T2D studies:           11987
++ Phase 3:                 1642
++ recruiting:              869
++ within 50 mi of Boston:  586
++ semaglutide:             331
+50 recruiting semaglutide T2D trials; newest update:
+NCT07743983 2026-10-13 ['PHASE3'] BrightGene Bio-Medical Technology Co., Ltd.
+NCT06897475 2026-10-09 ['PHASE2'] Eli Lilly and Company
+NCT07668388 2026-10-07 ['PHASE2'] Novo Nordisk A/S
+```
+
+## Mistakes the API rejects (and ones it doesn't)
+
+| Request | What happens |
+|---|---|
+| `filter.phase=PHASE3` | HTTP 400, `` `filter.phase` is unknown parameter `` |
+| `filter.overallStatus=OPEN` | HTTP 400, invalid value |
+| `fields=NCTId,Bogus` | HTTP 400, `Parameter 'fields' contains invalid field name: 'Bogus'` |
+| `sort=BriefTitle` | HTTP 400, text fields can't be sorted |
+| `pageSize=5000` | HTTP 200 with 1,000 studies, no warning |
+| `query.term=NCT04437511 NCT04368728` plus filters | HTTP 200, and the filters are ignored (documented: a query of only NCT IDs switches filters off) |
+
+A 400 is a bug in your query, so don't retry it. Retry only on 429 and 5xx, with backoff. NLM doesn't publish a fixed request quota for this API.
+
+## Related guides for this API
+
+- [Look up a study by NCT number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/) with `/studies/{nctId}`.
+- [Get completed trial results](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/) with `aggFilters=results:with,status:com`.
+- [Classic API to v2 migration](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/): how `expr`, `min_rnk` and `fmt` map to v2.
+- [Export search results to CSV in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/), including the header-based CSV paging.
+
+## Do it without code
+
+The free [ClinicalTrials.gov search tool](https://datatooly.xyz/clinical-trials-search/) builds these queries for you and runs them live in your browser. Pick a condition, a drug, a phase and a status, and you get real studies back.
+
+## At scale
+
+For scheduled pulls across many conditions or sponsors, with FDA approvals, device clearances, adverse events, recalls and shortages joined on, use the [Clinical Trials & FDA Pipeline actor](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) on Apify. Its `trials` mode takes conditions, interventions, phases, statuses, countries and a date range, and pages through `nextPageToken` for you. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly tool and the Apify actor. The API works the same without them.*
+
+Sources: [ClinicalTrials.gov API, interactive OpenAPI docs](https://clinicaltrials.gov/data-api/api), [Search Areas](https://clinicaltrials.gov/data-api/about-api/search-areas), [Study Data Structure](https://clinicaltrials.gov/data-api/about-api/study-data-structure), and live API responses on 2026-10-14.
+
+## Quick answers
+
+### Where is the ClinicalTrials.gov API documentation?
+
+The official reference is the interactive OpenAPI page at `https://clinicaltrials.gov/data-api/api`, and the raw OpenAPI 3.0 spec is served at `https://clinicaltrials.gov/api/oas/v2`. Field names are on the Study Data Structure page and search areas on the Search Areas page, both under clinicaltrials.gov/data-api/about-api.
+
+### How do I use clinicaltrials.gov/api/v2/studies?query.cond?
+
+`query.cond` searches the Conditions or disease area: `https://clinicaltrials.gov/api/v2/studies?query.cond=type%202%20diabetes`. On 2026-10-14 that matched 11,987 studies. Narrow it with `filter.overallStatus=RECRUITING`, `filter.advanced=AREA[Phase]PHASE3` or `query.intr=semaglutide`, and add `countTotal=true` to get `totalCount`.
+
+### Is there a filter.phase parameter in clinicaltrials.gov/api/v2/studies?
+
+No. `filter.phase=PHASE3` returns HTTP 400 with the body: filter.phase is unknown parameter. Filter phase with `filter.advanced=AREA[Phase]PHASE3`, `AREA[Phase](PHASE2 OR PHASE3)` for several phases, or `aggFilters=phase:3`. Both forms returned the same 1,642 Phase 3 type 2 diabetes studies on 2026-10-14.
+
+### Is there a free clinical trials API?
+
+Yes. The ClinicalTrials.gov v2 REST API from the U.S. National Library of Medicine is free, needs no API key or signup, and returns JSON or CSV. On 2026-10-14 it reported 606,964 registered studies (`/api/v2/stats/size`).
+
+## Related guides
+
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+
+---
+
+Source: https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/
+
+# ClinicalTrials.gov Classic API to v2: Migration Guide
+
+> The classic ClinicalTrials.gov API was retired on June 25, 2024. Map full_studies, study_fields, expr, min_rnk and fmt to API v2, or use the legacy XML shims.
+
+- URL: https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search ClinicalTrials.gov live — by condition, drug, or phase](https://datatooly.xyz/clinical-trials-search/)
+- Tags: api, python, healthcare, datascience
+
+The classic ClinicalTrials.gov API (`/api/query/full_studies`, `/api/query/study_fields`, `/api/info/...`) was retired on June 25, 2024, and those URLs now return HTTP 404. Move to API v2 at `https://clinicaltrials.gov/api/v2/studies`. Put your classic `expr` into `query.term`, replace `min_rnk`/`max_rnk` with `pageSize` and `pageToken`, and use `format=json` or `csv`. For XML in the old shape, NLM runs `/api/legacy/` endpoints.
+
+This guide maps every classic endpoint and parameter to its v2 replacement. It's based on NLM's official [API Migration Guide](https://clinicaltrials.gov/data-api/about-api/api-migration), and every URL was checked live on 2026-10-14.
+
+## What happened to the classic API
+
+NLM's Technical Bulletin of June 25, 2024 says: *"Effective today, the classic ClinicalTrials.gov website and its application programming interface (API) are retired and no longer available."* ([NLM Technical Bulletin](https://www.nlm.nih.gov/pubs/techbull/mj24/mj24_Modern_Clinical_Trials_Website.html)). NLM's earlier announcement said attempts to use the classic website would be "automatically redirected to the modernized ClinicalTrials.gov website" ([NLM news](https://www.nlm.nih.gov/news/Modernized_ClinicalTrials.html)), but API calls get no such redirect to a working endpoint.
+
+What the old URLs do now:
+
+| URL | Result on 2026-10-14 |
+|---|---|
+| `https://clinicaltrials.gov/api/query/study_fields?...` | HTTP 404 |
+| `https://clinicaltrials.gov/api/query/full_studies?...` | HTTP 404 |
+| `https://clinicaltrials.gov/api/info/study_fields_list` | HTTP 404 |
+| `https://classic.clinicaltrials.gov/api/query/...` | HTTP 301 to the same path on clinicaltrials.gov, which then returns 404 |
+| `https://clinicaltrials.gov/ct2/results?cond=diabetes` | HTTP 301 to the new website search |
+
+If a script started failing with 404s or empty responses in mid-2024, this is why.
+
+## Endpoint mapping
+
+The path prefixes, from the migration guide: classic endpoints start with `/api/info/` or `/api/query/`, the new API with `/api/v2/`, and the legacy support endpoints with `/api/legacy/`.
+
+| Classic endpoint | v2 replacement | Legacy endpoint (XML only) |
+|---|---|---|
+| `/api/query/full_studies` | `/api/v2/studies` | `/api/legacy/full-studies` |
+| `/api/query/study_fields` | `/api/v2/studies` with `fields=` | `/api/legacy/study-fields` |
+| `/api/query/field_values` | `/api/v2/stats/field/values` (all studies, at most 250 values), or `/api/v2/studies?fields=...` | none |
+| `/api/info/data_vrs` | `/api/v2/version` (`dataTimestamp`) | `DataVrs` tag in legacy responses |
+| `/api/info/api_vrs` | `/api/v2/version` (`apiVersion`) | `APIVrs` tag in legacy responses |
+| `/api/info/study_structure`, `/api/info/api_defs` | `/api/v2/studies/metadata`, `/api/v2/stats/field/values`, `/api/v2/stats/field/sizes` | |
+| `/api/info/study_fields_list` | `/api/v2/studies/metadata` | `/api/legacy/study-fields-list` |
+| `/api/info/search_areas` | `/api/v2/studies/search-areas` | |
+| Single study without results | `/api/v2/studies/{nctId}` | `/api/legacy/public-xml/{nctId}` |
+| Single study with results | `/api/v2/studies/{nctId}` | `/api/legacy/public-xml/{nctId}?full=true` |
+| All public data as a ZIP | `/api/v2/studies/download?format=json.zip` | `/api/legacy/public-xml?format=zip` |
+| `/ct2/download_studies` (search as ZIP) | `/api/v2/studies` | `/api/legacy/public-xml?format=zip&term=...` |
+
+In the v2 column, one endpoint replaces both `full_studies` and `study_fields`: `/api/v2/studies` returns full records by default and only the requested fields when you pass `fields`.
+
+## Parameter mapping
+
+| Classic parameter | v2 equivalent | Notes |
+|---|---|---|
+| `expr` | `query.term` | The migration guide: "The Search expression, classic expr parameter, can be set in the query.term parameter." Default search areas differ slightly. |
+| `min_rnk`, `max_rnk` | `pageSize` + `pageToken` | v2 uses a cursor. Each response has `nextPageToken`; pass it back as `pageToken`. Default page size 10, maximum 1,000. |
+| `fmt=json` / `xml` / `csv` | `format=json` / `csv` | v2 has no XML. Only the `/api/legacy/` endpoints return XML. |
+| `fields` | `fields` | v2 accepts the same piece names (`NCTId`, `BriefTitle`, `OverallStatus`), but returns them nested inside `protocolSection`. |
+| Ranking by relevance | `sort=@relevance` | v2 results are unsorted by default. |
+| `cond`, `term`, `intr`, `lead`, `id` (website search URLs) | `query.cond`, `query.term`, `query.intr`, `query.lead`, `query.id` | |
+
+## Data model changes that break parsers
+
+From the migration guide's Study Data Model section:
+
+- **Shorter, reused field names in a nested structure.** `NCTId` is now at `protocolSection.identificationModule.nctId`. The Study Data Structure page lists each field's classic XPath next to its new path.
+- **Lists are plain arrays.** There are no wrapper objects any more, and list fields have plural names, such as `conditions` and `phases`.
+- **Enums are upper-case codes.** `Recruiting` is now `RECRUITING`, `Phase 2` is `PHASE2`, `Not Applicable` is `NA`. `/api/v2/studies/enums` gives every value with its `legacyValue`, so you can build the mapping in code (below).
+- **Dates are ISO 8601.** They come as `yyyy`, `yyyy-MM`, `yyyy-MM-dd` or `yyyy-MM-dd'T'HH:mm`. Classic values like "June 2020" are gone. Two booleans were added for the old `Unknown` dates: `SubmissionUnreleaseDateUnknown` and `UnpostedEventDateUnknown`.
+- **Rich text is Markdown.** Pass `markupFormat=legacy` to get the classic formatting.
+
+## Side by side: classic, legacy and v2
+
+```python
+import xml.etree.ElementTree as ET
+import requests
+
+CT = "https://clinicaltrials.gov"
+
+# 1. The classic endpoint is gone.
+r = requests.get(f"{CT}/api/query/study_fields",
+                 params={"expr": "heart attack", "fields": "NCTId,BriefTitle", "fmt": "json"}, timeout=60)
+print("classic /api/query/study_fields:", r.status_code)
+
+# 2. The legacy shim answers in the classic XML shape (XML only).
+r = requests.get(f"{CT}/api/legacy/study-fields",
+                 params={"expr": "heart attack", "fields": "NCTId,BriefTitle", "min_rnk": 1, "max_rnk": 3}, timeout=60)
+root = ET.fromstring(r.content)
+print("legacy study-fields:", r.status_code, "APIVrs", root.findtext("APIVrs"),
+      "found", root.findtext("NStudiesFound"),
+      [v.text for v in root.iter("FieldValue")][:2])
+
+# 3. The v2 equivalent: expr -> query.term, min_rnk/max_rnk -> pageSize + pageToken.
+r = requests.get(f"{CT}/api/v2/studies", params={
+    "query.term": "heart attack", "fields": "NCTId,BriefTitle",
+    "pageSize": 3, "countTotal": "true"}, timeout=60)
+d = r.json()
+print("v2 /api/v2/studies:", r.status_code, "totalCount", d["totalCount"],
+      [s["protocolSection"]["identificationModule"]["nctId"] for s in d["studies"]],
+      "nextPageToken" in d)
+
+# 4. Map classic display values ("Recruiting") to v2 enums ("RECRUITING").
+enums = requests.get(f"{CT}/api/v2/studies/enums", timeout=60).json()
+legacy_to_v2 = {
+    e["type"]: {v["legacyValue"]: v["value"] for v in e["values"]}
+    for e in enums if e["type"] in ("Status", "Phase", "StudyType")
+}
+print(legacy_to_v2["Status"]["Active, not recruiting"], legacy_to_v2["Phase"]["Phase 2"],
+      legacy_to_v2["Phase"]["Not Applicable"], legacy_to_v2["StudyType"])
+```
+
+Output on 2026-10-14:
+
+```text
+classic /api/query/study_fields: 404
+legacy study-fields: 200 APIVrs 1.2.0 found 13807 ['NCT01401036', 'Nobori And Uncoated Stent In Coronary Attack']
+v2 /api/v2/studies: 200 totalCount 13807 ['NCT05513248', 'NCT04345848', 'NCT04619355'] True
+ACTIVE_NOT_RECRUITING PHASE2 NA {'Expanded Access': 'EXPANDED_ACCESS', 'Interventional': 'INTERVENTIONAL', 'Observational': 'OBSERVATIONAL'}
+```
+
+Both APIs found 13,807 studies, but in a different order. The legacy endpoint ranks by relevance, and v2 doesn't sort unless you ask. Adding `sort=@relevance` to the v2 call returned `NCT01401036`, `NCT04838808`, `NCT05392712`, the same top three as the legacy endpoint:
+
+```bash
+curl -s "https://clinicaltrials.gov/api/v2/studies?query.term=heart+attack&fields=NCTId&pageSize=3&sort=@relevance"
+```
+
+## Should you use the legacy endpoints?
+
+They're a bridge, not a destination. The migration guide says they are "designed to replicate the behavior of classic system endpoints as closely as possible" so clients can move "at their own pace". Their documented limits:
+
+- XML only. `fmt=json` returns HTTP 400: `` Allowed values for parameter `fmt` are `xml` ``.
+- When `expr` is set, only the first 10,000 studies can be retrieved.
+- `/api/legacy/study-fields` lacks `FlowReasonNumUnits` and `OrgStudyIdDomain`. The guide notes these fields hold no data in any study.
+- They report their own version (`APIVrs` 1.2.0 on 2026-10-14), separate from `/api/v2/version`.
+
+If you have XML parsers you can't rewrite yet, point them at `/api/legacy/` today. Then move to v2 JSON, which is where new fields and features go.
+
+## Bulk download
+
+To mirror the whole registry, skip paging. `https://clinicaltrials.gov/api/v2/studies/download?format=json.zip` answered with `content-type: application/zip` and the file name `ctg-studies.json.zip`. Per the migration guide, each JSON file in it has the same schema as `/api/v2/studies/{nctId}`. The registry held 606,964 studies on 2026-10-14, so expect a large download.
+
+## Related guides for this API
+
+- [ClinicalTrials.gov API v2 query parameters](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/): everything that replaced `expr`, with tested examples.
+- [Look up a study by NCT number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/): the v2 replacement for single-study XML.
+- [Get completed trial results](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/): reading `resultsSection`.
+- [Export search results to CSV in Python](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/): v2's CSV mode and its header-based paging.
+
+## Do it without code
+
+The free [ClinicalTrials.gov search tool](https://datatooly.xyz/clinical-trials-search/) already runs on API v2. Use it to check that a migrated query returns what you expect, live in your browser.
+
+## At scale
+
+If you'd rather not maintain an API client at all, the [Clinical Trials & FDA Pipeline actor](https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu) on Apify uses API v2 with `nextPageToken` paging, and adds FDA approvals, device clearances, adverse events, recalls and shortages. It exports JSON, CSV or Excel. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly tool and the Apify actor. The migration steps above don't depend on either.*
+
+Sources: [ClinicalTrials.gov API Migration Guide](https://clinicaltrials.gov/data-api/about-api/api-migration), [NLM Technical Bulletin, June 25, 2024](https://www.nlm.nih.gov/pubs/techbull/mj24/mj24_Modern_Clinical_Trials_Website.html), [NLM news: classic website to retire](https://www.nlm.nih.gov/news/Modernized_ClinicalTrials.html), [ClinicalTrials.gov API, interactive OpenAPI docs](https://clinicaltrials.gov/data-api/api), and live responses on 2026-10-14.
+
+## Quick answers
+
+### What is the ClinicalTrials.gov API v2?
+
+It is the current REST API of ClinicalTrials.gov, at `https://clinicaltrials.gov/api/v2/`. It returns JSON or CSV, needs no key, and replaced the classic API, which NLM retired on June 25, 2024. On 2026-10-14, `/api/v2/version` reported `apiVersion` 2.0.5.
+
+### Does the old clinicaltrials.gov/api/query/full_studies endpoint still work?
+
+No. On 2026-10-14, `https://clinicaltrials.gov/api/query/full_studies` and `/api/query/study_fields` returned HTTP 404, and `classic.clinicaltrials.gov` redirected to them. Use `/api/v2/studies`, or `/api/legacy/full-studies` and `/api/legacy/study-fields`, which keep the classic parameters but return XML only.
+
+### How do I replace the expr parameter from the classic ClinicalTrials.gov API?
+
+Put the classic `expr` search expression into `query.term` on `/api/v2/studies`, as NLM's migration guide says. Add `sort=@relevance` to get the classic ranking order. In a test on 2026-10-14, `expr=heart attack` and `query.term=heart attack` both matched 13,807 studies and returned the same top three NCT IDs.
+
+## Related guides
+
+- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [Track Peptide & GLP-1 Mentions on YouTube with Python (No API Key)](https://datatooly.xyz/guides/track-peptide-glp1-mentions-youtube-python/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -5085,11 +5961,11 @@ One honest note: these endpoints are public because companies *want* their jobs 
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -5331,11 +6207,11 @@ Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -5510,10 +6386,10 @@ Yes. The script writes `new_cairo_listings.csv` directly. The Apify actor also e
 ## Related guides
 
 - [How to Extract Saudi Arabia Property Data from 4 Listing Portals](https://datatooly.xyz/guides/saudi-arabia-property-data/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -5643,10 +6519,10 @@ For a **facebook ad library scraper**, draw the line clearly: the official Meta 
 ## Related guides
 
 - [TikTok Ad Library API: Who Gets Access + a Working Request](https://datatooly.xyz/guides/tiktok-ad-library-api/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -5814,10 +6690,10 @@ All sit under `https://fantasy.premierleague.com/api/`: `bootstrap-static/` (pla
 ## Related guides
 
 - [Understat xG Data Export: Pull Expected Goals with Python + CSV](https://datatooly.xyz/guides/understat-xg-data-export/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -5939,11 +6815,11 @@ A closing note on doing this responsibly: scraping any site, Google Patents incl
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -6113,11 +6989,11 @@ The reason **Dubai used car listings data** is approachable comes down to one th
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -6283,11 +7159,11 @@ Go build something. The index is wide open.
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -6451,10 +7327,10 @@ Collect the profile URLs, normalize them to slugs, and write name, headline, URL
 ## Related guides
 
 - [How to Build a LinkedIn Profile Scraper: The Honest Technical Guide](https://datatooly.xyz/guides/build-linkedin-profile-scraper/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -6595,10 +7471,10 @@ The durable lesson is that a good **LinkedIn profile scraper** is mostly an exer
 ## Related guides
 
 - [LinkedIn X-Ray Search for Recently Updated Profiles (Past Week)](https://datatooly.xyz/guides/linkedin-x-ray-search-recently-updated-profiles/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -6784,11 +7660,11 @@ Yes, by hand in the apps: ask the same buyer-style questions in each one, note e
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -6970,9 +7846,9 @@ Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (
 
 - [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
 - [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
 
 ---
 
@@ -7172,10 +8048,10 @@ No. It is a record of what people publish online. It shouldn't be used to judge 
 ## Related guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -7318,7 +8194,7 @@ Whatever path you pick, respect the source. Reddit's terms prohibit unauthorized
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
 
 ---
 
@@ -7534,11 +8410,11 @@ Pricing pages are published for anyone to read, but legality depends on your jur
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -7679,10 +8555,10 @@ There is no official H-1B salary JSON API. But the data behind every H-1B salary
 ## Related guides
 
 - [PERM Disclosure Data FY2026 in Python: Green Card Sponsors](https://datatooly.xyz/guides/perm-disclosure-data-python-green-card-sponsors/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -7830,10 +8706,669 @@ The takeaway, tool or no tool: in Saudi Arabia, the regulator handed you a free 
 ## Related guides
 
 - [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+
+---
+
+Source: https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/
+
+# SEC Company Facts API: companyfacts, concept & frames
+
+> Pull XBRL financials from data.sec.gov: companyfacts, companyconcept and frames URLs, the JSON shape, the fy and frame traps, and a CSV export. Tested Python.
+
+- URL: https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Tags: api, python, finance, datascience
+
+The SEC's XBRL APIs on data.sec.gov return reported financials as JSON, free and with no API key. `companyfacts/CIK##########.json` gives every fact for one company. `companyconcept/CIK##########/us-gaap/{Tag}.json` gives one tag for one company. `frames/us-gaap/{Tag}/{Unit}/CY{Year}.json` gives one tag across all companies for one period. Pad the CIK to 10 digits and send a User-Agent.
+
+This page covers the three endpoints, the JSON they return, and the traps that silently give you wrong numbers. All code was run on 2026-10-14.
+
+## The three endpoints
+
+From the SEC's [EDGAR APIs page](https://www.sec.gov/search-filings/edgar-application-programming-interfaces):
+
+| Endpoint | URL pattern | Returns |
+|---|---|---|
+| Company facts | `https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json` | "all the company concepts data for a company" |
+| Company concept | `https://data.sec.gov/api/xbrl/companyconcept/CIK##########/us-gaap/AccountsPayableCurrent.json` | "all the XBRL disclosures from a single company (CIK) and concept (a taxonomy and tag)", with "a separate array of facts for each units on measure" |
+| Frames | `https://data.sec.gov/api/xbrl/frames/us-gaap/AccountsPayableCurrent/USD/CY2019Q1I.json` | "one fact for each reporting entity that is last filed that most closely fits the calendrical period requested" |
+
+The SEC says the facts come from financial statements in "forms 10-Q, 10-K, 8-K, 20-F, 40-F, 6-K, and their variants". They are limited to standard taxonomies (`us-gaap`, `ifrs-full`, `dei`, `srt`) and to facts that apply to the whole company. The XBRL APIs update in real time "with a typical processing delay of under a minute".
+
+### Frame periods and units
+
+| Period | Format | Meaning (from the SEC page) |
+|---|---|---|
+| Annual | `CY2024` | Duration of 365 days, plus or minus 30 |
+| Quarterly | `CY2024Q1` | Duration of 91 days, plus or minus 30 |
+| Instant | `CY2024Q1I` | A point in time, for balance-sheet items |
+
+Units are `USD`, `shares`, `pure` (the default XBRL unit), or a ratio joined with `-per-`, such as `USD-per-shares` for EPS. `frames/us-gaap/EarningsPerShareBasic/USD-per-shares/CY2024.json` returned 5,591 companies.
+
+## The JSON
+
+`companyfacts` has the shape `{cik, entityName, facts: {taxonomy: {Tag: {label, description, units: {unit: [fact, ...]}}}}}`. Apple's file on 2026-10-14 was 3.8 MB, with the `dei` and `us-gaap` taxonomies and 503 us-gaap concepts. One fact:
+
+```json
+{"start": "2026-03-29", "end": "2026-06-27", "val": 29789000000,
+ "accn": "0000320193-26-000020", "fy": 2026, "fp": "Q3", "form": "10-Q",
+ "filed": "2026-07-31", "frame": "CY2026Q2"}
+```
+
+| Field | Meaning |
+|---|---|
+| `start`, `end` | The period the value covers. Instant facts have only `end`. |
+| `val` | The value, in the unit you are under |
+| `accn` | Accession number of the filing that reported it |
+| `fy`, `fp` | Fiscal year and period **of the filing**, not of the fact (see trap 1) |
+| `form`, `filed` | Form type and filing date |
+| `frame` | Present on the one fact the SEC chose for that calendar period (see trap 2) |
+
+`frames` has the shape `{taxonomy, tag, ccp, uom, label, description, pts, data: [{accn, cik, entityName, loc, start, end, val}]}`, where `pts` is the number of companies.
+
+## Python: all three, plus a CSV for Excel
+
+```python
+import csv
+import time
+from datetime import date
+import requests
+
+HEADERS = {"User-Agent": "Data Tooly research contact@example.com"}  # use your own name + email
+XBRL = "https://data.sec.gov/api/xbrl"
+
+def get(url):
+    r = requests.get(url, headers=HEADERS, timeout=60)
+    r.raise_for_status()  # 404 = wrong CIK padding, tag, unit or period
+    time.sleep(0.15)      # stay under 10 requests/second
+    return r.json()
+
+def cik10(cik):
+    return f"CIK{int(cik):010d}"
+
+def annual_from_10k(facts):
+    """One value per fiscal year: full-year facts from 10-K filings, latest filing wins."""
+    best = {}
+    for f in facts:
+        if f.get("form") not in ("10-K", "10-K/A") or "start" not in f:
+            continue
+        days = (date.fromisoformat(f["end"]) - date.fromisoformat(f["start"])).days
+        if 350 <= days <= 380 and (f["end"] not in best or f["filed"] > best[f["end"]]["filed"]):
+            best[f["end"]] = f
+    return [best[k] for k in sorted(best)]
+
+# 1. companyfacts: every XBRL fact a company has reported, in one call.
+facts = get(f"{XBRL}/companyfacts/{cik10(320193)}.json")
+print(facts["entityName"], "| taxonomies:", list(facts["facts"]),
+      "| us-gaap concepts:", len(facts["facts"]["us-gaap"]))
+for f in annual_from_10k(facts["facts"]["us-gaap"]["NetIncomeLoss"]["units"]["USD"])[-3:]:
+    print(f"  FY ending {f['end']}: ${f['val']:,}  (fy {f['fy']}, filed {f['filed']}, frame {f.get('frame')})")
+
+# 2. companyconcept: one tag for one company.
+rev = get(f"{XBRL}/companyconcept/{cik10(320193)}/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax.json")
+last = annual_from_10k(rev["units"]["USD"])[-1]
+print(rev["label"], "| FY ending", last["end"], f"${last['val']:,}")
+
+# 3. frames: one tag for every company, one period.
+frame = get(f"{XBRL}/frames/us-gaap/NetIncomeLoss/USD/CY2024.json")
+print("CY2024 NetIncomeLoss:", frame["pts"], "companies; largest values:")
+for d in sorted(frame["data"], key=lambda d: d["val"], reverse=True)[:5]:
+    print(f"  {d['entityName'][:28]:28s} ${d['val']:,}  accn {d['accn']}")
+
+# 4. Check a suspicious frame value against every fact behind it.
+trr = get(f"{XBRL}/companyfacts/{cik10(1573221)}.json")["facts"]["us-gaap"]["NetIncomeLoss"]["units"]["USD"]
+for f in trr:
+    if f.get("start") == "2024-01-01" and f["end"] == "2024-12-31":
+        print(f"  TheRealReal FY2024: {f['val']:,}  form {f['form']:8s} filed {f['filed']}  frame {f.get('frame')}")
+
+# 5. Save the frame to CSV (opens in Excel).
+with open("net_income_cy2024.csv", "w", newline="", encoding="utf-8") as fh:
+    w = csv.DictWriter(fh, fieldnames=["cik", "entityName", "loc", "start", "end", "val", "accn"])
+    w.writeheader()
+    w.writerows(frame["data"])
+print("wrote", len(frame["data"]), "rows to net_income_cy2024.csv")
+```
+
+Output on 2026-10-14:
+
+```text
+Apple Inc. | taxonomies: ['dei', 'us-gaap'] | us-gaap concepts: 503
+  FY ending 2023-09-30: $96,995,000,000  (fy 2025, filed 2025-10-31, frame CY2023)
+  FY ending 2024-09-28: $93,736,000,000  (fy 2025, filed 2025-10-31, frame CY2024)
+  FY ending 2025-09-27: $112,010,000,000  (fy 2025, filed 2025-10-31, frame CY2025)
+Revenue from Contract with Customer, Excluding Assessed Tax | FY ending 2025-09-27 $416,161,000,000
+CY2024 NetIncomeLoss: 6068 companies; largest values:
+  TheRealReal, Inc.            $134,202,000,000  accn 0001573221-26-000036
+  Alphabet Inc.                $100,118,000,000  accn 0001308179-26-000342
+  HighPeak Energy, Inc.        $95,069,000,000  accn 0001437749-26-014193
+  Apple Inc.                   $93,736,000,000  accn 0000320193-25-000079
+  BERKSHIRE HATHAWAY INC       $88,995,000,000  accn 0001193125-26-083899
+  TheRealReal FY2024: -134,202,000  form 10-K     filed 2025-02-21  frame None
+  TheRealReal FY2024: -134,202,000  form 10-K     filed 2026-02-26  frame None
+  TheRealReal FY2024: 134,202,000,000  form PRE 14A  filed 2026-04-15  frame None
+  TheRealReal FY2024: 134,202,000,000  form DEF 14A  filed 2026-04-27  frame CY2024
+wrote 6068 rows to net_income_cy2024.csv
+```
+
+The first rows of the CSV:
+
+```csv
+cik,entityName,loc,start,end,val,accn
+1750,AAR CORP.,-,2024-06-01,2025-05-31,12500000,0001140361-26-031078
+1800,Abbott Laboratories,US-IL,2024-01-01,2024-12-31,13402000000,0001628280-26-010185
+```
+
+## The traps
+
+### 1. `fy` is the filing's fiscal year, not the fact's
+
+All three Apple values above carry `fy 2025`, including the year that ended in September 2023. They were all reported in the 10-K filed on 2025-10-31, which shows three years of income statement. To label a value by its own period, use `end` (or `start` and `end`). Don't group by `fy`.
+
+### 2. A `frame` value can come from the wrong filing
+
+The frames API returns the fact that was **last filed** for the period. The output above shows what that can do. TheRealReal's 10-Ks report a 2024 net **loss** of $134,202,000. A proxy statement (DEF 14A) filed in April 2026 tagged the same line as **+$134,202,000,000**: the opposite sign and 1,000 times larger. Because it was filed last, it became the `CY2024` frame value, and TheRealReal ranked first in the frame, ahead of Alphabet. HighPeak Energy has the same pattern: $95,069,000 in its 10-Ks, $95,069,000,000 in a DEF 14A.
+
+What to do:
+
+- For one company's history, filter on `form` (`10-K`, `10-K/A`, `10-Q`) and take the latest filing per period, as `annual_from_10k` does, instead of trusting `frame`.
+- For cross-company frames, sanity-check outliers. For any value that looks off, open that company's `companyfacts` and compare the facts behind it.
+
+### 3. Duplicates are normal
+
+The same period appears once for every filing that reported it. Apple's fiscal 2024 net income is in both the 2024 and the 2025 10-K. Only one copy has `frame`. Summing facts without de-duplicating double-counts.
+
+### 4. The tag you guess may not exist
+
+`companyconcept/CIK0000320193/us-gaap/Revenue.json` returned HTTP 404 with an XML `NoSuchKey` body. Apple reports revenue as `RevenueFromContractWithCustomerExcludingAssessedTax`. Across all filers, the CY2024 frame for that tag had 2,972 companies and the frame for `Revenues` had 2,507. The older `SalesRevenueNet` had 1,649 companies in CY2017. Some companies change tags over the years. List the keys of `facts["us-gaap"]` from `companyfacts` to see which tags a company really uses.
+
+### 5. 404s are XML, and the CIK must be padded
+
+Every miss (an unpadded CIK such as `CIK320193.json`, a tag that doesn't exist, or a period without the `CY` prefix) returned HTTP 404 with an XML error body, not JSON. Check the status before parsing.
+
+## Bulk alternative
+
+For every company at once, the SEC publishes `https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip`. It "contains all the data from the XBRL Frame API and the XBRL Company Facts API", is recompiled nightly, and is the SEC's recommended way to fetch large amounts of data.
+
+## Related guides for this API
+
+- [Submissions API and ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/): find the CIK these URLs need.
+- [EDGAR full-text search API](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/): find filings by what they say.
+- [SEC rate limits and User-Agent rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/): the 403 and the 10-per-second limit.
+- [SEC EDGAR API in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/), the overview guide.
+
+## Do it without code
+
+The free [SEC EDGAR query builder](https://datatooly.xyz/sec-edgar-search/) builds a financials query from tickers and shows the output shape. It's a query builder: browsers can't send the User-Agent the SEC requires, so the data is fetched server-side when you run the query.
+
+## At scale
+
+The [SEC EDGAR Scraper actor](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) on Apify has a `financials` mode that returns normalized income statement, balance sheet and cash flow rows per ticker, and an `xbrl_facts` mode for raw facts by concept (`xbrlConcepts`). It resolves tickers to CIKs, paces requests, and exports JSON, CSV or Excel. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly query builder and the Apify actor. The endpoints above work without either.*
+
+Sources: [SEC: EDGAR Application Programming Interfaces](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), [SEC: Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), and live data.sec.gov responses on 2026-10-14.
+
+## Quick answers
+
+### Where is the official documentation for the SEC EDGAR company facts API?
+
+On sec.gov's "EDGAR Application Programming Interfaces" page (sec.gov/search-filings/edgar-application-programming-interfaces). It documents `data.sec.gov/api/xbrl/companyfacts/CIK##########.json`, `companyconcept/CIK##########/us-gaap/{tag}.json` and `frames/{taxonomy}/{tag}/{unit}/{period}.json`, and says these APIs "do not require any authentication or API keys".
+
+### What is the difference between companyfacts, companyconcept and frames?
+
+`companyfacts` returns every XBRL fact for one company (Apple: 503 us-gaap concepts in one 3.8 MB file on 2026-10-14). `companyconcept` returns one tag for one company. `frames` returns one tag for every company in one period, such as `us-gaap/NetIncomeLoss/USD/CY2024`, which had 6,068 companies.
+
+### How do I download SEC financial data into Excel with the API?
+
+Call the frames API for the tag and period you want, for example `https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2024.json` with a declared User-Agent, and write `data[]` to a CSV file with columns cik, entityName, loc, start, end, val and accn. Excel opens the CSV directly. The Python script on this page does exactly that.
+
+### Do the SEC XBRL APIs need an API key?
+
+No. The SEC states that data.sec.gov's APIs "do not require any authentication or API keys to access." You do need a User-Agent header that identifies you, and you must stay under 10 requests per second.
+
+## Related guides
+
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/)
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/)
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+
+---
+
+Source: https://datatooly.xyz/guides/sec-edgar-full-text-search-api/
+
+# EDGAR Full-Text Search API: efts.sec.gov Parameters
+
+> How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.
+
+- URL: https://datatooly.xyz/guides/sec-edgar-full-text-search-api/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Tags: api, python, finance, datascience
+
+EDGAR full-text search has a JSON endpoint: `https://efts.sec.gov/LATEST/search-index?q=...`. Pass a phrase in `q`, filter with `forms`, `ciks` (10-digit) and `startdt`/`enddt`, and page with `from` in steps of 100. No API key is needed, but you must send a User-Agent naming you. The SEC doesn't document this endpoint as an API; it's the backend of its Full-Text Search page.
+
+This page documents what each parameter actually does. Every response from the endpoint includes a `query` object, the Elasticsearch query it ran, so the table below comes from those echoes plus live tests on 2026-10-14. It is not from an official spec, because there isn't one.
+
+## What full-text search covers
+
+From the SEC's [Full-Text Search FAQ](https://www.sec.gov/edgar/search/efts-faq.html): it searches "the full text of all EDGAR filings submitted electronically since 2001", and "the full text of a filing includes all data in the filing itself as well as all attachments (such as exhibits)". Natural-language queries aren't supported.
+
+Each result is one **document**, not one filing. A 10-K and its exhibits are separate hits that share an accession number. In one page of 100 hits I found 99 distinct filings.
+
+## Parameters
+
+| Parameter | What it does (from the echoed query) | Example |
+|---|---|---|
+| `q` | Searches document text. A quoted phrase is a phrase match. Words without quotes are each required. | `q="supply chain disruption"` |
+| `forms` | Filters on `root_forms`, comma-separated. Upper case only: `8-k` matched 0 documents where `8-K` matched 831. `10-K` also returns `10-K/A`. | `forms=10-K,8-K` |
+| `ciks` | Filters on `ciks`. Must be zero-padded to 10 digits: `320193` matched 0, `0000320193` matched 12. | `ciks=0000320193` |
+| `startdt`, `enddt` | Range on `file_date`, format `yyyy-mm-dd`. Works with or without `dateRange=custom`. | `startdt=2025-01-01&enddt=2025-12-31` |
+| `dateRange` | Ignored by the endpoint. `30d`, `1y`, `5y` and `all` produced no date filter; the website turns them into `startdt`/`enddt` itself. | |
+| `from` | Offset of the first hit. `from=9900` worked; `from=10000` returned no hits. | `from=100` |
+| `sort` | `desc` or `asc` sorts by `file_date`. Without it, results are ranked by relevance. | `sort=desc` |
+| `locationCodes` | Filters on business-address state (`biz_states`). | `locationCodes=CA` |
+| `locationType=incorporated` | Makes `locationCodes` filter on state of incorporation (`inc_states`) instead. | `locationType=incorporated&locationCodes=DE` |
+| `entityName` | Adds a loose word match on company names. `Apple Inc.` became separate matches for `Apple` and `Inc.`, giving 43 results against 12 for Apple's CIK. Prefer `ciks`. | |
+| `hits`, `size`, `page` | Ignored. The page size is always 100. | |
+
+### Query syntax in `q`
+
+These all ran on 2026-10-14. The syntax matches the FAQ.
+
+| You type | It becomes |
+|---|---|
+| `"supply chain disruption"` | Exact phrase |
+| `software hardware` | Both words required (implied AND) |
+| `tariff OR tariffs -china` | Either word, and not "china" (`-` or `NOT` excludes) |
+| `tariff NEAR(5) china` | Both words within 5 words of each other, in any order (default 10) |
+| `gas*` | Prefix wildcard (only at the end of a word) |
+
+An empty `q` with no other filter returns nothing. But `forms` plus dates with no `q` works: `forms=8-K&startdt=2026-10-13&enddt=2026-10-13` returned the day's 252 8-K documents.
+
+## The response
+
+```json
+{
+  "took": 293,
+  "hits": {
+    "total": {"value": 331, "relation": "eq"},
+    "hits": [{
+      "_id": "0001640334-25-001300:acro_10k.htm",
+      "_source": {
+        "ciks": ["0001622996"],
+        "display_names": ["ACRO BIOMEDICAL CO., LTD.  (CIK 0001622996)"],
+        "form": "10-K", "root_forms": ["10-K"], "file_type": "10-K",
+        "file_date": "2025-07-24", "period_ending": "2024-12-31",
+        "adsh": "0001640334-25-001300", "sequence": 1,
+        "sics": ["7900"], "biz_states": ["IN"], "inc_states": ["NV"],
+        "biz_locations": ["Fishers, IN"], "file_num": ["000-55643"], "items": []
+      }
+    }]
+  },
+  "aggregations": {"entity_filter": {}, "sic_filter": {}, "biz_states_filter": {}, "form_filter": {}},
+  "query": {}
+}
+```
+
+That's a trimmed real hit from the query below. The fields you'll use most:
+
+- `hits.total.value` with `relation`. When `relation` is `"gte"`, the value is capped at 10,000 and the true count is higher.
+- `_id` is `accession:filename`. Together with the first CIK, it gives the document URL (see `doc_url` below).
+- `adsh` is the accession number, the same for every document in a filing.
+- `items` lists 8-K item numbers when the document belongs to an 8-K.
+- `aggregations` gives the top 30 companies, SIC codes, states and forms for the whole result set. That's useful for counts without paging.
+
+## Python: search, page and link to documents
+
+```python
+import time
+import requests
+
+EFTS = "https://efts.sec.gov/LATEST/search-index"
+HEADERS = {"User-Agent": "Data Tooly research contact@example.com"}  # use your own name + email
+
+def search(q, forms=None, ciks=None, start=None, end=None, max_hits=300):
+    """Yield full-text search hits, 100 per page, following `from`."""
+    params = {"q": q}
+    if forms:
+        params["forms"] = ",".join(forms)           # upper case: "8-K", not "8-k"
+    if ciks:
+        params["ciks"] = ",".join(f"{int(c):010d}" for c in ciks)  # must be 10 digits
+    if start or end:
+        params.update(dateRange="custom", startdt=start, enddt=end)  # yyyy-mm-dd
+    offset = 0
+    while offset < max_hits:
+        r = requests.get(EFTS, params={**params, "from": offset}, headers=HEADERS, timeout=60)
+        r.raise_for_status()
+        hits = r.json()["hits"]["hits"]
+        if not hits:
+            return
+        yield from hits
+        offset += len(hits)                         # the page size is fixed at 100
+        time.sleep(0.2)                             # stay well under 10 requests/second
+
+def doc_url(hit):
+    """Build the sec.gov URL of the matching document."""
+    adsh, filename = hit["_id"].split(":", 1)
+    cik = int(hit["_source"]["ciks"][0])
+    return f"https://www.sec.gov/Archives/edgar/data/{cik}/{adsh.replace('-', '')}/{filename}"
+
+first = requests.get(EFTS, headers=HEADERS, timeout=60, params={
+    "q": '"supply chain disruption"', "forms": "10-K",
+    "dateRange": "custom", "startdt": "2025-01-01", "enddt": "2025-12-31"}).json()
+print("total:", first["hits"]["total"])
+print("forms:", [(b["key"], b["doc_count"]) for b in first["aggregations"]["form_filter"]["buckets"]])
+print("top states:", [(b["key"], b["doc_count"]) for b in first["aggregations"]["biz_states_filter"]["buckets"][:3]])
+
+hits = list(search('"supply chain disruption"', forms=["10-K"], start="2025-01-01", end="2025-12-31"))
+print(len(hits), "hits,", len({h["_source"]["adsh"] for h in hits}), "distinct filings")
+h = hits[0]["_source"]
+print(h["display_names"][0], "|", h["form"], h["file_date"], "| period", h["period_ending"])
+print(doc_url(hits[0]))
+
+apple = list(search("tariff", ciks=[320193]))
+print("Apple filings mentioning tariff:", len(apple), sorted({x["_source"]["form"] for x in apple}))
+```
+
+Output on 2026-10-14:
+
+```text
+total: {'value': 331, 'relation': 'eq'}
+forms: [('10-K', 331)]
+top states: [('CA', 68), ('NY', 28), ('TX', 26)]
+300 hits, 299 distinct filings
+ACRO BIOMEDICAL CO., LTD.  (CIK 0001622996) | 10-K 2025-07-24 | period 2024-12-31
+https://www.sec.gov/Archives/edgar/data/1622996/000164033425001300/acro_10k.htm
+Apple filings mentioning tariff: 12 ['10-K', '10-K405', '10-Q', '8-K', 'DEF 14A', 'PX14A6G', 'SC TO-I']
+```
+
+The document URL returned HTTP 200. The filing's index is at the same folder plus `{accession}-index.htm`, or `index.json` for a machine-readable listing.
+
+The same first query with curl:
+
+```bash
+curl -s -A "Data Tooly research contact@example.com" \
+  "https://efts.sec.gov/LATEST/search-index?q=%22supply+chain+disruption%22&forms=10-K&dateRange=custom&startdt=2025-01-01&enddt=2025-12-31"
+```
+
+## Traps that return wrong data without an error
+
+None of these return an error. You just get wrong or empty results:
+
+1. **Unpadded CIK → 0 results.** `ciks=320193` returns an empty result with HTTP 200. Always pad: `f"{cik:010d}"`.
+2. **Lowercase form → 0 results.** `forms=8-k` matched nothing.
+3. **`dateRange=30d` does nothing.** Send `startdt` and `enddt` yourself.
+4. **A badly formatted date is ignored.** `startdt=2026/01/01` returned unfiltered results. Use `yyyy-mm-dd`.
+5. **The 10,000-hit ceiling.** `from` can't go past 9,900. To collect more, split the date range into smaller windows, for example month by month, so each window stays under 10,000.
+6. **Hits are documents.** Count filings with distinct `adsh`, not with `len(hits)`.
+
+## Rate limit and User-Agent
+
+The endpoint follows SEC.gov's fair-access rules: at most 10 requests per second, and a declared User-Agent. With no User-Agent, or with curl's or python-requests' default, efts.sec.gov answered HTTP 403. The [SEC rate limit and User-Agent guide](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/) covers the exact format and the block behavior.
+
+## Related guides for this API
+
+- [SEC EDGAR API in Python: User-Agent, rate limits, XBRL](https://datatooly.xyz/guides/sec-edgar-api-python-guide/), the overview.
+- [Submissions API and ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/): get the 10-digit CIK that `ciks=` needs.
+- [Company facts, company concept and frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/): the numbers inside the filings you found.
+- [SEC rate limits and User-Agent rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/).
+
+## Do it without code
+
+The free [SEC EDGAR query builder](https://datatooly.xyz/sec-edgar-search/) assembles a full-text search configuration, with tickers, forms and dates, and shows the output shape. It's a query builder, not a live search: browsers can't send the User-Agent the SEC requires, so the query runs server-side.
+
+## At scale
+
+The [SEC EDGAR Scraper actor](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) on Apify has a `full_text_search` mode (`searchQuery`, `searchCiks`, `forms`, `dateFrom`, `dateTo`) that handles the User-Agent, pacing and paging, and returns clean rows as JSON, CSV or Excel. It also has a `latest_feed` mode for new filings. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly query builder and the Apify actor. The endpoint works the same without them.*
+
+Sources: [SEC Full-Text Search FAQ](https://www.sec.gov/edgar/search/efts-faq.html), [SEC: Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), and live responses from efts.sec.gov on 2026-10-14, including each response's echoed `query` object.
+
+## Quick answers
+
+### What are the efts.sec.gov LATEST search-index API parameters?
+
+`q` (search text, quoted for a phrase), `forms` (comma-separated, upper case, e.g. `10-K,8-K`), `ciks` (10-digit, zero-padded), `startdt` and `enddt` (`yyyy-mm-dd`), `from` (offset), `sort` (`desc` or `asc` by filing date), `locationCodes` and `locationType=incorporated`, and `entityName`. The page size is fixed at 100 and `from` stops at 9,900. Checked against the echoed query on 2026-10-14.
+
+### Is there SEC EDGAR full text search API documentation?
+
+The SEC documents the Full-Text Search page in its FAQ (sec.gov/edgar/search/efts-faq.html), including the query syntax, but it doesn't publish `efts.sec.gov/LATEST/search-index` as a documented API. The parameter behavior on this page comes from live tests and the `query` object each response echoes back. Treat it as an interface that can change without notice.
+
+### How do I call efts.sec.gov from Python with requests?
+
+`requests.get('https://efts.sec.gov/LATEST/search-index', params={'q': '"supply chain disruption"', 'forms': '10-K', 'startdt': '2025-01-01', 'enddt': '2025-12-31'}, headers={'User-Agent': 'Your Name you@example.com'})`. Without a declared User-Agent, python-requests' default got HTTP 403 on 2026-10-14. Read `hits.total.value` for the count and `hits.hits[]._source` for each document.
+
+### How far back does EDGAR full-text search go?
+
+The SEC's FAQ says Full-Text Search covers "the full text of all EDGAR filings submitted electronically since 2001", including attachments such as exhibits.
+
+## Related guides
+
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/)
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+
+---
+
+Source: https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/
+
+# SEC EDGAR Rate Limit and User-Agent: Fair Access Rules
+
+> SEC fair access in practice: the User-Agent format, the 10 requests/second cap across all machines, what the 403 means, how long a block lasts. Tested client.
+
+- URL: https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Tags: api, python, finance, webscraping
+
+SEC EDGAR's fair-access rules are short. Send a `User-Agent` with your name or company and a contact email, such as `Acme Research admin@acme.com`, and stay at or under 10 requests per second in total across all your machines. No User-Agent, or a library default, gets HTTP 403. Go over the rate and your IP can be limited until it stays under it for 10 minutes.
+
+The [SEC EDGAR API in Python guide](https://datatooly.xyz/guides/sec-edgar-api-python-guide/) gives the short version. This page goes further: the exact wording of each rule, what the server actually does (tested on 2026-10-14), and a client that follows the rules.
+
+## The rules, in the SEC's words
+
+**User-Agent.** From [Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data):
+
+> Please declare your user agent in request headers:
+> Sample Declared Bot Request Headers:
+> User-Agent: Sample Company Name AdminContact@&lt;sample company domain&gt;.com
+
+The [webmaster FAQ](https://www.sec.gov/about/webmaster-frequently-asked-questions) repeats that sample and adds `Accept-Encoding: gzip, deflate` and `Host: www.sec.gov`.
+
+**Rate.** Accessing EDGAR Data says "Current max request rate: 10 requests/second" and "SEC reserves the right to limit request rates to preserve fair access for all users." The SEC.gov [privacy and security policy](https://www.sec.gov/about/privacy-information) gives the details:
+
+> Current guidelines limit users to a total of no more than 10 requests per second, regardless of the number of machines used to submit requests.
+>
+> If a user or application submits more than 10 requests per second, further requests from the IP address(es) may be limited for a brief period. Once the rate of requests has dropped below the threshold for 10 minutes, the user may resume accessing content on SEC.gov.
+
+Three details matter in practice:
+
+1. **The limit is per user, not per IP.** Ten workers each doing 2 requests per second is 20 per second, which is over the limit.
+2. **The block is not a fixed 10 minutes.** It lasts until your rate has stayed below the threshold for 10 minutes. If you keep retrying at full speed while blocked, the 10 minutes never start.
+3. **It covers all of SEC.gov.** That includes data.sec.gov (submissions, XBRL), efts.sec.gov (full-text search) and www.sec.gov (Archives, `company_tickers.json`).
+
+The SEC also says it doesn't "offer technical support for developing or debugging scripted downloading processes", and that the policy "may change".
+
+## What the server did on 2026-10-14
+
+Each User-Agent below was sent to `https://data.sec.gov/submissions/CIK0000789019.json`, with a one-second pause between requests:
+
+| User-Agent sent | Status |
+|---|---|
+| (header removed) | 403 |
+| `curl/8.15.0` (curl's default) | 403 |
+| `python-requests/2.32.3` (requests' default format) | 403 |
+| `MyApp/1.0` | 200 |
+| `Mozilla/5.0` | 200 |
+| `contact@example.com` | 200 |
+| `Jane Doe jane@example.com` | 200 |
+| `Data Tooly research contact@example.com` | 200 |
+
+curl's default also got 403 from efts.sec.gov and from www.sec.gov (`/files/company_tickers.json` and an Archives document).
+
+What this shows: the automatic 403 catches **missing and default library** User-Agents. It didn't check whether an email was present. A 200 doesn't make a request compliant, though. The policy asks for company-specific information and a contact, and the SEC can manage traffic it can't identify. Send `Name or Company contact@yourdomain` and you meet the rule as written.
+
+### The 403 page
+
+The 403 body is an HTML page, not JSON. Its key lines:
+
+> Your Request Originates from an Undeclared Automated Tool
+>
+> To allow for equitable access to all users, SEC reserves the right to limit requests originating from undeclared automated tools. Your request has been identified as part of a network of automated tools outside of the acceptable policy and will be managed until action is taken to declare your traffic.
+>
+> Please declare your traffic by updating your user agent to include company specific information.
+
+The page also includes a `Reference ID`. If you think you've been blocked by mistake, the SEC points you to opendata@sec.gov.
+
+## A client that follows the rules
+
+```python
+import threading
+import time
+import requests
+
+class SecClient:
+    """requests.Session that declares a User-Agent, stays under a request rate,
+    and tells an undeclared-tool block apart from a temporary limit."""
+
+    def __init__(self, user_agent, max_per_second=8):
+        self.s = requests.Session()
+        self.s.headers.update({"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate"})
+        self.min_interval = 1.0 / max_per_second
+        self.lock = threading.Lock()  # one shared pace across threads
+        self.last = 0.0
+
+    def _wait_turn(self):
+        with self.lock:
+            delay = self.last + self.min_interval - time.monotonic()
+            if delay > 0:
+                time.sleep(delay)
+            self.last = time.monotonic()
+
+    def get(self, url, retries=4, **kw):
+        for attempt in range(retries + 1):
+            self._wait_turn()
+            r = self.s.get(url, timeout=60, **kw)
+            if r.status_code == 403 and "Undeclared Automated Tool" in r.text:
+                # Retrying won't help: fix the User-Agent.
+                raise RuntimeError("SEC blocked the request as an undeclared automated tool")
+            if r.status_code in (403, 429, 503) and attempt < retries:
+                wait = float(r.headers.get("Retry-After", 0)) or min(60 * 2 ** attempt, 600)
+                time.sleep(wait)  # back off; the SEC lifts limits after 10 quiet minutes
+                continue
+            r.raise_for_status()
+            return r
+        raise RuntimeError(f"gave up on {url}")
+
+sec = SecClient("Data Tooly research contact@example.com")
+
+# 20 requests: the client spaces them at 8 per second.
+t0 = time.monotonic()
+for cik in [320193, 789019, 1652044, 1018724, 1045810] * 4:
+    sec.get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json")
+elapsed = time.monotonic() - t0
+print(f"20 requests in {elapsed:.1f}s = {20 / elapsed:.1f} req/s")
+
+# What a missing or default User-Agent gets.
+bad = SecClient("python-requests/2.32.3")
+try:
+    bad.get("https://data.sec.gov/submissions/CIK0000320193.json")
+except RuntimeError as e:
+    print("blocked:", e)
+```
+
+Output on 2026-10-14:
+
+```text
+20 requests in 3.3s = 6.0 req/s
+blocked: SEC blocked the request as an undeclared automated tool
+```
+
+Design notes:
+
+- **Pace below 10, not at 10.** At 8 per second you have room for clock jitter and a second script you forgot was running. The measured 6 per second is lower because each request also waits for the network; the limiter only sets a ceiling.
+- **One limiter for the whole job.** The lock makes threads share one pace. For several processes or machines, divide the budget between them, because the SEC counts your total.
+- **Don't retry the undeclared-tool 403.** Every retry is another undeclared request. Fix the header instead.
+- **Back off for minutes, not seconds, on other errors.** The SEC doesn't document which status code a rate-limited client gets, and I didn't trigger the limit to find out. The client therefore backs off on 403, 429 and 503, from 1 minute up to 10, which fits the "below the threshold for 10 minutes" rule.
+
+## Need more than 10 per second? Use the bulk files
+
+The SEC's [EDGAR APIs page](https://www.sec.gov/search-filings/edgar-application-programming-interfaces) calls the nightly ZIP archives "the most efficient means to fetch large amounts of API data":
+
+| File | Contains |
+|---|---|
+| `https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip` | All data from the XBRL frames and company facts APIs |
+| `https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip` | The filing history of every filer, from the submissions API |
+
+One download instead of tens of thousands of requests keeps you within the rules without trying.
+
+## Can a browser call the SEC APIs?
+
+Not in a way that meets the rule. A web page can't choose the User-Agent its browser sends, so it can't declare itself the way the SEC asks. Run SEC requests server-side, which is why the free tool below is a query builder rather than a live search.
+
+## Related guides for this API
+
+- [SEC EDGAR API in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): the overview, with a full example.
+- [Submissions API and ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/).
+- [Company facts, company concept and frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/).
+- [EDGAR full-text search API](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/).
+
+## Do it without code
+
+The free [SEC EDGAR query builder](https://datatooly.xyz/sec-edgar-search/) assembles a ready-to-run query for filings, financials, full-text search or insider trades from plain tickers, and shows the output shape. You run it server-side, where the User-Agent can be set.
+
+## At scale
+
+The [SEC EDGAR Scraper actor](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) on Apify sends a declared User-Agent, paces its requests and handles paging for you across nine modes: filings, financials, XBRL facts, full-text search, Form 4, 13F, 13D/G, a latest-filings feed and 8-K items. It exports JSON, CSV or Excel. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly query builder and the Apify actor. The rules and the client above apply with or without them.*
+
+Sources: [SEC: Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), [SEC webmaster FAQ, Developers section](https://www.sec.gov/about/webmaster-frequently-asked-questions), [SEC.gov privacy and security policy](https://www.sec.gov/about/privacy-information), [SEC: EDGAR APIs](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), and live responses on 2026-10-14.
+
+## Quick answers
+
+### What is the SEC EDGAR API rate limit?
+
+No more than 10 requests per second, "regardless of the number of machines used to submit requests", per SEC.gov's privacy and security policy. If you go over, "further requests from the IP address(es) may be limited for a brief period"; access resumes once your rate has stayed under the threshold for 10 minutes. The same limit covers data.sec.gov, efts.sec.gov and www.sec.gov.
+
+### What does the SEC fair access policy say about 10 requests per second and User-Agent?
+
+Both rules are on the SEC's Accessing EDGAR Data page: "Current max request rate: 10 requests/second" and "Please declare your user agent in request headers", with the sample `User-Agent: Sample Company Name AdminContact@<sample company domain>.com`. The webmaster FAQ adds `Accept-Encoding: gzip, deflate` and `Host: www.sec.gov` to the sample headers.
+
+### Why does SEC EDGAR return 403 Forbidden?
+
+Usually because the request has no User-Agent or a library default. The 403 page is titled "Your Request Originates from an Undeclared Automated Tool" and asks you to "declare your traffic by updating your user agent to include company specific information." On 2026-10-14, no User-Agent, `curl/8.15.0` and `python-requests/...` all got 403 from data.sec.gov.
+
+### What is the SEC user agent API requirement?
+
+Every request to SEC.gov's APIs (data.sec.gov, efts.sec.gov and www.sec.gov files) must carry a User-Agent that names you or your company and gives a contact email, for example `Acme Research admin@acme.com`. There is no API key; the User-Agent is how the SEC identifies automated traffic.
+
+## Related guides
+
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/)
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
 
 ---
 
@@ -7979,11 +9514,197 @@ The SEC's current maximum is 10 requests per second, and it reserves the right t
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/)
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/)
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+
+---
+
+Source: https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/
+
+# SEC EDGAR API: Submissions JSON and Ticker to CIK
+
+> Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.
+
+- URL: https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/
+- Author: Omar Eldeeb (https://datatooly.xyz/about/)
+- Published: 2026-10-14
+- Updated: 2026-10-14
+- Free tool: [Search SEC EDGAR filings, financials & insider trades](https://datatooly.xyz/sec-edgar-search/)
+- Tags: api, python, finance, datascience
+
+Yes, EDGAR has an API, and it's free with no API key. Map a ticker to a CIK with `https://www.sec.gov/files/company_tickers.json`, then fetch `https://data.sec.gov/submissions/CIK##########.json`, with the CIK zero-padded to 10 digits, to get the company's details and full filing history. The one requirement is a User-Agent header with your name and email.
+
+This page covers the two building blocks every EDGAR project starts with: ticker-to-CIK and the submissions API. The code was run on 2026-10-14.
+
+## The SEC's APIs at a glance
+
+| What | URL | Key? |
+|---|---|---|
+| Ticker → CIK map | `https://www.sec.gov/files/company_tickers.json` | No |
+| Ticker → CIK + exchange | `https://www.sec.gov/files/company_tickers_exchange.json` | No |
+| Filing history + metadata | `https://data.sec.gov/submissions/CIK##########.json` | No |
+| XBRL financials | `https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json` (and `companyconcept`, `frames`) | No |
+| Full-text search | `https://efts.sec.gov/LATEST/search-index?q=...` | No |
+| Filing documents | `https://www.sec.gov/Archives/edgar/data/{cik}/{accession}/...` | No |
+
+The SEC's [EDGAR APIs page](https://www.sec.gov/search-filings/edgar-application-programming-interfaces) says data.sec.gov's APIs "do not require any authentication or API keys to access." What is required is a declared User-Agent and a rate of no more than 10 requests per second; see the [SEC rate limit and User-Agent guide](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/). A search for "SEC API key" often leads to filer API tokens. Those exist, but they are for submitting filings to EDGAR, not for reading data.
+
+## Ticker to CIK
+
+EDGAR identifies every filer by a Central Index Key (CIK). The SEC says CIKs "remain unique to the filer; they are not recycled." `company_tickers.json` maps tickers to CIKs:
+
+```bash
+curl -s -A "Data Tooly research contact@example.com" "https://www.sec.gov/files/company_tickers.json"
+```
+
+```json
+{"0":{"cik_str":1045810,"ticker":"NVDA","title":"NVIDIA CORP"},"1":{"cik_str":320193,"ticker":"AAPL","title":"Apple Inc."},"2":{"cik_str":1652044,"ticker":"GOOGL","title":"Alphabet Inc."}, ...}
+```
+
+What to know about the file (checked on 2026-10-14):
+
+- The top-level keys (`"0"`, `"1"`, ...) are just row numbers. Build your own index by ticker.
+- `cik_str` is an **integer** despite its name. Pad it yourself: `f"CIK{cik:010d}"`.
+- It held 10,447 tickers for 8,032 CIKs. 1,440 companies have more than one ticker; GOOGL and GOOG both map to 1652044, for example.
+- Share classes use a dash: Berkshire Class B is `BRK-B`, not `BRK.B`. Normalize user input.
+- The SEC says it updates these files periodically "but do[es] not guarantee accuracy or scope". Delisted tickers drop out. For historical work, keep the CIK, not the ticker.
+
+`company_tickers_exchange.json` has the same mapping in a columnar layout with the exchange added: `{"fields": ["cik", "name", "ticker", "exchange"], "data": [[1045810, "NVIDIA CORP", "NVDA", "Nasdaq"], ...]}`.
+
+## The submissions API
+
+```bash
+curl -s -A "Data Tooly research contact@example.com" "https://data.sec.gov/submissions/CIK0000320193.json"
+```
+
+The top-level fields for Apple: `cik`, `entityType`, `sic`, `sicDescription`, `ownerOrg`, `insiderTransactionForOwnerExists`, `insiderTransactionForIssuerExists`, `name`, `tickers`, `exchanges`, `ein`, `lei`, `description`, `website`, `investorWebsite`, `category`, `fiscalYearEnd`, `stateOfIncorporation`, `stateOfIncorporationDescription`, `addresses`, `phone`, `flags`, `formerNames`, `filings`.
+
+`filings` has two parts:
+
+- **`filings.recent`**: per the SEC, "at least one year's of filing or to 1,000 (whichever is more) of the most recent filings in a compact columnar data array". Apple's had 1,001 rows.
+- **`filings.files`**: extra JSON files for older filings, each with `name`, `filingCount`, `filingFrom` and `filingTo`. Apple had one, `CIK0000320193-submissions-001.json`, with 1,264 filings from 1994-01-26 to 2015-09-15.
+
+`recent` is **column-oriented**: one array per field (`accessionNumber`, `filingDate`, `reportDate`, `acceptanceDateTime`, `act`, `form`, `fileNumber`, `filmNumber`, `items`, `core_type`, `size`, `isXBRL`, `isInlineXBRL`, `isXBRLNumeric`, `primaryDocument`, `primaryDocDescription`). Row `i` is the `i`th element of every array.
+
+The SEC says the submissions API updates in real time "with a typical processing delay of less than a second".
+
+## Python: ticker → CIK → filings → document URLs
+
+```python
+import time
+import requests
+
+HEADERS = {"User-Agent": "Data Tooly research contact@example.com"}  # use your own name + email
+
+def get(url):
+    r = requests.get(url, headers=HEADERS, timeout=60)
+    r.raise_for_status()
+    time.sleep(0.15)  # stay under 10 requests/second
+    return r.json()
+
+# 1. Ticker -> CIK, from the SEC's own mapping file.
+tickers = get("https://www.sec.gov/files/company_tickers.json")
+by_ticker = {row["ticker"]: row for row in tickers.values()}
+print(len(by_ticker), "tickers;", by_ticker["AAPL"], by_ticker["BRK-B"])
+
+def cik_for(ticker):
+    return by_ticker[ticker.upper()]["cik_str"]
+
+# 2. Submissions: company metadata plus filing history.
+cik = cik_for("aapl")
+sub = get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json")
+print(sub["name"], sub["tickers"], sub["exchanges"], "| SIC", sub["sic"], sub["sicDescription"],
+      "| FY ends", sub["fiscalYearEnd"])
+
+# `recent` is column-oriented: one list per field. Zip it into rows.
+recent = sub["filings"]["recent"]
+rows = [dict(zip(recent, values)) for values in zip(*recent.values())]
+print(len(rows), "recent filings; older pages:", [f["name"] for f in sub["filings"]["files"]])
+
+def filing_urls(cik, row):
+    folder = f"https://www.sec.gov/Archives/edgar/data/{cik}/{row['accessionNumber'].replace('-', '')}"
+    return f"{folder}/{row['primaryDocument']}", f"{folder}/{row['accessionNumber']}-index.htm"
+
+for row in [r for r in rows if r["form"] in ("10-K", "10-Q")][:3]:
+    doc, index = filing_urls(cik, row)
+    print(row["form"], row["filingDate"], "period", row["reportDate"], doc)
+
+# 3. Older filings live in extra files listed under filings.files.
+older = get(f"https://data.sec.gov/submissions/{sub['filings']['files'][0]['name']}")
+print("oldest filing on record:", min(older["filingDate"]), "| rows in older file:", len(older["accessionNumber"]))
+```
+
+Output on 2026-10-14:
+
+```text
+10447 tickers; {'cik_str': 320193, 'ticker': 'AAPL', 'title': 'Apple Inc.'} {'cik_str': 1067983, 'ticker': 'BRK-B', 'title': 'BERKSHIRE HATHAWAY INC'}
+Apple Inc. ['AAPL'] ['Nasdaq'] | SIC 3571 Electronic Computers | FY ends 0926
+1001 recent filings; older pages: ['CIK0000320193-submissions-001.json']
+10-Q 2026-07-31 period 2026-06-27 https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm
+10-Q 2026-05-01 period 2026-03-28 https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm
+10-Q 2026-01-30 period 2025-12-27 https://www.sec.gov/Archives/edgar/data/320193/000032019326000006/aapl-20251227.htm
+```
+
+The older file is a bare column dictionary, with no `filings.recent` wrapper, which is why the last step reads `older["filingDate"]` directly.
+
+## Gotchas
+
+- **Pad the CIK in data.sec.gov URLs.** `submissions/CIK320193.json` returned HTTP 404 with an XML body. Archive paths (`/Archives/edgar/data/320193/...`) take the unpadded number.
+- **`cik` comes back as a string here.** The submissions JSON has `"cik": "0000320193"` (padded string), while `company_tickers.json` has an integer. Normalize with `int()` before you compare.
+- **Accession numbers appear in two forms.** The JSON uses `0000320193-25-000079`. Folder paths drop the dashes: `000032019325000079`.
+- **`fiscalYearEnd` is `MMDD`.** Apple's `0926` means its fiscal year ends around September 26.
+- **Recent isn't everything.** For a full history, also fetch every file in `filings.files`.
+- **Bulk option.** The SEC publishes all submissions as one nightly ZIP: `https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip`.
+
+## Related guides for this API
+
+- [Company facts, company concept and frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/): the financial numbers, using the same CIK.
+- [EDGAR full-text search API](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/): find filings by their text, filtered by CIK.
+- [SEC rate limits and User-Agent rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/).
+- [SEC EDGAR API in Python](https://datatooly.xyz/guides/sec-edgar-api-python-guide/), the overview guide.
+
+## Do it without code
+
+The free [SEC EDGAR query builder](https://datatooly.xyz/sec-edgar-search/) takes plain tickers, so you don't have to look up or pad CIKs, plus a mode (filings, financials, full-text search or insider trades) and form types. It shows the output shape. It builds the query rather than fetching live, because browsers can't send the User-Agent the SEC requires.
+
+## At scale
+
+The [SEC EDGAR Scraper actor](https://apify.com/constructive_calm/sec-edgar-scraper?fpr=v77kxu) on Apify resolves tickers to CIKs and pulls filings, financials, Form 4 insider trades, 13F holdings, 13D/G stakes and parsed 8-K items, with the User-Agent and pacing handled. It exports JSON, CSV or Excel. It's free to start, then pay-as-you-go.
+
+*Disclosure: I build the datatooly query builder and the Apify actor. The endpoints above work without either.*
+
+Sources: [SEC: EDGAR Application Programming Interfaces](https://www.sec.gov/search-filings/edgar-application-programming-interfaces), [SEC: Accessing EDGAR Data](https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data), [SEC webmaster FAQ](https://www.sec.gov/about/webmaster-frequently-asked-questions), and live responses on 2026-10-14.
+
+## Quick answers
+
+### Does EDGAR have an API?
+
+Yes. The SEC runs free REST APIs on data.sec.gov: `submissions/CIK##########.json` for a company's filing history and `api/xbrl/...` for financial data. There's also full-text search at efts.sec.gov. The SEC says these APIs "do not require any authentication or API keys to access." You only need a User-Agent header that identifies you.
+
+### Do I need an SEC API key?
+
+No. There's no API key, token or signup for EDGAR data. Send a User-Agent such as `Your Company you@example.com` and stay under 10 requests per second. (The SEC does issue API tokens to filers, but only for submitting filings, not for reading data.)
+
+### How do I convert a stock ticker to a CIK?
+
+Download `https://www.sec.gov/files/company_tickers.json`. Each entry has `cik_str`, `ticker` and `title`, for example `{"cik_str": 320193, "ticker": "AAPL", "title": "Apple Inc."}`. Pad the CIK to 10 digits for API URLs: `CIK0000320193`. On 2026-10-14 the file had 10,447 tickers for 8,032 CIKs.
+
+### What is the SEC submissions API URL?
+
+`https://data.sec.gov/submissions/CIK##########.json`, with the 10-digit zero-padded CIK, for example `https://data.sec.gov/submissions/CIK0000320193.json` for Apple. It returns company metadata plus `filings.recent` (at least one year or 1,000 filings, whichever is more) and `filings.files` for older history.
+
+## Related guides
+
+- [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/)
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
 
 ---
 
@@ -8172,11 +9893,11 @@ The store blocks non-browser clients with a WAF or CDN rule, or is password-prot
 
 ## Related guides
 
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/)
 
 ---
 
@@ -8344,7 +10065,7 @@ To **scrape a Telegram channel without login**: fetch `https://t.me/s/<channel>`
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
 
 ---
 
@@ -8490,9 +10211,9 @@ Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (
 
 - [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
 - [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
 
 ---
 
@@ -8716,7 +10437,7 @@ It lets an app call `GET /keyword_search` on the Threads API, together with `thr
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
 
 ---
 
@@ -8849,7 +10570,7 @@ Whether you hand-roll it with the snippet here or run the actor, the takeaways a
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [Scrape YouTube Shorts Data: Exact Views, Likes & Comments](https://datatooly.xyz/guides/scrape-youtube-shorts-data/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
 
 ---
 
@@ -8978,10 +10699,10 @@ The **TikTok ad library API** is real and, for the DSA region, surprisingly rich
 ## Related guides
 
 - [Facebook Ad Library Scraper: API Limits and the Real Approach](https://datatooly.xyz/guides/facebook-ad-library-scraper/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -9128,10 +10849,10 @@ There's no official Understat API, but there doesn't need to be. The xG, xA, and
 ## Related guides
 
 - [FPL API Price Change Data in Python: The Official 2026/27 Fields](https://datatooly.xyz/guides/fpl-api-price-change-data-python/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -9335,10 +11056,10 @@ Employer names are free text in the source. Trailing spaces, punctuation and sub
 ## Related guides
 
 - [How to Build an H-1B Salary Database by Employer (with Python)](https://datatooly.xyz/guides/h1b-salary-database-by-employer/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [What Slippage Should I Set to Avoid Sandwich Attacks?](https://datatooly.xyz/guides/what-slippage-to-set-to-avoid-sandwich-attacks/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
+- [ClinicalTrials.gov Classic API to v2: Migration Guide](https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/)
 
 ---
 
@@ -9484,9 +11205,9 @@ Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (
 
 - [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
 - [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
-- [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
-- [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
-- [Price per sqm by Compound in New Cairo: Compute It with Python](https://datatooly.xyz/guides/new-cairo-price-per-sqm-by-compound-python/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)
+- [ClinicalTrials.gov API: Look Up a Study by NCT Number](https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/)
+- [ClinicalTrials.gov API v2 Query Parameters: Full Reference](https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/)
 
 ---
 
@@ -9616,4 +11337,4 @@ However you go about it, keep it to **public data only** — public Shorts, publ
 - [How to Scrape a Telegram Channel Without Login (No API Key)](https://datatooly.xyz/guides/scrape-telegram-channel-without-login/)
 - [threads_keyword_search: App Review, 2,200 Limit, Workaround](https://datatooly.xyz/guides/threads-keyword-search-without-app-review/)
 - [How to Build a Threads Scraper for Meta Profiles and Posts](https://datatooly.xyz/guides/build-threads-scraper-profiles-posts/)
-- [How to Tell if a Token's Pool Is Getting Sandwiched Before You Swap](https://datatooly.xyz/guides/tell-if-token-pool-is-getting-sandwiched/)
+- [Get Completed Clinical Trial Results with the API](https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/)

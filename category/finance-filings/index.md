@@ -12,7 +12,11 @@
 
 ## Guides
 
+- [SEC Company Facts API: companyfacts, concept & frames](https://datatooly.xyz/guides/sec-edgar-companyfacts-xbrl-frames-api/): Pull XBRL financials from data.sec.gov: companyfacts, companyconcept and frames URLs, the JSON shape, the fy and frame traps, and a CSV export. Tested Python.
+- [EDGAR Full-Text Search API: efts.sec.gov Parameters](https://datatooly.xyz/guides/sec-edgar-full-text-search-api/): How efts.sec.gov/LATEST/search-index works: q syntax, forms, ciks, startdt/enddt, sort, paging with from, the JSON response and its traps. Tested Python code.
+- [SEC EDGAR Rate Limit and User-Agent: Fair Access Rules](https://datatooly.xyz/guides/sec-edgar-rate-limit-user-agent/): SEC fair access in practice: the User-Agent format, the 10 requests/second cap across all machines, what the 403 means, how long a block lasts. Tested client.
 - [SEC EDGAR API in Python: User-Agent Format & Rate Limits](https://datatooly.xyz/guides/sec-edgar-api-python-guide/): Use the free SEC EDGAR API in Python: the User-Agent format the SEC asks for, the 10 requests/second limit, ticker-to-CIK and XBRL financials. Code included.
+- [SEC EDGAR API: Submissions JSON and Ticker to CIK](https://datatooly.xyz/guides/sec-edgar-submissions-api-ticker-to-cik/): Yes, EDGAR has a free API with no key: map a ticker to a CIK with company_tickers.json, then list every filing from data.sec.gov/submissions. Tested Python.
 
 ## Other categories
 

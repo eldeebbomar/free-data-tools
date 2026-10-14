@@ -1,0 +1,240 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>Get Completed Clinical Trial Results with the API</title>
+<meta name="description" content="Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.">
+<link rel="canonical" href="https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="Get Completed Clinical Trial Results with the API"><meta property="og:description" content="Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included."><meta property="og:url" content="https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-api-completed-trial-results.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Get Completed Clinical Trial Results with the API">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="healthcare"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Get Completed Clinical Trial Results with the API"><meta name="twitter:description" content="Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-api-completed-trial-results.jpg"><meta name="twitter:image:alt" content="Get Completed Clinical Trial Results with the API">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#article","headline":"Get Completed Clinical Trial Results with the API","description":"Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-api-completed-trial-results.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, healthcare, datascience","about":{"@type":"SoftwareApplication","name":"Search ClinicalTrials.gov live — by condition, drug, or phase","url":"https://datatooly.xyz/clinical-trials-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#webpage","url":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/","name":"Get Completed Clinical Trial Results with the API","description":"Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-api-completed-trial-results.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"Get Completed Clinical Trial Results with the API","item":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/#quick-answers","mainEntity":[{"@type":"Question","name":"Where can I search for results of completed clinical trials?","acceptedAnswer":{"@type":"Answer","text":"On ClinicalTrials.gov. On the website, use the Study Results filter set to \"With results\" with status Completed. With the API, call https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com. On 2026-10-14 that matched 67,158 completed studies with posted results, out of 331,828 completed studies. The results themselves are in each record's resultsSection."}},{"@type":"Question","name":"How do I get clinicaltrials.gov results data from the API?","acceptedAnswer":{"@type":"Answer","text":"Request one study with fields=ResultsSection, for example https://clinicaltrials.gov/api/v2/studies/NCT06045221?fields=NCTId,ResultsSection. The section has five modules: participantFlowModule, baselineCharacteristicsModule, outcomeMeasuresModule, adverseEventsModule and moreInfoModule. It's present only when hasResults is true."}},{"@type":"Question","name":"Is there a clinical trial results database?","acceptedAnswer":{"@type":"Answer","text":"ClinicalTrials.gov is the main public one for trials registered there: on 2026-10-14, 80,504 of its 606,964 studies had summary results posted. Many other trials report results only in journals. For those, check the record's referencesModule for publications of type RESULT or DERIVED, which carry PubMed IDs."}}]}</script>
+</head><body data-tool-id="clinical-trials-search"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/health-pharma/">Health &amp; Pharma</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Health &amp; Pharma</span>
+<h1>Get Completed Clinical Trial Results with the API</h1>
+<p class="lede">Find completed trials with posted results on ClinicalTrials.gov and read outcomes, p-values and adverse events from the v2 API resultsSection. Python included.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Search ClinicalTrials.gov live — by condition, drug, or phase</p><p class="gcta-s">Search ClinicalTrials.gov live by condition, drug, phase or status with the official v2 API. No key, no signup: real NCT IDs, status, phase and lead sponsor.</p><a class="btn btn-primary" href="../../clinical-trials-search/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>To find results of completed clinical trials, search ClinicalTrials.gov for completed studies that have posted results. With the free v2 API that&#39;s <code>https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com</code>. Then fetch a study with <code>fields=ResultsSection</code> to get its outcome measures, statistical analyses, participant flow and adverse events as JSON. No API key is needed.</p>
+<p>This guide shows how to find those trials, what the results JSON looks like, and how to read it in Python. Everything was run against the live API on 2026-10-14.</p>
+<h2 id="how-many-trials-have-posted-results">How many trials have posted results</h2>
+<p>Counts from the API on 2026-10-14:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Studies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>All registered studies</td>
+<td>606,964</td>
+</tr>
+<tr>
+<td>Studies with posted results (<code>AREA[HasResults]true</code>)</td>
+<td>80,504</td>
+</tr>
+<tr>
+<td>Completed studies (<code>filter.overallStatus=COMPLETED</code>)</td>
+<td>331,828</td>
+</tr>
+<tr>
+<td>Completed and with posted results (<code>aggFilters=results:with,status:com</code>)</td>
+<td>67,158</td>
+</tr>
+<tr>
+<td>Results first posted in 2026 (<code>AREA[ResultsFirstPostDate]RANGE[2026-01-01,MAX]</code>)</td>
+<td>4,757</td>
+</tr>
+</tbody></table></div>
+<p>So about one in five completed studies has summary results on ClinicalTrials.gov. A trial without posted results may still have published them in a journal. See the section on publications below.</p>
+<h2 id="step-1-find-completed-trials-with-results">Step 1: find completed trials with results</h2>
+<p>Two filters give the same set. Both returned 67,158 studies:</p>
+<div class="code-block"><pre><code>aggFilters=results:with,status:com
+filter.overallStatus=COMPLETED&amp;filter.advanced=AREA[HasResults]true</code></pre></div>
+<p>Results are often posted while a study is still <code>ACTIVE_NOT_RECRUITING</code>, for example after the primary completion date while long-term follow-up continues. To include those, drop the status filter and keep <code>AREA[HasResults]true</code>.</p>
+<p>To get the newest results first, sort by <code>ResultsFirstPostDate:desc</code>. That field is &quot;the date on which summary results information was first available on ClinicalTrials.gov after National Library of Medicine (NLM) quality control (QC) review has concluded&quot;, according to the API&#39;s field definitions.</p>
+<h2 id="step-2-what-the-results-json-contains">Step 2: what the results JSON contains</h2>
+<p><code>resultsSection</code> is present only when <code>hasResults</code> is <code>true</code>. It has five modules:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Module</th>
+<th>What&#39;s in it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>participantFlowModule</code></td>
+<td>Arms (<code>groups</code>) and <code>periods</code>: how many started, completed, and dropped out, and why</td>
+</tr>
+<tr>
+<td><code>baselineCharacteristicsModule</code></td>
+<td>Baseline measures per arm, such as age, sex and race, with <code>denoms</code> (participants analyzed)</td>
+</tr>
+<tr>
+<td><code>outcomeMeasuresModule</code></td>
+<td><code>outcomeMeasures</code>: each has <code>type</code> (<code>PRIMARY</code>, <code>SECONDARY</code>, ...), <code>title</code>, <code>unitOfMeasure</code>, <code>paramType</code>, <code>timeFrame</code>, <code>groups</code>, <code>classes</code> (the values) and <code>analyses</code> (the statistics)</td>
+</tr>
+<tr>
+<td><code>adverseEventsModule</code></td>
+<td><code>eventGroups</code> with serious and other adverse event counts per arm, plus <code>seriousEvents</code> and <code>otherEvents</code> broken down by term</td>
+</tr>
+<tr>
+<td><code>moreInfoModule</code></td>
+<td>Point of contact and any restriction on the investigators publishing (<code>certainAgreement</code>)</td>
+</tr>
+</tbody></table></div>
+<p>An outcome value sits at <code>classes[].categories[].measurements[]</code>, keyed by <code>groupId</code> (for example <code>OG000</code>). Map it back to the arm name through the outcome&#39;s own <code>groups</code> list. The IDs are local to each outcome, not shared across the record.</p>
+<h2 id="step-3-read-it-in-python">Step 3: read it in Python</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import requests
+
+BASE = &quot;https://clinicaltrials.gov/api/v2/studies&quot;
+
+# 1. Find completed trials that have posted results, newest results first.
+r = requests.get(BASE, params={
+    &quot;query.intr&quot;: &quot;semaglutide&quot;,
+    &quot;aggFilters&quot;: &quot;results:with,status:com&quot;,   # = has results + completed
+    &quot;sort&quot;: &quot;ResultsFirstPostDate:desc&quot;,
+    &quot;fields&quot;: &quot;NCTId,BriefTitle,ResultsFirstPostDate&quot;,
+    &quot;countTotal&quot;: &quot;true&quot;,
+    &quot;pageSize&quot;: 5,
+}, timeout=60)
+r.raise_for_status()
+data = r.json()
+print(&quot;completed semaglutide trials with results:&quot;, data[&quot;totalCount&quot;])
+for st in data[&quot;studies&quot;]:
+    p = st[&quot;protocolSection&quot;]
+    print(&quot; &quot;, p[&quot;identificationModule&quot;][&quot;nctId&quot;],
+          p[&quot;statusModule&quot;][&quot;resultsFirstPostDateStruct&quot;][&quot;date&quot;],
+          p[&quot;identificationModule&quot;][&quot;briefTitle&quot;][:70])
+
+# 2. Pull the results section of one of them.
+nct = &quot;NCT06045221&quot;  # pinned so the output below is reproducible
+study = requests.get(f&quot;{BASE}/{nct}&quot;, params={&quot;fields&quot;: &quot;NCTId,ResultsSection&quot;}, timeout=60).json()
+res = study[&quot;resultsSection&quot;]
+print(&quot;\n&quot;, nct, &quot;result modules:&quot;, list(res))
+
+# 3. Primary outcomes: one value per arm, plus the statistical analysis.
+for om in res[&quot;outcomeMeasuresModule&quot;][&quot;outcomeMeasures&quot;]:
+    if om[&quot;type&quot;] != &quot;PRIMARY&quot;:
+        continue
+    print(&quot;\nPRIMARY:&quot;, om[&quot;title&quot;])
+    print(&quot;  unit:&quot;, om.get(&quot;unitOfMeasure&quot;), &quot;| param:&quot;, om.get(&quot;paramType&quot;), &quot;| time frame:&quot;, om.get(&quot;timeFrame&quot;))
+    arms = {g[&quot;id&quot;]: g[&quot;title&quot;] for g in om[&quot;groups&quot;]}
+    for cls in om.get(&quot;classes&quot;, []):
+        for cat in cls[&quot;categories&quot;]:
+            for m in cat[&quot;measurements&quot;]:
+                print(f&quot;  {arms[m['groupId']]}: {m['value']} (spread {m.get('spread')})&quot;)
+    for a in om.get(&quot;analyses&quot;, []):
+        print(&quot;  p-value:&quot;, a.get(&quot;pValue&quot;), &quot;|&quot;, a.get(&quot;statisticalMethod&quot;),
+              &quot;|&quot;, a.get(&quot;paramType&quot;), a.get(&quot;paramValue&quot;),
+              f&quot;[{a.get('ciLowerLimit')}, {a.get('ciUpperLimit')}]&quot;)
+
+# 4. Serious adverse events per arm.
+for g in res[&quot;adverseEventsModule&quot;][&quot;eventGroups&quot;]:
+    print(f&quot;\nSAE {g['title']}: {g.get('seriousNumAffected')}/{g.get('seriousNumAtRisk')} participants&quot;)</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">completed semaglutide trials with results: 104
+  NCT06771115 2026-09-29 Phase 2a Placebo-Controlled Study of VTX3232 Alone or in Combination W
+  NCT06045221 2026-09-15 A Study of Orforglipron (LY3502970) Compared With Semaglutide in Parti
+  NCT06401746 2026-08-31 Body Surface Gastric Mapping in Patients on Semaglutide
+  NCT04596631 2026-08-21 A Research Study to Compare a New Medicine Oral Semaglutide to a Dummy
+  NCT05132088 2026-08-14 Research Study to Investigate How Well Semaglutide Tablets Taken Once 
+
+ NCT06045221 result modules: ['participantFlowModule', 'baselineCharacteristicsModule', 'outcomeMeasuresModule', 'adverseEventsModule', 'moreInfoModule']
+
+PRIMARY: Change From Baseline in Hemoglobin A1c (HbA1c) [Non-inferiority of 36 mg Orforglipron Versus 14 mg Semaglutide and 12 mg Orforglipron Versus 7 mg Semaglutide]
+  unit: Percentage of HbA1c | param: LEAST_SQUARES_MEAN | time frame: Baseline, Week 52
+  12 mg Orforglipron: -1.91 (spread 0.058)
+  36 mg Orforglipron: -2.16 (spread 0.051)
+  7 mg Semaglutide: -1.11 (spread 0.063)
+  14 mg Semaglutide: -1.45 (spread 0.061)
+  p-value: &lt;.001 | Mixed Models Analysis | Least Squares Mean difference -0.71 [-0.86, -0.55]
+  p-value: &lt;.001 | Mixed Models Analysis | Least Squares Mean difference -0.79 [-0.96, -0.62]
+
+SAE 12 mg Orforglipron: 21/424 participants
+
+SAE 36 mg Orforglipron: 40/423 participants
+
+SAE 7 mg Semaglutide: 19/426 participants
+
+SAE 14 mg Semaglutide: 24/425 participants</code></pre></div>
+<p>That is the ACHIEVE-3 trial: Lilly&#39;s oral orforglipron against oral semaglutide in type 2 diabetes.</p>
+<h2 id="things-to-watch-in-results-data">Things to watch in results data</h2>
+<ul>
+<li><strong>Values are strings.</strong> <code>value</code>, <code>spread</code>, <code>pValue</code> and the confidence limits all come back as text, and <code>pValue</code> can be <code>&quot;&lt;.001&quot;</code>. Parse them yourself and keep the original string.</li>
+<li><strong>Read <code>paramType</code> and <code>dispersionType</code>.</strong> A value can be a least-squares mean, a median or a count of participants. <code>spread</code> can be a standard error, a standard deviation or an interquartile range. The type tells you which.</li>
+<li><strong>Not every primary outcome has an analysis.</strong> In the first trial listed above (NCT06771115), the primary outcome was a count of participants with adverse events and had no <code>analyses</code> entry.</li>
+<li><strong>Large records.</strong> A full record with results can be well over 100 KB. Ask for <code>fields=NCTId,ResultsSection</code>, or narrower pieces such as <code>OutcomeMeasuresModule</code>, when you don&#39;t need the protocol.</li>
+<li><strong>There is no separate results endpoint.</strong> Results are part of the study record from <code>/api/v2/studies/{nctId}</code>. The website shows them on the study page&#39;s Results tab (<code>https://clinicaltrials.gov/study/NCT06045221?tab=results</code>).</li>
+</ul>
+<h2 id="when-a-trial-has-no-posted-results-look-for-publications">When a trial has no posted results: look for publications</h2>
+<p>Many completed trials report only in a journal. Each record&#39;s <code>protocolSection.referencesModule.references</code> lists publications with a PubMed ID (<code>pmid</code>) and a <code>type</code>: <code>BACKGROUND</code>, <code>RESULT</code> or <code>DERIVED</code>. <code>RESULT</code> marks a publication the record identifies as reporting the study&#39;s results. <code>DERIVED</code> references are publications ClinicalTrials.gov links to the study by its NCT number. ACHIEVE-3&#39;s Lancet paper, for example, is attached as <code>DERIVED</code> (PMID 41765029).</p>
+<p>On 2026-10-14, 83,614 completed studies had no posted results but did have a <code>RESULT</code> or <code>DERIVED</code> reference:</p>
+<div class="code-block"><pre><code>filter.overallStatus=COMPLETED&amp;filter.advanced=AREA[HasResults]false AND AREA[ReferenceType](RESULT OR DERIVED)</code></pre></div>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/">Look up a study by NCT number</a>: the <code>/studies/{nctId}</code> endpoint and its errors.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/">ClinicalTrials.gov API v2 query parameters</a>: every filter used above, and more.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/">Classic API to v2 migration</a>, if older code read results from the classic XML.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/">Export search results to CSV in Python</a>. The CSV has a <code>Study Results</code> column (YES/NO).</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>Use the free <a href="https://datatooly.xyz/clinical-trials-search/">ClinicalTrials.gov search tool</a> to find trials by condition, drug, phase and status, live in your browser, and get their NCT numbers before you pull results.</p>
+<h2 id="at-scale">At scale</h2>
+<p>To track a sponsor&#39;s or an indication&#39;s trials over time, use the <a href="https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu" target="_blank" rel="noopener">Clinical Trials &amp; FDA Pipeline actor</a> on Apify. It returns <code>hasResults</code> and the completion dates for each trial. Its <code>monitor</code> mode re-checks the trials you list and emits a <code>trial_results_posted</code> change when results appear. The actor doesn&#39;t parse the outcome tables themselves; use the script above for that. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly tool and the Apify actor. The API and the script above work without either.</em></p>
+<p>Sources: <a href="https://clinicaltrials.gov/data-api/api" target="_blank" rel="noopener">ClinicalTrials.gov API, interactive OpenAPI docs</a>, <a href="https://clinicaltrials.gov/data-api/about-api/study-data-structure" target="_blank" rel="noopener">Study Data Structure</a>, and live API responses on 2026-10-14.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>Where can I search for results of completed clinical trials?</h3>
+<p>On ClinicalTrials.gov. On the website, use the Study Results filter set to &quot;With results&quot; with status Completed. With the API, call <code>https://clinicaltrials.gov/api/v2/studies?aggFilters=results:with,status:com</code>. On 2026-10-14 that matched 67,158 completed studies with posted results, out of 331,828 completed studies. The results themselves are in each record's <code>resultsSection</code>.</p>
+<h3>How do I get clinicaltrials.gov results data from the API?</h3>
+<p>Request one study with <code>fields=ResultsSection</code>, for example <code>https://clinicaltrials.gov/api/v2/studies/NCT06045221?fields=NCTId,ResultsSection</code>. The section has five modules: <code>participantFlowModule</code>, <code>baselineCharacteristicsModule</code>, <code>outcomeMeasuresModule</code>, <code>adverseEventsModule</code> and <code>moreInfoModule</code>. It's present only when <code>hasResults</code> is <code>true</code>.</p>
+<h3>Is there a clinical trial results database?</h3>
+<p>ClinicalTrials.gov is the main public one for trials registered there: on 2026-10-14, 80,504 of its 606,964 studies had summary results posted. Many other trials report results only in journals. For those, check the record's <code>referencesModule</code> for publications of type <code>RESULT</code> or <code>DERIVED</code>, which carry PubMed IDs.</p>
+</section>
+<p class="guide-end"><a href="../../clinical-trials-search/">Open the free Search ClinicalTrials.gov live tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV →</a><a href="../../guides/clinicaltrials-gov-api-nct-number-lookup/">ClinicalTrials.gov API: Look Up a Study by NCT Number →</a><a href="../../guides/clinicaltrials-gov-api-v2-query-parameters/">ClinicalTrials.gov API v2 Query Parameters: Full Reference →</a><a href="../../guides/clinicaltrials-gov-classic-api-v2-migration/">ClinicalTrials.gov Classic API to v2: Migration Guide →</a><a href="../../guides/track-peptide-glp1-mentions-youtube-python/">Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key) →</a><a href="../../guides/sec-edgar-companyfacts-xbrl-frames-api/">SEC Company Facts API: companyfacts, concept &amp; frames →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>

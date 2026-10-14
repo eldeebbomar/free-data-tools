@@ -1,0 +1,425 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){if(navigator.webdriver){window.gtag=function(){};return;}window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-ZMND343WK1');var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-ZMND343WK1';document.head.appendChild(s);})();</script>
+<title>ClinicalTrials.gov API v2 Query Parameters: Full Reference</title>
+<meta name="description" content="Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.">
+<link rel="canonical" href="https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/">
+<meta name="author" content="Omar Eldeeb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Data Tooly"><meta property="og:locale" content="en_US">
+<meta property="og:title" content="ClinicalTrials.gov API v2 Query Parameters: Full Reference"><meta property="og:description" content="Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested."><meta property="og:url" content="https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/">
+<meta property="og:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-api-v2-query-parameters.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ClinicalTrials.gov API v2 Query Parameters: Full Reference">
+<meta property="article:published_time" content="2026-10-14"><meta property="article:modified_time" content="2026-10-14"><meta property="article:author" content="https://datatooly.xyz/about/"><meta property="article:tag" content="api"><meta property="article:tag" content="python"><meta property="article:tag" content="healthcare"><meta property="article:tag" content="datascience">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ClinicalTrials.gov API v2 Query Parameters: Full Reference"><meta name="twitter:description" content="Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested."><meta name="twitter:image" content="https://datatooly.xyz/og/guide-clinicaltrials-gov-api-v2-query-parameters.jpg"><meta name="twitter:image:alt" content="ClinicalTrials.gov API v2 Query Parameters: Full Reference">
+<link rel="alternate" type="text/markdown" href="index.md" title="Markdown version of this page">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E1411">
+<link rel="preload" href="../../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=21047919">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://datatooly.xyz/#website","name":"Data Tooly","url":"https://datatooly.xyz/","description":"Free micro-tools for developers, analysts & researchers.","inLanguage":"en","publisher":{"@id":"https://datatooly.xyz/about/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://datatooly.xyz/about/#person","name":"Omar Eldeeb","url":"https://datatooly.xyz/about/","jobTitle":"Data engineer & Apify Store actor developer","sameAs":["https://apify.com/constructive_calm","https://github.com/eldeebbomar","https://dev.to/odeeb"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#article","headline":"ClinicalTrials.gov API v2 Query Parameters: Full Reference","description":"Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.","author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"datePublished":"2026-10-14","dateModified":"2026-10-14","image":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-api-v2-query-parameters.jpg","width":1200,"height":630},"mainEntityOfPage":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#webpage"},"isPartOf":{"@id":"https://datatooly.xyz/#website"},"inLanguage":"en","keywords":"api, python, healthcare, datascience","about":{"@type":"SoftwareApplication","name":"Search ClinicalTrials.gov live — by condition, drug, or phase","url":"https://datatooly.xyz/clinical-trials-search/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#webpage","url":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/","name":"ClinicalTrials.gov API v2 Query Parameters: Full Reference","description":"Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.","inLanguage":"en","isPartOf":{"@id":"https://datatooly.xyz/#website"},"author":{"@id":"https://datatooly.xyz/about/#person"},"publisher":{"@id":"https://datatooly.xyz/about/#person"},"breadcrumb":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#breadcrumb"},"dateModified":"2026-10-14","primaryImageOfPage":{"@type":"ImageObject","url":"https://datatooly.xyz/og/guide-clinicaltrials-gov-api-v2-query-parameters.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#article"},"datePublished":"2026-10-14"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Data Tooly","item":"https://datatooly.xyz/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://datatooly.xyz/guides/"},{"@type":"ListItem","position":3,"name":"ClinicalTrials.gov API v2 Query Parameters: Full Reference","item":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://datatooly.xyz/guides/clinicaltrials-gov-api-v2-query-parameters/#quick-answers","mainEntity":[{"@type":"Question","name":"Where is the ClinicalTrials.gov API documentation?","acceptedAnswer":{"@type":"Answer","text":"The official reference is the interactive OpenAPI page at https://clinicaltrials.gov/data-api/api, and the raw OpenAPI 3.0 spec is served at https://clinicaltrials.gov/api/oas/v2. Field names are on the Study Data Structure page and search areas on the Search Areas page, both under clinicaltrials.gov/data-api/about-api."}},{"@type":"Question","name":"How do I use clinicaltrials.gov/api/v2/studies?query.cond?","acceptedAnswer":{"@type":"Answer","text":"query.cond searches the Conditions or disease area: https://clinicaltrials.gov/api/v2/studies?query.cond=type%202%20diabetes. On 2026-10-14 that matched 11,987 studies. Narrow it with filter.overallStatus=RECRUITING, filter.advanced=AREA[Phase]PHASE3 or query.intr=semaglutide, and add countTotal=true to get totalCount."}},{"@type":"Question","name":"Is there a filter.phase parameter in clinicaltrials.gov/api/v2/studies?","acceptedAnswer":{"@type":"Answer","text":"No. filter.phase=PHASE3 returns HTTP 400 with the body: filter.phase is unknown parameter. Filter phase with filter.advanced=AREA[Phase]PHASE3, AREA[Phase](PHASE2 OR PHASE3) for several phases, or aggFilters=phase:3. Both forms returned the same 1,642 Phase 3 type 2 diabetes studies on 2026-10-14."}},{"@type":"Question","name":"Is there a free clinical trials API?","acceptedAnswer":{"@type":"Answer","text":"Yes. The ClinicalTrials.gov v2 REST API from the U.S. National Library of Medicine is free, needs no API key or signup, and returns JSON or CSV. On 2026-10-14 it reported 606,964 registered studies (/api/v2/stats/size)."}}]}</script>
+</head><body data-tool-id="clinical-trials-search"><header class="masthead"><div class="wrap bar">
+<a class="brand" href="../../"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</a>
+<nav class="nav-links" aria-label="Main"><a href="../../">Tools</a><a href="../../guides/">Guides</a><a href="../../about/">About</a><a class="hide-sm" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All actors</a><a class="ghost hide-md" href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">by Omar Eldeeb</a></nav>
+</div></header>
+<main>
+<div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../../">Data Tooly</a> / <a href="../../guides/">Guides</a> / <a href="../../category/health-pharma/">Health &amp; Pharma</a></nav></div>
+<article class="guide">
+<header class="hero guide-hero" style="padding-top:40px"><div class="wrap-narrow">
+<span class="eyebrow">Guide · Health &amp; Pharma</span>
+<h1>ClinicalTrials.gov API v2 Query Parameters: Full Reference</h1>
+<p class="lede">Every ClinicalTrials.gov API v2 /studies parameter: query.cond, query.term, filter.advanced AREA[] syntax, filter.geo, aggFilters, sort, fields, paging. Tested.</p>
+<p class="updated">Published <time datetime="2026-10-14">October 14, 2026</time> · Updated <time datetime="2026-10-14">October 14, 2026</time> · By <a href="../../about/">Omar Eldeeb</a></p>
+</div></header>
+<div class="wrap-narrow">
+<aside class="guide-cta" aria-label="Free tool"><span class="gcta-k">Free live tool</span><p class="gcta-t">Search ClinicalTrials.gov live — by condition, drug, or phase</p><p class="gcta-s">Search ClinicalTrials.gov live by condition, drug, phase or status with the official v2 API. No key, no signup: real NCT IDs, status, phase and lead sponsor.</p><a class="btn btn-primary" href="../../clinical-trials-search/">Try it live — free <span class="arr">→</span></a></aside>
+<div class="prose guide-body">
+<p>The ClinicalTrials.gov API v2 has one search endpoint, <code>https://clinicaltrials.gov/api/v2/studies</code>. You search with <code>query.*</code> parameters (<code>query.cond</code>, <code>query.term</code>, <code>query.intr</code>, <code>query.spons</code>), narrow with <code>filter.*</code> and <code>aggFilters</code>, choose output with <code>fields</code> and <code>format</code>, and page with <code>pageSize</code> and <code>pageToken</code>. There is no API key. There is also no <code>filter.phase</code>; use <code>filter.advanced=AREA[Phase]PHASE3</code>.</p>
+<p>This is a complete reference for the <code>/studies</code> endpoint, built from the <a href="https://clinicaltrials.gov/data-api/api" target="_blank" rel="noopener">official OpenAPI spec</a> (API version 2.0.5) and checked against the live API on 2026-10-14. Every count below comes from that day&#39;s data, so your numbers will drift as the registry grows.</p>
+<h2 id="query-parameters-what-to-search">Query parameters: what to search</h2>
+<p><code>query.*</code> parameters search text and affect relevance ranking. Each one targets a &quot;search area&quot;, a group of fields defined by the API (the full list is at <code>/api/v2/studies/search-areas</code>).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Search area</th>
+<th>Searches in (examples)</th>
+<th>Example</th>
+<th>Matches on 2026-10-14</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>query.cond</code></td>
+<td>ConditionSearch</td>
+<td>Condition, titles, condition MeSH terms, keywords, NCT ID (7 fields)</td>
+<td><code>query.cond=lung cancer</code></td>
+<td>14,620</td>
+</tr>
+<tr>
+<td><code>query.term</code></td>
+<td>BasicSearch</td>
+<td>57 fields, incl. NCT ID, acronym, titles, conditions, interventions, summary (&quot;Other terms&quot; on the website)</td>
+<td><code>query.term=GLP-1</code></td>
+<td>4,273</td>
+</tr>
+<tr>
+<td><code>query.intr</code></td>
+<td>InterventionSearch</td>
+<td>Intervention name, type, other names, arm groups, MeSH terms (12 fields)</td>
+<td><code>query.intr=pembrolizumab</code></td>
+<td>2,977</td>
+</tr>
+<tr>
+<td><code>query.titles</code></td>
+<td>TitleSearch</td>
+<td>Acronym, brief title, official title</td>
+<td><code>query.titles=TRAILBLAZER</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>query.outc</code></td>
+<td>OutcomeSearch</td>
+<td>Primary, secondary and other outcome measures and descriptions (9 fields)</td>
+<td><code>query.outc=HbA1c</code></td>
+<td>12,125</td>
+</tr>
+<tr>
+<td><code>query.spons</code></td>
+<td>SponsorSearch</td>
+<td>Lead sponsor, collaborators, organization name</td>
+<td><code>query.spons=Pfizer</code></td>
+<td>6,091</td>
+</tr>
+<tr>
+<td><code>query.lead</code></td>
+<td><code>LeadSponsorName</code> field only</td>
+<td>Lead sponsor only</td>
+<td><code>query.lead=Pfizer</code></td>
+<td>3,884</td>
+</tr>
+<tr>
+<td><code>query.locn</code></td>
+<td>LocationSearch</td>
+<td>Location city, state, country, facility, ZIP</td>
+<td><code>query.locn=Boston</code></td>
+<td>21,515</td>
+</tr>
+<tr>
+<td><code>query.id</code></td>
+<td>IdSearch</td>
+<td>NCT ID, NCT ID aliases, acronym, org study ID, secondary IDs</td>
+<td><code>query.id=NCT04437511</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>query.patient</code></td>
+<td>PatientSearch</td>
+<td>47 fields, a patient-oriented mix of conditions, titles, summary and interventions</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table></div>
+<p><code>query.spons</code> vs <code>query.lead</code>: Pfizer appears as lead sponsor or collaborator on 6,091 studies, and as lead sponsor on 3,884.</p>
+<p>Every <code>query.*</code> value uses Essie expression syntax, so <code>&quot;exact phrase&quot;</code>, <code>AND</code>, <code>OR</code>, <code>NOT</code> and parentheses all work. For example <code>query.term=&quot;continuous glucose monitor&quot;</code> matched 234 type 2 diabetes studies.</p>
+<h2 id="filter-parameters-what-to-keep">Filter parameters: what to keep</h2>
+<p>Filters narrow the result set without changing ranking.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>filter.overallStatus</code></td>
+<td>Comma- or pipe-separated statuses</td>
+<td><code>RECRUITING|NOT_YET_RECRUITING</code></td>
+</tr>
+<tr>
+<td><code>filter.ids</code></td>
+<td>Comma- or pipe-separated NCT IDs</td>
+<td><code>NCT04437511,NCT04368728</code></td>
+</tr>
+<tr>
+<td><code>filter.geo</code></td>
+<td><code>distance(lat,lon,radius)</code> with <code>mi</code> or <code>km</code></td>
+<td><code>distance(42.3601,-71.0589,50mi)</code></td>
+</tr>
+<tr>
+<td><code>filter.advanced</code></td>
+<td>An Essie expression, usually <code>AREA[Field]value</code></td>
+<td><code>AREA[Phase]PHASE3</code></td>
+</tr>
+<tr>
+<td><code>filter.synonyms</code></td>
+<td><code>area:synonym_id</code> pairs</td>
+<td><code>ConditionSearch:1651367</code></td>
+</tr>
+<tr>
+<td><code>aggFilters</code></td>
+<td><code>filter_id:option</code> pairs, the website&#39;s sidebar filters</td>
+<td><code>results:with,status:com</code></td>
+</tr>
+<tr>
+<td><code>postFilter.*</code></td>
+<td>Same as the <code>filter.*</code> versions</td>
+<td><code>postFilter.overallStatus=RECRUITING</code></td>
+</tr>
+</tbody></table></div>
+<p>The spec says <code>filter.*</code> and <code>postFilter.*</code> &quot;have same effect&quot;, and both exist &quot;just to simplify applying parameters from search request&quot;.</p>
+<p>Valid <code>filter.overallStatus</code> values (from the spec): <code>ACTIVE_NOT_RECRUITING</code>, <code>COMPLETED</code>, <code>ENROLLING_BY_INVITATION</code>, <code>NOT_YET_RECRUITING</code>, <code>RECRUITING</code>, <code>SUSPENDED</code>, <code>TERMINATED</code>, <code>WITHDRAWN</code>, <code>AVAILABLE</code>, <code>NO_LONGER_AVAILABLE</code>, <code>TEMPORARILY_NOT_AVAILABLE</code>, <code>APPROVED_FOR_MARKETING</code>, <code>WITHHELD</code>, <code>UNKNOWN</code>. Anything else, such as <code>OPEN</code>, returns HTTP 400: <code>Invalid value in parameter `overallStatus`: `OPEN`</code>.</p>
+<h3 id="filter-advanced-and-the-area-syntax">filter.advanced and the AREA[] syntax</h3>
+<p>Most fields have no dedicated filter. You reach them with <code>filter.advanced</code>, which takes an Essie expression. <code>AREA[FieldName]</code> points the expression at one field. All of these returned HTTP 200 on 2026-10-14, combined with <code>query.cond=type 2 diabetes</code> (11,987 studies):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><code>filter.advanced</code> value</th>
+<th>Studies</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Phase 3</td>
+<td><code>AREA[Phase]PHASE3</code></td>
+<td>1,642</td>
+</tr>
+<tr>
+<td>Phase 2 or 3</td>
+<td><code>AREA[Phase](PHASE2 OR PHASE3)</code></td>
+<td>2,811</td>
+</tr>
+<tr>
+<td>Started on or after 2024-01-01</td>
+<td><code>AREA[StartDate]RANGE[2024-01-01,MAX]</code></td>
+<td>1,903</td>
+</tr>
+<tr>
+<td>Enrollment of 1,000 or more</td>
+<td><code>AREA[EnrollmentCount]RANGE[1000,MAX]</code></td>
+<td>1,059</td>
+</tr>
+<tr>
+<td>Industry lead sponsor</td>
+<td><code>AREA[LeadSponsorClass]INDUSTRY</code></td>
+<td>4,350</td>
+</tr>
+<tr>
+<td>Phase field empty</td>
+<td><code>AREA[Phase]MISSING</code></td>
+<td>2,113</td>
+</tr>
+<tr>
+<td>Exclude &quot;not applicable&quot; phase</td>
+<td><code>NOT AREA[Phase]NA</code></td>
+<td>7,497</td>
+</tr>
+<tr>
+<td>Completed, no results posted</td>
+<td><code>AREA[OverallStatus]COMPLETED AND AREA[HasResults]false</code></td>
+<td>5,955</td>
+</tr>
+<tr>
+<td>A recruiting site in Boston</td>
+<td><code>SEARCH[Location](AREA[LocationCity]Boston AND AREA[LocationStatus]RECRUITING)</code></td>
+<td>26</td>
+</tr>
+</tbody></table></div>
+<p><code>SEARCH[Location](...)</code> makes both conditions apply to the same location. Without it, a study with a recruiting site in Chicago and a closed site in Boston would match. Phase values are <code>NA</code>, <code>EARLY_PHASE1</code>, <code>PHASE1</code>, <code>PHASE2</code>, <code>PHASE3</code> and <code>PHASE4</code>.</p>
+<h3 id="aggfilters">aggFilters</h3>
+<p><code>aggFilters</code> uses the short keys behind the website&#39;s filter sidebar. The spec gives <code>results:with,status:com</code> and <code>status:not rec,sex:f,healthy:y</code> as examples. <code>phase:3</code> matched exactly the same 1,642 studies as <code>AREA[Phase]PHASE3</code>. Separate several options for one filter with spaces (<code>status:not rec</code>) and separate filters with commas.</p>
+<h2 id="output-and-paging-parameters">Output and paging parameters</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What it does</th>
+<th>Notes from testing</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>fields</code></td>
+<td>Which fields to return</td>
+<td>JSON uses field names (<code>NCTId</code>, <code>BriefTitle</code>), piece names or module names. CSV uses column names (<code>NCT Number</code>). An unknown name returns HTTP 400. <code>@query</code> returns the fields your query matched.</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td><code>json</code> (default) or <code>csv</code></td>
+<td>In CSV mode the next-page token comes in the <code>x-next-page-token</code> response header.</td>
+</tr>
+<tr>
+<td><code>markupFormat</code></td>
+<td><code>markdown</code> (default) or <code>legacy</code></td>
+<td>JSON only.</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Up to 2 sort keys, <code>Field:asc</code> or <code>Field:desc</code></td>
+<td>Only date and numeric fields, plus <code>@relevance</code>. <code>sort=BriefTitle</code> returned HTTP 400: <code>Unsupported sort field type: text</code>. Results are unsorted by default.</td>
+</tr>
+<tr>
+<td><code>countTotal</code></td>
+<td><code>true</code> adds <code>totalCount</code> to the first page</td>
+<td>CSV puts it in the <code>x-total-count</code> header.</td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td>Studies per page</td>
+<td>Default 10. Values above 1,000 are quietly reduced to 1,000. <code>0</code> means the default.</td>
+</tr>
+<tr>
+<td><code>pageToken</code></td>
+<td>The <code>nextPageToken</code> from the previous page</td>
+<td>Every other parameter must stay the same, apart from <code>countTotal</code>, <code>pageSize</code> and <code>pageToken</code>.</td>
+</tr>
+<tr>
+<td><code>geoDecay</code></td>
+<td>How distance from <code>filter.geo</code> affects ranking</td>
+<td>Ignored without <code>filter.geo</code>.</td>
+</tr>
+</tbody></table></div>
+<h2 id="curl-one-request-with-several-parameters">curl: one request with several parameters</h2>
+<div class="code-block"><span class="code-lang">bash</span><pre><code class="language-bash">curl -s &quot;https://clinicaltrials.gov/api/v2/studies?query.cond=type+2+diabetes&amp;filter.advanced=AREA%5BPhase%5DPHASE3&amp;filter.overallStatus=RECRUITING&amp;countTotal=true&amp;pageSize=2&amp;fields=NCTId,BriefTitle&quot;</code></pre></div>
+<p>Result (trimmed titles):</p>
+<div class="code-block"><span class="code-lang">json</span><pre><code class="language-json">{&quot;totalCount&quot;:74,&quot;studies&quot;:[
+{&quot;protocolSection&quot;:{&quot;identificationModule&quot;:{&quot;nctId&quot;:&quot;NCT07797335&quot;,&quot;briefTitle&quot;:&quot;AMBITION 7: A Research Study Investigating How Well Zenagamtide Lowers Blood Sugar ...&quot;}}},
+{&quot;protocolSection&quot;:{&quot;identificationModule&quot;:{&quot;nctId&quot;:&quot;NCT07613307&quot;,&quot;briefTitle&quot;:&quot;A Study of Orforglipron (LY3502970) in Participants With Type 2 Diabetes Who Observe Ramadan Fasting&quot;}}}
+],&quot;nextPageToken&quot;:&quot;ZVNj7o2Elu8o3lpzC8-7qrbumpOQJJxuZPKj2PAW&quot;}</code></pre></div>
+<p>URL-encode the brackets in <code>AREA[...]</code> (<code>%5B</code>, <code>%5D</code>) when you build URLs by hand. <code>requests</code> and <code>curl --data-urlencode</code> do it for you.</p>
+<h2 id="python-counting-and-paging">Python: counting and paging</h2>
+<div class="code-block"><span class="code-lang">python</span><pre><code class="language-python">import time
+import requests
+
+BASE = &quot;https://clinicaltrials.gov/api/v2/studies&quot;
+session = requests.Session()
+
+def count(**params):
+    &quot;&quot;&quot;Total matching studies for a query (countTotal=true, one tiny page).&quot;&quot;&quot;
+    p = {**params, &quot;countTotal&quot;: &quot;true&quot;, &quot;pageSize&quot;: 1, &quot;fields&quot;: &quot;NCTId&quot;}
+    r = session.get(BASE, params=p, timeout=60)
+    r.raise_for_status()  # a 400 means a bad parameter name or value
+    return r.json()[&quot;totalCount&quot;]
+
+def search(params, fields, page_size=1000, max_pages=50):
+    &quot;&quot;&quot;Yield every matching study, following nextPageToken.&quot;&quot;&quot;
+    p = {**params, &quot;fields&quot;: &quot;,&quot;.join(fields), &quot;pageSize&quot;: page_size}
+    for _ in range(max_pages):
+        r = session.get(BASE, params=p, timeout=60)
+        r.raise_for_status()
+        data = r.json()
+        yield from data.get(&quot;studies&quot;, [])  # a page may be empty
+        token = data.get(&quot;nextPageToken&quot;)
+        if not token:
+            return
+        p[&quot;pageToken&quot;] = token  # every other parameter must stay the same
+        time.sleep(0.5)
+
+q = {&quot;query.cond&quot;: &quot;type 2 diabetes&quot;}
+print(&quot;all T2D studies:          &quot;, count(**q))
+print(&quot;+ Phase 3:                &quot;, count(**q, **{&quot;filter.advanced&quot;: &quot;AREA[Phase]PHASE3&quot;}))
+print(&quot;+ recruiting:             &quot;, count(**q, **{&quot;filter.overallStatus&quot;: &quot;RECRUITING&quot;}))
+print(&quot;+ within 50 mi of Boston: &quot;, count(**q, **{&quot;filter.geo&quot;: &quot;distance(42.3601,-71.0589,50mi)&quot;}))
+print(&quot;+ semaglutide:            &quot;, count(**q, **{&quot;query.intr&quot;: &quot;semaglutide&quot;}))
+
+rows = list(search(
+    {**q, &quot;query.intr&quot;: &quot;semaglutide&quot;, &quot;filter.overallStatus&quot;: &quot;RECRUITING&quot;, &quot;sort&quot;: &quot;LastUpdatePostDate:desc&quot;},
+    [&quot;NCTId&quot;, &quot;BriefTitle&quot;, &quot;Phase&quot;, &quot;LeadSponsorName&quot;, &quot;LastUpdatePostDate&quot;],
+))
+print(len(rows), &quot;recruiting semaglutide T2D trials; newest update:&quot;)
+for st in rows[:3]:
+    p = st[&quot;protocolSection&quot;]
+    print(p[&quot;identificationModule&quot;][&quot;nctId&quot;], p[&quot;statusModule&quot;][&quot;lastUpdatePostDateStruct&quot;][&quot;date&quot;],
+          p.get(&quot;designModule&quot;, {}).get(&quot;phases&quot;), p[&quot;sponsorCollaboratorsModule&quot;][&quot;leadSponsor&quot;][&quot;name&quot;])</code></pre></div>
+<p>Output on 2026-10-14:</p>
+<div class="code-block"><span class="code-lang">text</span><pre><code class="language-text">all T2D studies:           11987
++ Phase 3:                 1642
++ recruiting:              869
++ within 50 mi of Boston:  586
++ semaglutide:             331
+50 recruiting semaglutide T2D trials; newest update:
+NCT07743983 2026-10-13 ['PHASE3'] BrightGene Bio-Medical Technology Co., Ltd.
+NCT06897475 2026-10-09 ['PHASE2'] Eli Lilly and Company
+NCT07668388 2026-10-07 ['PHASE2'] Novo Nordisk A/S</code></pre></div>
+<h2 id="mistakes-the-api-rejects-and-ones-it-doesn-t">Mistakes the API rejects (and ones it doesn&#39;t)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Request</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>filter.phase=PHASE3</code></td>
+<td>HTTP 400, <code>`filter.phase` is unknown parameter</code></td>
+</tr>
+<tr>
+<td><code>filter.overallStatus=OPEN</code></td>
+<td>HTTP 400, invalid value</td>
+</tr>
+<tr>
+<td><code>fields=NCTId,Bogus</code></td>
+<td>HTTP 400, <code>Parameter &#39;fields&#39; contains invalid field name: &#39;Bogus&#39;</code></td>
+</tr>
+<tr>
+<td><code>sort=BriefTitle</code></td>
+<td>HTTP 400, text fields can&#39;t be sorted</td>
+</tr>
+<tr>
+<td><code>pageSize=5000</code></td>
+<td>HTTP 200 with 1,000 studies, no warning</td>
+</tr>
+<tr>
+<td><code>query.term=NCT04437511 NCT04368728</code> plus filters</td>
+<td>HTTP 200, and the filters are ignored (documented: a query of only NCT IDs switches filters off)</td>
+</tr>
+</tbody></table></div>
+<p>A 400 is a bug in your query, so don&#39;t retry it. Retry only on 429 and 5xx, with backoff. NLM doesn&#39;t publish a fixed request quota for this API.</p>
+<h2 id="related-guides-for-this-api">Related guides for this API</h2>
+<ul>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-nct-number-lookup/">Look up a study by NCT number</a> with <code>/studies/{nctId}</code>.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-completed-trial-results/">Get completed trial results</a> with <code>aggFilters=results:with,status:com</code>.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-classic-api-v2-migration/">Classic API to v2 migration</a>: how <code>expr</code>, <code>min_rnk</code> and <code>fmt</code> map to v2.</li>
+<li><a href="https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/">Export search results to CSV in Python</a>, including the header-based CSV paging.</li>
+</ul>
+<h2 id="do-it-without-code">Do it without code</h2>
+<p>The free <a href="https://datatooly.xyz/clinical-trials-search/">ClinicalTrials.gov search tool</a> builds these queries for you and runs them live in your browser. Pick a condition, a drug, a phase and a status, and you get real studies back.</p>
+<h2 id="at-scale">At scale</h2>
+<p>For scheduled pulls across many conditions or sponsors, with FDA approvals, device clearances, adverse events, recalls and shortages joined on, use the <a href="https://apify.com/constructive_calm/clinical-trials-fda-scraper?fpr=v77kxu" target="_blank" rel="noopener">Clinical Trials &amp; FDA Pipeline actor</a> on Apify. Its <code>trials</code> mode takes conditions, interventions, phases, statuses, countries and a date range, and pages through <code>nextPageToken</code> for you. It&#39;s free to start, then pay-as-you-go.</p>
+<p><em>Disclosure: I build the datatooly tool and the Apify actor. The API works the same without them.</em></p>
+<p>Sources: <a href="https://clinicaltrials.gov/data-api/api" target="_blank" rel="noopener">ClinicalTrials.gov API, interactive OpenAPI docs</a>, <a href="https://clinicaltrials.gov/data-api/about-api/search-areas" target="_blank" rel="noopener">Search Areas</a>, <a href="https://clinicaltrials.gov/data-api/about-api/study-data-structure" target="_blank" rel="noopener">Study Data Structure</a>, and live API responses on 2026-10-14.</p>
+
+</div>
+<section class="prose guide-quick" aria-labelledby="quick-answers"><h2 id="quick-answers">Quick answers</h2>
+<h3>Where is the ClinicalTrials.gov API documentation?</h3>
+<p>The official reference is the interactive OpenAPI page at <code>https://clinicaltrials.gov/data-api/api</code>, and the raw OpenAPI 3.0 spec is served at <code>https://clinicaltrials.gov/api/oas/v2</code>. Field names are on the Study Data Structure page and search areas on the Search Areas page, both under clinicaltrials.gov/data-api/about-api.</p>
+<h3>How do I use clinicaltrials.gov/api/v2/studies?query.cond?</h3>
+<p><code>query.cond</code> searches the Conditions or disease area: <code>https://clinicaltrials.gov/api/v2/studies?query.cond=type%202%20diabetes</code>. On 2026-10-14 that matched 11,987 studies. Narrow it with <code>filter.overallStatus=RECRUITING</code>, <code>filter.advanced=AREA[Phase]PHASE3</code> or <code>query.intr=semaglutide</code>, and add <code>countTotal=true</code> to get <code>totalCount</code>.</p>
+<h3>Is there a filter.phase parameter in clinicaltrials.gov/api/v2/studies?</h3>
+<p>No. <code>filter.phase=PHASE3</code> returns HTTP 400 with the body: filter.phase is unknown parameter. Filter phase with <code>filter.advanced=AREA[Phase]PHASE3</code>, <code>AREA[Phase](PHASE2 OR PHASE3)</code> for several phases, or <code>aggFilters=phase:3</code>. Both forms returned the same 1,642 Phase 3 type 2 diabetes studies on 2026-10-14.</p>
+<h3>Is there a free clinical trials API?</h3>
+<p>Yes. The ClinicalTrials.gov v2 REST API from the U.S. National Library of Medicine is free, needs no API key or signup, and returns JSON or CSV. On 2026-10-14 it reported 606,964 registered studies (<code>/api/v2/stats/size</code>).</p>
+</section>
+<p class="guide-end"><a href="../../clinical-trials-search/">Open the free Search ClinicalTrials.gov live tool →</a></p>
+</div>
+</article>
+<section class="section" style="padding:48px 0"><div class="wrap-narrow">
+<h2 class="h3">Related guides</h2>
+<div class="related"><a href="../../guides/clinicaltrials-gov-api-export-csv-python/">ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV →</a><a href="../../guides/clinicaltrials-gov-api-completed-trial-results/">Get Completed Clinical Trial Results with the API →</a><a href="../../guides/clinicaltrials-gov-api-nct-number-lookup/">ClinicalTrials.gov API: Look Up a Study by NCT Number →</a><a href="../../guides/clinicaltrials-gov-classic-api-v2-migration/">ClinicalTrials.gov Classic API to v2: Migration Guide →</a><a href="../../guides/track-peptide-glp1-mentions-youtube-python/">Track Peptide &amp; GLP-1 Mentions on YouTube with Python (No API Key) →</a><a href="../../guides/sec-edgar-companyfacts-xbrl-frames-api/">SEC Company Facts API: companyfacts, concept &amp; frames →</a><a href="../../guides/">All guides →</a></div>
+</div></section>
+<section class="section" style="padding:0 0 48px"><div class="wrap-narrow"><p class="disclaimer">Written by <a href="../../about/">Omar Eldeeb</a>, who also builds the tools and Apify actors mentioned here. Links to apify.com carry an affiliate parameter — see the <a href="../../about/#affiliate">disclosure</a>.</p></div></section>
+</main>
+<footer class="foot"><div class="wrap"><div class="cols">
+<div><div class="brand" style="margin-bottom:12px"><img class="mark" src="../../favicon.svg" alt="Data Tooly logo" width="28" height="28"> Data Tooly</div><p style="color:var(--muted);font-size:14px;max-width:34ch">Free micro-tools for developers, analysts &amp; researchers. The browser tools are free, no login. Each is powered by an Apify actor — free to start, then pay-as-you-go.</p></div>
+<div><h2 class="foot-h">Popular tools</h2><a href="../../company-hiring-signals/">Company Hiring Signals</a><a href="../../hacker-news-search/">Search Hacker News by keyword</a><a href="../../app-store-top-charts/">App Store Top Charts</a><a href="../../sec-edgar-search/">Search SEC EDGAR filings, financia</a><a href="../../reddit-search-builder/">Search Reddit by keyword or subred</a><a href="../../shopify-store-products/">See any Shopify store's products</a><a href="../../#tools" class="foot-accent">Browse all 28 tools →</a></div>
+<div><h2 class="foot-h">More</h2><a href="../../guides/">Guides</a><a href="../../about/">About &amp; disclosures</a><a href="https://apify.com/constructive_calm?fpr=v77kxu" target="_blank" rel="noopener">All 28 actors on Apify →</a><a href="https://github.com/eldeebbomar" target="_blank" rel="noopener">GitHub</a></div>
+</div><div class="fine"><span>© Omar Eldeeb · Data Tooly</span><span class="mono">static site · no accounts · <a href="../../about/#privacy">Google Analytics</a></span></div></div></footer>
+<script src="../../assets/site.js?v=2e03ce9f" defer></script>
+</body></html>
