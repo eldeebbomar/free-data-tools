@@ -6,8 +6,10 @@
 - Category: [News & Crypto](https://datatooly.xyz/category/news-crypto/)
 - URL: https://datatooly.xyz/crypto-news-search/
 - Backing Apify actor: [crypto-news-scraper](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
 
 Search Cointelegraph by keyword and language edition and preview the article records the actor exports: URL, title, publish date and view count.
 

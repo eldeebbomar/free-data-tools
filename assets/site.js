@@ -7,7 +7,7 @@
   /* ---------- analytics (GA4 events through the page's gtag) ----------
      The <head> tag skips Google Analytics entirely when navigator.webdriver is true and leaves a no-op
      gtag(), so these calls are harmless there. Params never include anything the visitor typed.
-     Key events to mark in GA4 admin: outbound_apify, copy_input, run_tool, guide_to_tool. */
+     Key events to mark in GA4 admin: outbound_apify, copy_input, run_tool, guide_to_tool, partner_click. */
   function track(name, params) {
     try { if (typeof window.gtag === "function") window.gtag("event", name, params || {}); } catch (e) { /* analytics must never break the page */ }
   }
@@ -32,6 +32,15 @@
     var url;
     try { url = new URL(a.getAttribute("href"), location.href); } catch (err) { return; }
     var pos = linkPosition(a);
+    // referral-partner links (crypto pages only) carry data-partner; data-track-url keeps typed addresses out of GA
+    var partner = a.getAttribute("data-partner");
+    if (partner) {
+      var pp = { partner: partner, link_position: pos, link_url: a.getAttribute("data-track-url") || (url.hostname + url.pathname), transport_type: "beacon" };
+      var ptid = pageToolId();
+      if (ptid) pp.tool_id = ptid;
+      track("partner_click", pp);
+      return;
+    }
     if (/(^|\.)apify\.com$/i.test(url.hostname)) {
       if (pos === "cta" && url.hash === "#pricing") pos = "cta-pricing";
       var p = { link_position: pos, link_url: url.hostname + url.pathname, transport_type: "beacon" };
@@ -54,6 +63,44 @@
   function $all(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
+
+  /* @partner-links:start — pure (no DOM); unit-tested by _test_partner_links.mjs, which evaluates this block.
+     Mirrors mev-pair-scanner's parsePairRef: "chain:address" overrides per row, bare 0x addresses use the
+     default chain, bare base58 is Solana. Only chains in partner.networks get a link; anything else is skipped. */
+  var EVM_ADDR_RE = /^0x[0-9a-fA-F]{40}$/, SOL_ADDR_RE = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+  function partnerUrl(p, path) {
+    var u = String(p.base).replace(/\/+$/, "") + (path.charAt(0) === "/" ? path : "/" + path);
+    var h = u.indexOf("#"), frag = h >= 0 ? u.slice(h) : "";
+    if (h >= 0) u = u.slice(0, h);
+    if (/[?&]ref=/.test(u)) return u + frag;
+    return u + (u.indexOf("?") >= 0 ? "&" : "?") + "ref=" + encodeURIComponent(p.ref) + frag;
+  }
+  function partnerDeepLinks(p, raw, defaultChain, asPool, max) {
+    var items = (Array.isArray(raw) ? raw.join(",") : String(raw == null ? "" : raw)).split(/[\s,]+/);
+    var nets = (p && p.networks) || {}, out = [], seen = {};
+    var host = String(p.base).replace(/^https?:\/\//, "").replace(/\/+$/, "");
+    for (var i = 0; i < items.length && out.length < (max || 5); i++) {
+      var s = String(items[i] == null ? "" : items[i]).trim();
+      if (!s) continue;
+      var chain = null, addr = s, c = s.indexOf(":");
+      if (c > 0 && c < s.length - 1) { chain = s.slice(0, c).trim().toLowerCase(); addr = s.slice(c + 1).trim(); }
+      else if (EVM_ADDR_RE.test(s)) chain = String(defaultChain || "ethereum").toLowerCase();
+      else if (SOL_ADDR_RE.test(s)) chain = "solana";
+      else continue;
+      var net = Object.prototype.hasOwnProperty.call(nets, chain) ? nets[chain] : null;
+      if (!net) continue;                                                   // chain Defined can't chart → no link
+      if (net === "sol" ? !SOL_ADDR_RE.test(addr) : !EVM_ADDR_RE.test(addr)) continue;
+      if (net !== "sol") addr = addr.toLowerCase();                         // EVM is case-insensitive; base58 is NOT
+      if (seen[net + "/" + addr]) continue;
+      seen[net + "/" + addr] = 1;
+      var path = asPool ? "/" + net + "/" + addr : "/token/" + net + "/" + addr;
+      out.push({ net: net, address: addr, kind: asPool ? "pool" : "token", url: partnerUrl(p, path),
+        short: addr.slice(0, 6) + "…" + addr.slice(-4),
+        trackUrl: host + (asPool ? "/" + net : "/token/" + net) });              // analytics never sees the address
+    }
+    return out;
+  }
+  /* @partner-links:end */
 
   function highlightJSON(obj) {
     var json = JSON.stringify(obj, null, 2);
@@ -348,12 +395,44 @@
     }).catch(function (e) { status.innerHTML = '<span class="err">' + esc(e.message) + '</span>'; });
   }
 
+  /* ---------- referral deep links for the addresses the visitor typed (opted-in crypto tools only) ---------- */
+  function renderPartnerLinks(out) {
+    var p = TOOL && TOOL.partner, dl = p && p.deepLinks;
+    if (!dl) return;
+    var input = buildInput();
+    var asPool = (dl.poolModes || []).indexOf(input[dl.modeField]) >= 0;
+    var links = partnerDeepLinks(p, input[dl.addressField], input[dl.chainField], asPool, 5);
+    if (!links.length) return;                       // nothing valid typed: the static partner card already covers it
+    var box = el("div", "partner-links");
+    box.setAttribute("data-pos", "widget_deeplink");
+    box.appendChild(el("div", "pl-head", "Live " + (asPool ? "pool" : "token") + " charts for the addresses you entered:"));
+    var ul = el("ul", "pl-list");
+    links.forEach(function (l) {
+      var li = el("li"), a = el("a", null, "View " + l.short + " live on " + p.name + " →");
+      a.href = l.url; a.target = "_blank"; a.rel = p.rel || "sponsored nofollow noopener";
+      a.setAttribute("data-partner", p.key);
+      a.setAttribute("data-track-url", l.trackUrl);
+      li.appendChild(a);
+      li.appendChild(el("span", "pl-net", " " + l.kind + " · " + l.net));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    var d = el("p", "pl-d", (p.disclosure || "Referral link.") + " ");
+    var da = el("a", null, "Disclosure");
+    da.href = p.disclosureHref || "/about/#affiliate";
+    d.appendChild(da);
+    d.appendChild(document.createTextNode("."));
+    box.appendChild(d);
+    out.appendChild(box);
+  }
+
   /* ---------- configurator: build input + show sample ---------- */
   function runConfigurator() {
     var status = $("#status"), out = $("#results");
     renderJSON();
     status.innerHTML = '<span class="ok">✓ query ready — copy it below and paste into the actor for live results</span>';
     out.innerHTML = "";
+    renderPartnerLinks(out);
     if (!TOOL || !TOOL.sampleUrl) return;
     fetch(TOOL.sampleUrl).then(function (r) { return r.json(); }).then(function (rows) {
       var head = el("div", "example-head");

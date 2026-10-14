@@ -262,10 +262,11 @@ The example tables on query-builder pages are fixed samples bundled with the sit
 ## Affiliate disclosure
 
 Links to apify.com on this site carry an affiliate parameter (`fpr=v77kxu`). If you sign up for Apify through one of them, the site may earn a commission from Apify at no extra cost to you. Separately, Omar Eldeeb publishes the actors the tools link to, so running them on Apify's pay-as-you-go pricing also generates revenue for the author. The browser tools themselves are free and stay free.
+On crypto pages only — the tools [Search & export Cointelegraph crypto news](https://datatooly.xyz/crypto-news-search/) and [Scan DEX pairs for MEV & sandwich risk](https://datatooly.xyz/mev-pair-scanner-tool/), plus their guides — links to Defined (defined.fi), a DEX token-chart and trading app, carry the referral code `ref=CUKLU`. If you sign up through one of them, the site earns a share of the trading fees Defined collects from you, at no extra cost to you. These links are marked as sponsored, appear nowhere else on the site, and are not financial advice: crypto trading is high-risk and you can lose money.
 
 ## Privacy
 
-Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. Through the same Google Analytics tag it also records four kinds of clicks: opening a link to apify.com, copying a tool's query, pressing a tool's run button, and going from a guide to its tool. Those events carry only the tool's name, the apify.com page a link points to, where on the page the click happened, and whether the tool is live; what you type into a tool is never sent to Google Analytics. Google Analytics is not loaded at all in automated browsers (those that report `navigator.webdriver`). There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
+Data Tooly uses **Google Analytics 4** to count visits and see which pages are useful; Google Analytics sets cookies in your browser for this. Through the same Google Analytics tag it also records five kinds of clicks: opening a link to apify.com, opening a referral-partner link on the crypto pages, copying a tool's query, pressing a tool's run button, and going from a guide to its tool. Those events carry only the tool's name, the apify.com or partner page a link points to (never a token or pool address you typed), where on the page the click happened, and whether the tool is live; what you type into a tool is never sent to Google Analytics. Google Analytics is not loaded at all in automated browsers (those that report `navigator.webdriver`). There are no accounts, no sign-up, no forms and no newsletter. The site is static with no backend of its own: what you type into a tool is processed in your browser and, for live tools, sent directly to the public source listed above — it is not collected or stored by this site.
 
 ## Contact
 
@@ -1861,8 +1862,10 @@ Source: https://datatooly.xyz/crypto-news-search/
 - Category: [News & Crypto](https://datatooly.xyz/category/news-crypto/)
 - URL: https://datatooly.xyz/crypto-news-search/
 - Backing Apify actor: [crypto-news-scraper](https://apify.com/constructive_calm/crypto-news-scraper?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [Cointelegraph API: Get Crypto News as JSON Without a Key](https://datatooly.xyz/guides/cointelegraph-api-crypto-news-json/)
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
 
 Search Cointelegraph by keyword and language edition and preview the article records the actor exports: URL, title, publish date and view count.
 
@@ -2751,8 +2754,10 @@ Source: https://datatooly.xyz/mev-pair-scanner-tool/
 - Category: [Crypto & DeFi](https://datatooly.xyz/category/crypto-defi/)
 - URL: https://datatooly.xyz/mev-pair-scanner-tool/
 - Backing Apify actor: [mev-pair-scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
 
 Pick a chain and token or pool addresses and preview the per-pool MEV and sandwich-attack metrics the actor returns, from risk level to fee breakdown.
 
@@ -5316,6 +5321,8 @@ Offsets deep into the archive work. An offset of 20,000 on the English edition r
 
 These 14 codes all returned articles on 2026-09-29: `en`, `tr`, `de`, `es`, `fr`, `it`, `jp`, `kr`, `br`, `cn`, `ar`, `in`, `tw` and `ru`. `ar` is the Arabic edition, served from `cointelegraph.com.ar` despite the Argentinian-looking domain, and `my` returned no data. Query `language { domain }` to confirm a mapping.
 
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
+
 ## Related guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
@@ -6950,6 +6957,8 @@ Codex's fee indexing is per pool on Solana. In my test, the highest-volume SOL/U
 ### Does a low sandwich rate mean my trade is safe?
 
 No. It means the pool was rarely sandwiched recently. Your own slippage tolerance and whether your transaction goes through a public mempool matter more. A tight slippage limit and a private RPC reduce the risk no matter which pool you use.
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
 
 ## Related guides
 

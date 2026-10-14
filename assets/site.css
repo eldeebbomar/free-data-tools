@@ -431,3 +431,20 @@ main p, main li, main dt, main dd, main summary, main blockquote { overflow-wrap
 .code-block, .table-wrap, .sample-table-wrap { max-width: 100%; }
 .code-block pre, .json-panel pre { overflow-x: auto; max-width: 100%; }
 .code-block pre code, .table-wrap code { overflow-wrap: normal; }
+
+/* ---------- referral partner (crypto pages only): compact card + widget deep links ---------- */
+.partner-card { margin: 0 0 var(--s7); padding: var(--s5); background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+.cta + .partner-card { margin-top: calc(var(--s5) - var(--s8)); } /* sit just under the Apify CTA, not a full section away */
+.partner-card .pc-k { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.partner-card .pc-k::before { content: "// "; color: var(--accent); }
+.partner-card .pc-t { font-family: var(--f-display); font-weight: 600; font-size: 1.15rem; line-height: 1.25; color: var(--ink); margin: var(--s2) 0; }
+.partner-card .pc-s { font-size: 15px; color: var(--ink-2); margin: 0 0 var(--s4); max-width: 60ch; }
+.partner-card .btn { white-space: normal; max-width: 100%; }
+.partner-card .pc-d { font-size: 12.5px; color: var(--muted); margin: var(--s3) 0 0; }
+.partner-card .pc-d a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.partner-links { margin: 0 0 var(--s3); padding: 10px 14px; background: var(--term-bg-2); border: 1px solid var(--term-line); border-radius: var(--radius); font-size: 13px; color: var(--term-dim); }
+.partner-links .pl-head { color: var(--term-text); }
+.partner-links .pl-list { list-style: none; margin: 6px 0; padding: 0; display: grid; gap: 4px; }
+.partner-links a { color: var(--term-blue); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.partner-links .pl-net { font-family: var(--f-mono); font-size: 11px; }
+.partner-links .pl-d { font-size: 12px; margin: 6px 0 0; }

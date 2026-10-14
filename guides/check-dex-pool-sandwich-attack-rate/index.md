@@ -168,6 +168,8 @@ Codex's fee indexing is per pool on Solana. In my test, the highest-volume SOL/U
 
 No. It means the pool was rarely sandwiched recently. Your own slippage tolerance and whether your transaction goes through a public mempool matter more. A tight slippage limit and a private RPC reduce the risk no matter which pool you use.
 
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
+
 ## Related guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)

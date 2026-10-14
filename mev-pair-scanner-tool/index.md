@@ -6,8 +6,10 @@
 - Category: [Crypto & DeFi](https://datatooly.xyz/category/crypto-defi/)
 - URL: https://datatooly.xyz/mev-pair-scanner-tool/
 - Backing Apify actor: [mev-pair-scanner](https://apify.com/constructive_calm/mev-pair-scanner?fpr=v77kxu) (free to start, then pay-as-you-go)
-- Updated: 2026-09-29
+- Updated: 2026-10-14
 - Full guide: [How to Check a DEX Pool's Sandwich Attack Rate (Python + API)](https://datatooly.xyz/guides/check-dex-pool-sandwich-attack-rate/)
+
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
 
 Pick a chain and token or pool addresses and preview the per-pool MEV and sandwich-attack metrics the actor returns, from risk level to fee breakdown.
 

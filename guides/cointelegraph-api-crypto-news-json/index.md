@@ -230,6 +230,8 @@ Offsets deep into the archive work. An offset of 20,000 on the English edition r
 
 These 14 codes all returned articles on 2026-09-29: `en`, `tr`, `de`, `es`, `fr`, `it`, `jp`, `kr`, `br`, `cn`, `ar`, `in`, `tw` and `ru`. `ar` is the Arabic edition, served from `cointelegraph.com.ar` despite the Argentinian-looking domain, and `my` returned no data. Query `language { domain }` to confirm a mapping.
 
+Live token and pool charts: [Defined](https://www.defined.fi/tokens?ref=CUKLU) (referral link — the site earns a share of trading fees if you sign up; not financial advice).
+
 ## Related guides
 
 - [ClinicalTrials.gov API v2 in Python: query.cond, Phase, CSV](https://datatooly.xyz/guides/clinicaltrials-gov-api-export-csv-python/)
